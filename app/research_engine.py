@@ -117,6 +117,25 @@ def _bump_usage(node_id: str, queries: int, results: int, sources: int,
                                    "queries": queries, "results": results, "sources": sources})
 
 
+# --- LLM token accounting (per operator; cumulative + per-process for build totals) ---
+_LLM_TOKENS_PROC: dict = {}
+
+
+def _record_llm(operator: str, provider: str, tokens: int) -> None:
+    tokens = int(tokens or 0)
+    _LLM_TOKENS_PROC[operator] = _LLM_TOKENS_PROC.get(operator, 0) + tokens
+    try:
+        _S.get_backend().record_usage({"operator": operator, "provider": provider,
+                                       "operation": "llm", "tokens": tokens, "calls": 1})
+    except Exception:
+        pass   # never let usage logging break a generation
+
+
+def llm_tokens_used(operator: str) -> int:
+    """Cumulative LLM tokens for this operator since the process started (for per-build deltas)."""
+    return _LLM_TOKENS_PROC.get(operator, 0)
+
+
 # ==========================================================================
 # SEARCH provider (Serper)
 # ==========================================================================
@@ -257,8 +276,10 @@ class GroqClassifier(ClassificationProvider):
     # is the strongest for structured JSON; set GROQ_MODEL=qwen/qwen3.8-27b for Qwen.
     MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 
-    def __init__(self, api_key: str):
+    def __init__(self, api_key: str, operator: str = "unknown"):
         self.api_key = api_key
+        self.operator = operator
+        self.last_tokens = 0
 
     def classify(self, system: str, user: str) -> str:
         # NB: we do NOT use Groq's strict response_format:json_object — it hard-fails
@@ -271,6 +292,8 @@ class GroqClassifier(ClassificationProvider):
         data = _http_json(self.ENDPOINT, body,
                           {"Authorization": f"Bearer {self.api_key}",
                            "Content-Type": "application/json"})
+        self.last_tokens = int((data.get("usage") or {}).get("total_tokens", 0))
+        _record_llm(self.operator, "groq", self.last_tokens)
         return data["choices"][0]["message"]["content"]
 
 
@@ -299,8 +322,9 @@ def get_classifier(creds: dict | None = None) -> ClassificationProvider | None:
     # authenticated path: use ONLY this operator's key (no global/other-op fallback).
     # Groq (free tier) is the primary LLM; Gemini kept as an optional fallback.
     if creds is not None:
+        op = creds.get("operator", "unknown")
         if creds.get("groq"):
-            return GroqClassifier(creds["groq"])
+            return GroqClassifier(creds["groq"], operator=op)
         if creds.get("gemini"):
             return GeminiClassifier(creds["gemini"])
         return None
@@ -316,9 +340,55 @@ def get_classifier(creds: dict | None = None) -> ClassificationProvider | None:
     return None
 
 
+# ==========================================================================
+# IMAGE provider — Together AI, FLUX.1-schnell (Apache-2.0 → outputs sellable)
+# ==========================================================================
+class TogetherFlux:
+    name = "flux-schnell"
+    ENDPOINT = "https://api.together.xyz/v1/images/generations"
+    MODEL = os.environ.get("FLUX_MODEL", "black-forest-labs/FLUX.1-schnell-Free")
+
+    def __init__(self, api_key: str, operator: str = "unknown"):
+        self.api_key = api_key
+        self.operator = operator
+
+    def cover(self, prompt: str, width: int = 768, height: int = 1024) -> bytes | None:
+        """Generate a cover-art BACKGROUND (no text — FLUX renders text poorly; the
+        title is overlaid in the PDF). Returns PNG/JPEG bytes, or None on failure."""
+        import base64
+        body = json.dumps({"model": self.MODEL, "prompt": prompt, "width": width,
+                           "height": height, "steps": 4, "n": 1,
+                           "response_format": "b64_json"}).encode()
+        try:
+            data = _http_json(self.ENDPOINT, body,
+                              {"Authorization": f"Bearer {self.api_key}",
+                               "Content-Type": "application/json"}, timeout=120)
+            b64 = data["data"][0]["b64_json"]
+            img = base64.b64decode(b64)
+        except Exception:
+            return None
+        try:
+            _S.get_backend().record_usage({"operator": self.operator, "provider": "together",
+                                           "operation": "image", "images": 1})
+        except Exception:
+            pass
+        return img
+
+
+def get_image_provider(creds: dict | None = None):
+    if creds is not None:
+        return TogetherFlux(creds["together"], operator=creds.get("operator", "unknown")) \
+            if creds.get("together") else None
+    if os.environ.get("TOGETHER_API_KEY"):
+        return TogetherFlux(os.environ["TOGETHER_API_KEY"])
+    return None
+
+
 def providers_status(creds: dict | None = None) -> dict:
     sp, cl = get_search_provider(creds), get_classifier(creds)
-    return {"search": sp.name if sp else None, "classifier": cl.name if cl else None}
+    img = get_image_provider(creds)
+    return {"search": sp.name if sp else None, "classifier": cl.name if cl else None,
+            "image": img.name if img else None}
 
 
 # ==========================================================================

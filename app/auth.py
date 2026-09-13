@@ -97,9 +97,11 @@ def resolve_operator_credentials(operator: str) -> dict:
     groq = os.environ.get(f"{up}_GROQ_API_KEY")
     gem = os.environ.get(f"{up}_GEMINI_API_KEY")
     ser = os.environ.get(f"{up}_SERPER_API_KEY")
+    tog = os.environ.get(f"{up}_TOGETHER_API_KEY")
     # local-dev convenience: fall back to the shared single-key names ONLY in open mode
     if not auth_enabled():
         groq = groq or os.environ.get("GROQ_API_KEY")
         gem = gem or os.environ.get("GEMINI_API_KEY")
         ser = ser or os.environ.get("SERPER_API_KEY")
-    return {"groq": groq, "gemini": gem, "serper": ser}
+        tog = tog or os.environ.get("TOGETHER_API_KEY")
+    return {"groq": groq, "gemini": gem, "serper": ser, "together": tog, "operator": operator}

@@ -478,6 +478,8 @@ def _dep_order(plan: dict, arch: dict) -> list[str]:
 def build_product(opp_id: str, creds: dict | None = None, operator: str = "unknown",
                   only_component: str | None = None, force: bool = False) -> dict:
     validate_build_gate(opp_id)
+    import research_engine as _RE
+    _tok0 = _RE.llm_tokens_used(operator)
     spec = _load_spec(opp_id)
     _set_build_status(opp_id, "building")
     pdir = PRODUCTS / opp_id
@@ -562,7 +564,7 @@ def build_product(opp_id: str, creds: dict | None = None, operator: str = "unkno
     if verif_pending:
         blocked_reasons.append("external verification pending")
 
-    bundle_status, release_status = _assemble_bundle(pdir, manifest_components, spec)
+    bundle_status, release_status = _assemble_bundle(pdir, manifest_components, spec, creds=creds)
     if all_built and qa_ok and not verif_pending and bundle_status == "complete":
         release_status = "release_candidate"
     else:
@@ -574,6 +576,7 @@ def build_product(opp_id: str, creds: dict | None = None, operator: str = "unkno
         "spec_source": f"research/{opp_id}/", "components": manifest_components,
         "bundle_status": bundle_status, "release_status": release_status,
         "release_blocked_reasons": blocked_reasons,
+        "llm_tokens_used": _RE.llm_tokens_used(operator) - _tok0,
         "capabilities": {"pdf": B.pdf_available()[1]},
     }
     manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False))
@@ -620,9 +623,17 @@ def get_bundle(opp_id: str) -> bytes | None:
     return storage.get_backend().get_object(key)
 
 
-def _assemble_bundle(pdir: Path, components: list[dict], spec: dict) -> tuple[str, str]:
-    """One sellable ebook PDF (document components as chapters) + editable tool
-    files (spreadsheets) + a short START_HERE."""
+def _cover_prompt(title: str, transformation: dict) -> str:
+    return ("Professional ebook cover background art, modern and clean, abstract and "
+            f"tasteful, evoking: {title}. Calm premium colour palette, soft depth, "
+            "subtle gradient, plenty of empty space at the top for a title. "
+            "NO text, NO words, NO letters, NO logos.")
+
+
+def _assemble_bundle(pdir: Path, components: list[dict], spec: dict,
+                     creds: dict | None = None) -> tuple[str, str]:
+    """One sellable ebook PDF (document components as chapters, with an optional
+    AI cover) + editable tool files (spreadsheets) + a short START_HERE."""
     bdir = pdir / "bundle"
     if bdir.exists():
         shutil.rmtree(bdir)
@@ -654,8 +665,16 @@ def _assemble_bundle(pdir: Path, components: list[dict], spec: dict) -> tuple[st
     ebook_name = None
     if chapters:
         safe_title = re.sub(r"[^A-Za-z0-9 _-]+", "-", title).strip()[:60] or "Ebook"
+        cover = None
         try:
-            B.build_ebook_pdf(bdir / f"{safe_title}.pdf", title, subtitle, chapters)
+            import research_engine as _RE
+            imgp = _RE.get_image_provider(creds)
+            if imgp:
+                cover = imgp.cover(_cover_prompt(title, transformation))  # None on failure → typographic cover
+        except Exception:
+            cover = None
+        try:
+            B.build_ebook_pdf(bdir / f"{safe_title}.pdf", title, subtitle, chapters, cover_image=cover)
             ebook_name = f"{safe_title}.pdf"
         except Exception as e:                       # never fake it — surface as no ebook
             ebook_name = None

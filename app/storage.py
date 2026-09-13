@@ -43,6 +43,29 @@ class StorageError(Exception):
     pass
 
 
+def apply_usage(u: dict, event: dict) -> dict:
+    """Fold one usage event into the rolling research_usage aggregate (search + LLM).
+    Shared by both backends so the numbers match everywhere."""
+    if not isinstance(u, dict):
+        u = {}
+    u["events_count"] = u.get("events_count", 0) + 1
+    u["total_search_requests"] = u.get("total_search_requests", 0) + event.get("queries", 0)
+    u["total_results"] = u.get("total_results", 0) + event.get("results", 0)
+    u["total_llm_calls"] = u.get("total_llm_calls", 0) + event.get("calls", 0)
+    u["total_llm_tokens"] = u.get("total_llm_tokens", 0) + event.get("tokens", 0)
+    u["total_images"] = u.get("total_images", 0) + event.get("images", 0)
+    by = u.setdefault("by_operator", {})
+    op = by.setdefault(event.get("operator", "unknown"),
+                       {"queries": 0, "results": 0, "llm_calls": 0, "llm_tokens": 0, "images": 0})
+    op["queries"] = op.get("queries", 0) + event.get("queries", 0)
+    op["results"] = op.get("results", 0) + event.get("results", 0)
+    op["llm_calls"] = op.get("llm_calls", 0) + event.get("calls", 0)
+    op["llm_tokens"] = op.get("llm_tokens", 0) + event.get("tokens", 0)
+    op["images"] = op.get("images", 0) + event.get("images", 0)
+    u["last_request_at"] = NOW()
+    return u
+
+
 # ==========================================================================
 # interface
 # ==========================================================================
@@ -182,19 +205,7 @@ class LocalBackend(StorageBackend):
 
     def record_usage(self, event):
         u = self._read_json(self._cpath("research_usage"), {})
-        if not isinstance(u, dict):
-            u = {}
-        u.setdefault("events", [])
-        u["events"].append(event)
-        # keep the rolling aggregate the UI already reads
-        u["total_search_requests"] = u.get("total_search_requests", 0) + event.get("queries", 0)
-        u["total_results"] = u.get("total_results", 0) + event.get("results", 0)
-        by_op = u.setdefault("by_operator", {})
-        op = by_op.setdefault(event.get("operator", "unknown"),
-                              {"queries": 0, "results": 0})
-        op["queries"] += event.get("queries", 0); op["results"] += event.get("results", 0)
-        u["last_request_at"] = NOW()
-        self._write_json(self._cpath("research_usage"), u)
+        self._write_json(self._cpath("research_usage"), apply_usage(u, event))
 
     # sessions: a small local file (dev only)
     def _sessions(self):
@@ -336,8 +347,13 @@ class SupabaseBackend(StorageBackend):
                   prefer="resolution=merge-duplicates,return=minimal")
 
     def record_usage(self, event):
+        # audit row + keep the rolling aggregate the UI reads live (was frozen before)
         self._req("POST", "usage_events", "", [{**event, "created_at": NOW()}],
                   prefer="return=minimal")
+        try:
+            self.write_doc("research_usage", apply_usage(self.read_doc("research_usage") or {}, event))
+        except Exception:
+            pass   # aggregate is best-effort; the audit row is the source of truth
 
     def put_session(self, token, operator, expires_at):
         self._req("POST", "sessions", "",

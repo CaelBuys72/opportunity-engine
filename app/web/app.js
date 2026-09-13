@@ -455,8 +455,9 @@ async function showUniverseProduct(id) {
       ? `<a class="handoff" style="display:inline-block;background:rgba(82,214,154,.22);color:#e9f2ff;text-decoration:none"
            href="${(window.OE && window.OE.base) || ""}/api/universe/opportunity/${encodeURIComponent(id)}/product/download">⬇ Download product bundle (.zip)</a>`
       : `<span class="muted small">Bundle not ready — see blocked reasons below.</span>`;
+    const tok = m.llm_tokens_used ? ` · <span class="muted small">${m.llm_tokens_used.toLocaleString()} LLM tokens</span>` : "";
     inner = `<section class="card dossier" style="border-color:rgba(82,214,154,.45)">
-        <h3>📦 Product <span class="badge ${m.product_status === "release_candidate" ? "rs-complete" : "LOW"}">${esc(m.product_status)}</span></h3>
+        <h3>📦 Product <span class="badge ${m.product_status === "release_candidate" ? "rs-complete" : "LOW"}">${esc(m.product_status)}</span>${tok}</h3>
         <div class="kv"><b>Components (${(m.components || []).length})</b>${comps || '<p class="muted">—</p>'}</div>
         ${(m.release_blocked_reasons || []).length ? `<div class="kv"><b>Blocked</b>${li(m.release_blocked_reasons)}</div>` : ""}
         <div class="cta">${dl}
@@ -486,7 +487,8 @@ async function produceUniverse(id) {
   b.disabled = false;
   if (!r.ok) { res.innerHTML = `<span style="color:var(--bad)">${esc(r.error || "production failed")}</span>`; b.textContent = "GENERATE PRODUCT →"; return; }
   const built = (r.components || []).filter(c => c.status === "built").length;
-  res.innerHTML = `Built <b>${built}/${(r.components || []).length}</b> components · ${esc(r.product_status)}${r.download_ready ? " · bundle ready" : ""}`;
+  const tok = r.llm_tokens_used ? ` · ${r.llm_tokens_used.toLocaleString()} LLM tokens` : "";
+  res.innerHTML = `Built <b>${built}/${(r.components || []).length}</b> components · ${esc(r.product_status)}${r.download_ready ? " · bundle ready" : ""}${tok}`;
   showUniverseProduct(id);
 }
 

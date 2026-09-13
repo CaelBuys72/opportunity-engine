@@ -549,6 +549,7 @@ class Handler(BaseHTTPRequestHandler):
                                    "product_status": m["product_status"],
                                    "bundle_status": m["bundle_status"],
                                    "download_ready": m.get("download_ready", False),
+                                   "llm_tokens_used": m.get("llm_tokens_used", 0),
                                    "release_blocked_reasons": m.get("release_blocked_reasons", []),
                                    "components": comps})
             except PR.ProductionError as e:

@@ -103,9 +103,10 @@ def build_markdown(path: Path, title: str, blocks: list[dict]) -> Path:
 
 # ---------------------------------------------------------------- EBOOK (single sellable PDF)
 def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
-                    accent: str = "#6C4CF1") -> Path:
+                    accent: str = "#6C4CF1", cover_image: bytes | None = None) -> Path:
     """Compile document chapters into ONE clean, sellable PDF ebook:
     cover page + table of contents (auto page numbers) + styled chapters + footer.
+    cover_image (optional PNG/JPEG bytes) is drawn full-bleed behind the title.
     chapters: [{"title": str, "blocks": [ {type: heading|para|bullet|number|check|field} ]}]"""
     from reportlab.lib.pagesizes import A4
     from reportlab.lib.units import cm
@@ -114,6 +115,8 @@ def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
     from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
                                     ListFlowable, ListItem)
     from reportlab.platypus.tableofcontents import TableOfContents
+    from reportlab.lib.utils import ImageReader
+    import io as _io
 
     ACCENT = colors.HexColor(accent)
     INK = colors.HexColor("#1a1a2e")
@@ -164,14 +167,27 @@ def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
     def draw_cover(canvas, doc):
         w, h = A4
         canvas.saveState()
-        canvas.setFillColor(ACCENT); canvas.rect(0, h - 6 * cm, w, 6 * cm, fill=1, stroke=0)
-        canvas.setFillColor(colors.white); canvas.setFont("Helvetica-Bold", 26)
+        if cover_image:
+            try:
+                canvas.drawImage(ImageReader(_io.BytesIO(cover_image)), 0, 0, width=w, height=h,
+                                 preserveAspectRatio=False, mask="auto")
+                # dark scrim at the top so the title stays legible over any image
+                canvas.setFillColor(colors.Color(0.05, 0.05, 0.12, alpha=0.62))
+                canvas.rect(0, h - 7.5 * cm, w, 7.5 * cm, fill=1, stroke=0)
+                title_color, sub_color = colors.white, colors.Color(1, 1, 1, alpha=0.9)
+            except Exception:
+                canvas.setFillColor(ACCENT); canvas.rect(0, h - 6 * cm, w, 6 * cm, fill=1, stroke=0)
+                title_color, sub_color = colors.white, INK
+        else:
+            canvas.setFillColor(ACCENT); canvas.rect(0, h - 6 * cm, w, 6 * cm, fill=1, stroke=0)
+            title_color, sub_color = colors.white, INK
+        canvas.setFillColor(title_color); canvas.setFont("Helvetica-Bold", 26)
         for i, line in enumerate(_wrap(safe(title), 30)[:3]):
             canvas.drawString(2 * cm, h - 2.6 * cm - i * 1.0 * cm, line)
-        canvas.setFillColor(INK); canvas.setFont("Helvetica", 13)
+        canvas.setFillColor(sub_color); canvas.setFont("Helvetica", 13)
         for i, line in enumerate(_wrap(safe(subtitle or ""), 60)[:3]):
-            canvas.drawString(2 * cm, h - 8 * cm - i * 0.7 * cm, line)
-        canvas.setFillColor(MUTED); canvas.setFont("Helvetica", 9)
+            canvas.drawString(2 * cm, h - 6.2 * cm - i * 0.7 * cm, line)
+        canvas.setFillColor(colors.white if cover_image else MUTED); canvas.setFont("Helvetica", 9)
         canvas.drawString(2 * cm, 2 * cm, "Produced by the Opportunity Engine")
         canvas.restoreState()
 

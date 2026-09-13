@@ -20,9 +20,13 @@ services:
         sync: false
       - key: CAEL_SERPER_API_KEY
         sync: false
+      - key: CAEL_TOGETHER_API_KEY
+        sync: false
       - key: SHEYLYN_GROQ_API_KEY
         sync: false
       - key: SHEYLYN_SERPER_API_KEY
+        sync: false
+      - key: SHEYLYN_TOGETHER_API_KEY
         sync: false
       - key: CORS_ALLOW_ORIGINS
         sync: false
