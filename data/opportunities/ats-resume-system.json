@@ -1,0 +1,123 @@
+{
+  "id": "ats-resume-system",
+  "title": "ATS resume + application system",
+  "industry_id": "career",
+  "submarket_id": "job-search",
+  "origin": "seed-run",
+  "audience": "active job seekers getting screened out",
+  "core_problem": "Resumes get filtered by ATS; applicants don't know how to map keywords or track applications.",
+  "desired_outcome": "Get past ATS and actually land interviews.",
+  "related_problems": [
+    "1,000+ applications, few callbacks",
+    "how does ATS work",
+    "no direct experience for a career switch",
+    "keyword matching"
+  ],
+  "problems": [
+    {
+      "id": "prob-demand",
+      "statement": "Job seekers actively struggle to pass ATS.",
+      "symptoms": [
+        "Blind: 'not getting interviews despite relevant experience and ATS optimization'."
+      ],
+      "evidence_ids": [
+        "ev-ats-1"
+      ]
+    },
+    {
+      "id": "prob-pain",
+      "statement": "High stakes; screening is opaque.",
+      "symptoms": [
+        "Widely cited: ~75% of resumes rejected by ATS; 98% of Fortune 500 use ATS."
+      ],
+      "evidence_ids": [
+        "ev-ats-2"
+      ]
+    },
+    {
+      "id": "prob-wtp",
+      "statement": "People pay for resume/job tools.",
+      "symptoms": [
+        "Gumroad sells resume/job kits (e.g. 'AI Job Survival Kit 2026')."
+      ],
+      "evidence_ids": [
+        "ev-ats-3"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "ev-ats-1",
+    "ev-ats-2",
+    "ev-ats-3"
+  ],
+  "community_ids": [
+    "r-resumes"
+  ],
+  "existing_solutions": [
+    "Canva/free templates",
+    "Gumroad 'AI Job Survival Kit'",
+    "resume-writing services ($100-400)"
+  ],
+  "solution_gaps": [
+    "keyword-mapping + tracker + role-specificity beyond a plain template",
+    "career-changer reframing by industry pair"
+  ],
+  "creator_ecosystem": "inferred (career/LinkedIn creators) but not measured",
+  "digital_product_fit": "Strong template+tracker (~$15-40). Caveat: crowded; needs a role/industry angle.",
+  "source_urls": [
+    "https://www.teamblind.com/post/not-getting-interviews-despite-relevant-experience-and-ats-optimization-hcdmpij5",
+    "https://www.intelligentcv.app/career/ats-resume-rejection-brutal-truth-hack/"
+  ],
+  "score": {
+    "factors": {
+      "demand_evidence": {
+        "score": 8,
+        "basis": "observed",
+        "rationale": "Very high, high-emotion, huge audience.",
+        "weight": 20
+      },
+      "pain_importance": {
+        "score": 8,
+        "basis": "inferred",
+        "rationale": "Income/livelihood; urgent.",
+        "weight": 15
+      },
+      "clear_outcome": {
+        "score": 8,
+        "basis": "observed",
+        "rationale": "'Land interviews' concrete.",
+        "weight": 10
+      },
+      "existing_wtp": {
+        "score": 6,
+        "basis": "observed",
+        "rationale": "Kits sell, but templates largely free/commoditized.",
+        "weight": 15
+      },
+      "solution_gap": {
+        "score": 5,
+        "basis": "inferred",
+        "rationale": "Crowded; angle required.",
+        "weight": 15
+      },
+      "creator_density": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "Career creators abundant, not measured.",
+        "weight": 15
+      },
+      "digital_product_fit": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "Template+tracker fits.",
+        "weight": 10
+      }
+    },
+    "overall": 70.0,
+    "confidence": "MEDIUM",
+    "confidence_reason": "3/7 factors observed, 0/7 unknown; demand=observed, WTP=observed.",
+    "weight_unknown_pct": 0
+  },
+  "status": "researching",
+  "research_status": "needs_review"
+}

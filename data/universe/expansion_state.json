@@ -1,0 +1,59 @@
+{
+  "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list": {
+    "expansion_status": "expanded",
+    "researched_at": "2026-09-11T10:23:07.573286+00:00",
+    "research_version": "mvp-offline",
+    "source_count": 12,
+    "child_count": 6,
+    "opportunity_count": 3,
+    "origin": "dynamic_research"
+  },
+  "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job": {
+    "expansion_status": "expanded",
+    "researched_at": "2026-09-11T10:25:49.886357+00:00",
+    "research_version": "mvp-offline",
+    "source_count": 8,
+    "child_count": 5,
+    "opportunity_count": 3,
+    "origin": "dynamic_research"
+  },
+  "aud-personal-finance-personal-taxes-w-2-employees-trying-to-maximize-their-refund": {
+    "expansion_status": "failed",
+    "last_error": "no_search_provider"
+  },
+  "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions": {
+    "expansion_status": "expanded",
+    "researched_at": "2026-09-11T10:48:24.722230+00:00",
+    "research_version": "mvp-v1",
+    "source_count": 56,
+    "child_count": 7,
+    "opportunity_count": 3
+  },
+  "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk": {
+    "expansion_status": "expanded",
+    "researched_at": "2026-09-11T10:55:27.671962+00:00",
+    "research_version": "mvp-v1",
+    "source_count": 51,
+    "child_count": 4,
+    "opportunity_count": 3
+  },
+  "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms": {
+    "expansion_status": "expanded",
+    "researched_at": "2026-09-11T10:59:30.110753+00:00",
+    "research_version": "mvp-v1",
+    "source_count": 71,
+    "child_count": 5,
+    "opportunity_count": 4
+  },
+  "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls": {
+    "expansion_status": "expanded",
+    "researched_at": "2026-09-12T12:12:30.037215+00:00",
+    "research_version": "mvp-v1",
+    "source_count": 50,
+    "child_count": 6,
+    "opportunity_count": 4
+  },
+  "aud-home-and-diy-home-renovation-first-time-renovators-budgeting-a-project": {
+    "expansion_status": "researching"
+  }
+}

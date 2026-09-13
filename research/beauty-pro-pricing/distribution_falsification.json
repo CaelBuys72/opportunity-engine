@@ -1,0 +1,70 @@
+{
+  "checklist": {
+    "low_relevant_engagement": "creators discuss topic but relevant content underperforms",
+    "audience_prefers_free": "audience rejects paid products / prefers free info",
+    "creators_sell_competing": "creators already sell competing products",
+    "audience_mismatch": "creator audience differs from the actual buyer",
+    "views_without_relevance": "high views but low problem relevance",
+    "fragmented_audience": "audience too fragmented across many micro-niches",
+    "wont_promote_third_party": "creators unlikely to promote a third-party product",
+    "demand_without_creators": "strong problem demand but weak creator ecosystem"
+  },
+  "contradictory_evidence": [
+    {
+      "claim": "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities.",
+      "basis": "inferred",
+      "source": "phase8.analysis.contradictions"
+    }
+  ],
+  "unknown_checks": [
+    {
+      "check": "low_relevant_engagement",
+      "why": "no creator candidates to evaluate"
+    },
+    {
+      "check": "audience_prefers_free",
+      "why": "no creator candidates to evaluate"
+    },
+    {
+      "check": "creators_sell_competing",
+      "why": "no creator candidates to evaluate"
+    },
+    {
+      "check": "audience_mismatch",
+      "why": "no creator candidates to evaluate"
+    },
+    {
+      "check": "views_without_relevance",
+      "why": "no creator candidates to evaluate"
+    },
+    {
+      "check": "fragmented_audience",
+      "why": "no creator candidates to evaluate"
+    },
+    {
+      "check": "wont_promote_third_party",
+      "why": "no creator candidates to evaluate"
+    },
+    {
+      "check": "demand_without_creators",
+      "why": "no creator candidates to evaluate"
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Prevalence UNKNOWN",
+      "basis": "evidence-backed",
+      "source": "brief.risks_unknowns"
+    },
+    {
+      "risk": "Creator ecosystem UNKNOWN",
+      "basis": "evidence-backed",
+      "source": "brief.risks_unknowns"
+    },
+    {
+      "risk": "Willingness-to-pay needs primary-community confirmation",
+      "basis": "evidence-backed",
+      "source": "brief.risks_unknowns"
+    }
+  ]
+}

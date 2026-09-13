@@ -1,0 +1,52 @@
+{
+  "opportunity_id": "adhd-simple-planning",
+  "product_concept": "A focused planner / schedule that helps adults with ADHD a planning system they'll actually stick to.",
+  "product_format": "planner / schedule",
+  "transformation": {
+    "from_state": "Standard planners fail; systems that are too complex get abandoned within weeks",
+    "to_state": "To: A planning system they'll actually stick to",
+    "promise": "Get to 'A planning system they'll actually stick to.' without the usual guesswork.",
+    "core_problem": "Standard planners fail; systems that are too complex get abandoned within weeks.",
+    "desired_outcome": "A planning system they'll actually stick to.",
+    "basis": "evidence-backed"
+  },
+  "promise": "Get to 'A planning system they'll actually stick to.' without the usual guesswork.",
+  "target_customer": "adults with ADHD",
+  "price_range": "Unknown — infer from analogous products before pricing",
+  "price_rationale": "Unknown pricing evidence; do not set a price until validated.",
+  "confidence": "MEDIUM",
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: A planning system they'll actually stick to.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: can't stick to a planner",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: perfectionist systems collapse",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: executive-function overwhelm",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "differentiation": [
+    "genuinely simple/sustainable design (vs feature-heavy)",
+    "works better as sub-angle on other pockets (ADHD budgeting/meal-planning)"
+  ],
+  "exclusions": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ]
+}

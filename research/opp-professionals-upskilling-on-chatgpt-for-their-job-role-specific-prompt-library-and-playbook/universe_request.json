@@ -1,0 +1,27 @@
+{
+  "universe_opportunity_id": "opp-professionals-upskilling-on-chatgpt-for-their-job-role-specific-prompt-library-and-playbook",
+  "origin": "market_universe",
+  "market_id": "mkt-ai-tools-and-automation",
+  "submarket_id": "sub-ai-tools-and-automation-prompting-and-llm-skills",
+  "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+  "opportunity_name": "Role-Specific Prompt Library & Playbook",
+  "member_problem_ids": [
+    "prb-professionals-upskilling-on-chatgpt-for-their-job-prompt-writing-skill-gap",
+    "prb-professionals-upskilling-on-chatgpt-for-their-job-no-role-specific-prompts"
+  ],
+  "seed_source_refs": [
+    "src-008ff2322e17",
+    "src-3881bab7d4ec",
+    "src-e04731f5c49e",
+    "src-e5780dbc3255"
+  ],
+  "seed_commercial_evidence_refs": [],
+  "seed_creator_candidate_refs": [],
+  "priority_metadata": {
+    "commercial_score": 83,
+    "evidence_score": 45,
+    "priority_score": 68,
+    "priority_classification": "HIGH_PRIORITY",
+    "note": "Why we chose to investigate — NOT evidence of reality."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "audience": "sleep-deprived parents of 0-18 month infants",
+  "recurring_symptoms": [
+    "4-month regression",
+    "which method fits our family",
+    "wake-window confusion",
+    "guides are too long / too generic"
+  ],
+  "root_problems": [
+    "Sleep advice is contradictory, generic and long; parents want something tailored to their baby's age/temperament."
+  ],
+  "desired_outcomes": [
+    "Predictable naps/nights and restored parental sleep."
+  ],
+  "existing_behaviours": [
+    "Using free templates / generic tools",
+    "Asking peers in communities"
+  ],
+  "existing_solutions": [
+    "Etsy sleep guides ($1.40-30)",
+    "books (Precious Little Sleep, Ferber)",
+    "1:1 sleep consultants ($150-500)",
+    "done-for-you templates sold TO consultants ($100+)"
+  ],
+  "solution_strengths": [
+    "Cheap/most already exist",
+    "Instant download"
+  ],
+  "solution_weaknesses": [
+    "short decision-tree/personalized format between $1 cheat-sheet and $50 book",
+    "credibility marker (nurse/pediatrician) at low price"
+  ],
+  "customer_complaints": [],
+  "unmet_needs": [
+    "short decision-tree/personalized format between $1 cheat-sheet and $50 book",
+    "credibility marker (nurse/pediatrician) at low price"
+  ],
+  "solution_gaps": [
+    "short decision-tree/personalized format between $1 cheat-sheet and $50 book",
+    "credibility marker (nurse/pediatrician) at low price"
+  ],
+  "contradictions": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+  ],
+  "opportunity_assessment": "2 observed + 2 inferred/other claims support a recurring problem for sleep-deprived parents of 0-18 month infants. Gap: short decision-tree/personalized format between $1 cheat-sheet and $50 book; credibility marker (nurse/pediatrician) at low price."
+}

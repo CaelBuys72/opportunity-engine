@@ -1,0 +1,31 @@
+{
+  "_note": "Manual import. Only fields directly observed in web-search results are filled; everything unverified is null/[]/unknown. Numbers are NOT invented. Adding real candidates here and re-running is how this opportunity gets a real verdict.",
+  "_import_provenance": "WebSearch 2026-09-09 for freelancer/self-employed tax creators. Naive search surfaced mostly accounting firms and SEO blogs (1800accountant, TaxAct, Cookie Finance, NerdWallet), NOT audience-creators — recorded as a falsification signal. Only clearly-nameable creator-entity with a real URL is imported below.",
+  "candidates": [
+    {
+      "id": "creator-1",
+      "name": "How to Go Freelance (newsletter)",
+      "platform": "Newsletter/Substack",
+      "profile_url": "https://howtogofreelance.substack.com",
+      "handle": null,
+      "followers": null,
+      "niche": "freelancing / going freelance",
+      "audience_description": null,
+      "relevant_content": [
+        {
+          "url": "https://howtogofreelance.substack.com/p/your-freelance-tax-survival-guide",
+          "title": "Your freelance tax survival guide",
+          "topic": "freelance taxes",
+          "views": null,
+          "engagement": null,
+          "source_ref": "WebSearch 2026-09-09 'freelance business coach youtube ... taxes'"
+        }
+      ],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [],
+      "source_refs": ["WebSearch 2026-09-09 (result URL observed; channel identity + audience not inspected)"],
+      "basis": "observed"
+    }
+  ]
+}

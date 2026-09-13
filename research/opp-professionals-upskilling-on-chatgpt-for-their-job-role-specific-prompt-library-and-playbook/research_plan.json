@@ -1,0 +1,71 @@
+{
+  "pocket_id": "opp-professionals-upskilling-on-chatgpt-for-their-job-role-specific-prompt-library-and-playbook",
+  "known": [
+    "Audience: Professionals upskilling on ChatGPT for their job",
+    "Core problem: Professionals upskilling on ChatGPT for their job face a related cluster of problems around role-specific prompt library & playbook — e.g. prompt-writing skill gap, no role-specific prompts.",
+    "Discovery score 68/100 (MEDIUM confidence)",
+    "Evidence on file: People don't know how to write effective prompts; results vary widely by skill level.",
+    "Evidence on file: Generic prompts don't fit a specific role or workflow; professionals want role-specific ones."
+  ],
+  "unknown": [
+    "True prevalence / how many are affected (UNKNOWN)",
+    "Creator ecosystem size (UNKNOWN)",
+    "Primary-community depth not yet retrieved this run"
+  ],
+  "validating_evidence": [
+    "Multiple independent communities describing the same problem in their own words",
+    "People actively asking for tools/templates (solution-seeking language)",
+    "Existing paid solutions with real sales AND recurring complaints (gap)"
+  ],
+  "weakening_evidence": [
+    "Problem is rare, mild, or one-off",
+    "Free resources already solve it well (free-information problem)",
+    "Strong free-sharing culture that resists paying",
+    "Existing products already excellent with no complaint pattern"
+  ],
+  "communities": [
+    "(none catalogued yet — investigate niche subs/forums)"
+  ],
+  "queries": [
+    {
+      "angle": "problem",
+      "query": "how do I professionals upskilling on chatgpt for their job site:reddit.com"
+    },
+    {
+      "angle": "problem",
+      "query": "I don't know people don't know how to write effective prompts; results vary widely by skill level. site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "generic prompts don't fit a specific role or workflow; professionals want role-specific ones. frustrating site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "hate professionals upskilling on chatgpt for their job site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "people don't know how to write effective prompts; results vary widely by skill level. template site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "generic prompts don't fit a specific role or workflow; professionals want role-specific ones. calculator site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "professionals upskilling on chatgpt for their job too complicated site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "people don't know how to write effective prompts; results vary widely by skill level. too expensive site:reddit.com"
+    }
+  ],
+  "solutions_to_examine": [],
+  "questions": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service/free-info problem?",
+    "What is the single most useful asset we could ship?",
+    "What price will the audience tolerate, and on what evidence?"
+  ]
+}

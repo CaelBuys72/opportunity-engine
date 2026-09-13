@@ -1,0 +1,38 @@
+{
+  "_note": "OBSERVED sources genuinely encountered during this session's Phase-8/9.5 work on the Airbnb pocket. Each source lists the problem(s) it evidences. No frequency/demand invented; strength is per-source. Basis observed = the source itself was seen; it is NOT a claim about how many people are affected.",
+  "sources": [
+    {
+      "source_id": "src-airbnb-etsy-review-1star",
+      "source_type": "review",
+      "url": "https://www.etsy.com/listing/1308448953/airbnb-welcome-book-template-airbnb-host",
+      "title": "1-star review on an Airbnb welcome-book template (infleasy)",
+      "text": "Template could not be printed after personalizing and would not save. I lost hours of work.",
+      "accessible": true, "basis": "observed", "retrieval_method": "browser (Phase 8, 2026-09-08)",
+      "problems": [
+        {"statement": "Editable welcome-book/template tools fail to save or print, losing hosts' work.", "normalized_problem": "welcome book contents unclear", "problem_type": "technical_problem", "desired_outcome": "Produce a house manual without tool failures."}
+      ]
+    },
+    {
+      "source_id": "src-airbnb-touchstay-cleaning",
+      "source_type": "article",
+      "url": "https://touchstay.com/blog/airbnb-cleaning-checklist",
+      "title": "The ultimate Airbnb cleaning checklist (Touchstay)",
+      "text": "Guidance for hosts on standardizing turnover/cleaning so every cleaner follows the same steps.",
+      "accessible": true, "basis": "observed", "retrieval_method": "web search (2026-09-08)",
+      "problems": [
+        {"statement": "Coordinating and standardizing cleaner turnover between guests is hard.", "normalized_problem": "cleaner turnover coordination", "problem_type": "workflow_problem", "desired_outcome": "Standardize every turnover."}
+      ]
+    },
+    {
+      "source_id": "src-airbnb-welcomebook-demand",
+      "source_type": "marketplace",
+      "url": null,
+      "title": "Etsy 'airbnb welcome book template' — 1,000+ listings, many Bestsellers",
+      "text": "Large volume of host welcome-book / house-manual templates sold, indicating hosts seek help assembling what to include.",
+      "accessible": false, "basis": "observed", "retrieval_method": "browser search results (2026-09-08); individual listings not all inspected",
+      "problems": [
+        {"statement": "New hosts don't know what to include in a welcome book / house manual.", "normalized_problem": "welcome book contents unclear", "problem_type": "knowledge_gap", "desired_outcome": "Produce a complete house manual."}
+      ]
+    }
+  ]
+}

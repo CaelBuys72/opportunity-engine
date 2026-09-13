@@ -1,0 +1,12 @@
+{
+  "research_request_id": "rr-pt-client-management",
+  "created_at": "2026-09-12T12:28:46.835110+00:00",
+  "pocket_id": "pt-client-management",
+  "title": "Solo PT / online coach client-management template",
+  "industry_id": "fitness",
+  "audience": "independent personal trainers & online coaches",
+  "core_problem": "All-in-one coaching SaaS is expensive/overkill; spreadsheets get chaotic past ~15 clients.",
+  "desired_outcome": "Manage programming, check-ins and progress without paying for bloated software.",
+  "primary_question": "Do real people experience this problem, what does it look like, what outcome do they want, what have they tried, what remains unsolved?",
+  "note": "Feeds the Phase-8 research engine."
+}

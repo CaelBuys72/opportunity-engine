@@ -1,0 +1,18 @@
+{
+  "id": "relationships",
+  "name": "Relationships",
+  "description": "Dating, marriage, communication.",
+  "submarkets": [
+    {
+      "id": "wedding",
+      "name": "Weddings",
+      "audiences": [
+        {
+          "id": "engaged",
+          "label": "engaged couples / speech-givers"
+        }
+      ]
+    }
+  ],
+  "status": "explored"
+}

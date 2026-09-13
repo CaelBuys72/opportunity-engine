@@ -1,0 +1,33 @@
+{
+  "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+  "verdict": "NEEDS_RESEARCH",
+  "confidence": "LOW",
+  "reason": "0 qualified of 6 imported; 55% of weight is unknown (views/audience-problem data largely missing). Not enough to conclude.",
+  "creator_count": 6,
+  "qualified_creator_count": 0,
+  "highly_qualified_count": 0,
+  "strongest_creators": [],
+  "strongest_content_signals": [],
+  "supporting_evidence": [],
+  "contradictory_evidence": [
+    "Etsy welcome-book market is saturated on aesthetics; differentiation must be reliability + operational completeness, not looks.",
+    "Distribution likely harder than the product (creator ecosystem exists but promotion is unproven — see Build-4 density MEDIUM, not qualified).",
+    "No imported creator qualified on audience+problem+content."
+  ],
+  "unknowns": [
+    "low_relevant_engagement (no view data imported)",
+    "views_without_relevance (no view data imported)",
+    "audience_prefers_free (requires primary community/creator inspection not available this run)",
+    "creators_sell_competing (requires primary community/creator inspection not available this run)",
+    "wont_promote_third_party (requires primary community/creator inspection not available this run)",
+    "fragmented_audience (requires primary community/creator inspection not available this run)",
+    "55% of scoring weight is UNKNOWN."
+  ],
+  "major_risks": [
+    "Distribution/promotion unproven (creator density MEDIUM, not qualified)",
+    "Welcome-book market saturated — must be visibly more reliable/complete",
+    "Some hosts use a property manager and won't buy tools",
+    "demand_without_creators: brief shows demand but few qualified creators found so far."
+  ],
+  "next_action": "Capture per-creator relevant-content views + audience-problem signals (comments), then re-run."
+}

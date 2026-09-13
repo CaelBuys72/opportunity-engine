@@ -1,0 +1,346 @@
+{
+  "specs": [
+    {
+      "component_id": "cmp-1",
+      "name": "Quarterly estimated-tax calculator",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Tool that helps the buyer: Quarterly estimated-tax calculator.",
+      "maps_to_jobs": [
+        "job-1"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [
+        {
+          "req": "Formulas must not break when the buyer edits inputs (protect/lock calculation cells).",
+          "basis": "evidence-backed"
+        },
+        {
+          "req": "All calculations auto-update from a single input area.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Include one fully worked example the buyer can copy.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer-entered figures (income, expenses, dates)"
+      ],
+      "outputs": [
+        "calculated result the buyer acts on (e.g. amount to set aside, totals)"
+      ],
+      "requires_external_verification": true,
+      "verification_reason": "Touches 'tax' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-2",
+      "name": "Set-aside % calculator",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Tool that helps the buyer: Set-aside % calculator.",
+      "maps_to_jobs": [
+        "job-1"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [
+        {
+          "req": "Formulas must not break when the buyer edits inputs (protect/lock calculation cells).",
+          "basis": "evidence-backed"
+        },
+        {
+          "req": "All calculations auto-update from a single input area.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Include one fully worked example the buyer can copy.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer-entered figures (income, expenses, dates)"
+      ],
+      "outputs": [
+        "calculated result the buyer acts on (e.g. amount to set aside, totals)"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-3",
+      "name": "Schedule C category mapper",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Tool that helps the buyer: Schedule C category mapper.",
+      "maps_to_jobs": [
+        "job-3"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [
+        {
+          "req": "Formulas must not break when the buyer edits inputs (protect/lock calculation cells).",
+          "basis": "evidence-backed"
+        },
+        {
+          "req": "All calculations auto-update from a single input area.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Include one fully worked example the buyer can copy.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer-entered figures (income, expenses, dates)"
+      ],
+      "outputs": [
+        "calculated result the buyer acts on (e.g. amount to set aside, totals)"
+      ],
+      "requires_external_verification": true,
+      "verification_reason": "Touches 'schedule c' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-4",
+      "name": "Professional invoice",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Template that helps the buyer: Professional invoice.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [
+        {
+          "req": "Editable fields clearly marked; no design tool lock-in (offer an editable + a ready-to-send format).",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer's details slotted into marked fields"
+      ],
+      "outputs": [
+        "a finished, ready-to-use document"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": true
+    },
+    {
+      "component_id": "cmp-5",
+      "name": "Late-payment follow-up email",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Template that helps the buyer: Late-payment follow-up email.",
+      "maps_to_jobs": [
+        "job-4"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [
+        {
+          "req": "Editable fields clearly marked; no design tool lock-in (offer an editable + a ready-to-send format).",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer's details slotted into marked fields"
+      ],
+      "outputs": [
+        "a finished, ready-to-use document"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-6",
+      "name": "Quarterly payment scheduler (due dates)",
+      "type": "worksheet",
+      "format": "structured worksheet (printable + fillable)",
+      "purpose": "Worksheet that helps the buyer: Quarterly payment scheduler (due dates).",
+      "maps_to_jobs": [
+        "job-1"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [
+        {
+          "req": "Formulas must not break when the buyer edits inputs (protect/lock calculation cells).",
+          "basis": "evidence-backed"
+        }
+      ],
+      "inputs": [
+        "buyer's own situation / entries"
+      ],
+      "outputs": [
+        "a completed, decision-ready worksheet"
+      ],
+      "requires_external_verification": true,
+      "verification_reason": "Touches 'quarterly' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-7",
+      "name": "Deductible-expense checklist by Schedule C line",
+      "type": "worksheet",
+      "format": "structured worksheet (printable + fillable)",
+      "purpose": "Worksheet that helps the buyer: Deductible-expense checklist by Schedule C line.",
+      "maps_to_jobs": [
+        "job-3"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [
+        {
+          "req": "Formulas must not break when the buyer edits inputs (protect/lock calculation cells).",
+          "basis": "evidence-backed"
+        }
+      ],
+      "inputs": [
+        "buyer's own situation / entries"
+      ],
+      "outputs": [
+        "a completed, decision-ready worksheet"
+      ],
+      "requires_external_verification": true,
+      "verification_reason": "Touches 'schedule c' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-8",
+      "name": "How much to set aside (with worked example)",
+      "type": "reference",
+      "format": "concise reference guide page",
+      "purpose": "Reference that helps the buyer: How much to set aside (with worked example).",
+      "maps_to_jobs": [
+        "job-1"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [
+        {
+          "req": "Plain-English, skimmable; one screen per concept, no filler.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-9",
+      "name": "When quarterly payments are due",
+      "type": "reference",
+      "format": "concise reference guide page",
+      "purpose": "Reference that helps the buyer: When quarterly payments are due.",
+      "maps_to_jobs": [
+        "job-1",
+        "job-2"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [
+        {
+          "req": "Plain-English, skimmable; one screen per concept, no filler.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": true,
+      "verification_reason": "Touches 'quarterly' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-10",
+      "name": "Schedule C categories in plain English",
+      "type": "reference",
+      "format": "concise reference guide page",
+      "purpose": "Reference that helps the buyer: Schedule C categories in plain English.",
+      "maps_to_jobs": [
+        "job-3"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [
+        {
+          "req": "Plain-English, skimmable; one screen per concept, no filler.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": true,
+      "verification_reason": "Touches 'schedule c' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-11",
+      "name": "Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %)",
+      "type": "asset",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Asset that helps the buyer: Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %).",
+      "maps_to_jobs": [
+        "job-1",
+        "job-2"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": true,
+      "verification_reason": "Touches 'tax' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-12",
+      "name": "Short setup guide (how the rules work, plain-English)",
+      "type": "asset",
+      "format": "concise reference guide page",
+      "purpose": "Asset that helps the buyer: Short setup guide (how the rules work, plain-English).",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": true
+    },
+    {
+      "component_id": "cmp-13",
+      "name": "Invoice + late-payment follow-up templates",
+      "type": "asset",
+      "format": "editable fill-in template",
+      "purpose": "Asset that helps the buyer: Invoice + late-payment follow-up templates.",
+      "maps_to_jobs": [
+        "job-4"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-14",
+      "name": "Sub-niche category presets (content creator / rideshare / trades)",
+      "type": "bonus",
+      "format": "preset / variant pack for the core tool",
+      "purpose": "Bonus that helps the buyer: Sub-niche category presets (content creator / rideshare / trades).",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "functional_requirements": [],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": true
+    }
+  ]
+}

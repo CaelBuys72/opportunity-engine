@@ -1,0 +1,76 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "https://ipbusinessacademy.org/economics-of-streaming-the-rise-of-the-music-artists-rights-and-compensation",
+      "url": "https://ipbusinessacademy.org/economics-of-streaming-the-rise-of-the-music-artists-rights-and-compensation",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "low streaming royalty payouts"
+    },
+    {
+      "id": "src-2",
+      "label": "https://www.madelynread.com/post/why-is-streaming-so-bad-for-artists",
+      "url": "https://www.madelynread.com/post/why-is-streaming-so-bad-for-artists",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "low streaming royalty payouts"
+    },
+    {
+      "id": "src-3",
+      "label": "https://www.reddit.com/r/musicmarketing/comments/1ncwxot/an_overview_of_the_current_music_streaming_crisis/",
+      "url": "https://www.reddit.com/r/musicmarketing/comments/1ncwxot/an_overview_of_the_current_music_streaming_crisis/",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "low streaming royalty payouts"
+    },
+    {
+      "id": "src-4",
+      "label": "https://www.reddit.com/r/Music/comments/17h35g1/small_artists_set_to_not_get_paid_by_streaming/",
+      "url": "https://www.reddit.com/r/Music/comments/17h35g1/small_artists_set_to_not_get_paid_by_streaming/",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "low streaming royalty payouts"
+    },
+    {
+      "id": "src-5",
+      "label": "https://pennyfractions.ghost.io/did-streaming-actually-hurt-working-musicians/",
+      "url": "https://pennyfractions.ghost.io/did-streaming-actually-hurt-working-musicians/",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "low streaming royalty payouts"
+    },
+    {
+      "id": "src-6",
+      "label": "https://www.loopcloud.com/cloud/blog/4901-Which-music-streaming-service-is-best-to-sell-my-music-#:~:text=A%20platform%20like%20Bandcamp%20may,and%20their%20pre%2Dexisting%20fanbase.",
+      "url": "https://www.loopcloud.com/cloud/blog/4901-Which-music-streaming-service-is-best-to-sell-my-music-#:~:text=A%20platform%20like%20Bandcamp%20may,and%20their%20pre%2Dexisting%20fanbase.",
+      "tier": 2,
+      "source_type": "question",
+      "accessible": true,
+      "note": "low streaming royalty payouts"
+    },
+    {
+      "id": "src-7",
+      "label": "https://streamingcalculator.com/how-many-streams-to-make-10000#:~:text=Earning%20%2410%2C000%20per%20month%20from,major%20viral%20or%20playlist%20momentum.",
+      "url": "https://streamingcalculator.com/how-many-streams-to-make-10000#:~:text=Earning%20%2410%2C000%20per%20month%20from,major%20viral%20or%20playlist%20momentum.",
+      "tier": 2,
+      "source_type": "question",
+      "accessible": true,
+      "note": "low streaming royalty payouts"
+    },
+    {
+      "id": "src-8",
+      "label": "https://streamingcalculator.com/how-many-streams-to-make-1000#:~:text=The%20%241%2C000%20Monthly%20Milestone&text=At%20Spotify's%20average%20rate%2C%20that,depending%20on%20your%20platform%20distribution.",
+      "url": "https://streamingcalculator.com/how-many-streams-to-make-1000#:~:text=The%20%241%2C000%20Monthly%20Milestone&text=At%20Spotify's%20average%20rate%2C%20that,depending%20on%20your%20platform%20distribution.",
+      "tier": 2,
+      "source_type": "question",
+      "accessible": true,
+      "note": "low streaming royalty payouts"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "pocket_id": "opp-lifters-planning-a-cut-or-bulk-cut-vs-bulk-diagnostic-and-phase-periodization-blueprint",
+  "product_concept": "A focused guide / checklist that helps Lifters planning a cut or bulk clear, objective clarity on whether to start with a cut, bulk, or recomp, along with a structured 8–12 month phase roadmap to eliminate decision anxiety.",
+  "target_customer": "Lifters planning a cut or bulk",
+  "core_problem": "Lifters planning a cut or bulk face a related cluster of problems around cut vs. bulk diagnostic & phase periodization blueprint — e.g. Uncertainty in choosing between cutting and bulking phase, Ineffective muscle growth due to short bulk/cut cycles.",
+  "related_problems": [
+    "Beginner and skinny-fat lifters struggle to decide whether to cut or bulk first.",
+    "Frequent, short bulk-and-cut cycles disrupt long-term muscle building progress."
+  ],
+  "desired_outcome": "Clear, objective clarity on whether to start with a cut, bulk, or recomp, along with a structured 8–12 month phase roadmap to eliminate decision anxiety.",
+  "core_transformation": "From: Lifters planning a cut or bulk face a related cluster of problems around cut vs. bulk diagnostic & phase periodization blueprint — e.g. Uncertainty in choosing between cutting and bulking phase, Ineffective muscle growth due to short bulk/cut cycles.  →  To: Clear, objective clarity on whether to start with a cut, bulk, or recomp, along with a structured 8–12 month phase roadmap to eliminate decision anxiety.",
+  "product_promise": "Get to 'Clear, objective clarity on whether to start with a cut, bulk, or recomp, along with a structured 8–12 month phase roadmap to eliminate decision anxiety.' without the usual guesswork.",
+  "product_format": "Bundle: Diagnostic input questionnaire + Phase selection matrix + 8-12 month periodization schedule",
+  "why_this_format": "Mechanism → format: Interactive diagnostic assessment paired with a multi-phase periodization roadmap.. Inferred based on target outcome requiring calculated metric tracking and step-by-step roadmap structure. (basis: inferred)",
+  "product_structure": [
+    "Initial Diagnostic Decision Matrix — Determine whether to cut, bulk, or recomp based on baseline metrics [inferred]",
+    "8–12 Month Roadmap Generator — Provide long-term phase sequence and exit criteria to prevent premature goal switching [inferred]"
+  ],
+  "required_sections": [],
+  "required_tools": [],
+  "required_templates": [],
+  "required_worksheets": [],
+  "bonus_assets": [],
+  "exclude": [],
+  "existing_alternatives": [],
+  "differentiation": [
+    "Provide a structured decision tree and multi-month transition blueprint for lifters struggling with phase periodization."
+  ],
+  "price_range": "Unknown — no observed pricing evidence",
+  "price_rationale": "Pricing UNKNOWN; do not set a price until validated.",
+  "key_customer_language": [
+    "Beginner and skinny-fat lifters struggle to decide whether to cut or bulk first.",
+    "Frequent, short bulk-and-cut cycles disrupt long-term muscle building progress."
+  ],
+  "key_objections": [
+    "I can find this free",
+    "Templates never fit my exact case",
+    "I'll deal with it later"
+  ],
+  "key_buying_motivations": [
+    "Save time",
+    "Reduce anxiety/uncertainty",
+    "Look professional / avoid costly mistakes"
+  ],
+  "evidence_summary": "Outcome: NEEDS_MORE_RESEARCH. 139 results discovered → 81 candidates → 0 retrieved → 0 evidence-bearing. Mechanism: Interactive diagnostic assessment paired with a multi-phase periodization roadmap.",
+  "confidence": "HIGH",
+  "risks_unknowns": [
+    "CRITICAL unresolved: Is the problem recurring and painful enough to pay to solve?",
+    "CRITICAL unresolved: What exactly have people already tried, and why did it fall short?",
+    "CRITICAL unresolved: Is a digital product the right form, or is this a service / software / free-information problem?",
+    "CRITICAL unresolved: What is the single most useful asset or mechanism we could ship?",
+    "All sources provided contain empty snippet text; zero qualitative or quantitative observations were available in the source documents.",
+    "Willingness-to-pay and market prevalence of paid solutions are unknown.",
+    "User satisfaction with existing free advice/calculators is unverified."
+  ],
+  "required_components_evidence": [
+    {
+      "component": "Initial Diagnostic Decision Matrix",
+      "buyer_job": "Determine whether to cut, bulk, or recomp based on baseline metrics",
+      "evidence_refs": [],
+      "basis": "inferred"
+    },
+    {
+      "component": "8–12 Month Roadmap Generator",
+      "buyer_job": "Provide long-term phase sequence and exit criteria to prevent premature goal switching",
+      "evidence_refs": [],
+      "basis": "inferred"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "Insufficient call time to complete thorough discovery and establish next steps",
+      "source_id": "src-1",
+      "evidence": "By the time I finish doing my light rapport, agenda, discovery questions that’s pretty much half the call. I haven’t even gotten an understanding of ...",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "Insufficient call time to complete thorough discovery and establish next steps",
+      "source_id": "src-2",
+      "evidence": "Q: How long should a discovery call be? A: Most initial discovery calls are 30 minutes. Use a flexible structure like 2 minutes intro, 18 minutes discovery, 6 ...",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "Discovery calls feeling like interrogations rather than natural business conversations",
+      "source_id": "src-3",
+      "evidence": "Discovery calls often turn into dynamic interrogations or robotic question checklists, annoying buyers and stalling conversations.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-4",
+      "claim": "Discovery calls feeling like interrogations rather than natural business conversations",
+      "source_id": "src-4",
+      "evidence": "A discovery call is more than a list of questions to check off. It's your chance to uncover a pressing pain that only you can solve.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-5",
+      "claim": "Discovery calls feeling like interrogations rather than natural business conversations",
+      "source_id": "src-5",
+      "evidence": "The Mistake: I tried using \"tactical empathy\" without understanding it. I'd deploy a technique from the book, then completely stall when the ...",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-6",
+      "claim": "Discovery calls feeling like interrogations rather than natural business conversations",
+      "source_id": "src-6",
+      "evidence": "One CISO straight away started competing with me and challenging my skills because I tried to ask him a lot about his Infra and started ...",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-7",
+      "claim": "Discovery calls feeling like interrogations rather than natural business conversations",
+      "source_id": "src-7",
+      "evidence": "Here's why that date and most discovery calls are awful – because we've lost the focus (and ability) to have a proper conversation.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    }
+  ]
+}

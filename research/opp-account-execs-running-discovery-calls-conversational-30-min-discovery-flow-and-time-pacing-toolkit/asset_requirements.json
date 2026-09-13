@@ -1,0 +1,44 @@
+{
+  "assets": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "short decision-tree guide",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-2",
+      "component_id": "cmp-2",
+      "for": "editable fill-in templates",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-3",
+      "component_id": "cmp-3",
+      "for": "copy-paste scripts",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-4",
+      "component_id": "cmp-4",
+      "for": "step-by-step workflow / SOP",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ]
+}

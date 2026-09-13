@@ -1,0 +1,176 @@
+{
+  "opportunity_id": "beauty-pro-pricing",
+  "generated_at": "2026-09-11T10:11:51.263445+00:00",
+  "product_concept": "A focused calculator / spreadsheet that helps independent nail / lash / brow technicians price services profitably and confidently without losing clients.",
+  "product_format": "calculator / spreadsheet",
+  "transformation": {
+    "from_state": "Trained in technique, not business; pricing is guesswork and they fear raising prices",
+    "to_state": "To: Price services profitably and confidently without losing clients",
+    "promise": "Get to 'Price services profitably and confidently without losing clients.' without the usual guesswork.",
+    "core_problem": "Trained in technique, not business; pricing is guesswork and they fear raising prices.",
+    "desired_outcome": "Price services profitably and confidently without losing clients.",
+    "basis": "evidence-backed"
+  },
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: Price services profitably and confidently without losing clients.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: I don't know what to charge",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: scared to raise my prices",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: clients keep negotiating",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-4",
+      "statement": "Resolve: I think I'm undercharging",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-5",
+      "statement": "Resolve: don't know my real profit margin",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "auto-calculating spreadsheet with worked example",
+      "type": "asset",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Asset that helps the buyer: auto-calculating spreadsheet with worked example.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    }
+  ],
+  "asset_requirements": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "auto-calculating spreadsheet with worked example",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ],
+  "quality_requirements": {
+    "global": [
+      {
+        "req": "Time-to-first-value under ~15 minutes; usable without a manual.",
+        "basis": "inferred",
+        "source": "buyer-effort principle"
+      },
+      {
+        "req": "Honor exclusions verbatim (see exclusions list); scope stays tight.",
+        "basis": "evidence-backed",
+        "source": "brief.exclude"
+      }
+    ],
+    "exclusions_preserved": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ]
+  },
+  "buyer_effort": {
+    "overall_target": "Buyer reaches first useful result in one sitting, no setup call.",
+    "per_component": [
+      {
+        "component_id": "cmp-1",
+        "name": "auto-calculating spreadsheet with worked example",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      }
+    ],
+    "basis": "inferred"
+  },
+  "production_sequence": [
+    {
+      "order": 1,
+      "step": "Build: auto-calculating spreadsheet with worked example",
+      "component_id": "cmp-1",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ],
+  "verification_requirements": [],
+  "unresolved_questions": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation",
+    "Price not finalized — brief price is Unknown.",
+    "Components mapped only to the overall outcome (weak job fit): ['auto-calculating spreadsheet with worked example']"
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ],
+    "risks_unknowns": [
+      "Prevalence UNKNOWN",
+      "Creator ecosystem UNKNOWN",
+      "Willingness-to-pay needs primary-community confirmation"
+    ],
+    "differentiation": [
+      "trade-specific consumables-per-service cost math (gel/acrylic/lash-fan usage)",
+      "pricing confidence/scripts, not just a calculator"
+    ],
+    "evidence_requirements": [
+      {
+        "label": "marketplace",
+        "url": null,
+        "note": "seen across nail-pricing search; suggests niche served by repackaged generics",
+        "status": "must be retrieved/verified later"
+      }
+    ]
+  },
+  "basis_summary": {
+    "component_requirements_evidence_backed": 0,
+    "component_requirements_inferred": 0,
+    "note": "evidence-backed = traceable to a Phase-8 brief field; inferred = design decision made by the curation engine."
+  },
+  "handoff": {
+    "consumes": "product_architecture.json + component_specs.json + asset_requirements.json + quality_requirements.json + production_plan.json",
+    "for": "Phase 10 Product Builder",
+    "must_respect": [
+      "verification_requirements",
+      "carried_forward.exclusions",
+      "quality_requirements",
+      "unresolved_questions"
+    ]
+  }
+}

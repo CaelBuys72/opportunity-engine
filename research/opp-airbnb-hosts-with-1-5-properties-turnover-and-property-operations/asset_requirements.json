@@ -1,0 +1,85 @@
+{
+  "revision": "revision-001",
+  "assets": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-3",
+      "for": "Property Setup Workbook",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-2",
+      "component_id": "cmp-8",
+      "for": "Welcome Guide for Guests",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-3",
+      "component_id": "cmp-2",
+      "for": "Master Turnover SOP",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-4",
+      "component_id": "cmp-4",
+      "for": "Cleaner Handoff Sheet",
+      "deliverable": "Fillable PDF + printable version",
+      "tooling": "doc editor",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-5",
+      "component_id": "cmp-7",
+      "for": "Quick Turnover Checklist",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-6",
+      "component_id": "cmp-1",
+      "for": "Supply + Inventory Tracker",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-7",
+      "component_id": "cmp-10",
+      "for": "Damage & Incident Log",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-8",
+      "component_id": "cmp-9",
+      "for": "Guest Message Library",
+      "deliverable": "Supporting file",
+      "tooling": "doc editor",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ]
+}

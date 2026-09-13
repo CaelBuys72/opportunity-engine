@@ -1,0 +1,28 @@
+{
+  "id": "freelancing",
+  "name": "Freelancing",
+  "description": "Solo independent workers running a business of one.",
+  "submarkets": [
+    {
+      "id": "money-admin",
+      "name": "Money / Tax / Getting Paid",
+      "audiences": [
+        {
+          "id": "us-freelancers",
+          "label": "US 1099 freelancers & independent contractors"
+        }
+      ]
+    },
+    {
+      "id": "pricing",
+      "name": "Pricing & Contracts",
+      "audiences": [
+        {
+          "id": "new-freelancers",
+          "label": "new freelancers/consultants"
+        }
+      ]
+    }
+  ],
+  "status": "explored"
+}

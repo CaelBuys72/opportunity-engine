@@ -1,0 +1,10 @@
+{
+  "candidates": [],
+  "retrieval": [
+    {
+      "retriever": "manual-import",
+      "status": "no_data",
+      "note": "No candidate file at data/creator_candidates/pt-client-management.json and no live retriever configured. Import real creators to evaluate."
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "mkt-freelancing-and-solopreneurship",
+    "type": "market",
+    "name": "Freelancing & Solopreneurship",
+    "description": "People running a business of one, selling their skills directly to clients.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-small-business-and-entrepreneurship",
+    "type": "market",
+    "name": "Small Business & Entrepreneurship",
+    "description": "Owner-operators and founders of small, often local, businesses.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-personal-finance",
+    "type": "market",
+    "name": "Personal Finance",
+    "description": "Individuals managing money, debt, saving, and investing.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-career-and-job-search",
+    "type": "market",
+    "name": "Career & Job Search",
+    "description": "Professionals finding jobs and advancing careers.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-e-commerce-and-online-selling",
+    "type": "market",
+    "name": "E-commerce & Online Selling",
+    "description": "People selling physical or print products online.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-content-creation-and-creator-economy",
+    "type": "market",
+    "name": "Content Creation & Creator Economy",
+    "description": "Independent creators building audiences and monetizing them.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-real-estate-and-property",
+    "type": "market",
+    "name": "Real Estate & Property",
+    "description": "Buying, investing in, renting out, and selling property.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-travel-and-hospitality",
+    "type": "market",
+    "name": "Travel & Hospitality",
+    "description": "Travel planning and running short-term rental / hospitality operations.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-beauty-and-personal-care",
+    "type": "market",
+    "name": "Beauty & Personal Care",
+    "description": "Independent beauty-service professionals and their businesses.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-fitness-and-physical-training",
+    "type": "market",
+    "name": "Fitness & Physical Training",
+    "description": "Training people and coaching physical performance.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-health-and-wellness",
+    "type": "market",
+    "name": "Health & Wellness",
+    "description": "Everyday health, sleep, nutrition, and behavior change.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-parenting-and-family",
+    "type": "market",
+    "name": "Parenting & Family",
+    "description": "Raising children and running family logistics.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-relationships-and-dating",
+    "type": "market",
+    "name": "Relationships & Dating",
+    "description": "Dating, couples, and major relationship milestones.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-education-and-tutoring",
+    "type": "market",
+    "name": "Education & Tutoring",
+    "description": "Teaching, tutoring, test prep, and skill courses.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-home-and-diy",
+    "type": "market",
+    "name": "Home & DIY",
+    "description": "Organizing, renovating, gardening, and maintaining a home.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-pets-and-animal-care",
+    "type": "market",
+    "name": "Pets & Animal Care",
+    "description": "Caring for pets and running pet-service businesses.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-hobbies-and-creative-skills",
+    "type": "market",
+    "name": "Hobbies & Creative Skills",
+    "description": "Skill-based hobbies people learn, practice, and sometimes sell.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-productivity-and-self-organization",
+    "type": "market",
+    "name": "Productivity & Self-Organization",
+    "description": "Systems for managing tasks, knowledge, goals, and focus.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-technology-and-software",
+    "type": "market",
+    "name": "Technology & Software",
+    "description": "Learning to build software and running small tech operations.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-food-and-culinary",
+    "type": "market",
+    "name": "Food & Culinary",
+    "description": "Home cooking systems, specialty diets, and small food businesses.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-trading-investing-and-crypto",
+    "type": "market",
+    "name": "Trading, Investing & Crypto",
+    "description": "Active trading, self-directed investing, and market education — distinct from everyday budgeting/saving.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-ai-tools-and-automation",
+    "type": "market",
+    "name": "AI Tools & Automation",
+    "description": "Applying AI tools, prompting, and automation to real work — for non-engineers, creators, and operators.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-reselling-flipping-and-arbitrage",
+    "type": "market",
+    "name": "Reselling, Flipping & Arbitrage",
+    "description": "Buying and reselling goods for profit as an income stream — sourcing, channels, and operations.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-digital-marketing-and-agencies",
+    "type": "market",
+    "name": "Digital Marketing & Agencies",
+    "description": "Marketing as a profession and agency service — distinct from a local owner marketing their own shop.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-self-improvement-and-personal-development",
+    "type": "market",
+    "name": "Self-Improvement & Personal Development",
+    "description": "Mindset, discipline, and life design — the identity/motivation layer, distinct from clinical health or productivity tooling.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-sales-and-closing",
+    "type": "market",
+    "name": "Sales & Closing",
+    "description": "The sales profession — closing, setting, prospecting, and building sales processes.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-gaming-and-esports",
+    "type": "market",
+    "name": "Gaming & Esports",
+    "description": "Playing, coaching, streaming, and building businesses around games.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-music-and-audio-production",
+    "type": "market",
+    "name": "Music & Audio Production",
+    "description": "Making, mixing, releasing, and monetizing music and audio.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-writing-and-publishing",
+    "type": "market",
+    "name": "Writing & Publishing",
+    "description": "The writing crafts and getting written work published or sold — distinct from generic freelancing.",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "mkt-design-and-templates",
+    "type": "market",
+    "name": "Design & Templates",
+    "description": "Design as a product and a service — sellable templates plus client design work.",
+    "status": "active",
+    "basis": "inferred"
+  }
+]

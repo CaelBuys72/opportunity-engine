@@ -1,0 +1,15 @@
+{
+  "markets": 30,
+  "submarkets": 204,
+  "audiences": 612,
+  "broken_references": 0,
+  "duplicate_ids": 0,
+  "validation": "PASS",
+  "avg_submarkets_per_market": 6.8,
+  "avg_audiences_per_submarket": 3.0,
+  "sample_paths": [
+    "Freelancing & Solopreneurship -> Freelance Operations & Admin -> Freelancers in their first year",
+    "Freelancing & Solopreneurship -> Freelance Operations & Admin -> Freelancers with inconsistent / irregular income",
+    "Freelancing & Solopreneurship -> Freelance Operations & Admin -> Freelancers juggling many simultaneous clients"
+  ]
+}

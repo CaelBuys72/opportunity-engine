@@ -1,0 +1,85 @@
+{
+  "pocket_id": "opp-people-overwhelmed-by-their-to-do-list-prioritization-and-daily-focus-system",
+  "product_concept": "A focused guide / checklist that helps People overwhelmed by their to-do list a daily ritual that surfaces the 1-3 things that truly matter.",
+  "target_customer": "People overwhelmed by their to-do list",
+  "core_problem": "People overwhelmed by their to-do list face a related cluster of problems around prioritization & daily focus system — e.g. no prioritization on the list, task paralysis from overwhelm, quick vs big tasks not separated.",
+  "related_problems": [
+    "Everything lands on one undifferentiated list, so nothing feels urgent and the brain defaults to the easiest task.",
+    "Too many tasks at once triggers overwhelm and freeze — people can't decide where to start (task paralysis).",
+    "No differentiation between quick tasks and big projects, so important deep work is deferred."
+  ],
+  "desired_outcome": "A daily ritual that surfaces the 1-3 things that truly matter.",
+  "core_transformation": "From: People overwhelmed by their to-do list face a related cluster of problems around prioritization & daily focus system — e.g. no prioritization on the list, task paralysis from overwhelm, quick vs big tasks not separated.  →  To: A daily ritual that surfaces the 1-3 things that truly matter.",
+  "product_promise": "Get to 'A daily ritual that surfaces the 1-3 things that truly matter.' without the usual guesswork.",
+  "product_format": "Bundle: Single 'Must-Do' active display mode + Secondary backlog drawer (hidden during execution) + Random task spinner/die button to bypass decision freeze",
+  "why_this_format": "Mechanism → format: Single-task focus view coupled with a 2-tier backlog filter and a 1-click randomizer tool.. Users report success with 1 must-do focus and dice rolling, but express frustration with heavy apps; thus format must be minimalist. (basis: inferred)",
+  "product_structure": [
+    "1-Must-Do Focus View — Isolate the primary priority so the user is not overwhelmed by secondary tasks. [observed]",
+    "Randomized Task Selector ('Roll the Dice') — Break active task paralysis and decision freeze through forced arbitrary choice. [observed]",
+    "Secondary Backlog Vault — Store non-urgent or non-essential tasks out of daily line of sight. [observed]"
+  ],
+  "required_sections": [],
+  "required_tools": [],
+  "required_templates": [],
+  "required_worksheets": [],
+  "bonus_assets": [],
+  "exclude": [
+    "Complex multi-tagging, nested folder hierarchies, or Kanban boards",
+    "Unrestricted visible backlog lists on the primary screen",
+    "Heavy analytics dashboards or friction-heavy setup wizards"
+  ],
+  "existing_alternatives": [],
+  "differentiation": [
+    "A minimalist single-focus ritual app that limits active daily tasks to 1-3 items, relegates all other entries to an out-of-sight secondary vault, and includes a single-button randomized selector for paralysis moments."
+  ],
+  "price_range": "Unknown — no observed pricing evidence",
+  "price_rationale": "Pricing UNKNOWN; do not set a price until validated.",
+  "key_customer_language": [
+    "Everything lands on one undifferentiated list, so nothing feels urgent and the brain defaults to the easiest task.",
+    "Too many tasks at once triggers overwhelm and freeze — people can't decide where to start (task paralysis).",
+    "No differentiation between quick tasks and big projects, so important deep work is deferred."
+  ],
+  "key_objections": [
+    "I can find this free",
+    "Templates never fit my exact case",
+    "I'll deal with it later"
+  ],
+  "key_buying_motivations": [
+    "Save time",
+    "Reduce anxiety/uncertainty",
+    "Look professional / avoid costly mistakes"
+  ],
+  "evidence_summary": "Outcome: READY. 163 results discovered → 92 candidates → 0 retrieved → 5 evidence-bearing. Mechanism: Single-task focus view coupled with a 2-tier backlog filter and a 1-click randomizer tool.",
+  "confidence": "MEDIUM",
+  "risks_unknowns": [
+    "Willingness to pay and monetization viability remain completely unknown.",
+    "Exact optimal UI trigger for moving items from secondary vault to daily focus list."
+  ],
+  "required_components_evidence": [
+    {
+      "component": "1-Must-Do Focus View",
+      "buyer_job": "Isolate the primary priority so the user is not overwhelmed by secondary tasks.",
+      "evidence_refs": [
+        3,
+        9
+      ],
+      "basis": "observed"
+    },
+    {
+      "component": "Randomized Task Selector ('Roll the Dice')",
+      "buyer_job": "Break active task paralysis and decision freeze through forced arbitrary choice.",
+      "evidence_refs": [
+        0
+      ],
+      "basis": "observed"
+    },
+    {
+      "component": "Secondary Backlog Vault",
+      "buyer_job": "Store non-urgent or non-essential tasks out of daily line of sight.",
+      "evidence_refs": [
+        3
+      ],
+      "basis": "observed"
+    }
+  ]
+}

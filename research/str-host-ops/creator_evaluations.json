@@ -1,0 +1,585 @@
+{
+  "evaluations": [
+    {
+      "creator_id": "creator-1",
+      "name": "madeleineraifordholland",
+      "platform": "Instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 10,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 86.4k followers, bio"
+          ],
+          "rationale": "4 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 86.4k followers, bio"
+          ],
+          "rationale": "86400 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 86.4k followers, bio"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "creator-2",
+      "name": "coachinayah",
+      "platform": "Instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 8,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 255k followers, bio + masterclass link"
+          ],
+          "rationale": "2 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 255k followers, bio + masterclass link"
+          ],
+          "rationale": "255000 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 255k followers, bio + masterclass link"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "creator-3",
+      "name": "ridhwaanbasa",
+      "platform": "Instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 10,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 23.3k followers, bio"
+          ],
+          "rationale": "3 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 23.3k followers, bio"
+          ],
+          "rationale": "23300 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 23.3k followers, bio"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "creator-4",
+      "name": "taron.teague",
+      "platform": "Instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 134k followers, bio"
+          ],
+          "rationale": "1 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 134k followers, bio"
+          ],
+          "rationale": "134000 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 134k followers, bio"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "creator-5",
+      "name": "elliedulude",
+      "platform": "Instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 8,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 21.9k followers, bio"
+          ],
+          "rationale": "2 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 21.9k followers, bio"
+          ],
+          "rationale": "21900 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 21.9k followers, bio"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "creator-6",
+      "name": "camilaatunoni",
+      "platform": "Instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 10,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 135k followers, bio shows content-creation niche"
+          ],
+          "rationale": "5 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 135k followers, bio shows content-creation niche"
+          ],
+          "rationale": "135000 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No monetization signal captured."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "creator-7",
+      "name": "bhagya.bnb",
+      "platform": "Instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 17.9k followers, bio",
+            "operator doc note: ebook in bio"
+          ],
+          "rationale": "1 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 17.9k followers, bio",
+            "operator doc note: ebook in bio"
+          ],
+          "rationale": "17900 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 17.9k followers, bio",
+            "operator doc note: ebook in bio"
+          ],
+          "rationale": "2 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "creator-8",
+      "name": "managedbyluca",
+      "platform": "Instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 13.4k followers, bio"
+          ],
+          "rationale": "1 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 13.4k followers, bio"
+          ],
+          "rationale": "13400 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 13.4k followers, bio"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "creator-9",
+      "name": "johnazizzz",
+      "platform": "Instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 4,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 16.4k followers, bio"
+          ],
+          "rationale": "0 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 16.4k followers, bio"
+          ],
+          "rationale": "16400 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 16.4k followers, bio"
+          ],
+          "rationale": "2 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "creator-10",
+      "name": "digitalcleaningacademy",
+      "platform": "Instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 10,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 2,723 followers, bio + store"
+          ],
+          "rationale": "3 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 2,723 followers, bio + store"
+          ],
+          "rationale": "2723 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09: 2,723 followers, bio + store"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    }
+  ]
+}

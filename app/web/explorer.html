@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universe Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <div class="explorer">
+    <header class="ex-top">
+      <div class="ex-nav">
+        <span class="ex-logo">🌌 Universe Explorer</span>
+        <a class="ex-link" href="index.html">Opportunity Intelligence →</a>
+      </div>
+      <div class="ex-search">
+        <input id="search" type="search" placeholder="Search markets, audiences, problems, opportunities…" autocomplete="off">
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+      <div class="ex-actions">
+        <button id="reset-btn" class="ghost-btn" title="Reset to markets">Reset</button>
+        <button id="fit-btn" class="ghost-btn" title="Fit graph to view">Fit</button>
+      </div>
+    </header>
+
+    <div id="breadcrumb" class="breadcrumb"></div>
+
+    <div class="ex-body">
+      <div class="canvas-wrap">
+        <svg id="graph" xmlns="http://www.w3.org/2000/svg"></svg>
+        <div class="legend">
+          <span><i class="dot market"></i>Market</span>
+          <span><i class="dot submarket"></i>Submarket</span>
+          <span><i class="dot audience"></i>Audience</span>
+          <span><i class="dot problem"></i>Problem</span>
+          <span><i class="dot opportunity"></i>Opportunity</span>
+        </div>
+        <div id="hint" class="hint">Click a market to expand · drag nodes · scroll to zoom · drag background to pan</div>
+      </div>
+
+      <aside id="panel" class="ex-panel">
+        <div class="panel-empty">
+          <h2>Nothing selected</h2>
+          <p class="muted">Click any node to inspect it. Start with a market, drill down to an opportunity, then open it in Opportunity Intelligence.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <script src="auth.js"></script>
+  <script src="explorer.js"></script>
+</body>
+</html>

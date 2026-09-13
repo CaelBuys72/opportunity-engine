@@ -1,0 +1,45 @@
+{
+  "audience": "active job seekers getting screened out",
+  "recurring_symptoms": [
+    "1,000+ applications, few callbacks",
+    "how does ATS work",
+    "no direct experience for a career switch",
+    "keyword matching"
+  ],
+  "root_problems": [
+    "Resumes get filtered by ATS; applicants don't know how to map keywords or track applications."
+  ],
+  "desired_outcomes": [
+    "Get past ATS and actually land interviews."
+  ],
+  "existing_behaviours": [
+    "Using free templates / generic tools",
+    "Asking peers in communities"
+  ],
+  "existing_solutions": [
+    "Canva/free templates",
+    "Gumroad 'AI Job Survival Kit'",
+    "resume-writing services ($100-400)"
+  ],
+  "solution_strengths": [
+    "Cheap/most already exist",
+    "Instant download"
+  ],
+  "solution_weaknesses": [
+    "keyword-mapping + tracker + role-specificity beyond a plain template",
+    "career-changer reframing by industry pair"
+  ],
+  "customer_complaints": [],
+  "unmet_needs": [
+    "keyword-mapping + tracker + role-specificity beyond a plain template",
+    "career-changer reframing by industry pair"
+  ],
+  "solution_gaps": [
+    "keyword-mapping + tracker + role-specificity beyond a plain template",
+    "career-changer reframing by industry pair"
+  ],
+  "contradictions": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+  ],
+  "opportunity_assessment": "2 observed + 1 inferred/other claims support a recurring problem for active job seekers getting screened out. Gap: keyword-mapping + tracker + role-specificity beyond a plain template; career-changer reframing by industry pair."
+}

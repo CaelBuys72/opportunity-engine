@@ -1,0 +1,35 @@
+{
+  "sequence": [
+    {
+      "order": 1,
+      "step": "Build: editable templates + copy-paste scripts",
+      "component_id": "cmp-1",
+      "format": "editable fill-in template",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Build: short decision-tree guide + one-page checklist",
+      "component_id": "cmp-2",
+      "format": "concise reference guide page",
+      "depends_on": [
+        1
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 3,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1,
+        2
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ]
+}

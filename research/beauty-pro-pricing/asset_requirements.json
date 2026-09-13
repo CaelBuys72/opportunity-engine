@@ -1,0 +1,14 @@
+{
+  "assets": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "auto-calculating spreadsheet with worked example",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "audience": "US 1099 freelancers & independent contractors",
+  "recurring_symptoms": [
+    "don't know how much to set aside for quarterly taxes",
+    "spreadsheet formulas break when I edit them",
+    "expense categories don't map to Schedule C",
+    "chasing late invoices"
+  ],
+  "root_problems": [
+    "No withholding, quarterly estimated taxes and Schedule C categories are confusing; generic templates break or don't match the tax regime."
+  ],
+  "desired_outcomes": [
+    "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end."
+  ],
+  "existing_behaviours": [
+    "Free 1099 templates / generic bookkeeping sheets",
+    "Spreadsheets built from scratch",
+    "Deferring everything to tax season",
+    "Bonsai/FreshBooks/Wave subscriptions"
+  ],
+  "existing_solutions": [
+    "Etsy 1099/Schedule-C spreadsheets ($9-25)",
+    "SaaS (Bonsai, FreshBooks, Wave)",
+    "generic bookkeeping templates ($1-3)"
+  ],
+  "solution_strengths": [
+    "Cheap and instant",
+    "Many options",
+    "Auto-calculation when they work"
+  ],
+  "solution_weaknesses": [
+    "Too simple OR too complicated",
+    "Formulas break on edit",
+    "Categories don't map to Schedule C",
+    "Generic — not tuned to a specific 1099 trade"
+  ],
+  "customer_complaints": [
+    "'fixing broken formulas'",
+    "wrong balances at tax time",
+    "missing/inconsistent expense categories"
+  ],
+  "unmet_needs": [
+    "Correct US SE-tax + quarterly-estimate logic that a non-accountant trusts",
+    "Robust-but-simple middle ground",
+    "Sub-niche category presets"
+  ],
+  "solution_gaps": [
+    "robust-but-not-overwhelming middle ground (templates are too simple OR too complex)",
+    "formulas that don't break on edit",
+    "correct US SE-tax + quarterly-estimate logic",
+    "sub-niche versions (content creators, rideshare, trades)"
+  ],
+  "contradictions": [
+    "Free 1099 templates are abundant — risk of a 'free-information' problem for the generic version.",
+    "Etsy SEO is owned by high-volume generalist shops — the marketing problem may exceed the product problem.",
+    "A subset of freelancers offload this entirely to an accountant and won't buy a tool."
+  ],
+  "opportunity_assessment": "Strong, evidence-backed recurring problem with PROVEN willingness-to-pay ($9-25; RunTheCalc 2.2k sales @ ~$17) and a clear correctness+specificity gap. Main risk is distribution, not demand: incumbents are fragmented but own Etsy search, and free templates compete. Wedge = a specific US 1099 sub-niche + verifiable correctness (SE tax, quarterly estimates, Schedule C) + an off-Etsy distribution angle."
+}

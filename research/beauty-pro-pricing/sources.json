@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "https://www.etsy.com/listing/1554429326/nail-price-list-instant-download",
+      "url": "https://www.etsy.com/listing/1554429326/nail-price-list-instant-download",
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": true,
+      "note": "design flyers, not strategy; shows beauty pros buy business assets"
+    },
+    {
+      "id": "src-2",
+      "label": "marketplace",
+      "url": null,
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": false,
+      "note": "seen across nail-pricing search; suggests niche served by repackaged generics"
+    },
+    {
+      "id": "src-3",
+      "label": "https://carolinanewsandreporter.cic.sc.edu/nailed-it-how-at-home-nail-techs-are-changing-the-beauty-industry/",
+      "url": "https://carolinanewsandreporter.cic.sc.edu/nailed-it-how-at-home-nail-techs-are-changing-the-beauty-industry/",
+      "tier": 2,
+      "source_type": "article",
+      "accessible": true,
+      "note": "trade-press context"
+    },
+    {
+      "id": "src-4",
+      "label": "https://www.reddit.com/r/Nailtechs/",
+      "url": "https://www.reddit.com/r/Nailtechs/",
+      "tier": 1,
+      "source_type": "reddit",
+      "accessible": true,
+      "note": "tempers the Reddit demand signal"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "specs": [
+    {
+      "component_id": "cmp-1",
+      "name": "short decision-tree guide + one-page checklist",
+      "type": "asset",
+      "format": "concise reference guide page",
+      "purpose": "Asset that helps the buyer: short decision-tree guide + one-page checklist.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Manage programming, check-ins and progress without paying for bloated software.",
+      "functional_requirements": [],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": true
+    }
+  ]
+}

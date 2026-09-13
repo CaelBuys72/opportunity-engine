@@ -1,0 +1,269 @@
+{
+  "audience": "People overwhelmed by their to-do list",
+  "recurring_symptoms": [
+    "Everything lands on one undifferentiated list, so nothing feels urgent and the brain defaults to the easiest task.",
+    "Too many tasks at once triggers overwhelm and freeze — people can't decide where to start (task paralysis).",
+    "No differentiation between quick tasks and big projects, so important deep work is deferred."
+  ],
+  "root_problems": [
+    "People overwhelmed by their to-do list face a related cluster of problems around prioritization & daily focus system — e.g. no prioritization on the list, task paralysis from overwhelm, quick vs big tasks not separated."
+  ],
+  "desired_outcomes": [
+    "A low-friction daily ritual that isolates 1-3 critical priorities, hides backlog clutter, and enables immediate action without guilt or stress."
+  ],
+  "existing_behaviours": [
+    "Rolling a 20-sided die to select a random task",
+    "Switching from productivity apps to default iPhone Notes or physical paper",
+    "Creating manual secondary lists to push non-essential items away from daily view"
+  ],
+  "existing_solutions": [
+    "TickTick, Things, Workflowy, multi-tab app setups",
+    "iPhone Notes app",
+    "Hand-written paper to-do lists"
+  ],
+  "solution_strengths": [
+    "Cheap/most already exist",
+    "Instant download"
+  ],
+  "solution_weaknesses": [
+    "Feature bloat and complex settings creating entry/usage friction",
+    "Showing the entire accumulated backlog at once, triggering freeze/paralysis",
+    "Mixing work, personal, and secondary clutter in one persistent view"
+  ],
+  "customer_complaints": [],
+  "unmet_needs": [],
+  "solution_gaps": [],
+  "contradictions": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+  ],
+  "opportunity_assessment": "Outcome: READY. 163 results discovered → 92 candidates → 0 retrieved → 5 evidence-bearing. Mechanism: Single-task focus view coupled with a 2-tier backlog filter and a 1-click randomizer tool.",
+  "free_alternatives": [
+    "Paper and pen",
+    "Default iPhone Notes app",
+    "Manual d20 dice rolling / Google dice roller",
+    "Mental splitting of primary vs secondary tasks"
+  ],
+  "answered_questions": [
+    {
+      "question": "Is the problem recurring and painful enough to pay to solve?",
+      "question_type": "universal",
+      "status": "PARTIAL",
+      "answer": "To-do list overwhelm, decision paralysis, and anxiety are recurring and emotionally distressing for users. However, there is zero direct evidence in the sources regarding willingness to pay or price tolerance.",
+      "source_refs": [
+        0,
+        1,
+        4,
+        7,
+        9,
+        11
+      ],
+      "confidence": "MEDIUM",
+      "product_implication": "Validate core workflow and focus mechanics before assuming a paid SaaS model; monetization remains unverified.",
+      "remaining_uncertainty": "Willingness to pay and price sensitivity are completely unevidenced in the sources."
+    },
+    {
+      "question": "What exactly have people already tried, and why did it fall short?",
+      "question_type": "universal",
+      "status": "SUPPORTED",
+      "answer": "Users have tried dedicated productivity apps (TickTick, Things, Workflowy), paper lists, default iPhone notes, rolling a 20-sided die, and split lists. Apps fell short because feature complexity creates high entry friction, tab overload, and endless backlog accumulation.",
+      "source_refs": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        9
+      ],
+      "confidence": "HIGH",
+      "product_implication": "Avoid build-up of complex management features, tab clutter, or infinite list displays.",
+      "remaining_uncertainty": "None regarding past attempts and failure modes."
+    },
+    {
+      "question": "Is a digital product the right form, or is this a service / software / free-information problem?",
+      "question_type": "universal",
+      "status": "PARTIAL",
+      "answer": "Complex feature-heavy software is explicitly rejected by users in favor of paper or basic notes due to high friction. A digital product is only appropriate if it acts as an ultra-low-friction single-task filter rather than a full task-management platform.",
+      "source_refs": [
+        2,
+        5,
+        6,
+        9
+      ],
+      "confidence": "MEDIUM",
+      "product_implication": "Keep the interface extremely lightweight to prevent software-induced friction.",
+      "remaining_uncertainty": "Whether users would prefer a physical tool/analog protocol over a minimal web/mobile app."
+    },
+    {
+      "question": "What is the single most useful asset or mechanism we could ship?",
+      "question_type": "universal",
+      "status": "SUPPORTED",
+      "answer": "A daily focus filter that forces the isolation of a single 'must-do' item while hiding or deferring all secondary backlog tasks, combined with optional randomized task picking to break decision paralysis.",
+      "source_refs": [
+        0,
+        3,
+        9,
+        12
+      ],
+      "confidence": "HIGH",
+      "product_implication": "Build a interface that restricts active view to 1 main priority at a time.",
+      "remaining_uncertainty": "Exact UI preference between random selection versus user-forced rank ordering."
+    },
+    {
+      "question": "What price will the audience tolerate, and on what evidence?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "No pricing data, payment history, or monetary willingness-to-pay evidence exists in the provided sources.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Pricing must be tested independently.",
+      "remaining_uncertainty": "Complete absence of pricing data."
+    },
+    {
+      "question": "What specific mechanics cause existing daily focus frameworks (e.g., Eisenhower Matrix, Ivy Lee, Eat That Frog) to fail or get abandoned when someone is actively feeling overwhelmed?",
+      "question_type": "dynamic",
+      "status": "PARTIAL",
+      "answer": "Frameworks fail when they force complex categorization or expose the full backlog at once, which triggers emotional mental blocks, anxiety, and decision paralysis rather than immediate action.",
+      "source_refs": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        9
+      ],
+      "confidence": "MEDIUM",
+      "product_implication": "Eliminate multi-category sorting requirements and backlog visibility during active work states.",
+      "remaining_uncertainty": "Specific named frameworks like Ivy Lee or Eat That Frog are not explicitly analyzed in the snippets."
+    },
+    {
+      "question": "How do people currently distinguish 'quick tasks' from 'deep work' during brain-dumps, and what input UI allows capturing this context without adding entry friction?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "Sources show users separating 'real must-dos' from 'secondary' tasks, but specific UI mechanics or tags for quick tasks vs deep work are not documented in the evidence.",
+      "source_refs": [
+        3
+      ],
+      "confidence": "LOW",
+      "product_implication": "Do not force users to tag task duration or depth during initial brain dumps.",
+      "remaining_uncertainty": "No evidence on user mechanics for quick tasks vs deep work sorting."
+    },
+    {
+      "question": "When task paralysis strikes, what specific structural interventions (e.g., automated micro-task breakdown, artificial forced choices, time-boxed sprints) most reliably move users from freeze to action?",
+      "question_type": "dynamic",
+      "status": "SUPPORTED",
+      "answer": "Artificial forced choices (e.g., rolling a d20 die to pick a task), isolating focus to 1 must-do item, taking immediate small actions to reduce anxiety, and checklist procedures to bypass emotional kickbacks.",
+      "source_refs": [
+        0,
+        7,
+        9,
+        12
+      ],
+      "confidence": "HIGH",
+      "product_implication": "Implement randomized selection ('roll a die') and single-item execution views to break paralysis.",
+      "remaining_uncertainty": "Optimal micro-step breakdown granularity for different task types."
+    },
+    {
+      "question": "What real-world triggers (e.g., morning coffee, opening the browser, calendar sync) successfully anchor a 2-minute daily prioritization ritual into an existing workflow?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "Sources do not mention specific real-world anchor triggers for habit formation.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Rely on user-defined daily reminders or browser start-page triggers.",
+      "remaining_uncertainty": "No source data on habit triggers."
+    },
+    {
+      "question": "How should uncompleted daily priority tasks be handled at the end of the day to prevent accumulated guilt while maintaining realistic momentum for tomorrow?",
+      "question_type": "dynamic",
+      "status": "PARTIAL",
+      "answer": "Evidence shows users benefit from learning to let non-essential items go and shifting uncompleted non-vital tasks to a secondary background list rather than carrying over a massive active list.",
+      "source_refs": [
+        3,
+        10
+      ],
+      "confidence": "MEDIUM",
+      "product_implication": "Automate daily reset by demoting uncompleted tasks off the daily focus list into a secondary vault.",
+      "remaining_uncertainty": " exact automated rule vs manual review for end-of-day task rollover."
+    }
+  ],
+  "product_implications": {
+    "core_problem": "Users experience severe decision paralysis, anxiety, and mental blocks when confronted with long, overwhelming to-do lists in feature-heavy apps.",
+    "desired_outcome": "A low-friction daily ritual that isolates 1-3 critical priorities, hides backlog clutter, and enables immediate action without guilt or stress.",
+    "current_behavior": [
+      "Rolling a 20-sided die to select a random task",
+      "Switching from productivity apps to default iPhone Notes or physical paper",
+      "Creating manual secondary lists to push non-essential items away from daily view"
+    ],
+    "current_solutions": [
+      "TickTick, Things, Workflowy, multi-tab app setups",
+      "iPhone Notes app",
+      "Hand-written paper to-do lists"
+    ],
+    "failure_modes": [
+      "Feature bloat and complex settings creating entry/usage friction",
+      "Showing the entire accumulated backlog at once, triggering freeze/paralysis",
+      "Mixing work, personal, and secondary clutter in one persistent view"
+    ],
+    "free_alternatives": [
+      "Paper and pen",
+      "Default iPhone Notes app",
+      "Manual d20 dice rolling / Google dice roller",
+      "Mental splitting of primary vs secondary tasks"
+    ],
+    "product_opportunity": "A minimalist single-focus ritual app that limits active daily tasks to 1-3 items, relegates all other entries to an out-of-sight secondary vault, and includes a single-button randomized selector for paralysis moments.",
+    "product_mechanism": "Single-task focus view coupled with a 2-tier backlog filter and a 1-click randomizer tool.",
+    "product_format": {
+      "recommended": "Web/Mobile Minimalist Focused Application",
+      "components": [
+        "Single 'Must-Do' active display mode",
+        "Secondary backlog drawer (hidden during execution)",
+        "Random task spinner/die button to bypass decision freeze"
+      ],
+      "basis": "inferred",
+      "rationale": "Users report success with 1 must-do focus and dice rolling, but express frustration with heavy apps; thus format must be minimalist."
+    },
+    "must_have_components": [
+      {
+        "component": "1-Must-Do Focus View",
+        "buyer_job": "Isolate the primary priority so the user is not overwhelmed by secondary tasks.",
+        "evidence_refs": [
+          3,
+          9
+        ],
+        "basis": "observed"
+      },
+      {
+        "component": "Randomized Task Selector ('Roll the Dice')",
+        "buyer_job": "Break active task paralysis and decision freeze through forced arbitrary choice.",
+        "evidence_refs": [
+          0
+        ],
+        "basis": "observed"
+      },
+      {
+        "component": "Secondary Backlog Vault",
+        "buyer_job": "Store non-urgent or non-essential tasks out of daily line of sight.",
+        "evidence_refs": [
+          3
+        ],
+        "basis": "observed"
+      }
+    ],
+    "do_not_build": [
+      "Complex multi-tagging, nested folder hierarchies, or Kanban boards",
+      "Unrestricted visible backlog lists on the primary screen",
+      "Heavy analytics dashboards or friction-heavy setup wizards"
+    ],
+    "pricing": {
+      "values": [],
+      "basis": "unknown"
+    },
+    "contradictions": [],
+    "remaining_uncertainty": [
+      "Willingness to pay and monetization viability remain completely unknown.",
+      "Exact optimal UI trigger for moving items from secondary vault to daily focus list."
+    ],
+    "outcome": "READY"
+  }
+}

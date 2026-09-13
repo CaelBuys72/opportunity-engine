@@ -1,0 +1,30 @@
+{
+  "universe_opportunity_id": "opp-artists-growing-on-streaming-platforms-direct-to-fan-monetization-playbook-and-funnel-templates",
+  "origin": "market_universe",
+  "market_id": "mkt-music-and-audio-production",
+  "submarket_id": "sub-music-and-audio-production-artist-growth-and-release",
+  "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+  "opportunity_name": "Direct-to-Fan Monetization Playbook & Funnel Templates",
+  "member_problem_ids": [
+    "prb-artists-growing-on-streaming-platforms-low-streaming-royalty-payouts"
+  ],
+  "seed_source_refs": [
+    "src-031cf9c3296a",
+    "src-06205c36032c",
+    "src-0aa713112cf0",
+    "src-56ef75579bdf",
+    "src-63093f99da46",
+    "src-7994764445b9",
+    "src-a9491358651b",
+    "src-db2abca70714"
+  ],
+  "seed_commercial_evidence_refs": [],
+  "seed_creator_candidate_refs": [],
+  "priority_metadata": {
+    "commercial_score": 83,
+    "evidence_score": 70,
+    "priority_score": 78,
+    "priority_classification": "HIGH_PRIORITY",
+    "note": "Why we chose to investigate — NOT evidence of reality."
+  }
+}

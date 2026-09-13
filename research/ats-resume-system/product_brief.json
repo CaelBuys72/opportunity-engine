@@ -1,0 +1,65 @@
+{
+  "pocket_id": "ats-resume-system",
+  "product_concept": "A focused calculator / spreadsheet that helps active job seekers getting screened out get past ats and actually land interviews.",
+  "target_customer": "active job seekers getting screened out",
+  "core_problem": "Resumes get filtered by ATS; applicants don't know how to map keywords or track applications.",
+  "related_problems": [
+    "1,000+ applications, few callbacks",
+    "how does ATS work",
+    "no direct experience for a career switch",
+    "keyword matching"
+  ],
+  "desired_outcome": "Get past ATS and actually land interviews.",
+  "core_transformation": "From: Resumes get filtered by ATS; applicants don't know how to map keywords or track applications.  →  To: Get past ATS and actually land interviews.",
+  "product_promise": "Get to 'Get past ATS and actually land interviews.' without the usual guesswork.",
+  "product_format": "Bundle: calculator / spreadsheet + fill-in templates / scripts + guide / checklist",
+  "why_this_format": "Chosen from problem language, not by default. Signal scores: {'calculator / spreadsheet': 2, 'fill-in templates / scripts': 1, 'planner / schedule': 0, 'guide / checklist': 1}.",
+  "product_structure": [
+    "auto-calculating spreadsheet with worked example",
+    "editable templates + copy-paste scripts",
+    "short decision-tree guide + one-page checklist"
+  ],
+  "required_sections": [],
+  "required_tools": [],
+  "required_templates": [],
+  "required_worksheets": [],
+  "bonus_assets": [],
+  "exclude": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ],
+  "existing_alternatives": [
+    "Canva/free templates",
+    "Gumroad 'AI Job Survival Kit'",
+    "resume-writing services ($100-400)"
+  ],
+  "differentiation": [
+    "keyword-mapping + tracker + role-specificity beyond a plain template",
+    "career-changer reframing by industry pair"
+  ],
+  "price_range": "Unknown — infer from analogous products before pricing",
+  "price_rationale": "Unknown pricing evidence; do not set a price until validated.",
+  "key_customer_language": [
+    "1,000+ applications, few callbacks",
+    "how does ATS work",
+    "no direct experience for a career switch",
+    "keyword matching"
+  ],
+  "key_objections": [
+    "I can find this free",
+    "Templates never fit my exact case",
+    "I'll deal with it later"
+  ],
+  "key_buying_motivations": [
+    "Save time",
+    "Reduce anxiety/uncertainty",
+    "Look professional / avoid costly mistakes"
+  ],
+  "evidence_summary": "2 observed + 1 inferred/other claims support a recurring problem for active job seekers getting screened out. Gap: keyword-mapping + tracker + role-specificity beyond a plain template; career-changer reframing by industry pair.",
+  "confidence": "MEDIUM",
+  "risks_unknowns": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation"
+  ]
+}

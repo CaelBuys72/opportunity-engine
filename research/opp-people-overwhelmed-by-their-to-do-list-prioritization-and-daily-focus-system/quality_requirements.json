@@ -1,0 +1,19 @@
+{
+  "global": [
+    {
+      "req": "Time-to-first-value under ~15 minutes; usable without a manual.",
+      "basis": "inferred",
+      "source": "buyer-effort principle"
+    },
+    {
+      "req": "Honor exclusions verbatim (see exclusions list); scope stays tight.",
+      "basis": "evidence-backed",
+      "source": "brief.exclude"
+    }
+  ],
+  "exclusions_preserved": [
+    "Complex multi-tagging, nested folder hierarchies, or Kanban boards",
+    "Unrestricted visible backlog lists on the primary screen",
+    "Heavy analytics dashboards or friction-heavy setup wizards"
+  ]
+}

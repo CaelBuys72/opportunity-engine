@@ -1,0 +1,75 @@
+{
+  "pocket_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+  "product_concept": "A reliable turnover & property-operations kit for hosts with 1-5 listings: standardized cleaning/turnover checklists, a guest-ready house manual, and a supply-restock tracker — delivered so it won't break like the Canva templates hosts complain about.",
+  "target_customer": "Airbnb hosts with 1-5 properties",
+  "core_problem": "Airbnb hosts with 1-5 properties face a related cluster of problems around turnover & property operations — e.g. cleaner turnover coordination, supply restocking tracking, welcome book contents unclear.",
+  "related_problems": [
+    "Coordinating and standardizing cleaner turnover between guests is hard.",
+    "Restocking supplies and consumables is easy to forget.",
+    "Editable welcome-book/template tools fail to save or print, losing hosts' work."
+  ],
+  "desired_outcome": "A shared outcome across member problems: Standardize every turnover. Never run out of guest supplies. Produce a house manual without tool failures.",
+  "core_transformation": "From error-prone, ad-hoc turnovers and unclear house manuals -> a standardized, reliable turnover system nothing falls through.",
+  "product_promise": "Every turnover done the same way, nothing forgotten, no broken templates.",
+  "product_format": "Bundle: fill-in templates / scripts + calculator / spreadsheet + guide / checklist",
+  "why_this_format": "The job is repeatable operations + reference, so a checklist/tracker + house-manual bundle fits — not an ebook. Reliability (no save/print failures) is the wedge.",
+  "product_structure": [
+    "Turnover/cleaning checklist (printable + fillable)",
+    "Guest-ready house manual template",
+    "Supply restock tracker"
+  ],
+  "required_sections": [
+    "Turnover step-by-step",
+    "House-manual sections hosts forget"
+  ],
+  "required_tools": [
+    "Supply restock tracker"
+  ],
+  "required_templates": [
+    "Cleaning/turnover checklist",
+    "House manual"
+  ],
+  "required_worksheets": [
+    "Cleaner handoff sheet"
+  ],
+  "bonus_assets": [
+    "Guest message snippets for checkout"
+  ],
+  "exclude": [
+    "Pretty-but-fragile Canva-only formats",
+    "Padding/theory",
+    "Anything freely adequate already"
+  ],
+  "existing_alternatives": [
+    "Etsy Airbnb welcome-book / house-manual templates"
+  ],
+  "differentiation": [
+    "Reliability (no save/print failures)",
+    "Operationally complete, not just decorative",
+    "Standardization a cleaner can follow"
+  ],
+  "price_range": "$15-25 one-time",
+  "price_rationale": "Observed: Etsy host welcome-book/checklist bundles sell at ~$14-21+; this sits in the proven band.",
+  "key_customer_language": [
+    "template wouldn't save",
+    "cleaners miss steps",
+    "what goes in a house manual"
+  ],
+  "key_objections": [
+    "I already bought a welcome-book template",
+    "I can make my own checklist",
+    "another template that'll break?"
+  ],
+  "key_buying_motivations": [
+    "Protect reviews",
+    "Save turnover time",
+    "Stop things being forgotten"
+  ],
+  "evidence_summary": "Small Airbnb hosts repeatedly need a reliable turnover system (cleaning/turnover, a guest-ready house manual, supply restocking). Observed: hosts already pay for welcome-book/checklist templates on Etsy (1,000+ listings, many Bestsellers) and a real 1-star review shows those Canva templates failing to save/print — a reliability gap. Demand and spending are real; the open question is distribution, not whether the problem exists.",
+  "confidence": "MEDIUM",
+  "risks_unknowns": [
+    "Distribution/promotion unproven (creator density MEDIUM, not qualified)",
+    "Welcome-book market saturated — must be visibly more reliable/complete",
+    "Some hosts use a property manager and won't buy tools"
+  ]
+}

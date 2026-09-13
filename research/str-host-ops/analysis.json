@@ -1,0 +1,45 @@
+{
+  "audience": "first-year short-term-rental hosts",
+  "recurring_symptoms": [
+    "what goes in a welcome book",
+    "cleaning/turnover checklist",
+    "guest message scripts",
+    "checkout instructions"
+  ],
+  "root_problems": [
+    "New hosts don't know what to include in welcome books, cleaning checklists, house rules or checkout flow."
+  ],
+  "desired_outcomes": [
+    "Launch looking professional and avoid rookie mistakes that cost reviews."
+  ],
+  "existing_behaviours": [
+    "Using free templates / generic tools",
+    "Asking peers in communities"
+  ],
+  "existing_solutions": [
+    "Etsy welcome-book templates ($2-21)",
+    "500+/1000+ host bundles",
+    "Touchstay/Homeaglow content"
+  ],
+  "solution_strengths": [
+    "Cheap/most already exist",
+    "Instant download"
+  ],
+  "solution_weaknesses": [
+    "operational systems & message scripts (market is saturated on pretty welcome books)",
+    "reliable no-Canva-headache delivery format"
+  ],
+  "customer_complaints": [],
+  "unmet_needs": [
+    "operational systems & message scripts (market is saturated on pretty welcome books)",
+    "reliable no-Canva-headache delivery format"
+  ],
+  "solution_gaps": [
+    "operational systems & message scripts (market is saturated on pretty welcome books)",
+    "reliable no-Canva-headache delivery format"
+  ],
+  "contradictions": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+  ],
+  "opportunity_assessment": "3 observed + 0 inferred/other claims support a recurring problem for first-year short-term-rental hosts. Gap: operational systems & message scripts (market is saturated on pretty welcome books); reliable no-Canva-headache delivery format."
+}

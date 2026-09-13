@@ -1,0 +1,32 @@
+{
+  "opportunity_id": "beauty-pro-pricing",
+  "verdict": "NEEDS_RESEARCH",
+  "confidence": "LOW",
+  "reason": "No creator candidates available (no live retriever, no manual import). Nothing can be validated.",
+  "creator_count": 0,
+  "qualified_creator_count": 0,
+  "highly_qualified_count": 0,
+  "strongest_creators": [],
+  "strongest_content_signals": [],
+  "supporting_evidence": [],
+  "contradictory_evidence": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+  ],
+  "unknowns": [
+    "low_relevant_engagement (no creator candidates to evaluate)",
+    "audience_prefers_free (no creator candidates to evaluate)",
+    "creators_sell_competing (no creator candidates to evaluate)",
+    "audience_mismatch (no creator candidates to evaluate)",
+    "views_without_relevance (no creator candidates to evaluate)",
+    "fragmented_audience (no creator candidates to evaluate)",
+    "wont_promote_third_party (no creator candidates to evaluate)",
+    "demand_without_creators (no creator candidates to evaluate)",
+    "100% of scoring weight is UNKNOWN."
+  ],
+  "major_risks": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation"
+  ],
+  "next_action": "Import real creators to data/creator_candidates/<id>.json (or wire live retrieval), then re-run."
+}

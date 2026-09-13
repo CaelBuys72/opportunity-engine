@@ -1,0 +1,25 @@
+{
+  "universe_opportunity_id": "opp-independent-nail-technicians-pricing-and-profitability",
+  "origin": "market_universe",
+  "market_id": "mkt-beauty-and-personal-care",
+  "submarket_id": "sub-beauty-and-personal-care-nail-services",
+  "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+  "opportunity_name": "Pricing & Profitability",
+  "member_problem_ids": [
+    "prb-independent-nail-technicians-client-price-negotiation",
+    "prb-independent-nail-technicians-fear-of-raising-prices",
+    "prb-independent-nail-technicians-income-expense-tracking-for-tax",
+    "prb-independent-nail-technicians-product-cost-per-service-unknown",
+    "prb-independent-nail-technicians-service-pricing-uncertainty"
+  ],
+  "seed_source_refs": [],
+  "seed_commercial_evidence_refs": [],
+  "seed_creator_candidate_refs": [],
+  "priority_metadata": {
+    "commercial_score": 72,
+    "evidence_score": 0,
+    "priority_score": 54,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "note": "Why we chose to investigate — NOT evidence of reality."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "assets": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "1-Must-Do Focus View — Isolate the primary priority so the user is not overwhelmed by secondary tasks. [observed]",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-2",
+      "component_id": "cmp-2",
+      "for": "Randomized Task Selector ('Roll the Dice') — Break active task paralysis and decision freeze through forced arbitrary choice. [observed]",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-3",
+      "component_id": "cmp-3",
+      "for": "Secondary Backlog Vault — Store non-urgent or non-essential tasks out of daily line of sight. [observed]",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ]
+}

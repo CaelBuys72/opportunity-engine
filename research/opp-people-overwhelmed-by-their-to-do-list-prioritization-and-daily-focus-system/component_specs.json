@@ -1,0 +1,59 @@
+{
+  "specs": [
+    {
+      "component_id": "cmp-1",
+      "name": "1-Must-Do Focus View — Isolate the primary priority so the user is not overwhelmed by secondary tasks. [observed]",
+      "type": "asset",
+      "format": "supporting asset",
+      "purpose": "Asset that helps the buyer: 1-Must-Do Focus View — Isolate the primary priority so the user is not overwhelmed by secondary tasks. [observed].",
+      "maps_to_jobs": [
+        "job-2",
+        "job-3"
+      ],
+      "maps_to_outcome": "A daily ritual that surfaces the 1-3 things that truly matter.",
+      "functional_requirements": [],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-2",
+      "name": "Randomized Task Selector ('Roll the Dice') — Break active task paralysis and decision freeze through forced arbitrary choice. [observed]",
+      "type": "asset",
+      "format": "supporting asset",
+      "purpose": "Asset that helps the buyer: Randomized Task Selector ('Roll the Dice') — Break active task paralysis and decision freeze through forced arbitrary choice. [observed].",
+      "maps_to_jobs": [
+        "job-1",
+        "job-2"
+      ],
+      "maps_to_outcome": "A daily ritual that surfaces the 1-3 things that truly matter.",
+      "functional_requirements": [],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-3",
+      "name": "Secondary Backlog Vault — Store non-urgent or non-essential tasks out of daily line of sight. [observed]",
+      "type": "asset",
+      "format": "supporting asset",
+      "purpose": "Asset that helps the buyer: Secondary Backlog Vault — Store non-urgent or non-essential tasks out of daily line of sight. [observed].",
+      "maps_to_jobs": [
+        "job-1",
+        "job-2",
+        "job-3"
+      ],
+      "maps_to_outcome": "A daily ritual that surfaces the 1-3 things that truly matter.",
+      "functional_requirements": [],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    }
+  ]
+}

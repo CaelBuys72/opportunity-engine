@@ -1,0 +1,59 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "cleaner turnover coordination",
+      "source_id": "src-1",
+      "evidence": "Guidance for hosts on standardizing turnover/cleaning so every cleaner follows the same steps.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "inferred upstream problem (Build 2) — context, not observed evidence",
+      "source_id": "src-2",
+      "evidence": "Restocking supplies and consumables is easy to forget.",
+      "source_type": "other",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "welcome book contents unclear",
+      "source_id": "src-3",
+      "evidence": "Template could not be printed after personalizing and would not save. I lost hours of work.",
+      "source_type": "review",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-4",
+      "claim": "welcome book contents unclear",
+      "source_id": "src-4",
+      "evidence": "Large volume of host welcome-book / house-manual templates sold, indicating hosts seek help assembling what to include.",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-5",
+      "claim": "Hosts already pay for welcome-book/checklist templates.",
+      "source_id": "src-5",
+      "evidence": "Etsy 'airbnb welcome book template' returns 1,000+ paid listings, many Bestsellers.",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "observed",
+      "interpretation": "Willingness-to-pay for host operational assets is real."
+    }
+  ]
+}

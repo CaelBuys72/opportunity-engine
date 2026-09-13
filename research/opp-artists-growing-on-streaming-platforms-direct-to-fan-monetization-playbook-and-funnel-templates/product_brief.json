@@ -1,0 +1,50 @@
+{
+  "pocket_id": "opp-artists-growing-on-streaming-platforms-direct-to-fan-monetization-playbook-and-funnel-templates",
+  "product_concept": "A focused calculator / spreadsheet that helps Artists growing on streaming platforms .",
+  "target_customer": "Artists growing on streaming platforms",
+  "core_problem": "Artists growing on streaming platforms face a related cluster of problems around direct-to-fan monetization playbook & funnel templates — e.g. low streaming royalty payouts.",
+  "related_problems": [
+    "Independent artists earn extremely low royalty payouts per stream, making it difficult to generate a sustainable income without millions of monthly streams."
+  ],
+  "desired_outcome": "",
+  "core_transformation": "From: Artists growing on streaming platforms face a related cluster of problems around direct-to-fan monetization playbook & funnel templates — e.g. low streaming royalty payouts.  →  To: ",
+  "product_promise": "Get to '' without the usual guesswork.",
+  "product_format": "calculator / spreadsheet",
+  "why_this_format": "Chosen from problem language, not by default. Signal scores: {'calculator / spreadsheet': 1, 'fill-in templates / scripts': 0, 'planner / schedule': 0, 'guide / checklist': 0}.",
+  "product_structure": [
+    "auto-calculating spreadsheet with worked example"
+  ],
+  "required_sections": [],
+  "required_tools": [],
+  "required_templates": [],
+  "required_worksheets": [],
+  "bonus_assets": [],
+  "exclude": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ],
+  "existing_alternatives": [],
+  "differentiation": [],
+  "price_range": "Unknown — infer from analogous products before pricing",
+  "price_rationale": "Unknown pricing evidence; do not set a price until validated.",
+  "key_customer_language": [
+    "Independent artists earn extremely low royalty payouts per stream, making it difficult to generate a sustainable income without millions of monthly streams."
+  ],
+  "key_objections": [
+    "I can find this free",
+    "Templates never fit my exact case",
+    "I'll deal with it later"
+  ],
+  "key_buying_motivations": [
+    "Save time",
+    "Reduce anxiety/uncertainty",
+    "Look professional / avoid costly mistakes"
+  ],
+  "evidence_summary": "8 observed + 0 inferred/other claims support a recurring problem for Artists growing on streaming platforms. Gap: unknown.",
+  "confidence": "HIGH",
+  "risks_unknowns": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation"
+  ]
+}

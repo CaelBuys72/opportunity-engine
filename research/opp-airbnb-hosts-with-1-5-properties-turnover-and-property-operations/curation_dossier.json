@@ -1,0 +1,493 @@
+{
+  "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+  "generated_at": "2026-09-09T20:47:13.928218+00:00",
+  "product_concept": "A reliable turnover & property-operations kit for hosts with 1-5 listings: standardized cleaning/turnover checklists, a guest-ready house manual, and a supply-restock tracker — delivered so it won't break like the Canva templates hosts complain about.",
+  "product_format": "Bundle: fill-in templates / scripts + calculator / spreadsheet + guide / checklist",
+  "transformation": {
+    "from_state": "From error-prone, ad-hoc turnovers and unclear house manuals",
+    "to_state": "a standardized, reliable turnover system nothing falls through",
+    "promise": "Every turnover done the same way, nothing forgotten, no broken templates.",
+    "core_problem": "Airbnb hosts with 1-5 properties face a related cluster of problems around turnover & property operations — e.g. cleaner turnover coordination, supply restocking tracking, welcome book contents unclear.",
+    "desired_outcome": "A shared outcome across member problems: Standardize every turnover. Never run out of guest supplies. Produce a house manual without tool failures.",
+    "basis": "evidence-backed"
+  },
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: A shared outcome across member problems: Standardize every turnover. Never run out of guest supplies. Produce a house manual without tool failures.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: Coordinating and standardizing cleaner turnover between guests is hard.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: Restocking supplies and consumables is easy to forget.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: Editable welcome-book/template tools fail to save or print, losing hosts' work.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "components": [
+    {
+      "id": "cmp-3",
+      "name": "Property Setup Workbook",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Property Setup Workbook.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-8",
+      "name": "Welcome Guide for Guests",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Welcome Guide for Guests.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-2",
+      "name": "Master Turnover SOP",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Master Turnover SOP.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-4",
+      "name": "Cleaner Handoff Sheet",
+      "type": "worksheet",
+      "format": "structured worksheet (printable + fillable)",
+      "purpose": "Cleaner Handoff Sheet.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-7",
+      "name": "Quick Turnover Checklist",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Quick Turnover Checklist.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-1",
+      "name": "Supply + Inventory Tracker",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Supply + Inventory Tracker.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-10",
+      "name": "Damage & Incident Log",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Damage & Incident Log.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-9",
+      "name": "Guest Message Library",
+      "type": "bonus",
+      "format": "bonus asset",
+      "purpose": "Guest Message Library.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    }
+  ],
+  "asset_requirements": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "Supply restock tracker",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-2",
+      "component_id": "cmp-2",
+      "for": "Cleaning/turnover checklist",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-3",
+      "component_id": "cmp-3",
+      "for": "House manual",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-4",
+      "component_id": "cmp-4",
+      "for": "Cleaner handoff sheet",
+      "deliverable": "Fillable PDF + printable version",
+      "tooling": "doc/pdf",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-5",
+      "component_id": "cmp-5",
+      "for": "Turnover step-by-step",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-6",
+      "component_id": "cmp-6",
+      "for": "House-manual sections hosts forget",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-7",
+      "component_id": "cmp-7",
+      "for": "Turnover/cleaning checklist (printable + fillable)",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-8",
+      "component_id": "cmp-8",
+      "for": "Guest-ready house manual template",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-9",
+      "component_id": "cmp-9",
+      "for": "Guest message snippets for checkout",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ],
+  "quality_requirements": {
+    "global": [
+      {
+        "req": "Time-to-first-value under ~15 minutes; usable without a manual.",
+        "basis": "inferred",
+        "source": "buyer-effort principle"
+      },
+      {
+        "req": "Honor exclusions verbatim (see exclusions list); scope stays tight.",
+        "basis": "evidence-backed",
+        "source": "brief.exclude"
+      }
+    ],
+    "exclusions_preserved": [
+      "Pretty-but-fragile Canva-only formats",
+      "Padding/theory",
+      "Anything freely adequate already"
+    ]
+  },
+  "buyer_effort": {
+    "overall_target": "Buyer reaches first useful result in one sitting, no setup call.",
+    "per_component": [
+      {
+        "component_id": "cmp-1",
+        "name": "Supply restock tracker",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Ship with a prefilled worked example",
+          "Single input area",
+          "Dropdowns instead of free-typing where possible"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-2",
+        "name": "Cleaning/turnover checklist",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Provide a ready-to-send version, not only an editable one"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-3",
+        "name": "House manual",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Provide a ready-to-send version, not only an editable one"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-4",
+        "name": "Cleaner handoff sheet",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Ship with a prefilled worked example"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-5",
+        "name": "Turnover step-by-step",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-6",
+        "name": "House-manual sections hosts forget",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-7",
+        "name": "Turnover/cleaning checklist (printable + fillable)",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-8",
+        "name": "Guest-ready house manual template",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-9",
+        "name": "Guest message snippets for checkout",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      }
+    ],
+    "basis": "inferred"
+  },
+  "production_sequence": [
+    {
+      "order": 1,
+      "step": "Build: Property Setup Workbook",
+      "component_id": "cmp-3",
+      "format": "editable fill-in template",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Build: Welcome Guide for Guests",
+      "component_id": "cmp-8",
+      "format": "editable fill-in template",
+      "depends_on": [
+        1
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 3,
+      "step": "Build: Master Turnover SOP",
+      "component_id": "cmp-2",
+      "format": "editable fill-in template",
+      "depends_on": [
+        2
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 4,
+      "step": "Build: Cleaner Handoff Sheet",
+      "component_id": "cmp-4",
+      "format": "structured worksheet (printable + fillable)",
+      "depends_on": [
+        3
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 5,
+      "step": "Build: Quick Turnover Checklist",
+      "component_id": "cmp-7",
+      "format": "editable fill-in template",
+      "depends_on": [
+        4
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 6,
+      "step": "Build: Supply + Inventory Tracker",
+      "component_id": "cmp-1",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [
+        5
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 7,
+      "step": "Build: Damage & Incident Log",
+      "component_id": "cmp-10",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [
+        6
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 8,
+      "step": "Build: Guest Message Library",
+      "component_id": "cmp-9",
+      "format": "bonus asset",
+      "depends_on": [
+        7
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 9,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ],
+  "verification_requirements": [],
+  "unresolved_questions": [
+    "Distribution/promotion unproven (creator density MEDIUM, not qualified)",
+    "Welcome-book market saturated — must be visibly more reliable/complete",
+    "Some hosts use a property manager and won't buy tools",
+    "Components mapped only to the overall outcome (weak job fit): ['Supply restock tracker', 'House manual', 'Guest message snippets for checkout']"
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Pretty-but-fragile Canva-only formats",
+      "Padding/theory",
+      "Anything freely adequate already"
+    ],
+    "risks_unknowns": [
+      "Distribution/promotion unproven (creator density MEDIUM, not qualified)",
+      "Welcome-book market saturated — must be visibly more reliable/complete",
+      "Some hosts use a property manager and won't buy tools"
+    ],
+    "differentiation": [
+      "Reliability (no save/print failures)",
+      "Operationally complete, not just decorative",
+      "Standardization a cleaner can follow"
+    ],
+    "evidence_requirements": [
+      {
+        "label": "other",
+        "url": null,
+        "note": "inferred upstream problem (Build 2) — context, not observed evidence",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "marketplace",
+        "url": null,
+        "note": "welcome book contents unclear",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Etsy marketplace (observed 2026-09-08)",
+        "url": null,
+        "note": "",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "r/airbnb / r/AirBnBHosts turnover threads (primary host language)",
+        "url": "https://www.reddit.com/r/AirBnBHosts/",
+        "note": "Reddit thread bodies not retrievable in-app this run; retrieve later.",
+        "status": "must be retrieved/verified later"
+      }
+    ]
+  },
+  "basis_summary": {
+    "component_requirements_evidence_backed": 0,
+    "component_requirements_inferred": 6,
+    "note": "evidence-backed = traceable to a Phase-8 brief field; inferred = design decision made by the curation engine."
+  },
+  "handoff": {
+    "consumes": "product_architecture.json + component_specs.json + asset_requirements.json + quality_requirements.json + production_plan.json",
+    "for": "Phase 10 Product Builder",
+    "must_respect": [
+      "verification_requirements",
+      "carried_forward.exclusions",
+      "quality_requirements",
+      "unresolved_questions"
+    ]
+  },
+  "revision": "revision-001"
+}

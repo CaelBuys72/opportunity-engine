@@ -1,0 +1,2388 @@
+[
+  {
+    "id": "prb-independent-nail-technicians-service-pricing-uncertainty",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Techs don't know what to charge to stay profitable.",
+    "normalized_problem": "service pricing uncertainty",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Price services for real profit.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-fear-of-raising-prices",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Techs are scared to raise their prices.",
+    "normalized_problem": "fear of raising prices",
+    "problem_type": "emotional_friction",
+    "desired_outcome": "Raise rates without losing clients.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-client-price-negotiation",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Clients keep negotiating or asking for discounts.",
+    "normalized_problem": "client price negotiation",
+    "problem_type": "communication_problem",
+    "desired_outcome": "Hold firm, fair pricing.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-product-cost-per-service-unknown",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Techs don't know their true product cost per set.",
+    "normalized_problem": "product cost per service unknown",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Know cost of goods per service.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-no-shows-and-cancellations",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "No-shows and last-minute cancellations lose income.",
+    "normalized_problem": "no-shows and cancellations",
+    "problem_type": "operational_problem",
+    "desired_outcome": "Reduce no-shows with policies/deposits.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-inconsistent-bookings",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Filling the appointment book consistently is hard.",
+    "normalized_problem": "inconsistent bookings",
+    "problem_type": "acquisition_problem",
+    "desired_outcome": "Keep the calendar full.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-inconsistent-social-marketing",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Marketing on Instagram feels confusing and inconsistent.",
+    "normalized_problem": "inconsistent social marketing",
+    "problem_type": "acquisition_problem",
+    "desired_outcome": "Market consistently on social.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-client-rebooking-retention",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Getting clients to rebook regularly is difficult.",
+    "normalized_problem": "client rebooking / retention",
+    "problem_type": "retention_problem",
+    "desired_outcome": "Turn one-offs into regulars.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-client-intake-consent-disorganization",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Managing intake and consent forms is disorganized.",
+    "normalized_problem": "client intake/consent disorganization",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "Streamline intake and consent.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-deposit-cancellation-policy-unclear",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Setting deposit and cancellation policies is unclear.",
+    "normalized_problem": "deposit/cancellation policy unclear",
+    "problem_type": "decision_problem",
+    "desired_outcome": "Set clear booking policies.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-income-expense-tracking-for-tax",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Tracking income and expenses for taxes is stressful.",
+    "normalized_problem": "income/expense tracking for tax",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Stay tax-ready year round.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-building-initial-clientele",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Building a first client base from scratch is slow.",
+    "normalized_problem": "building initial clientele",
+    "problem_type": "acquisition_problem",
+    "desired_outcome": "Grow a starting client book.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-independent-nail-technicians-service-menu-decisions",
+    "type": "problem",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "statement": "Deciding which services to offer and package is unclear.",
+    "normalized_problem": "service menu decisions",
+    "problem_type": "decision_problem",
+    "desired_outcome": "Design a profitable service menu.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-budgeting-on-variable-income",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Income varies month to month, making budgeting hard.",
+    "normalized_problem": "budgeting on variable income",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Budget reliably despite variable income.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-owner-pay-draw-uncertainty",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Freelancers don't know what's safe to pay themselves.",
+    "normalized_problem": "owner pay / draw uncertainty",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Pay themselves a stable amount.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-feast-or-famine-pipeline",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Feast-or-famine client cycles cause stress.",
+    "normalized_problem": "feast-or-famine pipeline",
+    "problem_type": "acquisition_problem",
+    "desired_outcome": "Smooth out the client pipeline.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-irregular-tax-set-aside",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Setting money aside for taxes is inconsistent.",
+    "normalized_problem": "irregular tax set-aside",
+    "problem_type": "compliance_problem",
+    "desired_outcome": "Set aside the right amount each payment.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-late-invoice-cashflow-gaps",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Chasing late invoices hurts cashflow.",
+    "normalized_problem": "late invoice cashflow gaps",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Get paid on time.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-no-buffer-for-slow-months",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "No emergency buffer for slow months.",
+    "normalized_problem": "no buffer for slow months",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Build a slow-month buffer.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-income-forecasting-difficulty",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Hard to forecast next quarter's income.",
+    "normalized_problem": "income forecasting difficulty",
+    "problem_type": "planning_problem",
+    "desired_outcome": "Forecast income with some confidence.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-low-pay-work-decisions-in-slow-periods",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Deciding whether to take low-paying work in slow months.",
+    "normalized_problem": "low-pay work decisions in slow periods",
+    "problem_type": "decision_problem",
+    "desired_outcome": "Decide which work to accept.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-business-personal-money-mixing",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Separating business and personal money is messy.",
+    "normalized_problem": "business/personal money mixing",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "Cleanly separate finances.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-money-anxiety-and-avoidance",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Anxiety about money makes planning avoidance worse.",
+    "normalized_problem": "money anxiety and avoidance",
+    "problem_type": "emotional_friction",
+    "desired_outcome": "Reduce money stress with a system.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-pricing-for-income-stability",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Pricing to cover irregular income is guesswork.",
+    "normalized_problem": "pricing for income stability",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Price to stabilize take-home.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-freelancers-with-inconsistent-irregular-income-per-client-profitability-tracking",
+    "type": "problem",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "statement": "Tracking which clients/projects are actually profitable.",
+    "normalized_problem": "per-client profitability tracking",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Know which work pays best.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-running-out-of-ideas",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Creators keep running out of content ideas.",
+    "normalized_problem": "running out of ideas",
+    "problem_type": "knowledge_gap",
+    "desired_outcome": "Always have a backlog of ideas.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-posting-consistency",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Posting consistently is hard to sustain.",
+    "normalized_problem": "posting consistency",
+    "problem_type": "planning_problem",
+    "desired_outcome": "Maintain a steady posting cadence.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-content-batching-scheduling",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Batching and scheduling content is disorganized.",
+    "normalized_problem": "content batching/scheduling",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "Batch and schedule reliably.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-writing-strong-hooks",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Hooks that stop the scroll are hard to write.",
+    "normalized_problem": "writing strong hooks",
+    "problem_type": "performance_problem",
+    "desired_outcome": "Write scroll-stopping hooks.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-slow-editing-workflow",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Editing takes too long per video.",
+    "normalized_problem": "slow editing workflow",
+    "problem_type": "time_problem",
+    "desired_outcome": "Edit faster with a repeatable process.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-low-flat-views",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Low or flat view counts are discouraging.",
+    "normalized_problem": "low/flat views",
+    "problem_type": "performance_problem",
+    "desired_outcome": "Improve reach and views.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-cross-platform-repurposing",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Repurposing one video across platforms is manual.",
+    "normalized_problem": "cross-platform repurposing",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "Repurpose content efficiently.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-creator-burnout",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Burnout from the pressure to always post.",
+    "normalized_problem": "creator burnout",
+    "problem_type": "emotional_friction",
+    "desired_outcome": "Sustain output without burnout.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-niche-pillar-decisions",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Deciding what niche/content pillars to commit to.",
+    "normalized_problem": "niche/pillar decisions",
+    "problem_type": "decision_problem",
+    "desired_outcome": "Commit to clear content pillars.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-interpreting-analytics",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Understanding analytics to know what's working.",
+    "normalized_problem": "interpreting analytics",
+    "problem_type": "knowledge_gap",
+    "desired_outcome": "Read analytics and act on them.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-converting-views-to-audience",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Turning views into followers/email subscribers.",
+    "normalized_problem": "converting views to audience",
+    "problem_type": "acquisition_problem",
+    "desired_outcome": "Convert viewers into a real audience.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-creators-trying-to-post-consistently-on-reels-tiktok-weekly-content-planning",
+    "type": "problem",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "statement": "Planning a week of content in advance.",
+    "normalized_problem": "weekly content planning",
+    "problem_type": "planning_problem",
+    "desired_outcome": "Plan a week of content quickly.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-first-week-overwhelm",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Owners feel overwhelmed in the first days with a puppy.",
+    "normalized_problem": "first-week overwhelm",
+    "problem_type": "emotional_friction",
+    "desired_outcome": "Feel in control of the first weeks.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-potty-training-confusion",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Potty training is confusing and inconsistent.",
+    "normalized_problem": "potty training confusion",
+    "problem_type": "knowledge_gap",
+    "desired_outcome": "Follow a reliable potty routine.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-crate-training-difficulty",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Crate training feels cruel or isn't working.",
+    "normalized_problem": "crate training difficulty",
+    "problem_type": "knowledge_gap",
+    "desired_outcome": "Crate train calmly and effectively.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-nighttime-crying-sleep",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Puppy cries all night / disrupted sleep.",
+    "normalized_problem": "nighttime crying/sleep",
+    "problem_type": "operational_problem",
+    "desired_outcome": "Get the puppy sleeping through.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-no-daily-puppy-schedule",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Owners don't have a daily schedule for the puppy.",
+    "normalized_problem": "no daily puppy schedule",
+    "problem_type": "planning_problem",
+    "desired_outcome": "Follow a clear daily schedule.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-biting-nipping",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Biting and nipping is hard to curb.",
+    "normalized_problem": "biting/nipping",
+    "problem_type": "knowledge_gap",
+    "desired_outcome": "Reduce biting with a method.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-which-commands-first",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Unsure which commands to teach first and how.",
+    "normalized_problem": "which commands first",
+    "problem_type": "decision_problem",
+    "desired_outcome": "Know the command order to teach.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-socialization-uncertainty",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Socialization window feels confusing and time-pressured.",
+    "normalized_problem": "socialization uncertainty",
+    "problem_type": "time_problem",
+    "desired_outcome": "Socialize the puppy on time.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-leash-walking-difficulty",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Leash walking is chaotic.",
+    "normalized_problem": "leash walking difficulty",
+    "problem_type": "knowledge_gap",
+    "desired_outcome": "Walk calmly on a leash.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-conflicting-training-advice",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Conflicting advice online makes decisions hard.",
+    "normalized_problem": "conflicting training advice",
+    "problem_type": "decision_problem",
+    "desired_outcome": "Follow one trustworthy plan.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-vaccination-vet-tracking",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Tracking vaccinations and vet milestones.",
+    "normalized_problem": "vaccination/vet tracking",
+    "problem_type": "operational_problem",
+    "desired_outcome": "Stay on top of vet milestones.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-new-puppy-owners-in-the-first-weeks-separation-anxiety",
+    "type": "problem",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "statement": "Separation anxiety when left alone.",
+    "normalized_problem": "separation anxiety",
+    "problem_type": "emotional_friction",
+    "desired_outcome": "Build alone-time tolerance.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-welcome-book-contents-unclear",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Editable welcome-book/template tools fail to save or print, losing hosts' work.",
+    "normalized_problem": "welcome book contents unclear",
+    "problem_type": "technical_problem",
+    "desired_outcome": "Produce a house manual without tool failures.",
+    "source_refs": [
+      "src-airbnb-etsy-review-1star",
+      "src-airbnb-welcomebook-demand"
+    ],
+    "evidence_count": 2,
+    "basis": "observed",
+    "confidence": "MEDIUM",
+    "confidence_reason": "2 independent observed sources",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-cleaner-turnover-coordination",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Coordinating and standardizing cleaner turnover between guests is hard.",
+    "normalized_problem": "cleaner turnover coordination",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "Standardize every turnover.",
+    "source_refs": [
+      "src-airbnb-touchstay-cleaning"
+    ],
+    "evidence_count": 1,
+    "basis": "observed",
+    "confidence": "LOW",
+    "confidence_reason": "1 observed source",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-weekend-vs-weekday-pricing-uncertainty",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Hosts struggle to price weekends and weekdays differently.",
+    "normalized_problem": "weekend vs weekday pricing uncertainty",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Set confident day-of-week nightly rates.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-event-based-pricing-uncertainty",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Hosts don't know when to raise prices for local events.",
+    "normalized_problem": "event-based pricing uncertainty",
+    "problem_type": "financial_problem",
+    "desired_outcome": "Adjust rates for local demand spikes.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-occupancy-gaps-between-bookings",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Hosts have empty nights / gaps between bookings.",
+    "normalized_problem": "occupancy gaps between bookings",
+    "problem_type": "performance_problem",
+    "desired_outcome": "Reduce vacant nights.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-inconsistent-guest-messaging",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Guest messaging is inconsistent and time-consuming.",
+    "normalized_problem": "inconsistent guest messaging",
+    "problem_type": "communication_problem",
+    "desired_outcome": "Send consistent, timely guest messages.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-remote-listing-management",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Managing a listing remotely from another city is stressful.",
+    "normalized_problem": "remote listing management",
+    "problem_type": "operational_problem",
+    "desired_outcome": "Run the property hands-off.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-minimum-stay-rule-confusion",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Hosts are unsure how to set minimum-stay rules.",
+    "normalized_problem": "minimum-stay rule confusion",
+    "problem_type": "decision_problem",
+    "desired_outcome": "Choose the right min-stay settings.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-difficult-guest-handling",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Handling difficult or rule-breaking guests is draining.",
+    "normalized_problem": "difficult guest handling",
+    "problem_type": "emotional_friction",
+    "desired_outcome": "Handle problem guests calmly and safely.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-maintaining-consistent-reviews",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Keeping reviews consistently high is hard.",
+    "normalized_problem": "maintaining consistent reviews",
+    "problem_type": "retention_problem",
+    "desired_outcome": "Sustain 5-star reviews.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-per-property-expense-tracking",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Tracking expenses and profit per property is messy.",
+    "normalized_problem": "per-property expense tracking",
+    "problem_type": "financial_problem",
+    "desired_outcome": "See true profit per listing.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-listing-optimization-uncertainty",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Writing a listing that ranks and converts is confusing.",
+    "normalized_problem": "listing optimization uncertainty",
+    "problem_type": "performance_problem",
+    "desired_outcome": "Improve listing visibility and bookings.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-supply-restocking-tracking",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Restocking supplies and consumables is easy to forget.",
+    "normalized_problem": "supply restocking tracking",
+    "problem_type": "operational_problem",
+    "desired_outcome": "Never run out of guest supplies.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-airbnb-hosts-with-1-5-properties-dynamic-pricing-tool-setup",
+    "type": "problem",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "statement": "Setting up automated/dynamic pricing tools is intimidating.",
+    "normalized_problem": "dynamic pricing tool setup",
+    "problem_type": "technical_problem",
+    "desired_outcome": "Automate pricing confidently.",
+    "source_refs": [],
+    "evidence_count": 0,
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred candidate; no observed evidence",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-overwhelmed-by-their-to-do-list-no-prioritization-on-the-list",
+    "type": "problem",
+    "market_id": "mkt-productivity-and-self-organization",
+    "submarket_id": "sub-productivity-and-self-organization-task-and-time-management",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "statement": "Everything lands on one undifferentiated list, so nothing feels urgent and the brain defaults to the easiest task.",
+    "normalized_problem": "no prioritization on the list",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "Know the few things that actually matter today.",
+    "source_refs": [
+      "src-80971f406e02",
+      "src-fb079add15f1",
+      "src-fd5340158c73"
+    ],
+    "evidence_count": 3,
+    "current_solutions": [
+      "1-3-5 method",
+      "manual triage"
+    ],
+    "attempts": [
+      "adding due dates to everything"
+    ],
+    "solution_complaints": [
+      "lists assume infinite time and just keep growing"
+    ],
+    "basis": "observed",
+    "confidence": "MEDIUM",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:23:07.551617+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-overwhelmed-by-their-to-do-list-task-paralysis-from-overwhelm",
+    "type": "problem",
+    "market_id": "mkt-productivity-and-self-organization",
+    "submarket_id": "sub-productivity-and-self-organization-task-and-time-management",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "statement": "Too many tasks at once triggers overwhelm and freeze — people can't decide where to start (task paralysis).",
+    "normalized_problem": "task paralysis from overwhelm",
+    "problem_type": "emotional_friction",
+    "desired_outcome": "Start the first task without freezing.",
+    "source_refs": [
+      "src-3790487b0b45",
+      "src-ac59973f9e6e",
+      "src-a285020b3e27",
+      "src-e0002b616a4c"
+    ],
+    "evidence_count": 4,
+    "current_solutions": [
+      "break tasks into chunks",
+      "pick a task at random"
+    ],
+    "attempts": [
+      "pushing through with willpower"
+    ],
+    "solution_complaints": [
+      "generic advice, not a repeatable system"
+    ],
+    "basis": "observed",
+    "confidence": "MEDIUM",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:23:07.551648+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-overwhelmed-by-their-to-do-list-quick-vs-big-tasks-not-separated",
+    "type": "problem",
+    "market_id": "mkt-productivity-and-self-organization",
+    "submarket_id": "sub-productivity-and-self-organization-task-and-time-management",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "statement": "No differentiation between quick tasks and big projects, so important deep work is deferred.",
+    "normalized_problem": "quick vs big tasks not separated",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "Separate quick wins from deep-work projects.",
+    "source_refs": [
+      "src-80971f406e02"
+    ],
+    "evidence_count": 1,
+    "current_solutions": [],
+    "attempts": [],
+    "solution_complaints": [],
+    "basis": "observed",
+    "confidence": "LOW",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:23:07.551669+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-overwhelmed-by-their-to-do-list-apps-too-complex-and-abandoned",
+    "type": "problem",
+    "market_id": "mkt-productivity-and-self-organization",
+    "submarket_id": "sub-productivity-and-self-organization-task-and-time-management",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "statement": "To-do and productivity apps feel too complex; people feel they must use every feature, creating upkeep, then abandon or switch apps.",
+    "normalized_problem": "apps too complex and abandoned",
+    "problem_type": "technical_problem",
+    "desired_outcome": "A simple system that doesn't need constant maintenance.",
+    "source_refs": [
+      "src-1798f2bcf08c",
+      "src-fd35a34b44bf"
+    ],
+    "evidence_count": 2,
+    "current_solutions": [
+      "all-in-one productivity apps"
+    ],
+    "attempts": [
+      "trying every new app"
+    ],
+    "solution_complaints": [
+      "cluttered",
+      "overwhelming",
+      "pointless maintenance"
+    ],
+    "basis": "observed",
+    "confidence": "MEDIUM",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:23:07.551689+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-overwhelmed-by-their-to-do-list-list-grows-endlessly-without-culling",
+    "type": "problem",
+    "market_id": "mkt-productivity-and-self-organization",
+    "submarket_id": "sub-productivity-and-self-organization-task-and-time-management",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "statement": "Lists grow endlessly (~150 tasks) with no method to cull, so the list itself becomes a source of stress.",
+    "normalized_problem": "list grows endlessly without culling",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "A repeatable way to prune and reset the list.",
+    "source_refs": [
+      "src-2ac4852a129e",
+      "src-fb079add15f1"
+    ],
+    "evidence_count": 2,
+    "current_solutions": [],
+    "attempts": [
+      "starting a fresh list repeatedly"
+    ],
+    "solution_complaints": [
+      "nothing ever gets removed"
+    ],
+    "basis": "observed",
+    "confidence": "LOW",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:23:07.551708+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-overwhelmed-by-their-to-do-list-tracking-not-completing",
+    "type": "problem",
+    "market_id": "mkt-productivity-and-self-organization",
+    "submarket_id": "sub-productivity-and-self-organization-task-and-time-management",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "statement": "Tracking tasks doesn't translate into completing them — the list organizes but doesn't drive action.",
+    "normalized_problem": "tracking not completing",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "A system that drives follow-through, not just capture.",
+    "source_refs": [
+      "src-fd5340158c73"
+    ],
+    "evidence_count": 1,
+    "current_solutions": [],
+    "attempts": [],
+    "solution_complaints": [
+      "a list is not a system"
+    ],
+    "basis": "observed",
+    "confidence": "LOW",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:23:07.551727+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-professionals-upskilling-on-chatgpt-for-their-job-inconsistent-output-quality",
+    "type": "problem",
+    "market_id": "mkt-ai-tools-and-automation",
+    "submarket_id": "sub-ai-tools-and-automation-prompting-and-llm-skills",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "statement": "Output quality is inconsistent and highly prompt-dependent, so professionals can't reliably get good results.",
+    "normalized_problem": "inconsistent output quality",
+    "problem_type": "technical_problem",
+    "desired_outcome": "Reliable, repeatable results for work tasks.",
+    "source_refs": [
+      "src-008ff2322e17",
+      "src-384e488a92d4",
+      "src-1abcef33be6b"
+    ],
+    "evidence_count": 3,
+    "current_solutions": [
+      "trial-and-error prompting"
+    ],
+    "attempts": [
+      "retrying prompts many times"
+    ],
+    "solution_complaints": [
+      "inconsistent within the same response"
+    ],
+    "basis": "observed",
+    "confidence": "MEDIUM",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:25:49.861140+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-professionals-upskilling-on-chatgpt-for-their-job-hallucinations-untrustworthy-for-work",
+    "type": "problem",
+    "market_id": "mkt-ai-tools-and-automation",
+    "submarket_id": "sub-ai-tools-and-automation-prompting-and-llm-skills",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "statement": "Hallucinations create real professional risk (e.g., fabricated citations), so output can't be trusted for final work.",
+    "normalized_problem": "hallucinations untrustworthy for work",
+    "problem_type": "risk_problem",
+    "desired_outcome": "Output they can trust without risking credibility.",
+    "source_refs": [
+      "src-384e488a92d4",
+      "src-653258a2b899",
+      "src-14cf740c6b92"
+    ],
+    "evidence_count": 3,
+    "current_solutions": [
+      "manual verification"
+    ],
+    "attempts": [],
+    "solution_complaints": [
+      "fabricated sources undermine credibility"
+    ],
+    "basis": "observed",
+    "confidence": "MEDIUM",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:25:49.861180+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-professionals-upskilling-on-chatgpt-for-their-job-prompt-writing-skill-gap",
+    "type": "problem",
+    "market_id": "mkt-ai-tools-and-automation",
+    "submarket_id": "sub-ai-tools-and-automation-prompting-and-llm-skills",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "statement": "People don't know how to write effective prompts; results vary widely by skill level.",
+    "normalized_problem": "prompt-writing skill gap",
+    "problem_type": "skill_problem",
+    "desired_outcome": "Write prompts that work the first time.",
+    "source_refs": [
+      "src-008ff2322e17",
+      "src-e04731f5c49e"
+    ],
+    "evidence_count": 2,
+    "current_solutions": [
+      "copy-pasting Reddit prompts",
+      "courses"
+    ],
+    "attempts": [],
+    "solution_complaints": [
+      "generic prompts don't fit their work"
+    ],
+    "basis": "observed",
+    "confidence": "MEDIUM",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:25:49.861206+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-professionals-upskilling-on-chatgpt-for-their-job-no-role-specific-prompts",
+    "type": "problem",
+    "market_id": "mkt-ai-tools-and-automation",
+    "submarket_id": "sub-ai-tools-and-automation-prompting-and-llm-skills",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "statement": "Generic prompts don't fit a specific role or workflow; professionals want role-specific ones.",
+    "normalized_problem": "no role-specific prompts",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "Prompts tailored to my exact job tasks.",
+    "source_refs": [
+      "src-3881bab7d4ec",
+      "src-e5780dbc3255"
+    ],
+    "evidence_count": 2,
+    "current_solutions": [
+      "buying prompt packs"
+    ],
+    "attempts": [],
+    "solution_complaints": [],
+    "basis": "observed",
+    "confidence": "LOW",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:25:49.861230+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-professionals-upskilling-on-chatgpt-for-their-job-ad-hoc-usage-no-system",
+    "type": "problem",
+    "market_id": "mkt-ai-tools-and-automation",
+    "submarket_id": "sub-ai-tools-and-automation-prompting-and-llm-skills",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "statement": "There's no repeatable system for applying ChatGPT across daily work tasks — usage stays ad hoc.",
+    "normalized_problem": "ad hoc usage no system",
+    "problem_type": "workflow_problem",
+    "desired_outcome": "A workflow to use AI consistently at work.",
+    "source_refs": [
+      "src-e04731f5c49e"
+    ],
+    "evidence_count": 1,
+    "current_solutions": [],
+    "attempts": [],
+    "solution_complaints": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:25:49.861255+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-organizing-bills-and-subscriptions-underestimating-total-subscription-count-and-monthly-spending",
+    "type": "problem",
+    "market_id": "mkt-personal-finance",
+    "submarket_id": "sub-personal-finance-financial-organization",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "statement": "Consumers frequently underestimate how many recurring subscriptions they pay for and their total monthly cost, leading to unnoticed financial drain.",
+    "normalized_problem": "Underestimating total subscription count and monthly spending",
+    "problem_type": "Financial",
+    "desired_outcome": "Gain complete visibility over all active recurring subscriptions and total monthly recurring expenses in one place.",
+    "source_refs": [
+      "src-19baab263f8e",
+      "src-536fc1f23230",
+      "src-0a861d7c6f57",
+      "src-e7512ddba5bb",
+      "src-fa518b147dae"
+    ],
+    "evidence_count": 5,
+    "current_solutions": [
+      "Subscription management apps (e.g., Rocket Money, PocketGuard)",
+      "Manual spreadsheet trackers",
+      "Manual bank statement reviews"
+    ],
+    "attempts": [
+      "Reviewing bank and credit card statements manually",
+      "Setting up custom Google Sheets or Excel templates"
+    ],
+    "solution_complaints": [
+      "Full budgeting apps add unnecessary complexity when users only want subscription tracking",
+      "Some apps fail to detect or track certain recurring bills automatically"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:48:02.841519+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-organizing-bills-and-subscriptions-difficulty-tracking-multiple-bill-due-dates-and-payment-timelines",
+    "type": "problem",
+    "market_id": "mkt-personal-finance",
+    "submarket_id": "sub-personal-finance-financial-organization",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "statement": "People struggle to keep track of disparate due dates across various utilities, service providers, and credit cards, leading to late payment anxiety and fees.",
+    "normalized_problem": "Difficulty tracking multiple bill due dates and payment timelines",
+    "problem_type": "Functional",
+    "desired_outcome": "Maintain a single consolidated calendar or checklist showing exact bill due dates and amounts.",
+    "source_refs": [
+      "src-101371de7f02",
+      "src-49f547510634",
+      "src-8c108d33a135",
+      "src-fc120e5dc433",
+      "src-4ca6e1a379d4",
+      "src-12e7d9847350"
+    ],
+    "evidence_count": 6,
+    "current_solutions": [
+      "Bill organizer apps (e.g., Chronicle, Bills Organizer & Reminder)",
+      "Paper calendars and reminder systems",
+      "Spreadsheet bill trackers"
+    ],
+    "attempts": [
+      "Creating calendar alerts",
+      "Sorting paper mail into inbox trays",
+      "Using fillable PDF trackers or spreadsheet schedules"
+    ],
+    "solution_complaints": [
+      "Paper systems become disorganized easily",
+      "Complex financial software requires too much manual setup and daily management"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:48:02.841567+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-organizing-bills-and-subscriptions-unpredictable-cash-flow-timing-caused-by-automated-payment-withdrawals",
+    "type": "problem",
+    "market_id": "mkt-personal-finance",
+    "submarket_id": "sub-personal-finance-financial-organization",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "statement": "Users setting bills to autopay struggle to monitor when funds will actually be debited, making cash flow tracking difficult and increasing overdraft risks.",
+    "normalized_problem": "Unpredictable cash flow timing caused by automated payment withdrawals",
+    "problem_type": "Financial",
+    "desired_outcome": "Predict exactly when auto-debits will hit bank accounts to ensure sufficient funds are available.",
+    "source_refs": [
+      "src-bef2f51d367e",
+      "src-6853c69b7988",
+      "src-2f548b7b1191"
+    ],
+    "evidence_count": 3,
+    "current_solutions": [
+      "Bank app account balance alerts",
+      "Manual calendar notes for autopay dates",
+      "Dedicated bill email accounts"
+    ],
+    "attempts": [
+      "Setting up separate email accounts just for bill statements",
+      "Automating bill payments through bank portals"
+    ],
+    "solution_complaints": [
+      "Autopay hides payment timing, making it hard to know how much cash remains available in checking accounts"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:48:02.841615+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-organizing-bills-and-subscriptions-overly-complex-budgeting-software-for-simple-bill-listing-needs",
+    "type": "problem",
+    "market_id": "mkt-personal-finance",
+    "submarket_id": "sub-personal-finance-financial-organization",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "statement": "Users seeking a simple bill and due-date checklist are forced into complex budgeting apps that demand extensive account linking and category setups.",
+    "normalized_problem": "Overly complex budgeting software for simple bill listing needs",
+    "problem_type": "Usability",
+    "desired_outcome": "A clean, straightforward app or tool that strictly lists bills and due dates without forced budgeting features.",
+    "source_refs": [
+      "src-c870464ab221",
+      "src-d8a47600853d",
+      "src-bc400ffcaec5"
+    ],
+    "evidence_count": 3,
+    "current_solutions": [
+      "Full budgeting software (e.g., Quicken Simplifi)",
+      "Standalone bill reminder apps",
+      "Printable PDF and paper templates"
+    ],
+    "attempts": [
+      "Downloading general budgeting apps",
+      "Building basic spreadsheet schedules"
+    ],
+    "solution_complaints": [
+      "Budgeting apps demand linking all financial accounts and setting spending goals when the user only wants a simple schedule of upcoming bills"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:48:02.841648+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-organizing-bills-and-subscriptions-third-party-bill-tracking-apps-fail-to-sync-with-utility-and-service-provi",
+    "type": "problem",
+    "market_id": "mkt-personal-finance",
+    "submarket_id": "sub-personal-finance-financial-organization",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "statement": "Third-party bill management apps frequently experience connection errors and sync failures when trying to link with utility, insurance, and service provider portals.",
+    "normalized_problem": "Third-party bill tracking apps fail to sync with utility and service provider accounts",
+    "problem_type": "Technical",
+    "desired_outcome": "Seamless, reliable automatic syncing between bill management tools and service provider payment portals.",
+    "source_refs": [
+      "src-8613548cfd25",
+      "src-db57aeea1f23"
+    ],
+    "evidence_count": 2,
+    "current_solutions": [
+      "Financial aggregator apps (e.g., Rocket Money)",
+      "Manual portal logins"
+    ],
+    "attempts": [
+      "Connecting cable, utility, and insurance provider accounts into bill tracking apps"
+    ],
+    "solution_complaints": [
+      "Apps report connection errors or fail to integrate with specific service providers",
+      "Provider websites have slow portals or glitchy payment interfaces"
+    ],
+    "basis": "observed",
+    "confidence": "MEDIUM",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:48:02.841693+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-organizing-bills-and-subscriptions-accumulation-of-physical-paper-mail-clutter-post-payment",
+    "type": "problem",
+    "market_id": "mkt-personal-finance",
+    "submarket_id": "sub-personal-finance-financial-organization",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "statement": "People who receive paper bills struggle with physical clutter and lack a clear system for organizing mail post-payment.",
+    "normalized_problem": "Accumulation of physical paper mail clutter post-payment",
+    "problem_type": "Operational",
+    "desired_outcome": "An organized, low-clutter system for collecting, paying, and archiving or disposing of paper bills.",
+    "source_refs": [
+      "src-8c108d33a135",
+      "src-33f6bc0139c4",
+      "src-6853c69b7988",
+      "src-1559c1ecb930"
+    ],
+    "evidence_count": 4,
+    "current_solutions": [
+      "Physical filing boxes or folders",
+      "Paperless electronic billing",
+      "Dedicated mail sorting stations"
+    ],
+    "attempts": [
+      "Storing paid paper bills in storage boxes under tables",
+      "Sorting mail into physical trays"
+    ],
+    "solution_complaints": [
+      "Paper bills accumulate endlessly without clear retention guidelines"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:48:02.841888+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-people-organizing-bills-and-subscriptions-inability-to-keep-up-with-bill-payments-due-to-demanding-work-schedules",
+    "type": "problem",
+    "market_id": "mkt-personal-finance",
+    "submarket_id": "sub-personal-finance-financial-organization",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "statement": "Individuals working extreme work hours lack the time needed to manually keep up with paying, tracking, and managing monthly bills.",
+    "normalized_problem": "Inability to keep up with bill payments due to demanding work schedules",
+    "problem_type": "Operational",
+    "desired_outcome": "Low-touch or automated bill management routines that take minimal time to maintain.",
+    "source_refs": [
+      "src-3c1ce96fe8fb",
+      "src-7b5838eefb79"
+    ],
+    "evidence_count": 2,
+    "current_solutions": [
+      "Full autopay automation",
+      "Hiring daily money managers or financial assistants"
+    ],
+    "attempts": [
+      "Setting up automatic payments across all accounts",
+      "Trialing personal money manager services"
+    ],
+    "solution_complaints": [
+      "Hiring daily money managers can be costly",
+      "Autopay without monitoring risks overdrafts when account balances fluctuate"
+    ],
+    "basis": "observed",
+    "confidence": "MEDIUM",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:48:02.842046+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-lifters-planning-a-cut-or-bulk-uncertainty-in-choosing-between-cutting-and-bulking-phase",
+    "type": "problem",
+    "market_id": "mkt-fitness-and-physical-training",
+    "submarket_id": "sub-fitness-and-physical-training-strength-and-physique",
+    "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+    "statement": "Beginner and skinny-fat lifters struggle to decide whether to cut or bulk first.",
+    "normalized_problem": "Uncertainty in choosing between cutting and bulking phase",
+    "problem_type": "decision_paralysis",
+    "desired_outcome": "Clear guidance on whether to start with a caloric surplus or deficit based on current body composition.",
+    "source_refs": [
+      "src-6031d548a0e7",
+      "src-85696a396fc6",
+      "src-dd8c3cf2404a",
+      "src-0555fc539577",
+      "src-6a3c505cfc9f",
+      "src-1d10bfb28994",
+      "src-602afacec473",
+      "src-0c9279a69d81"
+    ],
+    "evidence_count": 8,
+    "current_solutions": [
+      "Online bulk vs cut quizzes",
+      "Body fat percentage rule of thumbs",
+      "Following generic advice based on training experience"
+    ],
+    "attempts": [
+      "Tried cutting first while skinny-fat",
+      "Attempted recomp or maintenance before deciding"
+    ],
+    "solution_complaints": [
+      "Cutting first when skinny-fat led to rapid strength loss and poor visual results",
+      "Conflicting advice across different forums and trainers"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:55:07.802195+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-lifters-planning-a-cut-or-bulk-strength-and-muscle-loss-during-a-cutting-phase",
+    "type": "problem",
+    "market_id": "mkt-fitness-and-physical-training",
+    "submarket_id": "sub-fitness-and-physical-training-strength-and-physique",
+    "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+    "statement": "Lifters risk losing strength and muscle mass during a calorie-deficit cutting phase.",
+    "normalized_problem": "Strength and muscle loss during a cutting phase",
+    "problem_type": "performance_decline",
+    "desired_outcome": "Maintain maximal strength and spare lean muscle mass while losing body fat.",
+    "source_refs": [
+      "src-17a7ecf489da",
+      "src-6031d548a0e7",
+      "src-7138a6fe8e31",
+      "src-ad75cd4d2427",
+      "src-6e4a06bcc0c1"
+    ],
+    "evidence_count": 5,
+    "current_solutions": [
+      "Increasing protein intake during cuts",
+      "Using heavy single reps in core lifts to preserve strength",
+      "Focusing strictly on compound movements"
+    ],
+    "attempts": [
+      "Incorporating high protein diet during calorie deficit",
+      "Maintaining heavy strength work like presses and squats during cut"
+    ],
+    "solution_complaints": [
+      "Strength drops off significantly during cuts, causing discouragement",
+      "Fatigue makes maintaining lifting intensity difficult on lower calories"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:55:07.802237+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-lifters-planning-a-cut-or-bulk-excessive-fat-gain-and-loss-of-stamina-from-aggressive-bulking",
+    "type": "problem",
+    "market_id": "mkt-fitness-and-physical-training",
+    "submarket_id": "sub-fitness-and-physical-training-strength-and-physique",
+    "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+    "statement": "Lifters gain excessive body fat and experience poor conditioning when bulking too aggressively.",
+    "normalized_problem": "Excessive fat gain and loss of stamina from aggressive bulking",
+    "problem_type": "side_effect",
+    "desired_outcome": "Maximize muscle growth while minimizing body fat gain and retaining cardiovascular stamina.",
+    "source_refs": [
+      "src-3d5ec71dd75f",
+      "src-17a7ecf489da",
+      "src-eb96f5201c63",
+      "src-14fe1a596f0e"
+    ],
+    "evidence_count": 4,
+    "current_solutions": [
+      "Lean bulking with a modest calorie surplus (+10%)",
+      "Incorporating cardio while bulking"
+    ],
+    "attempts": [
+      "Dirty bulking with large calorie surpluses"
+    ],
+    "solution_complaints": [
+      "Dirty bulking leads to feeling out of breath easily and gaining too much fat that requires a long, grueling cut",
+      "Aerobic endurance and maximal oxygen uptake suffer during bulking phases"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:55:07.802268+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-lifters-planning-a-cut-or-bulk-ineffective-muscle-growth-due-to-short-bulk-cut-cycles",
+    "type": "problem",
+    "market_id": "mkt-fitness-and-physical-training",
+    "submarket_id": "sub-fitness-and-physical-training-strength-and-physique",
+    "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+    "statement": "Frequent, short bulk-and-cut cycles disrupt long-term muscle building progress.",
+    "normalized_problem": "Ineffective muscle growth due to short bulk/cut cycles",
+    "problem_type": "inefficiency",
+    "desired_outcome": "Sustain a bulking phase long enough to build meaningful muscle mass without constantly switching goals.",
+    "source_refs": [
+      "src-94a9555dd077",
+      "src-da25f06dfad2",
+      "src-667fe6602213",
+      "src-f317de51d739"
+    ],
+    "evidence_count": 4,
+    "current_solutions": [
+      "Planning long bulks lasting 8 to 11 months",
+      "Using short minicuts interspersed between moderate bulks"
+    ],
+    "attempts": [
+      "Alternating short 8-12 week bulks with short cuts"
+    ],
+    "solution_complaints": [
+      "Perpetual short bulk and cut cycles lead to zero net muscle progress",
+      "Cutting too frequently interrupts strength gains and muscle growth"
+    ],
+    "basis": "observed",
+    "confidence": "LOW",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:55:07.802296+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-artists-growing-on-streaming-platforms-low-streaming-royalty-payouts",
+    "type": "problem",
+    "market_id": "mkt-music-and-audio-production",
+    "submarket_id": "sub-music-and-audio-production-artist-growth-and-release",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "statement": "Independent artists earn extremely low royalty payouts per stream, making it difficult to generate a sustainable income without millions of monthly streams.",
+    "normalized_problem": "low streaming royalty payouts",
+    "problem_type": "financial",
+    "desired_outcome": "Earn a fair, living wage from streaming releases without requiring millions of streams per month.",
+    "source_refs": [
+      "src-06205c36032c",
+      "src-63093f99da46",
+      "src-db2abca70714",
+      "src-7994764445b9",
+      "src-56ef75579bdf",
+      "src-031cf9c3296a",
+      "src-a9491358651b",
+      "src-0aa713112cf0"
+    ],
+    "evidence_count": 8,
+    "current_solutions": [
+      "Selling music directly to fans on platforms like Bandcamp",
+      "Relying on live performances and physical merchandise sales",
+      "Distributing music across platforms offering higher per-stream rates"
+    ],
+    "attempts": [
+      "Releasing tracks exclusively on digital streaming platforms",
+      "Pushing for continuous stream volume to meet minimum payment thresholds"
+    ],
+    "solution_complaints": [
+      "Spotify requires approximately 250,000 monthly streams just to earn $1,000",
+      "Minimum stream thresholds prevent small artists from receiving any payout on low-volume tracks",
+      "Platform monetization models heavily favor major record labels over independent creators"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:59:08.304552+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-artists-growing-on-streaming-platforms-difficulty-maintaining-organic-visibility-amidst-platform-saturation",
+    "type": "problem",
+    "market_id": "mkt-music-and-audio-production",
+    "submarket_id": "sub-music-and-audio-production-artist-growth-and-release",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "statement": "Extreme market saturation and algorithmic shifts make it difficult for independent artists to maintain organic visibility and steady playlist growth.",
+    "normalized_problem": "difficulty maintaining organic visibility amidst platform saturation",
+    "problem_type": "functional",
+    "desired_outcome": "Achieve predictable organic discovery and steady listener growth across music platforms.",
+    "source_refs": [
+      "src-3df252eee5ba",
+      "src-707d96da672c",
+      "src-a1b1cc228b3b",
+      "src-871c7939b5f3",
+      "src-3766686c413f",
+      "src-28cbe699c294",
+      "src-86dbda77309f"
+    ],
+    "evidence_count": 7,
+    "current_solutions": [
+      "Pitching releases to curated platform playlists",
+      "Cross-promoting music on short-form video apps like TikTok and Instagram Reels",
+      "Maintaining regular posting schedules using trending audio tracks"
+    ],
+    "attempts": [
+      "Posting promotional social content three or more times per week",
+      "Adapting release strategies to fit platform algorithmic guidelines"
+    ],
+    "solution_complaints": [
+      "Sudden playlist or algorithm changes can cause severe, unexplained flatlines in follower growth",
+      "The constant influx of thousands of daily releases makes standing out nearly impossible without external push"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:59:08.304597+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-artists-growing-on-streaming-platforms-exposure-to-artificial-streaming-and-fraudulent-promotion-scams",
+    "type": "problem",
+    "market_id": "mkt-music-and-audio-production",
+    "submarket_id": "sub-music-and-audio-production-artist-growth-and-release",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "statement": "Promoting music on streaming services exposes artists to artificial streaming scams and bot farms that manipulate charts and risk account penalties.",
+    "normalized_problem": "exposure to artificial streaming and fraudulent promotion scams",
+    "problem_type": "functional",
+    "desired_outcome": "Boost stream counts through authentic listener engagement without risking fraudulent activity or account action.",
+    "source_refs": [
+      "src-33e92592aab4",
+      "src-593139e5be41",
+      "src-135ccbececbf",
+      "src-09280c53e178"
+    ],
+    "evidence_count": 4,
+    "current_solutions": [
+      "Relying strictly on organic audience building",
+      "Vetting playlist curators and third-party promotion services carefully"
+    ],
+    "attempts": [
+      "Using automated marketing platforms and external playlist submission services"
+    ],
+    "solution_complaints": [
+      "Distinguishing legitimate promotional services from bot farms is extremely difficult",
+      "Fraudulent streams distort audience analytics and put artist profiles at risk of removal or penalties"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:59:08.304628+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-artists-growing-on-streaming-platforms-fragmented-multi-platform-promotional-ecosystem",
+    "type": "problem",
+    "market_id": "mkt-music-and-audio-production",
+    "submarket_id": "sub-music-and-audio-production-artist-growth-and-release",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "statement": "Music discovery and audience building are fragmented across dozens of platforms, placing a heavy management burden on independent artists.",
+    "normalized_problem": "fragmented multi-platform promotional ecosystem",
+    "problem_type": "process",
+    "desired_outcome": "Streamline fan acquisition and profile management across multiple streaming and social channels.",
+    "source_refs": [
+      "src-707d96da672c",
+      "src-3766686c413f",
+      "src-db62e8d70982",
+      "src-26387f7fb894",
+      "src-e5f4e07ddc3b",
+      "src-9edc3c6ab53b"
+    ],
+    "evidence_count": 6,
+    "current_solutions": [
+      "Focusing efforts on 1-2 primary channels where target fans spend time",
+      "Utilizing centralized analytics and link-in-bio tools"
+    ],
+    "attempts": [
+      "Claiming and maintaining creator profiles across 9+ streaming services simultaneously",
+      "Creating unique short-form video and story content tailored to each platform"
+    ],
+    "solution_complaints": [
+      "Managing multiple dashboards, profiles, and analytics tools causes creator fatigue and burnout",
+      "Different platform best practices and audience expectations make unified growth strategies difficult to execute"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:59:08.304654+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-artists-growing-on-streaming-platforms-low-conversion-and-poor-roi-on-paid-music-ad-campaigns",
+    "type": "problem",
+    "market_id": "mkt-music-and-audio-production",
+    "submarket_id": "sub-music-and-audio-production-artist-growth-and-release",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "statement": "Paid digital ad campaigns and automated promotional tools often yield poor return on investment and inconsistent stream conversion for independent budgets.",
+    "normalized_problem": "low conversion and poor ROI on paid music ad campaigns",
+    "problem_type": "financial",
+    "desired_outcome": "Convert ad spend directly into active, long-term listeners at an affordable cost per acquisition.",
+    "source_refs": [
+      "src-e95e9a55a2b8",
+      "src-8d28671b382c",
+      "src-7d78650b903e",
+      "src-b1aa9a8362a8"
+    ],
+    "evidence_count": 4,
+    "current_solutions": [
+      "Running targeted Meta and Instagram ad campaigns",
+      "Using automated music advertising platforms like SymphonyOS"
+    ],
+    "attempts": [
+      "Testing small daily ad budgets ($5–$10/day) to boost Spotify tracks",
+      "Experimenting with multiple promotional tools and playlist campaign systems"
+    ],
+    "solution_complaints": [
+      "Small daily ad spends often fail to generate noticeable or sustained streaming increases",
+      "Automated promotion platforms undergo frequent changes and yield inconsistent conversion results"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:59:08.304685+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-account-execs-running-discovery-calls-insufficient-call-time-to-complete-thorough-discovery-and-establish-next-steps",
+    "type": "problem",
+    "market_id": "mkt-sales-and-closing",
+    "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "statement": "Account Executives struggle to complete effective discovery within standard 30-minute call windows, running out of time before understanding deep buyer pain or setting next steps.",
+    "normalized_problem": "Insufficient call time to complete thorough discovery and establish next steps",
+    "problem_type": "functional",
+    "desired_outcome": "Uncover critical business pain and align on clear next steps within a tight 30-minute timeframe without feeling rushed.",
+    "source_refs": [
+      "src-44696ddbd94e",
+      "src-71822e218fd7"
+    ],
+    "evidence_count": 2,
+    "current_solutions": [
+      "Rigid time-allocation frameworks (e.g., 2 mins intro, 18 mins discovery, 6 mins next steps)",
+      "Standardized discovery templates and cheat sheets",
+      "Open-ended question checklists"
+    ],
+    "attempts": [
+      "Allocating fixed minutes for rapport and agenda setting before asking discovery questions"
+    ],
+    "solution_complaints": [
+      "Light rapport and agenda setting consume half the call window, leaving minimal time to dive deep into buyer pain points."
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T12:11:28.743303+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-account-execs-running-discovery-calls-discovery-calls-feeling-like-interrogations-rather-than-natural-business-conve",
+    "type": "problem",
+    "market_id": "mkt-sales-and-closing",
+    "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "statement": "Discovery calls often turn into dynamic interrogations or robotic question checklists, annoying buyers and stalling conversations.",
+    "normalized_problem": "Discovery calls feeling like interrogations rather than natural business conversations",
+    "problem_type": "functional",
+    "desired_outcome": "Conduct fluid, engaging conversations that extract deep buyer insights without making prospects feel questioned or defensive.",
+    "source_refs": [
+      "src-b771ab056b4a",
+      "src-1554f6295287",
+      "src-f0f70a518423",
+      "src-21dbac67659d",
+      "src-a0b821e9807d"
+    ],
+    "evidence_count": 5,
+    "current_solutions": [
+      "Tactical empathy techniques",
+      "Qualification frameworks like BANT or MEDDIC",
+      "Standard discovery call scripts"
+    ],
+    "attempts": [
+      "Deploying tactical empathy techniques from sales books",
+      "Asking granular technical or infrastructure questions straight away"
+    ],
+    "solution_complaints": [
+      "Reps stall when prospects push back or answer outside the script",
+      "Deep technical questioning can make executive buyers combative or defensive"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T12:11:28.743355+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-account-execs-running-discovery-calls-difficulty-leading-discovery-calls-due-to-limited-domain-and-product-knowledge",
+    "type": "problem",
+    "market_id": "mkt-sales-and-closing",
+    "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "statement": "New or recently promoted Account Executives struggle to run effective discovery calls due to a lack of domain and product expertise.",
+    "normalized_problem": "Difficulty leading discovery calls due to limited domain and product knowledge",
+    "problem_type": "personal",
+    "desired_outcome": "Lead credible, insightful discovery conversations early in a new AE role without getting derailed by technical gaps.",
+    "source_refs": [
+      "src-ab2882bc2737",
+      "src-af3d8ae10d25",
+      "src-66b5c3a38c94",
+      "src-4e23c0e8312d",
+      "src-c190510f9438"
+    ],
+    "evidence_count": 5,
+    "current_solutions": [
+      "Practicing non-product related discovery scenarios with teammates",
+      "AE onboarding programs",
+      "Reviewing recorded discovery calls of top performers"
+    ],
+    "attempts": [
+      "Giving premature advice or technical tips during the call to show value"
+    ],
+    "solution_complaints": [
+      "Standard onboarding material leaves new reps feeling ill-prepared when prospects ask detailed technical questions."
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T12:11:28.743383+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-account-execs-running-discovery-calls-inability-to-hold-effective-discovery-calls-with-executive-and-c-level-buyers",
+    "type": "problem",
+    "market_id": "mkt-sales-and-closing",
+    "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "statement": "Account Executives find it difficult to engage cold or impatient C-level executives who resist standard discovery questioning.",
+    "normalized_problem": "Inability to hold effective discovery calls with executive and C-level buyers",
+    "problem_type": "functional",
+    "desired_outcome": "Quickly establish authority and draw out strategic business priorities from senior executives.",
+    "source_refs": [
+      "src-faa8c1b39a9e",
+      "src-8e4f5e108acb",
+      "src-8dc72fe14de0"
+    ],
+    "evidence_count": 3,
+    "current_solutions": [
+      "Executive opening hooks",
+      "Limiting discovery to 2–3 high-level strategic questions"
+    ],
+    "attempts": [
+      "Starting calls with icebreaker small talk",
+      "Using standard discovery qualification questions"
+    ],
+    "solution_complaints": [
+      "Executive prospects become impatient or ice-cold when subjected to generic discovery questions."
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T12:11:28.743418+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-account-execs-running-discovery-calls-excessive-time-required-for-pre-call-discovery-preparation",
+    "type": "problem",
+    "market_id": "mkt-sales-and-closing",
+    "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "statement": "Thorough pre-call research takes up to an hour per meeting, making complete discovery preparation unsustainable for AEs managing high call volume.",
+    "normalized_problem": "Excessive time required for pre-call discovery preparation",
+    "problem_type": "functional",
+    "desired_outcome": "Thoroughly prepare for inbound and outbound discovery calls in just a few minutes.",
+    "source_refs": [
+      "src-e61b89aa50bd",
+      "src-14322681bce5",
+      "src-f491f6cbc256",
+      "src-63abb5518920"
+    ],
+    "evidence_count": 4,
+    "current_solutions": [
+      "AI tools for discovery call preparation",
+      "Pre-call research templates and prep sheets",
+      "Manual LinkedIn profile and company lookup"
+    ],
+    "attempts": [
+      "Spending 60 minutes researching accounts before every discovery call"
+    ],
+    "solution_complaints": [
+      "Spending 60 minutes of research per call is completely unfeasible for active sellers."
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T12:11:28.743453+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-account-execs-running-discovery-calls-difficulty-preparing-for-and-passing-mock-discovery-call-job-interviews",
+    "type": "problem",
+    "market_id": "mkt-sales-and-closing",
+    "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "statement": "Job candidates applying for AE roles face high anxiety and struggle to pass mock discovery calls during hiring interviews.",
+    "normalized_problem": "Difficulty preparing for and passing mock discovery call job interviews",
+    "problem_type": "personal",
+    "desired_outcome": "Confidently demonstrate discovery skills and win job offers during AE interview mock calls.",
+    "source_refs": [
+      "src-185e4686f208",
+      "src-50c25963f8ba",
+      "src-9218b954017e",
+      "src-03ae48c968ca"
+    ],
+    "evidence_count": 4,
+    "current_solutions": [
+      "AE interview training programs and YouTube guides",
+      "Mock call preparation slides setting agendas and objectives"
+    ],
+    "attempts": [
+      "Preparing slide decks with agendas to structure the mock interview call"
+    ],
+    "solution_complaints": [
+      "Interviewers evaluate candidates strictly on dynamic conversation control without providing clear expectations beforehand."
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T12:11:28.743479+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-first-time-renovators-budgeting-a-project-renovation-budget-overruns-caused-by-unforeseen-expenses",
+    "type": "problem",
+    "market_id": "mkt-home-and-diy",
+    "submarket_id": "sub-home-and-diy-home-renovation",
+    "audience_id": "aud-home-and-diy-home-renovation-first-time-renovators-budgeting-a-project",
+    "statement": "First-time renovators frequently experience severe budget overruns due to unexpected structural issues and hidden project costs.",
+    "normalized_problem": "Renovation budget overruns caused by unforeseen expenses",
+    "problem_type": "functional",
+    "desired_outcome": "Accurately forecast hidden expenses and maintain strict control over total renovation costs.",
+    "source_refs": [
+      "src-5f3c128c1fe6",
+      "src-832cbb39906c",
+      "src-c54dc5edeb9d",
+      "src-9819f4825d1c",
+      "src-bd3afa2eeeb8"
+    ],
+    "evidence_count": 5,
+    "current_solutions": [
+      "Setting aside an extra 10% to 15% contingency buffer in the budget",
+      "Using data-backed budget planning guides",
+      "Buying under budget to preserve cash reserves"
+    ],
+    "attempts": [
+      "Allocating general contingency funds in budget spreadsheets",
+      "Researching local neighborhood remodeling averages"
+    ],
+    "solution_complaints": [
+      "Up to 78% to 90% of home renovations still end up going over budget",
+      "Standard contingency percentages are often insufficient for older homes"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T18:30:01.447443+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-first-time-renovators-budgeting-a-project-difficulty-prioritizing-home-renovation-projects-on-a-tight-budget",
+    "type": "problem",
+    "market_id": "mkt-home-and-diy",
+    "submarket_id": "sub-home-and-diy-home-renovation",
+    "audience_id": "aud-home-and-diy-home-renovation-first-time-renovators-budgeting-a-project",
+    "statement": "First-time home renovators struggle to prioritize a long list of repairs and updates when working with limited funds.",
+    "normalized_problem": "Difficulty prioritizing home renovation projects on a tight budget",
+    "problem_type": "emotional",
+    "desired_outcome": "Confidently sequence projects based on urgency and return on investment without feeling overwhelmed.",
+    "source_refs": [
+      "src-bd3d8aac1185",
+      "src-a1dc2706f642",
+      "src-8c8a339fc12d",
+      "src-733c31ed1a6d",
+      "src-577467a32830",
+      "src-69e794076c37"
+    ],
+    "evidence_count": 6,
+    "current_solutions": [
+      "Categorizing upgrades into must-haves versus nice-to-haves",
+      "Renovating one room or project at a time",
+      "Focusing on core problems to solve before starting decorative work"
+    ],
+    "attempts": [
+      "Creating room checklists and physical project binders",
+      "Tinkering with small interior cosmetic fixes"
+    ],
+    "solution_complaints": [
+      "Having too many needed fixes quickly turns excitement into extreme overwhelm",
+      "Lack of a clear overall vision causes progress to stall"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T18:30:01.447484+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-first-time-renovators-budgeting-a-project-inability-to-accurately-estimate-renovation-costs-prior-to-home-purchase",
+    "type": "problem",
+    "market_id": "mkt-home-and-diy",
+    "submarket_id": "sub-home-and-diy-home-renovation",
+    "audience_id": "aud-home-and-diy-home-renovation-first-time-renovators-budgeting-a-project",
+    "statement": "Prospective buyers of older homes find it difficult to estimate realistic renovation costs before closing on a house.",
+    "normalized_problem": "Inability to accurately estimate renovation costs prior to home purchase",
+    "problem_type": "functional",
+    "desired_outcome": "Obtain accurate, realistic renovation estimates before making an offer on an outdated home.",
+    "source_refs": [
+      "src-d697afc6bfda",
+      "src-da5e766cd749",
+      "src-7d52e216b558",
+      "src-dcbc0ce85e26",
+      "src-d94399eb1030",
+      "src-79ff7fe650c9"
+    ],
+    "evidence_count": 6,
+    "current_solutions": [
+      "Consulting contractors for early cost assessments",
+      "Using online home renovation cost estimators and apps"
+    ],
+    "attempts": [
+      "Asking online homebuyer forums for budgeting formulas",
+      "Roughly estimating material prices online"
+    ],
+    "solution_complaints": [
+      "Rushing into home buys without thorough cost research leads to money-pit situations",
+      "Initial cost assumptions fail because actual labor and hidden repair costs aren't factored in early"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T18:30:01.447511+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-first-time-renovators-budgeting-a-project-diy-renovation-mistakes-inflating-project-costs",
+    "type": "problem",
+    "market_id": "mkt-home-and-diy",
+    "submarket_id": "sub-home-and-diy-home-renovation",
+    "audience_id": "aud-home-and-diy-home-renovation-first-time-renovators-budgeting-a-project",
+    "statement": "Inexperienced homeowners attempting DIY work to save money often make mistakes that lead to costly professional fixes.",
+    "normalized_problem": "DIY renovation mistakes inflating project costs",
+    "problem_type": "functional",
+    "desired_outcome": "Complete basic DIY updates safely without damaging fixtures or requiring expensive professional remediation.",
+    "source_refs": [
+      "src-922f4a40818a",
+      "src-164c5c87888c"
+    ],
+    "evidence_count": 2,
+    "current_solutions": [
+      "Following DIY video tutorials",
+      "Buying entry-level power tools"
+    ],
+    "attempts": [
+      "Attempting self-demo on fixtures like tubs or tiles to cut contractor costs"
+    ],
+    "solution_complaints": [
+      "Accidentally breaking surrounding infrastructure (e.g., wall tiles) creates disasters that blow the budget",
+      "Managing a DIY renovation requires time, effort, and project management skills many first-timers lack"
+    ],
+    "basis": "observed",
+    "confidence": "MEDIUM",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T18:30:01.447533+00:00",
+    "status": "active"
+  },
+  {
+    "id": "prb-first-time-renovators-budgeting-a-project-inadequate-and-fragmented-tools-for-tracking-renovation-budgets-and-expens",
+    "type": "problem",
+    "market_id": "mkt-home-and-diy",
+    "submarket_id": "sub-home-and-diy-home-renovation",
+    "audience_id": "aud-home-and-diy-home-renovation-first-time-renovators-budgeting-a-project",
+    "statement": "Homeowners rely on half-baked spreadsheets or complex financial software that fails to streamline renovation budgeting and contractor tracking.",
+    "normalized_problem": "Inadequate and fragmented tools for tracking renovation budgets and expenses",
+    "problem_type": "functional",
+    "desired_outcome": "Easily log contractor estimates, actual payments, materials, and schedules in one centralized tracker.",
+    "source_refs": [
+      "src-0ed9f483c73c",
+      "src-8f6da5ee0af7",
+      "src-d486c8bf0ed2",
+      "src-29635b86245d",
+      "src-a275600eb08e",
+      "src-b5a71bde3e2e"
+    ],
+    "evidence_count": 6,
+    "current_solutions": [
+      "Custom or free downloaded Excel/Google Sheets budget templates",
+      "Personal accounting software like Quicken",
+      "Dedicated renovation management apps (e.g., HomeZada, Home Stories)"
+    ],
+    "attempts": [
+      "Setting up custom spreadsheets with categories, estimates, and actuals",
+      "Configuring general financial software for home project tracking"
+    ],
+    "solution_complaints": [
+      "Traditional spreadsheets become fragmented and messy over multi-stage projects",
+      "General personal finance software like Quicken is unintuitive for tracking multi-item project budgets"
+    ],
+    "basis": "observed",
+    "confidence": "HIGH",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T18:30:01.447559+00:00",
+    "status": "active"
+  }
+]

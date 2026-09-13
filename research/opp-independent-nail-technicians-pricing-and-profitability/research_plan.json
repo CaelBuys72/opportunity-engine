@@ -1,0 +1,72 @@
+{
+  "pocket_id": "opp-independent-nail-technicians-pricing-and-profitability",
+  "known": [
+    "Audience: Independent nail technicians",
+    "Core problem: Independent nail technicians face a related cluster of problems around pricing & profitability — e.g. client price negotiation, fear of raising prices, income/expense tracking for tax.",
+    "Discovery score 54/100 (LOW confidence)",
+    "Evidence on file: Clients keep negotiating or asking for discounts.",
+    "Evidence on file: Techs are scared to raise their prices.",
+    "Evidence on file: Tracking income and expenses for taxes is stressful."
+  ],
+  "unknown": [
+    "True prevalence / how many are affected (UNKNOWN)",
+    "Creator ecosystem size (UNKNOWN)",
+    "Primary-community depth not yet retrieved this run"
+  ],
+  "validating_evidence": [
+    "Multiple independent communities describing the same problem in their own words",
+    "People actively asking for tools/templates (solution-seeking language)",
+    "Existing paid solutions with real sales AND recurring complaints (gap)"
+  ],
+  "weakening_evidence": [
+    "Problem is rare, mild, or one-off",
+    "Free resources already solve it well (free-information problem)",
+    "Strong free-sharing culture that resists paying",
+    "Existing products already excellent with no complaint pattern"
+  ],
+  "communities": [
+    "(none catalogued yet — investigate niche subs/forums)"
+  ],
+  "queries": [
+    {
+      "angle": "problem",
+      "query": "how do I independent nail technicians site:reddit.com"
+    },
+    {
+      "angle": "problem",
+      "query": "I don't know clients keep negotiating or asking for discounts. site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "techs are scared to raise their prices. frustrating site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "hate tracking income and expenses for taxes is stressful. site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "techs don't know their true product cost per set. template site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "independent nail technicians calculator site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "clients keep negotiating or asking for discounts. too complicated site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "techs are scared to raise their prices. too expensive site:reddit.com"
+    }
+  ],
+  "solutions_to_examine": [],
+  "questions": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service/free-info problem?",
+    "What is the single most useful asset we could ship?",
+    "What price will the audience tolerate, and on what evidence?"
+  ]
+}

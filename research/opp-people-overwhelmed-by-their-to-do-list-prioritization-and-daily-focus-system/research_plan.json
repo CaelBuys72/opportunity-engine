@@ -1,0 +1,178 @@
+{
+  "pocket_id": "opp-people-overwhelmed-by-their-to-do-list-prioritization-and-daily-focus-system",
+  "known": [
+    "Audience: People overwhelmed by their to-do list",
+    "Core problem: People overwhelmed by their to-do list face a related cluster of problems around prioritization & daily focus system — e.g. no prioritization on the list, task paralysis from overwhelm, quick vs big tasks not separated.",
+    "Discovery score 70/100 (MEDIUM confidence)",
+    "Evidence on file: Everything lands on one undifferentiated list, so nothing feels urgent and the brain defaults to the easiest task.",
+    "Evidence on file: Too many tasks at once triggers overwhelm and freeze — people can't decide where to start (task paralysis).",
+    "Evidence on file: No differentiation between quick tasks and big projects, so important deep work is deferred."
+  ],
+  "unknown": [
+    "True prevalence / how many are affected (UNKNOWN)",
+    "Creator ecosystem size (UNKNOWN)",
+    "Primary-community depth not yet retrieved this run"
+  ],
+  "validating_evidence": [
+    "Multiple independent communities describing the same problem in their own words",
+    "People actively asking for tools/templates (solution-seeking language)",
+    "Existing paid solutions with real sales AND recurring complaints (gap)"
+  ],
+  "weakening_evidence": [
+    "Problem is rare, mild, or one-off",
+    "Free resources already solve it well (free-information problem)",
+    "Strong free-sharing culture that resists paying",
+    "Existing products already excellent with no complaint pattern"
+  ],
+  "communities": [
+    "(none catalogued yet — investigate niche subs/forums)"
+  ],
+  "queries": [
+    {
+      "angle": "problem",
+      "query": "how do I people overwhelmed by their to-do list site:reddit.com"
+    },
+    {
+      "angle": "problem",
+      "query": "I don't know everything lands on one undifferentiated list, so nothing feels urgent and the brain defaults to the easiest task. site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "too many tasks at once triggers overwhelm and freeze — people can't decide where to start (task paralysis). frustrating site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "hate no differentiation between quick tasks and big projects, so important deep work is deferred. site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "people overwhelmed by their to-do list template site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "everything lands on one undifferentiated list, so nothing feels urgent and the brain defaults to the easiest task. calculator site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "too many tasks at once triggers overwhelm and freeze — people can't decide where to start (task paralysis). too complicated site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "no differentiation between quick tasks and big projects, so important deep work is deferred. too expensive site:reddit.com"
+    }
+  ],
+  "solutions_to_examine": [],
+  "questions": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service/free-info problem?",
+    "What is the single most useful asset we could ship?",
+    "What price will the audience tolerate, and on what evidence?"
+  ],
+  "executed": [
+    {
+      "query": "People overwhelmed by their to-do list problem reddit",
+      "intent": "problem",
+      "results": 9,
+      "sources_retained": 9
+    },
+    {
+      "query": "how do People overwhelmed by their to-do list currently",
+      "intent": "behavior",
+      "results": 14,
+      "sources_retained": 7
+    },
+    {
+      "query": "People overwhelmed by their to-do list frustrated OR struggle",
+      "intent": "pain",
+      "results": 10,
+      "sources_retained": 6
+    },
+    {
+      "query": "Everything lands on one undifferentiated list, so nothing feels urgent and the brain defaults to the easiest task. reddit",
+      "intent": "problem",
+      "results": 9,
+      "sources_retained": 8
+    },
+    {
+      "query": "Too many tasks at once triggers overwhelm and freeze — people can't decide where to start (task paralysis). reddit",
+      "intent": "problem",
+      "results": 13,
+      "sources_retained": 8
+    },
+    {
+      "query": "People overwhelmed by their to-do list tools OR template OR software",
+      "intent": "existing_solution",
+      "results": 10,
+      "sources_retained": 10
+    },
+    {
+      "query": "People overwhelmed by their to-do list template OR spreadsheet OR notion pricing",
+      "intent": "pricing",
+      "results": 10,
+      "sources_retained": 10
+    },
+    {
+      "query": "People overwhelmed by their to-do list what specific mechanics cause existing daily focus frameworks",
+      "intent": "dynamic",
+      "results": 13,
+      "sources_retained": 6
+    },
+    {
+      "query": "People overwhelmed by their to-do list how do people currently distinguish quick tasks from",
+      "intent": "dynamic",
+      "results": 13,
+      "sources_retained": 2
+    },
+    {
+      "query": "People overwhelmed by their to-do list when task paralysis strikes what specific structural interventions",
+      "intent": "dynamic",
+      "results": 13,
+      "sources_retained": 6
+    },
+    {
+      "query": "People overwhelmed by their to-do list what real world triggers e g morning coffee",
+      "intent": "dynamic",
+      "results": 13,
+      "sources_retained": 6
+    },
+    {
+      "query": "People overwhelmed by their to-do list how should uncompleted daily priority tasks be handled",
+      "intent": "dynamic",
+      "results": 13,
+      "sources_retained": 5
+    },
+    {
+      "query": "free People overwhelmed by their to-do list template OR guide OR alternative",
+      "intent": "falsification",
+      "results": 10,
+      "sources_retained": 5
+    },
+    {
+      "query": "is it worth paying for People overwhelmed by their to-do list tools reddit",
+      "intent": "falsification",
+      "results": 13,
+      "sources_retained": 4
+    }
+  ],
+  "retrieval": {
+    "ok": 0,
+    "failed": 14,
+    "not_fetched": 78
+  },
+  "accounting": {
+    "search_results_discovered": 163,
+    "unique_candidate_sources": 92,
+    "sources_selected": 14,
+    "sources_retrieved": 0,
+    "retrieval_failed": 14,
+    "evidence_bearing_sources": 5
+  },
+  "dynamic_questions": [
+    "What specific mechanics cause existing daily focus frameworks (e.g., Eisenhower Matrix, Ivy Lee, Eat That Frog) to fail or get abandoned when someone is actively feeling overwhelmed?",
+    "How do people currently distinguish 'quick tasks' from 'deep work' during brain-dumps, and what input UI allows capturing this context without adding entry friction?",
+    "When task paralysis strikes, what specific structural interventions (e.g., automated micro-task breakdown, artificial forced choices, time-boxed sprints) most reliably move users from freeze to action?",
+    "What real-world triggers (e.g., morning coffee, opening the browser, calendar sync) successfully anchor a 2-minute daily prioritization ritual into an existing workflow?",
+    "How should uncompleted daily priority tasks be handled at the end of the day to prevent accumulated guilt while maintaining realistic momentum for tomorrow?"
+  ]
+}

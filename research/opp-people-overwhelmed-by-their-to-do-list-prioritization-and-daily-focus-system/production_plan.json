@@ -1,0 +1,47 @@
+{
+  "sequence": [
+    {
+      "order": 1,
+      "step": "Build: 1-Must-Do Focus View — Isolate the primary priority so the user is not overwhelmed by secondary tasks. [observed]",
+      "component_id": "cmp-1",
+      "format": "supporting asset",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Build: Randomized Task Selector ('Roll the Dice') — Break active task paralysis and decision freeze through forced arbitrary choice. [observed]",
+      "component_id": "cmp-2",
+      "format": "supporting asset",
+      "depends_on": [
+        1
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 3,
+      "step": "Build: Secondary Backlog Vault — Store non-urgent or non-essential tasks out of daily line of sight. [observed]",
+      "component_id": "cmp-3",
+      "format": "supporting asset",
+      "depends_on": [
+        2
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 4,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1,
+        2,
+        3
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ]
+}

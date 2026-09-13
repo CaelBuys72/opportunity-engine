@@ -1,0 +1,31 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "https://www.teamblind.com/post/not-getting-interviews-despite-relevant-experience-and-ats-optimization-hcdmpij5",
+      "url": "https://www.teamblind.com/post/not-getting-interviews-despite-relevant-experience-and-ats-optimization-hcdmpij5",
+      "tier": 1,
+      "source_type": "forum",
+      "accessible": true,
+      "note": "real thread title"
+    },
+    {
+      "id": "src-2",
+      "label": "https://www.intelligentcv.app/career/ats-resume-rejection-brutal-truth-hack/",
+      "url": "https://www.intelligentcv.app/career/ats-resume-rejection-brutal-truth-hack/",
+      "tier": 2,
+      "source_type": "article",
+      "accessible": true,
+      "note": "stat from secondary source"
+    },
+    {
+      "id": "src-3",
+      "label": "https://careerkitai.gumroad.com/l/AIJobSurvivalKit2026",
+      "url": "https://careerkitai.gumroad.com/l/AIJobSurvivalKit2026",
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": true,
+      "note": "monetization exists"
+    }
+  ]
+}

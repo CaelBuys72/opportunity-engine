@@ -1,0 +1,40 @@
+{
+  "candidates": [
+    {
+      "id": "creator-1",
+      "name": "How to Go Freelance (newsletter)",
+      "platform": "Newsletter/Substack",
+      "profile_url": "https://howtogofreelance.substack.com",
+      "handle": null,
+      "followers": null,
+      "followers_basis": "unknown",
+      "niche": "freelancing / going freelance",
+      "audience_description": null,
+      "relevant_content": [
+        {
+          "url": "https://howtogofreelance.substack.com/p/your-freelance-tax-survival-guide",
+          "title": "Your freelance tax survival guide",
+          "topic": "freelance taxes",
+          "views": null,
+          "engagement": null,
+          "source_ref": "WebSearch 2026-09-09 'freelance business coach youtube ... taxes'"
+        }
+      ],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [],
+      "source_refs": [
+        "WebSearch 2026-09-09 (result URL observed; channel identity + audience not inspected)"
+      ],
+      "basis": "observed"
+    }
+  ],
+  "retrieval": [
+    {
+      "retriever": "manual-import",
+      "status": "loaded",
+      "count": 1,
+      "source": "data/creator_candidates/freelancer-us-tax.json"
+    }
+  ]
+}

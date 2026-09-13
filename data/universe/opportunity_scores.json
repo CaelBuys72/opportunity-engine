@@ -1,0 +1,2509 @@
+[
+  {
+    "opportunity_id": "opp-independent-nail-technicians-pricing-and-profitability",
+    "name": "Pricing & Profitability",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "scoring_version": "v1",
+    "commercial_score": 72,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 54,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 74,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 73,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-independent-nail-technicians-client-acquisition-and-retention",
+    "name": "Client Acquisition & Retention",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "scoring_version": "v1",
+    "commercial_score": 70,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 52,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 75,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 64,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-independent-nail-technicians-booking-operations-and-policies",
+    "name": "Booking Operations & Policies",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "scoring_version": "v1",
+    "commercial_score": 68,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 51,
+    "priority_classification": "MODERATE",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 58,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 72,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-freelancers-with-inconsistent-irregular-income-income-stability-and-cashflow",
+    "name": "Income Stability & Cashflow",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "scoring_version": "v1",
+    "commercial_score": 74,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 56,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 75,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-freelancers-with-inconsistent-irregular-income-getting-paid-and-client-pipeline",
+    "name": "Getting Paid & Client Pipeline",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "scoring_version": "v1",
+    "commercial_score": 72,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 54,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 75,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-freelancers-with-inconsistent-irregular-income-tax-and-money-organization",
+    "name": "Tax & Money Organization",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "scoring_version": "v1",
+    "commercial_score": 71,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 53,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 75,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 67,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "possible_liability_or_service",
+        "basis": "inferred",
+        "reason": "Compliance-type problems can imply regulated/bespoke service."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-creators-trying-to-post-consistently-on-reels-tiktok-ideation-and-posting-consistency",
+    "name": "Ideation & Posting Consistency",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "scoring_version": "v1",
+    "commercial_score": 68,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 51,
+    "priority_classification": "MODERATE",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 60,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 72,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-creators-trying-to-post-consistently-on-reels-tiktok-production-and-editing-workflow",
+    "name": "Production & Editing Workflow",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "scoring_version": "v1",
+    "commercial_score": 69,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 52,
+    "priority_classification": "MODERATE",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 62,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 72,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-creators-trying-to-post-consistently-on-reels-tiktok-reach-performance-and-growth",
+    "name": "Reach, Performance & Growth",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "scoring_version": "v1",
+    "commercial_score": 70,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 52,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 68,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 71,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-new-puppy-owners-in-the-first-weeks-foundation-training-skills",
+    "name": "Foundation Training Skills",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "scoring_version": "v1",
+    "commercial_score": 69,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 52,
+    "priority_classification": "MODERATE",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 55,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 79,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-new-puppy-owners-in-the-first-weeks-daily-routine-and-care-schedule",
+    "name": "Daily Routine & Care Schedule",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "scoring_version": "v1",
+    "commercial_score": 68,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 51,
+    "priority_classification": "MODERATE",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 61,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 69,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-new-puppy-owners-in-the-first-weeks-owner-confidence-and-decisions",
+    "name": "Owner Confidence & Decisions",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "scoring_version": "v1",
+    "commercial_score": 65,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 49,
+    "priority_classification": "MODERATE",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 55,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-pricing-and-revenue-optimization",
+    "name": "Pricing & Revenue Optimization",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "scoring_version": "v1",
+    "commercial_score": 73,
+    "evidence_score": 7,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 55,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "excluded_factor_count": 2,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 69,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": 65,
+        "confidence": "MEDIUM",
+        "basis": "observed",
+        "reason": "Search-yield signal: 9 candidate(s) imported, 7 relevant to this audience/opportunity. NOT a census of the market.",
+        "source_refs": [
+          "cd-madeleineraifordholland",
+          "cd-coachinayah",
+          "cd-managedbyluca",
+          "cd-johnazizzz",
+          "cd-taron-teague",
+          "cd-elliedulude",
+          "cd-bhagya-bnb"
+        ],
+        "excluded": false
+      },
+      "creator_product_alignment": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Creators in this niche commonly promote tools/guides for this audience (inferred).",
+        "source_refs": [],
+        "excluded": false
+      },
+      "audience_accessibility": {
+        "value": 80,
+        "confidence": "MEDIUM",
+        "basis": "observed",
+        "reason": "Reachable via 7 relevant creators/communities (observed).",
+        "source_refs": [
+          "cd-madeleineraifordholland",
+          "cd-coachinayah",
+          "cd-managedbyluca",
+          "cd-johnazizzz",
+          "cd-taron-teague",
+          "cd-elliedulude",
+          "cd-bhagya-bnb"
+        ],
+        "excluded": false
+      }
+    },
+    "creator_density": "MEDIUM",
+    "creator_density_confidence": "MEDIUM",
+    "creator_density_detail": {
+      "queries_run": 3,
+      "candidates_discovered": 9,
+      "relevant_candidates": 7,
+      "density_band": "MEDIUM",
+      "basis": "observed",
+      "confidence": "MEDIUM",
+      "retrieval_method": "browser (Instagram public profiles, 2026-09-09)",
+      "reason": "Search-yield signal: 9 candidate(s) imported, 7 relevant to this audience/opportunity. NOT a census of the market.",
+      "candidate_refs": [
+        "cd-madeleineraifordholland",
+        "cd-coachinayah",
+        "cd-managedbyluca",
+        "cd-johnazizzz",
+        "cd-taron-teague",
+        "cd-elliedulude",
+        "cd-bhagya-bnb"
+      ]
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 7 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-guest-communication-and-experience",
+    "name": "Guest Communication & Experience",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "scoring_version": "v1",
+    "commercial_score": 67,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 50,
+    "priority_classification": "MODERATE",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 68,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 57,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+    "name": "Turnover & Property Operations",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "scoring_version": "v1",
+    "commercial_score": 71,
+    "evidence_score": 62,
+    "evidence_band": "MEDIUM",
+    "priority_score": 67,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 60,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 75,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": 70,
+        "confidence": "MEDIUM",
+        "basis": "observed",
+        "reason": "1 observed paid-solution/spending signal(s): Etsy Airbnb welcome-book / house-manual templates",
+        "source_refs": [
+          "Etsy Airbnb welcome-book / house-manual templates"
+        ],
+        "excluded": false
+      },
+      "existing_solution_weakness": {
+        "value": 74,
+        "confidence": "MEDIUM",
+        "basis": "observed",
+        "reason": "2 observed complaint/gap signal(s): 'Template could not be printed after personalizing; Existing welcome-book/checklist templates fail on ",
+        "source_refs": [
+          "https://www.etsy.com/listing/1308448953/airbnb-welcome-book-template-airbnb-host",
+          "Canva-template reliability gap"
+        ],
+        "excluded": false
+      },
+      "creator_density": {
+        "value": 65,
+        "confidence": "MEDIUM",
+        "basis": "observed",
+        "reason": "Search-yield signal: 6 candidate(s) imported, 6 relevant to this audience/opportunity. NOT a census of the market.",
+        "source_refs": [
+          "cd-managedbyluca",
+          "cd-coachinayah",
+          "cd-madeleineraifordholland",
+          "cd-digitalcleaningacademy",
+          "cd-johnazizzz",
+          "cd-taron-teague"
+        ],
+        "excluded": false
+      },
+      "creator_product_alignment": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Creators in this niche commonly promote tools/guides for this audience (inferred).",
+        "source_refs": [],
+        "excluded": false
+      },
+      "audience_accessibility": {
+        "value": 80,
+        "confidence": "MEDIUM",
+        "basis": "observed",
+        "reason": "Reachable via 6 relevant creators/communities (observed).",
+        "source_refs": [
+          "cd-managedbyluca",
+          "cd-coachinayah",
+          "cd-madeleineraifordholland",
+          "cd-digitalcleaningacademy",
+          "cd-johnazizzz",
+          "cd-taron-teague"
+        ],
+        "excluded": false
+      }
+    },
+    "creator_density": "MEDIUM",
+    "creator_density_confidence": "MEDIUM",
+    "creator_density_detail": {
+      "queries_run": 3,
+      "candidates_discovered": 6,
+      "relevant_candidates": 6,
+      "density_band": "MEDIUM",
+      "basis": "observed",
+      "confidence": "MEDIUM",
+      "retrieval_method": "browser (Instagram public profiles, 2026-09-09)",
+      "reason": "Search-yield signal: 6 candidate(s) imported, 6 relevant to this audience/opportunity. NOT a census of the market.",
+      "candidate_refs": [
+        "cd-managedbyluca",
+        "cd-coachinayah",
+        "cd-madeleineraifordholland",
+        "cd-digitalcleaningacademy",
+        "cd-johnazizzz",
+        "cd-taron-teague"
+      ]
+    },
+    "commercial_evidence_count": 3,
+    "risk_flags": [],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-remote-and-financial-management",
+    "name": "Remote & Financial Management",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "scoring_version": "v1",
+    "commercial_score": 72,
+    "evidence_score": 0,
+    "evidence_band": "VERY_LOW",
+    "priority_score": 54,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "excluded_factor_count": 4,
+    "score_breakdown": {
+      "pain_severity": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from member problem-type severity; not observed.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "problem_recurrence": {
+        "value": 70,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Member problems are framed as ongoing responsibilities, not one-off events.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "desired_outcome_clarity": {
+        "value": 78,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Clear shared/member desired outcomes present.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "productizability": {
+        "value": 75,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Inferred from whether member problems are repeatable/standardizable tasks.",
+        "source_refs": [],
+        "excluded": false
+      },
+      "wtp_spending": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed spending/paid-solution evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "existing_solution_weakness": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No observed complaints/solution-gap evidence imported.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_density": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "No creator evidence imported; density unknown.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "creator_product_alignment": {
+        "value": null,
+        "confidence": "UNKNOWN",
+        "basis": "unknown",
+        "reason": "Cannot judge alignment without any creator evidence.",
+        "source_refs": [],
+        "excluded": true
+      },
+      "audience_accessibility": {
+        "value": 65,
+        "confidence": "LOW",
+        "basis": "inferred",
+        "reason": "Audience is role-defined with likely communities/search surfaces (inferred).",
+        "source_refs": [],
+        "excluded": false
+      }
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "UNKNOWN",
+    "creator_density_detail": {
+      "queries_run": 0,
+      "candidates_discovered": 0,
+      "relevant_candidates": 0,
+      "density_band": "UNKNOWN",
+      "basis": "unknown",
+      "confidence": "UNKNOWN",
+      "retrieval_method": "manual-import",
+      "reason": "No creator evidence imported; density unknown (not zero).",
+      "candidate_refs": []
+    },
+    "commercial_evidence_count": 0,
+    "risk_flags": [
+      {
+        "flag": "no_observed_spending_evidence",
+        "basis": "unknown",
+        "reason": "No observed willingness-to-pay evidence yet."
+      },
+      {
+        "flag": "unvalidated_inferred_cluster",
+        "basis": "inferred",
+        "reason": "Opportunity composed only of inferred problems."
+      },
+      {
+        "flag": "low_evidence",
+        "basis": "observed",
+        "reason": "evidence_score 0 is very low."
+      }
+    ],
+    "screening_status": "screened"
+  },
+  {
+    "opportunity_id": "opp-people-overwhelmed-by-their-to-do-list-prioritization-and-daily-focus-system",
+    "name": "Prioritization & Daily Focus System",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 87,
+    "evidence_score": 45,
+    "evidence_band": "MEDIUM",
+    "priority_score": 70,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 4,
+      "recurrence": 5,
+      "existing_spend": 4,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 5,
+      "audience_accessibility": 4,
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 7,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-people-overwhelmed-by-their-to-do-list-anti-overwhelm-task-paralysis-starter-kit",
+    "name": "Anti-Overwhelm / Task-Paralysis Starter Kit",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 80,
+    "evidence_score": 45,
+    "evidence_band": "MEDIUM",
+    "priority_score": 66,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 5,
+      "recurrence": 4,
+      "existing_spend": "UNKNOWN",
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 4,
+      "audience_accessibility": 3,
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 6,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-people-overwhelmed-by-their-to-do-list-simple-task-system-for-app-fatigued-people",
+    "name": "Simple Task System for App-Fatigued People",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 73,
+    "evidence_score": 20,
+    "evidence_band": "LOW",
+    "priority_score": 52,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 3,
+      "recurrence": 4,
+      "existing_spend": 3,
+      "solution_dissatisfaction": 5,
+      "digital_product_fit": 4,
+      "audience_accessibility": 3,
+      "evidence_confidence": "LOW"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 3,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-professionals-upskilling-on-chatgpt-for-their-job-role-specific-prompt-library-and-playbook",
+    "name": "Role-Specific Prompt Library & Playbook",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 83,
+    "evidence_score": 45,
+    "evidence_band": "MEDIUM",
+    "priority_score": 68,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 4,
+      "recurrence": 4,
+      "existing_spend": 5,
+      "solution_dissatisfaction": 3,
+      "digital_product_fit": 5,
+      "audience_accessibility": 4,
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 4,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-professionals-upskilling-on-chatgpt-for-their-job-reliable-output-and-verification-system",
+    "name": "Reliable-Output & Verification System",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 80,
+    "evidence_score": 45,
+    "evidence_band": "MEDIUM",
+    "priority_score": 66,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 5,
+      "recurrence": 4,
+      "existing_spend": "UNKNOWN",
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 4,
+      "audience_accessibility": 3,
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 5,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-professionals-upskilling-on-chatgpt-for-their-job-chatgpt-at-work-onboarding-system",
+    "name": "ChatGPT-at-Work Onboarding System",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 70,
+    "evidence_score": 20,
+    "evidence_band": "LOW",
+    "priority_score": 50,
+    "priority_classification": "PROMISING_NEEDS_RESEARCH",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 3,
+      "recurrence": 4,
+      "existing_spend": 3,
+      "solution_dissatisfaction": 3,
+      "digital_product_fit": 4,
+      "audience_accessibility": 4,
+      "evidence_confidence": "LOW"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 2,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-people-organizing-bills-and-subscriptions-privacy-first-bill-and-subscription-cash-flow-planner",
+    "name": "Privacy-First Bill & Subscription Cash-Flow Planner",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 90,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 82,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 4,
+      "recurrence": 5,
+      "existing_spend": 4,
+      "solution_dissatisfaction": 5,
+      "digital_product_fit": 5,
+      "audience_accessibility": 4,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 19,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-people-organizing-bills-and-subscriptions-paperless-household-mail-and-bill-organization-system",
+    "name": "Paperless Household Mail & Bill Organization System",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 70,
+    "evidence_score": 45,
+    "evidence_band": "MEDIUM",
+    "priority_score": 60,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 3,
+      "recurrence": 4,
+      "existing_spend": 2,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 4,
+      "audience_accessibility": 4,
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 4,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-people-organizing-bills-and-subscriptions-time-poor-professional-s-fail-safe-bill-automation-playbook",
+    "name": "Time-Poor Professional's Fail-Safe Bill Automation Playbook",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 73,
+    "evidence_score": 45,
+    "evidence_band": "MEDIUM",
+    "priority_score": 62,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 4,
+      "recurrence": 4,
+      "existing_spend": 4,
+      "solution_dissatisfaction": 3,
+      "digital_product_fit": 4,
+      "audience_accessibility": 3,
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 5,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-lifters-planning-a-cut-or-bulk-cut-vs-bulk-diagnostic-and-phase-periodization-blueprint",
+    "name": "Cut vs. Bulk Diagnostic & Phase Periodization Blueprint",
+    "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 80,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 76,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 4,
+      "recurrence": 3,
+      "existing_spend": 3,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 5,
+      "audience_accessibility": 5,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 12,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-lifters-planning-a-cut-or-bulk-muscle-sparing-cutting-system-and-strength-defense-tracker",
+    "name": "Muscle-Sparing Cutting System & Strength Defense Tracker",
+    "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 83,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 78,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 5,
+      "recurrence": 4,
+      "existing_spend": 4,
+      "solution_dissatisfaction": 3,
+      "digital_product_fit": 5,
+      "audience_accessibility": 4,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 5,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-lifters-planning-a-cut-or-bulk-lean-surplus-and-conditioning-integration-operating-system",
+    "name": "Lean Surplus & Conditioning Integration Operating System",
+    "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 83,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 78,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 4,
+      "recurrence": 4,
+      "existing_spend": 3,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 5,
+      "audience_accessibility": 5,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 8,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-artists-growing-on-streaming-platforms-direct-to-fan-monetization-playbook-and-funnel-templates",
+    "name": "Direct-to-Fan Monetization Playbook & Funnel Templates",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 83,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 78,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 5,
+      "recurrence": 4,
+      "existing_spend": 3,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 5,
+      "audience_accessibility": 4,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 8,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-artists-growing-on-streaming-platforms-safe-playlist-promotion-vetting-and-anti-bot-toolkit",
+    "name": "Safe Playlist Promotion Vetting & Anti-Bot Toolkit",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 80,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 76,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 5,
+      "recurrence": 3,
+      "existing_spend": 4,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 4,
+      "audience_accessibility": 4,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 4,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-artists-growing-on-streaming-platforms-cross-platform-music-release-and-content-os",
+    "name": "Cross-Platform Music Release & Content OS",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 87,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 80,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 4,
+      "recurrence": 5,
+      "existing_spend": 3,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 5,
+      "audience_accessibility": 5,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 11,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-artists-growing-on-streaming-platforms-high-roi-music-ads-and-listener-conversion-blueprint",
+    "name": "High-ROI Music Ads & Listener Conversion Blueprint",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 87,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 80,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 4,
+      "recurrence": 4,
+      "existing_spend": 5,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 5,
+      "audience_accessibility": 4,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 4,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-account-execs-running-discovery-calls-conversational-30-min-discovery-flow-and-time-pacing-toolkit",
+    "name": "Conversational 30-Min Discovery Flow & Time Pacing Toolkit",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 83,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 78,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 4,
+      "recurrence": 5,
+      "existing_spend": 3,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 5,
+      "audience_accessibility": 4,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 7,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-account-execs-running-discovery-calls-c-suite-discovery-and-executive-framing-playbook",
+    "name": "C-Suite Discovery & Executive Framing Playbook",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 87,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 80,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 5,
+      "recurrence": 4,
+      "existing_spend": 4,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 5,
+      "audience_accessibility": 4,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 8,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-account-execs-running-discovery-calls-5-minute-pre-call-discovery-research-and-prep-system",
+    "name": "5-Minute Pre-Call Discovery Research & Prep System",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 83,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 78,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 4,
+      "recurrence": 5,
+      "existing_spend": 3,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 5,
+      "audience_accessibility": 4,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 4,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  },
+  {
+    "opportunity_id": "opp-account-execs-running-discovery-calls-ae-mock-discovery-call-interview-survival-kit",
+    "name": "AE Mock Discovery Call Interview Survival Kit",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "scoring_version": "mvp-v1",
+    "commercial_score": 83,
+    "evidence_score": 70,
+    "evidence_band": "HIGH",
+    "priority_score": 78,
+    "priority_classification": "HIGH_PRIORITY",
+    "excluded_factor_count": 0,
+    "score_breakdown": {
+      "pain_importance": 5,
+      "recurrence": 3,
+      "existing_spend": 4,
+      "solution_dissatisfaction": 4,
+      "digital_product_fit": 5,
+      "audience_accessibility": 4,
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "creator_density_confidence": "unknown",
+    "creator_density_detail": {
+      "band": "UNKNOWN"
+    },
+    "commercial_evidence_count": 4,
+    "risk_flags": [],
+    "screening_status": "mvp_basic"
+  }
+]

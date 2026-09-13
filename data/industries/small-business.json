@@ -1,0 +1,18 @@
+{
+  "id": "small-business",
+  "name": "Small Business",
+  "description": "Micro-operators and side businesses.",
+  "submarkets": [
+    {
+      "id": "str-hosting",
+      "name": "Short-Term Rental Hosting",
+      "audiences": [
+        {
+          "id": "new-hosts",
+          "label": "first-year Airbnb / STR hosts"
+        }
+      ]
+    }
+  ],
+  "status": "explored"
+}

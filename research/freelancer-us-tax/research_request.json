@@ -1,0 +1,12 @@
+{
+  "research_request_id": "rr-freelancer-us-tax",
+  "created_at": "2026-09-09T10:58:00.229492+00:00",
+  "pocket_id": "freelancer-us-tax",
+  "title": "US freelancer get-paid & tax-ready system",
+  "industry_id": "freelancing",
+  "audience": "US 1099 freelancers & independent contractors",
+  "core_problem": "No withholding, quarterly estimated taxes and Schedule C categories are confusing; generic templates break or don't match the tax regime.",
+  "desired_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+  "primary_question": "Do real people experience this problem, what does it look like, what outcome do they want, what have they tried, what remains unsolved?",
+  "note": "Feeds the Phase-8 research engine."
+}

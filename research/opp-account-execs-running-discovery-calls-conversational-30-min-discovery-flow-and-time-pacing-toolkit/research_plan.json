@@ -1,0 +1,177 @@
+{
+  "pocket_id": "opp-account-execs-running-discovery-calls-conversational-30-min-discovery-flow-and-time-pacing-toolkit",
+  "known": [
+    "Audience: Account execs running discovery calls",
+    "Core problem: Account execs running discovery calls face a related cluster of problems around conversational 30-min discovery flow & time pacing toolkit — e.g. Insufficient call time to complete thorough discovery and establish next steps, Discovery calls feeling like interrogations rather than natural business conversations.",
+    "Discovery score 78/100 (HIGH confidence)",
+    "Evidence on file: Account Executives struggle to complete effective discovery within standard 30-minute call windows, running out of time before understanding deep buyer pain or setting next steps.",
+    "Evidence on file: Discovery calls often turn into dynamic interrogations or robotic question checklists, annoying buyers and stalling conversations."
+  ],
+  "unknown": [
+    "True prevalence / how many are affected (UNKNOWN)",
+    "Creator ecosystem size (UNKNOWN)",
+    "Primary-community depth not yet retrieved this run"
+  ],
+  "validating_evidence": [
+    "Multiple independent communities describing the same problem in their own words",
+    "People actively asking for tools/templates (solution-seeking language)",
+    "Existing paid solutions with real sales AND recurring complaints (gap)"
+  ],
+  "weakening_evidence": [
+    "Problem is rare, mild, or one-off",
+    "Free resources already solve it well (free-information problem)",
+    "Strong free-sharing culture that resists paying",
+    "Existing products already excellent with no complaint pattern"
+  ],
+  "communities": [
+    "(none catalogued yet — investigate niche subs/forums)"
+  ],
+  "queries": [
+    {
+      "angle": "problem",
+      "query": "how do I account execs running discovery calls site:reddit.com"
+    },
+    {
+      "angle": "problem",
+      "query": "I don't know account executives struggle to complete effective discovery within standard 30-minute call windows, running out of time before understanding deep buyer pain or setting next steps. site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "discovery calls often turn into dynamic interrogations or robotic question checklists, annoying buyers and stalling conversations. frustrating site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "hate account execs running discovery calls site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "account executives struggle to complete effective discovery within standard 30-minute call windows, running out of time before understanding deep buyer pain or setting next steps. template site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "discovery calls often turn into dynamic interrogations or robotic question checklists, annoying buyers and stalling conversations. calculator site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "account execs running discovery calls too complicated site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "account executives struggle to complete effective discovery within standard 30-minute call windows, running out of time before understanding deep buyer pain or setting next steps. too expensive site:reddit.com"
+    }
+  ],
+  "solutions_to_examine": [],
+  "questions": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service/free-info problem?",
+    "What is the single most useful asset we could ship?",
+    "What price will the audience tolerate, and on what evidence?"
+  ],
+  "executed": [
+    {
+      "query": "Account execs running discovery calls problem reddit",
+      "intent": "problem",
+      "results": 9,
+      "sources_retained": 9
+    },
+    {
+      "query": "how do Account execs running discovery calls currently",
+      "intent": "behavior",
+      "results": 14,
+      "sources_retained": 10
+    },
+    {
+      "query": "Account execs running discovery calls frustrated OR struggle",
+      "intent": "pain",
+      "results": 10,
+      "sources_retained": 8
+    },
+    {
+      "query": "Account Executives struggle to complete effective discovery within standard 30-minute call windows, running out of time before understanding deep buyer pain or setting next steps. reddit",
+      "intent": "problem",
+      "results": 10,
+      "sources_retained": 5
+    },
+    {
+      "query": "Discovery calls often turn into dynamic interrogations or robotic question checklists, annoying buyers and stalling conversations. reddit",
+      "intent": "problem",
+      "results": 10,
+      "sources_retained": 7
+    },
+    {
+      "query": "Account execs running discovery calls tools OR template OR software",
+      "intent": "existing_solution",
+      "results": 10,
+      "sources_retained": 4
+    },
+    {
+      "query": "Account execs running discovery calls template OR spreadsheet OR notion pricing",
+      "intent": "pricing",
+      "results": 10,
+      "sources_retained": 7
+    },
+    {
+      "query": "Account execs running discovery calls at what exact phase of the 30 minute",
+      "intent": "dynamic",
+      "results": 13,
+      "sources_retained": 4
+    },
+    {
+      "query": "Account execs running discovery calls how do top performing aes structure their live",
+      "intent": "dynamic",
+      "results": 13,
+      "sources_retained": 5
+    },
+    {
+      "query": "Account execs running discovery calls what specific signals indicate a prospect feels interrogated",
+      "intent": "dynamic",
+      "results": 13,
+      "sources_retained": 5
+    },
+    {
+      "query": "Account execs running discovery calls why do current conversation intelligence tools or call",
+      "intent": "dynamic",
+      "results": 10,
+      "sources_retained": 10
+    },
+    {
+      "query": "Account execs running discovery calls what minimal set of real time visual pacing",
+      "intent": "dynamic",
+      "results": 13,
+      "sources_retained": 3
+    },
+    {
+      "query": "free Account execs running discovery calls template OR guide OR alternative",
+      "intent": "falsification",
+      "results": 10,
+      "sources_retained": 5
+    },
+    {
+      "query": "is it worth paying for Account execs running discovery calls tools reddit",
+      "intent": "falsification",
+      "results": 9,
+      "sources_retained": 7
+    }
+  ],
+  "retrieval": {
+    "ok": 1,
+    "failed": 13,
+    "not_fetched": 75
+  },
+  "accounting": {
+    "search_results_discovered": 154,
+    "unique_candidate_sources": 89,
+    "sources_selected": 14,
+    "sources_retrieved": 1,
+    "retrieval_failed": 13,
+    "evidence_bearing_sources": 0
+  },
+  "dynamic_questions": [
+    "At what exact phase of the 30-minute call agenda do AEs most frequently lose control of time, and what specific prospect behaviors or tangents cause those detours?",
+    "How do top-performing AEs structure their live screen notes or prompts to cover qualification criteria without making the conversation feel like a robotic checklist?",
+    "What specific signals indicate a prospect feels interrogated during discovery, and what conversational techniques successfully pivot the dynamic back to a peer-level business discussion?",
+    "Why do current conversation intelligence tools or call notes fail to prevent the 'last-5-minutes rush' to secure clear, confirmed next steps?",
+    "What minimal set of real-time visual pacing cues or dynamic prompts could an AE monitor during a live video call without losing eye contact or active listening focus?"
+  ]
+}

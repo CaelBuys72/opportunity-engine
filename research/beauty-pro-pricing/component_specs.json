@@ -1,0 +1,21 @@
+{
+  "specs": [
+    {
+      "component_id": "cmp-1",
+      "name": "auto-calculating spreadsheet with worked example",
+      "type": "asset",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Asset that helps the buyer: auto-calculating spreadsheet with worked example.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Price services profitably and confidently without losing clients.",
+      "functional_requirements": [],
+      "inputs": [],
+      "outputs": [],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": true
+    }
+  ]
+}

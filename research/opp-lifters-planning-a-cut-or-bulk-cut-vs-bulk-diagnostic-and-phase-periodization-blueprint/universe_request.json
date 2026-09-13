@@ -1,0 +1,35 @@
+{
+  "universe_opportunity_id": "opp-lifters-planning-a-cut-or-bulk-cut-vs-bulk-diagnostic-and-phase-periodization-blueprint",
+  "origin": "market_universe",
+  "market_id": "mkt-fitness-and-physical-training",
+  "submarket_id": "sub-fitness-and-physical-training-strength-and-physique",
+  "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+  "opportunity_name": "Cut vs. Bulk Diagnostic & Phase Periodization Blueprint",
+  "member_problem_ids": [
+    "prb-lifters-planning-a-cut-or-bulk-uncertainty-in-choosing-between-cutting-and-bulking-phase",
+    "prb-lifters-planning-a-cut-or-bulk-ineffective-muscle-growth-due-to-short-bulk-cut-cycles"
+  ],
+  "seed_source_refs": [
+    "src-0555fc539577",
+    "src-0c9279a69d81",
+    "src-1d10bfb28994",
+    "src-602afacec473",
+    "src-6031d548a0e7",
+    "src-667fe6602213",
+    "src-6a3c505cfc9f",
+    "src-85696a396fc6",
+    "src-94a9555dd077",
+    "src-da25f06dfad2",
+    "src-dd8c3cf2404a",
+    "src-f317de51d739"
+  ],
+  "seed_commercial_evidence_refs": [],
+  "seed_creator_candidate_refs": [],
+  "priority_metadata": {
+    "commercial_score": 80,
+    "evidence_score": 70,
+    "priority_score": 76,
+    "priority_classification": "HIGH_PRIORITY",
+    "note": "Why we chose to investigate — NOT evidence of reality."
+  }
+}

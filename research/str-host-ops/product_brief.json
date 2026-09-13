@@ -1,0 +1,64 @@
+{
+  "pocket_id": "str-host-ops",
+  "product_concept": "A focused fill-in templates / scripts that helps first-year short-term-rental hosts launch looking professional and avoid rookie mistakes that cost reviews.",
+  "target_customer": "first-year short-term-rental hosts",
+  "core_problem": "New hosts don't know what to include in welcome books, cleaning checklists, house rules or checkout flow.",
+  "related_problems": [
+    "what goes in a welcome book",
+    "cleaning/turnover checklist",
+    "guest message scripts",
+    "checkout instructions"
+  ],
+  "desired_outcome": "Launch looking professional and avoid rookie mistakes that cost reviews.",
+  "core_transformation": "From: New hosts don't know what to include in welcome books, cleaning checklists, house rules or checkout flow.  →  To: Launch looking professional and avoid rookie mistakes that cost reviews.",
+  "product_promise": "Get to 'Launch looking professional and avoid rookie mistakes that cost reviews.' without the usual guesswork.",
+  "product_format": "Bundle: fill-in templates / scripts + guide / checklist",
+  "why_this_format": "Chosen from problem language, not by default. Signal scores: {'calculator / spreadsheet': 1, 'fill-in templates / scripts': 8, 'planner / schedule': 0, 'guide / checklist': 4}.",
+  "product_structure": [
+    "editable templates + copy-paste scripts",
+    "short decision-tree guide + one-page checklist"
+  ],
+  "required_sections": [],
+  "required_tools": [],
+  "required_templates": [],
+  "required_worksheets": [],
+  "bonus_assets": [],
+  "exclude": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ],
+  "existing_alternatives": [
+    "Etsy welcome-book templates ($2-21)",
+    "500+/1000+ host bundles",
+    "Touchstay/Homeaglow content"
+  ],
+  "differentiation": [
+    "operational systems & message scripts (market is saturated on pretty welcome books)",
+    "reliable no-Canva-headache delivery format"
+  ],
+  "price_range": "Unknown — infer from analogous products before pricing",
+  "price_rationale": "Unknown pricing evidence; do not set a price until validated.",
+  "key_customer_language": [
+    "what goes in a welcome book",
+    "cleaning/turnover checklist",
+    "guest message scripts",
+    "checkout instructions"
+  ],
+  "key_objections": [
+    "I can find this free",
+    "Templates never fit my exact case",
+    "I'll deal with it later"
+  ],
+  "key_buying_motivations": [
+    "Save time",
+    "Reduce anxiety/uncertainty",
+    "Look professional / avoid costly mistakes"
+  ],
+  "evidence_summary": "3 observed + 0 inferred/other claims support a recurring problem for first-year short-term-rental hosts. Gap: operational systems & message scripts (market is saturated on pretty welcome books); reliable no-Canva-headache delivery format.",
+  "confidence": "MEDIUM",
+  "risks_unknowns": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation"
+  ]
+}

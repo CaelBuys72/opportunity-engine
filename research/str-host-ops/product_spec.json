@@ -1,0 +1,58 @@
+{
+  "opportunity_id": "str-host-ops",
+  "product_concept": "A focused fill-in templates / scripts that helps first-year short-term-rental hosts launch looking professional and avoid rookie mistakes that cost reviews.",
+  "product_format": "Bundle: fill-in templates / scripts + guide / checklist",
+  "transformation": {
+    "from_state": "New hosts don't know what to include in welcome books, cleaning checklists, house rules or checkout flow",
+    "to_state": "To: Launch looking professional and avoid rookie mistakes that cost reviews",
+    "promise": "Get to 'Launch looking professional and avoid rookie mistakes that cost reviews.' without the usual guesswork.",
+    "core_problem": "New hosts don't know what to include in welcome books, cleaning checklists, house rules or checkout flow.",
+    "desired_outcome": "Launch looking professional and avoid rookie mistakes that cost reviews.",
+    "basis": "evidence-backed"
+  },
+  "promise": "Get to 'Launch looking professional and avoid rookie mistakes that cost reviews.' without the usual guesswork.",
+  "target_customer": "first-year short-term-rental hosts",
+  "price_range": "Unknown — infer from analogous products before pricing",
+  "price_rationale": "Unknown pricing evidence; do not set a price until validated.",
+  "confidence": "MEDIUM",
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: Launch looking professional and avoid rookie mistakes that cost reviews.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: what goes in a welcome book",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: cleaning/turnover checklist",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: guest message scripts",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-4",
+      "statement": "Resolve: checkout instructions",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "differentiation": [
+    "operational systems & message scripts (market is saturated on pretty welcome books)",
+    "reliable no-Canva-headache delivery format"
+  ],
+  "exclusions": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ]
+}

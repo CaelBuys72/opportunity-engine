@@ -1,0 +1,47 @@
+{
+  "dimensions": {
+    "audience_alignment": {
+      "score": 6.0,
+      "weight": 20,
+      "basis": "observed"
+    },
+    "problem_alignment": {
+      "score": null,
+      "weight": 20,
+      "basis": "unknown"
+    },
+    "content_alignment": {
+      "score": null,
+      "weight": 15,
+      "basis": "unknown"
+    },
+    "relevant_view_evidence": {
+      "score": null,
+      "weight": 15,
+      "basis": "unknown"
+    },
+    "creator_density": {
+      "score": 0,
+      "weight": 15,
+      "basis": "inferred"
+    },
+    "approachability": {
+      "score": 7.7,
+      "weight": 5,
+      "basis": "observed"
+    },
+    "monetization_signal": {
+      "score": 7.0,
+      "weight": 5,
+      "basis": "observed"
+    },
+    "product_content_fit": {
+      "score": null,
+      "weight": 5,
+      "basis": "unknown"
+    }
+  },
+  "overall": 43.0,
+  "weight_unknown_pct": 55,
+  "confidence": "LOW"
+}

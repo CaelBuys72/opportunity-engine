@@ -1,0 +1,48 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "design flyers, not strategy; shows beauty pros buy business assets",
+      "source_id": "src-1",
+      "evidence": "GraphicLabPro (beauty price-list templates): 7.4k sales, 4.8★ (666 reviews), Star Seller.",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "seen across nail-pricing search; suggests niche served by repackaged generics",
+      "source_id": "src-2",
+      "evidence": "Nail-specific pricing calculators exist ($3.50-11) but Etsy 'Bestseller' badges cluster on GENERIC small-business calculators.",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "trade-press context",
+      "source_id": "src-3",
+      "evidence": "At-home/independent nail techs are a documented growth category.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-4",
+      "claim": "tempers the Reddit demand signal",
+      "source_id": "src-4",
+      "evidence": "r/Nailtechs is small (~29k) and pricing threads get modest engagement; beauty biz talk skews to Facebook/IG.",
+      "source_type": "reddit",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    }
+  ]
+}

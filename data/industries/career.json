@@ -1,0 +1,18 @@
+{
+  "id": "career",
+  "name": "Career",
+  "description": "Job search, resumes, transitions.",
+  "submarkets": [
+    {
+      "id": "job-search",
+      "name": "Job Search / Resumes",
+      "audiences": [
+        {
+          "id": "job-seekers",
+          "label": "active job seekers getting screened out"
+        }
+      ]
+    }
+  ],
+  "status": "explored"
+}

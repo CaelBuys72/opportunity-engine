@@ -1,0 +1,30 @@
+{
+  "universe_opportunity_id": "opp-account-execs-running-discovery-calls-conversational-30-min-discovery-flow-and-time-pacing-toolkit",
+  "origin": "market_universe",
+  "market_id": "mkt-sales-and-closing",
+  "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+  "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+  "opportunity_name": "Conversational 30-Min Discovery Flow & Time Pacing Toolkit",
+  "member_problem_ids": [
+    "prb-account-execs-running-discovery-calls-insufficient-call-time-to-complete-thorough-discovery-and-establish-next-steps",
+    "prb-account-execs-running-discovery-calls-discovery-calls-feeling-like-interrogations-rather-than-natural-business-conve"
+  ],
+  "seed_source_refs": [
+    "src-1554f6295287",
+    "src-21dbac67659d",
+    "src-44696ddbd94e",
+    "src-71822e218fd7",
+    "src-a0b821e9807d",
+    "src-b771ab056b4a",
+    "src-f0f70a518423"
+  ],
+  "seed_commercial_evidence_refs": [],
+  "seed_creator_candidate_refs": [],
+  "priority_metadata": {
+    "commercial_score": 83,
+    "evidence_score": 70,
+    "priority_score": 78,
+    "priority_classification": "HIGH_PRIORITY",
+    "note": "Why we chose to investigate — NOT evidence of reality."
+  }
+}

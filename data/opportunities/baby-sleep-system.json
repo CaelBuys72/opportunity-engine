@@ -1,0 +1,131 @@
+{
+  "id": "baby-sleep-system",
+  "title": "Tailored baby sleep schedule & troubleshooting system",
+  "industry_id": "parenting",
+  "submarket_id": "infant-sleep",
+  "origin": "seed-run",
+  "audience": "sleep-deprived parents of 0-18 month infants",
+  "core_problem": "Sleep advice is contradictory, generic and long; parents want something tailored to their baby's age/temperament.",
+  "desired_outcome": "Predictable naps/nights and restored parental sleep.",
+  "related_problems": [
+    "4-month regression",
+    "which method fits our family",
+    "wake-window confusion",
+    "guides are too long / too generic"
+  ],
+  "problems": [
+    {
+      "id": "prob-wtp",
+      "statement": "Parents pay premium for sleep help.",
+      "symptoms": [
+        "Etsy baby-sleep guides span $1.40-$30 — highest consumer price band of the pockets checked; 'nurse/pediatrician-reviewed' ones command $19-30.",
+        "Distinct B2B tier: done-for-you sleep-guide templates sold TO consultants/doulas at $100+."
+      ],
+      "evidence_ids": [
+        "ev-bs-1",
+        "ev-bs-2"
+      ]
+    },
+    {
+      "id": "prob-gap",
+      "statement": "Existing guides too generic/long; not tailored.",
+      "symptoms": [
+        "Reviewers call some sleep ebooks a 'waste of $50', 'nothing new', 'hundreds of pages to get to the point'."
+      ],
+      "evidence_ids": [
+        "ev-bs-3"
+      ]
+    },
+    {
+      "id": "prob-demand",
+      "statement": "Acute, motivated demand around regressions.",
+      "symptoms": [
+        "A parent: sleep-training guide 'was a life saver' after 4-month regression, baby now sleeps 11h."
+      ],
+      "evidence_ids": [
+        "ev-bs-4"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "ev-bs-1",
+    "ev-bs-2",
+    "ev-bs-3",
+    "ev-bs-4"
+  ],
+  "community_ids": [
+    "r-beyondthebump",
+    "r-sleeptrain"
+  ],
+  "existing_solutions": [
+    "Etsy sleep guides ($1.40-30)",
+    "books (Precious Little Sleep, Ferber)",
+    "1:1 sleep consultants ($150-500)",
+    "done-for-you templates sold TO consultants ($100+)"
+  ],
+  "solution_gaps": [
+    "short decision-tree/personalized format between $1 cheat-sheet and $50 book",
+    "credibility marker (nurse/pediatrician) at low price"
+  ],
+  "creator_ecosystem": "inferred large (parenting/mom creators) but not measured",
+  "digital_product_fit": "Strong: age-banded decision-tree guide (~$19-39). Note: health-accuracy/liability risk.",
+  "source_urls": [
+    "https://www.etsy.com/market/baby_sleep_guide",
+    "https://www.amazon.com/Precious-Little-Sleep-Complete-Parents-ebook/dp/B08LCPK8M1",
+    "https://www.goodreads.com/book/show/51002555-baby-sleep-miracle"
+  ],
+  "score": {
+    "factors": {
+      "demand_evidence": {
+        "score": 8,
+        "basis": "observed",
+        "rationale": "865 listings; acute recurring pain.",
+        "weight": 20
+      },
+      "pain_importance": {
+        "score": 9,
+        "basis": "inferred",
+        "rationale": "Sleep deprivation; desperate buyers.",
+        "weight": 15
+      },
+      "clear_outcome": {
+        "score": 9,
+        "basis": "observed",
+        "rationale": "'Sleep through the night' is unambiguous.",
+        "weight": 10
+      },
+      "existing_wtp": {
+        "score": 9,
+        "basis": "observed",
+        "rationale": "Highest price band + B2B tier + $150-500 consultants.",
+        "weight": 15
+      },
+      "solution_gap": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "Generic-vs-tailored gap; short decision-tree missing.",
+        "weight": 15
+      },
+      "creator_density": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "Parenting creators abundant, not measured.",
+        "weight": 15
+      },
+      "digital_product_fit": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "Fits, but health-liability caveat.",
+        "weight": 10
+      }
+    },
+    "overall": 80.0,
+    "confidence": "MEDIUM",
+    "confidence_reason": "3/7 factors observed, 0/7 unknown; demand=observed, WTP=observed.",
+    "weight_unknown_pct": 0
+  },
+  "status": "researching",
+  "research_status": "needs_review",
+  "curation_status": "complete",
+  "distribution_verdict": "NEEDS_RESEARCH"
+}

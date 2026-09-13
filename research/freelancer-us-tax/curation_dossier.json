@@ -1,0 +1,792 @@
+{
+  "opportunity_id": "freelancer-us-tax",
+  "generated_at": "2026-09-09T10:58:17.896069+00:00",
+  "product_concept": "A robust-but-simple US 1099 tax & get-paid toolkit for a specific freelancer sub-niche (e.g. content creators or rideshare/independent contractors): a spreadsheet that gets the SE-tax + quarterly-estimate math right, plus an invoice template and a short setup guide.",
+  "product_format": "calculator / spreadsheet",
+  "transformation": {
+    "from_state": "From 'no idea what to set aside and formulas that break'",
+    "to_state": "'know my quarterly number, invoices out, expenses categorised for Schedule C, no tax-season panic'",
+    "promise": "Know exactly what to set aside every quarter and get paid on time — without an accountant or a broken spreadsheet.",
+    "core_problem": "No withholding, quarterly estimated taxes and Schedule C categories are confusing; generic templates break or don't match the tax regime.",
+    "desired_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+    "basis": "evidence-backed"
+  },
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: don't know how much to set aside for quarterly taxes",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: spreadsheet formulas break when I edit them",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: expense categories don't map to Schedule C",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-4",
+      "statement": "Resolve: chasing late invoices",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "Quarterly estimated-tax calculator",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Tool that helps the buyer: Quarterly estimated-tax calculator.",
+      "maps_to_jobs": [
+        "job-1"
+      ]
+    },
+    {
+      "id": "cmp-2",
+      "name": "Set-aside % calculator",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Tool that helps the buyer: Set-aside % calculator.",
+      "maps_to_jobs": [
+        "job-1"
+      ]
+    },
+    {
+      "id": "cmp-3",
+      "name": "Schedule C category mapper",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Tool that helps the buyer: Schedule C category mapper.",
+      "maps_to_jobs": [
+        "job-3"
+      ]
+    },
+    {
+      "id": "cmp-4",
+      "name": "Professional invoice",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Template that helps the buyer: Professional invoice.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-5",
+      "name": "Late-payment follow-up email",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Template that helps the buyer: Late-payment follow-up email.",
+      "maps_to_jobs": [
+        "job-4"
+      ]
+    },
+    {
+      "id": "cmp-6",
+      "name": "Quarterly payment scheduler (due dates)",
+      "type": "worksheet",
+      "format": "structured worksheet (printable + fillable)",
+      "purpose": "Worksheet that helps the buyer: Quarterly payment scheduler (due dates).",
+      "maps_to_jobs": [
+        "job-1"
+      ]
+    },
+    {
+      "id": "cmp-7",
+      "name": "Deductible-expense checklist by Schedule C line",
+      "type": "worksheet",
+      "format": "structured worksheet (printable + fillable)",
+      "purpose": "Worksheet that helps the buyer: Deductible-expense checklist by Schedule C line.",
+      "maps_to_jobs": [
+        "job-3"
+      ]
+    },
+    {
+      "id": "cmp-8",
+      "name": "How much to set aside (with worked example)",
+      "type": "reference",
+      "format": "concise reference guide page",
+      "purpose": "Reference that helps the buyer: How much to set aside (with worked example).",
+      "maps_to_jobs": [
+        "job-1"
+      ]
+    },
+    {
+      "id": "cmp-9",
+      "name": "When quarterly payments are due",
+      "type": "reference",
+      "format": "concise reference guide page",
+      "purpose": "Reference that helps the buyer: When quarterly payments are due.",
+      "maps_to_jobs": [
+        "job-1",
+        "job-2"
+      ]
+    },
+    {
+      "id": "cmp-10",
+      "name": "Schedule C categories in plain English",
+      "type": "reference",
+      "format": "concise reference guide page",
+      "purpose": "Reference that helps the buyer: Schedule C categories in plain English.",
+      "maps_to_jobs": [
+        "job-3"
+      ]
+    },
+    {
+      "id": "cmp-11",
+      "name": "Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %)",
+      "type": "asset",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Asset that helps the buyer: Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %).",
+      "maps_to_jobs": [
+        "job-1",
+        "job-2"
+      ]
+    },
+    {
+      "id": "cmp-12",
+      "name": "Short setup guide (how the rules work, plain-English)",
+      "type": "asset",
+      "format": "concise reference guide page",
+      "purpose": "Asset that helps the buyer: Short setup guide (how the rules work, plain-English).",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-13",
+      "name": "Invoice + late-payment follow-up templates",
+      "type": "asset",
+      "format": "editable fill-in template",
+      "purpose": "Asset that helps the buyer: Invoice + late-payment follow-up templates.",
+      "maps_to_jobs": [
+        "job-4"
+      ]
+    },
+    {
+      "id": "cmp-14",
+      "name": "Sub-niche category presets (content creator / rideshare / trades)",
+      "type": "bonus",
+      "format": "preset / variant pack for the core tool",
+      "purpose": "Bonus that helps the buyer: Sub-niche category presets (content creator / rideshare / trades).",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    }
+  ],
+  "asset_requirements": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "Quarterly estimated-tax calculator",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-2",
+      "component_id": "cmp-2",
+      "for": "Set-aside % calculator",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-3",
+      "component_id": "cmp-3",
+      "for": "Schedule C category mapper",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-4",
+      "component_id": "cmp-4",
+      "for": "Professional invoice",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-5",
+      "component_id": "cmp-5",
+      "for": "Late-payment follow-up email",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-6",
+      "component_id": "cmp-6",
+      "for": "Quarterly payment scheduler (due dates)",
+      "deliverable": "Fillable PDF + printable version",
+      "tooling": "doc/pdf",
+      "notes": "",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-7",
+      "component_id": "cmp-7",
+      "for": "Deductible-expense checklist by Schedule C line",
+      "deliverable": "Fillable PDF + printable version",
+      "tooling": "doc/pdf",
+      "notes": "",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-8",
+      "component_id": "cmp-8",
+      "for": "How much to set aside (with worked example)",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-9",
+      "component_id": "cmp-9",
+      "for": "When quarterly payments are due",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-10",
+      "component_id": "cmp-10",
+      "for": "Schedule C categories in plain English",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-11",
+      "component_id": "cmp-11",
+      "for": "Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %)",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-12",
+      "component_id": "cmp-12",
+      "for": "Short setup guide (how the rules work, plain-English)",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-13",
+      "component_id": "cmp-13",
+      "for": "Invoice + late-payment follow-up templates",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-14",
+      "component_id": "cmp-14",
+      "for": "Sub-niche category presets (content creator / rideshare / trades)",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ],
+  "quality_requirements": {
+    "global": [
+      {
+        "req": "Every calculation/claim verified correct against current, cited rules before release.",
+        "basis": "evidence-backed",
+        "source": "brief.differentiation / risks"
+      },
+      {
+        "req": "No broken formulas on edit — stress-test with bad/blank inputs.",
+        "basis": "evidence-backed",
+        "source": "brief.related_problems"
+      },
+      {
+        "req": "Time-to-first-value under ~15 minutes; usable without a manual.",
+        "basis": "inferred",
+        "source": "buyer-effort principle"
+      },
+      {
+        "req": "Honor exclusions verbatim (see exclusions list); scope stays tight.",
+        "basis": "evidence-backed",
+        "source": "brief.exclude"
+      }
+    ],
+    "exclusions_preserved": [
+      "Actual tax filing (liability)",
+      "Personalised tax advice",
+      "Generic personal-budgeting bloat",
+      "Filler theory"
+    ]
+  },
+  "buyer_effort": {
+    "overall_target": "Buyer reaches first useful result in one sitting, no setup call.",
+    "per_component": [
+      {
+        "component_id": "cmp-1",
+        "name": "Quarterly estimated-tax calculator",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Ship with a prefilled worked example",
+          "Single input area",
+          "Dropdowns instead of free-typing where possible"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-2",
+        "name": "Set-aside % calculator",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Ship with a prefilled worked example",
+          "Single input area",
+          "Dropdowns instead of free-typing where possible"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-3",
+        "name": "Schedule C category mapper",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Ship with a prefilled worked example",
+          "Single input area",
+          "Dropdowns instead of free-typing where possible"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-4",
+        "name": "Professional invoice",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Provide a ready-to-send version, not only an editable one"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-5",
+        "name": "Late-payment follow-up email",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Provide a ready-to-send version, not only an editable one"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-6",
+        "name": "Quarterly payment scheduler (due dates)",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Ship with a prefilled worked example"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-7",
+        "name": "Deductible-expense checklist by Schedule C line",
+        "effort_level": "low",
+        "effort_minimizers": [
+          "Ship with a prefilled worked example"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-8",
+        "name": "How much to set aside (with worked example)",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-9",
+        "name": "When quarterly payments are due",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-10",
+        "name": "Schedule C categories in plain English",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-11",
+        "name": "Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %)",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-12",
+        "name": "Short setup guide (how the rules work, plain-English)",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-13",
+        "name": "Invoice + late-payment follow-up templates",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-14",
+        "name": "Sub-niche category presets (content creator / rideshare / trades)",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      }
+    ],
+    "basis": "inferred"
+  },
+  "production_sequence": [
+    {
+      "order": 1,
+      "step": "Build: Quarterly estimated-tax calculator",
+      "component_id": "cmp-1",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Build: Set-aside % calculator",
+      "component_id": "cmp-2",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [
+        1
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 3,
+      "step": "Build: Schedule C category mapper",
+      "component_id": "cmp-3",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [
+        2
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 4,
+      "step": "Build: Quarterly payment scheduler (due dates)",
+      "component_id": "cmp-6",
+      "format": "structured worksheet (printable + fillable)",
+      "depends_on": [
+        3
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 5,
+      "step": "Build: Deductible-expense checklist by Schedule C line",
+      "component_id": "cmp-7",
+      "format": "structured worksheet (printable + fillable)",
+      "depends_on": [
+        4
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 6,
+      "step": "Build: Professional invoice",
+      "component_id": "cmp-4",
+      "format": "editable fill-in template",
+      "depends_on": [
+        5
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 7,
+      "step": "Build: Late-payment follow-up email",
+      "component_id": "cmp-5",
+      "format": "editable fill-in template",
+      "depends_on": [
+        6
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 8,
+      "step": "Build: How much to set aside (with worked example)",
+      "component_id": "cmp-8",
+      "format": "concise reference guide page",
+      "depends_on": [
+        7
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 9,
+      "step": "Build: When quarterly payments are due",
+      "component_id": "cmp-9",
+      "format": "concise reference guide page",
+      "depends_on": [
+        8
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 10,
+      "step": "Build: Schedule C categories in plain English",
+      "component_id": "cmp-10",
+      "format": "concise reference guide page",
+      "depends_on": [
+        9
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 11,
+      "step": "Build: Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %)",
+      "component_id": "cmp-11",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [
+        10
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 12,
+      "step": "Build: Short setup guide (how the rules work, plain-English)",
+      "component_id": "cmp-12",
+      "format": "concise reference guide page",
+      "depends_on": [
+        11
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 13,
+      "step": "Build: Invoice + late-payment follow-up templates",
+      "component_id": "cmp-13",
+      "format": "editable fill-in template",
+      "depends_on": [
+        12
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 14,
+      "step": "Build: Sub-niche category presets (content creator / rideshare / trades)",
+      "component_id": "cmp-14",
+      "format": "preset / variant pack for the core tool",
+      "depends_on": [
+        13
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 15,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ],
+  "verification_requirements": [
+    {
+      "component_id": "cmp-1",
+      "name": "Quarterly estimated-tax calculator",
+      "reason": "Touches 'tax' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "verified_by": "qualified professional (unresolved)"
+    },
+    {
+      "component_id": "cmp-3",
+      "name": "Schedule C category mapper",
+      "reason": "Touches 'schedule c' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "verified_by": "qualified professional (unresolved)"
+    },
+    {
+      "component_id": "cmp-6",
+      "name": "Quarterly payment scheduler (due dates)",
+      "reason": "Touches 'quarterly' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "verified_by": "qualified professional (unresolved)"
+    },
+    {
+      "component_id": "cmp-7",
+      "name": "Deductible-expense checklist by Schedule C line",
+      "reason": "Touches 'schedule c' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "verified_by": "qualified professional (unresolved)"
+    },
+    {
+      "component_id": "cmp-9",
+      "name": "When quarterly payments are due",
+      "reason": "Touches 'quarterly' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "verified_by": "qualified professional (unresolved)"
+    },
+    {
+      "component_id": "cmp-10",
+      "name": "Schedule C categories in plain English",
+      "reason": "Touches 'schedule c' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "verified_by": "qualified professional (unresolved)"
+    },
+    {
+      "component_id": "cmp-11",
+      "name": "Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %)",
+      "reason": "Touches 'tax' — domain accuracy (tax/legal/financial/health) must be verified by a qualified professional before release.",
+      "verified_by": "qualified professional (unresolved)"
+    }
+  ],
+  "unresolved_questions": [
+    "Distribution is the hard part (incumbents own Etsy SEO) — UNKNOWN best channel",
+    "Tax-logic correctness carries liability; needs careful, disclaimed implementation",
+    "Free templates compete; must be visibly better",
+    "Creator ecosystem size UNKNOWN",
+    "Prevalence UNKNOWN",
+    "Components mapped only to the overall outcome (weak job fit): ['Professional invoice', 'Short setup guide (how the rules work, plain-English)', 'Sub-niche category presets (content creator / rideshare / trades)']",
+    "External verification pending for: Quarterly estimated-tax calculator, Schedule C category mapper, Quarterly payment scheduler (due dates), Deductible-expense checklist by Schedule C line, When quarterly payments are due, Schedule C categories in plain English, Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %)"
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Actual tax filing (liability)",
+      "Personalised tax advice",
+      "Generic personal-budgeting bloat",
+      "Filler theory"
+    ],
+    "risks_unknowns": [
+      "Distribution is the hard part (incumbents own Etsy SEO) — UNKNOWN best channel",
+      "Tax-logic correctness carries liability; needs careful, disclaimed implementation",
+      "Free templates compete; must be visibly better",
+      "Creator ecosystem size UNKNOWN",
+      "Prevalence UNKNOWN"
+    ],
+    "differentiation": [
+      "Correct SE-tax + quarterly logic a non-accountant can trust",
+      "Formulas that don't break on edit",
+      "Tuned to a specific US 1099 sub-niche",
+      "Distribution off Etsy (niche community/content), not SEO roulette"
+    ],
+    "evidence_requirements": [
+      {
+        "label": "marketplace",
+        "url": null,
+        "note": "seen across Etsy search results; no single canonical URL",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Etsy search (observed breadth)",
+        "url": null,
+        "note": "",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Etsy search (observed)",
+        "url": null,
+        "note": "",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "r/freelance / r/tax threads on quarterly estimated taxes (primary user language)",
+        "url": "https://www.reddit.com/r/freelance/",
+        "note": "Reddit thread bodies not retrievable by in-app tools this run; requirement preserved for live retrieval.",
+        "status": "must be retrieved/verified later"
+      }
+    ]
+  },
+  "basis_summary": {
+    "component_requirements_evidence_backed": 5,
+    "component_requirements_inferred": 11,
+    "note": "evidence-backed = traceable to a Phase-8 brief field; inferred = design decision made by the curation engine."
+  },
+  "handoff": {
+    "consumes": "product_architecture.json + component_specs.json + asset_requirements.json + quality_requirements.json + production_plan.json",
+    "for": "Phase 10 Product Builder",
+    "must_respect": [
+      "verification_requirements",
+      "carried_forward.exclusions",
+      "quality_requirements",
+      "unresolved_questions"
+    ]
+  }
+}

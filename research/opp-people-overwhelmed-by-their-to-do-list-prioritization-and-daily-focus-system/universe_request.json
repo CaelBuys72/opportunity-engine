@@ -1,0 +1,31 @@
+{
+  "universe_opportunity_id": "opp-people-overwhelmed-by-their-to-do-list-prioritization-and-daily-focus-system",
+  "origin": "market_universe",
+  "market_id": "mkt-productivity-and-self-organization",
+  "submarket_id": "sub-productivity-and-self-organization-task-and-time-management",
+  "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+  "opportunity_name": "Prioritization & Daily Focus System",
+  "member_problem_ids": [
+    "prb-people-overwhelmed-by-their-to-do-list-no-prioritization-on-the-list",
+    "prb-people-overwhelmed-by-their-to-do-list-task-paralysis-from-overwhelm",
+    "prb-people-overwhelmed-by-their-to-do-list-quick-vs-big-tasks-not-separated"
+  ],
+  "seed_source_refs": [
+    "src-3790487b0b45",
+    "src-80971f406e02",
+    "src-a285020b3e27",
+    "src-ac59973f9e6e",
+    "src-e0002b616a4c",
+    "src-fb079add15f1",
+    "src-fd5340158c73"
+  ],
+  "seed_commercial_evidence_refs": [],
+  "seed_creator_candidate_refs": [],
+  "priority_metadata": {
+    "commercial_score": 87,
+    "evidence_score": 45,
+    "priority_score": 70,
+    "priority_classification": "HIGH_PRIORITY",
+    "note": "Why we chose to investigate — NOT evidence of reality."
+  }
+}

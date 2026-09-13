@@ -1,0 +1,30 @@
+{
+  "audience": "Professionals upskilling on ChatGPT for their job",
+  "recurring_symptoms": [
+    "People don't know how to write effective prompts; results vary widely by skill level.",
+    "Generic prompts don't fit a specific role or workflow; professionals want role-specific ones."
+  ],
+  "root_problems": [
+    "Professionals upskilling on ChatGPT for their job face a related cluster of problems around role-specific prompt library & playbook — e.g. prompt-writing skill gap, no role-specific prompts."
+  ],
+  "desired_outcomes": [
+    ""
+  ],
+  "existing_behaviours": [
+    "Using free templates / generic tools",
+    "Asking peers in communities"
+  ],
+  "existing_solutions": [],
+  "solution_strengths": [
+    "Cheap/most already exist",
+    "Instant download"
+  ],
+  "solution_weaknesses": [],
+  "customer_complaints": [],
+  "unmet_needs": [],
+  "solution_gaps": [],
+  "contradictions": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+  ],
+  "opportunity_assessment": "4 observed + 0 inferred/other claims support a recurring problem for Professionals upskilling on ChatGPT for their job. Gap: unknown."
+}

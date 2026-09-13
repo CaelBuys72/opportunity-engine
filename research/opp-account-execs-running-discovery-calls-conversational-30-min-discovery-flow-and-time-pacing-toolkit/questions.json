@@ -1,0 +1,148 @@
+{
+  "questions": [
+    {
+      "question": "Is the problem recurring and painful enough to pay to solve?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "The provided source contains no usable data or evidence regarding problem frequency or willingness to pay.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Market demand and monetization potential cannot be validated without empirical evidence.",
+      "remaining_uncertainty": "Need user research and buyer interviews to evaluate if sales leaders or AEs will pay for discovery call pacing solutions."
+    },
+    {
+      "question": "What exactly have people already tried, and why did it fall short?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "No source evidence exists describing prior solutions, existing workarounds, or failure reasons.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "High risk of building duplicate or redundant tooling without mapping existing workflows.",
+      "remaining_uncertainty": "Investigate current AE toolstacks (e.g., call intelligence tools, notepad templates, battlecards) and why they fail during live calls."
+    },
+    {
+      "question": "Is a digital product the right form, or is this a service / software / free-information problem?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "No source evidence available to determine the appropriate product delivery format.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Cannot recommend software, content, or coaching format without observing rep workflow constraints.",
+      "remaining_uncertainty": "Evaluate whether live call software, template guides, or sales coaching best addresses conversational pacing."
+    },
+    {
+      "question": "What is the single most useful asset or mechanism we could ship?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "No evidence available to identify high-leverage product mechanisms.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Cannot specify core feature set without operational data from live discovery calls.",
+      "remaining_uncertainty": "Determine key live-call intervention points where AEs lose control of time or conversational tone."
+    },
+    {
+      "question": "What price will the audience tolerate, and on what evidence?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "No pricing evidence or financial benchmarks exist in the provided source.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Pricing strategy cannot be established.",
+      "remaining_uncertainty": "Conduct price sensitivity analysis with prospective SaaS AE buyers and sales management."
+    },
+    {
+      "question": "At what exact phase of the 30-minute call agenda do AEs most frequently lose control of time, and what specific prospect behaviors or tangents cause those detours?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "The source provides no data on discovery call stage timing or prospect tangent patterns.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Cannot target pacing cues to specific failure points in the 30-minute window.",
+      "remaining_uncertainty": "Map detailed 30-minute call breakdowns across discovery call recordings."
+    },
+    {
+      "question": "How do top-performing AEs structure their live screen notes or prompts to cover qualification criteria without making the conversation feel like a robotic checklist?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "No source evidence exists regarding top-performer note structures or prompt techniques.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Cannot model UI note structures on proven rep behaviors.",
+      "remaining_uncertainty": "Observe and analyze top-tier sales reps' note-taking systems and conversational frameworks."
+    },
+    {
+      "question": "What specific signals indicate a prospect feels interrogated during discovery, and what conversational techniques successfully pivot the dynamic back to a peer-level business discussion?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "No source data is available regarding prospect interrogation signals or conversational recovery tactics.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Cannot design effective live prompting scripts for conversational re-engagement.",
+      "remaining_uncertainty": "Gather qualitative data on prospect friction indicators and effective peer-level pivot language."
+    },
+    {
+      "question": "Why do current conversation intelligence tools or call notes fail to prevent the 'last-5-minutes rush' to secure clear, confirmed next steps?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "No evidence provided regarding the limitations of existing conversation intelligence software during active calls.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Must identify why post-call intelligence tools fail to deliver real-time pacing enforcement.",
+      "remaining_uncertainty": "Analyze active screen usage and cognitive overload during live video calls."
+    },
+    {
+      "question": "What minimal set of real-time visual pacing cues or dynamic prompts could an AE monitor during a live video call without losing eye contact or active listening focus?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "No evidence available on visual UX mechanics or live-call cognitive load constraints.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "UX parameters cannot be defined without measuring active visual friction.",
+      "remaining_uncertainty": "Prototype and test minimal HUD (heads-up display) overlay designs during mock/live calls."
+    }
+  ],
+  "critical_unresolved": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service / software / free-information problem?",
+    "What is the single most useful asset or mechanism we could ship?"
+  ],
+  "research_outcome": "NEEDS_MORE_RESEARCH",
+  "accounting": {
+    "search_results_discovered": 154,
+    "unique_candidate_sources": 89,
+    "sources_selected": 14,
+    "sources_retrieved": 1,
+    "retrieval_failed": 13,
+    "evidence_bearing_sources": 0
+  },
+  "product_implications": {
+    "core_problem": "Account execs running discovery calls face a related cluster of problems around conversational 30-min discovery flow & time pacing toolkit — e.g. Insufficient call time to complete thorough discovery and establish next steps, Discovery calls feeling like interrogations rather than natural business conversations.",
+    "desired_outcome": "Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+    "current_behavior": [],
+    "current_solutions": [],
+    "failure_modes": [],
+    "free_alternatives": [],
+    "product_opportunity": "Unknown due to complete absence of usable evidence in the provided source.",
+    "product_mechanism": "Unknown due to lack of source data.",
+    "product_format": {
+      "recommended": "Unknown",
+      "components": [],
+      "basis": "inferred",
+      "rationale": "No valid data was provided in the sources to evaluate workflow, constraints, or format preference."
+    },
+    "must_have_components": [],
+    "do_not_build": [
+      "Do not build a live call assistant or pacing tool based on unverified assumptions without primary user research."
+    ],
+    "pricing": {
+      "values": [],
+      "basis": "unknown"
+    },
+    "contradictions": [],
+    "remaining_uncertainty": [
+      "Lack of source data on AE call breakdowns, existing tools, buyer willingness to pay, and live call visual friction."
+    ],
+    "outcome": "NEEDS_MORE_RESEARCH"
+  }
+}

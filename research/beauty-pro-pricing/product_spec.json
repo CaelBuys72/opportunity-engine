@@ -1,0 +1,64 @@
+{
+  "opportunity_id": "beauty-pro-pricing",
+  "product_concept": "A focused calculator / spreadsheet that helps independent nail / lash / brow technicians price services profitably and confidently without losing clients.",
+  "product_format": "calculator / spreadsheet",
+  "transformation": {
+    "from_state": "Trained in technique, not business; pricing is guesswork and they fear raising prices",
+    "to_state": "To: Price services profitably and confidently without losing clients",
+    "promise": "Get to 'Price services profitably and confidently without losing clients.' without the usual guesswork.",
+    "core_problem": "Trained in technique, not business; pricing is guesswork and they fear raising prices.",
+    "desired_outcome": "Price services profitably and confidently without losing clients.",
+    "basis": "evidence-backed"
+  },
+  "promise": "Get to 'Price services profitably and confidently without losing clients.' without the usual guesswork.",
+  "target_customer": "independent nail / lash / brow technicians",
+  "price_range": "Unknown — infer from analogous products before pricing",
+  "price_rationale": "Unknown pricing evidence; do not set a price until validated.",
+  "confidence": "MEDIUM",
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: Price services profitably and confidently without losing clients.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: I don't know what to charge",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: scared to raise my prices",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: clients keep negotiating",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-4",
+      "statement": "Resolve: I think I'm undercharging",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-5",
+      "statement": "Resolve: don't know my real profit margin",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "differentiation": [
+    "trade-specific consumables-per-service cost math (gel/acrylic/lash-fan usage)",
+    "pricing confidence/scripts, not just a calculator"
+  ],
+  "exclusions": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ]
+}

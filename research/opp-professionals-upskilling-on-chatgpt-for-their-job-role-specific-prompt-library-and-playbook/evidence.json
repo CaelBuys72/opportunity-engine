@@ -1,0 +1,48 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "prompt-writing skill gap",
+      "source_id": "src-1",
+      "evidence": "Plus users report ~90% success on detailed prompts vs ~60% on vague ones; professionals copy community-shared prompts.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "prompt-writing skill gap",
+      "source_id": "src-2",
+      "evidence": "Guide covering workplace tasks: knowledge retrieval, writing, onboarding, project management.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "no role-specific prompts",
+      "source_id": "src-3",
+      "evidence": "Paid prompt packs tailored to specific roles (accountants, lawyers, nurses, engineers, HR).",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-4",
+      "claim": "no role-specific prompts",
+      "source_id": "src-4",
+      "evidence": "Paid product teaching professionals to craft effective prompts.",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    }
+  ]
+}

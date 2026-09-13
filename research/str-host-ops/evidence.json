@@ -1,0 +1,37 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "established seller volume",
+      "source_id": "src-1",
+      "evidence": "infleasy Airbnb welcome-book: 1.3k sales, 4.9★ (76 reviews), ~$9.60.",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "Canva usability failure — a delivery-reliability gap",
+      "source_id": "src-1",
+      "evidence": "Real 1★ review: 'Template could not be printed after personalizing and would not save. I lost hours of work.'",
+      "source_type": "review",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "breadth observed in search",
+      "source_id": "src-2",
+      "evidence": "'airbnb welcome book template' returns 1,000+ Etsy items, a wall of Bestseller badges — category is deep but design-saturated.",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    }
+  ]
+}

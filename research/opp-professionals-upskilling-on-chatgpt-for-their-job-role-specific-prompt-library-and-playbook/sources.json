@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "https://www.aitooldiscovery.com/guides/chatgpt-prompts-reddit",
+      "url": "https://www.aitooldiscovery.com/guides/chatgpt-prompts-reddit",
+      "tier": 2,
+      "source_type": "article",
+      "accessible": true,
+      "note": "prompt-writing skill gap"
+    },
+    {
+      "id": "src-2",
+      "label": "https://gptcentral.substack.com/p/use-chatgpt-at-work-like-a-pro",
+      "url": "https://gptcentral.substack.com/p/use-chatgpt-at-work-like-a-pro",
+      "tier": 2,
+      "source_type": "article",
+      "accessible": true,
+      "note": "prompt-writing skill gap"
+    },
+    {
+      "id": "src-3",
+      "label": "https://ismailsaleem.gumroad.com/l/ChatGPT-Prompts-for-Professionals",
+      "url": "https://ismailsaleem.gumroad.com/l/ChatGPT-Prompts-for-Professionals",
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": true,
+      "note": "no role-specific prompts"
+    },
+    {
+      "id": "src-4",
+      "label": "https://andreanara.gumroad.com/l/promptingforprofessionals",
+      "url": "https://andreanara.gumroad.com/l/promptingforprofessionals",
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": true,
+      "note": "no role-specific prompts"
+    }
+  ]
+}

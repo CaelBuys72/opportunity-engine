@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "https://www.etsy.com/listing/1308448953/airbnb-welcome-book-template-airbnb-host",
+      "url": "https://www.etsy.com/listing/1308448953/airbnb-welcome-book-template-airbnb-host",
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": true,
+      "note": "established seller volume"
+    },
+    {
+      "id": "src-2",
+      "label": "marketplace",
+      "url": null,
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": false,
+      "note": "breadth observed in search"
+    }
+  ]
+}

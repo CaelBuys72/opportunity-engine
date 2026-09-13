@@ -1,0 +1,44 @@
+{
+  "audience": "adults with ADHD",
+  "recurring_symptoms": [
+    "can't stick to a planner",
+    "perfectionist systems collapse",
+    "executive-function overwhelm"
+  ],
+  "root_problems": [
+    "Standard planners fail; systems that are too complex get abandoned within weeks."
+  ],
+  "desired_outcomes": [
+    "A planning system they'll actually stick to."
+  ],
+  "existing_behaviours": [
+    "Using free templates / generic tools",
+    "Asking peers in communities"
+  ],
+  "existing_solutions": [
+    "Gumroad ADHD planners/toolkits ($5-30)",
+    "generic Notion planners",
+    "apps"
+  ],
+  "solution_strengths": [
+    "Cheap/most already exist",
+    "Instant download"
+  ],
+  "solution_weaknesses": [
+    "genuinely simple/sustainable design (vs feature-heavy)",
+    "works better as sub-angle on other pockets (ADHD budgeting/meal-planning)"
+  ],
+  "customer_complaints": [],
+  "unmet_needs": [
+    "genuinely simple/sustainable design (vs feature-heavy)",
+    "works better as sub-angle on other pockets (ADHD budgeting/meal-planning)"
+  ],
+  "solution_gaps": [
+    "genuinely simple/sustainable design (vs feature-heavy)",
+    "works better as sub-angle on other pockets (ADHD budgeting/meal-planning)"
+  ],
+  "contradictions": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+  ],
+  "opportunity_assessment": "1 observed + 1 inferred/other claims support a recurring problem for adults with ADHD. Gap: genuinely simple/sustainable design (vs feature-heavy); works better as sub-angle on other pockets (ADHD budgeting/meal-planning)."
+}

@@ -1,0 +1,58 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "https://touchstay.com/blog/airbnb-cleaning-checklist",
+      "url": "https://touchstay.com/blog/airbnb-cleaning-checklist",
+      "tier": 2,
+      "source_type": "article",
+      "accessible": true,
+      "note": "cleaner turnover coordination"
+    },
+    {
+      "id": "src-2",
+      "label": "other",
+      "url": null,
+      "tier": 2,
+      "source_type": "other",
+      "accessible": false,
+      "note": "inferred upstream problem (Build 2) — context, not observed evidence"
+    },
+    {
+      "id": "src-3",
+      "label": "https://www.etsy.com/listing/1308448953/airbnb-welcome-book-template-airbnb-host",
+      "url": "https://www.etsy.com/listing/1308448953/airbnb-welcome-book-template-airbnb-host",
+      "tier": 3,
+      "source_type": "review",
+      "accessible": true,
+      "note": "welcome book contents unclear"
+    },
+    {
+      "id": "src-4",
+      "label": "marketplace",
+      "url": null,
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": false,
+      "note": "welcome book contents unclear"
+    },
+    {
+      "id": "src-5",
+      "label": "Etsy marketplace (observed 2026-09-08)",
+      "url": null,
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": false,
+      "note": ""
+    },
+    {
+      "id": "src-6",
+      "label": "r/airbnb / r/AirBnBHosts turnover threads (primary host language)",
+      "url": "https://www.reddit.com/r/AirBnBHosts/",
+      "tier": 1,
+      "source_type": "reddit",
+      "accessible": false,
+      "note": "Reddit thread bodies not retrievable in-app this run; retrieve later."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "opportunity_id": "str-host-ops",
+  "target_audience": "first-year short-term-rental hosts",
+  "audience_identity": "first-year short-term-rental hosts",
+  "audience_problem": "New hosts don't know what to include in welcome books, cleaning checklists, house rules or checkout flow.",
+  "desired_outcome": "Launch looking professional and avoid rookie mistakes that cost reviews.",
+  "relevant_terminology": [
+    "what goes in a welcome book",
+    "cleaning/turnover checklist",
+    "guest message scripts",
+    "checkout instructions",
+    "what goes in a welcome book",
+    "cleaning/turnover checklist",
+    "guest message scripts",
+    "checkout instructions"
+  ],
+  "adjacent_terminology": [
+    "(derive adjacent terms from audience — none inferred)"
+  ],
+  "content_topics": [
+    "what goes in a welcome book",
+    "cleaning/turnover checklist",
+    "guest message scripts",
+    "checkout instructions",
+    "Launch looking professional and avoid rookie mistakes that cost reviews."
+  ],
+  "content_formats": [
+    "short-form video",
+    "long-form video",
+    "carousel/post",
+    "newsletter"
+  ],
+  "creator_archetypes": [
+    "niche educator",
+    "practitioner-creator",
+    "community host"
+  ],
+  "creator_categories": [
+    "personal finance",
+    "freelancing/solopreneurship",
+    "creator economy",
+    "small business"
+  ],
+  "likely_platforms": [
+    "YouTube",
+    "Instagram",
+    "TikTok",
+    "Newsletter/Substack",
+    "X"
+  ],
+  "exclusion_terms": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ],
+  "search_queries": [
+    {
+      "platform": "multi",
+      "query": "first-year short-term-rental hosts youtube creator"
+    },
+    {
+      "platform": "multi",
+      "query": "first-year short-term-rental hosts tiktok"
+    }
+  ],
+  "content_signals": {
+    "exact_match_terms": [
+      "what goes in a welcome book",
+      "cleaning/turnover checklist",
+      "guest message scripts",
+      "checkout instructions",
+      "what goes in a welcome book",
+      "cleaning/turnover checklist",
+      "guest message scripts",
+      "checkout instructions"
+    ],
+    "adjacent_terms": [
+      "(derive adjacent terms from audience — none inferred)"
+    ],
+    "weak_terms": [
+      "what goes in a welcome book",
+      "cleaning/turnover checklist",
+      "guest message scripts",
+      "checkout instructions",
+      "Launch looking professional and avoid rookie mistakes that cost reviews."
+    ],
+    "exclusion_terms": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ],
+    "note": "Classify each creator content item as exact / adjacent / weak / irrelevant."
+  },
+  "audience_signals": {
+    "demand_signals_to_look_for": [
+      "comments asking how to solve the problem",
+      "requests for a template / calculator / spreadsheet / guide",
+      "requests for examples",
+      "complaints about existing methods (e.g. 'my spreadsheet breaks')",
+      "people describing the pain in their own words",
+      "asking where to find a solution / recommendations"
+    ],
+    "note": "Generic engagement is NOT demand — require problem-specific signals."
+  },
+  "qualification_rubric": {
+    "dimensions": {
+      "audience_alignment": 20,
+      "problem_alignment": 20,
+      "content_alignment": 15,
+      "relevant_view_evidence": 15,
+      "creator_density": 15,
+      "approachability": 5,
+      "monetization_signal": 5,
+      "product_content_fit": 5
+    },
+    "definitions": {
+      "audience_alignment": "Does the creator actually reach the target buyer?",
+      "problem_alignment": "Does their audience experience THIS problem?",
+      "content_alignment": "Do they repeatedly make content on the problem/outcome/adjacent?",
+      "relevant_view_evidence": "Do relevant pieces get meaningful, repeated distribution?",
+      "creator_density": "Do multiple creators independently reach this audience/problem?",
+      "approachability": "Could a small operator realistically partner with them?",
+      "monetization_signal": "Do they already monetize (positive, not required)?",
+      "product_content_fit": "Would the product feel like a natural extension of their content?"
+    },
+    "target_follower_band": "10k-100k (heuristic, not a rule; strong alignment beats size)"
+  }
+}

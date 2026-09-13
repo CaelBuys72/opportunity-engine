@@ -1,0 +1,130 @@
+{
+  "id": "beauty-pro-pricing",
+  "title": "Independent beauty professional pricing confidence",
+  "industry_id": "beauty",
+  "submarket_id": "beauty-pros",
+  "origin": "seed-run",
+  "audience": "independent nail / lash / brow technicians",
+  "core_problem": "Trained in technique, not business; pricing is guesswork and they fear raising prices.",
+  "desired_outcome": "Price services profitably and confidently without losing clients.",
+  "related_problems": [
+    "I don't know what to charge",
+    "scared to raise my prices",
+    "clients keep negotiating",
+    "I think I'm undercharging",
+    "don't know my real profit margin"
+  ],
+  "problems": [
+    {
+      "id": "prob-wtp",
+      "statement": "Beauty pros pay for pricing/business assets.",
+      "symptoms": [
+        "GraphicLabPro (beauty price-list templates): 7.4k sales, 4.8★ (666 reviews), Star Seller."
+      ],
+      "evidence_ids": [
+        "ev-be-1"
+      ]
+    },
+    {
+      "id": "prob-gap",
+      "statement": "No dominant trade-specific pricing tool.",
+      "symptoms": [
+        "Nail-specific pricing calculators exist ($3.50-11) but Etsy 'Bestseller' badges cluster on GENERIC small-business calculators."
+      ],
+      "evidence_ids": [
+        "ev-be-2"
+      ]
+    },
+    {
+      "id": "prob-demand",
+      "statement": "Growing base of solo beauty operators.",
+      "symptoms": [
+        "At-home/independent nail techs are a documented growth category.",
+        "r/Nailtechs is small (~29k) and pricing threads get modest engagement; beauty biz talk skews to Facebook/IG."
+      ],
+      "evidence_ids": [
+        "ev-be-3",
+        "ev-be-4"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "ev-be-1",
+    "ev-be-2",
+    "ev-be-3",
+    "ev-be-4"
+  ],
+  "community_ids": [
+    "r-nailtechs"
+  ],
+  "existing_solutions": [
+    "Etsy nail pricing calculators ($3.50-11)",
+    "generic pricing calculators ($1)",
+    "price-list flyer designs",
+    "booking SaaS (GlossGenius, Vagaro)"
+  ],
+  "solution_gaps": [
+    "trade-specific consumables-per-service cost math (gel/acrylic/lash-fan usage)",
+    "pricing confidence/scripts, not just a calculator"
+  ],
+  "creator_ecosystem": "inferred large (beauty-business creators on IG/TikTok) but not measured this session",
+  "digital_product_fit": "Good: calculator + service-menu + no-show/deposit scripts bundle (~$15-29).",
+  "source_urls": [
+    "https://www.etsy.com/listing/1554429326/nail-price-list-instant-download",
+    "https://carolinanewsandreporter.cic.sc.edu/nailed-it-how-at-home-nail-techs-are-changing-the-beauty-industry/"
+  ],
+  "score": {
+    "factors": {
+      "demand_evidence": {
+        "score": 6,
+        "basis": "observed",
+        "rationale": "Real spend + growth, but Reddit signal thin; lives on FB/IG.",
+        "weight": 20
+      },
+      "pain_importance": {
+        "score": 8,
+        "basis": "inferred",
+        "rationale": "Underpricing directly erodes livelihood.",
+        "weight": 15
+      },
+      "clear_outcome": {
+        "score": 8,
+        "basis": "inferred",
+        "rationale": "'Price profitably & confidently' is concrete.",
+        "weight": 10
+      },
+      "existing_wtp": {
+        "score": 6,
+        "basis": "observed",
+        "rationale": "Spend concentrates in design/generic tools, not niche strategy.",
+        "weight": 15
+      },
+      "solution_gap": {
+        "score": 7,
+        "basis": "observed",
+        "rationale": "No trade-specific cost model dominates.",
+        "weight": 15
+      },
+      "creator_density": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "Beauty-biz creators are abundant, but not measured.",
+        "weight": 15
+      },
+      "digital_product_fit": {
+        "score": 8,
+        "basis": "inferred",
+        "rationale": "Calculator+scripts bundle fits.",
+        "weight": 10
+      }
+    },
+    "overall": 70.0,
+    "confidence": "MEDIUM",
+    "confidence_reason": "3/7 factors observed, 0/7 unknown; demand=observed, WTP=observed.",
+    "weight_unknown_pct": 0
+  },
+  "status": "researching",
+  "research_status": "needs_review",
+  "curation_status": "complete",
+  "distribution_verdict": "NEEDS_RESEARCH"
+}

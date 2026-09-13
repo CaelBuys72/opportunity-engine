@@ -1,0 +1,223 @@
+{
+  "candidates": [
+    {
+      "id": "creator-1",
+      "name": "madeleineraifordholland",
+      "platform": "Instagram",
+      "profile_url": "https://www.instagram.com/madeleineraifordholland",
+      "handle": "@madeleineraifordholland",
+      "followers": 86400,
+      "followers_basis": "observed",
+      "niche": "Airbnb / STR host coaching",
+      "audience_description": "short-term rental hosts (positioned for high earners); STR coach, cut taxes, Airbnbs that run without a property manager",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "STR coaching business (observed in bio)"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09: 86.4k followers, bio"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "creator-2",
+      "name": "coachinayah",
+      "platform": "Instagram",
+      "profile_url": "https://www.instagram.com/coachinayah",
+      "handle": "@coachinayah",
+      "followers": 255000,
+      "followers_basis": "observed",
+      "niche": "Airbnb / STR education",
+      "audience_description": "people who want to make money via short-term rentals; '$1M+ from Airbnb, I teach STR'",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "paid masterclass / 'turnkey program' course (link in bio, observed)"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09: 255k followers, bio + masterclass link"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "creator-3",
+      "name": "ridhwaanbasa",
+      "platform": "Instagram",
+      "profile_url": "https://www.instagram.com/ridhwaanbasa",
+      "handle": "@ridhwaanbasa",
+      "followers": 23300,
+      "followers_basis": "observed",
+      "niche": "Property investing (adjacent, NOT Airbnb host-ops specifically)",
+      "audience_description": "property investors seeking financial freedom / generational wealth — adjacent to hosting, not first-year-host focused",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "linktr.ee funnel (observed)"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09: 23.3k followers, bio"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "creator-4",
+      "name": "taron.teague",
+      "platform": "Instagram",
+      "profile_url": "https://www.instagram.com/taron.teague",
+      "handle": "@taron.teague",
+      "followers": 134000,
+      "followers_basis": "observed",
+      "niche": "Airbnb host lifestyle",
+      "audience_description": "followers of an Airbnb host / 'adventure mom' lifestyle account — host-curious audience; not education-led",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "brand partnerships email in bio (observed)"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09: 134k followers, bio"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "creator-5",
+      "name": "elliedulude",
+      "platform": "Instagram",
+      "profile_url": "https://www.instagram.com/elliedulude",
+      "handle": "@elliedulude",
+      "followers": 21900,
+      "followers_basis": "observed",
+      "niche": "Airbnb / STR owner lifestyle",
+      "audience_description": "lifestyle audience of an STR owner (@the.northern.haus); host-adjacent, not education-led",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "partnerships email in bio (observed)"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09: 21.9k followers, bio"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "creator-6",
+      "name": "camilaatunoni",
+      "platform": "Instagram",
+      "profile_url": "https://www.instagram.com/camilaatunoni",
+      "handle": "@camilaatunoni",
+      "followers": 135000,
+      "followers_basis": "observed",
+      "niche": "MISMATCH — content creation / marketing, not Airbnb",
+      "audience_description": "content-creation / social-media-marketing audience ('content creation 101'); NOT short-term-rental hosts — audience mismatch vs this product",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [],
+      "source_refs": [
+        "IG public profile 2026-09-09: 135k followers, bio shows content-creation niche"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "creator-7",
+      "name": "bhagya.bnb",
+      "platform": "Instagram",
+      "profile_url": "https://www.instagram.com/bhagya.bnb",
+      "handle": "@bhagya.bnb",
+      "followers": 17900,
+      "followers_basis": "observed",
+      "niche": "Airbnb Superhost / real-estate + finance",
+      "audience_description": "real-estate-investor + Airbnb Superhost audience; co-founder of a finance brand (smartherfinance)",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "operator doc: ebook in bio (competing product flag)",
+        "co-founder @smartherfinance (observed)"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09: 17.9k followers, bio",
+        "operator doc note: ebook in bio"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "creator-8",
+      "name": "managedbyluca",
+      "platform": "Instagram",
+      "profile_url": "https://www.instagram.com/managedbyluca",
+      "handle": "@managedbyluca",
+      "followers": 13400,
+      "followers_basis": "observed",
+      "niche": "Airbnb education (help others start hosting)",
+      "audience_description": "aspiring hosts, esp. tradesmen leaving their jobs; 'I help tradesmen do the same', 'DM AIRBNB to work with me' (approachable + coaching)",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "1:1 coaching / 'work with me' (observed)"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09: 13.4k followers, bio"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "creator-9",
+      "name": "johnazizzz",
+      "platform": "Instagram",
+      "profile_url": "https://www.instagram.com/johnazizzz",
+      "handle": "@johnazizzz",
+      "followers": 16400,
+      "followers_basis": "observed",
+      "niche": "Airbnb education (founder Paragon Stays)",
+      "audience_description": "aspiring STR operators; 'I generate revenue & teach others how'; YouTube funnel",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "teaches/monetizes (observed)",
+        "YouTube channel funnel (observed)"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09: 16.4k followers, bio"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "creator-10",
+      "name": "digitalcleaningacademy",
+      "platform": "Instagram",
+      "profile_url": "https://www.instagram.com/digitalcleaningacademy",
+      "handle": "@digitalcleaningacademy",
+      "followers": 2723,
+      "followers_basis": "observed",
+      "niche": "MISMATCH — cleaning Airbnbs as a business (audience = cleaners, not hosts)",
+      "audience_description": "people building an Airbnb-CLEANING business ('$500k+ cleaning Airbnbs'); audience is cleaners, not hosts — mismatch vs a host-ops product (but fits a cleaning-business product)",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "own store: digitalcleaningacademy.store (observed)"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09: 2,723 followers, bio + store"
+      ],
+      "basis": "observed"
+    }
+  ],
+  "retrieval": [
+    {
+      "retriever": "manual-import",
+      "status": "loaded",
+      "count": 10,
+      "source": "data/creator_candidates/str-host-ops.json"
+    }
+  ]
+}

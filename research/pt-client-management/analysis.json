@@ -1,0 +1,112 @@
+{
+  "audience": "independent personal trainers & online coaches",
+  "recurring_symptoms": [
+    "what software do you use",
+    "Trainerize too expensive at scale",
+    "programs scattered across WhatsApp/Notes",
+    "no template to reuse programs"
+  ],
+  "root_problems": [
+    "All-in-one coaching SaaS is expensive/overkill; spreadsheets get chaotic past ~15 clients."
+  ],
+  "desired_outcomes": [
+    "Deliver and track client workout programs efficiently without paying monthly per-client software subscription fees."
+  ],
+  "existing_behaviours": [
+    "Trainerize ($10-$135+/mo based on client tier)",
+    "TrueCoach ($20-$100/mo)",
+    "My PT Hub ($29-$119/mo)",
+    "Google Sheets / Excel one-time templates ($1.99-$19.99)",
+    "Notion templates (PRO COACH / Personal Trainer OS)"
+  ],
+  "existing_solutions": [
+    "Trainerize/TrueCoach/My PT Hub ($20-150/mo)",
+    "Notion/Sheets templates ($9-40)",
+    "indie coaching apps (free-cheap)"
+  ],
+  "solution_strengths": [
+    "Cheap/most already exist",
+    "Instant download"
+  ],
+  "solution_weaknesses": [
+    "'better than a spreadsheet, cheaper than SaaS' one-time template",
+    "for app-switching-fatigued coaches"
+  ],
+  "customer_complaints": [
+    "Steep price jumps when crossing client threshold tiers (e.g., $77/mo for 30 clients).",
+    "Add-on feature microtransactions ($4.99-$14.99/mo per feature).",
+    "SaaS platforms feeling overly complex or budget-heavy for solo trainers."
+  ],
+  "unmet_needs": [
+    "Lack of cost-effective, non-subscription program management tools for trainers scaling past ~15 clients who refuse high SaaS fees."
+  ],
+  "solution_gaps": [
+    "'better than a spreadsheet, cheaper than SaaS' one-time template",
+    "for app-switching-fatigued coaches"
+  ],
+  "contradictions": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+  ],
+  "opportunity_assessment": "2 observed + 1 inferred/other claims support a recurring problem for independent personal trainers & online coaches. Gap: 'better than a spreadsheet, cheaper than SaaS' one-time template; for app-switching-fatigued coaches.  [Executed research: 8 pages retrieved, 85 sources; critical unresolved: 0.]",
+  "answered_questions": [
+    {
+      "question": "Is the problem recurring and painful enough to pay to solve?",
+      "status": "PARTIAL",
+      "answer": "Coaches regularly pay recurring subscriptions for platforms like Trainerize ($10–$135/mo), but complain about rising costs as client count scales ($77/mo for 30 clients) and unexpected add-on costs.",
+      "source_refs": [
+        53,
+        54,
+        57,
+        60
+      ],
+      "confidence": "MEDIUM",
+      "notes": "Evidence confirms high spending on SaaS platforms, but specific churn/quitting due solely to software pain is inferred."
+    },
+    {
+      "question": "What exactly have people already tried, and why did it fall short?",
+      "status": "SUPPORTED",
+      "answer": "Trainers use Trainerize, TrueCoach, My PT Hub, and Notion/Sheets templates. Dedicated SaaS falls short due to steep pricing scaling with client count and extra monthly add-on fees ($4.99–$14.99/mo per feature).",
+      "source_refs": [
+        53,
+        54,
+        57,
+        62
+      ],
+      "confidence": "HIGH",
+      "notes": "Direct user posts and reviews highlight cost frustrations with per-client tier scaling."
+    },
+    {
+      "question": "Is a digital product the right form, or is this a service/free-info problem?",
+      "status": "SUPPORTED",
+      "answer": "A digital product (such as a one-time purchase spreadsheet or Notion template) is an appropriate fit, as trainers seek tools to organize client programs without recurring seat/client subscription costs.",
+      "source_refs": [
+        28,
+        72
+      ],
+      "confidence": "HIGH",
+      "notes": "Spreadsheet and Notion template alternatives exist to replace monthly per-seat SaaS costs."
+    },
+    {
+      "question": "What is the single most useful asset we could ship?",
+      "status": "SUPPORTED",
+      "answer": "A reusable Google Sheets/Excel workout program template and client tracking dashboard with no monthly per-client pricing.",
+      "source_refs": [
+        34,
+        72
+      ],
+      "confidence": "HIGH",
+      "notes": "Templates directly solve the program reuse and scale pain without recurring SaaS fees."
+    },
+    {
+      "question": "What price will the audience tolerate, and on what evidence?",
+      "status": "SUPPORTED",
+      "answer": "For digital templates, trainers tolerate a one-time price of $1.99 to $19.99 (or up to ~$40 for comprehensive Notion/Sheets systems). For entry-level SaaS, budget solo-coaches tolerate $10–$25/mo.",
+      "source_refs": [
+        57,
+        72
+      ],
+      "confidence": "HIGH",
+      "notes": "Observed market prices for spreadsheet template alternatives range from $1.99-$19.99, while basic SaaS starts around $10-$25/mo."
+    }
+  ]
+}

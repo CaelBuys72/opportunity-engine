@@ -1,0 +1,34 @@
+{
+  "assets": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "auto-calculating spreadsheet with worked example",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-2",
+      "component_id": "cmp-2",
+      "for": "printable + editable planner",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-3",
+      "component_id": "cmp-3",
+      "for": "short decision-tree guide + one-page checklist",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "pocket_id": "freelancer-us-tax",
+  "known": [
+    "Audience: US 1099 freelancers & independent contractors",
+    "Core problem: No withholding, quarterly estimated taxes and Schedule C categories are confusing; generic templates break or don't match the tax regime.",
+    "Discovery score 80.6/100 (MEDIUM confidence)",
+    "Evidence on file: don't know how much to set aside for quarterly taxes",
+    "Evidence on file: spreadsheet formulas break when I edit them",
+    "Evidence on file: expense categories don't map to Schedule C"
+  ],
+  "unknown": [
+    "True prevalence / how many are affected (UNKNOWN)",
+    "Creator ecosystem size (UNKNOWN)"
+  ],
+  "validating_evidence": [
+    "Multiple independent communities describing the same problem in their own words",
+    "People actively asking for tools/templates (solution-seeking language)",
+    "Existing paid solutions with real sales AND recurring complaints (gap)"
+  ],
+  "weakening_evidence": [
+    "Problem is rare, mild, or one-off",
+    "Free resources already solve it well (free-information problem)",
+    "Strong free-sharing culture that resists paying",
+    "Existing products already excellent with no complaint pattern"
+  ],
+  "communities": [
+    "r-freelance"
+  ],
+  "queries": [
+    {
+      "angle": "problem",
+      "query": "how do I us 1099 freelancers & independent contractors site:reddit.com"
+    },
+    {
+      "angle": "problem",
+      "query": "I don't know don't know how much to set aside for quarterly taxes site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "spreadsheet formulas break when i edit them frustrating site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "hate expense categories don't map to schedule c site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "chasing late invoices template site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "us 1099 freelancers & independent contractors calculator site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "don't know how much to set aside for quarterly taxes too complicated site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "spreadsheet formulas break when i edit them too expensive site:reddit.com"
+    }
+  ],
+  "solutions_to_examine": [
+    "Etsy 1099/Schedule-C spreadsheets ($9-25)",
+    "SaaS (Bonsai, FreshBooks, Wave)",
+    "generic bookkeeping templates ($1-3)"
+  ],
+  "questions": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service/free-info problem?",
+    "What is the single most useful asset we could ship?",
+    "What price will the audience tolerate, and on what evidence?"
+  ]
+}

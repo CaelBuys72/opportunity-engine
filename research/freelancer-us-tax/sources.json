@@ -1,0 +1,76 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "https://www.etsy.com/listing/1533152672/1099-bookkeeping-spreadsheet-accounting",
+      "url": "https://www.etsy.com/listing/1533152672/1099-bookkeeping-spreadsheet-accounting",
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": true,
+      "note": "sales+rating read directly from listing"
+    },
+    {
+      "id": "src-2",
+      "label": "https://www.etsy.com/listing/4313117556/tax-deduction-tracker-google-sheets",
+      "url": "https://www.etsy.com/listing/4313117556/tax-deduction-tracker-google-sheets",
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": true,
+      "note": "shop-level volume; generalist template shop"
+    },
+    {
+      "id": "src-3",
+      "label": "marketplace",
+      "url": null,
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": false,
+      "note": "seen across Etsy search results; no single canonical URL"
+    },
+    {
+      "id": "src-4",
+      "label": "https://www.keepertax.com/posts/1099-excel-template",
+      "url": "https://www.keepertax.com/posts/1099-excel-template",
+      "tier": 2,
+      "source_type": "article",
+      "accessible": true,
+      "note": "recurring complaint theme, secondary source"
+    },
+    {
+      "id": "src-5",
+      "label": "https://stripe.com/nz/resources/more/how-to-bill-as-a-freelancer-a-guide",
+      "url": "https://stripe.com/nz/resources/more/how-to-bill-as-a-freelancer-a-guide",
+      "tier": 2,
+      "source_type": "article",
+      "accessible": true,
+      "note": "platform-level recognition of the pain"
+    },
+    {
+      "id": "src-6",
+      "label": "Etsy search (observed breadth)",
+      "url": null,
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": false,
+      "note": ""
+    },
+    {
+      "id": "src-7",
+      "label": "Etsy search (observed)",
+      "url": null,
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": false,
+      "note": ""
+    },
+    {
+      "id": "src-8",
+      "label": "r/freelance / r/tax threads on quarterly estimated taxes (primary user language)",
+      "url": "https://www.reddit.com/r/freelance/",
+      "tier": 1,
+      "source_type": "reddit",
+      "accessible": false,
+      "note": "Reddit thread bodies not retrievable by in-app tools this run; requirement preserved for live retrieval."
+    }
+  ]
+}

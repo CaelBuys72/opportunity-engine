@@ -1,0 +1,56 @@
+{
+  "pocket_id": "opp-account-execs-running-discovery-calls-conversational-30-min-discovery-flow-and-time-pacing-toolkit",
+  "product_concept": "A focused guide / checklist that helps Account execs running discovery calls run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+  "target_customer": "Account execs running discovery calls",
+  "core_problem": "Account execs running discovery calls face a related cluster of problems around conversational 30-min discovery flow & time pacing toolkit — e.g. Insufficient call time to complete thorough discovery and establish next steps, Discovery calls feeling like interrogations rather than natural business conversations.",
+  "related_problems": [
+    "Account Executives struggle to complete effective discovery within standard 30-minute call windows, running out of time before understanding deep buyer pain or setting next steps.",
+    "Discovery calls often turn into dynamic interrogations or robotic question checklists, annoying buyers and stalling conversations."
+  ],
+  "desired_outcome": "Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+  "core_transformation": "From: Account execs running discovery calls face a related cluster of problems around conversational 30-min discovery flow & time pacing toolkit — e.g. Insufficient call time to complete thorough discovery and establish next steps, Discovery calls feeling like interrogations rather than natural business conversations.  →  To: Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+  "product_promise": "Get to 'Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.' without the usual guesswork.",
+  "product_format": "Unknown",
+  "why_this_format": "Mechanism → format: Unknown due to lack of source data.. No valid data was provided in the sources to evaluate workflow, constraints, or format preference. (basis: inferred)",
+  "product_structure": [
+    "Unknown"
+  ],
+  "required_sections": [],
+  "required_tools": [],
+  "required_templates": [],
+  "required_worksheets": [],
+  "bonus_assets": [],
+  "exclude": [
+    "Do not build a live call assistant or pacing tool based on unverified assumptions without primary user research."
+  ],
+  "existing_alternatives": [],
+  "differentiation": [
+    "Unknown due to complete absence of usable evidence in the provided source."
+  ],
+  "price_range": "Unknown — no observed pricing evidence",
+  "price_rationale": "Pricing UNKNOWN; do not set a price until validated.",
+  "key_customer_language": [
+    "Account Executives struggle to complete effective discovery within standard 30-minute call windows, running out of time before understanding deep buyer pain or setting next steps.",
+    "Discovery calls often turn into dynamic interrogations or robotic question checklists, annoying buyers and stalling conversations."
+  ],
+  "key_objections": [
+    "I can find this free",
+    "Templates never fit my exact case",
+    "I'll deal with it later"
+  ],
+  "key_buying_motivations": [
+    "Save time",
+    "Reduce anxiety/uncertainty",
+    "Look professional / avoid costly mistakes"
+  ],
+  "evidence_summary": "Outcome: NEEDS_MORE_RESEARCH. 154 results discovered → 89 candidates → 1 retrieved → 0 evidence-bearing. Mechanism: Unknown due to lack of source data.",
+  "confidence": "HIGH",
+  "risks_unknowns": [
+    "CRITICAL unresolved: Is the problem recurring and painful enough to pay to solve?",
+    "CRITICAL unresolved: What exactly have people already tried, and why did it fall short?",
+    "CRITICAL unresolved: Is a digital product the right form, or is this a service / software / free-information problem?",
+    "CRITICAL unresolved: What is the single most useful asset or mechanism we could ship?",
+    "Lack of source data on AE call breakdowns, existing tools, buyer willingness to pay, and live call visual friction."
+  ],
+  "required_components_evidence": []
+}

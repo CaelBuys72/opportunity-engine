@@ -1,0 +1,28 @@
+{
+  "id": "mental-health",
+  "name": "Mental Health",
+  "description": "ADHD, sleep, anxiety, executive function.",
+  "submarkets": [
+    {
+      "id": "adhd",
+      "name": "Adult ADHD",
+      "audiences": [
+        {
+          "id": "adhd-adults",
+          "label": "adults with ADHD"
+        }
+      ]
+    },
+    {
+      "id": "sleep",
+      "name": "Sleep",
+      "audiences": [
+        {
+          "id": "insomnia",
+          "label": "adults with disrupted sleep"
+        }
+      ]
+    }
+  ],
+  "status": "explored"
+}

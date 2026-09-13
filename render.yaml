@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: opportunity-engine
+    runtime: python
+    plan: free
+    buildCommand: ""
+    startCommand: python3 app/server.py
+    envVars:
+      - key: STORAGE_BACKEND
+        value: supabase
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: CAEL_PASSWORD_HASH
+        sync: false
+      - key: SHEYLYN_PASSWORD_HASH
+        sync: false
+      - key: CAEL_GEMINI_API_KEY
+        sync: false
+      - key: CAEL_SERPER_API_KEY
+        sync: false
+      - key: SHEYLYN_GEMINI_API_KEY
+        sync: false
+      - key: SHEYLYN_SERPER_API_KEY
+        sync: false
+      - key: CORS_ALLOW_ORIGINS
+        sync: false

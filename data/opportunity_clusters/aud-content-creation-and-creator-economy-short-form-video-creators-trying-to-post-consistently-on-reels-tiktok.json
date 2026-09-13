@@ -1,0 +1,5 @@
+{ "clusters": [
+  {"name": "Ideation & Posting Consistency", "problem_normalized": ["running out of ideas","posting consistency","weekly content planning","niche/pillar decisions","creator burnout"]},
+  {"name": "Production & Editing Workflow", "problem_normalized": ["content batching/scheduling","slow editing workflow","cross-platform repurposing"]},
+  {"name": "Reach, Performance & Growth", "problem_normalized": ["writing strong hooks","low/flat views","interpreting analytics","converting views to audience"]}
+]}

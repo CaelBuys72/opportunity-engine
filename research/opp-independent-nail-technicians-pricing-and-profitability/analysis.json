@@ -1,0 +1,33 @@
+{
+  "audience": "Independent nail technicians",
+  "recurring_symptoms": [
+    "Clients keep negotiating or asking for discounts.",
+    "Techs are scared to raise their prices.",
+    "Tracking income and expenses for taxes is stressful.",
+    "Techs don't know their true product cost per set.",
+    "Techs don't know what to charge to stay profitable."
+  ],
+  "root_problems": [
+    "Independent nail technicians face a related cluster of problems around pricing & profitability — e.g. client price negotiation, fear of raising prices, income/expense tracking for tax."
+  ],
+  "desired_outcomes": [
+    "A shared outcome across member problems: Hold firm, fair pricing. Raise rates without losing clients. Stay tax-ready year round."
+  ],
+  "existing_behaviours": [
+    "Using free templates / generic tools",
+    "Asking peers in communities"
+  ],
+  "existing_solutions": [],
+  "solution_strengths": [
+    "Cheap/most already exist",
+    "Instant download"
+  ],
+  "solution_weaknesses": [],
+  "customer_complaints": [],
+  "unmet_needs": [],
+  "solution_gaps": [],
+  "contradictions": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+  ],
+  "opportunity_assessment": "0 observed + 5 inferred/other claims support a recurring problem for Independent nail technicians. Gap: unknown."
+}

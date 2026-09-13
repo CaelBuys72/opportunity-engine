@@ -1,0 +1,27 @@
+{
+  "content_relevance": {
+    "counts": {
+      "exact": 1,
+      "adjacent": 0,
+      "weak": 0,
+      "irrelevant": 0,
+      "unknown": 0
+    },
+    "total_content_items": 1,
+    "basis": "observed"
+  },
+  "audience_alignment": {
+    "audience_fit_mean": 6.0,
+    "problem_fit_mean": null,
+    "basis": "observed"
+  },
+  "distribution_density": {
+    "creator_count": 1,
+    "qualified_creator_count": 0,
+    "highly_qualified_count": 0,
+    "relevant_content_count": 1,
+    "density_score": 0,
+    "basis": "inferred",
+    "rationale": "Counts are observed for the imported set, but representativeness of the true creator ecosystem is inferred (import is not a census)."
+  }
+}

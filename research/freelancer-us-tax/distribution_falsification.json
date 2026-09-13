@@ -1,0 +1,92 @@
+{
+  "checklist": {
+    "low_relevant_engagement": "creators discuss topic but relevant content underperforms",
+    "audience_prefers_free": "audience rejects paid products / prefers free info",
+    "creators_sell_competing": "creators already sell competing products",
+    "audience_mismatch": "creator audience differs from the actual buyer",
+    "views_without_relevance": "high views but low problem relevance",
+    "fragmented_audience": "audience too fragmented across many micro-niches",
+    "wont_promote_third_party": "creators unlikely to promote a third-party product",
+    "demand_without_creators": "strong problem demand but weak creator ecosystem"
+  },
+  "contradictory_evidence": [
+    {
+      "claim": "Free 1099 templates are abundant — risk of a 'free-information' problem for the generic version.",
+      "basis": "inferred",
+      "source": "phase8.analysis.contradictions"
+    },
+    {
+      "claim": "Etsy SEO is owned by high-volume generalist shops — the marketing problem may exceed the product problem.",
+      "basis": "inferred",
+      "source": "phase8.analysis.contradictions"
+    },
+    {
+      "claim": "A subset of freelancers offload this entirely to an accountant and won't buy a tool.",
+      "basis": "inferred",
+      "source": "phase8.analysis.contradictions"
+    },
+    {
+      "claim": "No imported creator qualified on audience+problem+content.",
+      "basis": "observed",
+      "source": "phase9.5.evaluations"
+    }
+  ],
+  "unknown_checks": [
+    {
+      "check": "low_relevant_engagement",
+      "why": "no view data imported"
+    },
+    {
+      "check": "views_without_relevance",
+      "why": "no view data imported"
+    },
+    {
+      "check": "audience_prefers_free",
+      "why": "requires primary community/creator inspection not available this run"
+    },
+    {
+      "check": "creators_sell_competing",
+      "why": "requires primary community/creator inspection not available this run"
+    },
+    {
+      "check": "wont_promote_third_party",
+      "why": "requires primary community/creator inspection not available this run"
+    },
+    {
+      "check": "fragmented_audience",
+      "why": "requires primary community/creator inspection not available this run"
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Distribution is the hard part (incumbents own Etsy SEO) — UNKNOWN best channel",
+      "basis": "evidence-backed",
+      "source": "brief.risks_unknowns"
+    },
+    {
+      "risk": "Tax-logic correctness carries liability; needs careful, disclaimed implementation",
+      "basis": "evidence-backed",
+      "source": "brief.risks_unknowns"
+    },
+    {
+      "risk": "Free templates compete; must be visibly better",
+      "basis": "evidence-backed",
+      "source": "brief.risks_unknowns"
+    },
+    {
+      "risk": "Creator ecosystem size UNKNOWN",
+      "basis": "evidence-backed",
+      "source": "brief.risks_unknowns"
+    },
+    {
+      "risk": "Prevalence UNKNOWN",
+      "basis": "evidence-backed",
+      "source": "brief.risks_unknowns"
+    },
+    {
+      "risk": "demand_without_creators: brief shows demand but few qualified creators found so far.",
+      "basis": "inferred",
+      "source": "cross-check"
+    }
+  ]
+}

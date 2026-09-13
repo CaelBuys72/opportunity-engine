@@ -1,0 +1,23 @@
+{
+  "sequence": [
+    {
+      "order": 1,
+      "step": "Build: printable + editable planner",
+      "component_id": "cmp-1",
+      "format": "supporting asset",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ]
+}

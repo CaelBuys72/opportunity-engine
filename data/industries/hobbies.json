@@ -1,0 +1,18 @@
+{
+  "id": "hobbies",
+  "name": "Hobbies",
+  "description": "Crafts, games, making.",
+  "submarkets": [
+    {
+      "id": "ttrpg",
+      "name": "Tabletop RPG",
+      "audiences": [
+        {
+          "id": "dms",
+          "label": "new & burned-out D&D game masters"
+        }
+      ]
+    }
+  ],
+  "status": "explored"
+}

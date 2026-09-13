@@ -1,0 +1,76 @@
+{
+  "pocket_id": "adhd-simple-planning",
+  "known": [
+    "Audience: adults with ADHD",
+    "Core problem: Standard planners fail; systems that are too complex get abandoned within weeks.",
+    "Discovery score 66.5/100 (MEDIUM confidence)",
+    "Evidence on file: can't stick to a planner",
+    "Evidence on file: perfectionist systems collapse",
+    "Evidence on file: executive-function overwhelm"
+  ],
+  "unknown": [
+    "True prevalence / how many are affected (UNKNOWN)",
+    "Creator ecosystem size (UNKNOWN)",
+    "Primary-community depth not yet retrieved this run"
+  ],
+  "validating_evidence": [
+    "Multiple independent communities describing the same problem in their own words",
+    "People actively asking for tools/templates (solution-seeking language)",
+    "Existing paid solutions with real sales AND recurring complaints (gap)"
+  ],
+  "weakening_evidence": [
+    "Problem is rare, mild, or one-off",
+    "Free resources already solve it well (free-information problem)",
+    "Strong free-sharing culture that resists paying",
+    "Existing products already excellent with no complaint pattern"
+  ],
+  "communities": [
+    "r-adhd"
+  ],
+  "queries": [
+    {
+      "angle": "problem",
+      "query": "how do I adults with adhd site:reddit.com"
+    },
+    {
+      "angle": "problem",
+      "query": "I don't know can't stick to a planner site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "perfectionist systems collapse frustrating site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "hate executive-function overwhelm site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "adults with adhd template site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "can't stick to a planner calculator site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "perfectionist systems collapse too complicated site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "executive-function overwhelm too expensive site:reddit.com"
+    }
+  ],
+  "solutions_to_examine": [
+    "Gumroad ADHD planners/toolkits ($5-30)",
+    "generic Notion planners",
+    "apps"
+  ],
+  "questions": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service/free-info problem?",
+    "What is the single most useful asset we could ship?",
+    "What price will the audience tolerate, and on what evidence?"
+  ]
+}

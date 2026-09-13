@@ -1,0 +1,58 @@
+{
+  "opportunity_id": "pt-client-management",
+  "product_concept": "A focused guide / checklist that helps independent personal trainers & online coaches manage programming, check-ins and progress without paying for bloated software.",
+  "product_format": "guide / checklist",
+  "transformation": {
+    "from_state": "All-in-one coaching SaaS is expensive/overkill; spreadsheets get chaotic past ~15 clients",
+    "to_state": "To: Manage programming, check-ins and progress without paying for bloated software",
+    "promise": "Get to 'Manage programming, check-ins and progress without paying for bloated software.' without the usual guesswork.",
+    "core_problem": "All-in-one coaching SaaS is expensive/overkill; spreadsheets get chaotic past ~15 clients.",
+    "desired_outcome": "Manage programming, check-ins and progress without paying for bloated software.",
+    "basis": "evidence-backed"
+  },
+  "promise": "Get to 'Manage programming, check-ins and progress without paying for bloated software.' without the usual guesswork.",
+  "target_customer": "independent personal trainers & online coaches",
+  "price_range": "Unknown — infer from analogous products before pricing",
+  "price_rationale": "Unknown pricing evidence; do not set a price until validated.",
+  "confidence": "MEDIUM",
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: Manage programming, check-ins and progress without paying for bloated software.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: what software do you use",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: Trainerize too expensive at scale",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: programs scattered across WhatsApp/Notes",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-4",
+      "statement": "Resolve: no template to reuse programs",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "differentiation": [
+    "'better than a spreadsheet, cheaper than SaaS' one-time template",
+    "for app-switching-fatigued coaches"
+  ],
+  "exclusions": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "opportunity_id": "opp-people-overwhelmed-by-their-to-do-list-prioritization-and-daily-focus-system",
+  "generated_at": "2026-09-12T17:14:46.438960+00:00",
+  "product_concept": "A focused guide / checklist that helps People overwhelmed by their to-do list a daily ritual that surfaces the 1-3 things that truly matter.",
+  "product_format": "Bundle: Single 'Must-Do' active display mode + Secondary backlog drawer (hidden during execution) + Random task spinner/die button to bypass decision freeze",
+  "transformation": {
+    "from_state": "People overwhelmed by their to-do list face a related cluster of problems around prioritization & daily focus system — e.g. no prioritization on the list, task paralysis from overwhelm, quick vs big tasks not separated",
+    "to_state": "To: A daily ritual that surfaces the 1-3 things that truly matter",
+    "promise": "Get to 'A daily ritual that surfaces the 1-3 things that truly matter.' without the usual guesswork.",
+    "core_problem": "People overwhelmed by their to-do list face a related cluster of problems around prioritization & daily focus system — e.g. no prioritization on the list, task paralysis from overwhelm, quick vs big tasks not separated.",
+    "desired_outcome": "A daily ritual that surfaces the 1-3 things that truly matter.",
+    "basis": "evidence-backed"
+  },
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: A daily ritual that surfaces the 1-3 things that truly matter.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: Everything lands on one undifferentiated list, so nothing feels urgent and the brain defaults to the easiest task.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: Too many tasks at once triggers overwhelm and freeze — people can't decide where to start (task paralysis).",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: No differentiation between quick tasks and big projects, so important deep work is deferred.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "1-Must-Do Focus View — Isolate the primary priority so the user is not overwhelmed by secondary tasks. [observed]",
+      "type": "asset",
+      "format": "supporting asset",
+      "purpose": "Asset that helps the buyer: 1-Must-Do Focus View — Isolate the primary priority so the user is not overwhelmed by secondary tasks. [observed].",
+      "maps_to_jobs": [
+        "job-2",
+        "job-3"
+      ]
+    },
+    {
+      "id": "cmp-2",
+      "name": "Randomized Task Selector ('Roll the Dice') — Break active task paralysis and decision freeze through forced arbitrary choice. [observed]",
+      "type": "asset",
+      "format": "supporting asset",
+      "purpose": "Asset that helps the buyer: Randomized Task Selector ('Roll the Dice') — Break active task paralysis and decision freeze through forced arbitrary choice. [observed].",
+      "maps_to_jobs": [
+        "job-1",
+        "job-2"
+      ]
+    },
+    {
+      "id": "cmp-3",
+      "name": "Secondary Backlog Vault — Store non-urgent or non-essential tasks out of daily line of sight. [observed]",
+      "type": "asset",
+      "format": "supporting asset",
+      "purpose": "Asset that helps the buyer: Secondary Backlog Vault — Store non-urgent or non-essential tasks out of daily line of sight. [observed].",
+      "maps_to_jobs": [
+        "job-1",
+        "job-2",
+        "job-3"
+      ]
+    }
+  ],
+  "asset_requirements": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "1-Must-Do Focus View — Isolate the primary priority so the user is not overwhelmed by secondary tasks. [observed]",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-2",
+      "component_id": "cmp-2",
+      "for": "Randomized Task Selector ('Roll the Dice') — Break active task paralysis and decision freeze through forced arbitrary choice. [observed]",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-3",
+      "component_id": "cmp-3",
+      "for": "Secondary Backlog Vault — Store non-urgent or non-essential tasks out of daily line of sight. [observed]",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ],
+  "quality_requirements": {
+    "global": [
+      {
+        "req": "Time-to-first-value under ~15 minutes; usable without a manual.",
+        "basis": "inferred",
+        "source": "buyer-effort principle"
+      },
+      {
+        "req": "Honor exclusions verbatim (see exclusions list); scope stays tight.",
+        "basis": "evidence-backed",
+        "source": "brief.exclude"
+      }
+    ],
+    "exclusions_preserved": [
+      "Complex multi-tagging, nested folder hierarchies, or Kanban boards",
+      "Unrestricted visible backlog lists on the primary screen",
+      "Heavy analytics dashboards or friction-heavy setup wizards"
+    ]
+  },
+  "buyer_effort": {
+    "overall_target": "Buyer reaches first useful result in one sitting, no setup call.",
+    "per_component": [
+      {
+        "component_id": "cmp-1",
+        "name": "1-Must-Do Focus View — Isolate the primary priority so the user is not overwhelmed by secondary tasks. [observed]",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-2",
+        "name": "Randomized Task Selector ('Roll the Dice') — Break active task paralysis and decision freeze through forced arbitrary choice. [observed]",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-3",
+        "name": "Secondary Backlog Vault — Store non-urgent or non-essential tasks out of daily line of sight. [observed]",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      }
+    ],
+    "basis": "inferred"
+  },
+  "production_sequence": [
+    {
+      "order": 1,
+      "step": "Build: 1-Must-Do Focus View — Isolate the primary priority so the user is not overwhelmed by secondary tasks. [observed]",
+      "component_id": "cmp-1",
+      "format": "supporting asset",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Build: Randomized Task Selector ('Roll the Dice') — Break active task paralysis and decision freeze through forced arbitrary choice. [observed]",
+      "component_id": "cmp-2",
+      "format": "supporting asset",
+      "depends_on": [
+        1
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 3,
+      "step": "Build: Secondary Backlog Vault — Store non-urgent or non-essential tasks out of daily line of sight. [observed]",
+      "component_id": "cmp-3",
+      "format": "supporting asset",
+      "depends_on": [
+        2
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 4,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1,
+        2,
+        3
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ],
+  "verification_requirements": [],
+  "unresolved_questions": [
+    "Willingness to pay and monetization viability remain completely unknown.",
+    "Exact optimal UI trigger for moving items from secondary vault to daily focus list.",
+    "Price not finalized — brief price is Unknown."
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Complex multi-tagging, nested folder hierarchies, or Kanban boards",
+      "Unrestricted visible backlog lists on the primary screen",
+      "Heavy analytics dashboards or friction-heavy setup wizards"
+    ],
+    "risks_unknowns": [
+      "Willingness to pay and monetization viability remain completely unknown.",
+      "Exact optimal UI trigger for moving items from secondary vault to daily focus list."
+    ],
+    "differentiation": [
+      "A minimalist single-focus ritual app that limits active daily tasks to 1-3 items, relegates all other entries to an out-of-sight secondary vault, and includes a single-button randomized selector for paralysis moments."
+    ],
+    "evidence_requirements": [
+      {
+        "label": "My way of coping with too many items on the to-do list",
+        "url": "https://www.reddit.com/r/productivity/comments/14m2tyl/my_way_of_coping_with_too_many_items_on_the_todo/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Overwhelming To Do lists, what do you use to help?",
+        "url": "https://www.reddit.com/r/productivity/comments/y7zmve/overwhelming_to_do_lists_what_do_you_use_to_help/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Do you use TODO LISTS? : r/productivity",
+        "url": "https://www.reddit.com/r/productivity/comments/13ig6a4/do_you_use_todo_lists/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "I often find myself so overwhelmed with my daily to-do lists ...",
+        "url": "https://www.reddit.com/r/productivity/comments/aujg3v/i_often_find_myself_so_overwhelmed_with_my_daily/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "I need to do an important task but I'm frozen/paralyzed ...",
+        "url": "https://www.reddit.com/r/productivity/comments/1fdk8bl/i_need_to_do_an_important_task_but_im/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Anyone else feel overwhelmed by all the productivity tools ...",
+        "url": "https://www.reddit.com/r/productivity/comments/1nij3xb/anyone_else_feel_overwhelmed_by_all_the/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "no task management platform is better than a hand-written ...",
+        "url": "https://www.reddit.com/r/productivity/comments/1f76sej/unpopular_opinion_no_task_management_platform_is/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "There are too many tasks on my plate, and it's making me feel ...",
+        "url": "https://www.quora.com/There-are-too-many-tasks-on-my-plate-and-its-making-me-feel-overwhelmed-and-anxious-How-can-I-effectively-manage-my-workload-prioritize-tasks-and-overcome-this-feeling-of-insecurity-to-become-more-productive-in-my",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "What do you do when you're overwhelmed by the amount ...",
+        "url": "https://www.reddit.com/r/productivity/comments/129g0rk/what_do_you_do_when_youre_overwhelmed_by_the/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "To-do lists don't make me productive, they make me anxious!",
+        "url": "https://www.reddit.com/r/productivity/comments/1qkm0oi/todo_lists_dont_make_me_productive_they_make_me/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How do y'all deal with your constant, never ending to- ...",
+        "url": "https://www.reddit.com/r/TheGirlSurvivalGuide/comments/w9j70f/how_do_yall_deal_with_your_constant_never_ending/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Did you get overwhelmed just by looking at your to-do list? ...",
+        "url": "https://www.quora.com/Did-you-get-overwhelmed-just-by-looking-at-your-to-do-list-How-do-you-overcome-it",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Sometimes I feel like my brain wants to do ANYTHING to ...",
+        "url": "https://www.reddit.com/r/productivity/comments/myioi7/sometimes_i_feel_like_my_brain_wants_to_do/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "I get so overwhelmed with the things that i have to do ...",
+        "url": "https://www.reddit.com/r/productivity/comments/gtrmfy/i_get_so_overwhelmed_with_the_things_that_i_have/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      }
+    ]
+  },
+  "basis_summary": {
+    "component_requirements_evidence_backed": 0,
+    "component_requirements_inferred": 0,
+    "note": "evidence-backed = traceable to a Phase-8 brief field; inferred = design decision made by the curation engine."
+  },
+  "handoff": {
+    "consumes": "product_architecture.json + component_specs.json + asset_requirements.json + quality_requirements.json + production_plan.json",
+    "for": "Phase 10 Product Builder",
+    "must_respect": [
+      "verification_requirements",
+      "carried_forward.exclusions",
+      "quality_requirements",
+      "unresolved_questions"
+    ]
+  }
+}

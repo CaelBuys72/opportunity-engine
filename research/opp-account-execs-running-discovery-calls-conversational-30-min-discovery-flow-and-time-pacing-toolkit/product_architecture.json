@@ -1,0 +1,69 @@
+{
+  "opportunity_id": "opp-account-execs-running-discovery-calls-conversational-30-min-discovery-flow-and-time-pacing-toolkit",
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "short decision-tree guide",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: short decision-tree guide.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "concise reference guide page",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-2",
+      "name": "editable fill-in templates",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: editable fill-in templates.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "editable fill-in template",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-3",
+      "name": "copy-paste scripts",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: copy-paste scripts.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "supporting asset",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-4",
+      "name": "step-by-step workflow / SOP",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: step-by-step workflow / SOP.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "supporting asset",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    }
+  ]
+}

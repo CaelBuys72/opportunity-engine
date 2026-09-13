@@ -1,0 +1,59 @@
+{
+  "sequence": [
+    {
+      "order": 1,
+      "step": "Build: short decision-tree guide",
+      "component_id": "cmp-1",
+      "format": "concise reference guide page",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Build: editable fill-in templates",
+      "component_id": "cmp-2",
+      "format": "editable fill-in template",
+      "depends_on": [
+        1
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 3,
+      "step": "Build: copy-paste scripts",
+      "component_id": "cmp-3",
+      "format": "supporting asset",
+      "depends_on": [
+        2
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 4,
+      "step": "Build: step-by-step workflow / SOP",
+      "component_id": "cmp-4",
+      "format": "supporting asset",
+      "depends_on": [
+        3
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 5,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ]
+}

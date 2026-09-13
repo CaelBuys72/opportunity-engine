@@ -1,0 +1,231 @@
+{
+  "opportunity_id": "freelancer-us-tax",
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "Quarterly estimated-tax calculator",
+      "type": "tool",
+      "source_field": "required_tools",
+      "purpose": "Tool that helps the buyer: Quarterly estimated-tax calculator.",
+      "maps_to_jobs": [
+        "job-1"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "interactive spreadsheet / calculator",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'tool' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-2",
+      "name": "Set-aside % calculator",
+      "type": "tool",
+      "source_field": "required_tools",
+      "purpose": "Tool that helps the buyer: Set-aside % calculator.",
+      "maps_to_jobs": [
+        "job-1"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "interactive spreadsheet / calculator",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'tool' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-3",
+      "name": "Schedule C category mapper",
+      "type": "tool",
+      "source_field": "required_tools",
+      "purpose": "Tool that helps the buyer: Schedule C category mapper.",
+      "maps_to_jobs": [
+        "job-3"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "interactive spreadsheet / calculator",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'tool' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-4",
+      "name": "Professional invoice",
+      "type": "template",
+      "source_field": "required_templates",
+      "purpose": "Template that helps the buyer: Professional invoice.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "editable fill-in template",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'template' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-5",
+      "name": "Late-payment follow-up email",
+      "type": "template",
+      "source_field": "required_templates",
+      "purpose": "Template that helps the buyer: Late-payment follow-up email.",
+      "maps_to_jobs": [
+        "job-4"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "editable fill-in template",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'template' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-6",
+      "name": "Quarterly payment scheduler (due dates)",
+      "type": "worksheet",
+      "source_field": "required_worksheets",
+      "purpose": "Worksheet that helps the buyer: Quarterly payment scheduler (due dates).",
+      "maps_to_jobs": [
+        "job-1"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "structured worksheet (printable + fillable)",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'worksheet' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-7",
+      "name": "Deductible-expense checklist by Schedule C line",
+      "type": "worksheet",
+      "source_field": "required_worksheets",
+      "purpose": "Worksheet that helps the buyer: Deductible-expense checklist by Schedule C line.",
+      "maps_to_jobs": [
+        "job-3"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "structured worksheet (printable + fillable)",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'worksheet' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-8",
+      "name": "How much to set aside (with worked example)",
+      "type": "reference",
+      "source_field": "required_sections",
+      "purpose": "Reference that helps the buyer: How much to set aside (with worked example).",
+      "maps_to_jobs": [
+        "job-1"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "concise reference guide page",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'reference' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-9",
+      "name": "When quarterly payments are due",
+      "type": "reference",
+      "source_field": "required_sections",
+      "purpose": "Reference that helps the buyer: When quarterly payments are due.",
+      "maps_to_jobs": [
+        "job-1",
+        "job-2"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "concise reference guide page",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'reference' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-10",
+      "name": "Schedule C categories in plain English",
+      "type": "reference",
+      "source_field": "required_sections",
+      "purpose": "Reference that helps the buyer: Schedule C categories in plain English.",
+      "maps_to_jobs": [
+        "job-3"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "concise reference guide page",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'reference' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-11",
+      "name": "Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %)",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %).",
+      "maps_to_jobs": [
+        "job-1",
+        "job-2"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "interactive spreadsheet / calculator",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-12",
+      "name": "Short setup guide (how the rules work, plain-English)",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: Short setup guide (how the rules work, plain-English).",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "concise reference guide page",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-13",
+      "name": "Invoice + late-payment follow-up templates",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: Invoice + late-payment follow-up templates.",
+      "maps_to_jobs": [
+        "job-4"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "editable fill-in template",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-14",
+      "name": "Sub-niche category presets (content creator / rideshare / trades)",
+      "type": "bonus",
+      "source_field": "bonus_assets",
+      "purpose": "Bonus that helps the buyer: Sub-niche category presets (content creator / rideshare / trades).",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "preset / variant pack for the core tool",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'bonus' and the transformation; deliberately not an ebook."
+    }
+  ]
+}

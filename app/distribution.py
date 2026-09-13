@@ -1,0 +1,558 @@
+"""Phase 9.5 — Creator / Distribution Fit Engine.
+
+Answers ONE question before we build: "Are there creators whose existing
+audience already contains the buyers for THIS product, tightly enough that a
+partnership is plausible?"
+
+Deterministic, local-first. Retrieval is isolated in gather_creator_candidates()
+(the single swap-point for future live/API retrieval). Manual candidates are
+read from data/creator_candidates/<opportunity-id>.json.
+
+HARD honesty rules:
+  * Never fabricate creators, followers, views, engagement, comments, URLs.
+    Unknown stays null / "unknown"; inaccessible sources are recorded, not
+    reconstructed.
+  * Every creator FACT must carry a source_ref; every score carries a basis
+    (observed / inferred / unknown).
+  * A dimension that cannot be evaluated is UNKNOWN and lowers confidence — it
+    never gets a made-up value, and unknown weight is excluded from the overall.
+  * With no candidate data the honest verdict is NEEDS_RESEARCH.
+  * Falsification is mandatory: the engine actively records why distribution
+    might NOT work, and which of those checks are simply UNKNOWN here.
+
+Does NOT build outreach, product content, or Whop integration.
+"""
+from __future__ import annotations
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+RESEARCH_DIR = ROOT / "research"
+IMPORT_DIR = ROOT / "data" / "creator_candidates"
+
+# 8 scoring dimensions (weights sum to 100)
+WEIGHTS = {
+    "audience_alignment": 20, "problem_alignment": 20, "content_alignment": 15,
+    "relevant_view_evidence": 15, "creator_density": 15,
+    "approachability": 5, "monetization_signal": 5, "product_content_fit": 5,
+}
+
+STOPWORDS = {"the", "and", "for", "with", "your", "you", "how", "what", "that", "this",
+             "from", "are", "was", "their", "them", "a", "to", "of", "in", "on", "my"}
+
+
+class DistributionError(Exception):
+    """Raised when inputs are missing/invalid — refuse rather than fabricate."""
+
+
+def _tok(s: str) -> set[str]:
+    s = s or ""
+    return {w for w in "".join(c.lower() if c.isalnum() else " " for c in s).split()
+            if len(w) > 2 and w not in STOPWORDS}
+
+
+# ------------------------------------------------------------------ 1. load
+def load_opportunity(opp_id: str) -> dict:
+    import storage
+    backend = storage.get_backend()
+    brief = backend.read_dossier_file(opp_id, "product_brief")
+    if brief is None:
+        raise DistributionError(f"No product_brief.json for '{opp_id}'. Run Phases 8+9 first.")
+    for req in ("target_customer", "core_problem", "desired_outcome"):
+        if not brief.get(req):
+            raise DistributionError(f"Brief missing '{req}'; cannot derive a creator profile honestly.")
+
+    def opt(name):
+        return backend.read_dossier_file(opp_id, name)
+    return {"opp_id": opp_id, "brief": brief, "spec": opt("product_spec"),
+            "architecture": opt("product_architecture"), "component_specs": opt("component_specs"),
+            "analysis": opt("analysis"), "research_plan": opt("research_plan"),
+            "sources": opt("sources")}
+
+
+# ------------------------------------------------------------------ 2. search profile
+def define_creator_search_profile(bundle: dict) -> dict:
+    b = bundle["brief"]
+    rel = []
+    for f in ("key_customer_language", "related_problems"):
+        rel += b.get(f, [])
+    terms = sorted({w for phrase in [b["target_customer"], b["core_problem"], b["desired_outcome"]] + rel
+                    for w in _tok(phrase)})
+    # audience-noun heuristics for query building
+    audience = b["target_customer"]
+    return {
+        "opportunity_id": bundle["opp_id"],
+        "target_audience": audience,
+        "audience_identity": audience,
+        "audience_problem": b["core_problem"],
+        "desired_outcome": b["desired_outcome"],
+        "relevant_terminology": rel[:8],
+        "adjacent_terminology": _adjacent_terms(audience),
+        "content_topics": (b.get("related_problems", []) + [b["desired_outcome"]])[:8],
+        "content_formats": ["short-form video", "long-form video", "carousel/post", "newsletter"],
+        "creator_archetypes": _archetypes(audience),
+        "creator_categories": _categories(audience),
+        "likely_platforms": ["YouTube", "Instagram", "TikTok", "Newsletter/Substack", "X"],
+        "exclusion_terms": b.get("exclude", []),
+        "search_queries": _queries(audience, rel),
+        "_token_bag": terms,
+    }
+
+
+def _adjacent_terms(audience: str) -> list[str]:
+    a = audience.lower()
+    out = []
+    if "freelanc" in a or "1099" in a or "contractor" in a or "self-employed" in a or "self employed" in a:
+        out = ["freelance money", "solopreneur finance", "self employed money",
+               "freelance business", "creator finance", "gig worker money"]
+    return out or ["(derive adjacent terms from audience — none inferred)"]
+
+
+def _archetypes(audience: str) -> list[str]:
+    a = audience.lower()
+    if "freelanc" in a or "1099" in a or "self" in a or "contractor" in a:
+        return ["freelance educator / coach", "self-employed finance explainer",
+                "accountant/CPA creator", "solopreneur / creator-economy educator"]
+    return ["niche educator", "practitioner-creator", "community host"]
+
+
+def _categories(audience: str) -> list[str]:
+    return ["personal finance", "freelancing/solopreneurship", "creator economy", "small business"]
+
+
+def _queries(audience: str, rel: list[str]) -> list[dict]:
+    a = audience.lower()
+    base = []
+    if "freelanc" in a or "1099" in a or "self" in a or "contractor" in a:
+        base = ["freelancer taxes youtube creator", "1099 taxes explained creator",
+                "self employed taxes tiktok", "freelance finance youtuber",
+                "quarterly taxes freelancer instagram", "freelance money creator newsletter"]
+    else:
+        base = [f"{audience} youtube creator", f"{audience} tiktok"]
+    return [{"platform": "multi", "query": q} for q in base]
+
+
+# ------------------------------------------------------------------ 3. content signals
+def define_content_signals(profile: dict) -> dict:
+    return {
+        "exact_match_terms": profile["relevant_terminology"],
+        "adjacent_terms": profile["adjacent_terminology"],
+        "weak_terms": profile["content_topics"],
+        "exclusion_terms": profile["exclusion_terms"],
+        "note": "Classify each creator content item as exact / adjacent / weak / irrelevant.",
+    }
+
+
+# ------------------------------------------------------------------ 4. audience signals
+def define_audience_signals(profile: dict) -> dict:
+    return {"demand_signals_to_look_for": [
+        "comments asking how to solve the problem",
+        "requests for a template / calculator / spreadsheet / guide",
+        "requests for examples",
+        "complaints about existing methods (e.g. 'my spreadsheet breaks')",
+        "people describing the pain in their own words",
+        "asking where to find a solution / recommendations",
+    ], "note": "Generic engagement is NOT demand — require problem-specific signals."}
+
+
+# ------------------------------------------------------------------ 5. qualification rubric
+def define_creator_qualification(profile: dict) -> dict:
+    return {"dimensions": WEIGHTS,
+            "definitions": {
+                "audience_alignment": "Does the creator actually reach the target buyer?",
+                "problem_alignment": "Does their audience experience THIS problem?",
+                "content_alignment": "Do they repeatedly make content on the problem/outcome/adjacent?",
+                "relevant_view_evidence": "Do relevant pieces get meaningful, repeated distribution?",
+                "creator_density": "Do multiple creators independently reach this audience/problem?",
+                "approachability": "Could a small operator realistically partner with them?",
+                "monetization_signal": "Do they already monetize (positive, not required)?",
+                "product_content_fit": "Would the product feel like a natural extension of their content?",
+            },
+            "target_follower_band": "10k-100k (heuristic, not a rule; strong alignment beats size)"}
+
+
+# ------------------------------------------------------------------ 6. RETRIEVAL (swap point)
+def gather_creator_candidates(opp_id: str, profile: dict) -> tuple[list[dict], list[dict]]:
+    """The ONLY retrieval stage. V1 = manual/import from
+    data/creator_candidates/<opp_id>.json. Returns (candidates, retrieval_notes).
+    A future live retriever (search API, browser, platform API, CSV) replaces
+    this function body only. No network here → nothing is fabricated."""
+    f = IMPORT_DIR / f"{opp_id}.json"
+    if not f.exists():
+        return [], [{"retriever": "manual-import", "status": "no_data",
+                     "note": f"No candidate file at data/creator_candidates/{opp_id}.json and no "
+                             "live retriever configured. Import real creators to evaluate."}]
+    try:
+        data = json.loads(f.read_text())
+    except json.JSONDecodeError as e:
+        return [], [{"retriever": "manual-import", "status": "invalid_json", "note": str(e)}]
+    cands = data.get("candidates", data if isinstance(data, list) else [])
+    notes = [{"retriever": "manual-import", "status": "loaded", "count": len(cands),
+              "source": f"data/creator_candidates/{opp_id}.json"}]
+    # normalise minimal shape without inventing anything
+    norm = []
+    for i, c in enumerate(cands, 1):
+        norm.append({
+            "id": c.get("id") or f"creator-{i}",
+            "name": c.get("name", "unknown"), "platform": c.get("platform", "unknown"),
+            "profile_url": c.get("profile_url"), "handle": c.get("handle"),
+            "followers": c.get("followers"),
+            "followers_basis": "observed" if isinstance(c.get("followers"), int) else "unknown",
+            "niche": c.get("niche"), "audience_description": c.get("audience_description"),
+            "relevant_content": c.get("relevant_content", []),
+            "relevant_view_signals": c.get("relevant_view_signals", []),
+            "audience_problem_signals": c.get("audience_problem_signals", []),
+            "monetization_signals": c.get("monetization_signals", []),
+            "source_refs": c.get("source_refs", []),
+            "basis": c.get("basis", "observed"),
+        })
+    return norm, notes
+
+
+# ------------------------------------------------------------------ 7-8. evaluate candidates + content
+def _classify_content(item: dict, signals: dict) -> str:
+    text = _tok((item.get("title", "") + " " + item.get("topic", "")))
+    if not text:
+        return "unknown"
+    if text & _tok(" ".join(signals["exact_match_terms"])):
+        return "exact"
+    if text & _tok(" ".join(signals["adjacent_terms"])):
+        return "adjacent"
+    if text & _tok(" ".join(signals["weak_terms"])):
+        return "weak"
+    return "irrelevant"
+
+
+def _sub(score, basis, refs, rationale):
+    return {"score": score, "basis": basis, "evidence_refs": refs, "rationale": rationale}
+
+
+def evaluate_creator_candidates(candidates: list[dict], profile: dict, signals: dict) -> list[dict]:
+    evals = []
+    prof_terms = _tok(" ".join(profile["relevant_terminology"] + [profile["target_audience"]]
+                               + profile["adjacent_terminology"]))
+    for c in candidates:
+        refs = c.get("source_refs", [])
+        # content classification
+        classified = []
+        for item in c.get("relevant_content", []):
+            classified.append({**{k: item.get(k) for k in ("url", "title", "topic", "views", "engagement")},
+                               "relevance": _classify_content(item, signals),
+                               "source_ref": item.get("source_ref")})
+        n_exact = sum(1 for x in classified if x["relevance"] == "exact")
+        n_adj = sum(1 for x in classified if x["relevance"] == "adjacent")
+
+        # audience_fit
+        atext = _tok((c.get("niche") or "") + " " + (c.get("audience_description") or ""))
+        if atext:
+            overlap = len(atext & prof_terms)
+            audience_fit = _sub(min(10, 4 + overlap * 2), "observed" if c["basis"] == "observed" else "inferred",
+                                refs, f"{overlap} audience-term overlaps with profile.")
+        else:
+            audience_fit = _sub(None, "unknown", [], "No niche/audience text provided.")
+        # problem_fit
+        aps = c.get("audience_problem_signals", [])
+        problem_fit = (_sub(min(10, 5 + len(aps) * 2), "observed", refs,
+                            f"{len(aps)} problem-specific audience signal(s).")
+                       if aps else _sub(None, "unknown", [], "No audience-problem signals captured."))
+        # content_fit
+        if classified:
+            content_fit = _sub(min(10, n_exact * 4 + n_adj * 2), "observed", refs,
+                               f"{n_exact} exact + {n_adj} adjacent content items.")
+        else:
+            content_fit = _sub(None, "unknown", [], "No content items captured.")
+        # view_fit — only if numeric views or explicit view signals exist
+        views = [x["views"] for x in classified if isinstance(x.get("views"), int)]
+        if views:
+            relevant_views = [x["views"] for x in classified if isinstance(x.get("views"), int)
+                              and x["relevance"] in ("exact", "adjacent")]
+            strong = sum(1 for v in relevant_views if v >= 20000)
+            view_fit = _sub(min(10, 3 + strong * 3 + (1 if len(relevant_views) >= 2 else 0)),
+                            "observed", refs, f"{len(relevant_views)} relevant items w/ views; {strong} >=20k.")
+        elif c.get("relevant_view_signals"):
+            view_fit = _sub(None, "unknown", refs, "View signals described but not numeric — cannot score.")
+        else:
+            view_fit = _sub(None, "unknown", [], "No view data.")
+        # approachability
+        f = c.get("followers")
+        if isinstance(f, int):
+            band = 9 if 10000 <= f <= 100000 else 7 if f < 10000 else 6 if f <= 500000 else 4
+            approach = _sub(band, "observed", refs, f"{f} followers (band heuristic).")
+        elif c.get("monetization_signals"):
+            approach = _sub(None, "unknown", refs, "Follower count unknown; monetization present.")
+        else:
+            approach = _sub(None, "unknown", [], "Follower count unknown.")
+        # monetization
+        mon = c.get("monetization_signals", [])
+        monet = (_sub(min(10, 5 + len(mon) * 2), "observed", refs, f"{len(mon)} monetization signal(s).")
+                 if mon else _sub(None, "unknown", [], "No monetization signal captured."))
+        # product_content_fit (inferred from content+problem where known)
+        known = [x["score"] for x in (content_fit, problem_fit) if x["score"] is not None]
+        pfit = (_sub(round(sum(known) / len(known)), "inferred", refs,
+                     "Derived from content + problem fit.") if known
+                else _sub(None, "unknown", [], "Insufficient content/problem data."))
+
+        q = {"audience_fit": audience_fit, "problem_fit": problem_fit, "content_fit": content_fit,
+             "view_fit": view_fit, "approachability": approach, "monetization_fit": monet,
+             "product_fit": pfit}
+        qualified = all(q[k]["score"] is not None and q[k]["score"] >= 6
+                        for k in ("audience_fit", "problem_fit", "content_fit"))
+        highly = qualified and view_fit["score"] is not None and view_fit["score"] >= 6
+        evals.append({"creator_id": c["id"], "name": c["name"], "platform": c["platform"],
+                      "classified_content": classified, "qualification": q,
+                      "qualified": qualified, "highly_qualified": highly})
+    return evals
+
+
+def evaluate_content_relevance(evals: list[dict]) -> dict:
+    counts = {"exact": 0, "adjacent": 0, "weak": 0, "irrelevant": 0, "unknown": 0}
+    for e in evals:
+        for x in e["classified_content"]:
+            counts[x["relevance"]] = counts.get(x["relevance"], 0) + 1
+    return {"counts": counts, "total_content_items": sum(counts.values()),
+            "basis": "observed" if sum(counts.values()) else "unknown"}
+
+
+def evaluate_audience_alignment(evals: list[dict]) -> dict:
+    def mean(key):
+        vals = [e["qualification"][key]["score"] for e in evals
+                if e["qualification"][key]["score"] is not None]
+        return round(sum(vals) / len(vals), 1) if vals else None
+    return {"audience_fit_mean": mean("audience_fit"), "problem_fit_mean": mean("problem_fit"),
+            "basis": "observed" if any(e["qualification"]["audience_fit"]["score"] is not None
+                                       for e in evals) else "unknown"}
+
+
+# ------------------------------------------------------------------ 10. density
+def evaluate_distribution_density(evals: list[dict], content_rel: dict) -> dict:
+    n = len(evals)
+    nq = sum(1 for e in evals if e["qualified"])
+    nhq = sum(1 for e in evals if e["highly_qualified"])
+    known_f = [e for e in evals]  # placeholder; follower dist computed in verdict from candidates
+    density_score = 0 if nq == 0 else 4 if nq <= 2 else 7 if nq <= 5 else 9
+    return {"creator_count": n, "qualified_creator_count": nq, "highly_qualified_count": nhq,
+            "relevant_content_count": content_rel["counts"]["exact"] + content_rel["counts"]["adjacent"],
+            "density_score": density_score,
+            "basis": "inferred",
+            "rationale": "Counts are observed for the imported set, but representativeness of the "
+                         "true creator ecosystem is inferred (import is not a census)."}
+
+
+# ------------------------------------------------------------------ 11. falsification (mandatory)
+def identify_distribution_risks(bundle: dict, evals: list[dict], density: dict) -> dict:
+    b = bundle["brief"]
+    contradictory, unknown_checks, risks = [], [], []
+    analysis = bundle.get("analysis") or {}
+
+    # carry Phase-8 contradictions (evidence-backed context)
+    for c in analysis.get("contradictions", []):
+        contradictory.append({"claim": c, "basis": "inferred", "source": "phase8.analysis.contradictions"})
+    for r in b.get("risks_unknowns", []):
+        risks.append({"risk": r, "basis": "evidence-backed", "source": "brief.risks_unknowns"})
+
+    checks = {
+        "low_relevant_engagement": "creators discuss topic but relevant content underperforms",
+        "audience_prefers_free": "audience rejects paid products / prefers free info",
+        "creators_sell_competing": "creators already sell competing products",
+        "audience_mismatch": "creator audience differs from the actual buyer",
+        "views_without_relevance": "high views but low problem relevance",
+        "fragmented_audience": "audience too fragmented across many micro-niches",
+        "wont_promote_third_party": "creators unlikely to promote a third-party product",
+        "demand_without_creators": "strong problem demand but weak creator ecosystem",
+    }
+    # evaluate what the available data can actually judge
+    has_views = any(e["qualification"]["view_fit"]["score"] is not None for e in evals)
+    if evals and not has_views:
+        unknown_checks.append({"check": "low_relevant_engagement", "why": "no view data imported"})
+        unknown_checks.append({"check": "views_without_relevance", "why": "no view data imported"})
+    if not evals:
+        for k in checks:
+            unknown_checks.append({"check": k, "why": "no creator candidates to evaluate"})
+    else:
+        if density["qualified_creator_count"] == 0:
+            contradictory.append({"claim": "No imported creator qualified on audience+problem+content.",
+                                  "basis": "observed", "source": "phase9.5.evaluations"})
+        if density["qualified_creator_count"] < 3 and b.get("confidence") in ("HIGH", "MEDIUM"):
+            risks.append({"risk": "demand_without_creators: brief shows demand but few qualified creators found so far.",
+                          "basis": "inferred", "source": "cross-check"})
+        # checks we can't judge from import alone:
+        for k in ("audience_prefers_free", "creators_sell_competing", "wont_promote_third_party", "fragmented_audience"):
+            unknown_checks.append({"check": k, "why": "requires primary community/creator inspection not available this run"})
+
+    return {"checklist": checks, "contradictory_evidence": contradictory,
+            "unknown_checks": unknown_checks, "risks": risks}
+
+
+# ------------------------------------------------------------------ scoring
+def _score_dimensions(audience_al, density, content_rel, evals) -> dict:
+    def agg(key):
+        vals = [e["qualification"][key]["score"] for e in evals
+                if e["qualification"][key]["score"] is not None]
+        return (round(sum(vals) / len(vals), 1), "observed") if vals else (None, "unknown")
+
+    aud, aud_b = agg("audience_fit")
+    prob, prob_b = agg("problem_fit")
+    cont, cont_b = agg("content_fit")
+    view, view_b = agg("view_fit")
+    appr, appr_b = agg("approachability")
+    mon, mon_b = agg("monetization_fit")
+    pfit, pfit_b = agg("product_fit")
+    dens = density["density_score"] if evals else None
+    dims = {
+        "audience_alignment": (aud, aud_b), "problem_alignment": (prob, prob_b),
+        "content_alignment": (cont, cont_b), "relevant_view_evidence": (view, view_b),
+        "creator_density": (dens, "inferred" if evals else "unknown"),
+        "approachability": (appr, appr_b), "monetization_signal": (mon, mon_b),
+        "product_content_fit": (pfit, pfit_b),
+    }
+    out = {}
+    for name, (score, basis) in dims.items():
+        out[name] = {"score": score, "weight": WEIGHTS[name],
+                     "basis": basis if score is not None else "unknown"}
+    known_w = sum(d["weight"] for d in out.values() if d["score"] is not None)
+    overall = round(sum((d["score"] / 10) * d["weight"] for d in out.values() if d["score"] is not None)
+                    / known_w * 100, 1) if known_w else 0.0
+    unknown_pct = 100 - known_w
+    n_obs = sum(1 for d in out.values() if d["basis"] == "observed")
+    conf = "HIGH" if (unknown_pct <= 20 and n_obs >= 5) else "LOW" if unknown_pct >= 50 else "MEDIUM"
+    return {"dimensions": out, "overall": overall, "weight_unknown_pct": unknown_pct, "confidence": conf}
+
+
+# ------------------------------------------------------------------ 12. verdict
+def build_distribution_verdict(candidates, evals, score, density, falsification, bundle) -> dict:
+    n = len(candidates)
+    nq = density["qualified_creator_count"]
+    nhq = density["highly_qualified_count"]
+    strongest = sorted([e for e in evals if e["qualified"]],
+                       key=lambda e: (e["highly_qualified"], e["qualification"]["content_fit"]["score"] or 0),
+                       reverse=True)[:5]
+    strongest_names = [f"{e['name']} ({e['platform']})" for e in strongest]
+    content_sig = []
+    for e in strongest:
+        for x in e["classified_content"]:
+            if x["relevance"] in ("exact", "adjacent"):
+                content_sig.append(f"{e['name']}: {x.get('title') or x.get('topic')} "
+                                   f"[{x['relevance']}{', ' + str(x['views']) + ' views' if isinstance(x.get('views'), int) else ''}]")
+    unknowns = [f"{u['check']} ({u['why']})" for u in falsification["unknown_checks"]]
+    if score["weight_unknown_pct"]:
+        unknowns.append(f"{score['weight_unknown_pct']}% of scoring weight is UNKNOWN.")
+
+    # gating logic — unknowns dominate the decision, never optimism
+    if n == 0:
+        verdict, reason, action = ("NEEDS_RESEARCH",
+            "No creator candidates available (no live retriever, no manual import). Nothing can be validated.",
+            "Import real creators to data/creator_candidates/<id>.json (or wire live retrieval), then re-run.")
+    elif score["weight_unknown_pct"] >= 50 or nq == 0:
+        verdict, reason, action = ("NEEDS_RESEARCH",
+            f"{nq} qualified of {n} imported; {score['weight_unknown_pct']}% of weight is unknown "
+            "(views/audience-problem data largely missing). Not enough to conclude.",
+            "Capture per-creator relevant-content views + audience-problem signals (comments), then re-run.")
+    elif score["overall"] >= 70 and nhq >= 3:
+        verdict, reason, action = ("STRONG_FIT",
+            f"{nhq} highly-qualified creators with relevant, repeatedly-viewed content.",
+            "Proceed toward Phase 10; shortlist top creators for outreach validation.")
+    elif score["overall"] >= 45:
+        verdict, reason, action = ("MODERATE_FIT",
+            f"{nq} qualified creators; alignment present but evidence partial.",
+            "Validate with 5 creator conversations / capture view+comment evidence before building.")
+    else:
+        verdict, reason, action = ("WEAK_FIT",
+            "Alignment or density too low on available evidence.",
+            "Reconsider distribution path or pocket before investing in the build.")
+
+    supporting = []
+    if density["relevant_content_count"]:
+        supporting.append(f"{density['relevant_content_count']} relevant (exact/adjacent) content items across imports.")
+    if nq:
+        supporting.append(f"{nq} creator(s) qualified on audience+problem+content.")
+    return {
+        "opportunity_id": bundle["opp_id"], "verdict": verdict,
+        "confidence": score["confidence"], "reason": reason,
+        "creator_count": n, "qualified_creator_count": nq, "highly_qualified_count": nhq,
+        "strongest_creators": strongest_names,
+        "strongest_content_signals": content_sig[:6],
+        "supporting_evidence": supporting,
+        "contradictory_evidence": [c["claim"] for c in falsification["contradictory_evidence"]],
+        "unknowns": unknowns,
+        "major_risks": [r["risk"] for r in falsification["risks"]],
+        "next_action": action,
+    }
+
+
+# ------------------------------------------------------------------ 13. dossier
+def build_creator_validation_dossier(bundle, profile, verdict, score, density,
+                                     content_rel, audience_al, falsification, retrieval_notes) -> dict:
+    b = bundle["brief"]
+    return {
+        "opportunity_id": bundle["opp_id"],
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "product_concept": b.get("product_concept", ""),
+        "target_audience": profile["target_audience"],
+        "verdict": verdict,
+        "score": score,
+        "distribution_density": density,
+        "content_relevance": content_rel,
+        "audience_alignment": audience_al,
+        "falsification": falsification,
+        "retrieval": retrieval_notes,
+        "carried_forward": {
+            "exclusions": b.get("exclude", []),
+            "risks_unknowns": b.get("risks_unknowns", []),
+            "phase8_contradictions": (bundle.get("analysis") or {}).get("contradictions", []),
+        },
+        "handoff": {
+            "for": "Phase 10+ Creator Outreach (NOT built here)",
+            "consumes": "creator_validation_dossier.json + creator_evaluations.json + distribution_verdict.json",
+            "gate": "Do not begin outreach unless verdict is MODERATE_FIT or STRONG_FIT; "
+                    "NEEDS_RESEARCH/WEAK_FIT must be resolved first.",
+            "must_respect": ["verdict.next_action", "carried_forward.exclusions",
+                             "falsification.unknown_checks (resolve before outreach)"],
+        },
+    }
+
+
+# ------------------------------------------------------------------ orchestrator
+def _write(opp_id: str, name: str, obj) -> str:
+    import storage
+    storage.get_backend().write_dossier_file(opp_id, name, obj)
+    return f"research/{opp_id}/{name}.json"
+
+
+def run(opp_id: str) -> dict:
+    bundle = load_opportunity(opp_id)
+    profile = define_creator_search_profile(bundle)
+    content_signals = define_content_signals(profile)
+    audience_signals = define_audience_signals(profile)
+    qualification = define_creator_qualification(profile)
+    candidates, retrieval_notes = gather_creator_candidates(opp_id, profile)
+    evals = evaluate_creator_candidates(candidates, profile, content_signals)
+    content_rel = evaluate_content_relevance(evals)
+    audience_al = evaluate_audience_alignment(evals)
+    density = evaluate_distribution_density(evals, content_rel)
+    falsification = identify_distribution_risks(bundle, evals, density)
+    score = _score_dimensions(audience_al, density, content_rel, evals)
+    verdict = build_distribution_verdict(candidates, evals, score, density, falsification, bundle)
+    dossier = build_creator_validation_dossier(bundle, profile, verdict, score, density,
+                                               content_rel, audience_al, falsification, retrieval_notes)
+
+    profile_out = {k: v for k, v in profile.items() if not k.startswith("_")}
+    profile_out.update({"content_signals": content_signals, "audience_signals": audience_signals,
+                        "qualification_rubric": qualification})
+    files = {
+        "creator_search_profile": _write(opp_id, "creator_search_profile", profile_out),
+        "creator_candidates": _write(opp_id, "creator_candidates",
+                                     {"candidates": candidates, "retrieval": retrieval_notes}),
+        "creator_evaluations": _write(opp_id, "creator_evaluations", {"evaluations": evals}),
+        "distribution_evidence": _write(opp_id, "distribution_evidence",
+                                        {"content_relevance": content_rel, "audience_alignment": audience_al,
+                                         "distribution_density": density}),
+        "distribution_falsification": _write(opp_id, "distribution_falsification", falsification),
+        "distribution_analysis": _write(opp_id, "distribution_analysis", score),
+        "distribution_verdict": _write(opp_id, "distribution_verdict", verdict),
+        "creator_validation_dossier": _write(opp_id, "creator_validation_dossier", dossier),
+    }
+    return {"opportunity_id": opp_id, "verdict": verdict["verdict"], "confidence": verdict["confidence"],
+            "counts": {"candidates": len(candidates), "qualified": density["qualified_creator_count"],
+                       "highly_qualified": density["highly_qualified_count"]},
+            "files": files, "dossier": dossier}

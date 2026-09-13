@@ -1,0 +1,28 @@
+{
+  "id": "fitness",
+  "name": "Fitness",
+  "description": "Training, coaching, body composition.",
+  "submarkets": [
+    {
+      "id": "personal-training",
+      "name": "Personal Training / Coaching",
+      "audiences": [
+        {
+          "id": "solo-pt",
+          "label": "independent personal trainers & online coaches"
+        }
+      ]
+    },
+    {
+      "id": "body-recomp",
+      "name": "Body Recomposition",
+      "audiences": [
+        {
+          "id": "recomp-beginners",
+          "label": "beginners trying to cut/bulk/recomp"
+        }
+      ]
+    }
+  ],
+  "status": "explored"
+}

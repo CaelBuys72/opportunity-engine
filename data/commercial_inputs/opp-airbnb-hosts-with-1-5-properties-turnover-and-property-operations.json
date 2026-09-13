@@ -1,0 +1,5 @@
+{ "observations": [
+  {"type":"existing_paid_solution","name":"Etsy Airbnb welcome-book / house-manual templates","url":null,"price":null,"observation":"1,000+ paid listings (many 'Bestseller') for host welcome books & checklists; hosts already spend on these.","basis":"observed"},
+  {"type":"buyer_complaint","name":"1-star review (infleasy welcome-book template)","url":"https://www.etsy.com/listing/1308448953/airbnb-welcome-book-template-airbnb-host","observation":"'Template could not be printed after personalizing and would not save. I lost hours of work.'","basis":"observed"},
+  {"type":"solution_gap","name":"Canva-template reliability gap","url":null,"price":null,"observation":"Existing welcome-book/checklist templates fail on save/print; reliable, foolproof turnover tooling is missing.","basis":"observed"}
+]}

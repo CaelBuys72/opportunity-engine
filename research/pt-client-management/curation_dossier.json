@@ -1,0 +1,163 @@
+{
+  "opportunity_id": "pt-client-management",
+  "generated_at": "2026-09-11T11:41:40.667132+00:00",
+  "product_concept": "A focused guide / checklist that helps independent personal trainers & online coaches manage programming, check-ins and progress without paying for bloated software.",
+  "product_format": "guide / checklist",
+  "transformation": {
+    "from_state": "All-in-one coaching SaaS is expensive/overkill; spreadsheets get chaotic past ~15 clients",
+    "to_state": "To: Manage programming, check-ins and progress without paying for bloated software",
+    "promise": "Get to 'Manage programming, check-ins and progress without paying for bloated software.' without the usual guesswork.",
+    "core_problem": "All-in-one coaching SaaS is expensive/overkill; spreadsheets get chaotic past ~15 clients.",
+    "desired_outcome": "Manage programming, check-ins and progress without paying for bloated software.",
+    "basis": "evidence-backed"
+  },
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: Manage programming, check-ins and progress without paying for bloated software.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: what software do you use",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: Trainerize too expensive at scale",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: programs scattered across WhatsApp/Notes",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-4",
+      "statement": "Resolve: no template to reuse programs",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "short decision-tree guide + one-page checklist",
+      "type": "asset",
+      "format": "concise reference guide page",
+      "purpose": "Asset that helps the buyer: short decision-tree guide + one-page checklist.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    }
+  ],
+  "asset_requirements": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "short decision-tree guide + one-page checklist",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ],
+  "quality_requirements": {
+    "global": [
+      {
+        "req": "Time-to-first-value under ~15 minutes; usable without a manual.",
+        "basis": "inferred",
+        "source": "buyer-effort principle"
+      },
+      {
+        "req": "Honor exclusions verbatim (see exclusions list); scope stays tight.",
+        "basis": "evidence-backed",
+        "source": "brief.exclude"
+      }
+    ],
+    "exclusions_preserved": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ]
+  },
+  "buyer_effort": {
+    "overall_target": "Buyer reaches first useful result in one sitting, no setup call.",
+    "per_component": [
+      {
+        "component_id": "cmp-1",
+        "name": "short decision-tree guide + one-page checklist",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      }
+    ],
+    "basis": "inferred"
+  },
+  "production_sequence": [
+    {
+      "order": 1,
+      "step": "Build: short decision-tree guide + one-page checklist",
+      "component_id": "cmp-1",
+      "format": "concise reference guide page",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ],
+  "verification_requirements": [],
+  "unresolved_questions": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation",
+    "Price not finalized — brief price is Unknown.",
+    "Components mapped only to the overall outcome (weak job fit): ['short decision-tree guide + one-page checklist']"
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ],
+    "risks_unknowns": [
+      "Prevalence UNKNOWN",
+      "Creator ecosystem UNKNOWN",
+      "Willingness-to-pay needs primary-community confirmation"
+    ],
+    "differentiation": [
+      "'better than a spreadsheet, cheaper than SaaS' one-time template",
+      "for app-switching-fatigued coaches"
+    ],
+    "evidence_requirements": []
+  },
+  "basis_summary": {
+    "component_requirements_evidence_backed": 0,
+    "component_requirements_inferred": 0,
+    "note": "evidence-backed = traceable to a Phase-8 brief field; inferred = design decision made by the curation engine."
+  },
+  "handoff": {
+    "consumes": "product_architecture.json + component_specs.json + asset_requirements.json + quality_requirements.json + production_plan.json",
+    "for": "Phase 10 Product Builder",
+    "must_respect": [
+      "verification_requirements",
+      "carried_forward.exclusions",
+      "quality_requirements",
+      "unresolved_questions"
+    ]
+  }
+}

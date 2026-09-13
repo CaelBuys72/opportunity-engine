@@ -1,0 +1,38 @@
+{
+  "universe_opportunity_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+  "origin": "market_universe",
+  "market_id": "mkt-travel-and-hospitality",
+  "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+  "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+  "opportunity_name": "Turnover & Property Operations",
+  "member_problem_ids": [
+    "prb-airbnb-hosts-with-1-5-properties-cleaner-turnover-coordination",
+    "prb-airbnb-hosts-with-1-5-properties-supply-restocking-tracking",
+    "prb-airbnb-hosts-with-1-5-properties-welcome-book-contents-unclear"
+  ],
+  "seed_source_refs": [
+    "src-airbnb-etsy-review-1star",
+    "src-airbnb-touchstay-cleaning",
+    "src-airbnb-welcomebook-demand"
+  ],
+  "seed_commercial_evidence_refs": [
+    "Etsy Airbnb welcome-book / house-manual templates",
+    "https://www.etsy.com/listing/1308448953/airbnb-welcome-book-template-airbnb-host",
+    "Canva-template reliability gap"
+  ],
+  "seed_creator_candidate_refs": [
+    "cd-managedbyluca",
+    "cd-coachinayah",
+    "cd-madeleineraifordholland",
+    "cd-digitalcleaningacademy",
+    "cd-johnazizzz",
+    "cd-taron-teague"
+  ],
+  "priority_metadata": {
+    "commercial_score": 71,
+    "evidence_score": 62,
+    "priority_score": 67,
+    "priority_classification": "HIGH_PRIORITY",
+    "note": "Why we chose to investigate — NOT evidence of reality."
+  }
+}

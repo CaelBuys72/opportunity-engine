@@ -1,0 +1,59 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "shows real recurring pain AND a crowded field",
+      "source_id": "src-1",
+      "evidence": "r/personaltraining thread 'What software are you using to manage clients?' — trainers named 9+ tools (Trainerize, TrueCoach, SuperSet, Everfit, ...).",
+      "source_type": "reddit",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "template demand explicit",
+      "source_id": "src-1",
+      "evidence": "In-thread ask: 'do you have any template you can share?' — direct want for a template.",
+      "source_type": "reddit",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "secondary summary of Reddit discussion",
+      "source_id": "src-2",
+      "evidence": "Coaching SaaS runs $20-150/mo, expensive for a 10-client coach; summary of coach software pain points.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-4",
+      "claim": "Trainerize scaling pricing creates frustration for growing independent coaches.",
+      "source_id": "rsrc-54",
+      "evidence": "User reports paying $77/mo for up to 30 clients and feeling nickel-and-dimed by $4.99-$14.99/mo add-ons.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": "pricing pain"
+    },
+    {
+      "id": "cl-5",
+      "claim": "One-time spreadsheet templates serve as a direct alternative to per-seat coaching software.",
+      "source_id": "rsrc-73",
+      "evidence": "Market sources show Excel/Sheets templates priced at $1.99-$19.99 one-time replacing Notion and SaaS planner jobs with no per-seat fee.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": "alternative solutions"
+    }
+  ]
+}

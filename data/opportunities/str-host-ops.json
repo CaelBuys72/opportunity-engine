@@ -1,0 +1,122 @@
+{
+  "id": "str-host-ops",
+  "title": "First-year Airbnb / STR host operations kit",
+  "industry_id": "small-business",
+  "submarket_id": "str-hosting",
+  "origin": "seed-run",
+  "audience": "first-year short-term-rental hosts",
+  "core_problem": "New hosts don't know what to include in welcome books, cleaning checklists, house rules or checkout flow.",
+  "desired_outcome": "Launch looking professional and avoid rookie mistakes that cost reviews.",
+  "related_problems": [
+    "what goes in a welcome book",
+    "cleaning/turnover checklist",
+    "guest message scripts",
+    "checkout instructions"
+  ],
+  "problems": [
+    {
+      "id": "prob-wtp",
+      "statement": "New hosts pay for host templates.",
+      "symptoms": [
+        "infleasy Airbnb welcome-book: 1.3k sales, 4.9★ (76 reviews), ~$9.60."
+      ],
+      "evidence_ids": [
+        "ev-str-1"
+      ]
+    },
+    {
+      "id": "prob-gap",
+      "statement": "Canva templates fail on save/print; reliability gap.",
+      "symptoms": [
+        "Real 1★ review: 'Template could not be printed after personalizing and would not save. I lost hours of work.'"
+      ],
+      "evidence_ids": [
+        "ev-str-2"
+      ]
+    },
+    {
+      "id": "prob-demand",
+      "statement": "Large, active buyer base; aesthetics commoditized.",
+      "symptoms": [
+        "'airbnb welcome book template' returns 1,000+ Etsy items, a wall of Bestseller badges — category is deep but design-saturated."
+      ],
+      "evidence_ids": [
+        "ev-str-3"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "ev-str-1",
+    "ev-str-2",
+    "ev-str-3"
+  ],
+  "community_ids": [],
+  "existing_solutions": [
+    "Etsy welcome-book templates ($2-21)",
+    "500+/1000+ host bundles",
+    "Touchstay/Homeaglow content"
+  ],
+  "solution_gaps": [
+    "operational systems & message scripts (market is saturated on pretty welcome books)",
+    "reliable no-Canva-headache delivery format"
+  ],
+  "creator_ecosystem": "inferred (Airbnb-coach creators on YouTube) but not measured",
+  "digital_product_fit": "Good: welcome book + checklists + scripts bundle (~$10-25). Caveat: aesthetic lane crowded.",
+  "source_urls": [
+    "https://www.etsy.com/listing/1308448953/airbnb-welcome-book-template-airbnb-host",
+    "https://touchstay.com/blog/airbnb-cleaning-checklist"
+  ],
+  "score": {
+    "factors": {
+      "demand_evidence": {
+        "score": 8,
+        "basis": "observed",
+        "rationale": "1,000+ listings, many bestsellers, 1.3k-sales shops.",
+        "weight": 20
+      },
+      "pain_importance": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "Money + reviews at stake.",
+        "weight": 15
+      },
+      "clear_outcome": {
+        "score": 8,
+        "basis": "inferred",
+        "rationale": "'Launch professionally' concrete.",
+        "weight": 10
+      },
+      "existing_wtp": {
+        "score": 8,
+        "basis": "observed",
+        "rationale": "Established sellers with real volume.",
+        "weight": 15
+      },
+      "solution_gap": {
+        "score": 5,
+        "basis": "observed",
+        "rationale": "Saturated on aesthetics; ops/reliability lane open.",
+        "weight": 15
+      },
+      "creator_density": {
+        "basis": "unknown",
+        "rationale": "No creator data collected.",
+        "weight": 15,
+        "score": null
+      },
+      "digital_product_fit": {
+        "score": 8,
+        "basis": "inferred",
+        "rationale": "Template bundle fits.",
+        "weight": 10
+      }
+    },
+    "overall": 72.9,
+    "confidence": "MEDIUM",
+    "confidence_reason": "3/7 factors observed, 1/7 unknown; demand=observed, WTP=observed.",
+    "weight_unknown_pct": 15
+  },
+  "status": "researching",
+  "research_status": "needs_review",
+  "curation_status": "complete"
+}

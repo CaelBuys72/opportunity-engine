@@ -1,0 +1,177 @@
+{
+  "pocket_id": "opp-lifters-planning-a-cut-or-bulk-cut-vs-bulk-diagnostic-and-phase-periodization-blueprint",
+  "known": [
+    "Audience: Lifters planning a cut or bulk",
+    "Core problem: Lifters planning a cut or bulk face a related cluster of problems around cut vs. bulk diagnostic & phase periodization blueprint — e.g. Uncertainty in choosing between cutting and bulking phase, Ineffective muscle growth due to short bulk/cut cycles.",
+    "Discovery score 76/100 (HIGH confidence)",
+    "Evidence on file: Beginner and skinny-fat lifters struggle to decide whether to cut or bulk first.",
+    "Evidence on file: Frequent, short bulk-and-cut cycles disrupt long-term muscle building progress."
+  ],
+  "unknown": [
+    "True prevalence / how many are affected (UNKNOWN)",
+    "Creator ecosystem size (UNKNOWN)",
+    "Primary-community depth not yet retrieved this run"
+  ],
+  "validating_evidence": [
+    "Multiple independent communities describing the same problem in their own words",
+    "People actively asking for tools/templates (solution-seeking language)",
+    "Existing paid solutions with real sales AND recurring complaints (gap)"
+  ],
+  "weakening_evidence": [
+    "Problem is rare, mild, or one-off",
+    "Free resources already solve it well (free-information problem)",
+    "Strong free-sharing culture that resists paying",
+    "Existing products already excellent with no complaint pattern"
+  ],
+  "communities": [
+    "(none catalogued yet — investigate niche subs/forums)"
+  ],
+  "queries": [
+    {
+      "angle": "problem",
+      "query": "how do I lifters planning a cut or bulk site:reddit.com"
+    },
+    {
+      "angle": "problem",
+      "query": "I don't know beginner and skinny-fat lifters struggle to decide whether to cut or bulk first. site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "frequent, short bulk-and-cut cycles disrupt long-term muscle building progress. frustrating site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "hate lifters planning a cut or bulk site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "beginner and skinny-fat lifters struggle to decide whether to cut or bulk first. template site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "frequent, short bulk-and-cut cycles disrupt long-term muscle building progress. calculator site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "lifters planning a cut or bulk too complicated site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "beginner and skinny-fat lifters struggle to decide whether to cut or bulk first. too expensive site:reddit.com"
+    }
+  ],
+  "solutions_to_examine": [],
+  "questions": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service/free-info problem?",
+    "What is the single most useful asset we could ship?",
+    "What price will the audience tolerate, and on what evidence?"
+  ],
+  "executed": [
+    {
+      "query": "Lifters planning a cut or bulk problem reddit",
+      "intent": "problem",
+      "results": 10,
+      "sources_retained": 10
+    },
+    {
+      "query": "how do Lifters planning a cut or bulk currently",
+      "intent": "behavior",
+      "results": 10,
+      "sources_retained": 9
+    },
+    {
+      "query": "Lifters planning a cut or bulk frustrated OR struggle",
+      "intent": "pain",
+      "results": 10,
+      "sources_retained": 8
+    },
+    {
+      "query": "Beginner and skinny-fat lifters struggle to decide whether to cut or bulk first. reddit",
+      "intent": "problem",
+      "results": 10,
+      "sources_retained": 7
+    },
+    {
+      "query": "Frequent, short bulk-and-cut cycles disrupt long-term muscle building progress. reddit",
+      "intent": "problem",
+      "results": 9,
+      "sources_retained": 7
+    },
+    {
+      "query": "Lifters planning a cut or bulk tools OR template OR software",
+      "intent": "existing_solution",
+      "results": 10,
+      "sources_retained": 7
+    },
+    {
+      "query": "Lifters planning a cut or bulk template OR spreadsheet OR notion pricing",
+      "intent": "pricing",
+      "results": 10,
+      "sources_retained": 9
+    },
+    {
+      "query": "Lifters planning a cut or bulk what specific emotional or visual triggers e g",
+      "intent": "dynamic",
+      "results": 10,
+      "sources_retained": 4
+    },
+    {
+      "query": "Lifters planning a cut or bulk what baseline diagnostic metrics e g waist circumference",
+      "intent": "dynamic",
+      "results": 10,
+      "sources_retained": 5
+    },
+    {
+      "query": "Lifters planning a cut or bulk how do lifters currently distinguish between a true",
+      "intent": "dynamic",
+      "results": 10,
+      "sources_retained": 2
+    },
+    {
+      "query": "Lifters planning a cut or bulk what structural milestones or guardrails in a multi",
+      "intent": "dynamic",
+      "results": 10,
+      "sources_retained": 3
+    },
+    {
+      "query": "Lifters planning a cut or bulk how do lifters with conflicting priorities e g",
+      "intent": "dynamic",
+      "results": 10,
+      "sources_retained": 1
+    },
+    {
+      "query": "free Lifters planning a cut or bulk template OR guide OR alternative",
+      "intent": "falsification",
+      "results": 10,
+      "sources_retained": 3
+    },
+    {
+      "query": "is it worth paying for Lifters planning a cut or bulk tools reddit",
+      "intent": "falsification",
+      "results": 10,
+      "sources_retained": 6
+    }
+  ],
+  "retrieval": {
+    "ok": 0,
+    "failed": 14,
+    "not_fetched": 67
+  },
+  "accounting": {
+    "search_results_discovered": 139,
+    "unique_candidate_sources": 81,
+    "sources_selected": 14,
+    "sources_retrieved": 0,
+    "retrieval_failed": 14,
+    "evidence_bearing_sources": 0
+  },
+  "dynamic_questions": [
+    "What specific emotional or visual triggers (e.g., temporary fat gain, strength plateaus) currently cause lifters to prematurely abandon a cut or bulk phase?",
+    "What baseline diagnostic metrics (e.g., waist circumference, strength ratios, scale weight, photo markers) do lifters trust versus find misleading when evaluating whether they are 'skinny-fat' or ready to bulk?",
+    "How do lifters currently distinguish between a true phase plateau that requires changing goals versus temporary fluctuations that require staying the course?",
+    "What structural milestones or guardrails in a multi-month roadmap (e.g., maintenance phases, strength targets, cut limits) provide enough conviction to prevent mid-cycle goal switching?",
+    "How do lifters with conflicting priorities (e.g., wanting to look lean now vs. wanting to build muscle long-term) decide which goal takes priority when given generic advice?"
+  ]
+}

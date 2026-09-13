@@ -1,0 +1,48 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "865 results; premium tier visible",
+      "source_id": "src-1",
+      "evidence": "Etsy baby-sleep guides span $1.40-$30 — highest consumer price band of the pockets checked; 'nurse/pediatrician-reviewed' ones command $19-30.",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "e.g. SweetSleepDesign ~$113; secondary market signal",
+      "source_id": "src-2",
+      "evidence": "Distinct B2B tier: done-for-you sleep-guide templates sold TO consultants/doulas at $100+.",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "recurring 'too generic / too long' complaint",
+      "source_id": "src-3",
+      "evidence": "Reviewers call some sleep ebooks a 'waste of $50', 'nothing new', 'hundreds of pages to get to the point'.",
+      "source_type": "review",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-4",
+      "claim": "paraphrased from surfaced review text",
+      "source_id": "src-1",
+      "evidence": "A parent: sleep-training guide 'was a life saver' after 4-month regression, baby now sleeps 11h.",
+      "source_type": "review",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    }
+  ]
+}

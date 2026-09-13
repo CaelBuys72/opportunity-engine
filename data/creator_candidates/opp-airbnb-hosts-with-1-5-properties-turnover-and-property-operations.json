@@ -1,0 +1,126 @@
+{
+  "_note": "Seeded from Build-4 creator-density candidates (Phase-9.5 still evaluates).",
+  "_seeded_from": "data/creator_density_inputs/opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations.json",
+  "candidates": [
+    {
+      "id": "cd-managedbyluca",
+      "name": "@managedbyluca",
+      "platform": "instagram",
+      "profile_url": "https://www.instagram.com/managedbyluca",
+      "handle": "@managedbyluca",
+      "followers": 13400,
+      "niche": null,
+      "audience_description": "seed relevance audience=high opportunity=high",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "present"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09; automation/ops"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "cd-coachinayah",
+      "name": "@coachinayah",
+      "platform": "instagram",
+      "profile_url": "https://www.instagram.com/coachinayah",
+      "handle": "@coachinayah",
+      "followers": 255000,
+      "niche": null,
+      "audience_description": "seed relevance audience=high opportunity=high",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "present"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "cd-madeleineraifordholland",
+      "name": "@madeleineraifordholland",
+      "platform": "instagram",
+      "profile_url": "https://www.instagram.com/madeleineraifordholland",
+      "handle": "@madeleineraifordholland",
+      "followers": 86400,
+      "niche": null,
+      "audience_description": "seed relevance audience=high opportunity=high",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "present"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09; 'runs without you'"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "cd-digitalcleaningacademy",
+      "name": "@digitalcleaningacademy",
+      "platform": "instagram",
+      "profile_url": "https://www.instagram.com/digitalcleaningacademy",
+      "handle": "@digitalcleaningacademy",
+      "followers": 2723,
+      "niche": null,
+      "audience_description": "seed relevance audience=medium opportunity=high",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "present"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09; Airbnb cleaning niche - relevant to turnover"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "cd-johnazizzz",
+      "name": "@johnazizzz",
+      "platform": "instagram",
+      "profile_url": "https://www.instagram.com/johnazizzz",
+      "handle": "@johnazizzz",
+      "followers": 16400,
+      "niche": null,
+      "audience_description": "seed relevance audience=medium opportunity=medium",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "present"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09"
+      ],
+      "basis": "observed"
+    },
+    {
+      "id": "cd-taron-teague",
+      "name": "@taron.teague",
+      "platform": "instagram",
+      "profile_url": "https://www.instagram.com/taron.teague",
+      "handle": "@taron.teague",
+      "followers": 134000,
+      "niche": null,
+      "audience_description": "seed relevance audience=medium opportunity=medium",
+      "relevant_content": [],
+      "relevant_view_signals": [],
+      "audience_problem_signals": [],
+      "monetization_signals": [
+        "present"
+      ],
+      "source_refs": [
+        "IG public profile 2026-09-09"
+      ],
+      "basis": "observed"
+    }
+  ]
+}

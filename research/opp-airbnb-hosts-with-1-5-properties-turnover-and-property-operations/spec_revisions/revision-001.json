@@ -1,0 +1,53 @@
+{
+  "revision_id": "revision-001",
+  "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+  "reason": "Build 6.5 acceptance audit (score 77.1; spec_revision_required)",
+  "previous_acceptance_score": 77.1,
+  "issues": [
+    "overlap cmp-2/cmp-7 and cmp-3/cmp-8",
+    "cmp-5 and cmp-6 too thin",
+    "missing damage/incident + inventory workflows",
+    "perceived value low",
+    "9-component padding"
+  ],
+  "changes": [
+    "cmp-1 -> Supply + Inventory Tracker (expanded)",
+    "cmp-2 -> Master Turnover SOP (merged old cmp-2 detailed + cmp-5 steps)",
+    "cmp-3 -> Property Setup Workbook (absorbed old cmp-6)",
+    "cmp-7 -> Quick Turnover Checklist (condensed from SOP)",
+    "cmp-9 -> Guest Message Library (+issue-resolution/late-checkout)"
+  ],
+  "components_added": [
+    "cmp-10 Damage & Incident Log"
+  ],
+  "components_removed": [
+    "cmp-5",
+    "cmp-6"
+  ],
+  "components_merged": [
+    {
+      "into": "cmp-2",
+      "from": [
+        "cmp-2(detailed)",
+        "cmp-5(steps)"
+      ]
+    },
+    {
+      "into": "cmp-3",
+      "absorbed": [
+        "cmp-6(sections hosts forget)"
+      ]
+    }
+  ],
+  "components_retained_unchanged": [
+    "cmp-4",
+    "cmp-8"
+  ],
+  "expected_improvements": [
+    "less padding/overlap (cohesion)",
+    "stronger operational core (utility)",
+    "two missing workflows added (completeness)",
+    "two functional spreadsheets (value)"
+  ],
+  "research_unchanged": true
+}

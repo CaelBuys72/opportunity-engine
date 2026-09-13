@@ -1,0 +1,62 @@
+{
+  "pocket_id": "pt-client-management",
+  "product_concept": "A focused guide / checklist that helps independent personal trainers & online coaches manage programming, check-ins and progress without paying for bloated software.",
+  "target_customer": "independent personal trainers & online coaches",
+  "core_problem": "All-in-one coaching SaaS is expensive/overkill; spreadsheets get chaotic past ~15 clients.",
+  "related_problems": [
+    "what software do you use",
+    "Trainerize too expensive at scale",
+    "programs scattered across WhatsApp/Notes",
+    "no template to reuse programs"
+  ],
+  "desired_outcome": "Manage programming, check-ins and progress without paying for bloated software.",
+  "core_transformation": "From: All-in-one coaching SaaS is expensive/overkill; spreadsheets get chaotic past ~15 clients.  →  To: Manage programming, check-ins and progress without paying for bloated software.",
+  "product_promise": "Get to 'Manage programming, check-ins and progress without paying for bloated software.' without the usual guesswork.",
+  "product_format": "Bundle: template + spreadsheet + tracker",
+  "why_this_format": "Chosen from executed-research evidence. Spreadsheet templates offer a one-time cost structure that eliminates monthly per-client software overhead while enabling reusable workout programming.",
+  "product_structure": [
+    "editable fill-in templates",
+    "auto-calculating spreadsheet with worked example",
+    "structured tracker with fields + summary view"
+  ],
+  "required_sections": [],
+  "required_tools": [],
+  "required_templates": [],
+  "required_worksheets": [],
+  "bonus_assets": [],
+  "exclude": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ],
+  "existing_alternatives": [
+    "Trainerize/TrueCoach/My PT Hub ($20-150/mo)",
+    "Notion/Sheets templates ($9-40)",
+    "indie coaching apps (free-cheap)"
+  ],
+  "differentiation": [
+    "Lack of cost-effective, non-subscription program management tools for trainers scaling past ~15 clients who refuse high SaaS fees."
+  ],
+  "price_range": "$1.99 - $19.99 one-time (digital spreadsheet template), $10 - $25/month (entry SaaS allowance), $77 - $135/month (30-50 client SaaS tier)",
+  "price_rationale": "Observed pricing from executed research (competitor/marketplace).",
+  "key_customer_language": [
+    "what software do you use",
+    "Trainerize too expensive at scale",
+    "programs scattered across WhatsApp/Notes",
+    "no template to reuse programs"
+  ],
+  "key_objections": [
+    "I can find this free",
+    "Templates never fit my exact case",
+    "I'll deal with it later"
+  ],
+  "key_buying_motivations": [
+    "Save time",
+    "Reduce anxiety/uncertainty",
+    "Look professional / avoid costly mistakes"
+  ],
+  "evidence_summary": "2 observed + 1 inferred/other claims support a recurring problem for independent personal trainers & online coaches. Gap: 'better than a spreadsheet, cheaper than SaaS' one-time template; for app-switching-fatigued coaches.  [Executed research: 8 pages retrieved, 85 sources; critical unresolved: 0.]",
+  "confidence": "MEDIUM",
+  "risks_unknowns": [
+    "Is the problem recurring and painful enough to pay to solve?: PARTIAL"
+  ]
+}

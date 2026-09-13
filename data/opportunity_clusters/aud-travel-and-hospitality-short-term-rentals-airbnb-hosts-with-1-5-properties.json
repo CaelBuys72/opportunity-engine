@@ -1,0 +1,6 @@
+{ "clusters": [
+  {"name": "Pricing & Revenue Optimization", "problem_normalized": ["weekend vs weekday pricing uncertainty","event-based pricing uncertainty","occupancy gaps between bookings","minimum-stay rule confusion","dynamic pricing tool setup","listing optimization uncertainty"]},
+  {"name": "Guest Communication & Experience", "problem_normalized": ["inconsistent guest messaging","difficult guest handling","maintaining consistent reviews"]},
+  {"name": "Turnover & Property Operations", "problem_normalized": ["cleaner turnover coordination","welcome book contents unclear","supply restocking tracking"]},
+  {"name": "Remote & Financial Management", "problem_normalized": ["remote listing management","per-property expense tracking"]}
+]}

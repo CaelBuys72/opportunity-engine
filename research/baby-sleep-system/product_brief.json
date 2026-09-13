@@ -1,0 +1,66 @@
+{
+  "pocket_id": "baby-sleep-system",
+  "product_concept": "A focused calculator / spreadsheet that helps sleep-deprived parents of 0-18 month infants predictable naps/nights and restored parental sleep.",
+  "target_customer": "sleep-deprived parents of 0-18 month infants",
+  "core_problem": "Sleep advice is contradictory, generic and long; parents want something tailored to their baby's age/temperament.",
+  "related_problems": [
+    "4-month regression",
+    "which method fits our family",
+    "wake-window confusion",
+    "guides are too long / too generic"
+  ],
+  "desired_outcome": "Predictable naps/nights and restored parental sleep.",
+  "core_transformation": "From: Sleep advice is contradictory, generic and long; parents want something tailored to their baby's age/temperament.  →  To: Predictable naps/nights and restored parental sleep.",
+  "product_promise": "Get to 'Predictable naps/nights and restored parental sleep.' without the usual guesswork.",
+  "product_format": "Bundle: calculator / spreadsheet + planner / schedule + guide / checklist",
+  "why_this_format": "Chosen from problem language, not by default. Signal scores: {'calculator / spreadsheet': 1, 'fill-in templates / scripts': 0, 'planner / schedule': 1, 'guide / checklist': 1}.",
+  "product_structure": [
+    "auto-calculating spreadsheet with worked example",
+    "printable + editable planner",
+    "short decision-tree guide + one-page checklist"
+  ],
+  "required_sections": [],
+  "required_tools": [],
+  "required_templates": [],
+  "required_worksheets": [],
+  "bonus_assets": [],
+  "exclude": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ],
+  "existing_alternatives": [
+    "Etsy sleep guides ($1.40-30)",
+    "books (Precious Little Sleep, Ferber)",
+    "1:1 sleep consultants ($150-500)",
+    "done-for-you templates sold TO consultants ($100+)"
+  ],
+  "differentiation": [
+    "short decision-tree/personalized format between $1 cheat-sheet and $50 book",
+    "credibility marker (nurse/pediatrician) at low price"
+  ],
+  "price_range": "Unknown — infer from analogous products before pricing",
+  "price_rationale": "Unknown pricing evidence; do not set a price until validated.",
+  "key_customer_language": [
+    "4-month regression",
+    "which method fits our family",
+    "wake-window confusion",
+    "guides are too long / too generic"
+  ],
+  "key_objections": [
+    "I can find this free",
+    "Templates never fit my exact case",
+    "I'll deal with it later"
+  ],
+  "key_buying_motivations": [
+    "Save time",
+    "Reduce anxiety/uncertainty",
+    "Look professional / avoid costly mistakes"
+  ],
+  "evidence_summary": "2 observed + 2 inferred/other claims support a recurring problem for sleep-deprived parents of 0-18 month infants. Gap: short decision-tree/personalized format between $1 cheat-sheet and $50 book; credibility marker (nurse/pediatrician) at low price.",
+  "confidence": "MEDIUM",
+  "risks_unknowns": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation"
+  ]
+}

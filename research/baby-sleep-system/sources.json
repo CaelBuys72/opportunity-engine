@@ -1,0 +1,31 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "https://www.etsy.com/market/baby_sleep_guide",
+      "url": "https://www.etsy.com/market/baby_sleep_guide",
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": true,
+      "note": "865 results; premium tier visible"
+    },
+    {
+      "id": "src-2",
+      "label": "marketplace",
+      "url": null,
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": false,
+      "note": "e.g. SweetSleepDesign ~$113; secondary market signal"
+    },
+    {
+      "id": "src-3",
+      "label": "https://www.goodreads.com/book/show/51002555-baby-sleep-miracle",
+      "url": "https://www.goodreads.com/book/show/51002555-baby-sleep-miracle",
+      "tier": 3,
+      "source_type": "review",
+      "accessible": true,
+      "note": "recurring 'too generic / too long' complaint"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "id": "pt-client-management",
+  "title": "Solo PT / online coach client-management template",
+  "industry_id": "fitness",
+  "submarket_id": "personal-training",
+  "origin": "seed-run",
+  "audience": "independent personal trainers & online coaches",
+  "core_problem": "All-in-one coaching SaaS is expensive/overkill; spreadsheets get chaotic past ~15 clients.",
+  "desired_outcome": "Manage programming, check-ins and progress without paying for bloated software.",
+  "related_problems": [
+    "what software do you use",
+    "Trainerize too expensive at scale",
+    "programs scattered across WhatsApp/Notes",
+    "no template to reuse programs"
+  ],
+  "problems": [
+    {
+      "id": "prob-demand",
+      "statement": "Coaches actively seek a manageable client system.",
+      "symptoms": [
+        "r/personaltraining thread 'What software are you using to manage clients?' — trainers named 9+ tools (Trainerize, TrueCoach, SuperSet, Everfit, ...)."
+      ],
+      "evidence_ids": [
+        "ev-pt-1"
+      ]
+    },
+    {
+      "id": "prob-gap",
+      "statement": "Template (not another app) is the wedge.",
+      "symptoms": [
+        "In-thread ask: 'do you have any template you can share?' — direct want for a template."
+      ],
+      "evidence_ids": [
+        "ev-pt-2"
+      ]
+    },
+    {
+      "id": "prob-wtp",
+      "statement": "Coaches pay monthly; open to cheaper one-time tool.",
+      "symptoms": [
+        "Coaching SaaS runs $20-150/mo, expensive for a 10-client coach; summary of coach software pain points."
+      ],
+      "evidence_ids": [
+        "ev-pt-3"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "ev-pt-1",
+    "ev-pt-2",
+    "ev-pt-3"
+  ],
+  "community_ids": [
+    "r-personaltraining"
+  ],
+  "existing_solutions": [
+    "Trainerize/TrueCoach/My PT Hub ($20-150/mo)",
+    "Notion/Sheets templates ($9-40)",
+    "indie coaching apps (free-cheap)"
+  ],
+  "solution_gaps": [
+    "'better than a spreadsheet, cheaper than SaaS' one-time template",
+    "for app-switching-fatigued coaches"
+  ],
+  "creator_ecosystem": "inferred very large (fitness creators) but not measured",
+  "digital_product_fit": "Good: Notion/Sheets client-management template (~$15-29). Caveat: crowded w/ cheap apps.",
+  "source_urls": [
+    "https://1fit.com/2026/07/reddit-personal-trainer-coaching-software-problems/",
+    "https://www.reddit.com/r/personaltraining/"
+  ],
+  "score": {
+    "factors": {
+      "demand_evidence": {
+        "score": 7,
+        "basis": "observed",
+        "rationale": "Recurring subreddit threads + explicit template asks.",
+        "weight": 20
+      },
+      "pain_importance": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "Admin time directly cuts billable capacity.",
+        "weight": 15
+      },
+      "clear_outcome": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "'Manage clients without bloated SaaS'.",
+        "weight": 10
+      },
+      "existing_wtp": {
+        "score": 6,
+        "basis": "inferred",
+        "rationale": "Pay SaaS monthly; template WTP unproven, plus free apps compete.",
+        "weight": 15
+      },
+      "solution_gap": {
+        "score": 5,
+        "basis": "observed",
+        "rationale": "Field crowded with cheap/free indie apps.",
+        "weight": 15
+      },
+      "creator_density": {
+        "score": 8,
+        "basis": "inferred",
+        "rationale": "Fitness creator ecosystem huge (not measured).",
+        "weight": 15
+      },
+      "digital_product_fit": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "Notion/Sheets template fits.",
+        "weight": 10
+      }
+    },
+    "overall": 67.0,
+    "confidence": "MEDIUM",
+    "confidence_reason": "2/7 factors observed, 0/7 unknown; demand=observed, WTP=inferred.",
+    "weight_unknown_pct": 0
+  },
+  "status": "selected",
+  "research_status": "complete",
+  "curation_status": "complete",
+  "distribution_verdict": "NEEDS_RESEARCH"
+}

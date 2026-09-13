@@ -1,0 +1,222 @@
+{
+  "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+  "generated_at": "2026-09-09T20:47:13.938973+00:00",
+  "product_concept": "A reliable turnover & property-operations kit for hosts with 1-5 listings: standardized cleaning/turnover checklists, a guest-ready house manual, and a supply-restock tracker — delivered so it won't break like the Canva templates hosts complain about.",
+  "target_audience": "Airbnb hosts with 1-5 properties",
+  "verdict": {
+    "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+    "verdict": "NEEDS_RESEARCH",
+    "confidence": "LOW",
+    "reason": "0 qualified of 6 imported; 55% of weight is unknown (views/audience-problem data largely missing). Not enough to conclude.",
+    "creator_count": 6,
+    "qualified_creator_count": 0,
+    "highly_qualified_count": 0,
+    "strongest_creators": [],
+    "strongest_content_signals": [],
+    "supporting_evidence": [],
+    "contradictory_evidence": [
+      "Etsy welcome-book market is saturated on aesthetics; differentiation must be reliability + operational completeness, not looks.",
+      "Distribution likely harder than the product (creator ecosystem exists but promotion is unproven — see Build-4 density MEDIUM, not qualified).",
+      "No imported creator qualified on audience+problem+content."
+    ],
+    "unknowns": [
+      "low_relevant_engagement (no view data imported)",
+      "views_without_relevance (no view data imported)",
+      "audience_prefers_free (requires primary community/creator inspection not available this run)",
+      "creators_sell_competing (requires primary community/creator inspection not available this run)",
+      "wont_promote_third_party (requires primary community/creator inspection not available this run)",
+      "fragmented_audience (requires primary community/creator inspection not available this run)",
+      "55% of scoring weight is UNKNOWN."
+    ],
+    "major_risks": [
+      "Distribution/promotion unproven (creator density MEDIUM, not qualified)",
+      "Welcome-book market saturated — must be visibly more reliable/complete",
+      "Some hosts use a property manager and won't buy tools",
+      "demand_without_creators: brief shows demand but few qualified creators found so far."
+    ],
+    "next_action": "Capture per-creator relevant-content views + audience-problem signals (comments), then re-run."
+  },
+  "score": {
+    "dimensions": {
+      "audience_alignment": {
+        "score": 6.0,
+        "weight": 20,
+        "basis": "observed"
+      },
+      "problem_alignment": {
+        "score": null,
+        "weight": 20,
+        "basis": "unknown"
+      },
+      "content_alignment": {
+        "score": null,
+        "weight": 15,
+        "basis": "unknown"
+      },
+      "relevant_view_evidence": {
+        "score": null,
+        "weight": 15,
+        "basis": "unknown"
+      },
+      "creator_density": {
+        "score": 0,
+        "weight": 15,
+        "basis": "inferred"
+      },
+      "approachability": {
+        "score": 7.7,
+        "weight": 5,
+        "basis": "observed"
+      },
+      "monetization_signal": {
+        "score": 7.0,
+        "weight": 5,
+        "basis": "observed"
+      },
+      "product_content_fit": {
+        "score": null,
+        "weight": 5,
+        "basis": "unknown"
+      }
+    },
+    "overall": 43.0,
+    "weight_unknown_pct": 55,
+    "confidence": "LOW"
+  },
+  "distribution_density": {
+    "creator_count": 6,
+    "qualified_creator_count": 0,
+    "highly_qualified_count": 0,
+    "relevant_content_count": 0,
+    "density_score": 0,
+    "basis": "inferred",
+    "rationale": "Counts are observed for the imported set, but representativeness of the true creator ecosystem is inferred (import is not a census)."
+  },
+  "content_relevance": {
+    "counts": {
+      "exact": 0,
+      "adjacent": 0,
+      "weak": 0,
+      "irrelevant": 0,
+      "unknown": 0
+    },
+    "total_content_items": 0,
+    "basis": "unknown"
+  },
+  "audience_alignment": {
+    "audience_fit_mean": 6.0,
+    "problem_fit_mean": null,
+    "basis": "observed"
+  },
+  "falsification": {
+    "checklist": {
+      "low_relevant_engagement": "creators discuss topic but relevant content underperforms",
+      "audience_prefers_free": "audience rejects paid products / prefers free info",
+      "creators_sell_competing": "creators already sell competing products",
+      "audience_mismatch": "creator audience differs from the actual buyer",
+      "views_without_relevance": "high views but low problem relevance",
+      "fragmented_audience": "audience too fragmented across many micro-niches",
+      "wont_promote_third_party": "creators unlikely to promote a third-party product",
+      "demand_without_creators": "strong problem demand but weak creator ecosystem"
+    },
+    "contradictory_evidence": [
+      {
+        "claim": "Etsy welcome-book market is saturated on aesthetics; differentiation must be reliability + operational completeness, not looks.",
+        "basis": "inferred",
+        "source": "phase8.analysis.contradictions"
+      },
+      {
+        "claim": "Distribution likely harder than the product (creator ecosystem exists but promotion is unproven — see Build-4 density MEDIUM, not qualified).",
+        "basis": "inferred",
+        "source": "phase8.analysis.contradictions"
+      },
+      {
+        "claim": "No imported creator qualified on audience+problem+content.",
+        "basis": "observed",
+        "source": "phase9.5.evaluations"
+      }
+    ],
+    "unknown_checks": [
+      {
+        "check": "low_relevant_engagement",
+        "why": "no view data imported"
+      },
+      {
+        "check": "views_without_relevance",
+        "why": "no view data imported"
+      },
+      {
+        "check": "audience_prefers_free",
+        "why": "requires primary community/creator inspection not available this run"
+      },
+      {
+        "check": "creators_sell_competing",
+        "why": "requires primary community/creator inspection not available this run"
+      },
+      {
+        "check": "wont_promote_third_party",
+        "why": "requires primary community/creator inspection not available this run"
+      },
+      {
+        "check": "fragmented_audience",
+        "why": "requires primary community/creator inspection not available this run"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Distribution/promotion unproven (creator density MEDIUM, not qualified)",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      },
+      {
+        "risk": "Welcome-book market saturated — must be visibly more reliable/complete",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      },
+      {
+        "risk": "Some hosts use a property manager and won't buy tools",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      },
+      {
+        "risk": "demand_without_creators: brief shows demand but few qualified creators found so far.",
+        "basis": "inferred",
+        "source": "cross-check"
+      }
+    ]
+  },
+  "retrieval": [
+    {
+      "retriever": "manual-import",
+      "status": "loaded",
+      "count": 6,
+      "source": "data/creator_candidates/opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations.json"
+    }
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Pretty-but-fragile Canva-only formats",
+      "Padding/theory",
+      "Anything freely adequate already"
+    ],
+    "risks_unknowns": [
+      "Distribution/promotion unproven (creator density MEDIUM, not qualified)",
+      "Welcome-book market saturated — must be visibly more reliable/complete",
+      "Some hosts use a property manager and won't buy tools"
+    ],
+    "phase8_contradictions": [
+      "Etsy welcome-book market is saturated on aesthetics; differentiation must be reliability + operational completeness, not looks.",
+      "Distribution likely harder than the product (creator ecosystem exists but promotion is unproven — see Build-4 density MEDIUM, not qualified)."
+    ]
+  },
+  "handoff": {
+    "for": "Phase 10+ Creator Outreach (NOT built here)",
+    "consumes": "creator_validation_dossier.json + creator_evaluations.json + distribution_verdict.json",
+    "gate": "Do not begin outreach unless verdict is MODERATE_FIT or STRONG_FIT; NEEDS_RESEARCH/WEAK_FIT must be resolved first.",
+    "must_respect": [
+      "verdict.next_action",
+      "carried_forward.exclusions",
+      "falsification.unknown_checks (resolve before outreach)"
+    ]
+  }
+}

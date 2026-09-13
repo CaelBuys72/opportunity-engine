@@ -1,0 +1,92 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "low streaming royalty payouts",
+      "source_id": "src-1",
+      "evidence": "This paper explores some current issues addressing the concerns of the music artists in the streaming world both from the perspective of rights ...",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "low streaming royalty payouts",
+      "source_id": "src-2",
+      "evidence": "The points I explore below include poor pay for artists, the false notion of “meritocracy” promoted by the platforms, and the erosion of ...",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "low streaming royalty payouts",
+      "source_id": "src-3",
+      "evidence": "Every day I become more aligned with the idea that artists shouldn't use streaming platforms and should only be on Bandcamp. grahsam. •. 1y ago.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-4",
+      "claim": "low streaming royalty payouts",
+      "source_id": "src-4",
+      "evidence": "Most small artists don't pull in a ton of streams a month, and therefore make a bit off the lifetime of streams, but if they're not pulling 1000 ...",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-5",
+      "claim": "low streaming royalty payouts",
+      "source_id": "src-5",
+      "evidence": "music streaming has in fact decreased the ability for artists to make a living off their music.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-6",
+      "claim": "low streaming royalty payouts",
+      "source_id": "src-6",
+      "evidence": "A platform like Bandcamp may pay you more per stream, but Spotify holds the vast majority of listeners and listens. It's possible that this extra volume may actually beat the revenue offered by Bandcamp, but this depends on the artist, their efforts, and their pre-existing fanbase.Feb 18, 2026",
+      "source_type": "question",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-7",
+      "claim": "low streaming royalty payouts",
+      "source_id": "src-7",
+      "evidence": "Earning $10,000 per month from streaming alone puts you in the top tier of independent musicians. At Spotify's average rate, that means roughly 2.5 million monthly streams, which implies either a large, active fanbase or one or more tracks with major viral or playlist momentum.",
+      "source_type": "question",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-8",
+      "claim": "low streaming royalty payouts",
+      "source_id": "src-8",
+      "evidence": "The $1,000 Monthly Milestone\n\nAt Spotify's average rate, that requires about 250,000 monthly streams, which implies a real and engaged listener base. Across all platforms combined, you might be hitting 150,000-300,000 total monthly streams depending on your platform distribution.",
+      "source_type": "question",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    }
+  ]
+}

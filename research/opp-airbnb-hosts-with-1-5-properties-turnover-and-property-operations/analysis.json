@@ -1,0 +1,48 @@
+{
+  "audience": "Airbnb hosts with 1-5 properties",
+  "recurring_symptoms": [
+    "Coordinating and standardizing cleaner turnover between guests is hard.",
+    "Restocking supplies and consumables is easy to forget.",
+    "Editable welcome-book/template tools fail to save or print, losing hosts' work."
+  ],
+  "root_problems": [
+    "Airbnb hosts with 1-5 properties face a related cluster of problems around turnover & property operations — e.g. cleaner turnover coordination, supply restocking tracking, welcome book contents unclear."
+  ],
+  "desired_outcomes": [
+    "A shared outcome across member problems: Standardize every turnover. Never run out of guest supplies. Produce a house manual without tool failures."
+  ],
+  "existing_behaviours": [
+    "Buying Canva welcome-book/checklist templates on Etsy",
+    "Ad-hoc cleaner coordination",
+    "DIY house-manual docs"
+  ],
+  "existing_solutions": [
+    "Etsy Airbnb welcome-book / house-manual templates"
+  ],
+  "solution_strengths": [
+    "Cheap, instant templates exist",
+    "Attractive designs"
+  ],
+  "solution_weaknesses": [
+    "Canva templates fail on save/print (lost work)",
+    "Pretty but not operationally complete",
+    "No turnover/restock system"
+  ],
+  "customer_complaints": [
+    "'could not print after personalizing and would not save. I lost hours of work.'"
+  ],
+  "unmet_needs": [
+    "A turnover system that won't break like a Canva file",
+    "Standardized checklists cleaners actually follow",
+    "Restock tracking"
+  ],
+  "solution_gaps": [
+    "'Template could not be printed after personalizing and would not save. I lost hours of work.'",
+    "Existing welcome-book/checklist templates fail on save/print; reliable, foolproof turnover tooling is missing."
+  ],
+  "contradictions": [
+    "Etsy welcome-book market is saturated on aesthetics; differentiation must be reliability + operational completeness, not looks.",
+    "Distribution likely harder than the product (creator ecosystem exists but promotion is unproven — see Build-4 density MEDIUM, not qualified)."
+  ],
+  "opportunity_assessment": "Small Airbnb hosts repeatedly need a reliable turnover system (cleaning/turnover, a guest-ready house manual, supply restocking). Observed: hosts already pay for welcome-book/checklist templates on Etsy (1,000+ listings, many Bestsellers) and a real 1-star review shows those Canva templates failing to save/print — a reliability gap. Demand and spending are real; the open question is distribution, not whether the problem exists."
+}

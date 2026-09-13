@@ -1,0 +1,179 @@
+{
+  "sequence": [
+    {
+      "order": 1,
+      "step": "Build: Quarterly estimated-tax calculator",
+      "component_id": "cmp-1",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Build: Set-aside % calculator",
+      "component_id": "cmp-2",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [
+        1
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 3,
+      "step": "Build: Schedule C category mapper",
+      "component_id": "cmp-3",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [
+        2
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 4,
+      "step": "Build: Quarterly payment scheduler (due dates)",
+      "component_id": "cmp-6",
+      "format": "structured worksheet (printable + fillable)",
+      "depends_on": [
+        3
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 5,
+      "step": "Build: Deductible-expense checklist by Schedule C line",
+      "component_id": "cmp-7",
+      "format": "structured worksheet (printable + fillable)",
+      "depends_on": [
+        4
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 6,
+      "step": "Build: Professional invoice",
+      "component_id": "cmp-4",
+      "format": "editable fill-in template",
+      "depends_on": [
+        5
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 7,
+      "step": "Build: Late-payment follow-up email",
+      "component_id": "cmp-5",
+      "format": "editable fill-in template",
+      "depends_on": [
+        6
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 8,
+      "step": "Build: How much to set aside (with worked example)",
+      "component_id": "cmp-8",
+      "format": "concise reference guide page",
+      "depends_on": [
+        7
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 9,
+      "step": "Build: When quarterly payments are due",
+      "component_id": "cmp-9",
+      "format": "concise reference guide page",
+      "depends_on": [
+        8
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 10,
+      "step": "Build: Schedule C categories in plain English",
+      "component_id": "cmp-10",
+      "format": "concise reference guide page",
+      "depends_on": [
+        9
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 11,
+      "step": "Build: Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %)",
+      "component_id": "cmp-11",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [
+        10
+      ],
+      "verification_gate": "EXTERNAL VERIFICATION required before this component is releasable",
+      "basis": "inferred"
+    },
+    {
+      "order": 12,
+      "step": "Build: Short setup guide (how the rules work, plain-English)",
+      "component_id": "cmp-12",
+      "format": "concise reference guide page",
+      "depends_on": [
+        11
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 13,
+      "step": "Build: Invoice + late-payment follow-up templates",
+      "component_id": "cmp-13",
+      "format": "editable fill-in template",
+      "depends_on": [
+        12
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 14,
+      "step": "Build: Sub-niche category presets (content creator / rideshare / trades)",
+      "component_id": "cmp-14",
+      "format": "preset / variant pack for the core tool",
+      "depends_on": [
+        13
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 15,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ]
+}

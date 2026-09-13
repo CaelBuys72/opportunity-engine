@@ -1,0 +1,54 @@
+{
+  "total_search_requests": 134,
+  "total_results": 2390,
+  "total_sources_kept": 1469,
+  "requests_by_node": {
+    "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions": {
+      "queries": 8,
+      "results": 100,
+      "sources": 56
+    },
+    "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk": {
+      "queries": 8,
+      "results": 80,
+      "sources": 51
+    },
+    "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms": {
+      "queries": 8,
+      "results": 100,
+      "sources": 71
+    },
+    "opp-people-overwhelmed-by-their-to-do-list-prioritization-and-daily-focus-system": {
+      "queries": 24,
+      "results": 749,
+      "sources": 503
+    },
+    "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls": {
+      "queries": 8,
+      "results": 208,
+      "sources": 100
+    },
+    "opp-account-execs-running-discovery-calls-conversational-30-min-discovery-flow-and-time-pacing-toolkit": {
+      "queries": 28,
+      "results": 532,
+      "sources": 306
+    },
+    "pt-client-management": {
+      "queries": 10,
+      "results": 99,
+      "sources": 85
+    },
+    "opp-lifters-planning-a-cut-or-bulk-cut-vs-bulk-diagnostic-and-phase-periodization-blueprint": {
+      "queries": 24,
+      "results": 417,
+      "sources": 239
+    },
+    "aud-home-and-diy-home-renovation-first-time-renovators-budgeting-a-project": {
+      "queries": 8,
+      "results": 105,
+      "sources": 58
+    }
+  },
+  "note": "counter reset; only real (non-cached) Serper calls counted going forward",
+  "last_request_at": "2026-09-12T18:29:26.238279+00:00"
+}

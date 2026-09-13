@@ -1,0 +1,246 @@
+{
+  "opportunity_id": "freelancer-us-tax",
+  "generated_at": "2026-09-09T14:25:53.026920+00:00",
+  "product_concept": "A robust-but-simple US 1099 tax & get-paid toolkit for a specific freelancer sub-niche (e.g. content creators or rideshare/independent contractors): a spreadsheet that gets the SE-tax + quarterly-estimate math right, plus an invoice template and a short setup guide.",
+  "target_audience": "US 1099 freelancers & independent contractors",
+  "verdict": {
+    "opportunity_id": "freelancer-us-tax",
+    "verdict": "NEEDS_RESEARCH",
+    "confidence": "MEDIUM",
+    "reason": "0 qualified of 1 imported; 45% of weight is unknown (views/audience-problem data largely missing). Not enough to conclude.",
+    "creator_count": 1,
+    "qualified_creator_count": 0,
+    "highly_qualified_count": 0,
+    "strongest_creators": [],
+    "strongest_content_signals": [],
+    "supporting_evidence": [
+      "1 relevant (exact/adjacent) content items across imports."
+    ],
+    "contradictory_evidence": [
+      "Free 1099 templates are abundant — risk of a 'free-information' problem for the generic version.",
+      "Etsy SEO is owned by high-volume generalist shops — the marketing problem may exceed the product problem.",
+      "A subset of freelancers offload this entirely to an accountant and won't buy a tool.",
+      "No imported creator qualified on audience+problem+content."
+    ],
+    "unknowns": [
+      "low_relevant_engagement (no view data imported)",
+      "views_without_relevance (no view data imported)",
+      "audience_prefers_free (requires primary community/creator inspection not available this run)",
+      "creators_sell_competing (requires primary community/creator inspection not available this run)",
+      "wont_promote_third_party (requires primary community/creator inspection not available this run)",
+      "fragmented_audience (requires primary community/creator inspection not available this run)",
+      "45% of scoring weight is UNKNOWN."
+    ],
+    "major_risks": [
+      "Distribution is the hard part (incumbents own Etsy SEO) — UNKNOWN best channel",
+      "Tax-logic correctness carries liability; needs careful, disclaimed implementation",
+      "Free templates compete; must be visibly better",
+      "Creator ecosystem size UNKNOWN",
+      "Prevalence UNKNOWN",
+      "demand_without_creators: brief shows demand but few qualified creators found so far."
+    ],
+    "next_action": "Capture per-creator relevant-content views + audience-problem signals (comments), then re-run."
+  },
+  "score": {
+    "dimensions": {
+      "audience_alignment": {
+        "score": 6.0,
+        "weight": 20,
+        "basis": "observed"
+      },
+      "problem_alignment": {
+        "score": null,
+        "weight": 20,
+        "basis": "unknown"
+      },
+      "content_alignment": {
+        "score": 4.0,
+        "weight": 15,
+        "basis": "observed"
+      },
+      "relevant_view_evidence": {
+        "score": null,
+        "weight": 15,
+        "basis": "unknown"
+      },
+      "creator_density": {
+        "score": 0,
+        "weight": 15,
+        "basis": "inferred"
+      },
+      "approachability": {
+        "score": null,
+        "weight": 5,
+        "basis": "unknown"
+      },
+      "monetization_signal": {
+        "score": null,
+        "weight": 5,
+        "basis": "unknown"
+      },
+      "product_content_fit": {
+        "score": 4.0,
+        "weight": 5,
+        "basis": "observed"
+      }
+    },
+    "overall": 36.4,
+    "weight_unknown_pct": 45,
+    "confidence": "MEDIUM"
+  },
+  "distribution_density": {
+    "creator_count": 1,
+    "qualified_creator_count": 0,
+    "highly_qualified_count": 0,
+    "relevant_content_count": 1,
+    "density_score": 0,
+    "basis": "inferred",
+    "rationale": "Counts are observed for the imported set, but representativeness of the true creator ecosystem is inferred (import is not a census)."
+  },
+  "content_relevance": {
+    "counts": {
+      "exact": 1,
+      "adjacent": 0,
+      "weak": 0,
+      "irrelevant": 0,
+      "unknown": 0
+    },
+    "total_content_items": 1,
+    "basis": "observed"
+  },
+  "audience_alignment": {
+    "audience_fit_mean": 6.0,
+    "problem_fit_mean": null,
+    "basis": "observed"
+  },
+  "falsification": {
+    "checklist": {
+      "low_relevant_engagement": "creators discuss topic but relevant content underperforms",
+      "audience_prefers_free": "audience rejects paid products / prefers free info",
+      "creators_sell_competing": "creators already sell competing products",
+      "audience_mismatch": "creator audience differs from the actual buyer",
+      "views_without_relevance": "high views but low problem relevance",
+      "fragmented_audience": "audience too fragmented across many micro-niches",
+      "wont_promote_third_party": "creators unlikely to promote a third-party product",
+      "demand_without_creators": "strong problem demand but weak creator ecosystem"
+    },
+    "contradictory_evidence": [
+      {
+        "claim": "Free 1099 templates are abundant — risk of a 'free-information' problem for the generic version.",
+        "basis": "inferred",
+        "source": "phase8.analysis.contradictions"
+      },
+      {
+        "claim": "Etsy SEO is owned by high-volume generalist shops — the marketing problem may exceed the product problem.",
+        "basis": "inferred",
+        "source": "phase8.analysis.contradictions"
+      },
+      {
+        "claim": "A subset of freelancers offload this entirely to an accountant and won't buy a tool.",
+        "basis": "inferred",
+        "source": "phase8.analysis.contradictions"
+      },
+      {
+        "claim": "No imported creator qualified on audience+problem+content.",
+        "basis": "observed",
+        "source": "phase9.5.evaluations"
+      }
+    ],
+    "unknown_checks": [
+      {
+        "check": "low_relevant_engagement",
+        "why": "no view data imported"
+      },
+      {
+        "check": "views_without_relevance",
+        "why": "no view data imported"
+      },
+      {
+        "check": "audience_prefers_free",
+        "why": "requires primary community/creator inspection not available this run"
+      },
+      {
+        "check": "creators_sell_competing",
+        "why": "requires primary community/creator inspection not available this run"
+      },
+      {
+        "check": "wont_promote_third_party",
+        "why": "requires primary community/creator inspection not available this run"
+      },
+      {
+        "check": "fragmented_audience",
+        "why": "requires primary community/creator inspection not available this run"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Distribution is the hard part (incumbents own Etsy SEO) — UNKNOWN best channel",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      },
+      {
+        "risk": "Tax-logic correctness carries liability; needs careful, disclaimed implementation",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      },
+      {
+        "risk": "Free templates compete; must be visibly better",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      },
+      {
+        "risk": "Creator ecosystem size UNKNOWN",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      },
+      {
+        "risk": "Prevalence UNKNOWN",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      },
+      {
+        "risk": "demand_without_creators: brief shows demand but few qualified creators found so far.",
+        "basis": "inferred",
+        "source": "cross-check"
+      }
+    ]
+  },
+  "retrieval": [
+    {
+      "retriever": "manual-import",
+      "status": "loaded",
+      "count": 1,
+      "source": "data/creator_candidates/freelancer-us-tax.json"
+    }
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Actual tax filing (liability)",
+      "Personalised tax advice",
+      "Generic personal-budgeting bloat",
+      "Filler theory"
+    ],
+    "risks_unknowns": [
+      "Distribution is the hard part (incumbents own Etsy SEO) — UNKNOWN best channel",
+      "Tax-logic correctness carries liability; needs careful, disclaimed implementation",
+      "Free templates compete; must be visibly better",
+      "Creator ecosystem size UNKNOWN",
+      "Prevalence UNKNOWN"
+    ],
+    "phase8_contradictions": [
+      "Free 1099 templates are abundant — risk of a 'free-information' problem for the generic version.",
+      "Etsy SEO is owned by high-volume generalist shops — the marketing problem may exceed the product problem.",
+      "A subset of freelancers offload this entirely to an accountant and won't buy a tool."
+    ]
+  },
+  "handoff": {
+    "for": "Phase 10+ Creator Outreach (NOT built here)",
+    "consumes": "creator_validation_dossier.json + creator_evaluations.json + distribution_verdict.json",
+    "gate": "Do not begin outreach unless verdict is MODERATE_FIT or STRONG_FIT; NEEDS_RESEARCH/WEAK_FIT must be resolved first.",
+    "must_respect": [
+      "verdict.next_action",
+      "carried_forward.exclusions",
+      "falsification.unknown_checks (resolve before outreach)"
+    ]
+  }
+}

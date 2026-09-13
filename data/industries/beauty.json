@@ -1,0 +1,18 @@
+{
+  "id": "beauty",
+  "name": "Beauty",
+  "description": "Independent beauty service providers.",
+  "submarkets": [
+    {
+      "id": "beauty-pros",
+      "name": "Beauty Professionals",
+      "audiences": [
+        {
+          "id": "nail-lash-techs",
+          "label": "independent nail / lash / brow techs"
+        }
+      ]
+    }
+  ],
+  "status": "explored"
+}

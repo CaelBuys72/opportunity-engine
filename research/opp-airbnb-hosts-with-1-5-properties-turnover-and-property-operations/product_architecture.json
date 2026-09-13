@@ -1,0 +1,134 @@
+{
+  "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+  "revision": "revision-001",
+  "components": [
+    {
+      "id": "cmp-3",
+      "name": "Property Setup Workbook",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Property Setup Workbook — Single host-facing source of truth for every guest-relevant detail.",
+      "basis": "inferred",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "source_field": "revision-001",
+      "unmapped": false,
+      "format_basis": "inferred",
+      "format_rationale": "revised per Build-6.5 acceptance audit"
+    },
+    {
+      "id": "cmp-8",
+      "name": "Welcome Guide for Guests",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Welcome Guide for Guests — Polished, guest-facing; no host-only operational detail.",
+      "basis": "inferred",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "source_field": "revision-001",
+      "unmapped": false,
+      "format_basis": "inferred",
+      "format_rationale": "revised per Build-6.5 acceptance audit"
+    },
+    {
+      "id": "cmp-2",
+      "name": "Master Turnover SOP",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Master Turnover SOP — Covers the full turnover: entry, room-by-room reset, laundry, kitchen, bathrooms, supplies, damage check, final inspection.",
+      "basis": "inferred",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "source_field": "revision-001",
+      "unmapped": false,
+      "format_basis": "inferred",
+      "format_rationale": "revised per Build-6.5 acceptance audit"
+    },
+    {
+      "id": "cmp-4",
+      "name": "Cleaner Handoff Sheet",
+      "type": "worksheet",
+      "format": "structured worksheet (printable + fillable)",
+      "purpose": "Cleaner Handoff Sheet — A single sheet the cleaner completes each turnover.",
+      "basis": "inferred",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "source_field": "revision-001",
+      "unmapped": false,
+      "format_basis": "inferred",
+      "format_rationale": "revised per Build-6.5 acceptance audit"
+    },
+    {
+      "id": "cmp-7",
+      "name": "Quick Turnover Checklist",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Quick Turnover Checklist — One-page field checklist condensed directly from the Master Turnover SOP.",
+      "basis": "inferred",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "source_field": "revision-001",
+      "unmapped": false,
+      "format_basis": "inferred",
+      "format_rationale": "revised per Build-6.5 acceptance audit"
+    },
+    {
+      "id": "cmp-1",
+      "name": "Supply + Inventory Tracker",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Supply + Inventory Tracker — Reorder Status auto-flags when Current < Minimum (real formula).",
+      "basis": "inferred",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "source_field": "revision-001",
+      "unmapped": false,
+      "format_basis": "inferred",
+      "format_rationale": "revised per Build-6.5 acceptance audit"
+    },
+    {
+      "id": "cmp-10",
+      "name": "Damage & Incident Log",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Damage & Incident Log — Log each issue: area, severity, description, action taken, status, follow-up.",
+      "basis": "inferred",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "source_field": "revision-001",
+      "unmapped": false,
+      "format_basis": "inferred",
+      "format_rationale": "revised per Build-6.5 acceptance audit"
+    },
+    {
+      "id": "cmp-9",
+      "name": "Guest Message Library",
+      "type": "bonus",
+      "format": "bonus asset",
+      "purpose": "Guest Message Library — Copy-paste templates for every booking stage.",
+      "basis": "inferred",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "source_field": "revision-001",
+      "unmapped": false,
+      "format_basis": "inferred",
+      "format_rationale": "revised per Build-6.5 acceptance audit"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "pocket_id": "opp-independent-nail-technicians-pricing-and-profitability",
+  "product_concept": "A focused calculator / spreadsheet that helps Independent nail technicians a shared outcome across member problems: hold firm, fair pricing. raise rates without losing clients. stay tax-ready year round.",
+  "target_customer": "Independent nail technicians",
+  "core_problem": "Independent nail technicians face a related cluster of problems around pricing & profitability — e.g. client price negotiation, fear of raising prices, income/expense tracking for tax.",
+  "related_problems": [
+    "Clients keep negotiating or asking for discounts.",
+    "Techs are scared to raise their prices.",
+    "Tracking income and expenses for taxes is stressful.",
+    "Techs don't know their true product cost per set.",
+    "Techs don't know what to charge to stay profitable."
+  ],
+  "desired_outcome": "A shared outcome across member problems: Hold firm, fair pricing. Raise rates without losing clients. Stay tax-ready year round.",
+  "core_transformation": "From: Independent nail technicians face a related cluster of problems around pricing & profitability — e.g. client price negotiation, fear of raising prices, income/expense tracking for tax.  →  To: A shared outcome across member problems: Hold firm, fair pricing. Raise rates without losing clients. Stay tax-ready year round.",
+  "product_promise": "Get to 'A shared outcome across member problems: Hold firm, fair pricing. Raise rates without losing clients. Stay tax-ready year round.' without the usual guesswork.",
+  "product_format": "calculator / spreadsheet",
+  "why_this_format": "Chosen from problem language, not by default. Signal scores: {'calculator / spreadsheet': 18, 'fill-in templates / scripts': 0, 'planner / schedule': 0, 'guide / checklist': 3}.",
+  "product_structure": [
+    "auto-calculating spreadsheet with worked example"
+  ],
+  "required_sections": [],
+  "required_tools": [],
+  "required_templates": [],
+  "required_worksheets": [],
+  "bonus_assets": [],
+  "exclude": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ],
+  "existing_alternatives": [],
+  "differentiation": [],
+  "price_range": "Unknown — infer from analogous products before pricing",
+  "price_rationale": "Unknown pricing evidence; do not set a price until validated.",
+  "key_customer_language": [
+    "Clients keep negotiating or asking for discounts.",
+    "Techs are scared to raise their prices.",
+    "Tracking income and expenses for taxes is stressful.",
+    "Techs don't know their true product cost per set.",
+    "Techs don't know what to charge to stay profitable."
+  ],
+  "key_objections": [
+    "I can find this free",
+    "Templates never fit my exact case",
+    "I'll deal with it later"
+  ],
+  "key_buying_motivations": [
+    "Save time",
+    "Reduce anxiety/uncertainty",
+    "Look professional / avoid costly mistakes"
+  ],
+  "evidence_summary": "0 observed + 5 inferred/other claims support a recurring problem for Independent nail technicians. Gap: unknown.",
+  "confidence": "LOW",
+  "risks_unknowns": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation"
+  ]
+}

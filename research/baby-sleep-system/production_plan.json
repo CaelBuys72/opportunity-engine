@@ -1,0 +1,47 @@
+{
+  "sequence": [
+    {
+      "order": 1,
+      "step": "Build: auto-calculating spreadsheet with worked example",
+      "component_id": "cmp-1",
+      "format": "interactive spreadsheet / calculator",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Build: printable + editable planner",
+      "component_id": "cmp-2",
+      "format": "supporting asset",
+      "depends_on": [
+        1
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 3,
+      "step": "Build: short decision-tree guide + one-page checklist",
+      "component_id": "cmp-3",
+      "format": "concise reference guide page",
+      "depends_on": [
+        2
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 4,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1,
+        2,
+        3
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ]
+}

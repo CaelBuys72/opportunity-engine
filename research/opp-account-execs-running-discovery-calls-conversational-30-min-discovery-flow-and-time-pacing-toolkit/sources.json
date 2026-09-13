@@ -1,0 +1,80 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "https://www.reddit.com/r/sales/comments/zwn0jp/how_the_hell_do_you_do_discovery_in_30_minutes/",
+      "url": "https://www.reddit.com/r/sales/comments/zwn0jp/how_the_hell_do_you_do_discovery_in_30_minutes/",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "Insufficient call time to complete thorough discovery and establish next steps"
+    },
+    {
+      "id": "src-2",
+      "label": "https://www.higherlevels.com/blog/discovery-call-step-by-step-framework-tech-sales",
+      "url": "https://www.higherlevels.com/blog/discovery-call-step-by-step-framework-tech-sales",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "Insufficient call time to complete thorough discovery and establish next steps"
+    },
+    {
+      "id": "src-3",
+      "label": "https://www.reddit.com/r/sales/comments/1ckzwkn/the_dangers_of_doing_a_textbook_discovery_call/",
+      "url": "https://www.reddit.com/r/sales/comments/1ckzwkn/the_dangers_of_doing_a_textbook_discovery_call/",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "Discovery calls feeling like interrogations rather than natural business conversations"
+    },
+    {
+      "id": "src-4",
+      "label": "https://www.salesforce.com/blog/sales/what-is-a-discovery-call/",
+      "url": "https://www.salesforce.com/blog/sales/what-is-a-discovery-call/",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "Discovery calls feeling like interrogations rather than natural business conversations"
+    },
+    {
+      "id": "src-5",
+      "label": "https://www.linkedin.com/posts/tomslocum_after-running-600-discovery-calls-over-the-activity-7336810400069386240-5nOS",
+      "url": "https://www.linkedin.com/posts/tomslocum_after-running-600-discovery-calls-over-the-activity-7336810400069386240-5nOS",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "Discovery calls feeling like interrogations rather than natural business conversations"
+    },
+    {
+      "id": "src-6",
+      "label": "https://www.reddit.com/r/techsales/comments/1p64xok/how_do_you_carry_a_discoverycall_conversation/",
+      "url": "https://www.reddit.com/r/techsales/comments/1p64xok/how_do_you_carry_a_discoverycall_conversation/",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "Discovery calls feeling like interrogations rather than natural business conversations"
+    },
+    {
+      "id": "src-7",
+      "label": "https://www.samsalesconsulting.com/resource/discoverycalls/",
+      "url": "https://www.samsalesconsulting.com/resource/discoverycalls/",
+      "tier": 2,
+      "source_type": "web",
+      "accessible": true,
+      "note": "Discovery calls feeling like interrogations rather than natural business conversations"
+    },
+    {
+      "id": "rsrc-1",
+      "label": "What does the typical day look like for an account executive ('salesperson') ...",
+      "url": "https://www.quora.com/What-does-the-typical-day-look-like-for-an-account-executive-salesperson-at-a-SaaS-startup-How-much-of-it-is-prospecting-cold-emails-or-cold-calls-reaching-out-through-network-giving-demos-trying-to-close-deals-etc",
+      "tier": 2,
+      "source_type": "web",
+      "intent": "behavior",
+      "accessible": true,
+      "retrieval_status": "ok",
+      "content_length": 295,
+      "query": "how do Account execs running discovery calls currently",
+      "note": "executed research"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "revision": "revision-001",
+  "specs": [
+    {
+      "component_id": "cmp-3",
+      "name": "Property Setup Workbook",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Property Setup Workbook.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "functional_requirements": [
+        {
+          "req": "Single host-facing source of truth for every guest-relevant detail.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Includes the sections hosts most often forget (parking, quirks, quiet hours, emergency, nearest pharmacy).",
+          "basis": "inferred"
+        },
+        {
+          "req": "Feeds the guest-facing Welcome Guide.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer's property details / operational data"
+      ],
+      "outputs": [
+        "a ready-to-use operational asset"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-8",
+      "name": "Welcome Guide for Guests",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Welcome Guide for Guests.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "functional_requirements": [
+        {
+          "req": "Polished, guest-facing; no host-only operational detail.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Derived from the Property Setup Workbook.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer's property details / operational data"
+      ],
+      "outputs": [
+        "a ready-to-use operational asset"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-2",
+      "name": "Master Turnover SOP",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Master Turnover SOP.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "functional_requirements": [
+        {
+          "req": "Covers the full turnover: entry, room-by-room reset, laundry, kitchen, bathrooms, supplies, damage check, final inspection.",
+          "basis": "inferred"
+        },
+        {
+          "req": "States the guest-ready standard and an issue-escalation path.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Absorbs the former standalone step-by-step order (merged).",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer's property details / operational data"
+      ],
+      "outputs": [
+        "a ready-to-use operational asset"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-4",
+      "name": "Cleaner Handoff Sheet",
+      "type": "worksheet",
+      "format": "structured worksheet (printable + fillable)",
+      "purpose": "Cleaner Handoff Sheet.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "functional_requirements": [
+        {
+          "req": "A single sheet the cleaner completes each turnover.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Records issues and items to reorder.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer's property details / operational data"
+      ],
+      "outputs": [
+        "a ready-to-use operational asset"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-7",
+      "name": "Quick Turnover Checklist",
+      "type": "template",
+      "format": "editable fill-in template",
+      "purpose": "Quick Turnover Checklist.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "functional_requirements": [
+        {
+          "req": "One-page field checklist condensed directly from the Master Turnover SOP.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Print-and-pin with checkboxes.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer's property details / operational data"
+      ],
+      "outputs": [
+        "a ready-to-use operational asset"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-1",
+      "name": "Supply + Inventory Tracker",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Supply + Inventory Tracker.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "functional_requirements": [
+        {
+          "req": "Reorder Status auto-flags when Current < Minimum (real formula).",
+          "basis": "inferred"
+        },
+        {
+          "req": "Columns: property, category, item, location, current/min/reorder qty, status, last restocked, notes.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Usable in under 5 minutes with example rows to replace.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer's property details / operational data"
+      ],
+      "outputs": [
+        "a ready-to-use operational asset"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-10",
+      "name": "Damage & Incident Log",
+      "type": "tool",
+      "format": "interactive spreadsheet / calculator",
+      "purpose": "Damage & Incident Log.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "functional_requirements": [
+        {
+          "req": "Log each issue: area, severity, description, action taken, status, follow-up.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Distinct job from the tracker — 'what happened and is it resolved?'.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Simple; no legal or insurance claims.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer's property details / operational data"
+      ],
+      "outputs": [
+        "a ready-to-use operational asset"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    },
+    {
+      "component_id": "cmp-9",
+      "name": "Guest Message Library",
+      "type": "bonus",
+      "format": "bonus asset",
+      "purpose": "Guest Message Library.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Run reliable, repeatable turnovers with less effort and fewer misses.",
+      "functional_requirements": [
+        {
+          "req": "Copy-paste templates for every booking stage.",
+          "basis": "inferred"
+        },
+        {
+          "req": "Includes an issue-resolution / apology and a late-checkout snippet.",
+          "basis": "inferred"
+        }
+      ],
+      "inputs": [
+        "buyer's property details / operational data"
+      ],
+      "outputs": [
+        "a ready-to-use operational asset"
+      ],
+      "requires_external_verification": false,
+      "verification_reason": "",
+      "unmapped_flag": false
+    }
+  ]
+}

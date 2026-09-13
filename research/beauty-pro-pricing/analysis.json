@@ -1,0 +1,47 @@
+{
+  "audience": "independent nail / lash / brow technicians",
+  "recurring_symptoms": [
+    "I don't know what to charge",
+    "scared to raise my prices",
+    "clients keep negotiating",
+    "I think I'm undercharging",
+    "don't know my real profit margin"
+  ],
+  "root_problems": [
+    "Trained in technique, not business; pricing is guesswork and they fear raising prices."
+  ],
+  "desired_outcomes": [
+    "Price services profitably and confidently without losing clients."
+  ],
+  "existing_behaviours": [
+    "Using free templates / generic tools",
+    "Asking peers in communities"
+  ],
+  "existing_solutions": [
+    "Etsy nail pricing calculators ($3.50-11)",
+    "generic pricing calculators ($1)",
+    "price-list flyer designs",
+    "booking SaaS (GlossGenius, Vagaro)"
+  ],
+  "solution_strengths": [
+    "Cheap/most already exist",
+    "Instant download"
+  ],
+  "solution_weaknesses": [
+    "trade-specific consumables-per-service cost math (gel/acrylic/lash-fan usage)",
+    "pricing confidence/scripts, not just a calculator"
+  ],
+  "customer_complaints": [],
+  "unmet_needs": [
+    "trade-specific consumables-per-service cost math (gel/acrylic/lash-fan usage)",
+    "pricing confidence/scripts, not just a calculator"
+  ],
+  "solution_gaps": [
+    "trade-specific consumables-per-service cost math (gel/acrylic/lash-fan usage)",
+    "pricing confidence/scripts, not just a calculator"
+  ],
+  "contradictions": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+  ],
+  "opportunity_assessment": "3 observed + 1 inferred/other claims support a recurring problem for independent nail / lash / brow technicians. Gap: trade-specific consumables-per-service cost math (gel/acrylic/lash-fan usage); pricing confidence/scripts, not just a calculator."
+}

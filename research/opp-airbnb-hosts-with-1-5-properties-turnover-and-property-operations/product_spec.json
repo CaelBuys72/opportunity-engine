@@ -1,0 +1,54 @@
+{
+  "opportunity_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+  "product_concept": "A reliable turnover & property-operations kit for hosts with 1-5 listings: standardized cleaning/turnover checklists, a guest-ready house manual, and a supply-restock tracker — delivered so it won't break like the Canva templates hosts complain about.",
+  "product_format": "Bundle: fill-in templates / scripts + calculator / spreadsheet + guide / checklist",
+  "transformation": {
+    "from_state": "From error-prone, ad-hoc turnovers and unclear house manuals",
+    "to_state": "a standardized, reliable turnover system nothing falls through",
+    "promise": "Every turnover done the same way, nothing forgotten, no broken templates.",
+    "core_problem": "Airbnb hosts with 1-5 properties face a related cluster of problems around turnover & property operations — e.g. cleaner turnover coordination, supply restocking tracking, welcome book contents unclear.",
+    "desired_outcome": "A shared outcome across member problems: Standardize every turnover. Never run out of guest supplies. Produce a house manual without tool failures.",
+    "basis": "evidence-backed"
+  },
+  "promise": "Every turnover done the same way, nothing forgotten, no broken templates.",
+  "target_customer": "Airbnb hosts with 1-5 properties",
+  "price_range": "$15-25 one-time",
+  "price_rationale": "Observed: Etsy host welcome-book/checklist bundles sell at ~$14-21+; this sits in the proven band.",
+  "confidence": "MEDIUM",
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: A shared outcome across member problems: Standardize every turnover. Never run out of guest supplies. Produce a house manual without tool failures.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: Coordinating and standardizing cleaner turnover between guests is hard.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: Restocking supplies and consumables is easy to forget.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: Editable welcome-book/template tools fail to save or print, losing hosts' work.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "differentiation": [
+    "Reliability (no save/print failures)",
+    "Operationally complete, not just decorative",
+    "Standardization a cleaner can follow"
+  ],
+  "exclusions": [
+    "Pretty-but-fragile Canva-only formats",
+    "Padding/theory",
+    "Anything freely adequate already"
+  ]
+}

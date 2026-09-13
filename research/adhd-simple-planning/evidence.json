@@ -1,0 +1,26 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "articulates the core problem",
+      "source_id": "src-1",
+      "evidence": "'Why ADHDers fail at planning' — simple = sustainable; perfectionist routines break.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "monetization exists, sales counts unknown",
+      "source_id": "src-2",
+      "evidence": "Multiple Gumroad ADHD planners/toolkits actively sold ($5-30).",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    }
+  ]
+}

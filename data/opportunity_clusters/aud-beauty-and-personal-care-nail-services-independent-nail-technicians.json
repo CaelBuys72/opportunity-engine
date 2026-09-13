@@ -1,0 +1,5 @@
+{ "clusters": [
+  {"name": "Pricing & Profitability", "problem_normalized": ["service pricing uncertainty","fear of raising prices","product cost per service unknown","client price negotiation","income/expense tracking for tax"]},
+  {"name": "Client Acquisition & Retention", "problem_normalized": ["inconsistent bookings","building initial clientele","inconsistent social marketing","client rebooking / retention"]},
+  {"name": "Booking Operations & Policies", "problem_normalized": ["no-shows and cancellations","client intake/consent disorganization","deposit/cancellation policy unclear","service menu decisions"]}
+]}

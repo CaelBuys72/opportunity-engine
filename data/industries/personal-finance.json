@@ -1,0 +1,18 @@
+{
+  "id": "personal-finance",
+  "name": "Personal Finance",
+  "description": "Budgeting, debt, irregular income.",
+  "submarkets": [
+    {
+      "id": "budgeting",
+      "name": "Budgeting / Debt",
+      "audiences": [
+        {
+          "id": "irregular-income",
+          "label": "people with irregular/gig income"
+        }
+      ]
+    }
+  ],
+  "status": "explored"
+}

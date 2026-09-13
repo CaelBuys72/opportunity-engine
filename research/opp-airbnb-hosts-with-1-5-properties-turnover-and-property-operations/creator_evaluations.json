@@ -1,0 +1,352 @@
+{
+  "evaluations": [
+    {
+      "creator_id": "cd-managedbyluca",
+      "name": "@managedbyluca",
+      "platform": "instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09; automation/ops"
+          ],
+          "rationale": "1 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09; automation/ops"
+          ],
+          "rationale": "13400 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09; automation/ops"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "cd-coachinayah",
+      "name": "@coachinayah",
+      "platform": "instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09"
+          ],
+          "rationale": "1 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09"
+          ],
+          "rationale": "255000 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "cd-madeleineraifordholland",
+      "name": "@madeleineraifordholland",
+      "platform": "instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09; 'runs without you'"
+          ],
+          "rationale": "1 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09; 'runs without you'"
+          ],
+          "rationale": "86400 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09; 'runs without you'"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "cd-digitalcleaningacademy",
+      "name": "@digitalcleaningacademy",
+      "platform": "instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09; Airbnb cleaning niche - relevant to turnover"
+          ],
+          "rationale": "1 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09; Airbnb cleaning niche - relevant to turnover"
+          ],
+          "rationale": "2723 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09; Airbnb cleaning niche - relevant to turnover"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "cd-johnazizzz",
+      "name": "@johnazizzz",
+      "platform": "instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09"
+          ],
+          "rationale": "1 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 9,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09"
+          ],
+          "rationale": "16400 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    },
+    {
+      "creator_id": "cd-taron-teague",
+      "name": "@taron.teague",
+      "platform": "instagram",
+      "classified_content": [],
+      "qualification": {
+        "audience_fit": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09"
+          ],
+          "rationale": "1 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No content items captured."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09"
+          ],
+          "rationale": "134000 followers (band heuristic)."
+        },
+        "monetization_fit": {
+          "score": 7,
+          "basis": "observed",
+          "evidence_refs": [
+            "IG public profile 2026-09-09"
+          ],
+          "rationale": "1 monetization signal(s)."
+        },
+        "product_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Insufficient content/problem data."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    }
+  ]
+}

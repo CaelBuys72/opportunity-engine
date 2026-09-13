@@ -1,0 +1,37 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "real thread title",
+      "source_id": "src-1",
+      "evidence": "Blind: 'not getting interviews despite relevant experience and ATS optimization'.",
+      "source_type": "forum",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "stat from secondary source",
+      "source_id": "src-2",
+      "evidence": "Widely cited: ~75% of resumes rejected by ATS; 98% of Fortune 500 use ATS.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "monetization exists",
+      "source_id": "src-3",
+      "evidence": "Gumroad sells resume/job kits (e.g. 'AI Job Survival Kit 2026').",
+      "source_type": "marketplace",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    }
+  ]
+}

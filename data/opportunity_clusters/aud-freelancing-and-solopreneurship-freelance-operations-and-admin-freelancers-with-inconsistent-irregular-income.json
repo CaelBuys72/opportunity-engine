@@ -1,0 +1,5 @@
+{ "clusters": [
+  {"name": "Income Stability & Cashflow", "problem_normalized": ["budgeting on variable income","owner pay / draw uncertainty","no buffer for slow months","income forecasting difficulty","pricing for income stability","money anxiety and avoidance"]},
+  {"name": "Getting Paid & Client Pipeline", "problem_normalized": ["feast-or-famine pipeline","late invoice cashflow gaps","low-pay work decisions in slow periods"]},
+  {"name": "Tax & Money Organization", "problem_normalized": ["irregular tax set-aside","business/personal money mixing","per-client profitability tracking"]}
+]}

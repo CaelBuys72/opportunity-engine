@@ -1,0 +1,165 @@
+{
+  "questions": [
+    {
+      "question": "Is the problem recurring and painful enough to pay to solve?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "There is no substantive text or data in the provided sources to evaluate payment willingness or pain severity.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Cannot validate commercial viability without empirical evidence on willingness-to-pay.",
+      "remaining_uncertainty": "Requires primary user research or un-truncated community threads to assess willingness-to-pay."
+    },
+    {
+      "question": "What exactly have people already tried, and why did it fall short?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "The provided sources contain no readable content detailing prior attempts or failure modes.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Cannot determine existing user workflows or product gaps.",
+      "remaining_uncertainty": "Full text of Reddit threads must be retrieved to identify prior attempts."
+    },
+    {
+      "question": "Is a digital product the right form, or is this a service / software / free-information problem?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "No source content is available to contrast digital guides against free information or software solutions.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Risk of duplicating freely available advice without clear product differentiation.",
+      "remaining_uncertainty": "Need evidence on whether users seek interactive software, static guides, or personal coaching."
+    },
+    {
+      "question": "What is the single most useful asset or mechanism we could ship?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "No evidence available from sources to establish the exact mechanism preferred by target lifters.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Product features cannot be validated from evidence.",
+      "remaining_uncertainty": "Mechanism needs empirical verification once text sources are available."
+    },
+    {
+      "question": "What price will the audience tolerate, and on what evidence?",
+      "question_type": "universal",
+      "status": "UNKNOWN",
+      "answer": "No pricing evidence or benchmark data is present in the provided sources.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Price point cannot be set based on current evidence.",
+      "remaining_uncertainty": "Pricing benchmarks remain completely unverified."
+    },
+    {
+      "question": "What specific emotional or visual triggers (e.g., temporary fat gain, strength plateaus) currently cause lifters to prematurely abandon a cut or bulk phase?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "Source snippets contain no text describing user psychological triggers or abandonment points.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Cannot design targeted phase guardrails without knowing panic triggers.",
+      "remaining_uncertainty": "Specific emotional/visual abandonment triggers need source confirmation."
+    },
+    {
+      "question": "What baseline diagnostic metrics (e.g., waist circumference, strength ratios, scale weight, photo markers) do lifters trust versus find misleading when evaluating whether they are 'skinny-fat' or ready to bulk?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "Sources contain no text evaluating diagnostic metrics trusted or rejected by lifters.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Diagnostic toolkit metrics remain unverified.",
+      "remaining_uncertainty": "User preferences for specific body/strength metrics must be validated."
+    },
+    {
+      "question": "How do lifters currently distinguish between a true phase plateau that requires changing goals versus temporary fluctuations that require staying the course?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "No body text is available to analyze how lifters interpret plateaus versus noise.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Rule engine for phase progression cannot be built on observed data.",
+      "remaining_uncertainty": "Requires research into actual lifter decision-making rules."
+    },
+    {
+      "question": "What structural milestones or guardrails in a multi-month roadmap (e.g., maintenance phases, strength targets, cut limits) provide enough conviction to prevent mid-cycle goal switching?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "No content exists in the provided sources to evaluate specific roadmap structural features.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Multi-month roadmap guardrails must be tested with users.",
+      "remaining_uncertainty": "Optimal roadmap length and phase transitions are unknown."
+    },
+    {
+      "question": "How do lifters with conflicting priorities (e.g., wanting to look lean now vs. wanting to build muscle long-term) decide which goal takes priority when given generic advice?",
+      "question_type": "dynamic",
+      "status": "UNKNOWN",
+      "answer": "No qualitative text is available to determine how lifters handle conflicting aesthetic vs. strength priorities.",
+      "source_refs": [],
+      "confidence": "LOW",
+      "product_implication": "Goal prioritization matrix cannot be backed by source evidence.",
+      "remaining_uncertainty": "Decision pathways for conflicted lifters remain unanalyzed."
+    }
+  ],
+  "critical_unresolved": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service / software / free-information problem?",
+    "What is the single most useful asset or mechanism we could ship?"
+  ],
+  "research_outcome": "NEEDS_MORE_RESEARCH",
+  "accounting": {
+    "search_results_discovered": 139,
+    "unique_candidate_sources": 81,
+    "sources_selected": 14,
+    "sources_retrieved": 0,
+    "retrieval_failed": 14,
+    "evidence_bearing_sources": 0
+  },
+  "product_implications": {
+    "core_problem": "Lifters planning a cut or bulk experience uncertainty choosing between cutting, bulking, or recomp, and risk abandoned or inefficient short cycles.",
+    "desired_outcome": "Objective diagnostic clarity on cut/bulk/recomp direction combined with an 8-12 month structured roadmap to eliminate decision anxiety.",
+    "current_behavior": [],
+    "current_solutions": [],
+    "failure_modes": [],
+    "free_alternatives": [],
+    "product_opportunity": "Provide a structured decision tree and multi-month transition blueprint for lifters struggling with phase periodization.",
+    "product_mechanism": "Interactive diagnostic assessment paired with a multi-phase periodization roadmap.",
+    "product_format": {
+      "recommended": "Digital Spreadsheet / Web Assessment Tool",
+      "components": [
+        "Diagnostic input questionnaire",
+        "Phase selection matrix",
+        "8-12 month periodization schedule"
+      ],
+      "basis": "inferred",
+      "rationale": "Inferred based on target outcome requiring calculated metric tracking and step-by-step roadmap structure."
+    },
+    "must_have_components": [
+      {
+        "component": "Initial Diagnostic Decision Matrix",
+        "buyer_job": "Determine whether to cut, bulk, or recomp based on baseline metrics",
+        "evidence_refs": [],
+        "basis": "inferred"
+      },
+      {
+        "component": "8–12 Month Roadmap Generator",
+        "buyer_job": "Provide long-term phase sequence and exit criteria to prevent premature goal switching",
+        "evidence_refs": [],
+        "basis": "inferred"
+      }
+    ],
+    "do_not_build": [],
+    "pricing": {
+      "values": [],
+      "basis": "unknown"
+    },
+    "contradictions": [],
+    "remaining_uncertainty": [
+      "All sources provided contain empty snippet text; zero qualitative or quantitative observations were available in the source documents.",
+      "Willingness-to-pay and market prevalence of paid solutions are unknown.",
+      "User satisfaction with existing free advice/calculators is unverified."
+    ],
+    "outcome": "NEEDS_MORE_RESEARCH"
+  }
+}

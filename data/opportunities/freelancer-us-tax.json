@@ -1,0 +1,139 @@
+{
+  "id": "freelancer-us-tax",
+  "title": "US freelancer get-paid & tax-ready system",
+  "industry_id": "freelancing",
+  "submarket_id": "money-admin",
+  "origin": "seed-run",
+  "audience": "US 1099 freelancers & independent contractors",
+  "core_problem": "No withholding, quarterly estimated taxes and Schedule C categories are confusing; generic templates break or don't match the tax regime.",
+  "desired_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+  "related_problems": [
+    "don't know how much to set aside for quarterly taxes",
+    "spreadsheet formulas break when I edit them",
+    "expense categories don't map to Schedule C",
+    "chasing late invoices"
+  ],
+  "problems": [
+    {
+      "id": "prob-wtp-proven",
+      "statement": "Freelancers already pay for tax/bookkeeping spreadsheets.",
+      "symptoms": [
+        "RunTheCalc '1099 Self-Employed Bookkeeping Spreadsheet': 2.2k sales, 4.7-4.8★, priced ~$17.",
+        "PrioriDigitalStudio (sells a self-employed tax tracker): shop 173.8k sales, 11.1k reviews, 4.8★."
+      ],
+      "evidence_ids": [
+        "ev-fl-1",
+        "ev-fl-2"
+      ]
+    },
+    {
+      "id": "prob-gap-specificity",
+      "statement": "Generic templates lose to regime/trade-specific ones.",
+      "symptoms": [
+        "Region/profession-specific trackers ('Self Assessment UK / HMRC', 'Therapist Bookkeeping') rank among bestsellers — specificity outsells generic."
+      ],
+      "evidence_ids": [
+        "ev-fl-3"
+      ]
+    },
+    {
+      "id": "prob-gap-usability",
+      "statement": "Templates break or mis-fit; buyers want robust-but-simple.",
+      "symptoms": [
+        "Buyers repeatedly report bookkeeping templates are 'too simple or too complicated' and spend time 'fixing broken formulas'."
+      ],
+      "evidence_ids": [
+        "ev-fl-4"
+      ]
+    },
+    {
+      "id": "prob-demand",
+      "statement": "Getting paid + tax admin is a recurring freelancer pain.",
+      "symptoms": [
+        "Job seekers/contractors discuss estimated-tax and getting-paid friction; Stripe publishes a dedicated freelancer billing guide."
+      ],
+      "evidence_ids": [
+        "ev-fl-5"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "ev-fl-1",
+    "ev-fl-2",
+    "ev-fl-3",
+    "ev-fl-4",
+    "ev-fl-5"
+  ],
+  "community_ids": [
+    "r-freelance"
+  ],
+  "existing_solutions": [
+    "Etsy 1099/Schedule-C spreadsheets ($9-25)",
+    "SaaS (Bonsai, FreshBooks, Wave)",
+    "generic bookkeeping templates ($1-3)"
+  ],
+  "solution_gaps": [
+    "robust-but-not-overwhelming middle ground (templates are too simple OR too complex)",
+    "formulas that don't break on edit",
+    "correct US SE-tax + quarterly-estimate logic",
+    "sub-niche versions (content creators, rideshare, trades)"
+  ],
+  "creator_ecosystem": "unknown — no creator-density data collected this session",
+  "digital_product_fit": "Strong: spreadsheet/calculator + short setup guide. Buyer earns money so a $10-25 tool is trivial.",
+  "source_urls": [
+    "https://www.etsy.com/listing/1533152672/1099-bookkeeping-spreadsheet-accounting",
+    "https://www.keepertax.com/posts/1099-excel-template",
+    "https://stripe.com/nz/resources/more/how-to-bill-as-a-freelancer-a-guide"
+  ],
+  "score": {
+    "factors": {
+      "demand_evidence": {
+        "score": 8,
+        "basis": "observed",
+        "rationale": "1,000+ live listings + dedicated sub-category; recurring across sources.",
+        "weight": 20
+      },
+      "pain_importance": {
+        "score": 8,
+        "basis": "inferred",
+        "rationale": "Tax penalties + cashflow; high-stakes, recurring annually/quarterly.",
+        "weight": 15
+      },
+      "clear_outcome": {
+        "score": 9,
+        "basis": "observed",
+        "rationale": "'Know what to set aside / get paid on time' is concrete.",
+        "weight": 10
+      },
+      "existing_wtp": {
+        "score": 8,
+        "basis": "observed",
+        "rationale": "RunTheCalc 2.2k sales at ~$17; premium over $1 generics.",
+        "weight": 15
+      },
+      "solution_gap": {
+        "score": 7,
+        "basis": "observed",
+        "rationale": "Bestsellers are generic; correctness+niche gap is real.",
+        "weight": 15
+      },
+      "creator_density": {
+        "basis": "unknown",
+        "rationale": "No creator data collected.",
+        "weight": 15,
+        "score": null
+      },
+      "digital_product_fit": {
+        "score": 9,
+        "basis": "inferred",
+        "rationale": "Spreadsheet/calculator is the native form.",
+        "weight": 10
+      }
+    },
+    "overall": 80.6,
+    "confidence": "MEDIUM",
+    "confidence_reason": "4/7 factors observed, 1/7 unknown; demand=observed, WTP=observed.",
+    "weight_unknown_pct": 15
+  },
+  "status": "selected"
+}

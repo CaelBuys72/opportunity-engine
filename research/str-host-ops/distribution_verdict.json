@@ -1,0 +1,32 @@
+{
+  "opportunity_id": "str-host-ops",
+  "verdict": "NEEDS_RESEARCH",
+  "confidence": "LOW",
+  "reason": "0 qualified of 10 imported; 55% of weight is unknown (views/audience-problem data largely missing). Not enough to conclude.",
+  "creator_count": 10,
+  "qualified_creator_count": 0,
+  "highly_qualified_count": 0,
+  "strongest_creators": [],
+  "strongest_content_signals": [],
+  "supporting_evidence": [],
+  "contradictory_evidence": [
+    "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities.",
+    "No imported creator qualified on audience+problem+content."
+  ],
+  "unknowns": [
+    "low_relevant_engagement (no view data imported)",
+    "views_without_relevance (no view data imported)",
+    "audience_prefers_free (requires primary community/creator inspection not available this run)",
+    "creators_sell_competing (requires primary community/creator inspection not available this run)",
+    "wont_promote_third_party (requires primary community/creator inspection not available this run)",
+    "fragmented_audience (requires primary community/creator inspection not available this run)",
+    "55% of scoring weight is UNKNOWN."
+  ],
+  "major_risks": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation",
+    "demand_without_creators: brief shows demand but few qualified creators found so far."
+  ],
+  "next_action": "Capture per-creator relevant-content views + audience-problem signals (comments), then re-run."
+}

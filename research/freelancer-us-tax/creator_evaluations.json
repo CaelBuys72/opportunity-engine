@@ -1,0 +1,72 @@
+{
+  "evaluations": [
+    {
+      "creator_id": "creator-1",
+      "name": "How to Go Freelance (newsletter)",
+      "platform": "Newsletter/Substack",
+      "classified_content": [
+        {
+          "url": "https://howtogofreelance.substack.com/p/your-freelance-tax-survival-guide",
+          "title": "Your freelance tax survival guide",
+          "topic": "freelance taxes",
+          "views": null,
+          "engagement": null,
+          "relevance": "exact",
+          "source_ref": "WebSearch 2026-09-09 'freelance business coach youtube ... taxes'"
+        }
+      ],
+      "qualification": {
+        "audience_fit": {
+          "score": 6,
+          "basis": "observed",
+          "evidence_refs": [
+            "WebSearch 2026-09-09 (result URL observed; channel identity + audience not inspected)"
+          ],
+          "rationale": "1 audience-term overlaps with profile."
+        },
+        "problem_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No audience-problem signals captured."
+        },
+        "content_fit": {
+          "score": 4,
+          "basis": "observed",
+          "evidence_refs": [
+            "WebSearch 2026-09-09 (result URL observed; channel identity + audience not inspected)"
+          ],
+          "rationale": "1 exact + 0 adjacent content items."
+        },
+        "view_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No view data."
+        },
+        "approachability": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "Follower count unknown."
+        },
+        "monetization_fit": {
+          "score": null,
+          "basis": "unknown",
+          "evidence_refs": [],
+          "rationale": "No monetization signal captured."
+        },
+        "product_fit": {
+          "score": 4,
+          "basis": "inferred",
+          "evidence_refs": [
+            "WebSearch 2026-09-09 (result URL observed; channel identity + audience not inspected)"
+          ],
+          "rationale": "Derived from content + problem fit."
+        }
+      },
+      "qualified": false,
+      "highly_qualified": false
+    }
+  ]
+}

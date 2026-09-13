@@ -1,0 +1,59 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "inferred upstream problem (Build 2) — context, not observed evidence",
+      "source_id": "src-1",
+      "evidence": "Clients keep negotiating or asking for discounts.",
+      "source_type": "other",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "inferred upstream problem (Build 2) — context, not observed evidence",
+      "source_id": "src-1",
+      "evidence": "Techs are scared to raise their prices.",
+      "source_type": "other",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "inferred upstream problem (Build 2) — context, not observed evidence",
+      "source_id": "src-1",
+      "evidence": "Tracking income and expenses for taxes is stressful.",
+      "source_type": "other",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-4",
+      "claim": "inferred upstream problem (Build 2) — context, not observed evidence",
+      "source_id": "src-1",
+      "evidence": "Techs don't know their true product cost per set.",
+      "source_type": "other",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-5",
+      "claim": "inferred upstream problem (Build 2) — context, not observed evidence",
+      "source_id": "src-1",
+      "evidence": "Techs don't know what to charge to stay profitable.",
+      "source_type": "other",
+      "relevance": "high",
+      "strength": "moderate",
+      "basis": "inferred",
+      "interpretation": ""
+    }
+  ]
+}

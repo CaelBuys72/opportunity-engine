@@ -1,0 +1,141 @@
+{
+  "claims": [
+    {
+      "id": "cl-1",
+      "claim": "no prioritization on the list",
+      "source_id": "src-1",
+      "evidence": "When everything is on the list nothing feels urgent; there is no differentiation between quick tasks and time-consuming projects, so easy tasks get done first.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-2",
+      "claim": "no prioritization on the list",
+      "source_id": "src-2",
+      "evidence": "To-do lists assume an infinite amount of time and encourage you to keep adding tasks.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-3",
+      "claim": "no prioritization on the list",
+      "source_id": "src-3",
+      "evidence": "To-do lists are an organizational technique, not a productivity system; they track tasks but don't drive completion.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-4",
+      "claim": "task paralysis from overwhelm",
+      "source_id": "src-4",
+      "evidence": "When we feel overwhelmed we go into fight/flight/freeze; the fix is to triage the most important tasks.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-5",
+      "claim": "task paralysis from overwhelm",
+      "source_id": "src-5",
+      "evidence": "Task paralysis is the can't-start freeze: you want to begin and still cannot make the first move.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-6",
+      "claim": "task paralysis from overwhelm",
+      "source_id": "src-6",
+      "evidence": "Overwhelm is a state where too much lands at once and the system shuts down rather than picking a lane.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-7",
+      "claim": "task paralysis from overwhelm",
+      "source_id": "src-7",
+      "evidence": "Break tasks into smaller manageable chunks and limit focus to the two or three things that matter tomorrow.",
+      "source_type": "article",
+      "relevance": "high",
+      "strength": "strong",
+      "basis": "observed",
+      "interpretation": ""
+    },
+    {
+      "id": "cl-8",
+      "claim": "Long, uncategorized to-do lists cause decision paralysis and emotional freeze.",
+      "source_id": "rsrc-1",
+      "evidence": "Too many tasks gives me decision paralysis so I number my to-do list and roll a 20-sided dice for which one to do.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "medium",
+      "basis": "observed",
+      "interpretation": "pain",
+      "product_implication": "Provide a randomized task selection mechanism for paralysis moments."
+    },
+    {
+      "id": "cl-9",
+      "claim": "Traditional productivity apps fail because they accumulate tasks and become overwhelming.",
+      "source_id": "rsrc-2",
+      "evidence": "I've used every app; Tick Tick, Things, Workflowy etc, but I stop using them after a while as my to do lists are always overwhelming.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "medium",
+      "basis": "observed",
+      "interpretation": "attempt",
+      "product_implication": "Do not build another feature-rich backlog manager; constrain list size."
+    },
+    {
+      "id": "cl-10",
+      "claim": "Users switch to default iPhone notes or paper to avoid app feature clutter.",
+      "source_id": "rsrc-7",
+      "evidence": "Task management apps are good for what they do, but they are not todo lists... friction-y mess with way too many features.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "medium",
+      "basis": "observed",
+      "interpretation": "complaint",
+      "product_implication": "Keep interface extremely simple and low friction."
+    },
+    {
+      "id": "cl-11",
+      "claim": "Focusing on one single 'must-do' reduces stress and increases productivity.",
+      "source_id": "rsrc-10",
+      "evidence": "Focusing on one 'must-do' is way less overwhelming, and somehow I get more done!",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "medium",
+      "basis": "observed",
+      "interpretation": "desired_outcome",
+      "product_implication": "Design core workflow to surface only 1 main task on screen."
+    },
+    {
+      "id": "cl-12",
+      "claim": "Separating primary must-dos from secondary tasks prevents daily list overwhelm.",
+      "source_id": "rsrc-4",
+      "evidence": "Focus on the real must-dos and put other things on a secondary list.",
+      "source_type": "web",
+      "relevance": "high",
+      "strength": "medium",
+      "basis": "observed",
+      "interpretation": "behavior",
+      "product_implication": "Implement a 2-tier storage system: Active 1-3 Must-Dos vs Secondary Backlog."
+    }
+  ]
+}

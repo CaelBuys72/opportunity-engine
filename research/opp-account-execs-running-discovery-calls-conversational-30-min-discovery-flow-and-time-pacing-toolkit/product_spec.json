@@ -1,0 +1,46 @@
+{
+  "opportunity_id": "opp-account-execs-running-discovery-calls-conversational-30-min-discovery-flow-and-time-pacing-toolkit",
+  "product_concept": "A focused guide / checklist that helps Account execs running discovery calls run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+  "product_format": "Bundle: guide + template + scripts + workflow",
+  "transformation": {
+    "from_state": "Account execs running discovery calls face a related cluster of problems around conversational 30-min discovery flow & time pacing toolkit — e.g. Insufficient call time to complete thorough discovery and establish next steps, Discovery calls feeling like interrogations rather than natural business conversations",
+    "to_state": "To: Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled",
+    "promise": "Get to 'Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.' without the usual guesswork.",
+    "core_problem": "Account execs running discovery calls face a related cluster of problems around conversational 30-min discovery flow & time pacing toolkit — e.g. Insufficient call time to complete thorough discovery and establish next steps, Discovery calls feeling like interrogations rather than natural business conversations.",
+    "desired_outcome": "Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+    "basis": "evidence-backed"
+  },
+  "promise": "Get to 'Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.' without the usual guesswork.",
+  "target_customer": "Account execs running discovery calls",
+  "price_range": "Unknown — no observed pricing evidence",
+  "price_rationale": "Pricing remains UNKNOWN (inferred/none); do not set a price until validated.",
+  "confidence": "HIGH",
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: Account Executives struggle to complete effective discovery within standard 30-minute call windows, running out of time before understanding deep buyer pain or setting next steps.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: Discovery calls often turn into dynamic interrogations or robotic question checklists, annoying buyers and stalling conversations.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "differentiation": [
+    "Lack of time-pacing framework to balance rapport, thorough pain quantification, and clear next steps within standard meeting lengths",
+    "Lack of actionable frameworks to transition naturally from surface-level pain to root-cause probing without turning into an interrogation"
+  ],
+  "exclusions": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ]
+}

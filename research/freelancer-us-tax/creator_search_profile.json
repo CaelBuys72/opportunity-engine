@@ -1,0 +1,157 @@
+{
+  "opportunity_id": "freelancer-us-tax",
+  "target_audience": "US 1099 freelancers & independent contractors",
+  "audience_identity": "US 1099 freelancers & independent contractors",
+  "audience_problem": "No withholding, quarterly estimated taxes and Schedule C categories are confusing; generic templates break or don't match the tax regime.",
+  "desired_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+  "relevant_terminology": [
+    "how much do I set aside for quarterly taxes",
+    "my spreadsheet formulas keep breaking",
+    "what counts as a deduction",
+    "I always panic at tax time",
+    "don't know how much to set aside for quarterly taxes",
+    "spreadsheet formulas break when I edit them",
+    "expense categories don't map to Schedule C",
+    "chasing late invoices"
+  ],
+  "adjacent_terminology": [
+    "freelance money",
+    "solopreneur finance",
+    "self employed money",
+    "freelance business",
+    "creator finance",
+    "gig worker money"
+  ],
+  "content_topics": [
+    "don't know how much to set aside for quarterly taxes",
+    "spreadsheet formulas break when I edit them",
+    "expense categories don't map to Schedule C",
+    "chasing late invoices",
+    "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end."
+  ],
+  "content_formats": [
+    "short-form video",
+    "long-form video",
+    "carousel/post",
+    "newsletter"
+  ],
+  "creator_archetypes": [
+    "freelance educator / coach",
+    "self-employed finance explainer",
+    "accountant/CPA creator",
+    "solopreneur / creator-economy educator"
+  ],
+  "creator_categories": [
+    "personal finance",
+    "freelancing/solopreneurship",
+    "creator economy",
+    "small business"
+  ],
+  "likely_platforms": [
+    "YouTube",
+    "Instagram",
+    "TikTok",
+    "Newsletter/Substack",
+    "X"
+  ],
+  "exclusion_terms": [
+    "Actual tax filing (liability)",
+    "Personalised tax advice",
+    "Generic personal-budgeting bloat",
+    "Filler theory"
+  ],
+  "search_queries": [
+    {
+      "platform": "multi",
+      "query": "freelancer taxes youtube creator"
+    },
+    {
+      "platform": "multi",
+      "query": "1099 taxes explained creator"
+    },
+    {
+      "platform": "multi",
+      "query": "self employed taxes tiktok"
+    },
+    {
+      "platform": "multi",
+      "query": "freelance finance youtuber"
+    },
+    {
+      "platform": "multi",
+      "query": "quarterly taxes freelancer instagram"
+    },
+    {
+      "platform": "multi",
+      "query": "freelance money creator newsletter"
+    }
+  ],
+  "content_signals": {
+    "exact_match_terms": [
+      "how much do I set aside for quarterly taxes",
+      "my spreadsheet formulas keep breaking",
+      "what counts as a deduction",
+      "I always panic at tax time",
+      "don't know how much to set aside for quarterly taxes",
+      "spreadsheet formulas break when I edit them",
+      "expense categories don't map to Schedule C",
+      "chasing late invoices"
+    ],
+    "adjacent_terms": [
+      "freelance money",
+      "solopreneur finance",
+      "self employed money",
+      "freelance business",
+      "creator finance",
+      "gig worker money"
+    ],
+    "weak_terms": [
+      "don't know how much to set aside for quarterly taxes",
+      "spreadsheet formulas break when I edit them",
+      "expense categories don't map to Schedule C",
+      "chasing late invoices",
+      "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end."
+    ],
+    "exclusion_terms": [
+      "Actual tax filing (liability)",
+      "Personalised tax advice",
+      "Generic personal-budgeting bloat",
+      "Filler theory"
+    ],
+    "note": "Classify each creator content item as exact / adjacent / weak / irrelevant."
+  },
+  "audience_signals": {
+    "demand_signals_to_look_for": [
+      "comments asking how to solve the problem",
+      "requests for a template / calculator / spreadsheet / guide",
+      "requests for examples",
+      "complaints about existing methods (e.g. 'my spreadsheet breaks')",
+      "people describing the pain in their own words",
+      "asking where to find a solution / recommendations"
+    ],
+    "note": "Generic engagement is NOT demand — require problem-specific signals."
+  },
+  "qualification_rubric": {
+    "dimensions": {
+      "audience_alignment": 20,
+      "problem_alignment": 20,
+      "content_alignment": 15,
+      "relevant_view_evidence": 15,
+      "creator_density": 15,
+      "approachability": 5,
+      "monetization_signal": 5,
+      "product_content_fit": 5
+    },
+    "definitions": {
+      "audience_alignment": "Does the creator actually reach the target buyer?",
+      "problem_alignment": "Does their audience experience THIS problem?",
+      "content_alignment": "Do they repeatedly make content on the problem/outcome/adjacent?",
+      "relevant_view_evidence": "Do relevant pieces get meaningful, repeated distribution?",
+      "creator_density": "Do multiple creators independently reach this audience/problem?",
+      "approachability": "Could a small operator realistically partner with them?",
+      "monetization_signal": "Do they already monetize (positive, not required)?",
+      "product_content_fit": "Would the product feel like a natural extension of their content?"
+    },
+    "target_follower_band": "10k-100k (heuristic, not a rule; strong alignment beats size)"
+  }
+}

@@ -1,0 +1,5 @@
+{ "clusters": [
+  {"name": "Foundation Training Skills", "problem_normalized": ["potty training confusion","crate training difficulty","biting/nipping","which commands first","leash walking difficulty"]},
+  {"name": "Daily Routine & Care Schedule", "problem_normalized": ["no daily puppy schedule","nighttime crying/sleep","vaccination/vet tracking","socialization uncertainty"]},
+  {"name": "Owner Confidence & Decisions", "problem_normalized": ["first-week overwhelm","conflicting training advice","separation anxiety"]}
+]}

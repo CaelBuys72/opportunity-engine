@@ -1,0 +1,300 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Opportunity Intelligence Engine — Core Data Model (V1)",
+  "description": "Canonical shapes for the discovery layer. EVIDENCE and INFERENCE are kept separate: every scored factor carries a `basis` of observed|inferred|unknown, and evidence records carry source URLs. Numeric facts that are not observed must be marked unknown, never invented.",
+  "$defs": {
+    "Industry": {
+      "type": "object",
+      "required": ["id", "name", "status"],
+      "properties": {
+        "id": {"type": "string", "description": "kebab-case slug"},
+        "name": {"type": "string"},
+        "description": {"type": "string"},
+        "status": {"enum": ["seed", "explored", "archived"], "description": "seed = territory only, not yet judged good"},
+        "submarkets": {"type": "array", "items": {"$ref": "#/$defs/Submarket"}}
+      }
+    },
+    "Submarket": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "description": {"type": "string"},
+        "audiences": {"type": "array", "items": {"$ref": "#/$defs/Audience"}}
+      }
+    },
+    "Audience": {
+      "type": "object",
+      "required": ["id", "label"],
+      "properties": {
+        "id": {"type": "string"},
+        "label": {"type": "string", "description": "the concrete group of people, e.g. 'independent nail technicians'"},
+        "notes": {"type": "string"}
+      }
+    },
+    "Problem": {
+      "type": "object",
+      "required": ["id", "statement"],
+      "properties": {
+        "id": {"type": "string"},
+        "statement": {"type": "string", "description": "the underlying problem/desire in the audience's own framing"},
+        "symptoms": {"type": "array", "items": {"type": "string"}, "description": "individual real-world expressions that map to this problem"},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "Evidence": {
+      "type": "object",
+      "required": ["id", "quote_or_observation", "source_type", "basis"],
+      "properties": {
+        "id": {"type": "string"},
+        "quote_or_observation": {"type": "string", "description": "what a real person said, or a concretely observed fact"},
+        "source_type": {"enum": ["reddit", "quora", "forum", "youtube", "instagram", "tiktok", "review", "marketplace", "article", "other"]},
+        "source_url": {"type": ["string", "null"], "description": "null only when a URL genuinely cannot be attached"},
+        "basis": {"enum": ["observed", "inferred"], "description": "observed = directly seen; inferred = reasoned from other evidence"},
+        "date": {"type": ["string", "null"]},
+        "note": {"type": "string"}
+      }
+    },
+    "Community": {
+      "type": "object",
+      "required": ["id", "name", "platform"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "platform": {"enum": ["reddit", "facebook", "discord", "forum", "youtube", "instagram", "tiktok", "other"]},
+        "url": {"type": ["string", "null"]},
+        "size": {"type": ["integer", "null"], "description": "members/subscribers; null = unknown, never guessed"},
+        "size_basis": {"enum": ["observed", "unknown"]}
+      }
+    },
+    "OpportunityScore": {
+      "type": "object",
+      "description": "7 factors, each 0-10 with a basis. Weights sum to 100. overall = sum(score/10 * weight).",
+      "required": ["factors", "overall", "confidence"],
+      "properties": {
+        "factors": {
+          "type": "object",
+          "properties": {
+            "demand_evidence":   {"$ref": "#/$defs/Factor"},
+            "pain_importance":   {"$ref": "#/$defs/Factor"},
+            "clear_outcome":     {"$ref": "#/$defs/Factor"},
+            "existing_wtp":      {"$ref": "#/$defs/Factor"},
+            "solution_gap":      {"$ref": "#/$defs/Factor"},
+            "creator_density":   {"$ref": "#/$defs/Factor"},
+            "digital_product_fit": {"$ref": "#/$defs/Factor"}
+          }
+        },
+        "overall": {"type": "number", "minimum": 0, "maximum": 100},
+        "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+        "confidence_reason": {"type": "string"}
+      }
+    },
+    "Factor": {
+      "type": "object",
+      "required": ["score", "weight", "basis"],
+      "properties": {
+        "score": {"type": ["number", "null"], "minimum": 0, "maximum": 10, "description": "null when basis is unknown"},
+        "weight": {"type": "number"},
+        "basis": {"enum": ["observed", "inferred", "unknown"]},
+        "rationale": {"type": "string"}
+      }
+    },
+    "ProfitPocket": {
+      "type": "object",
+      "description": "The central object: a specific audience + recurring meaningful problem, narrow enough to be relevant, broad enough to have many potential buyers. Does NOT require an existing product.",
+      "required": ["id", "title", "industry_id", "audience", "core_problem", "status", "score"],
+      "properties": {
+        "id": {"type": "string"},
+        "title": {"type": "string"},
+        "industry_id": {"type": "string"},
+        "submarket_id": {"type": ["string", "null"]},
+        "origin": {"type": "string", "description": "where this pocket came from (which discovery run / cluster)"},
+        "audience": {"type": "string"},
+        "core_problem": {"type": "string"},
+        "desired_outcome": {"type": "string"},
+        "related_problems": {"type": "array", "items": {"type": "string"}},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}},
+        "community_ids": {"type": "array", "items": {"type": "string"}},
+        "existing_solutions": {"type": "array", "items": {"type": "string"}},
+        "solution_gaps": {"type": "array", "items": {"type": "string"}},
+        "creator_ecosystem": {"type": "string", "description": "'unknown' when no evidence"},
+        "digital_product_fit": {"type": "string", "description": "which product form(s) plausibly help, or why not"},
+        "source_urls": {"type": "array", "items": {"type": "string"}},
+        "score": {"$ref": "#/$defs/OpportunityScore"},
+        "status": {"enum": ["candidate", "selected", "researching", "archived"]},
+        "research_status": {"enum": ["not_started", "planning", "researching", "complete", "needs_review"], "description": "Phase-8 dossier state"}
+      }
+    },
+    "ResearchPlan": {
+      "type": "object",
+      "description": "Phase-8 plan generated before any research is executed.",
+      "required": ["pocket_id", "known", "unknown", "validating_evidence", "weakening_evidence", "communities", "queries", "solutions_to_examine", "questions"],
+      "properties": {
+        "pocket_id": {"type": "string"},
+        "known": {"type": "array", "items": {"type": "string"}, "description": "what we already know (from discovery)"},
+        "unknown": {"type": "array", "items": {"type": "string"}},
+        "validating_evidence": {"type": "array", "items": {"type": "string"}, "description": "what would strengthen the opportunity"},
+        "weakening_evidence": {"type": "array", "items": {"type": "string"}, "description": "what would falsify it"},
+        "communities": {"type": "array", "items": {"type": "string"}},
+        "queries": {"type": "array", "items": {"type": "object", "properties": {"angle": {"type": "string"}, "query": {"type": "string"}}}},
+        "solutions_to_examine": {"type": "array", "items": {"type": "string"}},
+        "questions": {"type": "array", "items": {"type": "string"}, "description": "must be answered before recommending a product"}
+      }
+    },
+    "Source": {
+      "type": "object",
+      "required": ["id", "label", "tier", "source_type", "accessible"],
+      "properties": {
+        "id": {"type": "string"},
+        "label": {"type": "string"},
+        "url": {"type": ["string", "null"]},
+        "tier": {"enum": [1, 2, 3], "description": "1 primary user evidence, 2 authoritative, 3 commercial"},
+        "source_type": {"type": "string"},
+        "accessible": {"type": "boolean", "description": "false = could not be retrieved this run; requirement preserved, not fabricated"},
+        "note": {"type": "string"}
+      }
+    },
+    "EvidenceClaim": {
+      "type": "object",
+      "description": "A traceable claim. Every important claim maps to a source with an explicit basis.",
+      "required": ["id", "claim", "source_id", "evidence", "source_type", "basis", "strength"],
+      "properties": {
+        "id": {"type": "string"},
+        "claim": {"type": "string"},
+        "source_id": {"type": "string"},
+        "evidence": {"type": "string", "description": "the actual quote/observation supporting the claim"},
+        "source_type": {"type": "string"},
+        "relevance": {"enum": ["high", "medium", "low"]},
+        "strength": {"enum": ["strong", "moderate", "weak"]},
+        "basis": {"enum": ["observed", "inferred", "unknown"]},
+        "interpretation": {"type": "string"}
+      }
+    },
+    "Analysis": {
+      "type": "object",
+      "description": "Synthesis. Every field separates evidence from interpretation.",
+      "properties": {
+        "audience": {"type": "string"},
+        "recurring_symptoms": {"type": "array", "items": {"type": "string"}},
+        "root_problems": {"type": "array", "items": {"type": "string"}},
+        "desired_outcomes": {"type": "array", "items": {"type": "string"}},
+        "existing_behaviours": {"type": "array", "items": {"type": "string"}},
+        "existing_solutions": {"type": "array", "items": {"type": "string"}},
+        "solution_strengths": {"type": "array", "items": {"type": "string"}},
+        "solution_weaknesses": {"type": "array", "items": {"type": "string"}},
+        "customer_complaints": {"type": "array", "items": {"type": "string"}},
+        "unmet_needs": {"type": "array", "items": {"type": "string"}},
+        "solution_gaps": {"type": "array", "items": {"type": "string"}},
+        "contradictions": {"type": "array", "items": {"type": "string"}, "description": "evidence AGAINST the opportunity (falsification pass)"},
+        "opportunity_assessment": {"type": "string"}
+      }
+    },
+    "ProductBrief": {
+      "type": "object",
+      "required": ["pocket_id", "product_concept", "product_format", "confidence"],
+      "properties": {
+        "pocket_id": {"type": "string"},
+        "product_concept": {"type": "string"},
+        "target_customer": {"type": "string"},
+        "core_problem": {"type": "string"},
+        "related_problems": {"type": "array", "items": {"type": "string"}},
+        "desired_outcome": {"type": "string"},
+        "core_transformation": {"type": "string"},
+        "product_promise": {"type": "string"},
+        "product_format": {"type": "string"},
+        "why_this_format": {"type": "string"},
+        "product_structure": {"type": "array", "items": {"type": "string"}},
+        "required_sections": {"type": "array", "items": {"type": "string"}},
+        "required_tools": {"type": "array", "items": {"type": "string"}},
+        "required_templates": {"type": "array", "items": {"type": "string"}},
+        "required_worksheets": {"type": "array", "items": {"type": "string"}},
+        "bonus_assets": {"type": "array", "items": {"type": "string"}},
+        "exclude": {"type": "array", "items": {"type": "string"}, "description": "what should NOT be included"},
+        "existing_alternatives": {"type": "array", "items": {"type": "string"}},
+        "differentiation": {"type": "array", "items": {"type": "string"}},
+        "price_range": {"type": "string"},
+        "price_rationale": {"type": "string"},
+        "key_customer_language": {"type": "array", "items": {"type": "string"}},
+        "key_objections": {"type": "array", "items": {"type": "string"}},
+        "key_buying_motivations": {"type": "array", "items": {"type": "string"}},
+        "evidence_summary": {"type": "string"},
+        "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+        "risks_unknowns": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "CreatorSearchProfile": {
+      "type": "object",
+      "description": "Phase-9.5 search profile derived from the Product Brief (source of truth).",
+      "required": ["opportunity_id", "target_audience", "audience_problem", "desired_outcome"],
+      "properties": {
+        "opportunity_id": {"type": "string"},
+        "target_audience": {"type": "string"},
+        "audience_identity": {"type": "string"},
+        "audience_problem": {"type": "string"},
+        "desired_outcome": {"type": "string"},
+        "relevant_terminology": {"type": "array", "items": {"type": "string"}},
+        "adjacent_terminology": {"type": "array", "items": {"type": "string"}},
+        "content_topics": {"type": "array", "items": {"type": "string"}},
+        "content_formats": {"type": "array", "items": {"type": "string"}},
+        "creator_archetypes": {"type": "array", "items": {"type": "string"}},
+        "creator_categories": {"type": "array", "items": {"type": "string"}},
+        "likely_platforms": {"type": "array", "items": {"type": "string"}},
+        "exclusion_terms": {"type": "array", "items": {"type": "string"}},
+        "search_queries": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "CreatorCandidate": {
+      "type": "object",
+      "description": "One creator. Unknown facts stay null/'unknown' — never fabricated.",
+      "required": ["id", "name", "platform", "basis"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "platform": {"type": "string"},
+        "profile_url": {"type": ["string", "null"]},
+        "handle": {"type": ["string", "null"]},
+        "followers": {"type": ["integer", "null"], "description": "null unless a source states it"},
+        "followers_basis": {"enum": ["observed", "unknown"]},
+        "niche": {"type": ["string", "null"]},
+        "audience_description": {"type": ["string", "null"]},
+        "relevant_content": {"type": "array", "items": {"type": "object"},
+                             "description": "{url,title,topic,views,engagement,relevance,source_ref}"},
+        "relevant_view_signals": {"type": "array", "items": {"type": "string"}},
+        "audience_problem_signals": {"type": "array", "items": {"type": "string"}},
+        "monetization_signals": {"type": "array", "items": {"type": "string"}},
+        "source_refs": {"type": "array", "items": {"type": "string"}, "description": "how each fact was observed"},
+        "qualification": {"type": "object"},
+        "basis": {"enum": ["observed", "inferred", "unknown"]}
+      }
+    },
+    "DistributionScore": {
+      "type": "object",
+      "description": "8 weighted dimensions (sum 100). Unknown dims excluded from overall (weight renormalised) and reduce confidence.",
+      "properties": {
+        "dimensions": {"type": "object"},
+        "overall": {"type": "number"},
+        "weight_unknown_pct": {"type": "number"},
+        "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]}
+      }
+    },
+    "DistributionVerdict": {
+      "type": "object",
+      "required": ["verdict", "confidence", "next_action"],
+      "properties": {
+        "verdict": {"enum": ["STRONG_FIT", "MODERATE_FIT", "WEAK_FIT", "NEEDS_RESEARCH"]},
+        "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+        "reason": {"type": "string"},
+        "creator_count": {"type": "integer"},
+        "qualified_creator_count": {"type": "integer"},
+        "strongest_creators": {"type": "array", "items": {"type": "string"}},
+        "strongest_content_signals": {"type": "array", "items": {"type": "string"}},
+        "supporting_evidence": {"type": "array", "items": {"type": "string"}},
+        "contradictory_evidence": {"type": "array", "items": {"type": "string"}},
+        "unknowns": {"type": "array", "items": {"type": "string"}},
+        "major_risks": {"type": "array", "items": {"type": "string"}},
+        "next_action": {"type": "string"}
+      }
+    }
+  }
+}

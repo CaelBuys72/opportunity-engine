@@ -1,0 +1,14 @@
+{
+  "assets": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "short decision-tree guide + one-page checklist",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "opportunity_id": "baby-sleep-system",
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "auto-calculating spreadsheet with worked example",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: auto-calculating spreadsheet with worked example.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Predictable naps/nights and restored parental sleep.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "interactive spreadsheet / calculator",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-2",
+      "name": "printable + editable planner",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: printable + editable planner.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Predictable naps/nights and restored parental sleep.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "supporting asset",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-3",
+      "name": "short decision-tree guide + one-page checklist",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: short decision-tree guide + one-page checklist.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Predictable naps/nights and restored parental sleep.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "concise reference guide page",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    }
+  ]
+}

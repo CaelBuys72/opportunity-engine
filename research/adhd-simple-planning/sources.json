@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "https://neurodivergentnotes.substack.com/p/why-adhders-fail-at-planning",
+      "url": "https://neurodivergentnotes.substack.com/p/why-adhders-fail-at-planning",
+      "tier": 2,
+      "source_type": "article",
+      "accessible": true,
+      "note": "articulates the core problem"
+    },
+    {
+      "id": "src-2",
+      "label": "https://remarkabletemplates.gumroad.com/l/ADHD-Planner-2025-iPad-Ultimate-Digital-Organizer-Focus-Efficiency",
+      "url": "https://remarkabletemplates.gumroad.com/l/ADHD-Planner-2025-iPad-Ultimate-Digital-Organizer-Focus-Efficiency",
+      "tier": 3,
+      "source_type": "marketplace",
+      "accessible": true,
+      "note": "monetization exists, sales counts unknown"
+    }
+  ]
+}

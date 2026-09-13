@@ -1,0 +1,133 @@
+{
+  "pocket_id": "pt-client-management",
+  "known": [
+    "Audience: independent personal trainers & online coaches",
+    "Core problem: All-in-one coaching SaaS is expensive/overkill; spreadsheets get chaotic past ~15 clients.",
+    "Discovery score 67.0/100 (MEDIUM confidence)",
+    "Evidence on file: what software do you use",
+    "Evidence on file: Trainerize too expensive at scale",
+    "Evidence on file: programs scattered across WhatsApp/Notes"
+  ],
+  "unknown": [
+    "True prevalence / how many are affected (UNKNOWN)",
+    "Creator ecosystem size (UNKNOWN)",
+    "Primary-community depth not yet retrieved this run"
+  ],
+  "validating_evidence": [
+    "Multiple independent communities describing the same problem in their own words",
+    "People actively asking for tools/templates (solution-seeking language)",
+    "Existing paid solutions with real sales AND recurring complaints (gap)"
+  ],
+  "weakening_evidence": [
+    "Problem is rare, mild, or one-off",
+    "Free resources already solve it well (free-information problem)",
+    "Strong free-sharing culture that resists paying",
+    "Existing products already excellent with no complaint pattern"
+  ],
+  "communities": [
+    "r-personaltraining"
+  ],
+  "queries": [
+    {
+      "angle": "problem",
+      "query": "how do I independent personal trainers & online coaches site:reddit.com"
+    },
+    {
+      "angle": "problem",
+      "query": "I don't know what software do you use site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "trainerize too expensive at scale frustrating site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "hate programs scattered across whatsapp/notes site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "no template to reuse programs template site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "independent personal trainers & online coaches calculator site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "what software do you use too complicated site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "trainerize too expensive at scale too expensive site:reddit.com"
+    }
+  ],
+  "solutions_to_examine": [
+    "Trainerize/TrueCoach/My PT Hub ($20-150/mo)",
+    "Notion/Sheets templates ($9-40)",
+    "indie coaching apps (free-cheap)"
+  ],
+  "questions": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service/free-info problem?",
+    "What is the single most useful asset we could ship?",
+    "What price will the audience tolerate, and on what evidence?"
+  ],
+  "executed": [
+    {
+      "query": "independent personal trainers & online coaches problem reddit",
+      "results": 9,
+      "sources_retained": 9
+    },
+    {
+      "query": "independent personal trainers & online coaches frustrated OR overwhelmed",
+      "results": 7,
+      "sources_retained": 7
+    },
+    {
+      "query": "how do independent personal trainers & online coaches manage OR track",
+      "results": 10,
+      "sources_retained": 10
+    },
+    {
+      "query": "independent personal trainers & online coaches template OR spreadsheet OR notion",
+      "results": 10,
+      "sources_retained": 10
+    },
+    {
+      "query": "best tools for independent personal trainers & online coaches",
+      "results": 14,
+      "sources_retained": 8
+    },
+    {
+      "query": "what software do you use reddit",
+      "results": 13,
+      "sources_retained": 9
+    },
+    {
+      "query": "Trainerize too expensive at scale reddit",
+      "results": 13,
+      "sources_retained": 9
+    },
+    {
+      "query": "Trainerize/TrueCoach/My PT Hub ($20-150/mo) review OR complaints OR expensive OR alternatives",
+      "results": 3,
+      "sources_retained": 3
+    },
+    {
+      "query": "Notion/Sheets templates ($9-40) review OR complaints OR expensive OR alternatives",
+      "results": 10,
+      "sources_retained": 10
+    },
+    {
+      "query": "indie coaching apps (free-cheap) review OR complaints OR expensive OR alternatives",
+      "results": 10,
+      "sources_retained": 10
+    }
+  ],
+  "retrieval": {
+    "ok": 8,
+    "failed": 0,
+    "not_fetched": 77
+  }
+}

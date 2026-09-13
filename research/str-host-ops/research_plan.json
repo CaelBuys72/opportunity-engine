@@ -1,0 +1,76 @@
+{
+  "pocket_id": "str-host-ops",
+  "known": [
+    "Audience: first-year short-term-rental hosts",
+    "Core problem: New hosts don't know what to include in welcome books, cleaning checklists, house rules or checkout flow.",
+    "Discovery score 72.9/100 (MEDIUM confidence)",
+    "Evidence on file: what goes in a welcome book",
+    "Evidence on file: cleaning/turnover checklist",
+    "Evidence on file: guest message scripts"
+  ],
+  "unknown": [
+    "True prevalence / how many are affected (UNKNOWN)",
+    "Creator ecosystem size (UNKNOWN)",
+    "Primary-community depth not yet retrieved this run"
+  ],
+  "validating_evidence": [
+    "Multiple independent communities describing the same problem in their own words",
+    "People actively asking for tools/templates (solution-seeking language)",
+    "Existing paid solutions with real sales AND recurring complaints (gap)"
+  ],
+  "weakening_evidence": [
+    "Problem is rare, mild, or one-off",
+    "Free resources already solve it well (free-information problem)",
+    "Strong free-sharing culture that resists paying",
+    "Existing products already excellent with no complaint pattern"
+  ],
+  "communities": [
+    "(none catalogued yet — investigate niche subs/forums)"
+  ],
+  "queries": [
+    {
+      "angle": "problem",
+      "query": "how do I first-year short-term-rental hosts site:reddit.com"
+    },
+    {
+      "angle": "problem",
+      "query": "I don't know what goes in a welcome book site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "cleaning/turnover checklist frustrating site:reddit.com"
+    },
+    {
+      "angle": "frustration",
+      "query": "hate guest message scripts site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "checkout instructions template site:reddit.com"
+    },
+    {
+      "angle": "solution_seeking",
+      "query": "first-year short-term-rental hosts calculator site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "what goes in a welcome book too complicated site:reddit.com"
+    },
+    {
+      "angle": "complaint",
+      "query": "cleaning/turnover checklist too expensive site:reddit.com"
+    }
+  ],
+  "solutions_to_examine": [
+    "Etsy welcome-book templates ($2-21)",
+    "500+/1000+ host bundles",
+    "Touchstay/Homeaglow content"
+  ],
+  "questions": [
+    "Is the problem recurring and painful enough to pay to solve?",
+    "What exactly have people already tried, and why did it fall short?",
+    "Is a digital product the right form, or is this a service/free-info problem?",
+    "What is the single most useful asset we could ship?",
+    "What price will the audience tolerate, and on what evidence?"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "opportunity_id": "freelancer-us-tax",
+  "product_concept": "A robust-but-simple US 1099 tax & get-paid toolkit for a specific freelancer sub-niche (e.g. content creators or rideshare/independent contractors): a spreadsheet that gets the SE-tax + quarterly-estimate math right, plus an invoice template and a short setup guide.",
+  "product_format": "calculator / spreadsheet",
+  "transformation": {
+    "from_state": "From 'no idea what to set aside and formulas that break'",
+    "to_state": "'know my quarterly number, invoices out, expenses categorised for Schedule C, no tax-season panic'",
+    "promise": "Know exactly what to set aside every quarter and get paid on time — without an accountant or a broken spreadsheet.",
+    "core_problem": "No withholding, quarterly estimated taxes and Schedule C categories are confusing; generic templates break or don't match the tax regime.",
+    "desired_outcome": "Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+    "basis": "evidence-backed"
+  },
+  "promise": "Know exactly what to set aside every quarter and get paid on time — without an accountant or a broken spreadsheet.",
+  "target_customer": "US 1099 freelancers & independent contractors",
+  "price_range": "$15-25 one-time",
+  "price_rationale": "Observed: dedicated US trackers sell at $9-25; RunTheCalc does 2.2k sales at ~$17. $15-25 sits in the proven band and above $1 generics without needing subscription justification.",
+  "confidence": "MEDIUM",
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: Invoice, track income/expenses, and know what to set aside for taxes without panic at year-end.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: don't know how much to set aside for quarterly taxes",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: spreadsheet formulas break when I edit them",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: expense categories don't map to Schedule C",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-4",
+      "statement": "Resolve: chasing late invoices",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "differentiation": [
+    "Correct SE-tax + quarterly logic a non-accountant can trust",
+    "Formulas that don't break on edit",
+    "Tuned to a specific US 1099 sub-niche",
+    "Distribution off Etsy (niche community/content), not SEO roulette"
+  ],
+  "exclusions": [
+    "Actual tax filing (liability)",
+    "Personalised tax advice",
+    "Generic personal-budgeting bloat",
+    "Filler theory"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "opportunity_id": "adhd-simple-planning",
+  "generated_at": "2026-09-11T11:02:49.203613+00:00",
+  "product_concept": "A focused planner / schedule that helps adults with ADHD a planning system they'll actually stick to.",
+  "product_format": "planner / schedule",
+  "transformation": {
+    "from_state": "Standard planners fail; systems that are too complex get abandoned within weeks",
+    "to_state": "To: A planning system they'll actually stick to",
+    "promise": "Get to 'A planning system they'll actually stick to.' without the usual guesswork.",
+    "core_problem": "Standard planners fail; systems that are too complex get abandoned within weeks.",
+    "desired_outcome": "A planning system they'll actually stick to.",
+    "basis": "evidence-backed"
+  },
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: A planning system they'll actually stick to.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: can't stick to a planner",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: perfectionist systems collapse",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: executive-function overwhelm",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "printable + editable planner",
+      "type": "asset",
+      "format": "supporting asset",
+      "purpose": "Asset that helps the buyer: printable + editable planner.",
+      "maps_to_jobs": [
+        "job-1"
+      ]
+    }
+  ],
+  "asset_requirements": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "printable + editable planner",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ],
+  "quality_requirements": {
+    "global": [
+      {
+        "req": "Time-to-first-value under ~15 minutes; usable without a manual.",
+        "basis": "inferred",
+        "source": "buyer-effort principle"
+      },
+      {
+        "req": "Honor exclusions verbatim (see exclusions list); scope stays tight.",
+        "basis": "evidence-backed",
+        "source": "brief.exclude"
+      }
+    ],
+    "exclusions_preserved": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ]
+  },
+  "buyer_effort": {
+    "overall_target": "Buyer reaches first useful result in one sitting, no setup call.",
+    "per_component": [
+      {
+        "component_id": "cmp-1",
+        "name": "printable + editable planner",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      }
+    ],
+    "basis": "inferred"
+  },
+  "production_sequence": [
+    {
+      "order": 1,
+      "step": "Build: printable + editable planner",
+      "component_id": "cmp-1",
+      "format": "supporting asset",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ],
+  "verification_requirements": [],
+  "unresolved_questions": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation",
+    "Price not finalized — brief price is Unknown."
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ],
+    "risks_unknowns": [
+      "Prevalence UNKNOWN",
+      "Creator ecosystem UNKNOWN",
+      "Willingness-to-pay needs primary-community confirmation"
+    ],
+    "differentiation": [
+      "genuinely simple/sustainable design (vs feature-heavy)",
+      "works better as sub-angle on other pockets (ADHD budgeting/meal-planning)"
+    ],
+    "evidence_requirements": []
+  },
+  "basis_summary": {
+    "component_requirements_evidence_backed": 0,
+    "component_requirements_inferred": 0,
+    "note": "evidence-backed = traceable to a Phase-8 brief field; inferred = design decision made by the curation engine."
+  },
+  "handoff": {
+    "consumes": "product_architecture.json + component_specs.json + asset_requirements.json + quality_requirements.json + production_plan.json",
+    "for": "Phase 10 Product Builder",
+    "must_respect": [
+      "verification_requirements",
+      "carried_forward.exclusions",
+      "quality_requirements",
+      "unresolved_questions"
+    ]
+  }
+}

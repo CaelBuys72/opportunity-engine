@@ -1,0 +1,21 @@
+{
+  "opportunity_id": "beauty-pro-pricing",
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "auto-calculating spreadsheet with worked example",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: auto-calculating spreadsheet with worked example.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Price services profitably and confidently without losing clients.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "interactive spreadsheet / calculator",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    }
+  ]
+}

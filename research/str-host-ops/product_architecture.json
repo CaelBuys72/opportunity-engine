@@ -1,0 +1,37 @@
+{
+  "opportunity_id": "str-host-ops",
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "editable templates + copy-paste scripts",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: editable templates + copy-paste scripts.",
+      "maps_to_jobs": [
+        "job-3"
+      ],
+      "maps_to_outcome": "Launch looking professional and avoid rookie mistakes that cost reviews.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "editable fill-in template",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    },
+    {
+      "id": "cmp-2",
+      "name": "short decision-tree guide + one-page checklist",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: short decision-tree guide + one-page checklist.",
+      "maps_to_jobs": [
+        "job-2"
+      ],
+      "maps_to_outcome": "Launch looking professional and avoid rookie mistakes that cost reviews.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "concise reference guide page",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    }
+  ]
+}

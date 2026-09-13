@@ -1,0 +1,1945 @@
+[
+  {
+    "id": "opp-independent-nail-technicians-pricing-and-profitability",
+    "type": "opportunity",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "name": "Pricing & Profitability",
+    "description": "Commercial problem space for Independent nail technicians: Pricing & Profitability.",
+    "problem_ids": [
+      "prb-independent-nail-technicians-client-price-negotiation",
+      "prb-independent-nail-technicians-fear-of-raising-prices",
+      "prb-independent-nail-technicians-income-expense-tracking-for-tax",
+      "prb-independent-nail-technicians-product-cost-per-service-unknown",
+      "prb-independent-nail-technicians-service-pricing-uncertainty"
+    ],
+    "problem_count": 5,
+    "shared_desired_outcome": "A shared outcome across member problems: Hold firm, fair pricing. Raise rates without losing clients. Stay tax-ready year round.",
+    "problem_types": {
+      "communication_problem": 1,
+      "emotional_friction": 1,
+      "financial_problem": 3
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 5,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (5 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-independent-nail-technicians-client-acquisition-and-retention",
+    "type": "opportunity",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "name": "Client Acquisition & Retention",
+    "description": "Commercial problem space for Independent nail technicians: Client Acquisition & Retention.",
+    "problem_ids": [
+      "prb-independent-nail-technicians-building-initial-clientele",
+      "prb-independent-nail-technicians-client-rebooking-retention",
+      "prb-independent-nail-technicians-inconsistent-bookings",
+      "prb-independent-nail-technicians-inconsistent-social-marketing"
+    ],
+    "problem_count": 4,
+    "shared_desired_outcome": "A shared outcome across member problems: Grow a starting client book. Turn one-offs into regulars. Keep the calendar full.",
+    "problem_types": {
+      "acquisition_problem": 3,
+      "retention_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 4,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (4 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-independent-nail-technicians-booking-operations-and-policies",
+    "type": "opportunity",
+    "market_id": "mkt-beauty-and-personal-care",
+    "submarket_id": "sub-beauty-and-personal-care-nail-services",
+    "audience_id": "aud-beauty-and-personal-care-nail-services-independent-nail-technicians",
+    "name": "Booking Operations & Policies",
+    "description": "Commercial problem space for Independent nail technicians: Booking Operations & Policies.",
+    "problem_ids": [
+      "prb-independent-nail-technicians-client-intake-consent-disorganization",
+      "prb-independent-nail-technicians-deposit-cancellation-policy-unclear",
+      "prb-independent-nail-technicians-no-shows-and-cancellations",
+      "prb-independent-nail-technicians-service-menu-decisions"
+    ],
+    "problem_count": 4,
+    "shared_desired_outcome": "A shared outcome across member problems: Streamline intake and consent. Set clear booking policies. Reduce no-shows with policies/deposits.",
+    "problem_types": {
+      "workflow_problem": 1,
+      "decision_problem": 2,
+      "operational_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 4,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (4 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-freelancers-with-inconsistent-irregular-income-income-stability-and-cashflow",
+    "type": "opportunity",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "name": "Income Stability & Cashflow",
+    "description": "Commercial problem space for Freelancers with inconsistent / irregular income: Income Stability & Cashflow.",
+    "problem_ids": [
+      "prb-freelancers-with-inconsistent-irregular-income-budgeting-on-variable-income",
+      "prb-freelancers-with-inconsistent-irregular-income-income-forecasting-difficulty",
+      "prb-freelancers-with-inconsistent-irregular-income-money-anxiety-and-avoidance",
+      "prb-freelancers-with-inconsistent-irregular-income-no-buffer-for-slow-months",
+      "prb-freelancers-with-inconsistent-irregular-income-owner-pay-draw-uncertainty",
+      "prb-freelancers-with-inconsistent-irregular-income-pricing-for-income-stability"
+    ],
+    "problem_count": 6,
+    "shared_desired_outcome": "A shared outcome across member problems: Budget reliably despite variable income. Forecast income with some confidence. Reduce money stress with a system.",
+    "problem_types": {
+      "financial_problem": 4,
+      "planning_problem": 1,
+      "emotional_friction": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 6,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (6 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-freelancers-with-inconsistent-irregular-income-getting-paid-and-client-pipeline",
+    "type": "opportunity",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "name": "Getting Paid & Client Pipeline",
+    "description": "Commercial problem space for Freelancers with inconsistent / irregular income: Getting Paid & Client Pipeline.",
+    "problem_ids": [
+      "prb-freelancers-with-inconsistent-irregular-income-feast-or-famine-pipeline",
+      "prb-freelancers-with-inconsistent-irregular-income-late-invoice-cashflow-gaps",
+      "prb-freelancers-with-inconsistent-irregular-income-low-pay-work-decisions-in-slow-periods"
+    ],
+    "problem_count": 3,
+    "shared_desired_outcome": "A shared outcome across member problems: Smooth out the client pipeline. Get paid on time. Decide which work to accept.",
+    "problem_types": {
+      "acquisition_problem": 1,
+      "financial_problem": 1,
+      "decision_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 3,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (3 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-freelancers-with-inconsistent-irregular-income-tax-and-money-organization",
+    "type": "opportunity",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "submarket_id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "audience_id": "aud-freelancing-and-solopreneurship-freelance-operations-and-admin-freelancers-with-inconsistent-irregular-income",
+    "name": "Tax & Money Organization",
+    "description": "Commercial problem space for Freelancers with inconsistent / irregular income: Tax & Money Organization.",
+    "problem_ids": [
+      "prb-freelancers-with-inconsistent-irregular-income-business-personal-money-mixing",
+      "prb-freelancers-with-inconsistent-irregular-income-irregular-tax-set-aside",
+      "prb-freelancers-with-inconsistent-irregular-income-per-client-profitability-tracking"
+    ],
+    "problem_count": 3,
+    "shared_desired_outcome": "A shared outcome across member problems: Cleanly separate finances. Set aside the right amount each payment. Know which work pays best.",
+    "problem_types": {
+      "workflow_problem": 1,
+      "compliance_problem": 1,
+      "financial_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 3,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (3 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-creators-trying-to-post-consistently-on-reels-tiktok-ideation-and-posting-consistency",
+    "type": "opportunity",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "name": "Ideation & Posting Consistency",
+    "description": "Commercial problem space for Creators trying to post consistently on Reels/TikTok: Ideation & Posting Consistency.",
+    "problem_ids": [
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-creator-burnout",
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-niche-pillar-decisions",
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-posting-consistency",
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-running-out-of-ideas",
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-weekly-content-planning"
+    ],
+    "problem_count": 5,
+    "shared_desired_outcome": "A shared outcome across member problems: Sustain output without burnout. Commit to clear content pillars. Maintain a steady posting cadence.",
+    "problem_types": {
+      "emotional_friction": 1,
+      "decision_problem": 1,
+      "planning_problem": 2,
+      "knowledge_gap": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 5,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (5 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-creators-trying-to-post-consistently-on-reels-tiktok-production-and-editing-workflow",
+    "type": "opportunity",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "name": "Production & Editing Workflow",
+    "description": "Commercial problem space for Creators trying to post consistently on Reels/TikTok: Production & Editing Workflow.",
+    "problem_ids": [
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-content-batching-scheduling",
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-cross-platform-repurposing",
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-slow-editing-workflow"
+    ],
+    "problem_count": 3,
+    "shared_desired_outcome": "A shared outcome across member problems: Batch and schedule reliably. Repurpose content efficiently. Edit faster with a repeatable process.",
+    "problem_types": {
+      "workflow_problem": 2,
+      "time_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 3,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (3 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-creators-trying-to-post-consistently-on-reels-tiktok-reach-performance-and-growth",
+    "type": "opportunity",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "submarket_id": "sub-content-creation-and-creator-economy-short-form-video",
+    "audience_id": "aud-content-creation-and-creator-economy-short-form-video-creators-trying-to-post-consistently-on-reels-tiktok",
+    "name": "Reach, Performance & Growth",
+    "description": "Commercial problem space for Creators trying to post consistently on Reels/TikTok: Reach, Performance & Growth.",
+    "problem_ids": [
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-converting-views-to-audience",
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-interpreting-analytics",
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-low-flat-views",
+      "prb-creators-trying-to-post-consistently-on-reels-tiktok-writing-strong-hooks"
+    ],
+    "problem_count": 4,
+    "shared_desired_outcome": "A shared outcome across member problems: Convert viewers into a real audience. Read analytics and act on them. Improve reach and views.",
+    "problem_types": {
+      "acquisition_problem": 1,
+      "knowledge_gap": 1,
+      "performance_problem": 2
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 4,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (4 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-new-puppy-owners-in-the-first-weeks-foundation-training-skills",
+    "type": "opportunity",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "name": "Foundation Training Skills",
+    "description": "Commercial problem space for New puppy owners in the first weeks: Foundation Training Skills.",
+    "problem_ids": [
+      "prb-new-puppy-owners-in-the-first-weeks-biting-nipping",
+      "prb-new-puppy-owners-in-the-first-weeks-crate-training-difficulty",
+      "prb-new-puppy-owners-in-the-first-weeks-leash-walking-difficulty",
+      "prb-new-puppy-owners-in-the-first-weeks-potty-training-confusion",
+      "prb-new-puppy-owners-in-the-first-weeks-which-commands-first"
+    ],
+    "problem_count": 5,
+    "shared_desired_outcome": "A shared outcome across member problems: Reduce biting with a method. Crate train calmly and effectively. Walk calmly on a leash.",
+    "problem_types": {
+      "knowledge_gap": 4,
+      "decision_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 5,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (5 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-new-puppy-owners-in-the-first-weeks-daily-routine-and-care-schedule",
+    "type": "opportunity",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "name": "Daily Routine & Care Schedule",
+    "description": "Commercial problem space for New puppy owners in the first weeks: Daily Routine & Care Schedule.",
+    "problem_ids": [
+      "prb-new-puppy-owners-in-the-first-weeks-nighttime-crying-sleep",
+      "prb-new-puppy-owners-in-the-first-weeks-no-daily-puppy-schedule",
+      "prb-new-puppy-owners-in-the-first-weeks-socialization-uncertainty",
+      "prb-new-puppy-owners-in-the-first-weeks-vaccination-vet-tracking"
+    ],
+    "problem_count": 4,
+    "shared_desired_outcome": "A shared outcome across member problems: Get the puppy sleeping through. Follow a clear daily schedule. Socialize the puppy on time.",
+    "problem_types": {
+      "operational_problem": 2,
+      "planning_problem": 1,
+      "time_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 4,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (4 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-new-puppy-owners-in-the-first-weeks-owner-confidence-and-decisions",
+    "type": "opportunity",
+    "market_id": "mkt-pets-and-animal-care",
+    "submarket_id": "sub-pets-and-animal-care-dog-training",
+    "audience_id": "aud-pets-and-animal-care-dog-training-new-puppy-owners-in-the-first-weeks",
+    "name": "Owner Confidence & Decisions",
+    "description": "Commercial problem space for New puppy owners in the first weeks: Owner Confidence & Decisions.",
+    "problem_ids": [
+      "prb-new-puppy-owners-in-the-first-weeks-conflicting-training-advice",
+      "prb-new-puppy-owners-in-the-first-weeks-first-week-overwhelm",
+      "prb-new-puppy-owners-in-the-first-weeks-separation-anxiety"
+    ],
+    "problem_count": 3,
+    "shared_desired_outcome": "A shared outcome across member problems: Follow one trustworthy plan. Feel in control of the first weeks. Build alone-time tolerance.",
+    "problem_types": {
+      "decision_problem": 1,
+      "emotional_friction": 2
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 3,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (3 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-airbnb-hosts-with-1-5-properties-pricing-and-revenue-optimization",
+    "type": "opportunity",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "name": "Pricing & Revenue Optimization",
+    "description": "Commercial problem space for Airbnb hosts with 1-5 properties: Pricing & Revenue Optimization.",
+    "problem_ids": [
+      "prb-airbnb-hosts-with-1-5-properties-dynamic-pricing-tool-setup",
+      "prb-airbnb-hosts-with-1-5-properties-event-based-pricing-uncertainty",
+      "prb-airbnb-hosts-with-1-5-properties-listing-optimization-uncertainty",
+      "prb-airbnb-hosts-with-1-5-properties-minimum-stay-rule-confusion",
+      "prb-airbnb-hosts-with-1-5-properties-occupancy-gaps-between-bookings",
+      "prb-airbnb-hosts-with-1-5-properties-weekend-vs-weekday-pricing-uncertainty"
+    ],
+    "problem_count": 6,
+    "shared_desired_outcome": "A shared outcome across member problems: Automate pricing confidently. Adjust rates for local demand spikes. Improve listing visibility and bookings.",
+    "problem_types": {
+      "technical_problem": 1,
+      "financial_problem": 2,
+      "performance_problem": 2,
+      "decision_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 6,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (6 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-airbnb-hosts-with-1-5-properties-guest-communication-and-experience",
+    "type": "opportunity",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "name": "Guest Communication & Experience",
+    "description": "Commercial problem space for Airbnb hosts with 1-5 properties: Guest Communication & Experience.",
+    "problem_ids": [
+      "prb-airbnb-hosts-with-1-5-properties-difficult-guest-handling",
+      "prb-airbnb-hosts-with-1-5-properties-inconsistent-guest-messaging",
+      "prb-airbnb-hosts-with-1-5-properties-maintaining-consistent-reviews"
+    ],
+    "problem_count": 3,
+    "shared_desired_outcome": "A shared outcome across member problems: Handle problem guests calmly and safely. Send consistent, timely guest messages. Sustain 5-star reviews.",
+    "problem_types": {
+      "emotional_friction": 1,
+      "communication_problem": 1,
+      "retention_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 3,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (3 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+    "type": "opportunity",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "name": "Turnover & Property Operations",
+    "description": "Commercial problem space for Airbnb hosts with 1-5 properties: Turnover & Property Operations.",
+    "problem_ids": [
+      "prb-airbnb-hosts-with-1-5-properties-cleaner-turnover-coordination",
+      "prb-airbnb-hosts-with-1-5-properties-supply-restocking-tracking",
+      "prb-airbnb-hosts-with-1-5-properties-welcome-book-contents-unclear"
+    ],
+    "problem_count": 3,
+    "shared_desired_outcome": "A shared outcome across member problems: Standardize every turnover. Never run out of guest supplies. Produce a house manual without tool failures.",
+    "problem_types": {
+      "workflow_problem": 1,
+      "operational_problem": 1,
+      "technical_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 2,
+      "inferred_problem_count": 1,
+      "source_count": 3
+    },
+    "source_refs": [
+      "src-airbnb-etsy-review-1star",
+      "src-airbnb-touchstay-cleaning",
+      "src-airbnb-welcomebook-demand"
+    ],
+    "basis": "mixed",
+    "confidence": "HIGH",
+    "confidence_reason": "3 problems, 2 observed members across 3 independent sources",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-airbnb-hosts-with-1-5-properties-remote-and-financial-management",
+    "type": "opportunity",
+    "market_id": "mkt-travel-and-hospitality",
+    "submarket_id": "sub-travel-and-hospitality-short-term-rentals",
+    "audience_id": "aud-travel-and-hospitality-short-term-rentals-airbnb-hosts-with-1-5-properties",
+    "name": "Remote & Financial Management",
+    "description": "Commercial problem space for Airbnb hosts with 1-5 properties: Remote & Financial Management.",
+    "problem_ids": [
+      "prb-airbnb-hosts-with-1-5-properties-per-property-expense-tracking",
+      "prb-airbnb-hosts-with-1-5-properties-remote-listing-management"
+    ],
+    "problem_count": 2,
+    "shared_desired_outcome": "A shared outcome across member problems: See true profit per listing. Run the property hands-off.",
+    "problem_types": {
+      "financial_problem": 1,
+      "operational_problem": 1
+    },
+    "evidence_summary": {
+      "observed_problem_count": 0,
+      "inferred_problem_count": 2,
+      "source_count": 0
+    },
+    "source_refs": [],
+    "basis": "inferred",
+    "confidence": "LOW",
+    "confidence_reason": "inferred-only cluster (2 problems, 0 observed, 0 sources)",
+    "commercial_status": "unvalidated",
+    "creator_density": "unknown",
+    "score": null,
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-people-overwhelmed-by-their-to-do-list-prioritization-and-daily-focus-system",
+    "type": "opportunity",
+    "market_id": "mkt-productivity-and-self-organization",
+    "submarket_id": "sub-productivity-and-self-organization-task-and-time-management",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "name": "Prioritization & Daily Focus System",
+    "description": "Everything sits on one flat list and they freeze on what to do first.",
+    "problem_ids": [
+      "prb-people-overwhelmed-by-their-to-do-list-no-prioritization-on-the-list",
+      "prb-people-overwhelmed-by-their-to-do-list-task-paralysis-from-overwhelm",
+      "prb-people-overwhelmed-by-their-to-do-list-quick-vs-big-tasks-not-separated"
+    ],
+    "problem_count": 3,
+    "buyer": "Overwhelmed knowledge workers and students",
+    "core_problem": "Everything sits on one flat list and they freeze on what to do first.",
+    "desired_outcome": "A daily ritual that surfaces the 1-3 things that truly matter.",
+    "current_solutions": [
+      "1-3-5 method",
+      "Eisenhower-matrix apps"
+    ],
+    "solution_gaps": [
+      "most apps capture but don't force prioritization",
+      "no guided daily triage ritual"
+    ],
+    "possible_product": "A daily prioritization template + short guide: brain-dump -> triage by impact/effort -> commit to a 1-3-5 for today.",
+    "possible_format": [
+      "notion_template",
+      "google_sheet",
+      "pdf_guide"
+    ],
+    "evidence_summary": {
+      "problem_count": 3,
+      "source_count": 7
+    },
+    "source_refs": [
+      "src-3790487b0b45",
+      "src-80971f406e02",
+      "src-a285020b3e27",
+      "src-ac59973f9e6e",
+      "src-e0002b616a4c",
+      "src-fb079add15f1",
+      "src-fd5340158c73"
+    ],
+    "basis": "mixed",
+    "confidence": "MEDIUM",
+    "basic_score": {
+      "commercial_score": 87,
+      "evidence_score": 45,
+      "priority_score": 70,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 4,
+        "recurrence": 5,
+        "existing_spend": 4,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 5,
+        "audience_accessibility": 4,
+        "evidence_confidence": "MEDIUM"
+      },
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:23:07.564451+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-people-overwhelmed-by-their-to-do-list-anti-overwhelm-task-paralysis-starter-kit",
+    "type": "opportunity",
+    "market_id": "mkt-productivity-and-self-organization",
+    "submarket_id": "sub-productivity-and-self-organization-task-and-time-management",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "name": "Anti-Overwhelm / Task-Paralysis Starter Kit",
+    "description": "Overwhelm causes freeze and the list keeps growing with no reset.",
+    "problem_ids": [
+      "prb-people-overwhelmed-by-their-to-do-list-task-paralysis-from-overwhelm",
+      "prb-people-overwhelmed-by-their-to-do-list-list-grows-endlessly-without-culling"
+    ],
+    "problem_count": 2,
+    "buyer": "People who freeze on a bloated list",
+    "core_problem": "Overwhelm causes freeze and the list keeps growing with no reset.",
+    "desired_outcome": "Unfreeze and start; reset a bloated list on a schedule.",
+    "current_solutions": [
+      "scattered blog advice",
+      "breaking tasks down"
+    ],
+    "solution_gaps": [
+      "advice is scattered across blogs, not one actionable system"
+    ],
+    "possible_product": "A 'reset your list' playbook + templates: brain-dump, 2-minute starts, and a weekly cull ritual.",
+    "possible_format": [
+      "pdf_playbook",
+      "notion_template",
+      "checklist"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 6
+    },
+    "source_refs": [
+      "src-2ac4852a129e",
+      "src-3790487b0b45",
+      "src-a285020b3e27",
+      "src-ac59973f9e6e",
+      "src-e0002b616a4c",
+      "src-fb079add15f1"
+    ],
+    "basis": "mixed",
+    "confidence": "LOW",
+    "basic_score": {
+      "commercial_score": 80,
+      "evidence_score": 45,
+      "priority_score": 66,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 5,
+        "recurrence": 4,
+        "existing_spend": "UNKNOWN",
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 4,
+        "audience_accessibility": 3,
+        "evidence_confidence": "MEDIUM"
+      },
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:23:07.564496+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-people-overwhelmed-by-their-to-do-list-simple-task-system-for-app-fatigued-people",
+    "type": "opportunity",
+    "market_id": "mkt-productivity-and-self-organization",
+    "submarket_id": "sub-productivity-and-self-organization-task-and-time-management",
+    "audience_id": "aud-productivity-and-self-organization-task-and-time-management-people-overwhelmed-by-their-to-do-list",
+    "name": "Simple Task System for App-Fatigued People",
+    "description": "Apps are too complex and tracking does not equal doing.",
+    "problem_ids": [
+      "prb-people-overwhelmed-by-their-to-do-list-apps-too-complex-and-abandoned",
+      "prb-people-overwhelmed-by-their-to-do-list-tracking-not-completing"
+    ],
+    "problem_count": 2,
+    "buyer": "People burned out on complex productivity apps",
+    "core_problem": "Apps are too complex and tracking does not equal doing.",
+    "desired_outcome": "A deliberately minimal system that drives completion.",
+    "current_solutions": [
+      "all-in-one apps"
+    ],
+    "solution_gaps": [
+      "all-in-one apps overwhelm",
+      "few deliberately minimal 'anti-app' systems are sold"
+    ],
+    "possible_product": "A minimalist single-page task system (template + method) positioned against bloated apps.",
+    "possible_format": [
+      "notion_template",
+      "paper_template",
+      "pdf_guide"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 3
+    },
+    "source_refs": [
+      "src-1798f2bcf08c",
+      "src-fd35a34b44bf",
+      "src-fd5340158c73"
+    ],
+    "basis": "mixed",
+    "confidence": "LOW",
+    "basic_score": {
+      "commercial_score": 73,
+      "evidence_score": 20,
+      "priority_score": 52,
+      "priority_classification": "PROMISING_NEEDS_RESEARCH",
+      "dimensions": {
+        "pain_importance": 3,
+        "recurrence": 4,
+        "existing_spend": 3,
+        "solution_dissatisfaction": 5,
+        "digital_product_fit": 4,
+        "audience_accessibility": 3,
+        "evidence_confidence": "LOW"
+      },
+      "evidence_confidence": "LOW"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:23:07.564524+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-professionals-upskilling-on-chatgpt-for-their-job-role-specific-prompt-library-and-playbook",
+    "type": "opportunity",
+    "market_id": "mkt-ai-tools-and-automation",
+    "submarket_id": "sub-ai-tools-and-automation-prompting-and-llm-skills",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "name": "Role-Specific Prompt Library & Playbook",
+    "description": "Generic prompts don't fit their role and results vary by skill.",
+    "problem_ids": [
+      "prb-professionals-upskilling-on-chatgpt-for-their-job-prompt-writing-skill-gap",
+      "prb-professionals-upskilling-on-chatgpt-for-their-job-no-role-specific-prompts"
+    ],
+    "problem_count": 2,
+    "buyer": "Professionals using ChatGPT for a specific job",
+    "core_problem": "Generic prompts don't fit their role and results vary by skill.",
+    "desired_outcome": "Ready prompts tailored to their exact tasks that work first try.",
+    "current_solutions": [
+      "Reddit prompt lists",
+      "generic prompt packs"
+    ],
+    "solution_gaps": [
+      "most packs are generic, not role/workflow-specific"
+    ],
+    "possible_product": "A curated, role-specific prompt library + usage guide (organized by profession and task).",
+    "possible_format": [
+      "notion_template",
+      "pdf_guide",
+      "prompt_pack"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 4
+    },
+    "source_refs": [
+      "src-008ff2322e17",
+      "src-3881bab7d4ec",
+      "src-e04731f5c49e",
+      "src-e5780dbc3255"
+    ],
+    "basis": "mixed",
+    "confidence": "MEDIUM",
+    "basic_score": {
+      "commercial_score": 83,
+      "evidence_score": 45,
+      "priority_score": 68,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 4,
+        "recurrence": 4,
+        "existing_spend": 5,
+        "solution_dissatisfaction": 3,
+        "digital_product_fit": 5,
+        "audience_accessibility": 4,
+        "evidence_confidence": "MEDIUM"
+      },
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:25:49.875584+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-professionals-upskilling-on-chatgpt-for-their-job-reliable-output-and-verification-system",
+    "type": "opportunity",
+    "market_id": "mkt-ai-tools-and-automation",
+    "submarket_id": "sub-ai-tools-and-automation-prompting-and-llm-skills",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "name": "Reliable-Output & Verification System",
+    "description": "Inconsistent, hallucination-prone output can't be trusted for real work.",
+    "problem_ids": [
+      "prb-professionals-upskilling-on-chatgpt-for-their-job-inconsistent-output-quality",
+      "prb-professionals-upskilling-on-chatgpt-for-their-job-hallucinations-untrustworthy-for-work"
+    ],
+    "problem_count": 2,
+    "buyer": "Professionals who can't risk bad AI output",
+    "core_problem": "Inconsistent, hallucination-prone output can't be trusted for real work.",
+    "desired_outcome": "Trustworthy output, verified before use.",
+    "current_solutions": [
+      "manual checking"
+    ],
+    "solution_gaps": [
+      "no simple system to reduce hallucinations and verify quickly"
+    ],
+    "possible_product": "A checklist + prompt patterns to reduce hallucinations and verify AI output before it ships.",
+    "possible_format": [
+      "checklist",
+      "pdf_guide",
+      "notion_template"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 5
+    },
+    "source_refs": [
+      "src-008ff2322e17",
+      "src-14cf740c6b92",
+      "src-1abcef33be6b",
+      "src-384e488a92d4",
+      "src-653258a2b899"
+    ],
+    "basis": "mixed",
+    "confidence": "MEDIUM",
+    "basic_score": {
+      "commercial_score": 80,
+      "evidence_score": 45,
+      "priority_score": 66,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 5,
+        "recurrence": 4,
+        "existing_spend": "UNKNOWN",
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 4,
+        "audience_accessibility": 3,
+        "evidence_confidence": "MEDIUM"
+      },
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:25:49.875690+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-professionals-upskilling-on-chatgpt-for-their-job-chatgpt-at-work-onboarding-system",
+    "type": "opportunity",
+    "market_id": "mkt-ai-tools-and-automation",
+    "submarket_id": "sub-ai-tools-and-automation-prompting-and-llm-skills",
+    "audience_id": "aud-ai-tools-and-automation-prompting-and-llm-skills-professionals-upskilling-on-chatgpt-for-their-job",
+    "name": "ChatGPT-at-Work Onboarding System",
+    "description": "Usage is ad hoc with no repeatable workflow.",
+    "problem_ids": [
+      "prb-professionals-upskilling-on-chatgpt-for-their-job-prompt-writing-skill-gap",
+      "prb-professionals-upskilling-on-chatgpt-for-their-job-ad-hoc-usage-no-system"
+    ],
+    "problem_count": 2,
+    "buyer": "Professionals adopting ChatGPT day-to-day",
+    "core_problem": "Usage is ad hoc with no repeatable workflow.",
+    "desired_outcome": "Embed AI into daily work with a clear system.",
+    "current_solutions": [
+      "scattered workplace guides"
+    ],
+    "solution_gaps": [
+      "guides are generic, not a step-by-step system with templates"
+    ],
+    "possible_product": "A step-by-step system to embed ChatGPT into daily tasks, with templates per common workflow.",
+    "possible_format": [
+      "course_outline",
+      "notion_template",
+      "pdf_guide"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 2
+    },
+    "source_refs": [
+      "src-008ff2322e17",
+      "src-e04731f5c49e"
+    ],
+    "basis": "mixed",
+    "confidence": "LOW",
+    "basic_score": {
+      "commercial_score": 70,
+      "evidence_score": 20,
+      "priority_score": 50,
+      "priority_classification": "PROMISING_NEEDS_RESEARCH",
+      "dimensions": {
+        "pain_importance": 3,
+        "recurrence": 4,
+        "existing_spend": 3,
+        "solution_dissatisfaction": 3,
+        "digital_product_fit": 4,
+        "audience_accessibility": 4,
+        "evidence_confidence": "LOW"
+      },
+      "evidence_confidence": "LOW"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:25:49.875737+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-people-organizing-bills-and-subscriptions-privacy-first-bill-and-subscription-cash-flow-planner",
+    "type": "opportunity",
+    "market_id": "mkt-personal-finance",
+    "submarket_id": "sub-personal-finance-financial-organization",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "name": "Privacy-First Bill & Subscription Cash-Flow Planner",
+    "description": "Third-party bill tracking apps constantly fail to sync with utility portals, demand invasive bank linking, and enforce complex budget setups when users simply want to see when money leaves their account and cut hidden recurring costs.",
+    "problem_ids": [
+      "prb-people-organizing-bills-and-subscriptions-underestimating-total-subscription-count-and-monthly-spending",
+      "prb-people-organizing-bills-and-subscriptions-difficulty-tracking-multiple-bill-due-dates-and-payment-timelines",
+      "prb-people-organizing-bills-and-subscriptions-unpredictable-cash-flow-timing-caused-by-automated-payment-withdrawals",
+      "prb-people-organizing-bills-and-subscriptions-overly-complex-budgeting-software-for-simple-bill-listing-needs",
+      "prb-people-organizing-bills-and-subscriptions-third-party-bill-tracking-apps-fail-to-sync-with-utility-and-service-provi"
+    ],
+    "problem_count": 5,
+    "buyer": "Individuals and households wanting a simple, reliable view of bills and subscriptions without bank linking or complex budgeting features.",
+    "core_problem": "Third-party bill tracking apps constantly fail to sync with utility portals, demand invasive bank linking, and enforce complex budget setups when users simply want to see when money leaves their account and cut hidden recurring costs.",
+    "desired_outcome": "A clean, accurate view of all recurring subscriptions, payment due dates, and exact autopay debit timelines to eliminate late fees and overdraft risks without software sync bugs.",
+    "current_solutions": [
+      "Subscription management apps (e.g., Rocket Money, PocketGuard)",
+      "Full budgeting software (e.g., Quicken Simplifi)",
+      "Manual bank statement reviews"
+    ],
+    "solution_gaps": [
+      "Frequent broken bank/utility portal sync connections",
+      "Overly complex setup requiring full financial account linking",
+      "Lack of granular visualization for specific autopay withdrawal dates relative to paychecks"
+    ],
+    "possible_product": "A pre-formatted Google Sheets or Notion dashboard featuring a subscription audit tool, interactive bill calendar, and dynamic cash flow forecasting timeline.",
+    "possible_format": [
+      "templates",
+      "trackers",
+      "systems"
+    ],
+    "evidence_summary": {
+      "problem_count": 5,
+      "source_count": 19
+    },
+    "source_refs": [
+      "src-0a861d7c6f57",
+      "src-101371de7f02",
+      "src-12e7d9847350",
+      "src-19baab263f8e",
+      "src-2f548b7b1191",
+      "src-49f547510634",
+      "src-4ca6e1a379d4",
+      "src-536fc1f23230",
+      "src-6853c69b7988",
+      "src-8613548cfd25",
+      "src-8c108d33a135",
+      "src-bc400ffcaec5",
+      "src-bef2f51d367e",
+      "src-c870464ab221",
+      "src-d8a47600853d",
+      "src-db57aeea1f23",
+      "src-e7512ddba5bb",
+      "src-fa518b147dae",
+      "src-fc120e5dc433"
+    ],
+    "basis": "Strong overlap across 5 problems indicating high user frustration with buggy third-party app integrations and over-engineered budgeting tools when all they need is simple bill/subscription visibility.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 90,
+      "evidence_score": 70,
+      "priority_score": 82,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 4,
+        "recurrence": 5,
+        "existing_spend": 4,
+        "solution_dissatisfaction": 5,
+        "digital_product_fit": 5,
+        "audience_accessibility": 4,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:48:24.706842+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-people-organizing-bills-and-subscriptions-paperless-household-mail-and-bill-organization-system",
+    "type": "opportunity",
+    "market_id": "mkt-personal-finance",
+    "submarket_id": "sub-personal-finance-financial-organization",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "name": "Paperless Household Mail & Bill Organization System",
+    "description": "Physical paper mail bills create visual clutter, and individuals lack a simple, structured workflow for triaging, scanning, retaining, or shredding bills post-payment.",
+    "problem_ids": [
+      "prb-people-organizing-bills-and-subscriptions-accumulation-of-physical-paper-mail-clutter-post-payment"
+    ],
+    "problem_count": 1,
+    "buyer": "Homeowners and household managers overwhelmed by physical paper mail, paper bills, and post-payment document clutter.",
+    "core_problem": "Physical paper mail bills create visual clutter, and individuals lack a simple, structured workflow for triaging, scanning, retaining, or shredding bills post-payment.",
+    "desired_outcome": "A clutter-free physical mail drop-zone and a searchable digital filing system for paid utility and service provider bills.",
+    "current_solutions": [
+      "Physical filing boxes or folders",
+      "Paperless electronic billing toggles",
+      "Dedicated mail sorting stations"
+    ],
+    "solution_gaps": [
+      "No structured workflow guide on what documents need physical retention vs. digital archiving",
+      "Lack of standardized digital naming and folder storage conventions for quick retrieval"
+    ],
+    "possible_product": "A complete paperless workflow playbook paired with a standardized digital document folder template (Google Drive/Dropbox/OneDrive structure) and retention checklist.",
+    "possible_format": [
+      "guides",
+      "systems",
+      "templates"
+    ],
+    "evidence_summary": {
+      "problem_count": 1,
+      "source_count": 4
+    },
+    "source_refs": [
+      "src-1559c1ecb930",
+      "src-33f6bc0139c4",
+      "src-6853c69b7988",
+      "src-8c108d33a135"
+    ],
+    "basis": "Targeted problem showing specific dissatisfaction with physical mail buildup and lack of organized post-payment workflows.",
+    "confidence": "MEDIUM",
+    "basic_score": {
+      "commercial_score": 70,
+      "evidence_score": 45,
+      "priority_score": 60,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 3,
+        "recurrence": 4,
+        "existing_spend": 2,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 4,
+        "audience_accessibility": 4,
+        "evidence_confidence": "MEDIUM"
+      },
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:48:24.706890+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-people-organizing-bills-and-subscriptions-time-poor-professional-s-fail-safe-bill-automation-playbook",
+    "type": "opportunity",
+    "market_id": "mkt-personal-finance",
+    "submarket_id": "sub-personal-finance-financial-organization",
+    "audience_id": "aud-personal-finance-financial-organization-people-organizing-bills-and-subscriptions",
+    "name": "Time-Poor Professional's Fail-Safe Bill Automation Playbook",
+    "description": "Lack of time prevents manual bill payments, but setting up full bill automation without a strategic checking buffer strategy risks unexpected overdrafts and bank fees.",
+    "problem_ids": [
+      "prb-people-organizing-bills-and-subscriptions-inability-to-keep-up-with-bill-payments-due-to-demanding-work-schedules",
+      "prb-people-organizing-bills-and-subscriptions-unpredictable-cash-flow-timing-caused-by-automated-payment-withdrawals"
+    ],
+    "problem_count": 2,
+    "buyer": "Busy professionals working extreme hours who cannot manually track bills but worry about overdrafts from uncontrolled autopay withdrawals.",
+    "core_problem": "Lack of time prevents manual bill payments, but setting up full bill automation without a strategic checking buffer strategy risks unexpected overdrafts and bank fees.",
+    "desired_outcome": "A completely hands-off, automated bill payment architecture with fail-safe buffers that operates seamlessly without manual intervention.",
+    "current_solutions": [
+      "Full autopay automation without safety buffers",
+      "Hiring daily money managers or financial assistants",
+      "Manual calendar notes for autopay dates"
+    ],
+    "solution_gaps": [
+      "Hiring personal money managers is too expensive for most working professionals",
+      "Standard autopay setups lack risk mitigation strategies for fluctuating utility/credit card bills"
+    ],
+    "possible_product": "A step-by-step setup guide and decision matrix covering multi-account buffer strategies, automated payment scheduling rules, and emergency overdraft prevention setups.",
+    "possible_format": [
+      "playbooks",
+      "systems",
+      "guides"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 5
+    },
+    "source_refs": [
+      "src-2f548b7b1191",
+      "src-3c1ce96fe8fb",
+      "src-6853c69b7988",
+      "src-7b5838eefb79",
+      "src-bef2f51d367e"
+    ],
+    "basis": "Combines severe time scarcity with cash flow predictability risks, serving high-earning, time-poor workers seeking reliable automation.",
+    "confidence": "MEDIUM",
+    "basic_score": {
+      "commercial_score": 73,
+      "evidence_score": 45,
+      "priority_score": 62,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 4,
+        "recurrence": 4,
+        "existing_spend": 4,
+        "solution_dissatisfaction": 3,
+        "digital_product_fit": 4,
+        "audience_accessibility": 3,
+        "evidence_confidence": "MEDIUM"
+      },
+      "evidence_confidence": "MEDIUM"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:48:24.706995+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-lifters-planning-a-cut-or-bulk-cut-vs-bulk-diagnostic-and-phase-periodization-blueprint",
+    "type": "opportunity",
+    "market_id": "mkt-fitness-and-physical-training",
+    "submarket_id": "sub-fitness-and-physical-training-strength-and-physique",
+    "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+    "name": "Cut vs. Bulk Diagnostic & Phase Periodization Blueprint",
+    "description": "Lifters second-guess whether to cut or bulk first, leading to short, reactionary cycles that stall long-term muscle building and body composition progress.",
+    "problem_ids": [
+      "prb-lifters-planning-a-cut-or-bulk-uncertainty-in-choosing-between-cutting-and-bulking-phase",
+      "prb-lifters-planning-a-cut-or-bulk-ineffective-muscle-growth-due-to-short-bulk-cut-cycles"
+    ],
+    "problem_count": 2,
+    "buyer": "Beginner and intermediate lifters (especially skinny-fat individuals) uncertain about phase selection",
+    "core_problem": "Lifters second-guess whether to cut or bulk first, leading to short, reactionary cycles that stall long-term muscle building and body composition progress.",
+    "desired_outcome": "Clear, objective clarity on whether to start with a cut, bulk, or recomp, along with a structured 8–12 month phase roadmap to eliminate decision anxiety.",
+    "current_solutions": [
+      "Online bulk vs cut quizzes",
+      "Body fat percentage rule of thumbs",
+      "Following generic advice based on training experience"
+    ],
+    "solution_gaps": [
+      "Generic rules of thumb ignore key variables like psychological fatigue, current training age, and personal strength baselines.",
+      "Simple quizzes do not offer long-term macro-cycle timelines, leaving lifters prone to panic-pivoting after a few weeks."
+    ],
+    "possible_product": "Interactive Phase Diagnostic Calculator & Multi-Month Periodization Planner",
+    "possible_format": [
+      "Notion Dashboard",
+      "Interactive Google Sheets Calculator",
+      "Step-by-Step Decision Matrix Guide"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 12
+    },
+    "source_refs": [
+      "src-0555fc539577",
+      "src-0c9279a69d81",
+      "src-1d10bfb28994",
+      "src-602afacec473",
+      "src-6031d548a0e7",
+      "src-667fe6602213",
+      "src-6a3c505cfc9f",
+      "src-85696a396fc6",
+      "src-94a9555dd077",
+      "src-da25f06dfad2",
+      "src-dd8c3cf2404a",
+      "src-f317de51d739"
+    ],
+    "basis": "Lifters lack diagnostic tools that combine body composition metrics with multi-phase planning, causing perpetual cycle switching.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 80,
+      "evidence_score": 70,
+      "priority_score": 76,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 4,
+        "recurrence": 3,
+        "existing_spend": 3,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 5,
+        "audience_accessibility": 5,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:55:27.662326+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-lifters-planning-a-cut-or-bulk-muscle-sparing-cutting-system-and-strength-defense-tracker",
+    "type": "opportunity",
+    "market_id": "mkt-fitness-and-physical-training",
+    "submarket_id": "sub-fitness-and-physical-training-strength-and-physique",
+    "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+    "name": "Muscle-Sparing Cutting System & Strength Defense Tracker",
+    "description": "Caloric deficits frequently trigger loss of hard-earned muscle and drop core lift performance, forcing lifters to end cuts prematurely or lose mass.",
+    "problem_ids": [
+      "prb-lifters-planning-a-cut-or-bulk-strength-and-muscle-loss-during-a-cutting-phase"
+    ],
+    "problem_count": 1,
+    "buyer": "Intermediate to advanced lifters aiming to cut body fat while preserving maximum muscle and power",
+    "core_problem": "Caloric deficits frequently trigger loss of hard-earned muscle and drop core lift performance, forcing lifters to end cuts prematurely or lose mass.",
+    "desired_outcome": "Maintain baseline strength markers and lean tissue mass while steadily dropping fat tissue on an optimized calorie deficit.",
+    "current_solutions": [
+      "Increasing protein intake during cuts",
+      "Using heavy single reps in core lifts to preserve strength",
+      "Focusing strictly on compound movements"
+    ],
+    "solution_gaps": [
+      "High protein alone doesn't prevent fatigue accumulation and strength decline if deficit depth and volume aren't auto-regulated.",
+      "Heavy singles without systematic fatigue tracking often accelerate neural burnout during energy deficits."
+    ],
+    "possible_product": "Catabolism-Proof Cutting Dashboard & Auto-Regulated Training Tracker",
+    "possible_format": [
+      "Google Sheets Tracker",
+      "PDF Cutting Protocol Playbook",
+      "Notion Workout Hub"
+    ],
+    "evidence_summary": {
+      "problem_count": 1,
+      "source_count": 5
+    },
+    "source_refs": [
+      "src-17a7ecf489da",
+      "src-6031d548a0e7",
+      "src-6e4a06bcc0c1",
+      "src-7138a6fe8e31",
+      "src-ad75cd4d2427"
+    ],
+    "basis": "Lifters actively track macros but lack programmatic feedback on fatigue management specifically designed for caloric deficits.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 83,
+      "evidence_score": 70,
+      "priority_score": 78,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 5,
+        "recurrence": 4,
+        "existing_spend": 4,
+        "solution_dissatisfaction": 3,
+        "digital_product_fit": 5,
+        "audience_accessibility": 4,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:55:27.662388+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-lifters-planning-a-cut-or-bulk-lean-surplus-and-conditioning-integration-operating-system",
+    "type": "opportunity",
+    "market_id": "mkt-fitness-and-physical-training",
+    "submarket_id": "sub-fitness-and-physical-training-strength-and-physique",
+    "audience_id": "aud-fitness-and-physical-training-strength-and-physique-lifters-planning-a-cut-or-bulk",
+    "name": "Lean Surplus & Conditioning Integration Operating System",
+    "description": "Aggressive surpluses cause rapid, unwanted fat accumulation and loss of aerobic conditioning, forcing premature end to bulking phases before real hypertrophy occurs.",
+    "problem_ids": [
+      "prb-lifters-planning-a-cut-or-bulk-excessive-fat-gain-and-loss-of-stamina-from-aggressive-bulking",
+      "prb-lifters-planning-a-cut-or-bulk-ineffective-muscle-growth-due-to-short-bulk-cut-cycles"
+    ],
+    "problem_count": 2,
+    "buyer": "Hypertrophy-focused lifters who want to execute extended muscle-building phases without turning 'dirty bulk'",
+    "core_problem": "Aggressive surpluses cause rapid, unwanted fat accumulation and loss of aerobic conditioning, forcing premature end to bulking phases before real hypertrophy occurs.",
+    "desired_outcome": "Sustain a high-quality lean muscle surplus for 6–12 months without excessive fat mass gain or aerobic degradation.",
+    "current_solutions": [
+      "Lean bulking with a modest calorie surplus (+10%)",
+      "Incorporating cardio while bulking",
+      "Planning long bulks lasting 8 to 11 months"
+    ],
+    "solution_gaps": [
+      "Static 10% surplus guidelines fail to adjust for metabolic adaptation as body weight rises.",
+      "Random cardio protocols often interfere with strength recovery rather than strategically supporting work capacity."
+    ],
+    "possible_product": "Hypertrophy Surplus Calculator & Non-Interference Conditioning Protocol",
+    "possible_format": [
+      "Spreadsheet Dynamic Calculator",
+      "PDF Execution Playbook",
+      "Video Masterclass"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 8
+    },
+    "source_refs": [
+      "src-14fe1a596f0e",
+      "src-17a7ecf489da",
+      "src-3d5ec71dd75f",
+      "src-667fe6602213",
+      "src-94a9555dd077",
+      "src-da25f06dfad2",
+      "src-eb96f5201c63",
+      "src-f317de51d739"
+    ],
+    "basis": "Lifters struggle to fine-tune energy surplus and conditioning modalities over multi-month bulks to avoid early fattening.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 83,
+      "evidence_score": 70,
+      "priority_score": 78,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 4,
+        "recurrence": 4,
+        "existing_spend": 3,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 5,
+        "audience_accessibility": 5,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:55:27.662446+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-artists-growing-on-streaming-platforms-direct-to-fan-monetization-playbook-and-funnel-templates",
+    "type": "opportunity",
+    "market_id": "mkt-music-and-audio-production",
+    "submarket_id": "sub-music-and-audio-production-artist-growth-and-release",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "name": "Direct-to-Fan Monetization Playbook & Funnel Templates",
+    "description": "Streaming platforms pay fractions of a cent per stream, making it impossible to earn a living without millions of streams unless artists sell directly to fans.",
+    "problem_ids": [
+      "prb-artists-growing-on-streaming-platforms-low-streaming-royalty-payouts"
+    ],
+    "problem_count": 1,
+    "buyer": "Independent recording artists and self-managed musicians",
+    "core_problem": "Streaming platforms pay fractions of a cent per stream, making it impossible to earn a living without millions of streams unless artists sell directly to fans.",
+    "desired_outcome": "Build sustainable direct revenue streams (Bandcamp, merchandise, VIP memberships) that turn passive listeners into high-value paying fans.",
+    "current_solutions": [
+      "Selling music directly to fans on platforms like Bandcamp",
+      "Relying on live performances and physical merchandise sales",
+      "Distributing music across platforms offering higher per-stream rates"
+    ],
+    "solution_gaps": [
+      "Artists lack structured funnels to convert casual streaming listeners into direct buyers",
+      "No simple playbook for pricing, bundling, or launching direct-to-fan digital/physical products"
+    ],
+    "possible_product": "A step-by-step fan funnel strategy guide with Notion templates for product pricing, launch calendars, and email nurture sequences.",
+    "possible_format": [
+      "Playbook",
+      "Templates",
+      "Guide"
+    ],
+    "evidence_summary": {
+      "problem_count": 1,
+      "source_count": 8
+    },
+    "source_refs": [
+      "src-031cf9c3296a",
+      "src-06205c36032c",
+      "src-0aa713112cf0",
+      "src-56ef75579bdf",
+      "src-63093f99da46",
+      "src-7994764445b9",
+      "src-a9491358651b",
+      "src-db2abca70714"
+    ],
+    "basis": "Low payouts are an existential issue for indie artists; direct-to-fan strategies are proven alternative solutions but lack clear execution blueprints.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 83,
+      "evidence_score": 70,
+      "priority_score": 78,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 5,
+        "recurrence": 4,
+        "existing_spend": 3,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 5,
+        "audience_accessibility": 4,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:59:30.101457+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-artists-growing-on-streaming-platforms-safe-playlist-promotion-vetting-and-anti-bot-toolkit",
+    "type": "opportunity",
+    "market_id": "mkt-music-and-audio-production",
+    "submarket_id": "sub-music-and-audio-production-artist-growth-and-release",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "name": "Safe Playlist Promotion Vetting & Anti-Bot Toolkit",
+    "description": "Promoting music on third-party playlists often leads to artificial streaming scams, risking store bans, chart manipulation flags, and lost ad money.",
+    "problem_ids": [
+      "prb-artists-growing-on-streaming-platforms-exposure-to-artificial-streaming-and-fraudulent-promotion-scams"
+    ],
+    "problem_count": 1,
+    "buyer": "Indie artists actively pitching music to third-party playlist curators",
+    "core_problem": "Promoting music on third-party playlists often leads to artificial streaming scams, risking store bans, chart manipulation flags, and lost ad money.",
+    "desired_outcome": "Identify authentic playlist curators safely and avoid bot-driven promotional scams that compromise platform accounts.",
+    "current_solutions": [
+      "Relying strictly on organic audience building",
+      "Vetting playlist curators and third-party promotion services carefully"
+    ],
+    "solution_gaps": [
+      "Manual curator vetting is time-consuming and difficult without technical analytics tools",
+      "No easy-to-use reference database of verified safe promotional channels"
+    ],
+    "possible_product": "Playlist Curator Vetting Database & Fraud Detection Checklist with red-flag audit templates.",
+    "possible_format": [
+      "Database",
+      "Checklist",
+      "System"
+    ],
+    "evidence_summary": {
+      "problem_count": 1,
+      "source_count": 4
+    },
+    "source_refs": [
+      "src-09280c53e178",
+      "src-135ccbececbf",
+      "src-33e92592aab4",
+      "src-593139e5be41"
+    ],
+    "basis": "Streaming platforms actively penalize accounts using bot playlists; artists are terrified of getting taken down and need reliable vetting standards.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 80,
+      "evidence_score": 70,
+      "priority_score": 76,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 5,
+        "recurrence": 3,
+        "existing_spend": 4,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 4,
+        "audience_accessibility": 4,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:59:30.101509+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-artists-growing-on-streaming-platforms-cross-platform-music-release-and-content-os",
+    "type": "opportunity",
+    "market_id": "mkt-music-and-audio-production",
+    "submarket_id": "sub-music-and-audio-production-artist-growth-and-release",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "name": "Cross-Platform Music Release & Content OS",
+    "description": "Managing promotional content across TikTok, Reels, Spotify, and link-in-bio tools creates extreme burnout and inconsistent organic visibility.",
+    "problem_ids": [
+      "prb-artists-growing-on-streaming-platforms-difficulty-maintaining-organic-visibility-amidst-platform-saturation",
+      "prb-artists-growing-on-streaming-platforms-fragmented-multi-platform-promotional-ecosystem"
+    ],
+    "problem_count": 2,
+    "buyer": "Solo musicians and independent artist managers juggling multi-channel promotion",
+    "core_problem": "Managing promotional content across TikTok, Reels, Spotify, and link-in-bio tools creates extreme burnout and inconsistent organic visibility.",
+    "desired_outcome": "Maintain a streamlined, repeatable release schedule and consistent organic reach across all major video and streaming channels without spending all day on social media.",
+    "current_solutions": [
+      "Pitching releases to curated platform playlists",
+      "Cross-promoting music on short-form video apps like TikTok and Instagram Reels",
+      "Maintaining regular posting schedules using trending audio tracks",
+      "Focusing efforts on 1-2 primary channels where target fans spend time",
+      "Utilizing centralized analytics and link-in-bio tools"
+    ],
+    "solution_gaps": [
+      "Generic social media calendars aren't tailored for song release cycles or audio-centric platforms",
+      "Managing multiple fragmented channels leads to workflow friction and inconsistent posting"
+    ],
+    "possible_product": "All-in-one Notion/Airtable Music Release System, featuring pre-built content repurposing workflows, pitch trackers, and release timeline templates.",
+    "possible_format": [
+      "Template",
+      "System",
+      "Tracker"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 11
+    },
+    "source_refs": [
+      "src-26387f7fb894",
+      "src-28cbe699c294",
+      "src-3766686c413f",
+      "src-3df252eee5ba",
+      "src-707d96da672c",
+      "src-86dbda77309f",
+      "src-871c7939b5f3",
+      "src-9edc3c6ab53b",
+      "src-a1b1cc228b3b",
+      "src-db62e8d70982",
+      "src-e5f4e07ddc3b"
+    ],
+    "basis": "Artists struggle with the heavy management burden of fragmented channels while competing in an over-saturated streaming market.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 87,
+      "evidence_score": 70,
+      "priority_score": 80,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 4,
+        "recurrence": 5,
+        "existing_spend": 3,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 5,
+        "audience_accessibility": 5,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:59:30.101542+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-artists-growing-on-streaming-platforms-high-roi-music-ads-and-listener-conversion-blueprint",
+    "type": "opportunity",
+    "market_id": "mkt-music-and-audio-production",
+    "submarket_id": "sub-music-and-audio-production-artist-growth-and-release",
+    "audience_id": "aud-music-and-audio-production-artist-growth-and-release-artists-growing-on-streaming-platforms",
+    "name": "High-ROI Music Ads & Listener Conversion Blueprint",
+    "description": "Paid ad campaigns frequently yield low stream conversions and negative ROI due to poor targeting, bad landing page funnels, or reliance on automated tools.",
+    "problem_ids": [
+      "prb-artists-growing-on-streaming-platforms-low-conversion-and-poor-roi-on-paid-music-ad-campaigns"
+    ],
+    "problem_count": 1,
+    "buyer": "Independent artists investing personal capital into Meta/TikTok digital ad campaigns",
+    "core_problem": "Paid ad campaigns frequently yield low stream conversions and negative ROI due to poor targeting, bad landing page funnels, or reliance on automated tools.",
+    "desired_outcome": "Run profitable or cost-effective ad campaigns that reliably convert ad views into active streaming listeners and save budget.",
+    "current_solutions": [
+      "Running targeted Meta and Instagram ad campaigns",
+      "Using automated music advertising platforms like SymphonyOS"
+    ],
+    "solution_gaps": [
+      "Automated tools lack granular audience targeting control",
+      "Standard ad tutorials don't cover music-specific conversion tracking or smart-link pixel optimization"
+    ],
+    "possible_product": "Step-by-step Meta Ads Playbook for Musicians, including high-converting ad copy templates, targeting presets, and pixel tracking setup guides.",
+    "possible_format": [
+      "Playbook",
+      "Guide",
+      "Templates"
+    ],
+    "evidence_summary": {
+      "problem_count": 1,
+      "source_count": 4
+    },
+    "source_refs": [
+      "src-7d78650b903e",
+      "src-8d28671b382c",
+      "src-b1aa9a8362a8",
+      "src-e95e9a55a2b8"
+    ],
+    "basis": "Artists spend real money on ad platforms like Meta and SymphonyOS, making ad spend optimization a high-intent financial problem.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 87,
+      "evidence_score": 70,
+      "priority_score": 80,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 4,
+        "recurrence": 4,
+        "existing_spend": 5,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 5,
+        "audience_accessibility": 4,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-11T10:59:30.101622+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-account-execs-running-discovery-calls-conversational-30-min-discovery-flow-and-time-pacing-toolkit",
+    "type": "opportunity",
+    "market_id": "mkt-sales-and-closing",
+    "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "name": "Conversational 30-Min Discovery Flow & Time Pacing Toolkit",
+    "description": "Discovery calls feel like robotic BANT/MEDDIC interrogations and frequently run out of time before rep can uncover deep pain or secure committed next steps.",
+    "problem_ids": [
+      "prb-account-execs-running-discovery-calls-insufficient-call-time-to-complete-thorough-discovery-and-establish-next-steps",
+      "prb-account-execs-running-discovery-calls-discovery-calls-feeling-like-interrogations-rather-than-natural-business-conve"
+    ],
+    "problem_count": 2,
+    "buyer": "Account Executives and B2B Sales Reps",
+    "core_problem": "Discovery calls feel like robotic BANT/MEDDIC interrogations and frequently run out of time before rep can uncover deep pain or secure committed next steps.",
+    "desired_outcome": "Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+    "current_solutions": [
+      "Rigid time-allocation frameworks (e.g., 2 mins intro, 18 mins discovery, 6 mins next steps)",
+      "Standardized discovery templates and cheat sheets",
+      "Open-ended question checklists",
+      "Tactical empathy techniques",
+      "Qualification frameworks like BANT or MEDDIC",
+      "Standard discovery call scripts"
+    ],
+    "solution_gaps": [
+      "Rigid time allocations break down when prospects digress.",
+      "Static qualification checklists force AEs into an interrogation dynamic instead of an organic business dialogue.",
+      "Existing cheat sheets don't provide transition phrases to bridge discovery into immediate next-step commitments."
+    ],
+    "possible_product": "Discovery Pacing & Conversational Transition Playbook",
+    "possible_format": [
+      "Notion Template",
+      "Interactive Call Flowchart",
+      "Audio/Video Guides",
+      "Cheatsheet"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 7
+    },
+    "source_refs": [
+      "src-1554f6295287",
+      "src-21dbac67659d",
+      "src-44696ddbd94e",
+      "src-71822e218fd7",
+      "src-a0b821e9807d",
+      "src-b771ab056b4a",
+      "src-f0f70a518423"
+    ],
+    "basis": "AEs repeatedly report running out of time and annoying prospects with interrogation-style qualification checklists on 30-minute discovery calls.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 83,
+      "evidence_score": 70,
+      "priority_score": 78,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 4,
+        "recurrence": 5,
+        "existing_spend": 3,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 5,
+        "audience_accessibility": 4,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T12:12:30.028299+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-account-execs-running-discovery-calls-c-suite-discovery-and-executive-framing-playbook",
+    "type": "opportunity",
+    "market_id": "mkt-sales-and-closing",
+    "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "name": "C-Suite Discovery & Executive Framing Playbook",
+    "description": "AEs lacking deep domain expertise struggle to engage impatient C-level executives who resist standard discovery questions and demand peer-level strategic conversation.",
+    "problem_ids": [
+      "prb-account-execs-running-discovery-calls-difficulty-leading-discovery-calls-due-to-limited-domain-and-product-knowledge",
+      "prb-account-execs-running-discovery-calls-inability-to-hold-effective-discovery-calls-with-executive-and-c-level-buyers"
+    ],
+    "problem_count": 2,
+    "buyer": "Newly promoted or mid-market Account Executives selling to executive decision-makers",
+    "core_problem": "AEs lacking deep domain expertise struggle to engage impatient C-level executives who resist standard discovery questions and demand peer-level strategic conversation.",
+    "desired_outcome": "Confidently lead executive discovery calls using strategic business framing and domain-specific insights rather than generic product/BANT questions.",
+    "current_solutions": [
+      "Practicing non-product related discovery scenarios with teammates",
+      "AE onboarding programs",
+      "Reviewing recorded discovery calls of top performers",
+      "Executive opening hooks",
+      "Limiting discovery to 2–3 high-level strategic questions"
+    ],
+    "solution_gaps": [
+      "Internal onboarding programs teach product feature specs, not executive business acumen.",
+      "Recorded top-performer calls are difficult to distill into repeatable tactical frameworks.",
+      "Generic opening hooks quickly break down when C-level buyers challenge rep domain knowledge."
+    ],
+    "possible_product": "C-Level Discovery Battlecards & Domain Framing System",
+    "possible_format": [
+      "Playbook",
+      "Executive Question Bank",
+      "Industry Battlecards",
+      "Notion Template"
+    ],
+    "evidence_summary": {
+      "problem_count": 2,
+      "source_count": 8
+    },
+    "source_refs": [
+      "src-4e23c0e8312d",
+      "src-66b5c3a38c94",
+      "src-8dc72fe14de0",
+      "src-8e4f5e108acb",
+      "src-ab2882bc2737",
+      "src-af3d8ae10d25",
+      "src-c190510f9438",
+      "src-faa8c1b39a9e"
+    ],
+    "basis": "New and experienced AEs struggle with executive resistance and lack the domain fluency required to run effective C-level discovery without falling back on basic scripts.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 87,
+      "evidence_score": 70,
+      "priority_score": 80,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 5,
+        "recurrence": 4,
+        "existing_spend": 4,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 5,
+        "audience_accessibility": 4,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T12:12:30.028354+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-account-execs-running-discovery-calls-5-minute-pre-call-discovery-research-and-prep-system",
+    "type": "opportunity",
+    "market_id": "mkt-sales-and-closing",
+    "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "name": "5-Minute Pre-Call Discovery Research & Prep System",
+    "description": "Thorough pre-call research takes up to an hour per meeting, making comprehensive discovery preparation unsustainable for AEs managing high call volume.",
+    "problem_ids": [
+      "prb-account-execs-running-discovery-calls-excessive-time-required-for-pre-call-discovery-preparation"
+    ],
+    "problem_count": 1,
+    "buyer": "High-volume B2B Account Executives and SDRs/BDRs",
+    "core_problem": "Thorough pre-call research takes up to an hour per meeting, making comprehensive discovery preparation unsustainable for AEs managing high call volume.",
+    "desired_outcome": "Extract strategic account insights and tailored discovery triggers in under 5 minutes per meeting without sacrificing quality.",
+    "current_solutions": [
+      "AI tools for discovery call preparation",
+      "Pre-call research templates and prep sheets",
+      "Manual LinkedIn profile and company lookup"
+    ],
+    "solution_gaps": [
+      "AI summaries often produce generic fluff rather than actionable discovery questions.",
+      "Manual research takes too long and leads to prep burn-out.",
+      "Existing prep sheets lack structured 5-minute timeboxes and rapid-extraction checklists."
+    ],
+    "possible_product": "5-Minute Pre-Call Research OS & AI Prompt Vault",
+    "possible_format": [
+      "Notion OS",
+      "Prompt Database",
+      "Workflow Checklist",
+      "Cheat Sheet"
+    ],
+    "evidence_summary": {
+      "problem_count": 1,
+      "source_count": 4
+    },
+    "source_refs": [
+      "src-14322681bce5",
+      "src-63abb5518920",
+      "src-e61b89aa50bd",
+      "src-f491f6cbc256"
+    ],
+    "basis": "AEs spending up to 60 minutes preparing for a single discovery call require lightweight, systematic workflows to keep prep sustainable.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 83,
+      "evidence_score": 70,
+      "priority_score": 78,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 4,
+        "recurrence": 5,
+        "existing_spend": 3,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 5,
+        "audience_accessibility": 4,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T12:12:30.028383+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  },
+  {
+    "id": "opp-account-execs-running-discovery-calls-ae-mock-discovery-call-interview-survival-kit",
+    "type": "opportunity",
+    "market_id": "mkt-sales-and-closing",
+    "submarket_id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "audience_id": "aud-sales-and-closing-b2b-and-saas-sales-account-execs-running-discovery-calls",
+    "name": "AE Mock Discovery Call Interview Survival Kit",
+    "description": "Candidates face high anxiety and fail mock discovery calls during AE job interviews due to a lack of realistic practice scenarios and clear evaluation standards.",
+    "problem_ids": [
+      "prb-account-execs-running-discovery-calls-difficulty-preparing-for-and-passing-mock-discovery-call-job-interviews"
+    ],
+    "problem_count": 1,
+    "buyer": "Job-seeking Account Executives and SDRs aiming for AE promotion",
+    "core_problem": "Candidates face high anxiety and fail mock discovery calls during AE job interviews due to a lack of realistic practice scenarios and clear evaluation standards.",
+    "desired_outcome": "Pass mock discovery call interviews with high confidence by presenting polished agendas, structured discovery flows, and strong next-step closes.",
+    "current_solutions": [
+      "AE interview training programs and YouTube guides",
+      "Mock call preparation slides setting agendas and objectives"
+    ],
+    "solution_gaps": [
+      "YouTube guides offer broad advice without actionable roleplay practice prompts.",
+      "Generic presentation slides don't teach how to handle unexpected interviewer curveballs during the mock call.",
+      "Lack of realistic practice buyer personas and scoring rubrics."
+    ],
+    "possible_product": "Mock Discovery Interview Prep & Roleplay Master Kit",
+    "possible_format": [
+      "Interactive Practice Scenarios",
+      "Self-Scoring Rubric",
+      "Slide Templates",
+      "Video Walkthroughs"
+    ],
+    "evidence_summary": {
+      "problem_count": 1,
+      "source_count": 4
+    },
+    "source_refs": [
+      "src-03ae48c968ca",
+      "src-185e4686f208",
+      "src-50c25963f8ba",
+      "src-9218b954017e"
+    ],
+    "basis": "Candidates consistently express high anxiety and failure rates on mock discovery call interview stages in tech sales hiring pipelines.",
+    "confidence": "HIGH",
+    "basic_score": {
+      "commercial_score": 83,
+      "evidence_score": 70,
+      "priority_score": 78,
+      "priority_classification": "HIGH_PRIORITY",
+      "dimensions": {
+        "pain_importance": 5,
+        "recurrence": 3,
+        "existing_spend": 4,
+        "solution_dissatisfaction": 4,
+        "digital_product_fit": 5,
+        "audience_accessibility": 4,
+        "evidence_confidence": "HIGH"
+      },
+      "evidence_confidence": "HIGH"
+    },
+    "creator_density": "UNKNOWN",
+    "research_generated": true,
+    "origin": "dynamic_research",
+    "researched_at": "2026-09-12T12:12:30.028407+00:00",
+    "research_status": "unresearched",
+    "status": "active"
+  }
+]

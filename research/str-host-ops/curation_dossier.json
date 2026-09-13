@@ -1,0 +1,210 @@
+{
+  "opportunity_id": "str-host-ops",
+  "generated_at": "2026-09-11T11:33:22.608751+00:00",
+  "product_concept": "A focused fill-in templates / scripts that helps first-year short-term-rental hosts launch looking professional and avoid rookie mistakes that cost reviews.",
+  "product_format": "Bundle: fill-in templates / scripts + guide / checklist",
+  "transformation": {
+    "from_state": "New hosts don't know what to include in welcome books, cleaning checklists, house rules or checkout flow",
+    "to_state": "To: Launch looking professional and avoid rookie mistakes that cost reviews",
+    "promise": "Get to 'Launch looking professional and avoid rookie mistakes that cost reviews.' without the usual guesswork.",
+    "core_problem": "New hosts don't know what to include in welcome books, cleaning checklists, house rules or checkout flow.",
+    "desired_outcome": "Launch looking professional and avoid rookie mistakes that cost reviews.",
+    "basis": "evidence-backed"
+  },
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: Launch looking professional and avoid rookie mistakes that cost reviews.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: what goes in a welcome book",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: cleaning/turnover checklist",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-3",
+      "statement": "Resolve: guest message scripts",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-4",
+      "statement": "Resolve: checkout instructions",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "editable templates + copy-paste scripts",
+      "type": "asset",
+      "format": "editable fill-in template",
+      "purpose": "Asset that helps the buyer: editable templates + copy-paste scripts.",
+      "maps_to_jobs": [
+        "job-3"
+      ]
+    },
+    {
+      "id": "cmp-2",
+      "name": "short decision-tree guide + one-page checklist",
+      "type": "asset",
+      "format": "concise reference guide page",
+      "purpose": "Asset that helps the buyer: short decision-tree guide + one-page checklist.",
+      "maps_to_jobs": [
+        "job-2"
+      ]
+    }
+  ],
+  "asset_requirements": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "editable templates + copy-paste scripts",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-2",
+      "component_id": "cmp-2",
+      "for": "short decision-tree guide + one-page checklist",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ],
+  "quality_requirements": {
+    "global": [
+      {
+        "req": "Time-to-first-value under ~15 minutes; usable without a manual.",
+        "basis": "inferred",
+        "source": "buyer-effort principle"
+      },
+      {
+        "req": "Honor exclusions verbatim (see exclusions list); scope stays tight.",
+        "basis": "evidence-backed",
+        "source": "brief.exclude"
+      }
+    ],
+    "exclusions_preserved": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ]
+  },
+  "buyer_effort": {
+    "overall_target": "Buyer reaches first useful result in one sitting, no setup call.",
+    "per_component": [
+      {
+        "component_id": "cmp-1",
+        "name": "editable templates + copy-paste scripts",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-2",
+        "name": "short decision-tree guide + one-page checklist",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      }
+    ],
+    "basis": "inferred"
+  },
+  "production_sequence": [
+    {
+      "order": 1,
+      "step": "Build: editable templates + copy-paste scripts",
+      "component_id": "cmp-1",
+      "format": "editable fill-in template",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Build: short decision-tree guide + one-page checklist",
+      "component_id": "cmp-2",
+      "format": "concise reference guide page",
+      "depends_on": [
+        1
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 3,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1,
+        2
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ],
+  "verification_requirements": [],
+  "unresolved_questions": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation",
+    "Price not finalized — brief price is Unknown."
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ],
+    "risks_unknowns": [
+      "Prevalence UNKNOWN",
+      "Creator ecosystem UNKNOWN",
+      "Willingness-to-pay needs primary-community confirmation"
+    ],
+    "differentiation": [
+      "operational systems & message scripts (market is saturated on pretty welcome books)",
+      "reliable no-Canva-headache delivery format"
+    ],
+    "evidence_requirements": [
+      {
+        "label": "marketplace",
+        "url": null,
+        "note": "breadth observed in search",
+        "status": "must be retrieved/verified later"
+      }
+    ]
+  },
+  "basis_summary": {
+    "component_requirements_evidence_backed": 0,
+    "component_requirements_inferred": 0,
+    "note": "evidence-backed = traceable to a Phase-8 brief field; inferred = design decision made by the curation engine."
+  },
+  "handoff": {
+    "consumes": "product_architecture.json + component_specs.json + asset_requirements.json + quality_requirements.json + production_plan.json",
+    "for": "Phase 10 Product Builder",
+    "must_respect": [
+      "verification_requirements",
+      "carried_forward.exclusions",
+      "quality_requirements",
+      "unresolved_questions"
+    ]
+  }
+}

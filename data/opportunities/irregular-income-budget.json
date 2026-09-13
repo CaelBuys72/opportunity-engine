@@ -1,0 +1,98 @@
+{
+  "id": "irregular-income-budget",
+  "title": "Budgeting for irregular / gig income",
+  "industry_id": "personal-finance",
+  "submarket_id": "budgeting",
+  "origin": "seed-run",
+  "audience": "people with irregular or gig income",
+  "core_problem": "Standard monthly budgets assume a steady paycheck; free templates don't handle variable income.",
+  "desired_outcome": "Smooth variable income into predictable spending & savings.",
+  "related_problems": [
+    "income varies every month",
+    "don't know what's safe to spend",
+    "generic budgets don't fit freelancers"
+  ],
+  "problems": [
+    {
+      "id": "prob-gap",
+      "statement": "Free-sharing culture; paid tool needs a distinct angle.",
+      "symptoms": [
+        "r/povertyfinance top threads are people GIVING AWAY budgeting spreadsheets free (dozens of upvotes) — strong free-sharing norm."
+      ],
+      "evidence_ids": [
+        "ev-if-1"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "ev-if-1"
+  ],
+  "community_ids": [
+    "r-povertyfinance"
+  ],
+  "existing_solutions": [
+    "YNAB",
+    "countless free spreadsheets",
+    "finance-influencer templates"
+  ],
+  "solution_gaps": [
+    "irregular-income-specific logic",
+    "differentiation vs strong free-sharing culture"
+  ],
+  "creator_ecosystem": "unknown — not measured",
+  "digital_product_fit": "Possible, but base budgeting is commoditized & given away free; needs a sharp sub-angle.",
+  "source_urls": [
+    "https://www.reddit.com/r/povertyfinance/"
+  ],
+  "score": {
+    "factors": {
+      "demand_evidence": {
+        "score": 6,
+        "basis": "observed",
+        "rationale": "Recurring topic, large audience.",
+        "weight": 20
+      },
+      "pain_importance": {
+        "score": 7,
+        "basis": "inferred",
+        "rationale": "Financial stress, high-emotion.",
+        "weight": 15
+      },
+      "clear_outcome": {
+        "score": 6,
+        "basis": "inferred",
+        "rationale": "'Predictable spending from variable income'.",
+        "weight": 10
+      },
+      "existing_wtp": {
+        "score": 3,
+        "basis": "observed",
+        "rationale": "Free-sharing culture; base concept given away.",
+        "weight": 15
+      },
+      "solution_gap": {
+        "score": 5,
+        "basis": "inferred",
+        "rationale": "Only a sub-niche angle is open.",
+        "weight": 15
+      },
+      "creator_density": {
+        "basis": "unknown",
+        "rationale": "No creator data collected.",
+        "weight": 15,
+        "score": null
+      },
+      "digital_product_fit": {
+        "score": 6,
+        "basis": "inferred",
+        "rationale": "Spreadsheet fits, but commoditized.",
+        "weight": 10
+      }
+    },
+    "overall": 54.7,
+    "confidence": "MEDIUM",
+    "confidence_reason": "2/7 factors observed, 1/7 unknown; demand=observed, WTP=observed.",
+    "weight_unknown_pct": 15
+  },
+  "status": "candidate"
+}

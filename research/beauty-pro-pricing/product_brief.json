@@ -1,0 +1,66 @@
+{
+  "pocket_id": "beauty-pro-pricing",
+  "product_concept": "A focused calculator / spreadsheet that helps independent nail / lash / brow technicians price services profitably and confidently without losing clients.",
+  "target_customer": "independent nail / lash / brow technicians",
+  "core_problem": "Trained in technique, not business; pricing is guesswork and they fear raising prices.",
+  "related_problems": [
+    "I don't know what to charge",
+    "scared to raise my prices",
+    "clients keep negotiating",
+    "I think I'm undercharging",
+    "don't know my real profit margin"
+  ],
+  "desired_outcome": "Price services profitably and confidently without losing clients.",
+  "core_transformation": "From: Trained in technique, not business; pricing is guesswork and they fear raising prices.  →  To: Price services profitably and confidently without losing clients.",
+  "product_promise": "Get to 'Price services profitably and confidently without losing clients.' without the usual guesswork.",
+  "product_format": "calculator / spreadsheet",
+  "why_this_format": "Chosen from problem language, not by default. Signal scores: {'calculator / spreadsheet': 10, 'fill-in templates / scripts': 1, 'planner / schedule': 0, 'guide / checklist': 3}.",
+  "product_structure": [
+    "auto-calculating spreadsheet with worked example"
+  ],
+  "required_sections": [],
+  "required_tools": [],
+  "required_templates": [],
+  "required_worksheets": [],
+  "bonus_assets": [],
+  "exclude": [
+    "Padding/filler theory",
+    "Anything freely available and already good enough"
+  ],
+  "existing_alternatives": [
+    "Etsy nail pricing calculators ($3.50-11)",
+    "generic pricing calculators ($1)",
+    "price-list flyer designs",
+    "booking SaaS (GlossGenius, Vagaro)"
+  ],
+  "differentiation": [
+    "trade-specific consumables-per-service cost math (gel/acrylic/lash-fan usage)",
+    "pricing confidence/scripts, not just a calculator"
+  ],
+  "price_range": "Unknown — infer from analogous products before pricing",
+  "price_rationale": "Unknown pricing evidence; do not set a price until validated.",
+  "key_customer_language": [
+    "I don't know what to charge",
+    "scared to raise my prices",
+    "clients keep negotiating",
+    "I think I'm undercharging",
+    "don't know my real profit margin"
+  ],
+  "key_objections": [
+    "I can find this free",
+    "Templates never fit my exact case",
+    "I'll deal with it later"
+  ],
+  "key_buying_motivations": [
+    "Save time",
+    "Reduce anxiety/uncertainty",
+    "Look professional / avoid costly mistakes"
+  ],
+  "evidence_summary": "3 observed + 1 inferred/other claims support a recurring problem for independent nail / lash / brow technicians. Gap: trade-specific consumables-per-service cost math (gel/acrylic/lash-fan usage); pricing confidence/scripts, not just a calculator.",
+  "confidence": "MEDIUM",
+  "risks_unknowns": [
+    "Prevalence UNKNOWN",
+    "Creator ecosystem UNKNOWN",
+    "Willingness-to-pay needs primary-community confirmation"
+  ]
+}

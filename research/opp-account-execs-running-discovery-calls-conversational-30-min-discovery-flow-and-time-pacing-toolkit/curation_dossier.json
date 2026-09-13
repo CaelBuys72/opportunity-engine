@@ -1,0 +1,565 @@
+{
+  "opportunity_id": "opp-account-execs-running-discovery-calls-conversational-30-min-discovery-flow-and-time-pacing-toolkit",
+  "generated_at": "2026-09-12T12:14:26.276720+00:00",
+  "product_concept": "A focused guide / checklist that helps Account execs running discovery calls run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+  "product_format": "Bundle: guide + template + scripts + workflow",
+  "transformation": {
+    "from_state": "Account execs running discovery calls face a related cluster of problems around conversational 30-min discovery flow & time pacing toolkit — e.g. Insufficient call time to complete thorough discovery and establish next steps, Discovery calls feeling like interrogations rather than natural business conversations",
+    "to_state": "To: Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled",
+    "promise": "Get to 'Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.' without the usual guesswork.",
+    "core_problem": "Account execs running discovery calls face a related cluster of problems around conversational 30-min discovery flow & time pacing toolkit — e.g. Insufficient call time to complete thorough discovery and establish next steps, Discovery calls feeling like interrogations rather than natural business conversations.",
+    "desired_outcome": "Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+    "basis": "evidence-backed"
+  },
+  "jobs_to_be_done": [
+    {
+      "id": "job-0",
+      "statement": "Achieve: Run fluid, 20-to-30-minute discovery calls that uncover high-value pain and lock in concrete next steps without making prospects feel grilled.",
+      "source": "desired_outcome",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-1",
+      "statement": "Resolve: Account Executives struggle to complete effective discovery within standard 30-minute call windows, running out of time before understanding deep buyer pain or setting next steps.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    },
+    {
+      "id": "job-2",
+      "statement": "Resolve: Discovery calls often turn into dynamic interrogations or robotic question checklists, annoying buyers and stalling conversations.",
+      "source": "related_problem",
+      "basis": "evidence-backed"
+    }
+  ],
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "short decision-tree guide",
+      "type": "asset",
+      "format": "concise reference guide page",
+      "purpose": "Asset that helps the buyer: short decision-tree guide.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-2",
+      "name": "editable fill-in templates",
+      "type": "asset",
+      "format": "editable fill-in template",
+      "purpose": "Asset that helps the buyer: editable fill-in templates.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-3",
+      "name": "copy-paste scripts",
+      "type": "asset",
+      "format": "supporting asset",
+      "purpose": "Asset that helps the buyer: copy-paste scripts.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    },
+    {
+      "id": "cmp-4",
+      "name": "step-by-step workflow / SOP",
+      "type": "asset",
+      "format": "supporting asset",
+      "purpose": "Asset that helps the buyer: step-by-step workflow / SOP.",
+      "maps_to_jobs": [
+        "job-0"
+      ]
+    }
+  ],
+  "asset_requirements": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "short decision-tree guide",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-2",
+      "component_id": "cmp-2",
+      "for": "editable fill-in templates",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-3",
+      "component_id": "cmp-3",
+      "for": "copy-paste scripts",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-4",
+      "component_id": "cmp-4",
+      "for": "step-by-step workflow / SOP",
+      "deliverable": "Supporting file",
+      "tooling": "tbd",
+      "notes": "",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ],
+  "quality_requirements": {
+    "global": [
+      {
+        "req": "Time-to-first-value under ~15 minutes; usable without a manual.",
+        "basis": "inferred",
+        "source": "buyer-effort principle"
+      },
+      {
+        "req": "Honor exclusions verbatim (see exclusions list); scope stays tight.",
+        "basis": "evidence-backed",
+        "source": "brief.exclude"
+      }
+    ],
+    "exclusions_preserved": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ]
+  },
+  "buyer_effort": {
+    "overall_target": "Buyer reaches first useful result in one sitting, no setup call.",
+    "per_component": [
+      {
+        "component_id": "cmp-1",
+        "name": "short decision-tree guide",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-2",
+        "name": "editable fill-in templates",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-3",
+        "name": "copy-paste scripts",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      },
+      {
+        "component_id": "cmp-4",
+        "name": "step-by-step workflow / SOP",
+        "effort_level": "medium",
+        "effort_minimizers": [
+          "Keep to one screen / one task"
+        ],
+        "basis": "inferred"
+      }
+    ],
+    "basis": "inferred"
+  },
+  "production_sequence": [
+    {
+      "order": 1,
+      "step": "Build: short decision-tree guide",
+      "component_id": "cmp-1",
+      "format": "concise reference guide page",
+      "depends_on": [],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 2,
+      "step": "Build: editable fill-in templates",
+      "component_id": "cmp-2",
+      "format": "editable fill-in template",
+      "depends_on": [
+        1
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 3,
+      "step": "Build: copy-paste scripts",
+      "component_id": "cmp-3",
+      "format": "supporting asset",
+      "depends_on": [
+        2
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 4,
+      "step": "Build: step-by-step workflow / SOP",
+      "component_id": "cmp-4",
+      "format": "supporting asset",
+      "depends_on": [
+        3
+      ],
+      "verification_gate": null,
+      "basis": "inferred"
+    },
+    {
+      "order": 5,
+      "step": "Assemble bundle + QA against quality_requirements.json",
+      "component_id": null,
+      "depends_on": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "verification_gate": "All flagged components verified",
+      "basis": "inferred"
+    }
+  ],
+  "verification_requirements": [],
+  "unresolved_questions": [
+    "Is the problem recurring and painful enough to pay to solve?: PARTIAL",
+    "Is a digital product the right form, or is this a service/free-info problem?: PARTIAL",
+    "What is the single most useful asset we could ship?: PARTIAL",
+    "What price will the audience tolerate, and on what evidence?: UNKNOWN",
+    "Price not finalized — brief price is Unknown.",
+    "Components mapped only to the overall outcome (weak job fit): ['short decision-tree guide', 'editable fill-in templates', 'copy-paste scripts', 'step-by-step workflow / SOP']"
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ],
+    "risks_unknowns": [
+      "Is the problem recurring and painful enough to pay to solve?: PARTIAL",
+      "Is a digital product the right form, or is this a service/free-info problem?: PARTIAL",
+      "What is the single most useful asset we could ship?: PARTIAL",
+      "What price will the audience tolerate, and on what evidence?: UNKNOWN"
+    ],
+    "differentiation": [
+      "Lack of time-pacing framework to balance rapport, thorough pain quantification, and clear next steps within standard meeting lengths",
+      "Lack of actionable frameworks to transition naturally from surface-level pain to root-cause probing without turning into an interrogation"
+    ],
+    "evidence_requirements": [
+      {
+        "label": "5 Signs Your Sales Team's Discovery Calls Are Killing ...",
+        "url": "https://www.linkedin.com/posts/jamesneilson_the-best-salespeople-ive-ever-managed-had-activity-7447630134817251329-pK5D",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to run a discovery call with C-level executives? I ... - LinkedIn",
+        "url": "https://www.linkedin.com/posts/vnadzhafov_how-to-run-a-discovery-call-with-c-level-activity-7161629838271791104-uFLR",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "5 Steps to Ace Discovery Calls Like Top AEs - LinkedIn",
+        "url": "https://www.linkedin.com/posts/mike-gallardo-62a55b29_how-to-run-discovery-calls-better-than-99-activity-7414682397469749248-vWBy",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to Run The Perfect Discovery Call (Without Feeling Salesy)",
+        "url": "https://www.youtube.com/watch?v=FAm9HLkhVsI",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "The Ultimate Guide to Discovery Calls - Realm",
+        "url": "https://www.withrealm.com/blog/discovery-call",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Why Discovery Calls Are Essential for Coaches - LinkedIn",
+        "url": "https://www.linkedin.com/posts/tanyabusinesscoachlondon_the-i-dont-take-discovery-calls-anymore-activity-7369802864078102528-DK0F",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Why Your Discovery Conversations Feel Like Awkward Dates",
+        "url": "https://conversedigital.com/ad-pr-agency-business-development-strategy-tactics/sales-discovery-calls-awkward",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to Run a Discovery Call That Converts — Without Feeling Salesy",
+        "url": "https://www.wendymccallum.com/blog/how-to-run-a-kickass-discovery-call-that-converts-without-feeling-salesy",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "The Ultimate Guide to Discovery Calls: Tips and Best Practices",
+        "url": "https://www.cognism.com/blog/discovery-calls-101",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "What does the typical day look like for an account executive ... - Quora",
+        "url": "https://www.quora.com/What-does-the-typical-day-look-like-for-an-account-executive-salesperson-at-a-SaaS-startup-How-much-of-it-is-prospecting-cold-emails-or-cold-calls-reaching-out-through-network-giving-demos-trying-to-close-deals-etc",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Warning: Don't Have Your Discovery Call Without Reading This First",
+        "url": "https://www.salesforce.com/blog/sales/what-is-a-discovery-call/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How To Run The PERFECT Discovery Call (in 480 Seconds)",
+        "url": "https://www.youtube.com/watch?v=qv8ehJUzM0g",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to Run a Great Discovery Call: A Step-by-Step Guide",
+        "url": "https://www.linkedin.com/posts/kyleasay_discovery-calls-end-with-can-you-send-me-activity-7353047761446989827-0WUS",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Discovery Calls: The Definitive Guide for Sales Reps - Highspot",
+        "url": "https://www.highspot.com/blog/discovery-call/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How is everyone preparing for your discovery calls? : r/sales - Reddit",
+        "url": "https://www.reddit.com/r/sales/comments/1g60hwy/how_is_everyone_preparing_for_your_discovery_calls/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to Run a Discovery Call [with Agenda] | #samsales Consulting",
+        "url": "https://www.samsalesconsulting.com/resource/the-perfect-discovery-call/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to Run a Discovery Call in Tech Sales (Step-by-Step Framework)",
+        "url": "https://www.higherlevels.com/blog/discovery-call-step-by-step-framework-tech-sales",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Discovery Calls: How to Run Them and Win More Deals",
+        "url": "https://pipeline.zoominfo.com/sales/ultimate-guide-to-discovery-calls",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "What Is a Discovery Call? A Sales Leader's Guide to Success",
+        "url": "https://www.outreach.ai/resources/blog/what-is-a-discovery-call",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "A free discovery call template (with tips on how to customize it)",
+        "url": "https://www.dialpad.com/blog/discovery-call-templates/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Client Discovery Call Sheet Template | Notion Marketplace",
+        "url": "https://www.notion.com/templates/client-discovery-call-sheet?srsltid=AfmBOop9goA35QqeEZMYwQwbO3Oz4lpkVX9acdBWXwWjMhQ8IwRCkJtL",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to Run an Effective Discovery Call [Post-Discovery Workflow ...",
+        "url": "https://www.flowla.com/blog/how-we-run-discovery-calls-discovery-call-template",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "The Ultimate Discovery Call Prep Sheet & Question Guide",
+        "url": "https://www.30mpc.com/newsletter/discovery-call-prep-sheet-discovery-guide",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Any AE able to give me advice for a mock discovery call I have ...",
+        "url": "https://www.reddit.com/r/sales/comments/1jez6fk/any_ae_able_to_give_me_advice_for_a_mock/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Best 10 Customer Discovery Templates for Account Executives",
+        "url": "https://www.notion.com/templates/collections/best-10-customer-discovery-templates-for-account-executives?srsltid=AfmBOooVD3zZP8wo_i7uJrosmotD4IxfjIhkA8gpCUb15hFQJEp9mdTM",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Discovery call notes template: Capture pain, stakeholders, and next ...",
+        "url": "https://www.granola.ai/blog/discovery-call-notes-template-capture-pain-stakeholders-and-next-steps-in-one-page",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to Structure The Perfect Discovery Call (Sell Playbook) - YouTube",
+        "url": "https://www.youtube.com/watch?v=AzRZqz01hc0",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "The Ultimate Discovery Call Guide for B2B Sales in 2026",
+        "url": "https://www.youtube.com/watch?v=nd8kY2xsAuQ",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "AI tools for Discovery Call Prep?",
+        "url": "https://www.reddit.com/r/sales/comments/1fz3nzw/ai_tools_for_discovery_call_prep/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Discovery call cheat codes for account executives",
+        "url": "https://www.linkedin.com/posts/chrisorlob_13-cheat-codes-for-discovery-calls-that-sell-activity-7338928116351868928-y3c0",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to run a killer discovery call. | Mike Gallardo",
+        "url": "https://www.linkedin.com/posts/mike-gallardo-62a55b29_how-to-run-a-killer-discovery-call-9-tips-activity-7374079727822815232-b63V",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "whats a good discovery call : r/sales",
+        "url": "https://www.reddit.com/r/sales/comments/1al3q43/whats_a_good_discovery_call/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to Run a Successful Sales Discovery Call",
+        "url": "https://www.rainsalestraining.com/blog/how-to-run-a-successful-sales-discovery-call",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How the hell do you do discovery in 30 minutes? : r/sales - Reddit",
+        "url": "https://www.reddit.com/r/sales/comments/zwn0jp/how_the_hell_do_you_do_discovery_in_30_minutes/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Discovery Calls Fail in First 3 Minutes Due to Listening Failures",
+        "url": "https://www.linkedin.com/posts/dennisteichmann_most-discovery-calls-fail-in-the-first-3-activity-7493183027422928897-92YG",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "I remember extensively preparing for a discovery meeting ... - LinkedIn",
+        "url": "https://www.linkedin.com/posts/kyleasay_i-remember-extensively-preparing-for-a-discovery-activity-7086705677200470016-L5vK",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Why Discovery Calls Fail: A Guide for Reps | Marcus Chan posted ...",
+        "url": "https://www.linkedin.com/posts/marcuschanmba_most-discovery-calls-are-worthless-small-activity-7353529281806823426-EZZ4",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "30MPC Compilation: Discovery Call Tips - YouTube",
+        "url": "https://www.youtube.com/watch?v=jgcvi12oY2U",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Stop Asking Too Many Discovery Questions in Sales Calls - LinkedIn",
+        "url": "https://www.linkedin.com/posts/dpriemer_i-think-salespeople-ask-too-many-discovery-activity-7497651576862433280-aMnf",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Your Discovery Script is Hurting Your Deals. Here's Why.",
+        "url": "https://cerebralselling.com/sales-discovery-script-hurting-deals/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "17 Best Discovery Call Questions to Qualify Leads Faster - Reevo",
+        "url": "https://reevo.ai/blog/discovery-call-questions",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Your Discovery Calls Are Annoying Buyers - Matthew Barton - Medium",
+        "url": "https://medium.com/@matthew.barton/your-discovery-calls-are-annoying-buyers-435cb56c5910",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Do you make these six (common) discovery call mistakes? 1. Asking ...",
+        "url": "https://www.linkedin.com/posts/chrisorlob_salespeople-do-you-make-these-six-common-activity-7133938560260345856-Uo53",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Your Discovery Call Framework Is 10 Years Out of Date | Ep 332",
+        "url": "https://www.youtube.com/watch?v=Qg1bk2Ob4A8",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "What's a 'red flag' during a discovery call that instantly tells you they ...",
+        "url": "https://www.reddit.com/r/sales/comments/1kojkbi/whats_a_red_flag_during_a_discovery_call_that/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "Everything You Need to Run a Perfect Discovery Call - YouTube",
+        "url": "https://www.youtube.com/watch?v=y0H6G7toc9s&vl=en",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "The Anatomy of a Perfect Discovery Call | Winning by Design Blog",
+        "url": "https://winningbydesign.com/resources/blog/the-anatomy-of-a-perfect-discovery-call/",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      },
+      {
+        "label": "How to Ace the Discovery Call [with 17 Effective Questions] - Acquire",
+        "url": "https://acquire.io/blog/discovery-call",
+        "note": "executed research",
+        "status": "must be retrieved/verified later"
+      }
+    ]
+  },
+  "basis_summary": {
+    "component_requirements_evidence_backed": 0,
+    "component_requirements_inferred": 0,
+    "note": "evidence-backed = traceable to a Phase-8 brief field; inferred = design decision made by the curation engine."
+  },
+  "handoff": {
+    "consumes": "product_architecture.json + component_specs.json + asset_requirements.json + quality_requirements.json + production_plan.json",
+    "for": "Phase 10 Product Builder",
+    "must_respect": [
+      "verification_requirements",
+      "carried_forward.exclusions",
+      "quality_requirements",
+      "unresolved_questions"
+    ]
+  }
+}

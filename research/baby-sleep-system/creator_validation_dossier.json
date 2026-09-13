@@ -1,0 +1,211 @@
+{
+  "opportunity_id": "baby-sleep-system",
+  "generated_at": "2026-09-11T10:17:31.676634+00:00",
+  "product_concept": "A focused calculator / spreadsheet that helps sleep-deprived parents of 0-18 month infants predictable naps/nights and restored parental sleep.",
+  "target_audience": "sleep-deprived parents of 0-18 month infants",
+  "verdict": {
+    "opportunity_id": "baby-sleep-system",
+    "verdict": "NEEDS_RESEARCH",
+    "confidence": "LOW",
+    "reason": "No creator candidates available (no live retriever, no manual import). Nothing can be validated.",
+    "creator_count": 0,
+    "qualified_creator_count": 0,
+    "highly_qualified_count": 0,
+    "strongest_creators": [],
+    "strongest_content_signals": [],
+    "supporting_evidence": [],
+    "contradictory_evidence": [
+      "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+    ],
+    "unknowns": [
+      "low_relevant_engagement (no creator candidates to evaluate)",
+      "audience_prefers_free (no creator candidates to evaluate)",
+      "creators_sell_competing (no creator candidates to evaluate)",
+      "audience_mismatch (no creator candidates to evaluate)",
+      "views_without_relevance (no creator candidates to evaluate)",
+      "fragmented_audience (no creator candidates to evaluate)",
+      "wont_promote_third_party (no creator candidates to evaluate)",
+      "demand_without_creators (no creator candidates to evaluate)",
+      "100% of scoring weight is UNKNOWN."
+    ],
+    "major_risks": [
+      "Prevalence UNKNOWN",
+      "Creator ecosystem UNKNOWN",
+      "Willingness-to-pay needs primary-community confirmation"
+    ],
+    "next_action": "Import real creators to data/creator_candidates/<id>.json (or wire live retrieval), then re-run."
+  },
+  "score": {
+    "dimensions": {
+      "audience_alignment": {
+        "score": null,
+        "weight": 20,
+        "basis": "unknown"
+      },
+      "problem_alignment": {
+        "score": null,
+        "weight": 20,
+        "basis": "unknown"
+      },
+      "content_alignment": {
+        "score": null,
+        "weight": 15,
+        "basis": "unknown"
+      },
+      "relevant_view_evidence": {
+        "score": null,
+        "weight": 15,
+        "basis": "unknown"
+      },
+      "creator_density": {
+        "score": null,
+        "weight": 15,
+        "basis": "unknown"
+      },
+      "approachability": {
+        "score": null,
+        "weight": 5,
+        "basis": "unknown"
+      },
+      "monetization_signal": {
+        "score": null,
+        "weight": 5,
+        "basis": "unknown"
+      },
+      "product_content_fit": {
+        "score": null,
+        "weight": 5,
+        "basis": "unknown"
+      }
+    },
+    "overall": 0.0,
+    "weight_unknown_pct": 100,
+    "confidence": "LOW"
+  },
+  "distribution_density": {
+    "creator_count": 0,
+    "qualified_creator_count": 0,
+    "highly_qualified_count": 0,
+    "relevant_content_count": 0,
+    "density_score": 0,
+    "basis": "inferred",
+    "rationale": "Counts are observed for the imported set, but representativeness of the true creator ecosystem is inferred (import is not a census)."
+  },
+  "content_relevance": {
+    "counts": {
+      "exact": 0,
+      "adjacent": 0,
+      "weak": 0,
+      "irrelevant": 0,
+      "unknown": 0
+    },
+    "total_content_items": 0,
+    "basis": "unknown"
+  },
+  "audience_alignment": {
+    "audience_fit_mean": null,
+    "problem_fit_mean": null,
+    "basis": "unknown"
+  },
+  "falsification": {
+    "checklist": {
+      "low_relevant_engagement": "creators discuss topic but relevant content underperforms",
+      "audience_prefers_free": "audience rejects paid products / prefers free info",
+      "creators_sell_competing": "creators already sell competing products",
+      "audience_mismatch": "creator audience differs from the actual buyer",
+      "views_without_relevance": "high views but low problem relevance",
+      "fragmented_audience": "audience too fragmented across many micro-niches",
+      "wont_promote_third_party": "creators unlikely to promote a third-party product",
+      "demand_without_creators": "strong problem demand but weak creator ecosystem"
+    },
+    "contradictory_evidence": [
+      {
+        "claim": "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities.",
+        "basis": "inferred",
+        "source": "phase8.analysis.contradictions"
+      }
+    ],
+    "unknown_checks": [
+      {
+        "check": "low_relevant_engagement",
+        "why": "no creator candidates to evaluate"
+      },
+      {
+        "check": "audience_prefers_free",
+        "why": "no creator candidates to evaluate"
+      },
+      {
+        "check": "creators_sell_competing",
+        "why": "no creator candidates to evaluate"
+      },
+      {
+        "check": "audience_mismatch",
+        "why": "no creator candidates to evaluate"
+      },
+      {
+        "check": "views_without_relevance",
+        "why": "no creator candidates to evaluate"
+      },
+      {
+        "check": "fragmented_audience",
+        "why": "no creator candidates to evaluate"
+      },
+      {
+        "check": "wont_promote_third_party",
+        "why": "no creator candidates to evaluate"
+      },
+      {
+        "check": "demand_without_creators",
+        "why": "no creator candidates to evaluate"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Prevalence UNKNOWN",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      },
+      {
+        "risk": "Creator ecosystem UNKNOWN",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      },
+      {
+        "risk": "Willingness-to-pay needs primary-community confirmation",
+        "basis": "evidence-backed",
+        "source": "brief.risks_unknowns"
+      }
+    ]
+  },
+  "retrieval": [
+    {
+      "retriever": "manual-import",
+      "status": "no_data",
+      "note": "No candidate file at data/creator_candidates/baby-sleep-system.json and no live retriever configured. Import real creators to evaluate."
+    }
+  ],
+  "carried_forward": {
+    "exclusions": [
+      "Padding/filler theory",
+      "Anything freely available and already good enough"
+    ],
+    "risks_unknowns": [
+      "Prevalence UNKNOWN",
+      "Creator ecosystem UNKNOWN",
+      "Willingness-to-pay needs primary-community confirmation"
+    ],
+    "phase8_contradictions": [
+      "Falsification pass limited to discovery evidence this run — verify free-info/free-sharing risk in primary communities."
+    ]
+  },
+  "handoff": {
+    "for": "Phase 10+ Creator Outreach (NOT built here)",
+    "consumes": "creator_validation_dossier.json + creator_evaluations.json + distribution_verdict.json",
+    "gate": "Do not begin outreach unless verdict is MODERATE_FIT or STRONG_FIT; NEEDS_RESEARCH/WEAK_FIT must be resolved first.",
+    "must_respect": [
+      "verdict.next_action",
+      "carried_forward.exclusions",
+      "falsification.unknown_checks (resolve before outreach)"
+    ]
+  }
+}

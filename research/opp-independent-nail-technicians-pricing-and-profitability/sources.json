@@ -1,0 +1,13 @@
+{
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "other",
+      "url": null,
+      "tier": 2,
+      "source_type": "other",
+      "accessible": false,
+      "note": "inferred upstream problem (Build 2) — context, not observed evidence"
+    }
+  ]
+}

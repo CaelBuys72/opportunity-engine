@@ -1,0 +1,1838 @@
+[
+  {
+    "id": "sub-freelancing-and-solopreneurship-freelance-operations-and-admin",
+    "type": "submarket",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "name": "Freelance Operations & Admin",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-freelancing-and-solopreneurship-freelance-pricing-and-sales",
+    "type": "submarket",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "name": "Freelance Pricing & Sales",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-freelancing-and-solopreneurship-freelance-taxes-and-money",
+    "type": "submarket",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "name": "Freelance Taxes & Money",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-freelancing-and-solopreneurship-finding-freelance-clients",
+    "type": "submarket",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "name": "Finding Freelance Clients",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-freelancing-and-solopreneurship-freelance-service-delivery",
+    "type": "submarket",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "name": "Freelance Service Delivery",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-freelancing-and-solopreneurship-freelance-positioning-and-niching",
+    "type": "submarket",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "name": "Freelance Positioning & Niching",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-freelancing-and-solopreneurship-freelance-systems-and-tools",
+    "type": "submarket",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "name": "Freelance Systems & Tools",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-freelancing-and-solopreneurship-scaling-beyond-solo",
+    "type": "submarket",
+    "market_id": "mkt-freelancing-and-solopreneurship",
+    "name": "Scaling Beyond Solo",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-small-business-and-entrepreneurship-bookkeeping-and-business-finance",
+    "type": "submarket",
+    "market_id": "mkt-small-business-and-entrepreneurship",
+    "name": "Bookkeeping & Business Finance",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-small-business-and-entrepreneurship-local-service-businesses",
+    "type": "submarket",
+    "market_id": "mkt-small-business-and-entrepreneurship",
+    "name": "Local Service Businesses",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-small-business-and-entrepreneurship-hiring-and-team",
+    "type": "submarket",
+    "market_id": "mkt-small-business-and-entrepreneurship",
+    "name": "Hiring & Team",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-small-business-and-entrepreneurship-business-launch",
+    "type": "submarket",
+    "market_id": "mkt-small-business-and-entrepreneurship",
+    "name": "Business Launch",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-small-business-and-entrepreneurship-local-marketing",
+    "type": "submarket",
+    "market_id": "mkt-small-business-and-entrepreneurship",
+    "name": "Local Marketing",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-small-business-and-entrepreneurship-operations-and-sops",
+    "type": "submarket",
+    "market_id": "mkt-small-business-and-entrepreneurship",
+    "name": "Operations & SOPs",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-small-business-and-entrepreneurship-customer-retention-and-loyalty",
+    "type": "submarket",
+    "market_id": "mkt-small-business-and-entrepreneurship",
+    "name": "Customer Retention & Loyalty",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-small-business-and-entrepreneurship-growth-and-strategy",
+    "type": "submarket",
+    "market_id": "mkt-small-business-and-entrepreneurship",
+    "name": "Growth & Strategy",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-personal-finance-budgeting-and-cashflow",
+    "type": "submarket",
+    "market_id": "mkt-personal-finance",
+    "name": "Budgeting & Cashflow",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-personal-finance-debt-payoff",
+    "type": "submarket",
+    "market_id": "mkt-personal-finance",
+    "name": "Debt Payoff",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-personal-finance-saving-and-sinking-funds",
+    "type": "submarket",
+    "market_id": "mkt-personal-finance",
+    "name": "Saving & Sinking Funds",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-personal-finance-investing-basics",
+    "type": "submarket",
+    "market_id": "mkt-personal-finance",
+    "name": "Investing Basics",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-personal-finance-financial-organization",
+    "type": "submarket",
+    "market_id": "mkt-personal-finance",
+    "name": "Financial Organization",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-personal-finance-credit-and-score",
+    "type": "submarket",
+    "market_id": "mkt-personal-finance",
+    "name": "Credit & Score",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-personal-finance-personal-taxes",
+    "type": "submarket",
+    "market_id": "mkt-personal-finance",
+    "name": "Personal Taxes",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-personal-finance-financial-independence-and-retirement",
+    "type": "submarket",
+    "market_id": "mkt-personal-finance",
+    "name": "Financial Independence & Retirement",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-career-and-job-search-resumes-and-applications",
+    "type": "submarket",
+    "market_id": "mkt-career-and-job-search",
+    "name": "Resumes & Applications",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-career-and-job-search-interviewing",
+    "type": "submarket",
+    "market_id": "mkt-career-and-job-search",
+    "name": "Interviewing",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-career-and-job-search-career-growth",
+    "type": "submarket",
+    "market_id": "mkt-career-and-job-search",
+    "name": "Career Growth",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-career-and-job-search-networking",
+    "type": "submarket",
+    "market_id": "mkt-career-and-job-search",
+    "name": "Networking",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-career-and-job-search-career-transitions",
+    "type": "submarket",
+    "market_id": "mkt-career-and-job-search",
+    "name": "Career Transitions",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-career-and-job-search-salary-and-compensation",
+    "type": "submarket",
+    "market_id": "mkt-career-and-job-search",
+    "name": "Salary & Compensation",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-career-and-job-search-remote-and-flexible-work",
+    "type": "submarket",
+    "market_id": "mkt-career-and-job-search",
+    "name": "Remote & Flexible Work",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-e-commerce-and-online-selling-etsy-and-handmade",
+    "type": "submarket",
+    "market_id": "mkt-e-commerce-and-online-selling",
+    "name": "Etsy & Handmade",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-e-commerce-and-online-selling-print-on-demand",
+    "type": "submarket",
+    "market_id": "mkt-e-commerce-and-online-selling",
+    "name": "Print-on-Demand",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-e-commerce-and-online-selling-amazon-selling",
+    "type": "submarket",
+    "market_id": "mkt-e-commerce-and-online-selling",
+    "name": "Amazon Selling",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-e-commerce-and-online-selling-shopify-dtc",
+    "type": "submarket",
+    "market_id": "mkt-e-commerce-and-online-selling",
+    "name": "Shopify DTC",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-e-commerce-and-online-selling-reselling-and-flipping",
+    "type": "submarket",
+    "market_id": "mkt-e-commerce-and-online-selling",
+    "name": "Reselling & Flipping",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-e-commerce-and-online-selling-email-and-retention-marketing",
+    "type": "submarket",
+    "market_id": "mkt-e-commerce-and-online-selling",
+    "name": "Email & Retention Marketing",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-e-commerce-and-online-selling-subscription-and-membership-commerce",
+    "type": "submarket",
+    "market_id": "mkt-e-commerce-and-online-selling",
+    "name": "Subscription & Membership Commerce",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-content-creation-and-creator-economy-short-form-video",
+    "type": "submarket",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "name": "Short-Form Video",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-content-creation-and-creator-economy-youtube",
+    "type": "submarket",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "name": "YouTube",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-content-creation-and-creator-economy-newsletters",
+    "type": "submarket",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "name": "Newsletters",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-content-creation-and-creator-economy-podcasting",
+    "type": "submarket",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "name": "Podcasting",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-content-creation-and-creator-economy-creator-monetization",
+    "type": "submarket",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "name": "Creator Monetization",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-content-creation-and-creator-economy-audience-growth-and-distribution",
+    "type": "submarket",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "name": "Audience Growth & Distribution",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-content-creation-and-creator-economy-personal-brand-and-authority",
+    "type": "submarket",
+    "market_id": "mkt-content-creation-and-creator-economy",
+    "name": "Personal Brand & Authority",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-real-estate-and-property-buying-a-home",
+    "type": "submarket",
+    "market_id": "mkt-real-estate-and-property",
+    "name": "Buying a Home",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-real-estate-and-property-property-investing",
+    "type": "submarket",
+    "market_id": "mkt-real-estate-and-property",
+    "name": "Property Investing",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-real-estate-and-property-landlording",
+    "type": "submarket",
+    "market_id": "mkt-real-estate-and-property",
+    "name": "Landlording",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-real-estate-and-property-selling-a-home",
+    "type": "submarket",
+    "market_id": "mkt-real-estate-and-property",
+    "name": "Selling a Home",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-real-estate-and-property-real-estate-agents",
+    "type": "submarket",
+    "market_id": "mkt-real-estate-and-property",
+    "name": "Real Estate Agents",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-real-estate-and-property-real-estate-financing-and-deals",
+    "type": "submarket",
+    "market_id": "mkt-real-estate-and-property",
+    "name": "Real Estate Financing & Deals",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-real-estate-and-property-mortgage-and-refinance",
+    "type": "submarket",
+    "market_id": "mkt-real-estate-and-property",
+    "name": "Mortgage & Refinance",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-travel-and-hospitality-short-term-rentals",
+    "type": "submarket",
+    "market_id": "mkt-travel-and-hospitality",
+    "name": "Short-Term Rentals",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-travel-and-hospitality-str-operations",
+    "type": "submarket",
+    "market_id": "mkt-travel-and-hospitality",
+    "name": "STR Operations",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-travel-and-hospitality-travel-planning",
+    "type": "submarket",
+    "market_id": "mkt-travel-and-hospitality",
+    "name": "Travel Planning",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-travel-and-hospitality-digital-nomad-travel",
+    "type": "submarket",
+    "market_id": "mkt-travel-and-hospitality",
+    "name": "Digital Nomad Travel",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-travel-and-hospitality-hospitality-businesses",
+    "type": "submarket",
+    "market_id": "mkt-travel-and-hospitality",
+    "name": "Hospitality Businesses",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-travel-and-hospitality-group-and-event-travel",
+    "type": "submarket",
+    "market_id": "mkt-travel-and-hospitality",
+    "name": "Group & Event Travel",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-travel-and-hospitality-travel-logistics-and-prep",
+    "type": "submarket",
+    "market_id": "mkt-travel-and-hospitality",
+    "name": "Travel Logistics & Prep",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-beauty-and-personal-care-nail-services",
+    "type": "submarket",
+    "market_id": "mkt-beauty-and-personal-care",
+    "name": "Nail Services",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-beauty-and-personal-care-lash-and-brow-services",
+    "type": "submarket",
+    "market_id": "mkt-beauty-and-personal-care",
+    "name": "Lash & Brow Services",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-beauty-and-personal-care-hair-professionals",
+    "type": "submarket",
+    "market_id": "mkt-beauty-and-personal-care",
+    "name": "Hair Professionals",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-beauty-and-personal-care-skincare-and-esthetics",
+    "type": "submarket",
+    "market_id": "mkt-beauty-and-personal-care",
+    "name": "Skincare & Esthetics",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-beauty-and-personal-care-beauty-business-admin",
+    "type": "submarket",
+    "market_id": "mkt-beauty-and-personal-care",
+    "name": "Beauty Business Admin",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-beauty-and-personal-care-makeup-artistry",
+    "type": "submarket",
+    "market_id": "mkt-beauty-and-personal-care",
+    "name": "Makeup Artistry",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-beauty-and-personal-care-beauty-content-and-education",
+    "type": "submarket",
+    "market_id": "mkt-beauty-and-personal-care",
+    "name": "Beauty Content & Education",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-fitness-and-physical-training-personal-training",
+    "type": "submarket",
+    "market_id": "mkt-fitness-and-physical-training",
+    "name": "Personal Training",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-fitness-and-physical-training-online-coaching",
+    "type": "submarket",
+    "market_id": "mkt-fitness-and-physical-training",
+    "name": "Online Coaching",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-fitness-and-physical-training-strength-and-physique",
+    "type": "submarket",
+    "market_id": "mkt-fitness-and-physical-training",
+    "name": "Strength & Physique",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-fitness-and-physical-training-running-and-endurance",
+    "type": "submarket",
+    "market_id": "mkt-fitness-and-physical-training",
+    "name": "Running & Endurance",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-fitness-and-physical-training-home-and-bodyweight-fitness",
+    "type": "submarket",
+    "market_id": "mkt-fitness-and-physical-training",
+    "name": "Home & Bodyweight Fitness",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-fitness-and-physical-training-group-fitness-and-studios",
+    "type": "submarket",
+    "market_id": "mkt-fitness-and-physical-training",
+    "name": "Group Fitness & Studios",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-fitness-and-physical-training-specialty-populations",
+    "type": "submarket",
+    "market_id": "mkt-fitness-and-physical-training",
+    "name": "Specialty Populations",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-health-and-wellness-sleep",
+    "type": "submarket",
+    "market_id": "mkt-health-and-wellness",
+    "name": "Sleep",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-health-and-wellness-nutrition-and-meal-planning",
+    "type": "submarket",
+    "market_id": "mkt-health-and-wellness",
+    "name": "Nutrition & Meal Planning",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-health-and-wellness-mental-health-and-stress",
+    "type": "submarket",
+    "market_id": "mkt-health-and-wellness",
+    "name": "Mental Health & Stress",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-health-and-wellness-habit-and-behavior-change",
+    "type": "submarket",
+    "market_id": "mkt-health-and-wellness",
+    "name": "Habit & Behavior Change",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-health-and-wellness-chronic-condition-management",
+    "type": "submarket",
+    "market_id": "mkt-health-and-wellness",
+    "name": "Chronic Condition Management",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-health-and-wellness-women-s-health",
+    "type": "submarket",
+    "market_id": "mkt-health-and-wellness",
+    "name": "Women's Health",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-health-and-wellness-longevity-and-energy",
+    "type": "submarket",
+    "market_id": "mkt-health-and-wellness",
+    "name": "Longevity & Energy",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-parenting-and-family-newborn-and-infant-care",
+    "type": "submarket",
+    "market_id": "mkt-parenting-and-family",
+    "name": "Newborn & Infant Care",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-parenting-and-family-toddler-and-early-childhood",
+    "type": "submarket",
+    "market_id": "mkt-parenting-and-family",
+    "name": "Toddler & Early Childhood",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-parenting-and-family-school-age-parenting",
+    "type": "submarket",
+    "market_id": "mkt-parenting-and-family",
+    "name": "School-Age Parenting",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-parenting-and-family-family-organization",
+    "type": "submarket",
+    "market_id": "mkt-parenting-and-family",
+    "name": "Family Organization",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-parenting-and-family-special-and-additional-needs",
+    "type": "submarket",
+    "market_id": "mkt-parenting-and-family",
+    "name": "Special & Additional Needs",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-parenting-and-family-teen-parenting",
+    "type": "submarket",
+    "market_id": "mkt-parenting-and-family",
+    "name": "Teen Parenting",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-parenting-and-family-parenting-finances-and-planning",
+    "type": "submarket",
+    "market_id": "mkt-parenting-and-family",
+    "name": "Parenting Finances & Planning",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-relationships-and-dating-online-dating",
+    "type": "submarket",
+    "market_id": "mkt-relationships-and-dating",
+    "name": "Online Dating",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-relationships-and-dating-couples-and-communication",
+    "type": "submarket",
+    "market_id": "mkt-relationships-and-dating",
+    "name": "Couples & Communication",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-relationships-and-dating-wedding-planning",
+    "type": "submarket",
+    "market_id": "mkt-relationships-and-dating",
+    "name": "Wedding Planning",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-relationships-and-dating-marriage-and-long-term",
+    "type": "submarket",
+    "market_id": "mkt-relationships-and-dating",
+    "name": "Marriage & Long-Term",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-relationships-and-dating-breakups-and-solo",
+    "type": "submarket",
+    "market_id": "mkt-relationships-and-dating",
+    "name": "Breakups & Solo",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-relationships-and-dating-friendship-and-social-life",
+    "type": "submarket",
+    "market_id": "mkt-relationships-and-dating",
+    "name": "Friendship & Social Life",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-education-and-tutoring-test-prep",
+    "type": "submarket",
+    "market_id": "mkt-education-and-tutoring",
+    "name": "Test Prep",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-education-and-tutoring-tutoring-businesses",
+    "type": "submarket",
+    "market_id": "mkt-education-and-tutoring",
+    "name": "Tutoring Businesses",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-education-and-tutoring-language-learning",
+    "type": "submarket",
+    "market_id": "mkt-education-and-tutoring",
+    "name": "Language Learning",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-education-and-tutoring-teachers-and-educators",
+    "type": "submarket",
+    "market_id": "mkt-education-and-tutoring",
+    "name": "Teachers & Educators",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-education-and-tutoring-skill-courses",
+    "type": "submarket",
+    "market_id": "mkt-education-and-tutoring",
+    "name": "Skill Courses",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-education-and-tutoring-homeschooling",
+    "type": "submarket",
+    "market_id": "mkt-education-and-tutoring",
+    "name": "Homeschooling",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-education-and-tutoring-cohort-and-community-learning",
+    "type": "submarket",
+    "market_id": "mkt-education-and-tutoring",
+    "name": "Cohort & Community Learning",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-home-and-diy-home-organization-and-decluttering",
+    "type": "submarket",
+    "market_id": "mkt-home-and-diy",
+    "name": "Home Organization & Decluttering",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-home-and-diy-home-renovation",
+    "type": "submarket",
+    "market_id": "mkt-home-and-diy",
+    "name": "Home Renovation",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-home-and-diy-gardening",
+    "type": "submarket",
+    "market_id": "mkt-home-and-diy",
+    "name": "Gardening",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-home-and-diy-interior-styling",
+    "type": "submarket",
+    "market_id": "mkt-home-and-diy",
+    "name": "Interior Styling",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-home-and-diy-home-maintenance",
+    "type": "submarket",
+    "market_id": "mkt-home-and-diy",
+    "name": "Home Maintenance",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-home-and-diy-moving-and-relocation",
+    "type": "submarket",
+    "market_id": "mkt-home-and-diy",
+    "name": "Moving & Relocation",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-home-and-diy-sustainable-and-self-sufficient-living",
+    "type": "submarket",
+    "market_id": "mkt-home-and-diy",
+    "name": "Sustainable & Self-Sufficient Living",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-pets-and-animal-care-dog-training",
+    "type": "submarket",
+    "market_id": "mkt-pets-and-animal-care",
+    "name": "Dog Training",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-pets-and-animal-care-pet-health-and-nutrition",
+    "type": "submarket",
+    "market_id": "mkt-pets-and-animal-care",
+    "name": "Pet Health & Nutrition",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-pets-and-animal-care-pet-businesses",
+    "type": "submarket",
+    "market_id": "mkt-pets-and-animal-care",
+    "name": "Pet Businesses",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-pets-and-animal-care-cats-and-small-pets",
+    "type": "submarket",
+    "market_id": "mkt-pets-and-animal-care",
+    "name": "Cats & Small Pets",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-pets-and-animal-care-specialty-and-exotic",
+    "type": "submarket",
+    "market_id": "mkt-pets-and-animal-care",
+    "name": "Specialty & Exotic",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-pets-and-animal-care-pet-content-and-community",
+    "type": "submarket",
+    "market_id": "mkt-pets-and-animal-care",
+    "name": "Pet Content & Community",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-hobbies-and-creative-skills-fiber-and-crafts",
+    "type": "submarket",
+    "market_id": "mkt-hobbies-and-creative-skills",
+    "name": "Fiber & Crafts",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-hobbies-and-creative-skills-baking-and-home-cooking",
+    "type": "submarket",
+    "market_id": "mkt-hobbies-and-creative-skills",
+    "name": "Baking & Home Cooking",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-hobbies-and-creative-skills-music",
+    "type": "submarket",
+    "market_id": "mkt-hobbies-and-creative-skills",
+    "name": "Music",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-hobbies-and-creative-skills-art-and-illustration",
+    "type": "submarket",
+    "market_id": "mkt-hobbies-and-creative-skills",
+    "name": "Art & Illustration",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-hobbies-and-creative-skills-tabletop-and-games",
+    "type": "submarket",
+    "market_id": "mkt-hobbies-and-creative-skills",
+    "name": "Tabletop & Games",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-hobbies-and-creative-skills-photography",
+    "type": "submarket",
+    "market_id": "mkt-hobbies-and-creative-skills",
+    "name": "Photography",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-hobbies-and-creative-skills-collecting-and-restoration",
+    "type": "submarket",
+    "market_id": "mkt-hobbies-and-creative-skills",
+    "name": "Collecting & Restoration",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-productivity-and-self-organization-task-and-time-management",
+    "type": "submarket",
+    "market_id": "mkt-productivity-and-self-organization",
+    "name": "Task & Time Management",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-productivity-and-self-organization-note-taking-and-knowledge",
+    "type": "submarket",
+    "market_id": "mkt-productivity-and-self-organization",
+    "name": "Note-Taking & Knowledge",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-productivity-and-self-organization-goal-and-habit-systems",
+    "type": "submarket",
+    "market_id": "mkt-productivity-and-self-organization",
+    "name": "Goal & Habit Systems",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-productivity-and-self-organization-adhd-and-executive-function",
+    "type": "submarket",
+    "market_id": "mkt-productivity-and-self-organization",
+    "name": "ADHD & Executive Function",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-productivity-and-self-organization-digital-organization",
+    "type": "submarket",
+    "market_id": "mkt-productivity-and-self-organization",
+    "name": "Digital Organization",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-productivity-and-self-organization-focus-and-deep-work",
+    "type": "submarket",
+    "market_id": "mkt-productivity-and-self-organization",
+    "name": "Focus & Deep Work",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-technology-and-software-learning-to-code",
+    "type": "submarket",
+    "market_id": "mkt-technology-and-software",
+    "name": "Learning to Code",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-technology-and-software-indie-hacking-and-saas",
+    "type": "submarket",
+    "market_id": "mkt-technology-and-software",
+    "name": "Indie Hacking & SaaS",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-technology-and-software-data-and-analytics",
+    "type": "submarket",
+    "market_id": "mkt-technology-and-software",
+    "name": "Data & Analytics",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-technology-and-software-it-and-support",
+    "type": "submarket",
+    "market_id": "mkt-technology-and-software",
+    "name": "IT & Support",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-technology-and-software-no-code-and-automation",
+    "type": "submarket",
+    "market_id": "mkt-technology-and-software",
+    "name": "No-Code & Automation",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-technology-and-software-cybersecurity-and-privacy",
+    "type": "submarket",
+    "market_id": "mkt-technology-and-software",
+    "name": "Cybersecurity & Privacy",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-food-and-culinary-home-meal-systems",
+    "type": "submarket",
+    "market_id": "mkt-food-and-culinary",
+    "name": "Home Meal Systems",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-food-and-culinary-specialty-diets",
+    "type": "submarket",
+    "market_id": "mkt-food-and-culinary",
+    "name": "Specialty Diets",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-food-and-culinary-food-businesses",
+    "type": "submarket",
+    "market_id": "mkt-food-and-culinary",
+    "name": "Food Businesses",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-food-and-culinary-beverages-and-fermentation",
+    "type": "submarket",
+    "market_id": "mkt-food-and-culinary",
+    "name": "Beverages & Fermentation",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-food-and-culinary-meal-prep-for-fitness",
+    "type": "submarket",
+    "market_id": "mkt-food-and-culinary",
+    "name": "Meal Prep for Fitness",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-food-and-culinary-restaurant-and-food-service",
+    "type": "submarket",
+    "market_id": "mkt-food-and-culinary",
+    "name": "Restaurant & Food Service",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-trading-investing-and-crypto-stock-trading",
+    "type": "submarket",
+    "market_id": "mkt-trading-investing-and-crypto",
+    "name": "Stock Trading",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-trading-investing-and-crypto-options-trading",
+    "type": "submarket",
+    "market_id": "mkt-trading-investing-and-crypto",
+    "name": "Options Trading",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-trading-investing-and-crypto-crypto-investing",
+    "type": "submarket",
+    "market_id": "mkt-trading-investing-and-crypto",
+    "name": "Crypto Investing",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-trading-investing-and-crypto-crypto-trading-and-defi",
+    "type": "submarket",
+    "market_id": "mkt-trading-investing-and-crypto",
+    "name": "Crypto Trading & DeFi",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-trading-investing-and-crypto-technical-and-chart-analysis",
+    "type": "submarket",
+    "market_id": "mkt-trading-investing-and-crypto",
+    "name": "Technical & Chart Analysis",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-trading-investing-and-crypto-trading-psychology-and-risk",
+    "type": "submarket",
+    "market_id": "mkt-trading-investing-and-crypto",
+    "name": "Trading Psychology & Risk",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-trading-investing-and-crypto-investing-research-and-tools",
+    "type": "submarket",
+    "market_id": "mkt-trading-investing-and-crypto",
+    "name": "Investing Research & Tools",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-ai-tools-and-automation-ai-for-business-owners",
+    "type": "submarket",
+    "market_id": "mkt-ai-tools-and-automation",
+    "name": "AI for Business Owners",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-ai-tools-and-automation-ai-content-workflows",
+    "type": "submarket",
+    "market_id": "mkt-ai-tools-and-automation",
+    "name": "AI Content Workflows",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-ai-tools-and-automation-prompting-and-llm-skills",
+    "type": "submarket",
+    "market_id": "mkt-ai-tools-and-automation",
+    "name": "Prompting & LLM Skills",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-ai-tools-and-automation-ai-agents-and-assistants",
+    "type": "submarket",
+    "market_id": "mkt-ai-tools-and-automation",
+    "name": "AI Agents & Assistants",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-ai-tools-and-automation-no-code-ai-automation",
+    "type": "submarket",
+    "market_id": "mkt-ai-tools-and-automation",
+    "name": "No-Code AI Automation",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-ai-tools-and-automation-ai-for-creators-and-media",
+    "type": "submarket",
+    "market_id": "mkt-ai-tools-and-automation",
+    "name": "AI for Creators & Media",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-ai-tools-and-automation-ai-literacy-and-careers",
+    "type": "submarket",
+    "market_id": "mkt-ai-tools-and-automation",
+    "name": "AI Literacy & Careers",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-reselling-flipping-and-arbitrage-sneaker-and-streetwear-reselling",
+    "type": "submarket",
+    "market_id": "mkt-reselling-flipping-and-arbitrage",
+    "name": "Sneaker & Streetwear Reselling",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-reselling-flipping-and-arbitrage-retail-and-online-arbitrage",
+    "type": "submarket",
+    "market_id": "mkt-reselling-flipping-and-arbitrage",
+    "name": "Retail & Online Arbitrage",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-reselling-flipping-and-arbitrage-thrift-and-vintage-flipping",
+    "type": "submarket",
+    "market_id": "mkt-reselling-flipping-and-arbitrage",
+    "name": "Thrift & Vintage Flipping",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-reselling-flipping-and-arbitrage-collectibles-and-trading-cards",
+    "type": "submarket",
+    "market_id": "mkt-reselling-flipping-and-arbitrage",
+    "name": "Collectibles & Trading Cards",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-reselling-flipping-and-arbitrage-wholesale-and-liquidation",
+    "type": "submarket",
+    "market_id": "mkt-reselling-flipping-and-arbitrage",
+    "name": "Wholesale & Liquidation",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-reselling-flipping-and-arbitrage-ticket-and-event-reselling",
+    "type": "submarket",
+    "market_id": "mkt-reselling-flipping-and-arbitrage",
+    "name": "Ticket & Event Reselling",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-reselling-flipping-and-arbitrage-reseller-operations-and-tools",
+    "type": "submarket",
+    "market_id": "mkt-reselling-flipping-and-arbitrage",
+    "name": "Reseller Operations & Tools",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-digital-marketing-and-agencies-social-media-marketing-smma",
+    "type": "submarket",
+    "market_id": "mkt-digital-marketing-and-agencies",
+    "name": "Social Media Marketing (SMMA)",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-digital-marketing-and-agencies-paid-advertising",
+    "type": "submarket",
+    "market_id": "mkt-digital-marketing-and-agencies",
+    "name": "Paid Advertising",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-digital-marketing-and-agencies-seo-and-content-marketing",
+    "type": "submarket",
+    "market_id": "mkt-digital-marketing-and-agencies",
+    "name": "SEO & Content Marketing",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-digital-marketing-and-agencies-email-marketing",
+    "type": "submarket",
+    "market_id": "mkt-digital-marketing-and-agencies",
+    "name": "Email Marketing",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-digital-marketing-and-agencies-lead-generation-and-cold-outreach",
+    "type": "submarket",
+    "market_id": "mkt-digital-marketing-and-agencies",
+    "name": "Lead Generation & Cold Outreach",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-digital-marketing-and-agencies-conversion-rate-optimization",
+    "type": "submarket",
+    "market_id": "mkt-digital-marketing-and-agencies",
+    "name": "Conversion Rate Optimization",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-digital-marketing-and-agencies-agency-operations-and-scaling",
+    "type": "submarket",
+    "market_id": "mkt-digital-marketing-and-agencies",
+    "name": "Agency Operations & Scaling",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-self-improvement-and-personal-development-discipline-and-habits",
+    "type": "submarket",
+    "market_id": "mkt-self-improvement-and-personal-development",
+    "name": "Discipline & Habits",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-self-improvement-and-personal-development-mindset-and-confidence",
+    "type": "submarket",
+    "market_id": "mkt-self-improvement-and-personal-development",
+    "name": "Mindset & Confidence",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-self-improvement-and-personal-development-focus-and-motivation",
+    "type": "submarket",
+    "market_id": "mkt-self-improvement-and-personal-development",
+    "name": "Focus & Motivation",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-self-improvement-and-personal-development-purpose-and-life-design",
+    "type": "submarket",
+    "market_id": "mkt-self-improvement-and-personal-development",
+    "name": "Purpose & Life Design",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-self-improvement-and-personal-development-social-skills-and-charisma",
+    "type": "submarket",
+    "market_id": "mkt-self-improvement-and-personal-development",
+    "name": "Social Skills & Charisma",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-self-improvement-and-personal-development-learning-and-memory",
+    "type": "submarket",
+    "market_id": "mkt-self-improvement-and-personal-development",
+    "name": "Learning & Memory",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-self-improvement-and-personal-development-emotional-regulation-and-resilience",
+    "type": "submarket",
+    "market_id": "mkt-self-improvement-and-personal-development",
+    "name": "Emotional Regulation & Resilience",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-sales-and-closing-high-ticket-closing",
+    "type": "submarket",
+    "market_id": "mkt-sales-and-closing",
+    "name": "High-Ticket Closing",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-sales-and-closing-appointment-setting",
+    "type": "submarket",
+    "market_id": "mkt-sales-and-closing",
+    "name": "Appointment Setting",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-sales-and-closing-b2b-and-saas-sales",
+    "type": "submarket",
+    "market_id": "mkt-sales-and-closing",
+    "name": "B2B & SaaS Sales",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-sales-and-closing-cold-outreach-and-prospecting",
+    "type": "submarket",
+    "market_id": "mkt-sales-and-closing",
+    "name": "Cold Outreach & Prospecting",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-sales-and-closing-sales-skills-and-psychology",
+    "type": "submarket",
+    "market_id": "mkt-sales-and-closing",
+    "name": "Sales Skills & Psychology",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-sales-and-closing-sales-management-and-teams",
+    "type": "submarket",
+    "market_id": "mkt-sales-and-closing",
+    "name": "Sales Management & Teams",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-gaming-and-esports-game-coaching-and-improvement",
+    "type": "submarket",
+    "market_id": "mkt-gaming-and-esports",
+    "name": "Game Coaching & Improvement",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-gaming-and-esports-streaming-and-content",
+    "type": "submarket",
+    "market_id": "mkt-gaming-and-esports",
+    "name": "Streaming & Content",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-gaming-and-esports-esports-and-competitive",
+    "type": "submarket",
+    "market_id": "mkt-gaming-and-esports",
+    "name": "Esports & Competitive",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-gaming-and-esports-indie-game-development",
+    "type": "submarket",
+    "market_id": "mkt-gaming-and-esports",
+    "name": "Indie Game Development",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-gaming-and-esports-gaming-communities-and-servers",
+    "type": "submarket",
+    "market_id": "mkt-gaming-and-esports",
+    "name": "Gaming Communities & Servers",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-gaming-and-esports-gaming-services-and-business",
+    "type": "submarket",
+    "market_id": "mkt-gaming-and-esports",
+    "name": "Gaming Services & Business",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-music-and-audio-production-music-production-and-beatmaking",
+    "type": "submarket",
+    "market_id": "mkt-music-and-audio-production",
+    "name": "Music Production & Beatmaking",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-music-and-audio-production-mixing-and-mastering",
+    "type": "submarket",
+    "market_id": "mkt-music-and-audio-production",
+    "name": "Mixing & Mastering",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-music-and-audio-production-songwriting-and-composition",
+    "type": "submarket",
+    "market_id": "mkt-music-and-audio-production",
+    "name": "Songwriting & Composition",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-music-and-audio-production-selling-music-assets",
+    "type": "submarket",
+    "market_id": "mkt-music-and-audio-production",
+    "name": "Selling Music Assets",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-music-and-audio-production-artist-growth-and-release",
+    "type": "submarket",
+    "market_id": "mkt-music-and-audio-production",
+    "name": "Artist Growth & Release",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-music-and-audio-production-audio-and-podcast-production",
+    "type": "submarket",
+    "market_id": "mkt-music-and-audio-production",
+    "name": "Audio & Podcast Production",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-writing-and-publishing-self-publishing-kdp",
+    "type": "submarket",
+    "market_id": "mkt-writing-and-publishing",
+    "name": "Self-Publishing (KDP)",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-writing-and-publishing-fiction-writing",
+    "type": "submarket",
+    "market_id": "mkt-writing-and-publishing",
+    "name": "Fiction Writing",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-writing-and-publishing-nonfiction-and-authority-books",
+    "type": "submarket",
+    "market_id": "mkt-writing-and-publishing",
+    "name": "Nonfiction & Authority Books",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-writing-and-publishing-copywriting",
+    "type": "submarket",
+    "market_id": "mkt-writing-and-publishing",
+    "name": "Copywriting",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-writing-and-publishing-ghostwriting",
+    "type": "submarket",
+    "market_id": "mkt-writing-and-publishing",
+    "name": "Ghostwriting",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-writing-and-publishing-blogging-and-content-writing",
+    "type": "submarket",
+    "market_id": "mkt-writing-and-publishing",
+    "name": "Blogging & Content Writing",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-design-and-templates-notion-and-productivity-templates",
+    "type": "submarket",
+    "market_id": "mkt-design-and-templates",
+    "name": "Notion & Productivity Templates",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-design-and-templates-canva-and-social-templates",
+    "type": "submarket",
+    "market_id": "mkt-design-and-templates",
+    "name": "Canva & Social Templates",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-design-and-templates-graphic-design-services",
+    "type": "submarket",
+    "market_id": "mkt-design-and-templates",
+    "name": "Graphic Design Services",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-design-and-templates-web-and-ux-ui-design",
+    "type": "submarket",
+    "market_id": "mkt-design-and-templates",
+    "name": "Web & UX/UI Design",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-design-and-templates-printables-and-digital-products",
+    "type": "submarket",
+    "market_id": "mkt-design-and-templates",
+    "name": "Printables & Digital Products",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-design-and-templates-brand-and-identity-design",
+    "type": "submarket",
+    "market_id": "mkt-design-and-templates",
+    "name": "Brand & Identity Design",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  },
+  {
+    "id": "sub-design-and-templates-design-assets-and-tools",
+    "type": "submarket",
+    "market_id": "mkt-design-and-templates",
+    "name": "Design Assets & Tools",
+    "description": "",
+    "status": "active",
+    "basis": "inferred"
+  }
+]

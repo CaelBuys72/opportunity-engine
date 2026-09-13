@@ -1,0 +1,113 @@
+{
+  "id": "adhd-simple-planning",
+  "title": "ADHD-friendly 'simple' planning system",
+  "industry_id": "mental-health",
+  "submarket_id": "adhd",
+  "origin": "seed-run",
+  "audience": "adults with ADHD",
+  "core_problem": "Standard planners fail; systems that are too complex get abandoned within weeks.",
+  "desired_outcome": "A planning system they'll actually stick to.",
+  "related_problems": [
+    "can't stick to a planner",
+    "perfectionist systems collapse",
+    "executive-function overwhelm"
+  ],
+  "problems": [
+    {
+      "id": "prob-pain",
+      "statement": "Complex systems get abandoned.",
+      "symptoms": [
+        "'Why ADHDers fail at planning' — simple = sustainable; perfectionist routines break."
+      ],
+      "evidence_ids": [
+        "ev-adhd-1"
+      ]
+    },
+    {
+      "id": "prob-wtp",
+      "statement": "People pay for ADHD planning tools.",
+      "symptoms": [
+        "Multiple Gumroad ADHD planners/toolkits actively sold ($5-30)."
+      ],
+      "evidence_ids": [
+        "ev-adhd-2"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "ev-adhd-1",
+    "ev-adhd-2"
+  ],
+  "community_ids": [
+    "r-adhd"
+  ],
+  "existing_solutions": [
+    "Gumroad ADHD planners/toolkits ($5-30)",
+    "generic Notion planners",
+    "apps"
+  ],
+  "solution_gaps": [
+    "genuinely simple/sustainable design (vs feature-heavy)",
+    "works better as sub-angle on other pockets (ADHD budgeting/meal-planning)"
+  ],
+  "creator_ecosystem": "inferred large (ADHD creators on TikTok/YouTube) but not measured",
+  "digital_product_fit": "Fits, but crowded; strongest as a sub-angle.",
+  "source_urls": [
+    "https://neurodivergentnotes.substack.com/p/why-adhders-fail-at-planning",
+    "https://remarkabletemplates.gumroad.com/l/ADHD-Planner-2025-iPad-Ultimate-Digital-Organizer-Focus-Efficiency"
+  ],
+  "score": {
+    "factors": {
+      "demand_evidence": {
+        "score": 7,
+        "basis": "observed",
+        "rationale": "Large audience; many products.",
+        "weight": 20
+      },
+      "pain_importance": {
+        "score": 8,
+        "basis": "inferred",
+        "rationale": "Daily executive-function struggle.",
+        "weight": 15
+      },
+      "clear_outcome": {
+        "score": 6,
+        "basis": "inferred",
+        "rationale": "'A system I stick to' — somewhat fuzzy.",
+        "weight": 10
+      },
+      "existing_wtp": {
+        "score": 6,
+        "basis": "observed",
+        "rationale": "Products sell; volumes unknown; crowded.",
+        "weight": 15
+      },
+      "solution_gap": {
+        "score": 5,
+        "basis": "inferred",
+        "rationale": "Very crowded planner market.",
+        "weight": 15
+      },
+      "creator_density": {
+        "score": 8,
+        "basis": "inferred",
+        "rationale": "ADHD creators huge (not measured).",
+        "weight": 15
+      },
+      "digital_product_fit": {
+        "score": 6,
+        "basis": "inferred",
+        "rationale": "Fits but generic; sub-angle better.",
+        "weight": 10
+      }
+    },
+    "overall": 66.5,
+    "confidence": "MEDIUM",
+    "confidence_reason": "2/7 factors observed, 0/7 unknown; demand=observed, WTP=observed.",
+    "weight_unknown_pct": 0
+  },
+  "status": "researching",
+  "research_status": "needs_review",
+  "curation_status": "complete",
+  "distribution_verdict": "NEEDS_RESEARCH"
+}

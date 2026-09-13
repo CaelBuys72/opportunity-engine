@@ -1,0 +1,21 @@
+{
+  "opportunity_id": "adhd-simple-planning",
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "printable + editable planner",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: printable + editable planner.",
+      "maps_to_jobs": [
+        "job-1"
+      ],
+      "maps_to_outcome": "A planning system they'll actually stick to.",
+      "unmapped": false,
+      "basis": "evidence-backed",
+      "format": "supporting asset",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    }
+  ]
+}

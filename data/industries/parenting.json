@@ -1,0 +1,18 @@
+{
+  "id": "parenting",
+  "name": "Parenting",
+  "description": "New parents, infant care.",
+  "submarkets": [
+    {
+      "id": "infant-sleep",
+      "name": "Infant Sleep",
+      "audiences": [
+        {
+          "id": "new-parents",
+          "label": "sleep-deprived parents of 0-18mo infants"
+        }
+      ]
+    }
+  ],
+  "status": "explored"
+}

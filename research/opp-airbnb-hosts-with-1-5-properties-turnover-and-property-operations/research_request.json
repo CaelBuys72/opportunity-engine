@@ -1,0 +1,12 @@
+{
+  "research_request_id": "rr-opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+  "created_at": "2026-09-09T20:47:13.919240+00:00",
+  "pocket_id": "opp-airbnb-hosts-with-1-5-properties-turnover-and-property-operations",
+  "title": "Turnover & Property Operations",
+  "industry_id": "mkt-travel-and-hospitality",
+  "audience": "Airbnb hosts with 1-5 properties",
+  "core_problem": "Airbnb hosts with 1-5 properties face a related cluster of problems around turnover & property operations — e.g. cleaner turnover coordination, supply restocking tracking, welcome book contents unclear.",
+  "desired_outcome": "A shared outcome across member problems: Standardize every turnover. Never run out of guest supplies. Produce a house manual without tool failures.",
+  "primary_question": "Do real people experience this problem, what does it look like, what outcome do they want, what have they tried, what remains unsolved?",
+  "note": "Feeds the Phase-8 research engine."
+}

@@ -1,0 +1,144 @@
+{
+  "assets": [
+    {
+      "id": "asset-1",
+      "component_id": "cmp-1",
+      "for": "Quarterly estimated-tax calculator",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-2",
+      "component_id": "cmp-2",
+      "for": "Set-aside % calculator",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-3",
+      "component_id": "cmp-3",
+      "for": "Schedule C category mapper",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-4",
+      "component_id": "cmp-4",
+      "for": "Professional invoice",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-5",
+      "component_id": "cmp-5",
+      "for": "Late-payment follow-up email",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-6",
+      "component_id": "cmp-6",
+      "for": "Quarterly payment scheduler (due dates)",
+      "deliverable": "Fillable PDF + printable version",
+      "tooling": "doc/pdf",
+      "notes": "",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-7",
+      "component_id": "cmp-7",
+      "for": "Deductible-expense checklist by Schedule C line",
+      "deliverable": "Fillable PDF + printable version",
+      "tooling": "doc/pdf",
+      "notes": "",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-8",
+      "component_id": "cmp-8",
+      "for": "How much to set aside (with worked example)",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-9",
+      "component_id": "cmp-9",
+      "for": "When quarterly payments are due",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-10",
+      "component_id": "cmp-10",
+      "for": "Schedule C categories in plain English",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-11",
+      "component_id": "cmp-11",
+      "for": "Auto-calculating spreadsheet (income, expenses, SE tax, quarterly estimate, set-aside %)",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": true,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-12",
+      "component_id": "cmp-12",
+      "for": "Short setup guide (how the rules work, plain-English)",
+      "deliverable": "Short PDF (one concept per page)",
+      "tooling": "doc/pdf",
+      "notes": "no long-form ebook",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-13",
+      "component_id": "cmp-13",
+      "for": "Invoice + late-payment follow-up templates",
+      "deliverable": "Editable document (.docx + PDF) or fillable template",
+      "tooling": "doc editor",
+      "notes": "mark editable fields",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    },
+    {
+      "id": "asset-14",
+      "component_id": "cmp-14",
+      "for": "Sub-niche category presets (content creator / rideshare / trades)",
+      "deliverable": "Spreadsheet (Google Sheets + .xlsx export)",
+      "tooling": "spreadsheet app",
+      "notes": "protect formula cells",
+      "requires_external_verification": false,
+      "basis": "inferred"
+    }
+  ]
+}

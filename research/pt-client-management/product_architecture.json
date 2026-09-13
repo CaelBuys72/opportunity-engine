@@ -1,0 +1,21 @@
+{
+  "opportunity_id": "pt-client-management",
+  "components": [
+    {
+      "id": "cmp-1",
+      "name": "short decision-tree guide + one-page checklist",
+      "type": "asset",
+      "source_field": "product_structure",
+      "purpose": "Asset that helps the buyer: short decision-tree guide + one-page checklist.",
+      "maps_to_jobs": [
+        "job-0"
+      ],
+      "maps_to_outcome": "Manage programming, check-ins and progress without paying for bloated software.",
+      "unmapped": true,
+      "basis": "evidence-backed",
+      "format": "concise reference guide page",
+      "format_basis": "inferred",
+      "format_rationale": "Chosen from component type 'asset' and the transformation; deliberately not an ebook."
+    }
+  ]
+}
