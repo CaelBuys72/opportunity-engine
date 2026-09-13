@@ -3,7 +3,7 @@ services:
     name: opportunity-engine
     runtime: python
     plan: free
-    buildCommand: ""
+    buildCommand: pip install -r requirements.txt
     startCommand: python3 app/server.py
     envVars:
       - key: STORAGE_BACKEND

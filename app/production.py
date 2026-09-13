@@ -38,13 +38,14 @@ class ProductionError(Exception):
 
 # ---------------------------------------------------------------- state helpers (reuse pipeline states)
 def _load_states() -> dict:
-    if not STATES_FILE.exists():
-        return {}
-    return {s["opportunity_id"]: s for s in json.loads(STATES_FILE.read_text())}
+    import storage
+    rows = storage.get_backend().read_doc("pipeline_states") or []
+    return {s["opportunity_id"]: s for s in rows}
 
 
 def _save_states(states: dict) -> None:
-    STATES_FILE.write_text(json.dumps(list(states.values()), indent=2, ensure_ascii=False))
+    import storage
+    storage.get_backend().write_doc("pipeline_states", list(states.values()))
 
 
 def _set_build_status(opp_id: str, status: str) -> None:
@@ -56,15 +57,18 @@ def _set_build_status(opp_id: str, status: str) -> None:
 
 # ---------------------------------------------------------------- spec loading + gate
 def _load_spec(opp_id: str) -> dict:
-    d = RESEARCH / opp_id
+    import storage
+    backend = storage.get_backend()
     need = ["product_brief", "product_architecture", "component_specs",
             "asset_requirements", "quality_requirements", "production_plan", "curation_dossier"]
     out = {}
     for n in need:
-        f = d / f"{n}.json"
-        if not f.exists():
-            raise ProductionError(f"missing Phase-9 spec file: {f}")
-        out[n] = json.loads(f.read_text())
+        obj = backend.read_dossier_file(opp_id, n)
+        if obj is None:
+            raise ProductionError(f"missing Phase-9 spec file '{n}' — curate the product first.")
+        out[n] = obj
+    # evidence + brief power real content generation; evidence is optional
+    out["evidence"] = backend.read_dossier_file(opp_id, "evidence") or {}
     return out
 
 
@@ -300,6 +304,77 @@ def _content(cid: str, name: str, prop="[Property Name]") -> dict:
     return {"kind": "docx", "title": T, "blocks": [{"type": "para", "text": name}]}
 
 
+def _generate_content(opp_id: str, comp: dict, cspec: dict, deliverable: str,
+                      required: set, spec: dict, creds: dict | None) -> dict:
+    """LLM-generate real, buyer-ready content for one component, shaped for the
+    format builders. Works for ANY opportunity (no hardcoded templates). Raises on
+    failure so the component is honestly marked failed rather than stubbed."""
+    import research_engine as RE
+    clf = RE.get_classifier(creds)
+    if clf is None:
+        raise ProductionError("no LLM credential available to generate product content "
+                              "(operator needs a Gemini key)")
+    brief = spec.get("product_brief", {}) or {}
+    dossier = spec.get("curation_dossier", {}) or {}
+    transformation = dossier.get("transformation", {}) or {}
+    ev = spec.get("evidence", {}) or {}
+    claims = ev.get("claims", []) if isinstance(ev, dict) else []
+    ev_lines = [c.get("claim") for c in claims[:8] if isinstance(c, dict) and c.get("claim")]
+
+    is_sheet = bool({"xlsx", "csv"} & set(required))
+    kind = "xlsx" if is_sheet else "docx"
+    context = {
+        "product_concept": brief.get("product_concept") or dossier.get("product_concept"),
+        "buyer": brief.get("target_customer") or brief.get("audience"),
+        "transformation": f"{transformation.get('from_state', '')} -> {transformation.get('to_state', '')}",
+        "component_name": comp.get("name"),
+        "component_purpose": comp.get("purpose", "") or cspec.get("purpose", ""),
+        "deliverable": deliverable,
+        "jobs": comp.get("maps_to_jobs", []) or cspec.get("maps_to_jobs", []),
+        "evidence_highlights": ev_lines,
+    }
+    rules = ("Write REAL, specific, immediately-usable content for the buyer described. "
+             "Be concrete and practical, grounded in the buyer's world and the evidence highlights. "
+             "Buyer-fillable blanks in [square brackets] are allowed (e.g. [Your business name]). "
+             "NEVER output unfinished placeholders like [write here], [insert], TODO, TBD, lorem ipsum "
+             "or 'example text'. NEVER mention internal ids, scores, 'basis', 'evidence' or any "
+             "engine/analysis terminology. Return STRICT JSON only, no prose around it.")
+    if kind == "xlsx":
+        system = ("You manufacture a working spreadsheet template. " + rules +
+                  ' Output schema: {"title": str, "sheet": {"name": str (<=31 chars), '
+                  '"instructions": str, "headers": [str,...], "rows": [[cell,...], ...]}}. '
+                  "6-14 columns and 3-6 realistic example rows the buyer can replace.")
+    else:
+        system = ("You manufacture a polished, finished document. " + rules +
+                  ' Output schema: {"title": str, "blocks": [ {"type":"heading","text":str} | '
+                  '{"type":"para","text":str} | {"type":"bullet","items":[str,...]} | '
+                  '{"type":"check","items":[str,...]} | {"type":"field","label":str} ]}. '
+                  "Produce a complete, well-structured document (headings, guidance, checklists/bullets "
+                  "where useful) — genuinely valuable on its own.")
+    user = json.dumps(context, ensure_ascii=False)
+    data = RE._extract_json(clf.classify(system, user))
+    if not isinstance(data, dict):
+        data = RE._extract_json(clf.classify(system + " Output valid JSON only.", user))
+    if not isinstance(data, dict):
+        raise ProductionError(f"content generation returned invalid JSON for '{comp.get('name')}'")
+
+    title = data.get("title") or comp.get("name") or "Product"
+    if kind == "xlsx":
+        sheet = data.get("sheet") or {}
+        headers = sheet.get("headers") or []
+        rows = sheet.get("rows") or []
+        if not headers:
+            raise ProductionError(f"generated spreadsheet for '{comp.get('name')}' has no columns")
+        sheet.setdefault("name", title[:31]); sheet.setdefault("instructions", "")
+        sheet["headers"], sheet["rows"] = headers, rows
+        return {"kind": "xlsx", "title": title, "sheet": sheet,
+                "csv_headers": headers, "csv_rows": rows}
+    blocks = data.get("blocks") or []
+    if not blocks:
+        raise ProductionError(f"generated document for '{comp.get('name')}' has no content")
+    return {"kind": "docx", "title": title, "blocks": blocks}
+
+
 # ---------------------------------------------------------------- component build
 def _produce_formats(cdir: Path, content: dict, required: set[str]) -> tuple[list[str], list[dict]]:
     files, blocked = [], []
@@ -376,7 +451,8 @@ def _dep_order(plan: dict, arch: dict) -> list[str]:
     return order
 
 
-def build_product(opp_id: str, only_component: str | None = None, force: bool = False) -> dict:
+def build_product(opp_id: str, creds: dict | None = None, operator: str = "unknown",
+                  only_component: str | None = None, force: bool = False) -> dict:
     validate_build_gate(opp_id)
     spec = _load_spec(opp_id)
     _set_build_status(opp_id, "building")
@@ -420,7 +496,7 @@ def build_product(opp_id: str, only_component: str | None = None, force: bool = 
             shutil.rmtree(cdir)
         cdir.mkdir(parents=True, exist_ok=True)
         try:
-            content = _content(cid, comp["name"])
+            content = _generate_content(opp_id, comp, cspec, deliverable, required, spec, creds)
             files, blocked = _produce_formats(cdir, content, required)
             qa = _qa_component(cdir, content, required, files)
             if blocked:
@@ -476,8 +552,42 @@ def build_product(opp_id: str, only_component: str | None = None, force: bool = 
         {"opportunity_id": opp_id, "release_status": release_status, "bundle_status": bundle_status,
          "components": {c["component_id"]: c["production_status"] for c in manifest_components}}, indent=2))
 
+    # persist to shared object storage so the bundle + manifest survive restarts and
+    # are downloadable by either operator (Render's local disk is ephemeral).
+    import io, zipfile
+    import storage as _S
+    backend = _S.get_backend()
+    bdir = pdir / "bundle"
+    bundle_key = None
+    if bdir.exists() and any(p.is_file() for p in bdir.rglob("*")):
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+            for f in sorted(bdir.rglob("*")):
+                if f.is_file():
+                    z.write(f, f.relative_to(bdir))
+        bundle_key = f"{opp_id}/product_bundle.zip"
+        backend.put_object(bundle_key, buf.getvalue(), "application/zip")
+    manifest["bundle_key"] = bundle_key
+    manifest["download_ready"] = bool(bundle_key)
+    manifest["built_by"] = operator
+    backend.write_dossier_file(opp_id, "product_manifest", manifest)
+
     _set_build_status(opp_id, "release_candidate" if release_status == "release_candidate" else "blocked")
     return manifest
+
+
+def get_manifest(opp_id: str) -> dict | None:
+    """Read the persisted product manifest (shared storage)."""
+    import storage
+    return storage.get_backend().read_dossier_file(opp_id, "product_manifest")
+
+
+def get_bundle(opp_id: str) -> bytes | None:
+    """Fetch the produced product bundle ZIP from shared storage."""
+    import storage
+    m = get_manifest(opp_id) or {}
+    key = m.get("bundle_key") or f"{opp_id}/product_bundle.zip"
+    return storage.get_backend().get_object(key)
 
 
 # buyer journey — (component_id, step, what it does, editable?, friendly bundle name) ; drives START_HERE + bundle filenames
@@ -500,38 +610,38 @@ def _assemble_bundle(pdir: Path, components: list[dict], spec: dict) -> tuple[st
         shutil.rmtree(bdir)
     bdir.mkdir(parents=True, exist_ok=True)
     by_id, excluded = {}, []
+    order_n = 0
     for c in components:
         cid = c["component_id"]
         if c["production_status"] != "built" or c["qa_status"] != "passed":
             excluded.append(cid); continue
-        order, friendly = _FRIENDLY.get(cid, (99, c["name"]))
-        safe = re.sub(r"[^A-Za-z0-9 _-]+", "-", f"{order:02d} - {friendly}").strip()
+        order_n += 1
+        friendly = c.get("name") or cid
+        safe = re.sub(r"[^A-Za-z0-9 _-]+", "-", f"{order_n:02d} - {friendly}").strip()[:80]
         names = []
         for f in c["files"]:
             src = PRODUCTS / f
             dest = bdir / f"{safe}{src.suffix}"
             shutil.copy(src, dest)
             names.append(dest.name)
-        by_id[cid] = {"name": friendly, "files": names}
-    included = [n for v in by_id.values() for n in v["files"]]
-    # START_HERE — a real buyer journey (inferred packaging), referencing only included files
+        by_id[cid] = {"name": friendly, "files": names, "purpose": c.get("purpose", "")}
+    # START_HERE — generic buyer guide derived from the curation spec (no hardcoding)
     if by_id:
-        blocks = [{"type": "para", "text": "This is your turnover & property-operations kit: a set of "
-                                           "templates, checklists and a tracker for running reliable, "
-                                           "repeatable turnovers. Work through it in this order."}]
+        dossier = spec.get("curation_dossier", {}) or {}
+        concept = ((spec.get("product_brief", {}) or {}).get("product_concept")
+                   or dossier.get("product_concept") or "your product")
+        blocks = [{"type": "para", "text": f"This is your product kit: {concept}. "
+                                           "Work through the files in this order."}]
         n = 0
-        for cid, step, what, editable, _friendly in JOURNEY:
-            if cid not in by_id:
-                continue
+        for v in by_id.values():
             n += 1
-            fnames = ", ".join(by_id[cid]["files"])
-            tag = " (editable)" if editable else ""
-            blocks.append({"type": "heading", "text": f"{n}. {step}"})
-            blocks.append({"type": "para", "text": f"{what}  →  **{fnames}**{tag}"})
-        blocks.append({"type": "para", "text": "Files marked (editable) are yours to fill in with your "
-                                               "property's details — anything in [brackets] is a prompt to replace. "
-                                               "The tracker opens in Excel or Google Sheets."})
-        B.build_markdown(bdir / "START_HERE.md", "Start Here — your turnover kit", blocks)
+            fnames = ", ".join(v["files"])
+            blocks.append({"type": "heading", "text": f"{n}. {v['name']}"})
+            blocks.append({"type": "para", "text": (f"{v['purpose']}  →  **{fnames}**"
+                                                    if v.get("purpose") else f"**{fnames}**")})
+        blocks.append({"type": "para", "text": "Anything in [brackets] is a prompt to replace with "
+                                               "your own details. Spreadsheets open in Excel or Google Sheets."})
+        B.build_markdown(bdir / "START_HERE.md", "Start Here", blocks)
     status = "complete" if by_id and not excluded else ("partial" if by_id else "empty")
     return status, "blocked"
 

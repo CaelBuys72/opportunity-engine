@@ -75,6 +75,9 @@ class StorageBackend:
     def put_session(self, token: str, operator: str, expires_at: float) -> None: raise NotImplementedError
     def get_session(self, token: str) -> dict | None: raise NotImplementedError
     def delete_session(self, token: str) -> None: raise NotImplementedError
+    # --- binary object store (produced product bundles) ---
+    def put_object(self, path: str, data: bytes, content_type: str = "application/octet-stream") -> None: raise NotImplementedError
+    def get_object(self, path: str) -> bytes | None: raise NotImplementedError
 
 
 # ==========================================================================
@@ -213,6 +216,15 @@ class LocalBackend(StorageBackend):
         s = self._sessions(); s.pop(token, None)
         self._write_json(UNIVERSE_DIR / "_sessions.json", s)
 
+    def put_object(self, path, data, content_type="application/octet-stream"):
+        p = ROOT / "products" / "_bundles" / path
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_bytes(data)
+
+    def get_object(self, path):
+        p = ROOT / "products" / "_bundles" / path
+        return p.read_bytes() if p.exists() else None
+
 
 # ==========================================================================
 # SUPABASE backend — PostgREST over stdlib urllib (no third-party deps)
@@ -343,6 +355,53 @@ class SupabaseBackend(StorageBackend):
 
     def delete_session(self, token):
         self._req("DELETE", "sessions", f"token=eq.{token}")
+
+    # --- binary object store: Supabase Storage bucket "products" ---
+    _BUCKET = "products"
+
+    def _ensure_bucket(self):
+        base = self.base.rsplit("/rest/v1", 1)[0]
+        url = f"{base}/storage/v1/bucket"
+        headers = {"apikey": self.key, "Authorization": f"Bearer {self.key}",
+                   "Content-Type": "application/json"}
+        body = json.dumps({"id": self._BUCKET, "name": self._BUCKET, "public": False}).encode()
+        req = urllib.request.Request(url, data=body, method="POST", headers=headers)
+        try:
+            urllib.request.urlopen(req, timeout=30).read()
+        except urllib.error.HTTPError as e:
+            if e.code not in (400, 409):        # already-exists is fine
+                raise StorageError(f"supabase create bucket -> {e.code}: {e.read().decode()[:200]}")
+        except urllib.error.URLError as e:
+            raise StorageError(f"supabase create bucket -> {e}")
+
+    def put_object(self, path, data, content_type="application/octet-stream"):
+        self._ensure_bucket()
+        base = self.base.rsplit("/rest/v1", 1)[0]
+        url = f"{base}/storage/v1/object/{self._BUCKET}/{path}"
+        headers = {"apikey": self.key, "Authorization": f"Bearer {self.key}",
+                   "Content-Type": content_type, "x-upsert": "true"}
+        req = urllib.request.Request(url, data=data, method="POST", headers=headers)
+        try:
+            urllib.request.urlopen(req, timeout=60).read()
+        except urllib.error.HTTPError as e:
+            raise StorageError(f"supabase put_object -> {e.code}: {e.read().decode()[:200]}")
+        except urllib.error.URLError as e:
+            raise StorageError(f"supabase put_object -> {e}")
+
+    def get_object(self, path):
+        base = self.base.rsplit("/rest/v1", 1)[0]
+        url = f"{base}/storage/v1/object/{self._BUCKET}/{path}"
+        headers = {"apikey": self.key, "Authorization": f"Bearer {self.key}"}
+        req = urllib.request.Request(url, method="GET", headers=headers)
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return None
+            raise StorageError(f"supabase get_object -> {e.code}: {e.read().decode()[:200]}")
+        except urllib.error.URLError as e:
+            raise StorageError(f"supabase get_object -> {e}")
 
 
 # ==========================================================================

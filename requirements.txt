@@ -1,0 +1,4 @@
+# Product-production layer (Build 6) needs these to manufacture real files.
+# The rest of the app is pure stdlib; these are only imported when producing a product.
+python-docx>=1.1
+openpyxl>=3.1

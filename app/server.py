@@ -253,6 +253,22 @@ class Handler(BaseHTTPRequestHandler):
             oid = unquote(path.split("/")[4])
             d = read_curation_dossier(oid)
             return self._json(d) if d else self._json({"error": "no curation dossier"}, 404)
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/product/download"):
+            if not self._require_operator():
+                return
+            oid = unquote(path.split("/")[4])
+            import production as PR
+            data = PR.get_bundle(oid)
+            if not data:
+                return self._json({"error": "no product bundle — generate the product first"}, 404)
+            fn = f"{oid[:60]}-product.zip"
+            return self._send(200, data, "application/zip",
+                              extra={"Content-Disposition": f'attachment; filename="{fn}"'})
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/product"):
+            oid = unquote(path.split("/")[4])
+            import production as PR
+            m = PR.get_manifest(oid)
+            return self._json(m) if m else self._json({"error": "no product yet"}, 404)
         if path == "/api/auth/me":
             op = self._operator()
             return self._json({"operator": op, "authenticated": bool(op),
@@ -491,6 +507,33 @@ class Handler(BaseHTTPRequestHandler):
             except PL.PipelineError as e:
                 return self._json({"ok": False, "error": str(e), "curation_status": "blocked",
                                    "override_available": True}, 422)
+            except Exception as e:
+                return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
+        # ---- Build 6: manufacture the actual product files (uses operator's LLM key) ----
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/produce"):
+            op = self._require_operator()
+            if not op:
+                return
+            oid = unquote(path.split("/")[4])
+            creds = auth.resolve_operator_credentials(op)
+            import research_engine as RE, production as PR
+            if not RE.get_classifier(creds):
+                return self._json({"ok": False, "operator": op,
+                                   "error": f"{op} is missing a Gemini key on the server",
+                                   "providers": RE.providers_status(creds)}, 503)
+            try:
+                PR.approve_build(oid)                       # one-click: auto-approve the build gate
+                m = PR.build_product(oid, creds=creds, operator=op)
+                comps = [{"name": c["name"], "status": c["production_status"], "qa": c["qa_status"],
+                          "formats": c["required_formats"]} for c in m["components"]]
+                return self._json({"ok": True, "opportunity_id": oid, "operator": op,
+                                   "product_status": m["product_status"],
+                                   "bundle_status": m["bundle_status"],
+                                   "download_ready": m.get("download_ready", False),
+                                   "release_blocked_reasons": m.get("release_blocked_reasons", []),
+                                   "components": comps})
+            except PR.ProductionError as e:
+                return self._json({"ok": False, "error": str(e)}, 422)
             except Exception as e:
                 return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
         if path.startswith("/api/opportunities/") and path.endswith("/select"):

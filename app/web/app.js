@@ -433,8 +433,61 @@ async function showUniverseDossier(id) {
       <button class="primary" id="u-curate">CURATE PRODUCT →</button>
       <span class="result" id="u-curate-result"></span>
     </div>
-    <div id="u-curation"></div>`;
+    <div id="u-curation"></div>
+    <div id="u-product"></div>`;
   $("#u-curate").onclick = () => curateUniverse(id, false);
+  showUniverseProduct(id);
+}
+
+// ---- Build 6: manufacture the actual product files (DOCX/XLSX/CSV/MD bundle) ----
+async function showUniverseProduct(id) {
+  const box = $("#u-product");
+  if (!box) return;
+  const m = await fetch("/api/universe/opportunity/" + encodeURIComponent(id) + "/product")
+    .then(r => r.ok ? r.json() : null).catch(() => null);
+  const li = a => (a && a.length) ? `<ul class="clean">${a.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
+  let inner = "";
+  if (m) {
+    const comps = (m.components || []).map(c => `<div class="ev"><p><b>${esc(c.name)}</b>
+        <span class="basis ${c.production_status === "built" ? "observed" : "unknown"}">${esc(c.production_status)}</span>
+        <span class="muted small">qa ${esc(c.qa_status)} · ${(c.required_formats || []).join(", ")}</span></p></div>`).join("");
+    const dl = m.download_ready
+      ? `<a class="handoff" style="display:inline-block;background:rgba(82,214,154,.22);color:#e9f2ff;text-decoration:none"
+           href="${(window.OE && window.OE.base) || ""}/api/universe/opportunity/${encodeURIComponent(id)}/product/download">⬇ Download product bundle (.zip)</a>`
+      : `<span class="muted small">Bundle not ready — see blocked reasons below.</span>`;
+    inner = `<section class="card dossier" style="border-color:rgba(82,214,154,.45)">
+        <h3>📦 Product <span class="badge ${m.product_status === "release_candidate" ? "rs-complete" : "LOW"}">${esc(m.product_status)}</span></h3>
+        <div class="kv"><b>Components (${(m.components || []).length})</b>${comps || '<p class="muted">—</p>'}</div>
+        ${(m.release_blocked_reasons || []).length ? `<div class="kv"><b>Blocked</b>${li(m.release_blocked_reasons)}</div>` : ""}
+        <div class="cta">${dl}
+          <button class="primary" id="u-produce" style="background:rgba(123,92,255,.25);color:#e9f2ff">Regenerate product</button>
+          <span class="result" id="u-produce-result"></span></div>
+      </section>`;
+  } else {
+    inner = `<section class="card dossier">
+        <h3>📦 Product</h3>
+        <p class="muted small">Generate the actual product files (documents, spreadsheets, checklists) from the curated spec — bundled as a downloadable .zip. Requires completed curation.</p>
+        <div class="cta"><button class="primary" id="u-produce">GENERATE PRODUCT →</button>
+          <span class="result" id="u-produce-result"></span></div>
+      </section>`;
+  }
+  box.innerHTML = inner;
+  const b = $("#u-produce");
+  if (b) b.onclick = () => produceUniverse(id);
+}
+
+async function produceUniverse(id) {
+  const b = $("#u-produce"), res = $("#u-produce-result");
+  b.disabled = true; b.textContent = "Manufacturing… (writing files, ~1–2 min)";
+  res.textContent = "Generating real content for each component and building the files…";
+  let r;
+  try { r = await (await fetch("/api/universe/opportunity/" + encodeURIComponent(id) + "/produce", { method: "POST" })).json(); }
+  catch (e) { res.innerHTML = `<span style="color:var(--bad)">Request failed: ${esc(e.message)}</span>`; b.disabled = false; b.textContent = "GENERATE PRODUCT →"; return; }
+  b.disabled = false;
+  if (!r.ok) { res.innerHTML = `<span style="color:var(--bad)">${esc(r.error || "production failed")}</span>`; b.textContent = "GENERATE PRODUCT →"; return; }
+  const built = (r.components || []).filter(c => c.status === "built").length;
+  res.innerHTML = `Built <b>${built}/${(r.components || []).length}</b> components · ${esc(r.product_status)}${r.download_ready ? " · bundle ready" : ""}`;
+  showUniverseProduct(id);
 }
 
 async function curateUniverse(id, override) {
