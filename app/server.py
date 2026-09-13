@@ -471,9 +471,12 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    print(f"Opportunity Intelligence Engine → http://localhost:{PORT}")
+    # 0.0.0.0 so cloud hosts (Render/Railway/Fly) can route to the port; still
+    # reachable locally at http://localhost:PORT. Override with HOST if needed.
+    host = os.environ.get("HOST", "0.0.0.0")
+    print(f"Opportunity Intelligence Engine → http://localhost:{PORT} (bound {host})")
     print("Ctrl+C to stop.")
-    ThreadingHTTPServer(("127.0.0.1", PORT), Handler).serve_forever()
+    ThreadingHTTPServer((host, PORT), Handler).serve_forever()
 
 
 if __name__ == "__main__":
