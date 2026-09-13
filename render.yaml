@@ -16,11 +16,11 @@ services:
         sync: false
       - key: SHEYLYN_PASSWORD_HASH
         sync: false
-      - key: CAEL_GEMINI_API_KEY
+      - key: CAEL_GROQ_API_KEY
         sync: false
       - key: CAEL_SERPER_API_KEY
         sync: false
-      - key: SHEYLYN_GEMINI_API_KEY
+      - key: SHEYLYN_GROQ_API_KEY
         sync: false
       - key: SHEYLYN_SERPER_API_KEY
         sync: false

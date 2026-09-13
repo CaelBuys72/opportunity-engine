@@ -448,7 +448,7 @@ class Handler(BaseHTTPRequestHandler):
             creds = auth.resolve_operator_credentials(op)
             if not RE.get_search_provider(creds) or not RE.get_classifier(creds):
                 return self._json({"ok": False, "operator": op,
-                                   "error": f"{op} is missing a Serper and/or Gemini key on the server",
+                                   "error": f"{op} is missing a Serper and/or Groq key on the server",
                                    "providers": RE.providers_status(creds)}, 503)
             if not storage.get_backend().claim_expansion(node_id, op):
                 return self._json({"ok": False, "error": "another operator is exploring this node; "
@@ -519,7 +519,7 @@ class Handler(BaseHTTPRequestHandler):
             import research_engine as RE, production as PR
             if not RE.get_classifier(creds):
                 return self._json({"ok": False, "operator": op,
-                                   "error": f"{op} is missing a Gemini key on the server",
+                                   "error": f"{op} is missing a Groq key on the server",
                                    "providers": RE.providers_status(creds)}, 503)
             try:
                 PR.approve_build(oid)                       # one-click: auto-approve the build gate

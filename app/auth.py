@@ -89,14 +89,17 @@ class MissingCredential(Exception):
 
 def resolve_operator_credentials(operator: str) -> dict:
     """The ONE place operator→keys happens. Never falls back to the other operator.
-    Returns {'gemini': str|None, 'serper': str|None}. Keys stay server-side."""
+    Returns {'groq': str|None, 'gemini': str|None, 'serper': str|None}. The LLM is
+    Groq (free tier); Gemini is kept as an optional fallback. Keys stay server-side."""
     if operator not in OPERATORS:
         raise MissingCredential(f"unknown operator '{operator}'")
     up = operator.upper()
+    groq = os.environ.get(f"{up}_GROQ_API_KEY")
     gem = os.environ.get(f"{up}_GEMINI_API_KEY")
     ser = os.environ.get(f"{up}_SERPER_API_KEY")
     # local-dev convenience: fall back to the shared single-key names ONLY in open mode
     if not auth_enabled():
+        groq = groq or os.environ.get("GROQ_API_KEY")
         gem = gem or os.environ.get("GEMINI_API_KEY")
         ser = ser or os.environ.get("SERPER_API_KEY")
-    return {"gemini": gem, "serper": ser}
+    return {"groq": groq, "gemini": gem, "serper": ser}

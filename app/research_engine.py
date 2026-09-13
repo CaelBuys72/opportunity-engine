@@ -241,6 +241,28 @@ class OpenAIClassifier(ClassificationProvider):
         return data["choices"][0]["message"]["content"]
 
 
+class GroqClassifier(ClassificationProvider):
+    """Groq free tier — OpenAI-compatible, fast, hosts open models (Llama/Qwen).
+    JSON mode via response_format; the prompts already ask for strict JSON."""
+    name = "groq"
+    ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
+    MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+
+    def __init__(self, api_key: str):
+        self.api_key = api_key
+
+    def classify(self, system: str, user: str) -> str:
+        body = json.dumps({"model": self.MODEL,
+                           "messages": [{"role": "system", "content": system},
+                                        {"role": "user", "content": user}],
+                           "temperature": 0.2,
+                           "response_format": {"type": "json_object"}}).encode()
+        data = _http_json(self.ENDPOINT, body,
+                          {"Authorization": f"Bearer {self.api_key}",
+                           "Content-Type": "application/json"})
+        return data["choices"][0]["message"]["content"]
+
+
 class GeminiClassifier(ClassificationProvider):
     name = "gemini"
     MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.6-flash")
@@ -263,10 +285,17 @@ class GeminiClassifier(ClassificationProvider):
 
 
 def get_classifier(creds: dict | None = None) -> ClassificationProvider | None:
-    # authenticated path: use ONLY the operator's Gemini key (no global/other-op fallback).
+    # authenticated path: use ONLY this operator's key (no global/other-op fallback).
+    # Groq (free tier) is the primary LLM; Gemini kept as an optional fallback.
     if creds is not None:
-        return GeminiClassifier(creds["gemini"]) if creds.get("gemini") else None
+        if creds.get("groq"):
+            return GroqClassifier(creds["groq"])
+        if creds.get("gemini"):
+            return GeminiClassifier(creds["gemini"])
+        return None
     # creds=None (CLI/dev): fall back to any configured global provider.
+    if os.environ.get("GROQ_API_KEY"):
+        return GroqClassifier(os.environ["GROQ_API_KEY"])
     if os.environ.get("ANTHROPIC_API_KEY"):
         return AnthropicClassifier(os.environ["ANTHROPIC_API_KEY"])
     if os.environ.get("OPENAI_API_KEY"):
