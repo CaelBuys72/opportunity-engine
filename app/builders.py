@@ -101,6 +101,110 @@ def build_markdown(path: Path, title: str, blocks: list[dict]) -> Path:
     return path
 
 
+# ---------------------------------------------------------------- EBOOK (single sellable PDF)
+def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
+                    accent: str = "#6C4CF1") -> Path:
+    """Compile document chapters into ONE clean, sellable PDF ebook:
+    cover page + table of contents (auto page numbers) + styled chapters + footer.
+    chapters: [{"title": str, "blocks": [ {type: heading|para|bullet|number|check|field} ]}]"""
+    from reportlab.lib.pagesizes import A4
+    from reportlab.lib.units import cm
+    from reportlab.lib import colors
+    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+    from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
+                                    ListFlowable, ListItem)
+    from reportlab.platypus.tableofcontents import TableOfContents
+
+    ACCENT = colors.HexColor(accent)
+    INK = colors.HexColor("#1a1a2e")
+    MUTED = colors.HexColor("#6b7280")
+    ss = getSampleStyleSheet()
+    body = ParagraphStyle("Body", parent=ss["BodyText"], fontName="Helvetica",
+                          fontSize=10.5, leading=15.5, textColor=INK, spaceAfter=7)
+    chap = ParagraphStyle("ChapterTitle", parent=ss["Heading1"], fontName="Helvetica-Bold",
+                          fontSize=20, leading=24, textColor=ACCENT, spaceBefore=4, spaceAfter=14)
+    sect = ParagraphStyle("Section", parent=ss["Heading1"], fontName="Helvetica-Bold",
+                          fontSize=20, leading=24, textColor=ACCENT, spaceAfter=14)
+    h2 = ParagraphStyle("H2", parent=ss["Heading2"], fontName="Helvetica-Bold",
+                        fontSize=13, leading=17, textColor=INK, spaceBefore=10, spaceAfter=5)
+    li = ParagraphStyle("Li", parent=body, spaceAfter=3)
+    fld = ParagraphStyle("Fld", parent=body, textColor=MUTED, spaceAfter=5)
+
+    def esc(t):
+        return str(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+    def render(b):
+        t = b.get("type")
+        if t == "heading":
+            return [Paragraph(esc(b.get("text", "")), h2)]
+        if t == "para":
+            return [Paragraph(esc(b.get("text", "")), body)]
+        if t in ("bullet", "number"):
+            items = [ListItem(Paragraph(esc(x), li)) for x in b.get("items", [])]
+            return [ListFlowable(items, bulletType="1" if t == "number" else "bullet",
+                                 leftIndent=16), Spacer(1, 4)]
+        if t == "check":
+            return [Paragraph("[ &nbsp; ]&nbsp;&nbsp;" + esc(x), li) for x in b.get("items", [])] + [Spacer(1, 4)]
+        if t == "field":
+            return [Paragraph(f"<b>{esc(b.get('label',''))}:</b> " + "_" * 28, fld)]
+        return []
+
+    def draw_cover(canvas, doc):
+        w, h = A4
+        canvas.saveState()
+        canvas.setFillColor(ACCENT); canvas.rect(0, h - 6 * cm, w, 6 * cm, fill=1, stroke=0)
+        canvas.setFillColor(colors.white); canvas.setFont("Helvetica-Bold", 26)
+        for i, line in enumerate(_wrap(title, 30)[:3]):
+            canvas.drawString(2 * cm, h - 2.6 * cm - i * 1.0 * cm, line)
+        canvas.setFillColor(INK); canvas.setFont("Helvetica", 13)
+        for i, line in enumerate(_wrap(subtitle or "", 60)[:3]):
+            canvas.drawString(2 * cm, h - 8 * cm - i * 0.7 * cm, line)
+        canvas.setFillColor(MUTED); canvas.setFont("Helvetica", 9)
+        canvas.drawString(2 * cm, 2 * cm, "Produced by the Opportunity Engine")
+        canvas.restoreState()
+
+    def footer(canvas, doc):
+        canvas.saveState()
+        canvas.setFont("Helvetica", 8); canvas.setFillColor(MUTED)
+        canvas.setStrokeColor(colors.HexColor("#e5e7eb"))
+        canvas.line(2 * cm, 1.5 * cm, A4[0] - 2 * cm, 1.5 * cm)
+        canvas.drawString(2 * cm, 1.05 * cm, esc(title)[:70])
+        canvas.drawRightString(A4[0] - 2 * cm, 1.05 * cm, str(doc.page))
+        canvas.restoreState()
+
+    class EbookDoc(SimpleDocTemplate):
+        def afterFlowable(self, flowable):
+            if isinstance(flowable, Paragraph) and flowable.style.name == "ChapterTitle":
+                self.notify("TOCEntry", (0, flowable.getPlainText(), self.page))
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    doc = EbookDoc(str(path), pagesize=A4, topMargin=2 * cm, bottomMargin=2 * cm,
+                   leftMargin=2 * cm, rightMargin=2 * cm, title=title)
+    toc = TableOfContents()
+    toc.levelStyles = [ParagraphStyle("TOC0", fontName="Helvetica", fontSize=11.5,
+                                      leading=20, textColor=INK)]
+    story = [PageBreak(), Paragraph("Contents", sect), toc, PageBreak()]
+    for ch in chapters:
+        story.append(Paragraph(esc(ch.get("title", "")), chap))
+        for b in ch.get("blocks", []):
+            story.extend(render(b))
+        story.append(PageBreak())
+    doc.multiBuild(story, onFirstPage=draw_cover, onLaterPages=footer)
+    return path
+
+
+def _wrap(text, width):
+    words, lines, cur = str(text).split(), [], ""
+    for wd in words:
+        if len(cur) + len(wd) + 1 <= width:
+            cur = (cur + " " + wd).strip()
+        else:
+            lines.append(cur); cur = wd
+    if cur:
+        lines.append(cur)
+    return lines or [""]
+
+
 # ---------------------------------------------------------------- PDF (real only)
 def pdf_available() -> tuple[bool, str]:
     try:

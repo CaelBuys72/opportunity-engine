@@ -444,6 +444,23 @@ def _qa_component(cdir: Path, content: dict, required: set[str], files: list[str
             "qa_status": "passed" if not structural and not contentq else "failed"}
 
 
+def _qa_text_blocks(blocks: list) -> dict:
+    """Content QA for document components that go into the ebook (no file yet)."""
+    parts = []
+    for b in blocks or []:
+        parts.append(b.get("text", "")); parts.append(b.get("label", ""))
+        parts.extend(str(x) for x in (b.get("items", []) or []))
+    text = "\n".join(p for p in parts if p)
+    issues = []
+    if not text.strip():
+        issues.append("empty document content")
+    if FORBIDDEN.search(text):
+        issues.append("forbidden placeholder/unfinished content")
+    if ENGINE_LEAK.search(text):
+        issues.append("internal engine terminology leaked to buyer")
+    return {"structural": [], "content": issues, "qa_status": "passed" if not issues else "failed"}
+
+
 # ---------------------------------------------------------------- orchestrator
 def _dep_order(plan: dict, arch: dict) -> list[str]:
     seq = [s for s in plan["sequence"] if s.get("component_id")]
@@ -491,10 +508,13 @@ def build_product(opp_id: str, creds: dict | None = None, operator: str = "unkno
         shash = _spec_hash(cspec)
         cdir = pdir / "components" / cid
 
-        # resumable: skip if already built with same spec hash and files present, unless --force
+        # resumable: skip if already built with same spec hash, files present, and (for
+        # ebook chapters) the generated content.json still on disk. Unless --force.
         prevc = prev_comps.get(cid)
+        content_ok = (pdir / "components" / cid / "content.json").exists() \
+            if (prevc and prevc.get("role") == "chapter") else True
         if (not force and prevc and prevc.get("spec_hash") == shash
-                and prevc.get("production_status") == "built"
+                and prevc.get("production_status") == "built" and content_ok
                 and all((PRODUCTS / f).exists() for f in prevc.get("files", []))):
             manifest_components.append(prevc)
             continue
@@ -502,22 +522,25 @@ def build_product(opp_id: str, creds: dict | None = None, operator: str = "unkno
         if cdir.exists():
             shutil.rmtree(cdir)
         cdir.mkdir(parents=True, exist_ok=True)
+        role = "tool" if bool({"xlsx", "csv"} & set(required)) else "chapter"
         try:
             content = _generate_content(opp_id, comp, cspec, deliverable, required, spec, creds)
-            files, blocked = _produce_formats(cdir, content, required)
-            qa = _qa_component(cdir, content, required, files)
-            if blocked:
-                status = "format_blocked"
-            elif qa["qa_status"] == "failed":
-                status = "qa_failed"
+            (cdir / "content.json").write_text(json.dumps(content, ensure_ascii=False))
+            if role == "tool":
+                # spreadsheets/trackers stay as separate editable files
+                files, blocked = _produce_formats(cdir, content, required & {"xlsx", "csv"})
+                qa = _qa_component(cdir, content, required & {"xlsx", "csv"}, files)
             else:
-                status = "built"
+                # document components become chapters in the combined ebook — QA the text now
+                files, blocked = [], []
+                qa = _qa_text_blocks(content.get("blocks", []))
+            status = "qa_failed" if qa["qa_status"] == "failed" else ("format_blocked" if blocked else "built")
         except Exception as e:
             files, blocked, qa, status = [], [], {"structural": [f"builder crashed: {e}"],
                                                   "content": [], "qa_status": "failed"}, "failed"
 
         manifest_components.append({
-            "component_id": cid, "name": comp["name"], "type": comp["type"],
+            "component_id": cid, "name": comp["name"], "type": comp["type"], "role": role,
             "purpose": comp.get("purpose", ""), "required_formats": sorted(required),
             "verification_required": verify,
             "verification_status": "pending" if verify else "not_required",
@@ -597,59 +620,59 @@ def get_bundle(opp_id: str) -> bytes | None:
     return storage.get_backend().get_object(key)
 
 
-# buyer journey — (component_id, step, what it does, editable?, friendly bundle name) ; drives START_HERE + bundle filenames
-JOURNEY = [
-    ("cmp-3", "Set up each property once", "Fill in the Property Setup Workbook — your single source of truth.", True, "Property Setup Workbook"),
-    ("cmp-8", "Create the guest welcome guide", "The polished, guest-facing guide, built from your setup workbook.", True, "Welcome Guide for Guests"),
-    ("cmp-2", "Define your turnover standard", "The Master Turnover SOP — how the property gets reset, every time.", True, "Master Turnover SOP"),
-    ("cmp-4", "Hand off to your cleaner", "A single sheet your cleaner completes each turnover.", True, "Cleaner Handoff Sheet"),
-    ("cmp-7", "Run quick turnovers", "The one-page field checklist — print and pin it by the door.", True, "Quick Turnover Checklist"),
-    ("cmp-1", "Track stock", "Supply + Inventory tracker that auto-flags what to reorder (Excel or Google Sheets).", True, "Supply and Inventory Tracker"),
-    ("cmp-10", "Log damage & incidents", "Record what happened, what you did, and whether it's resolved.", True, "Damage and Incident Log"),
-    ("cmp-9", "Communicate with guests", "Copy-paste message templates for every stage of a booking.", True, "Guest Message Library"),
-]
-_FRIENDLY = {cid: (order, friendly) for order, (cid, _s, _w, _e, friendly) in enumerate(JOURNEY, 1)}
-
-
 def _assemble_bundle(pdir: Path, components: list[dict], spec: dict) -> tuple[str, str]:
+    """One sellable ebook PDF (document components as chapters) + editable tool
+    files (spreadsheets) + a short START_HERE."""
     bdir = pdir / "bundle"
     if bdir.exists():
         shutil.rmtree(bdir)
     bdir.mkdir(parents=True, exist_ok=True)
-    by_id, excluded = {}, []
-    order_n = 0
+    brief = spec.get("product_brief", {}) or {}
+    dossier = spec.get("curation_dossier", {}) or {}
+    title = brief.get("product_concept") or dossier.get("product_concept") or "Your Product"
+    transformation = dossier.get("transformation", {}) or {}
+    subtitle = brief.get("product_promise") or transformation.get("to_state") or ""
+
+    chapters, tools, excluded = [], [], []
     for c in components:
         cid = c["component_id"]
-        if c["production_status"] != "built" or c["qa_status"] != "passed":
+        if not (c["production_status"] == "built" and c["qa_status"] == "passed"):
             excluded.append(cid); continue
-        order_n += 1
-        friendly = c.get("name") or cid
-        safe = re.sub(r"[^A-Za-z0-9 _-]+", "-", f"{order_n:02d} - {friendly}").strip()[:80]
-        names = []
-        for f in c["files"]:
-            src = PRODUCTS / f
-            dest = bdir / f"{safe}{src.suffix}"
-            shutil.copy(src, dest)
-            names.append(dest.name)
-        by_id[cid] = {"name": friendly, "files": names, "purpose": c.get("purpose", "")}
-    # START_HERE — generic buyer guide derived from the curation spec (no hardcoding)
-    if by_id:
-        dossier = spec.get("curation_dossier", {}) or {}
-        concept = ((spec.get("product_brief", {}) or {}).get("product_concept")
-                   or dossier.get("product_concept") or "your product")
-        blocks = [{"type": "para", "text": f"This is your product kit: {concept}. "
-                                           "Work through the files in this order."}]
-        n = 0
-        for v in by_id.values():
-            n += 1
-            fnames = ", ".join(v["files"])
-            blocks.append({"type": "heading", "text": f"{n}. {v['name']}"})
-            blocks.append({"type": "para", "text": (f"{v['purpose']}  →  **{fnames}**"
-                                                    if v.get("purpose") else f"**{fnames}**")})
-        blocks.append({"type": "para", "text": "Anything in [brackets] is a prompt to replace with "
-                                               "your own details. Spreadsheets open in Excel or Google Sheets."})
-        B.build_markdown(bdir / "START_HERE.md", "Start Here", blocks)
-    status = "complete" if by_id and not excluded else ("partial" if by_id else "empty")
+        if c.get("role") == "tool":
+            safe = re.sub(r"[^A-Za-z0-9 _-]+", "-", c.get("name") or cid).strip()[:70]
+            for f in c["files"]:
+                src = PRODUCTS / f
+                dest = bdir / f"{safe}{src.suffix}"
+                shutil.copy(src, dest); tools.append(dest.name)
+        else:
+            cj = pdir / "components" / cid / "content.json"
+            if cj.exists():
+                data = json.loads(cj.read_text())
+                chapters.append({"title": c.get("name") or data.get("title") or cid,
+                                 "blocks": data.get("blocks", [])})
+
+    ebook_name = None
+    if chapters:
+        safe_title = re.sub(r"[^A-Za-z0-9 _-]+", "-", title).strip()[:60] or "Ebook"
+        try:
+            B.build_ebook_pdf(bdir / f"{safe_title}.pdf", title, subtitle, chapters)
+            ebook_name = f"{safe_title}.pdf"
+        except Exception as e:                       # never fake it — surface as no ebook
+            ebook_name = None
+            (pdir / "qa" / "ebook_error.txt").write_text(str(e))
+
+    blocks = [{"type": "para", "text": f"This kit contains "
+               + ("your ebook" if ebook_name else "your files")
+               + (f" plus {len(tools)} editable tool file(s)." if tools else ".")}]
+    if ebook_name:
+        blocks.append({"type": "para", "text": f"Start with **{ebook_name}** — it's the main product."})
+    if tools:
+        blocks.append({"type": "heading", "text": "Editable tools (open in Excel or Google Sheets)"})
+        blocks.append({"type": "bullet", "items": tools})
+    B.build_markdown(bdir / "START_HERE.md", "Start Here", blocks)
+
+    has_content = bool(ebook_name or tools)
+    status = "complete" if has_content and not excluded else ("partial" if has_content else "empty")
     return status, "blocked"
 
 
