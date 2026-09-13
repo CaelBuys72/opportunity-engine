@@ -280,6 +280,25 @@ class Handler(BaseHTTPRequestHandler):
             usage = RE._read("research_usage")
             return self._json({"operator": op, "providers": RE.providers_status(creds),
                                "usage": usage if isinstance(usage, dict) else {}})
+        if path == "/api/universe/groq-models":
+            # diagnostic: list the Groq models the signed-in operator's key can use
+            op = self._require_operator()
+            if not op:
+                return
+            creds = auth.resolve_operator_credentials(op)
+            if not creds.get("groq"):
+                return self._json({"error": f"{op} has no Groq key"}, 503)
+            import urllib.request as _u, urllib.error as _ue
+            req = _u.Request("https://api.groq.com/openai/v1/models",
+                             headers={"Authorization": f"Bearer {creds['groq']}",
+                                      "User-Agent": "opportunity-engine/1.0"})
+            try:
+                with _u.urlopen(req, timeout=20) as r:
+                    data = json.loads(r.read())
+                ids = sorted(m.get("id") for m in data.get("data", []))
+                return self._json({"models": ids})
+            except _ue.HTTPError as e:
+                return self._json({"error": f"HTTP {e.code}: {e.read().decode()[:200]}"}, 502)
         if path == "/api/universe/search-index":
             from universe_graph import GraphService
             return self._json({"nodes": GraphService().search_index()})
