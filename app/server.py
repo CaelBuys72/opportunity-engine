@@ -300,7 +300,46 @@ class Handler(BaseHTTPRequestHandler):
             return self._json({"scoring_version": "v1", "rankings": svc.ranked_opportunities()})
         if path == "/api/universe/pipeline":
             import pipeline as PL
-            return self._json({"promoted": PL.PipelineService().promoted_opportunities()})
+            svc = UniverseService(UniverseStore())
+            promoted = []
+            for st in PL.PipelineService().promoted_opportunities():
+                oid = st.get("opportunity_id", "")
+                o = svc.get_opportunity(oid)
+                row = dict(st)
+                row["name"] = (o or {}).get("name")
+                row["path"] = svc.path_for_opportunity(oid) if o else []
+                promoted.append(row)
+            return self._json({"promoted": promoted})
+        if path == "/api/universe/explored":
+            # Everything the operator team has touched: expanded graph nodes +
+            # opened/researched opportunities. Read-only; no API spend.
+            import pipeline as PL
+            store = UniverseStore()
+            svc = UniverseService(store)
+            names = {}
+            for coll in ("markets", "submarkets", "audiences", "problems"):
+                for r in store.list(coll):
+                    names[r["id"]] = r.get("name") or r.get("statement") or r["id"]
+            ex = storage.get_backend().all_expansion()
+            expanded = [{"node_id": nid, "name": names.get(nid, nid),
+                         "expansion_status": v.get("expansion_status"),
+                         "opportunity_count": v.get("opportunity_count"),
+                         "child_count": v.get("child_count"),
+                         "source_count": v.get("source_count"),
+                         "researched_at": v.get("researched_at")}
+                        for nid, v in ex.items() if v.get("expansion_status") == "expanded"]
+            expanded.sort(key=lambda e: e.get("researched_at") or "", reverse=True)
+            opportunities = []
+            for st in PL.PipelineService().promoted_opportunities():
+                oid = st.get("opportunity_id", "")
+                o = svc.get_opportunity(oid)
+                opportunities.append({"opportunity_id": oid, "name": (o or {}).get("name"),
+                                      "priority_score": st.get("priority_score"),
+                                      "priority_classification": st.get("priority_classification"),
+                                      "research_status": st.get("research_status"),
+                                      "curation_status": st.get("curation_status"),
+                                      "pipeline_stage": st.get("pipeline_stage")})
+            return self._json({"expanded_nodes": expanded, "opportunities": opportunities})
         if path.startswith("/api/universe/pipeline/"):
             import pipeline as PL
             oid = path.split("/")[4]
@@ -412,6 +451,18 @@ class Handler(BaseHTTPRequestHandler):
                 storage.get_backend().release_expansion(node_id)
                 return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
         # ---- Hand a (generated) universe opportunity into the existing Phase-8 pipeline ----
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/open"):
+            # Register an opportunity into the shared workspace (idempotent, no API spend).
+            op = self._require_operator()
+            if not op:
+                return
+            oid = unquote(path.split("/")[4])
+            import pipeline as PL
+            try:
+                st = PL.promote(oid, force=True, promoted_by=op)
+                return self._json({"ok": True, "opportunity_id": oid, "operator": op, "state": st})
+            except Exception as e:
+                return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 422)
         if path.startswith("/api/universe/opportunity/") and path.endswith("/research"):
             op = self._require_operator()
             if not op:

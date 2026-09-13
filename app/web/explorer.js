@@ -639,6 +639,60 @@ searchBox.addEventListener("input", () => {
 });
 document.addEventListener("click", e => { if (!searchRes.contains(e.target) && e.target !== searchBox) searchRes.hidden = true; });
 
+// ---------------------------------------------------------------- explored panel
+// Everything the team has already explored (expanded nodes) or opened into
+// Opportunity Intelligence — so you can jump straight back instead of hunting.
+const exploredBtn = $("#explored-btn"), exploredRes = $("#explored-results");
+let exploredOpen = false;
+async function renderExplored() {
+  exploredRes.hidden = false;
+  exploredRes.innerHTML = '<div class="sr-empty muted">Loading…</div>';
+  let data;
+  try { const r = await fetch("/api/universe/explored"); if (!r.ok) throw 0; data = await r.json(); }
+  catch (e) { exploredRes.innerHTML = '<div class="sr-empty muted">Explored history needs the live server.</div>'; return; }
+  const idx = await getSearchIndex();
+  const anc = {}, pathOf = {};
+  idx.forEach(r => { anc[r.id] = r.ancestors || []; pathOf[r.id] = r.path || []; });
+  const opps = data.opportunities || [], xn = data.expanded_nodes || [];
+  if (!opps.length && !xn.length) {
+    exploredRes.innerHTML = '<div class="sr-empty muted">Nothing explored yet. Click a node → “Explore Deeper”, or open an opportunity in Opportunity Intelligence.</div>';
+    return;
+  }
+  const crumbs = id => esc((pathOf[id] || []).slice(0, -1).join(" › "));
+  let html = "";
+  if (opps.length) {
+    html += `<div class="sr-head">Opened opportunities (${opps.length})</div>`;
+    html += opps.map(o => {
+      const rs = o.research_status || "pending";
+      const tag = rs === "complete" ? "researched" : rs === "needs_review" ? "review" : "opened";
+      return `<button class="sr" data-id="${esc(o.opportunity_id)}">
+        <span class="sr-type opportunity">${tag}</span>
+        <span class="sr-label">${esc(o.name || o.opportunity_id)}</span>
+        <span class="sr-path muted">${crumbs(o.opportunity_id)}</span>
+        <a class="sr-oi" href="dashboard?focus=${encodeURIComponent(o.opportunity_id)}" title="Open in Opportunity Intelligence">OI ↗</a>
+      </button>`;
+    }).join("");
+  }
+  if (xn.length) {
+    html += `<div class="sr-head">Explored nodes (${xn.length})</div>`;
+    html += xn.map(n => `<button class="sr" data-id="${esc(n.node_id)}">
+        <span class="sr-type audience">explored</span>
+        <span class="sr-label">${esc(n.name || n.node_id)}</span>
+        <span class="sr-path muted">${crumbs(n.node_id)}${n.opportunity_count != null ? ` · ${n.opportunity_count} opps` : ""}</span>
+      </button>`).join("");
+  }
+  exploredRes.innerHTML = html;
+  exploredRes.querySelectorAll(".sr").forEach(b => b.onclick = async (e) => {
+    if (e.target.closest(".sr-oi")) return;   // let the OI ↗ link navigate to the dashboard
+    exploredRes.hidden = true; exploredOpen = false;
+    await focusNode(b.dataset.id, anc[b.dataset.id]);
+  });
+}
+exploredBtn.onclick = () => { exploredOpen = !exploredOpen; exploredOpen ? renderExplored() : (exploredRes.hidden = true); };
+document.addEventListener("click", e => {
+  if (exploredOpen && !exploredRes.contains(e.target) && !exploredBtn.contains(e.target)) { exploredRes.hidden = true; exploredOpen = false; }
+});
+
 // ---------------------------------------------------------------- controls
 $("#reset-btn").onclick = () => loadRoots();
 $("#fit-btn").onclick = () => fit();

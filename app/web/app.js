@@ -9,6 +9,47 @@ const FACTOR_LABELS = {
 };
 let ACTIVE = null;
 
+// ---- Workspace: only opportunities that have been opened / researched (shared state).
+// The full seed universe lives in the Universe Explorer; this dashboard is the
+// working set you've actually promoted into Opportunity Intelligence.
+const _STAGE_RANK = { distribution_complete: 0, curation_complete: 1, research_complete: 2,
+                      research_needs_review: 3, research_pending: 4, opened: 5 };
+async function loadWorkspace(activeId) {
+  const root = $("#industries");
+  let data;
+  try {
+    const r = await fetch("/api/universe/pipeline");
+    if (!r.ok) throw new Error("no server");
+    data = await r.json();
+  } catch (e) {
+    root.innerHTML = '<p class="muted" style="font-size:12px;line-height:1.5">Workspace needs the live server.<br><br>Explore the full universe in the <a href="explorer.html">🌌 Universe Explorer</a>.</p>';
+    return;
+  }
+  const items = data.promoted || [];
+  if (!items.length) {
+    root.innerHTML = '<p class="muted" style="font-size:12px;line-height:1.5">No opportunities opened yet.<br><br>Open the <a href="explorer.html">🌌 Universe Explorer</a>, pick an opportunity, and click <b>Open in Opportunity Intelligence</b> — it will appear here.</p>';
+    return;
+  }
+  items.sort((a, b) => (_STAGE_RANK[a.pipeline_stage] ?? 9) - (_STAGE_RANK[b.pipeline_stage] ?? 9)
+    || (b.priority_score || 0) - (a.priority_score || 0));
+  root.innerHTML = "";
+  items.forEach(p => {
+    const id = p.opportunity_id;
+    const rs = p.research_status || "pending";
+    const stat = rs === "complete" ? "✓ researched" : rs === "needs_review" ? "◐ needs review" : "○ not researched";
+    const curated = p.curation_status && !["not_started", "pending", "failed"].includes(p.curation_status);
+    const wrap = el("div", "ws-item");
+    const btn = el("button", "pocket-btn" + (id === activeId ? " active" : ""),
+      `<span>${esc(p.name || id)}</span><span class="s">${p.priority_score ?? "—"}</span>`);
+    btn.dataset.oid = id;
+    btn.onclick = () => { history.pushState({}, "", "?focus=" + encodeURIComponent(id)); openUniverseFocus(id); };
+    const meta = el("div", "ws-meta",
+      `<span class="ws-stat rs-${rs}">${stat}</span>${curated ? ' · <span class="ws-stat rs-complete">curated</span>' : ""}`);
+    wrap.append(btn, meta);
+    root.appendChild(wrap);
+  });
+}
+
 async function loadGraph() {
   const root = $("#industries");
   let g;
@@ -273,6 +314,11 @@ async function openUniverseFocus(id) {
   ]);
   const d = $("#detail");
   if (!o || o.error) { d.innerHTML = `<div class="empty"><h2>Opportunity not found</h2><p class="muted">${esc(id)}</p><p><a href="explorer.html">← Back to Universe Explorer</a></p></div>`; return; }
+  // Register into the shared workspace (idempotent, no API spend) so it persists
+  // as its own item, then refresh + highlight the sidebar list.
+  if (!pipe) { fetch("/api/universe/opportunity/" + encodeURIComponent(id) + "/open", { method: "POST" })
+    .then(() => loadWorkspace(id)).catch(() => {}); }
+  else { loadWorkspace(id); }
   const s = o.score || {};
   const path = o.path || [];
   const probs = (o.problems || []).map(p => `<li>${esc(p.statement)}</li>`).join("") || '<li class="muted">—</li>';
@@ -412,5 +458,9 @@ async function curateUniverse(id, override) {
 }
 
 const _focus = new URLSearchParams(location.search).get("focus");
-loadGraph();
+loadWorkspace(_focus && _focus.startsWith("opp-") ? _focus : null);
 if (_focus && _focus.startsWith("opp-")) openUniverseFocus(_focus);
+window.addEventListener("popstate", () => {
+  const f = new URLSearchParams(location.search).get("focus");
+  if (f && f.startsWith("opp-")) openUniverseFocus(f);
+});
