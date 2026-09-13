@@ -341,8 +341,45 @@ def get_classifier(creds: dict | None = None) -> ClassificationProvider | None:
 
 
 # ==========================================================================
-# IMAGE provider — Together AI, FLUX.1-schnell (Apache-2.0 → outputs sellable)
+# IMAGE provider — FLUX.1-schnell (Apache-2.0 → outputs sellable)
+# Primary: Cloudflare Workers AI (shared account, 10k free Neurons/day, no card).
+# Fallback: Together AI (per-operator) if a Together key is present instead.
 # ==========================================================================
+class CloudflareFlux:
+    name = "flux-schnell"
+    MODEL = os.environ.get("CF_IMAGE_MODEL", "@cf/black-forest-labs/flux-1-schnell")
+
+    def __init__(self, account_id: str, api_token: str, operator: str = "shared"):
+        self.account_id = account_id
+        self.token = api_token
+        self.operator = operator
+        self.last_error = None
+
+    def cover(self, prompt: str, width: int = 768, height: int = 1024) -> bytes | None:
+        """Cover-art BACKGROUND (no text; title overlaid in the PDF). Cloudflare
+        flux-1-schnell returns base64 JPEG under result.image. None on failure."""
+        import base64
+        url = f"https://api.cloudflare.com/client/v4/accounts/{self.account_id}/ai/run/{self.MODEL}"
+        body = json.dumps({"prompt": prompt, "steps": 6}).encode()
+        try:
+            data = _http_json(url, body, {"Authorization": f"Bearer {self.token}",
+                                          "Content-Type": "application/json"}, timeout=120)
+            b64 = (data.get("result") or {}).get("image")
+            if not b64:
+                self.last_error = f"no image in response: {str(data)[:200]}"
+                return None
+            img = base64.b64decode(b64)
+        except Exception as e:
+            self.last_error = str(e)[:200]
+            return None
+        try:
+            _S.get_backend().record_usage({"operator": self.operator, "provider": "cloudflare",
+                                           "operation": "image", "images": 1})
+        except Exception:
+            pass
+        return img
+
+
 class TogetherFlux:
     name = "flux-schnell"
     ENDPOINT = "https://api.together.xyz/v1/images/generations"
@@ -376,9 +413,14 @@ class TogetherFlux:
 
 
 def get_image_provider(creds: dict | None = None):
-    if creds is not None:
-        return TogetherFlux(creds["together"], operator=creds.get("operator", "unknown")) \
-            if creds.get("together") else None
+    op = creds.get("operator", "shared") if creds else "shared"
+    # Primary: shared Cloudflare account (global env, one pool for both operators)
+    acct, tok = os.environ.get("CF_ACCOUNT_ID"), os.environ.get("CF_API_TOKEN")
+    if acct and tok:
+        return CloudflareFlux(acct, tok, operator=op)
+    # Fallback: per-operator Together key, else global Together key
+    if creds is not None and creds.get("together"):
+        return TogetherFlux(creds["together"], operator=op)
     if os.environ.get("TOGETHER_API_KEY"):
         return TogetherFlux(os.environ["TOGETHER_API_KEY"])
     return None

@@ -671,8 +671,16 @@ def _assemble_bundle(pdir: Path, components: list[dict], spec: dict,
             imgp = _RE.get_image_provider(creds)
             if imgp:
                 cover = imgp.cover(_cover_prompt(title, transformation))  # None on failure → typographic cover
-        except Exception:
+                if cover is None and getattr(imgp, "last_error", None):
+                    (pdir / "qa").mkdir(parents=True, exist_ok=True)
+                    (pdir / "qa" / "cover_error.txt").write_text(str(imgp.last_error))
+        except Exception as e:
             cover = None
+            try:
+                (pdir / "qa").mkdir(parents=True, exist_ok=True)
+                (pdir / "qa" / "cover_error.txt").write_text(str(e))
+            except Exception:
+                pass
         try:
             B.build_ebook_pdf(bdir / f"{safe_title}.pdf", title, subtitle, chapters, cover_image=cover)
             ebook_name = f"{safe_title}.pdf"
