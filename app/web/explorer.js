@@ -549,7 +549,7 @@ async function renderPanel(id) {
       `<button class="handoff" id="research-btn">🔬 Research This Opportunity →</button>
        <p class="muted small" id="research-status">Hands this opportunity into the existing deep research pipeline (Phase 8).</p>
        <button class="handoff" id="handoff" style="background:rgba(123,92,255,.22);color:#e9f2ff">Open in Opportunity Intelligence →</button>`;
-    $("#handoff").onclick = () => { window.location.href = "index.html?focus=" + encodeURIComponent(id); };
+    $("#handoff").onclick = () => { window.location.href = "dashboard?focus=" + encodeURIComponent(id); };
     $("#research-btn").onclick = async () => {
       const rb = $("#research-btn"), st = $("#research-status");
       rb.disabled = true; rb.textContent = "Researching…"; st.textContent = "Promoting + running Phase-8 research…";

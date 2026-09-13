@@ -348,9 +348,11 @@ class Handler(BaseHTTPRequestHandler):
             pid = path.rsplit("/", 1)[-1]
             p = resolve_pocket(pid)
             return self._json(p) if p else self._json({"error": "not found"}, 404)
-        # static
-        rel = "index.html" if path in ("/", "") else path.lstrip("/")
+        # static (mirror Vercel: "/" -> explorer, extensionless clean URLs -> .html)
+        rel = "explorer.html" if path in ("/", "") else path.lstrip("/")
         f = (WEB / rel).resolve()
+        if not (f.exists() and f.is_file()) and "." not in rel.rsplit("/", 1)[-1]:
+            f = (WEB / (rel + ".html")).resolve()   # /dashboard -> dashboard.html
         if WEB in f.parents and f.exists() and f.is_file():
             ctype = {"html": "text/html", "css": "text/css", "js": "application/javascript",
                      "json": "application/json"}.get(
