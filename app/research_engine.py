@@ -261,11 +261,13 @@ class GroqClassifier(ClassificationProvider):
         self.api_key = api_key
 
     def classify(self, system: str, user: str) -> str:
+        # NB: we do NOT use Groq's strict response_format:json_object — it hard-fails
+        # (HTTP 400 json_validate_failed) if the model wraps output in an array or gets
+        # truncated. The prompts already demand strict JSON and _extract_json is tolerant.
         body = json.dumps({"model": self.MODEL,
                            "messages": [{"role": "system", "content": system},
                                         {"role": "user", "content": user}],
-                           "temperature": 0.2,
-                           "response_format": {"type": "json_object"}}).encode()
+                           "temperature": 0.2, "max_tokens": 8000}).encode()
         data = _http_json(self.ENDPOINT, body,
                           {"Authorization": f"Bearer {self.api_key}",
                            "Content-Type": "application/json"})

@@ -102,7 +102,7 @@ def _required_formats(deliverable: str, comp_type: str) -> set[str]:
     if "or fillable template" in d:
         return {"docx"}
     if "fillable pdf" in d or "short pdf" in d:
-        return {"pdf"}
+        return {"docx"}   # no-PDF build: deliver an editable DOCX (user can export to PDF)
     if "supporting file" in d:
         return {"md"} if comp_type == "bonus" else {"docx"}
     return {"docx"}
@@ -352,9 +352,16 @@ def _generate_content(opp_id: str, comp: dict, cspec: dict, deliverable: str,
                   "Produce a complete, well-structured document (headings, guidance, checklists/bullets "
                   "where useful) — genuinely valuable on its own.")
     user = json.dumps(context, ensure_ascii=False)
-    data = RE._extract_json(clf.classify(system, user))
+
+    def _gen(sys_prompt):
+        d = RE._extract_json(clf.classify(sys_prompt, user))
+        if isinstance(d, list) and d:          # model wrapped the object in an array
+            d = next((x for x in d if isinstance(x, dict)), None)
+        return d
+
+    data = _gen(system)
     if not isinstance(data, dict):
-        data = RE._extract_json(clf.classify(system + " Output valid JSON only.", user))
+        data = _gen(system + " Return a SINGLE JSON object (not an array), valid JSON only.")
     if not isinstance(data, dict):
         raise ProductionError(f"content generation returned invalid JSON for '{comp.get('name')}'")
 
