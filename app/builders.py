@@ -130,8 +130,20 @@ def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
     li = ParagraphStyle("Li", parent=body, spaceAfter=3)
     fld = ParagraphStyle("Fld", parent=body, textColor=MUTED, spaceAfter=5)
 
-    def esc(t):
-        return str(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    # Helvetica (WinAnsi) can't render smart quotes / unicode dashes → they show as
+    # tofu boxes. Normalise to safe equivalents before drawing anything.
+    _SUBS = {"’": "'", "‘": "'", "“": '"', "”": '"', "–": "-",
+             "—": " - ", "‑": "-", "‐": "-", "−": "-", "…": "...",
+             "•": "-", " ": " ", "■": "", "﻿": ""}
+
+    def safe(t):
+        s = str(t)
+        for k, v in _SUBS.items():
+            s = s.replace(k, v)
+        return s.encode("latin-1", "ignore").decode("latin-1")   # drop remaining non-WinAnsi
+
+    def esc(t):  # for Paragraph markup (safe() first, then HTML-escape)
+        return safe(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
     def render(b):
         t = b.get("type")
@@ -154,10 +166,10 @@ def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
         canvas.saveState()
         canvas.setFillColor(ACCENT); canvas.rect(0, h - 6 * cm, w, 6 * cm, fill=1, stroke=0)
         canvas.setFillColor(colors.white); canvas.setFont("Helvetica-Bold", 26)
-        for i, line in enumerate(_wrap(title, 30)[:3]):
+        for i, line in enumerate(_wrap(safe(title), 30)[:3]):
             canvas.drawString(2 * cm, h - 2.6 * cm - i * 1.0 * cm, line)
         canvas.setFillColor(INK); canvas.setFont("Helvetica", 13)
-        for i, line in enumerate(_wrap(subtitle or "", 60)[:3]):
+        for i, line in enumerate(_wrap(safe(subtitle or ""), 60)[:3]):
             canvas.drawString(2 * cm, h - 8 * cm - i * 0.7 * cm, line)
         canvas.setFillColor(MUTED); canvas.setFont("Helvetica", 9)
         canvas.drawString(2 * cm, 2 * cm, "Produced by the Opportunity Engine")
@@ -168,7 +180,7 @@ def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
         canvas.setFont("Helvetica", 8); canvas.setFillColor(MUTED)
         canvas.setStrokeColor(colors.HexColor("#e5e7eb"))
         canvas.line(2 * cm, 1.5 * cm, A4[0] - 2 * cm, 1.5 * cm)
-        canvas.drawString(2 * cm, 1.05 * cm, esc(title)[:70])
+        canvas.drawString(2 * cm, 1.05 * cm, safe(title)[:70])
         canvas.drawRightString(A4[0] - 2 * cm, 1.05 * cm, str(doc.page))
         canvas.restoreState()
 
