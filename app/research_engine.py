@@ -181,6 +181,9 @@ def get_search_provider(creds: dict | None = None) -> SearchProvider | None:
 def _http_json(url, data, headers, timeout=120, retries=6):
     """POST JSON with retry/backoff on transient errors (429/500/503/timeout).
     429 (rate limit) gets a longer backoff since free LLM tiers are strict."""
+    # Some LLM APIs (e.g. Groq) sit behind Cloudflare, which 403s the default
+    # "Python-urllib" agent — send a normal User-Agent so requests aren't blocked.
+    headers = {"User-Agent": "opportunity-engine/1.0", **headers}
     last = None
     for attempt in range(retries):
         try:
@@ -191,7 +194,11 @@ def _http_json(url, data, headers, timeout=120, retries=6):
             last = e
             if e.code in (429, 500, 502, 503) and attempt < retries - 1:
                 time.sleep((6 if e.code == 429 else 2) * (attempt + 1)); continue
-            raise
+            try:
+                body = e.read().decode()[:300]
+            except Exception:
+                body = ""
+            raise RuntimeError(f"HTTP {e.code} from {url.split('?')[0]}: {body or e.reason}")
         except (urllib.error.URLError, TimeoutError) as e:
             last = e
             if attempt < retries - 1:
