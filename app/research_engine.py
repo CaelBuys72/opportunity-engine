@@ -253,7 +253,9 @@ class GroqClassifier(ClassificationProvider):
     JSON mode via response_format; the prompts already ask for strict JSON."""
     name = "groq"
     ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
-    MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+    # Groq's current free lineup (verify with /api/universe/groq-models). gpt-oss-120b
+    # is the strongest for structured JSON; set GROQ_MODEL=qwen/qwen3.8-27b for Qwen.
+    MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 
     def __init__(self, api_key: str):
         self.api_key = api_key
