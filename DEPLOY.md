@@ -61,21 +61,27 @@ Copy each printed `pbkdf2_sha256$...` string. The plaintext is never stored.
 
 ### 4. Deploy the backend on Render
 1. Push this repo to GitHub.
-2. Render → **New → Web Service** → connect the repo. `render.yaml` supplies the
-   start command (`python3 app/server.py`); the env vars below are marked
-   `sync:false`, so set their **values** in the Render dashboard:
+2. Render → **New → Web Service** → connect the repo. Build command
+   `pip install -r requirements.txt`, start command `python3 app/server.py`.
+   **⚠️ `render.yaml` does NOT apply to a hand-created Web Service** — you must set
+   every env var below **manually** in the Render dashboard (this is the trap that
+   left the app silently on local storage: `STORAGE_BACKEND` was unset → defaulted
+   to `local`, so writes went to ephemeral disk and weren't shared). Verify after
+   deploy with `GET /api/universe/storage-info` (must report `"backend":"supabase"`).
 
    | Env var | Value |
    |---|---|
-   | `STORAGE_BACKEND` | `supabase` (already set) |
+   | `STORAGE_BACKEND` | **`supabase`** — REQUIRED; unset = local ephemeral disk |
    | `SUPABASE_URL` | your project URL |
    | `SUPABASE_SERVICE_ROLE_KEY` | the service_role secret |
    | `CAEL_PASSWORD_HASH` | hash from step 3 |
    | `SHEYLYN_PASSWORD_HASH` | hash from step 3 |
-   | `CAEL_GEMINI_API_KEY` | Cael's Gemini key |
-   | `CAEL_SERPER_API_KEY` | Cael's Serper key |
-   | `SHEYLYN_GEMINI_API_KEY` | Sheylyn's Gemini key (add when she provides it) |
+   | `CAEL_GROQ_API_KEY` | Cael's Groq key (LLM: research/curation/product) |
+   | `CAEL_SERPER_API_KEY` | Cael's Serper key (web search) |
+   | `SHEYLYN_GROQ_API_KEY` | Sheylyn's Groq key (add when she provides it) |
    | `SHEYLYN_SERPER_API_KEY` | Sheylyn's Serper key |
+   | `CF_ACCOUNT_ID` | shared Cloudflare account ID (ebook covers) |
+   | `CF_API_TOKEN` | shared Cloudflare Workers AI token |
    | `CORS_ALLOW_ORIGINS` | your Vercel URL, e.g. `https://opp-engine.vercel.app` |
 
    > Setting **any** `*_PASSWORD_HASH` turns auth ON. Until Sheylyn's keys are
