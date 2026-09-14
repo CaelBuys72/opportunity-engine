@@ -20,21 +20,84 @@ WTP_TYPES = {"existing_paid_solution", "paid_course", "subscription",
 WEAKNESS_TYPES = {"buyer_complaint", "solution_gap", "poor_review"}
 
 
-def _relevance(fit) -> str:
-    fit = fit or 0
-    return "high" if fit >= 60 else "medium" if fit >= 40 else "low"
+def _channel_key(url: str) -> str:
+    from urllib.parse import urlparse
+    try:
+        u = urlparse(url); host = (u.netloc or "").lower().replace("www.", "")
+        parts = [p for p in (u.path or "").split("/") if p]
+        if parts and any(h in host for h in ("youtube.com", "tiktok.com", "instagram.com", "x.com", "twitter.com")):
+            return f"{host}/{parts[0].lower().lstrip('@')}"
+        return host
+    except Exception:
+        return url.lower()
+
+
+def _discover_creators(ctx: dict, sp, clf) -> list[dict]:
+    """Self-contained creator discovery from RAW opportunity context (no product_brief
+    needed — works for every opportunity). Serper finds them, Groq classifies relevance."""
+    import research_engine as RE
+    aud = ctx.get("audience") or ctx.get("submarket") or ctx.get("market") or ctx.get("opportunity")
+    try:
+        d = RE._extract_json(clf.classify(
+            "Generate 6 web-search queries to find CREATORS/channels (YouTube, TikTok, Instagram, "
+            "newsletter) whose audience is this buyer with this problem. STRICT JSON {\"queries\":[str,...]}.",
+            json.dumps(ctx, ensure_ascii=False)))
+        queries = [q for q in ((d or {}).get("queries") or []) if isinstance(q, str) and q.strip()][:6]
+    except Exception:
+        queries = []
+    if not queries:
+        queries = [f"{aud} youtube creator", f"{aud} tiktok", f"{aud} instagram creator", f"{aud} newsletter"]
+
+    seen, results = set(), []
+    for q in queries:
+        try:
+            hits = sp.search(q, num=10)
+        except Exception:
+            hits = []
+        for h in hits:
+            url = h.get("url") or ""
+            k = _channel_key(url)
+            if url and k not in seen:
+                seen.add(k)
+                results.append({"i": len(results), "title": h.get("title"), "url": url,
+                                "snippet": (h.get("snippet") or "")[:200]})
+    if not results:
+        return []
+    system = (
+        "From web results, identify individual CREATORS/channels who serve this audience (NOT brands, "
+        "marketplaces, listicles or agencies). For each return STRICT JSON {\"creators\":[{\"i\":int,"
+        "\"keep\":bool,\"platform\":str,\"name\":str,\"handle\":str,\"relevance\":\"high|medium|low\"}]}. "
+        "name = the creator/channel (not a video title). keep=false if it is not a single identifiable "
+        "creator. relevance = how directly their audience matches this buyer + problem.")
+    data = RE._extract_json(clf.classify(system, json.dumps(
+        {"audience": ctx.get("audience"), "problem": (ctx.get("problems") or [None])[0],
+         "results": [{"i": r["i"], "title": r["title"], "url": r["url"], "snippet": r["snippet"]} for r in results]},
+        ensure_ascii=False)))
+    rows = (data or {}).get("creators") if isinstance(data, dict) else (data if isinstance(data, list) else [])
+    by_i = {r["i"]: r for r in results}
+    out = []
+    for r in (rows or []):
+        if not isinstance(r, dict) or not r.get("keep", True):
+            continue
+        src = by_i.get(r.get("i"))
+        if not src:
+            continue
+        rel = r.get("relevance", "low")
+        out.append({"platform": r.get("platform"), "url": src["url"], "handle": r.get("handle"),
+                    "name": r.get("name") or src.get("title"), "relevance": rel if rel in ("high", "medium", "low") else "low"})
+    return out
 
 
 def _write_density(opp_id: str, creators: list[dict]) -> int:
     cands = [{"platform": c.get("platform"), "url": c.get("url"), "handle": c.get("handle"),
               "display_name": c.get("name"),
-              "audience_relevance": _relevance(c.get("fit_score")),
-              "opportunity_relevance": _relevance(c.get("fit_score")),
+              "audience_relevance": c.get("relevance", "low"),
+              "opportunity_relevance": c.get("relevance", "low"),
               "basis": "observed", "source_refs": [c.get("url")] if c.get("url") else []}
              for c in creators if c.get("url")]
     CD_DIR.mkdir(parents=True, exist_ok=True)
     (CD_DIR / f"{opp_id}.json").write_text(json.dumps(
-        {"retrieval_method": "serper+groq(discover)", "queries_run": 0, "candidates": cands}))
+        {"retrieval_method": "serper+groq", "queries_run": 0, "candidates": cands}))
     return len(cands)
 
 
@@ -92,7 +155,6 @@ def rescore_one(opp_id: str, creds: dict | None = None, operator: str = "unknown
     """Gather real evidence for one opp, rescore it, upsert its score to storage."""
     import scoring as S
     import research_engine as RE
-    import distribution as DI
     import storage
     from universe import UniverseService
     svc = UniverseService()
@@ -103,11 +165,17 @@ def rescore_one(opp_id: str, creds: dict | None = None, operator: str = "unknown
     if not sp or not clf:
         raise ValueError("rescore needs this operator's Serper + Groq keys")
 
-    # density from the real discovery layer (strong recall; skip page fetches)
-    disc = DI.discover_creators(opp_id, creds=creds, operator=operator, fetch_contacts=False)
-    n_creators = _write_density(opp_id, disc.get("creators", []))
+    ctx = _ctx(opp, svc)
+    # creator density from raw opportunity context (works for every opp; no product_brief needed)
+    creators = _discover_creators(ctx, sp, clf)
+    n_creators = _write_density(opp_id, creators)
+    try:
+        RE._bump_usage(f"rescore:{opp_id}", queries=0, results=len(creators),
+                       sources=len(creators), operator=operator, provider="serper")
+    except Exception:
+        pass
     # demand / WTP / weakness
-    n_signals = _write_demand(opp_id, _ctx(opp, svc), sp, clf)
+    n_signals = _write_demand(opp_id, ctx, sp, clf)
 
     score = S.score_one(opp, svc)
     storage.get_backend().upsert_rows("opportunity_scores", [score], key="opportunity_id")
