@@ -387,12 +387,17 @@ class FallbackClassifier(ClassificationProvider):
 # Product generation gets Groq then Gemini (both long-context, high quality); the
 # lighter research/classification layers run on Cerebras (huge daily budget), with
 # Gemini as a large-context safety net when a prompt exceeds Cerebras's 8K window.
+# Reality (2026-09-15): Groq is the only reliably-free LLM. Cerebras returns 402
+# (billing-gated on this account) and Gemini's free quota is tiny + its 429 retries
+# hang requests — so research layers fall back to GROQ, not Gemini. Cerebras is kept
+# FIRST so the moment its billing/free access is enabled it's used automatically with
+# no code change; until then it fails fast (402, no retry) and Groq handles the layer.
 LAYER_CHAINS = {
     "product":  ["groq", "gemini"],
-    "research": ["cerebras", "gemini"],
-    "explore":  ["cerebras", "gemini"],
-    "rescore":  ["cerebras", "gemini"],
-    "creator":  ["cerebras", "gemini"],
+    "research": ["cerebras", "groq"],
+    "explore":  ["cerebras", "groq"],
+    "rescore":  ["cerebras", "groq"],
+    "creator":  ["cerebras", "groq"],
 }
 _DEFAULT_CHAIN = ["groq", "gemini", "cerebras"]
 
