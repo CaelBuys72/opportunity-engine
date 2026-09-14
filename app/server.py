@@ -274,6 +274,11 @@ class Handler(BaseHTTPRequestHandler):
             import distribution as DI
             d = DI.get_creator_shortlist(oid)
             return self._json(d) if d else self._json({"error": "no creator shortlist yet"}, 404)
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/outreach"):
+            oid = unquote(path.split("/")[4])
+            import distribution as DI
+            d = DI.get_outreach(oid)
+            return self._json(d) if d else self._json({"error": "no outreach drafts yet"}, 404)
         if path == "/api/auth/me":
             op = self._operator()
             return self._json({"operator": op, "authenticated": bool(op),
@@ -579,6 +584,40 @@ class Handler(BaseHTTPRequestHandler):
                                    "candidates_found": d["candidates_found"],
                                    "shortlisted": d["shortlisted"], "with_contact": d["with_contact"],
                                    "creators": d["creators"]})
+            except DI.DistributionError as e:
+                return self._json({"ok": False, "error": str(e)}, 422)
+            except Exception as e:
+                return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
+        # ---- Outreach drafts (Groq); DRAFTS ONLY, sent manually ----
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/draft-outreach"):
+            op = self._require_operator()
+            if not op:
+                return
+            oid = unquote(path.split("/")[4])
+            creds = auth.resolve_operator_credentials(op)
+            import research_engine as RE, distribution as DI
+            if not RE.get_classifier(creds):
+                return self._json({"ok": False, "operator": op,
+                                   "error": f"{op} is missing a Groq key on the server",
+                                   "providers": RE.providers_status(creds)}, 503)
+            try:
+                d = DI.draft_outreach(oid, creds=creds, operator=op)
+                return self._json({"ok": True, "opportunity_id": oid, "operator": op,
+                                   "count": d["count"], "drafts": d["drafts"]})
+            except DI.DistributionError as e:
+                return self._json({"ok": False, "error": str(e)}, 422)
+            except Exception as e:
+                return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/outreach-status"):
+            op = self._require_operator()
+            if not op:
+                return
+            oid = unquote(path.split("/")[4])
+            body = self._body_json()
+            import distribution as DI
+            try:
+                res = DI.set_outreach_status(oid, int(body.get("index", -1)), str(body.get("status", "")))
+                return self._json({"ok": True, **res})
             except DI.DistributionError as e:
                 return self._json({"ok": False, "error": str(e)}, 422)
             except Exception as e:

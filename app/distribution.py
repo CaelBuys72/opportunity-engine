@@ -20,7 +20,9 @@ HARD honesty rules:
   * Falsification is mandatory: the engine actively records why distribution
     might NOT work, and which of those checks are simply UNKNOWN here.
 
-Does NOT build outreach, product content, or Whop integration.
+Live creator discovery (Serper + Groq) and personalised outreach DRAFTS are also
+provided (discover_creators / draft_outreach) — drafts only, sent manually.
+Does NOT auto-send outreach, build product content, or integrate Whop.
 """
 from __future__ import annotations
 import json
@@ -740,3 +742,77 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
 def get_creator_shortlist(opp_id: str) -> dict | None:
     import storage
     return storage.get_backend().read_dossier_file(opp_id, "creator_shortlist")
+
+
+# ==================================================================
+# OUTREACH DRAFTS — Groq drafts a personalised message per shortlisted
+# creator. DRAFTS ONLY: the human reviews and SENDS manually. Never
+# auto-send / mass-blast from real accounts. Includes a status tracker.
+# ==================================================================
+_OUTREACH_STATUSES = ("draft", "sent", "replied", "skip")
+
+
+def draft_outreach(opp_id: str, creds: dict | None = None, operator: str = "unknown") -> dict:
+    import research_engine as RE
+    clf = RE.get_classifier(creds)
+    if not clf:
+        raise DistributionError("outreach drafting needs this operator's Groq key")
+    shortlist = get_creator_shortlist(opp_id)
+    creators = (shortlist or {}).get("creators") or []
+    if not creators:
+        raise DistributionError("no creator shortlist yet — run Find Creators first")
+    brief = load_opportunity(opp_id)["brief"]
+
+    compact = [{"i": i, "name": c.get("name"), "platform": c.get("platform"),
+                "niche": c.get("niche"), "why_fit": c.get("why_fit")} for i, c in enumerate(creators)]
+    system = (
+        "You write SHORT, genuine, non-spammy outreach from a small independent maker to a creator, "
+        "proposing they share/recommend a digital product their audience would value (affiliate / "
+        "light partnership). For EACH creator return STRICT JSON {\"drafts\":[{\"i\":int,"
+        "\"subject\":str,\"message\":str}]}. message = 60-110 words, personalised to the creator and "
+        "their audience, references what they actually make, ONE clear ask, warm and human (not "
+        "salesy), no fake flattery, no placeholders like [name] or [channel] — use the real name. "
+        "Plain text, no markdown.")
+    user = json.dumps({"product": brief.get("product_concept"),
+                       "promise": brief.get("product_promise") or brief.get("desired_outcome"),
+                       "buyer": brief.get("target_customer"), "creators": compact}, ensure_ascii=False)
+    data = RE._extract_json(clf.classify(system, user))
+    rows = (data or {}).get("drafts") if isinstance(data, dict) else (data if isinstance(data, list) else [])
+    by_i = {d.get("i"): d for d in (rows or []) if isinstance(d, dict)}
+
+    drafts = []
+    for i, c in enumerate(creators):
+        d = by_i.get(i) or {}
+        drafts.append({
+            "creator": c.get("name"), "platform": c.get("platform"), "url": c.get("url"),
+            "handle": c.get("handle"), "contact_emails": c.get("contact_emails", []),
+            "fit_score": c.get("fit_score"),
+            "subject": d.get("subject") or f"Idea for your {c.get('platform', '')} audience",
+            "message": d.get("message") or "",
+            "status": "draft",
+        })
+    dossier = {"opportunity_id": opp_id, "generated_at": _now(),
+               "product": brief.get("product_concept"), "count": len(drafts), "drafts": drafts,
+               "note": "DRAFTS ONLY — review, tweak, and SEND MANUALLY from your own account. "
+                       "Do not mass-automate sending (bans + platform ToS)."}
+    _write(opp_id, "outreach_drafts", dossier)
+    return dossier
+
+
+def get_outreach(opp_id: str) -> dict | None:
+    import storage
+    return storage.get_backend().read_dossier_file(opp_id, "outreach_drafts")
+
+
+def set_outreach_status(opp_id: str, index: int, status: str) -> dict:
+    import storage
+    if status not in _OUTREACH_STATUSES:
+        raise DistributionError(f"status must be one of {_OUTREACH_STATUSES}")
+    backend = storage.get_backend()
+    d = backend.read_dossier_file(opp_id, "outreach_drafts")
+    drafts = (d or {}).get("drafts") or []
+    if not isinstance(index, int) or not (0 <= index < len(drafts)):
+        raise DistributionError("bad draft index")
+    drafts[index]["status"] = status
+    backend.write_dossier_file(opp_id, "outreach_drafts", d)
+    return {"index": index, "status": status}

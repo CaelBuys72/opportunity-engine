@@ -435,10 +435,74 @@ async function showUniverseDossier(id) {
     </div>
     <div id="u-curation"></div>
     <div id="u-product"></div>
-    <div id="u-creators"></div>`;
+    <div id="u-creators"></div>
+    <div id="u-outreach"></div>`;
   $("#u-curate").onclick = () => curateUniverse(id, false);
   showUniverseProduct(id);
   showUniverseCreators(id);
+  showUniverseOutreach(id);
+}
+
+// ---- Outreach drafts: personalised per-creator messages (draft only, sent manually) ----
+const _OUT_STATUS = ["draft", "sent", "replied", "skip"];
+async function showUniverseOutreach(id) {
+  const box = $("#u-outreach");
+  if (!box) return;
+  const d = await fetch("/api/universe/opportunity/" + encodeURIComponent(id) + "/outreach")
+    .then(r => r.ok ? r.json() : null).catch(() => null);
+  let inner;
+  if (d && (d.drafts || []).length) {
+    const rows = d.drafts.map((m, i) => {
+      const to = (m.contact_emails || []).length ? m.contact_emails.join(", ")
+        : (m.url ? `via ${esc(m.platform || "profile")}` : "");
+      const opts = _OUT_STATUS.map(s => `<option value="${s}"${s === (m.status || "draft") ? " selected" : ""}>${s}</option>`).join("");
+      const body = `Subject: ${m.subject || ""}\n\n${m.message || ""}`;
+      return `<div class="ev">
+        <p><b>${esc(m.creator || "creator")}</b> <span class="muted small">${esc(m.platform || "")}${m.fit_score ? " · fit " + esc(m.fit_score) : ""}</span>
+          <span style="float:right"><select data-i="${i}" class="oi-status">${opts}</select></span></p>
+        <p class="meta">${m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.url)}</a> · ` : ""}${esc(to)}</p>
+        <p class="meta"><b>${esc(m.subject || "")}</b></p>
+        <pre class="oi-msg" style="white-space:pre-wrap;font:inherit;background:rgba(13,21,39,.6);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px;margin:4px 0">${esc(m.message || "")}</pre>
+        <button class="ghost-btn oi-copy" data-body="${esc(body).replace(/"/g, "&quot;")}">Copy</button></div>`;
+    }).join("");
+    inner = `<section class="card dossier" style="border-color:rgba(244,197,99,.4)">
+        <h3>✉️ Outreach drafts <span class="muted small">${d.count} · review &amp; send manually</span></h3>
+        <p class="muted small">${esc(d.note || "")}</p>
+        ${rows}
+        <div class="cta"><button class="primary" id="u-outreach-btn" style="background:rgba(244,197,99,.2);color:#e9f2ff">Re-draft all</button>
+          <span class="result" id="u-outreach-result"></span></div>
+      </section>`;
+  } else {
+    inner = `<section class="card dossier">
+        <h3>✉️ Outreach drafts</h3>
+        <p class="muted small">Generate a personalised outreach message for each shortlisted creator. Drafts only — you review and send them yourself.</p>
+        <div class="cta"><button class="primary" id="u-outreach-btn">DRAFT OUTREACH →</button>
+          <span class="result" id="u-outreach-result"></span></div>
+      </section>`;
+  }
+  box.innerHTML = inner;
+  const b = $("#u-outreach-btn");
+  if (b) b.onclick = () => draftOutreach(id);
+  box.querySelectorAll(".oi-copy").forEach(btn => btn.onclick = () => {
+    navigator.clipboard.writeText(btn.dataset.body).then(() => { btn.textContent = "Copied ✓"; setTimeout(() => btn.textContent = "Copy", 1500); });
+  });
+  box.querySelectorAll(".oi-status").forEach(sel => sel.onchange = () =>
+    fetch("/api/universe/opportunity/" + encodeURIComponent(id) + "/outreach-status",
+      { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ index: Number(sel.dataset.i), status: sel.value }) }).catch(() => {}));
+}
+
+async function draftOutreach(id) {
+  const b = $("#u-outreach-btn"), res = $("#u-outreach-result");
+  b.disabled = true; b.textContent = "Drafting…";
+  res.textContent = "Writing a personalised message per creator…";
+  let r;
+  try { r = await (await fetch("/api/universe/opportunity/" + encodeURIComponent(id) + "/draft-outreach", { method: "POST" })).json(); }
+  catch (e) { res.innerHTML = `<span style="color:var(--bad)">Request failed: ${esc(e.message)}</span>`; b.disabled = false; b.textContent = "DRAFT OUTREACH →"; return; }
+  b.disabled = false;
+  if (!r.ok) { res.innerHTML = `<span style="color:var(--bad)">${esc(r.error || "drafting failed")}</span>`; b.textContent = "DRAFT OUTREACH →"; return; }
+  res.innerHTML = `Drafted <b>${r.count}</b> messages`;
+  showUniverseOutreach(id);
 }
 
 // ---- Creator discovery: live shortlist for outreach (Serper + Groq) ----
