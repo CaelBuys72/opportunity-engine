@@ -325,12 +325,17 @@ class Handler(BaseHTTPRequestHandler):
                 return
             creds = auth.resolve_operator_credentials(op)
             import research_engine as RE
+            qs = self.path.split("?", 1)[1] if "?" in self.path else ""
+            qp = dict(p.split("=", 1) for p in qs.split("&") if "=" in p)
+            cmodel = unquote(qp.get("cmodel", "").replace("+", " ")) or None
             out = {}
             for name in ("groq", "gemini", "cerebras"):
                 p = RE._build_provider(name, creds, op)
                 if p is None:
                     out[name] = {"configured": False}
                     continue
+                if name == "cerebras" and cmodel:
+                    p.MODEL = cmodel
                 try:
                     txt = p.classify('Reply with STRICT JSON {"ok":true}.', "ping")
                     out[name] = {"configured": True, "ok": True, "model": getattr(p, "MODEL", "?"),
