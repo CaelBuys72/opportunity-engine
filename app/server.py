@@ -317,6 +317,28 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json({"models": ids})
             except _ue.HTTPError as e:
                 return self._json({"error": f"HTTP {e.code}: {e.read().decode()[:200]}"}, 502)
+        if path == "/api/universe/llm-test":
+            # diagnostic: make a tiny live classify call to EACH configured provider so
+            # we see per-provider ok/error (the FallbackClassifier hides which one failed).
+            op = self._require_operator()
+            if not op:
+                return
+            creds = auth.resolve_operator_credentials(op)
+            import research_engine as RE
+            out = {}
+            for name in ("groq", "gemini", "cerebras"):
+                p = RE._build_provider(name, creds, op)
+                if p is None:
+                    out[name] = {"configured": False}
+                    continue
+                try:
+                    txt = p.classify('Reply with STRICT JSON {"ok":true}.', "ping")
+                    out[name] = {"configured": True, "ok": True, "model": getattr(p, "MODEL", "?"),
+                                 "tokens": getattr(p, "last_tokens", 0), "sample": (txt or "")[:80]}
+                except Exception as e:
+                    out[name] = {"configured": True, "ok": False, "model": getattr(p, "MODEL", "?"),
+                                 "error": f"{type(e).__name__}: {e}"[:300]}
+            return self._json({"operator": op, "providers": out})
         if path == "/api/universe/search-index":
             from universe_graph import GraphService
             return self._json({"nodes": GraphService().search_index()})
