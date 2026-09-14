@@ -152,7 +152,7 @@ const DAMP = 0.84;       // velocity decay → inertia / weighted feel
 const MAX_V = 7;         // speed cap (stability)
 const IDLE = 0.16;       // tiny perpetual drift so it looks alive but still settles
 const CURSOR_R = 165;    // hover-repulsion radius around the hovered node (virtual units)
-const CURSOR_K = 6;      // hover-repulsion strength (stronger the closer they are)
+const CURSOR_K = 0;      // hover-repulsion strength — 0 disables the shove (hover highlight kept)
 // per-layer push multiplier — softer on the denser submarket/audience layers
 const HOVER_PUSH = { market: 1, submarket: 0.4, audience: 0.4, problem: 0.7, opportunity: 0.7 };
 const COLLIDE_PAD = 9;   // gap enforced between label boxes
