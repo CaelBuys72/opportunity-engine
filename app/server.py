@@ -290,6 +290,14 @@ class Handler(BaseHTTPRequestHandler):
             usage = RE._read("research_usage")
             return self._json({"operator": op, "providers": RE.providers_status(creds),
                                "usage": usage if isinstance(usage, dict) else {}})
+        if path == "/api/universe/storage-info":
+            # diagnostic: which storage backend is actually active + is Supabase configured
+            return self._json({
+                "backend": storage.get_backend().name,
+                "STORAGE_BACKEND_env": os.environ.get("STORAGE_BACKEND", "(unset)"),
+                "supabase_url_set": bool(os.environ.get("SUPABASE_URL")),
+                "supabase_key_set": bool(os.environ.get("SUPABASE_SERVICE_ROLE_KEY")),
+            })
         if path == "/api/universe/groq-models":
             # diagnostic: list the Groq models the signed-in operator's key can use
             op = self._require_operator()
