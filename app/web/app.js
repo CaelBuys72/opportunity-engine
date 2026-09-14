@@ -434,9 +434,62 @@ async function showUniverseDossier(id) {
       <span class="result" id="u-curate-result"></span>
     </div>
     <div id="u-curation"></div>
-    <div id="u-product"></div>`;
+    <div id="u-product"></div>
+    <div id="u-creators"></div>`;
   $("#u-curate").onclick = () => curateUniverse(id, false);
   showUniverseProduct(id);
+  showUniverseCreators(id);
+}
+
+// ---- Creator discovery: live shortlist for outreach (Serper + Groq) ----
+async function showUniverseCreators(id) {
+  const box = $("#u-creators");
+  if (!box) return;
+  const d = await fetch("/api/universe/opportunity/" + encodeURIComponent(id) + "/creators")
+    .then(r => r.ok ? r.json() : null).catch(() => null);
+  let inner;
+  if (d && (d.creators || []).length) {
+    const rows = d.creators.map(c => {
+      const emails = (c.contact_emails || []).length
+        ? c.contact_emails.map(e => `<a href="mailto:${esc(e)}">${esc(e)}</a>`).join(", ")
+        : '<span class="muted small">no public email</span>';
+      const fol = c.est_followers ? ` · ${Number(c.est_followers).toLocaleString()} followers` : "";
+      return `<div class="ev"><p><b>${esc(c.name || "creator")}</b>
+          <span class="basis ${(c.fit_score || 0) >= 60 ? "observed" : "inferred"}">fit ${esc(c.fit_score || 0)}</span>
+          <span class="muted small">${esc(c.platform || "")}${fol}</span></p>
+        <p class="meta">${esc(c.why_fit || "")}${c.caution ? ` <span class="unknown">⚠ ${esc(c.caution)}</span>` : ""}</p>
+        <p class="meta">${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url)}</a>` : ""} · ${emails}</p></div>`;
+    }).join("");
+    inner = `<section class="card dossier" style="border-color:rgba(123,92,255,.45)">
+        <h3>🎯 Creators <span class="muted small">${d.shortlisted} shortlisted · ${d.with_contact} with contact · ${d.candidates_found} found</span></h3>
+        ${rows}
+        <div class="cta"><button class="primary" id="u-creators-btn" style="background:rgba(123,92,255,.25);color:#e9f2ff">Re-run discovery</button>
+          <span class="result" id="u-creators-result"></span></div>
+      </section>`;
+  } else {
+    inner = `<section class="card dossier">
+        <h3>🎯 Creators</h3>
+        <p class="muted small">Find creators whose audience is this buyer — live search, ranked by fit, with any public contact details. For outreach.</p>
+        <div class="cta"><button class="primary" id="u-creators-btn">FIND CREATORS →</button>
+          <span class="result" id="u-creators-result"></span></div>
+      </section>`;
+  }
+  box.innerHTML = inner;
+  const b = $("#u-creators-btn");
+  if (b) b.onclick = () => discoverCreators(id);
+}
+
+async function discoverCreators(id) {
+  const b = $("#u-creators-btn"), res = $("#u-creators-result");
+  b.disabled = true; b.textContent = "Searching… (live web, ~1–2 min)";
+  res.textContent = "Finding creators, checking their pages for contacts, ranking by fit…";
+  let r;
+  try { r = await (await fetch("/api/universe/opportunity/" + encodeURIComponent(id) + "/discover-creators", { method: "POST" })).json(); }
+  catch (e) { res.innerHTML = `<span style="color:var(--bad)">Request failed: ${esc(e.message)}</span>`; b.disabled = false; b.textContent = "FIND CREATORS →"; return; }
+  b.disabled = false;
+  if (!r.ok) { res.innerHTML = `<span style="color:var(--bad)">${esc(r.error || "discovery failed")}</span>`; b.textContent = "FIND CREATORS →"; return; }
+  res.innerHTML = `Found <b>${r.shortlisted}</b> creators (${r.with_contact} with contact) from ${r.candidates_found} results`;
+  showUniverseCreators(id);
 }
 
 // ---- Build 6: manufacture the actual product files (DOCX/XLSX/CSV/MD bundle) ----

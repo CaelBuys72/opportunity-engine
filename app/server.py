@@ -269,6 +269,11 @@ class Handler(BaseHTTPRequestHandler):
             import production as PR
             m = PR.get_manifest(oid)
             return self._json(m) if m else self._json({"error": "no product yet"}, 404)
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/creators"):
+            oid = unquote(path.split("/")[4])
+            import distribution as DI
+            d = DI.get_creator_shortlist(oid)
+            return self._json(d) if d else self._json({"error": "no creator shortlist yet"}, 404)
         if path == "/api/auth/me":
             op = self._operator()
             return self._json({"operator": op, "authenticated": bool(op),
@@ -553,6 +558,28 @@ class Handler(BaseHTTPRequestHandler):
                                    "release_blocked_reasons": m.get("release_blocked_reasons", []),
                                    "components": comps})
             except PR.ProductionError as e:
+                return self._json({"ok": False, "error": str(e)}, 422)
+            except Exception as e:
+                return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
+        # ---- Creator discovery: live shortlist for outreach (operator's Serper + Groq) ----
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/discover-creators"):
+            op = self._require_operator()
+            if not op:
+                return
+            oid = unquote(path.split("/")[4])
+            creds = auth.resolve_operator_credentials(op)
+            import research_engine as RE, distribution as DI
+            if not RE.get_search_provider(creds) or not RE.get_classifier(creds):
+                return self._json({"ok": False, "operator": op,
+                                   "error": f"{op} is missing a Serper and/or Groq key on the server",
+                                   "providers": RE.providers_status(creds)}, 503)
+            try:
+                d = DI.discover_creators(oid, creds=creds, operator=op)
+                return self._json({"ok": True, "opportunity_id": oid, "operator": op,
+                                   "candidates_found": d["candidates_found"],
+                                   "shortlisted": d["shortlisted"], "with_contact": d["with_contact"],
+                                   "creators": d["creators"]})
+            except DI.DistributionError as e:
                 return self._json({"ok": False, "error": str(e)}, 422)
             except Exception as e:
                 return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)

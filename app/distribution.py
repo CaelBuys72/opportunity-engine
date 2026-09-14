@@ -24,6 +24,7 @@ Does NOT build outreach, product content, or Whop integration.
 """
 from __future__ import annotations
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -556,3 +557,182 @@ def run(opp_id: str) -> dict:
             "counts": {"candidates": len(candidates), "qualified": density["qualified_creator_count"],
                        "highly_qualified": density["highly_qualified_count"]},
             "files": files, "dossier": dossier}
+
+
+# ==================================================================
+# LIVE CREATOR DISCOVERY (Serper finds them, Groq scores fit, contacts
+# extracted from public pages only — nothing fabricated). Produces a
+# ranked shortlist ready for outreach. Uses the operator's own keys.
+# ==================================================================
+_EMAIL_RE = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
+
+
+def _now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def _channel_key(url: str) -> str:
+    """Dedupe creators by channel, not by individual video/post URL."""
+    try:
+        from urllib.parse import urlparse
+        u = urlparse(url)
+        host = (u.netloc or "").lower().replace("www.", "")
+        parts = [p for p in (u.path or "").split("/") if p]
+        if "youtube.com" in host and parts:
+            return f"{host}/{parts[0].lower()}"            # /@handle or /channel/ID or /c/name
+        if any(h in host for h in ("tiktok.com", "instagram.com", "x.com", "twitter.com")) and parts:
+            return f"{host}/{parts[0].lower().lstrip('@')}"
+        return host                                        # blogs/newsletters: one per domain
+    except Exception:
+        return url.lower()
+
+
+def _channel_root(url: str) -> str:
+    """Truncate a post/video URL to the creator's channel/profile root (still the real
+    URL, just shortened) so outreach links point at the creator, not one post."""
+    try:
+        from urllib.parse import urlparse
+        u = urlparse(url)
+        host = (u.netloc or "").lower()
+        parts = [p for p in (u.path or "").split("/") if p]
+        base = f"{u.scheme or 'https'}://{u.netloc}"
+        if "youtube.com" in host and parts:
+            if parts[0] in ("channel", "c", "user") and len(parts) > 1:
+                return f"{base}/{parts[0]}/{parts[1]}"
+            if parts[0].startswith("@"):
+                return f"{base}/{parts[0]}"
+        if any(h in host for h in ("tiktok.com", "instagram.com", "x.com", "twitter.com")) and parts:
+            return f"{base}/{parts[0]}"
+        return url
+    except Exception:
+        return url
+
+
+def _creator_queries(clf, brief: dict, profile: dict) -> list[str]:
+    """Groq-generate creator-search queries for ANY niche; fall back to the profile's."""
+    fallback = [q["query"] for q in profile.get("search_queries", []) if q.get("query")]
+    fallback += [f"{profile['target_audience']} youtube creator",
+                 f"{profile['target_audience']} tiktok", f"{profile['target_audience']} newsletter"]
+    try:
+        system = ("You build web-search queries to FIND CREATORS (YouTubers, TikTokers, "
+                  "Instagram, newsletter authors) whose audience is a given buyer with a given "
+                  "problem. Return STRICT JSON: {\"queries\": [str, ...]} — 8 varied queries across "
+                  "platforms that would surface such creators. No prose.")
+        user = json.dumps({"buyer": brief.get("target_customer"), "problem": brief.get("core_problem"),
+                           "outcome": brief.get("desired_outcome")}, ensure_ascii=False)
+        import research_engine as RE
+        data = RE._extract_json(clf.classify(system, user))
+        qs = (data or {}).get("queries") if isinstance(data, dict) else None
+        qs = [q for q in (qs or []) if isinstance(q, str) and q.strip()]
+        return (qs or fallback)[:8]
+    except Exception:
+        return fallback[:8]
+
+
+def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
+    """Groq scores each search hit for creator-fit. Returns per-index scoring; we merge
+    back the real URL + regex-found emails so nothing is invented."""
+    import research_engine as RE
+    compact = [{"i": it["i"], "title": it.get("title"), "url": it.get("url"),
+                "snippet": (it.get("snippet") or "")[:300],
+                "page_excerpt": (it.get("page_text") or "")[:600]} for it in items]
+    system = (
+        "You evaluate web-search results to decide which are real individual CREATORS/channels "
+        "(not marketplaces, listicles, agencies or brands) whose audience matches the buyer and "
+        "who make content on the problem. For EACH item return an object; respond with STRICT "
+        "JSON {\"creators\":[{\"i\":int,\"keep\":bool,\"name\":str,\"platform\":str,\"handle\":str,"
+        "\"niche\":str,\"est_followers\":int|null,\"why_fit\":str,\"fit_score\":int(0-100),"
+        "\"caution\":str}]}. Rules: keep=false for anything that is not a single creator/channel. "
+        "est_followers ONLY if explicitly present in the text, else null. Never invent numbers, "
+        "handles or emails. fit_score = audience match + problem/content match + approachability.")
+    user = json.dumps({"buyer": brief.get("target_customer"), "problem": brief.get("core_problem"),
+                       "product": brief.get("product_concept") or brief.get("desired_outcome"),
+                       "results": compact}, ensure_ascii=False)
+    data = RE._extract_json(clf.classify(system, user))
+    rows = (data or {}).get("creators") if isinstance(data, dict) else (data if isinstance(data, list) else None)
+    by_i = {it["i"]: it for it in items}
+    out = []
+    for r in (rows or []):
+        if not isinstance(r, dict) or not r.get("keep", True):
+            continue
+        src = by_i.get(r.get("i"))
+        if not src:
+            continue
+        out.append({
+            "name": r.get("name") or src.get("title"), "platform": r.get("platform"),
+            "handle": r.get("handle"),
+            "url": _channel_root(src.get("url", "")),                  # creator root (real, truncated)
+            "source_url": src.get("url"),                              # the exact hit from Serper
+            "niche": r.get("niche"), "est_followers": r.get("est_followers"),
+            "why_fit": r.get("why_fit"), "fit_score": r.get("fit_score") or 0,
+            "caution": r.get("caution"),
+            "contact_emails": src.get("emails", []),                   # regex-observed only
+            "found_via": src.get("query"),
+        })
+    return out
+
+
+def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "unknown",
+                      max_candidates: int = 15) -> dict:
+    """Live creator shortlist for outreach: Serper search -> page fetch for contacts ->
+    Groq fit-scoring. Honest: only real URLs, only publicly-found emails."""
+    import research_engine as RE
+    sp, clf = RE.get_search_provider(creds), RE.get_classifier(creds)
+    if not sp or not clf:
+        raise DistributionError("creator discovery needs this operator's Serper and Groq keys")
+    bundle = load_opportunity(opp_id)
+    profile = define_creator_search_profile(bundle)
+    brief = bundle["brief"]
+    queries = _creator_queries(clf, brief, profile)
+
+    seen, results = set(), []
+    for q in queries:
+        try:
+            hits = sp.search(q, num=10)
+        except Exception:
+            hits = []
+        for h in hits:
+            url = h.get("url") or ""
+            if not url:
+                continue
+            k = _channel_key(url)
+            if k in seen:
+                continue
+            seen.add(k)
+            results.append({**h, "query": q})
+    try:
+        RE._bump_usage(f"creators:{opp_id}", queries=len(queries), results=len(results),
+                       sources=len(results), operator=operator, provider="serper")
+    except Exception:
+        pass
+
+    # enrich the top slice: fetch each page once, pull emails (observed contact only)
+    top = results[:max_candidates]
+    for i, r in enumerate(top):
+        r["i"] = i
+        try:
+            text, status = RE.fetch_text(r["url"], cap=3000)
+        except Exception:
+            text, status = "", "error"
+        r["page_text"] = text if status == "ok" else ""
+        r["emails"] = sorted(set(_EMAIL_RE.findall(r["page_text"])))[:3] if r["page_text"] else []
+
+    creators = _score_creators(clf, brief, top) if top else []
+    creators.sort(key=lambda c: c.get("fit_score") or 0, reverse=True)
+
+    dossier = {
+        "opportunity_id": opp_id, "generated_at": _now(),
+        "audience": brief.get("target_customer"), "queries": queries,
+        "candidates_found": len(results), "shortlisted": len(creators),
+        "with_contact": sum(1 for c in creators if c.get("contact_emails")),
+        "creators": creators,
+        "note": "Creators from live search; fit scored by LLM; emails only where publicly "
+                "listed on the creator's own page. Verify before outreach.",
+    }
+    _write(opp_id, "creator_shortlist", dossier)
+    return dossier
+
+
+def get_creator_shortlist(opp_id: str) -> dict | None:
+    import storage
+    return storage.get_backend().read_dossier_file(opp_id, "creator_shortlist")
