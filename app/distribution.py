@@ -683,7 +683,7 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
     """Live creator shortlist for outreach: Serper search -> page fetch for contacts ->
     Groq fit-scoring. Honest: only real URLs, only publicly-found emails."""
     import research_engine as RE
-    sp, clf = RE.get_search_provider(creds), RE.get_classifier(creds)
+    sp, clf = RE.get_search_provider(creds), RE.get_classifier(creds, layer="creator")
     if not sp or not clf:
         raise DistributionError("creator discovery needs this operator's Serper and Groq keys")
     bundle = load_opportunity(opp_id)
@@ -759,7 +759,7 @@ _OUTREACH_STATUSES = ("draft", "sent", "replied", "skip")
 
 def draft_outreach(opp_id: str, creds: dict | None = None, operator: str = "unknown") -> dict:
     import research_engine as RE
-    clf = RE.get_classifier(creds)
+    clf = RE.get_classifier(creds, layer="creator")
     if not clf:
         raise DistributionError("outreach drafting needs this operator's Groq key")
     shortlist = get_creator_shortlist(opp_id)

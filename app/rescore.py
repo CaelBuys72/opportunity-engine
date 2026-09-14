@@ -161,7 +161,7 @@ def rescore_one(opp_id: str, creds: dict | None = None, operator: str = "unknown
     opp = svc._o.get(opp_id)
     if not opp:
         raise ValueError(f"no opportunity '{opp_id}'")
-    sp, clf = RE.get_search_provider(creds), RE.get_classifier(creds)
+    sp, clf = RE.get_search_provider(creds), RE.get_classifier(creds, layer="rescore")
     if not sp or not clf:
         raise ValueError("rescore needs this operator's Serper + Groq keys")
 

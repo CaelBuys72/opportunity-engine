@@ -89,19 +89,22 @@ class MissingCredential(Exception):
 
 def resolve_operator_credentials(operator: str) -> dict:
     """The ONE place operator→keys happens. Never falls back to the other operator.
-    Returns {'groq': str|None, 'gemini': str|None, 'serper': str|None}. The LLM is
-    Groq (free tier); Gemini is kept as an optional fallback. Keys stay server-side."""
+    Returns {'groq','gemini','cerebras','serper','together'} (str|None each). LLM work
+    is routed per layer: product gen on Groq/Gemini, research on Cerebras. Server-side."""
     if operator not in OPERATORS:
         raise MissingCredential(f"unknown operator '{operator}'")
     up = operator.upper()
     groq = os.environ.get(f"{up}_GROQ_API_KEY")
     gem = os.environ.get(f"{up}_GEMINI_API_KEY")
+    cer = os.environ.get(f"{up}_CEREBRAS_API_KEY")
     ser = os.environ.get(f"{up}_SERPER_API_KEY")
     tog = os.environ.get(f"{up}_TOGETHER_API_KEY")
     # local-dev convenience: fall back to the shared single-key names ONLY in open mode
     if not auth_enabled():
         groq = groq or os.environ.get("GROQ_API_KEY")
         gem = gem or os.environ.get("GEMINI_API_KEY")
+        cer = cer or os.environ.get("CEREBRAS_API_KEY")
         ser = ser or os.environ.get("SERPER_API_KEY")
         tog = tog or os.environ.get("TOGETHER_API_KEY")
-    return {"groq": groq, "gemini": gem, "serper": ser, "together": tog, "operator": operator}
+    return {"groq": groq, "gemini": gem, "cerebras": cer, "serper": ser,
+            "together": tog, "operator": operator}

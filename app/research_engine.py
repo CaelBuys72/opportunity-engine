@@ -301,8 +301,10 @@ class GeminiClassifier(ClassificationProvider):
     name = "gemini"
     MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.6-flash")
 
-    def __init__(self, api_key: str):
+    def __init__(self, api_key: str, operator: str = "unknown"):
         self.api_key = api_key
+        self.operator = operator
+        self.last_tokens = 0
 
     def classify(self, system: str, user: str) -> str:
         url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
@@ -314,29 +316,125 @@ class GeminiClassifier(ClassificationProvider):
                                  "responseMimeType": "application/json"},
         }).encode()
         data = _http_json(url, body, {"Content-Type": "application/json"})
+        self.last_tokens = int((data.get("usageMetadata") or {}).get("totalTokenCount", 0))
+        _record_llm(self.operator, "gemini", self.last_tokens)
         parts = data["candidates"][0]["content"].get("parts", [])
         return "".join(p.get("text", "") for p in parts)
 
 
-def get_classifier(creds: dict | None = None) -> ClassificationProvider | None:
-    # authenticated path: use ONLY this operator's key (no global/other-op fallback).
-    # Groq (free tier) is the primary LLM; Gemini kept as an optional fallback.
+class CerebrasClassifier(ClassificationProvider):
+    """Cerebras free tier — OpenAI-compatible, very fast, hosts open models (gpt-oss,
+    Llama, Qwen). Generous 1M tokens/day, but free tier caps context at ~8K, so it's
+    used for the SHORT-context research/classification layers, never long product prose."""
+    name = "cerebras"
+    ENDPOINT = "https://api.cerebras.ai/v1/chat/completions"
+    MODEL = os.environ.get("CEREBRAS_MODEL", "gpt-oss-120b")
+
+    def __init__(self, api_key: str, operator: str = "unknown"):
+        self.api_key = api_key
+        self.operator = operator
+        self.last_tokens = 0
+
+    def classify(self, system: str, user: str) -> str:
+        # keep output modest — the 8K free-tier context must hold prompt + completion.
+        body = json.dumps({"model": self.MODEL,
+                           "messages": [{"role": "system", "content": system},
+                                        {"role": "user", "content": user}],
+                           "temperature": 0.2, "max_tokens": 3000}).encode()
+        data = _http_json(self.ENDPOINT, body,
+                          {"Authorization": f"Bearer {self.api_key}",
+                           "Content-Type": "application/json"})
+        self.last_tokens = int((data.get("usage") or {}).get("total_tokens", 0))
+        _record_llm(self.operator, "cerebras", self.last_tokens)
+        return data["choices"][0]["message"]["content"]
+
+
+class FallbackClassifier(ClassificationProvider):
+    """Tries an ordered list of classifiers, moving to the next ONLY on a rate-limit
+    (HTTP 429) or provider-unavailable error — so a layer keeps working after its
+    primary provider's daily free quota is spent. Uses only this operator's keys."""
+    name = "fallback"
+
+    def __init__(self, providers: list[ClassificationProvider]):
+        self.providers = [p for p in providers if p is not None]
+        self.last_provider = None
+        self.last_tokens = 0
+
+    def _recoverable(self, e: Exception) -> bool:
+        s = str(e).lower()
+        return isinstance(e, ProviderUnavailable) or "429" in s or "rate limit" in s \
+            or "http 5" in s or "quota" in s or "resource_exhausted" in s
+
+    def classify(self, system: str, user: str) -> str:
+        last = None
+        for i, p in enumerate(self.providers):
+            try:
+                out = p.classify(system, user)
+                self.last_provider = p.name
+                self.last_tokens = getattr(p, "last_tokens", 0)
+                return out
+            except Exception as e:
+                last = e
+                if i < len(self.providers) - 1 and self._recoverable(e):
+                    continue
+                raise
+        if last:
+            raise last
+        raise ProviderUnavailable("no classifier available for this layer")
+
+
+# Per-layer provider chains (first available is primary, rest are overflow on 429).
+# Product generation gets Groq then Gemini (both long-context, high quality); the
+# lighter research/classification layers run on Cerebras (huge daily budget), with
+# Gemini as a large-context safety net when a prompt exceeds Cerebras's 8K window.
+LAYER_CHAINS = {
+    "product":  ["groq", "gemini"],
+    "research": ["cerebras", "gemini"],
+    "explore":  ["cerebras", "gemini"],
+    "rescore":  ["cerebras", "gemini"],
+    "creator":  ["cerebras", "gemini"],
+}
+_DEFAULT_CHAIN = ["groq", "gemini", "cerebras"]
+
+
+def _build_provider(name: str, creds: dict | None, op: str) -> ClassificationProvider | None:
     if creds is not None:
-        op = creds.get("operator", "unknown")
-        if creds.get("groq"):
-            return GroqClassifier(creds["groq"], operator=op)
-        if creds.get("gemini"):
-            return GeminiClassifier(creds["gemini"])
+        key = creds.get(name)
+    else:
+        key = os.environ.get(f"{name.upper()}_API_KEY")
+    if not key:
         return None
-    # creds=None (CLI/dev): fall back to any configured global provider.
-    if os.environ.get("GROQ_API_KEY"):
-        return GroqClassifier(os.environ["GROQ_API_KEY"])
-    if os.environ.get("ANTHROPIC_API_KEY"):
-        return AnthropicClassifier(os.environ["ANTHROPIC_API_KEY"])
-    if os.environ.get("OPENAI_API_KEY"):
-        return OpenAIClassifier(os.environ["OPENAI_API_KEY"])
-    if os.environ.get("GEMINI_API_KEY"):
-        return GeminiClassifier(os.environ["GEMINI_API_KEY"])
+    if name == "groq":
+        return GroqClassifier(key, operator=op)
+    if name == "gemini":
+        return GeminiClassifier(key, operator=op)
+    if name == "cerebras":
+        return CerebrasClassifier(key, operator=op)
+    return None
+
+
+def get_classifier(creds: dict | None = None, layer: str | None = None) -> ClassificationProvider | None:
+    """Return the classifier for a layer. `layer` routes to a provider chain so heavy
+    product generation (Groq/Gemini) never competes with research work (Cerebras) for
+    the same daily token budget. Uses ONLY this operator's keys — no cross-operator use.
+    layer=None keeps the legacy 'best available' behavior (used for availability checks)."""
+    op = creds.get("operator", "unknown") if creds is not None else "unknown"
+    chain = LAYER_CHAINS.get(layer, _DEFAULT_CHAIN)
+    built = [p for p in (_build_provider(n, creds, op) for n in chain) if p is not None]
+    if built:
+        return built[0] if len(built) == 1 else FallbackClassifier(built)
+    # nothing in the chain configured — fall back to any other configured provider so
+    # a missing key degrades gracefully instead of hard-failing the whole layer.
+    for n in _DEFAULT_CHAIN:
+        p = _build_provider(n, creds, op)
+        if p is not None:
+            return p
+    # dev-only extras (creds=None path)
+    if creds is None:
+        if os.environ.get("ANTHROPIC_API_KEY"):
+            return AnthropicClassifier(os.environ["ANTHROPIC_API_KEY"])
+        if os.environ.get("OPENAI_API_KEY"):
+            return OpenAIClassifier(os.environ["OPENAI_API_KEY"])
     return None
 
 
@@ -427,9 +525,18 @@ def get_image_provider(creds: dict | None = None):
 
 
 def providers_status(creds: dict | None = None) -> dict:
-    sp, cl = get_search_provider(creds), get_classifier(creds)
+    sp = get_search_provider(creds)
     img = get_image_provider(creds)
-    return {"search": sp.name if sp else None, "classifier": cl.name if cl else None,
+    op = creds.get("operator", "unknown") if creds is not None else "unknown"
+    llm = {n: (_build_provider(n, creds, op) is not None) for n in ("groq", "gemini", "cerebras")}
+    # what each layer would actually route to, given the configured keys
+    def _chain(layer):
+        c = get_classifier(creds, layer=layer)
+        return [p.name for p in c.providers] if hasattr(c, "providers") else ([c.name] if c else [])
+    return {"search": sp.name if sp else None,
+            "llm_configured": llm,
+            "product_llm": _chain("product"),
+            "research_llm": _chain("research"),
             "image": img.name if img else None}
 
 
@@ -770,7 +877,7 @@ def expand(node_id: str, creds: dict | None = None, operator: str = "unknown") -
     except ProviderUnavailable:
         set_expansion_state(node_id, expansion_status="failed", last_error="no_search_provider")
         raise
-    cl = get_classifier(creds)
+    cl = get_classifier(creds, layer="explore")
     if not cl:
         set_expansion_state(node_id, expansion_status="failed", last_error="no_classifier",
                             source_count=len(packet["evidence"]))
@@ -967,7 +1074,7 @@ def _dq_user(pocket: dict) -> str:
 
 
 def generate_dynamic_questions(pocket: dict, creds: dict | None = None) -> list[str]:
-    cl = get_classifier(creds)
+    cl = get_classifier(creds, layer="research")
     if not cl:
         return []
     try:
@@ -1105,7 +1212,7 @@ def execute_research(pocket: dict, plan: dict, max_fetch: int = 14,
                      creds: dict | None = None, operator: str = "unknown") -> dict | None:
     """Execute the plan end to end. Returns a rich result or None if no providers.
     Uses the authenticated operator's credentials. Two LLM calls total."""
-    sp, cl = get_search_provider(creds), get_classifier(creds)
+    sp, cl = get_search_provider(creds), get_classifier(creds, layer="research")
     if not sp or not cl:
         return None
     node_id = pocket["id"]

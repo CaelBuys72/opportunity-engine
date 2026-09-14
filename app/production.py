@@ -310,7 +310,7 @@ def _generate_content(opp_id: str, comp: dict, cspec: dict, deliverable: str,
     format builders. Works for ANY opportunity (no hardcoded templates). Raises on
     failure so the component is honestly marked failed rather than stubbed."""
     import research_engine as RE
-    clf = RE.get_classifier(creds)
+    clf = RE.get_classifier(creds, layer="product")
     if clf is None:
         raise ProductionError("no LLM credential available to generate product content "
                               "(operator needs a Gemini key)")
