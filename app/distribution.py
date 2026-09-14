@@ -637,14 +637,18 @@ def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
                 "snippet": (it.get("snippet") or "")[:300],
                 "page_excerpt": (it.get("page_text") or "")[:600]} for it in items]
     system = (
-        "You evaluate web-search results to decide which are real individual CREATORS/channels "
-        "(not marketplaces, listicles, agencies or brands) whose audience matches the buyer and "
-        "who make content on the problem. For EACH item return an object; respond with STRICT "
-        "JSON {\"creators\":[{\"i\":int,\"keep\":bool,\"name\":str,\"platform\":str,\"handle\":str,"
+        "You evaluate web-search results to identify real individual CREATORS/channels (not "
+        "marketplaces, listicles, agencies or brands) whose audience matches the buyer and who "
+        "make content on the problem. For EACH item return an object; respond with STRICT JSON "
+        "{\"creators\":[{\"i\":int,\"keep\":bool,\"name\":str,\"platform\":str,\"handle\":str,"
         "\"niche\":str,\"est_followers\":int|null,\"why_fit\":str,\"fit_score\":int(0-100),"
-        "\"caution\":str}]}. Rules: keep=false for anything that is not a single creator/channel. "
-        "est_followers ONLY if explicitly present in the text, else null. Never invent numbers, "
-        "handles or emails. fit_score = audience match + problem/content match + approachability.")
+        "\"caution\":str}]}. Rules: "
+        "'name' MUST be the CREATOR/channel/author (e.g. the YouTube channel or the person), NOT "
+        "the title of a single video or post. If the result is a one-off video/post and you "
+        "cannot identify the creator behind it from the title/snippet/page text, set keep=false. "
+        "keep=false for anything that is not a single identifiable creator/channel. est_followers "
+        "ONLY if explicitly present in the text, else null. Never invent numbers, handles or "
+        "emails. fit_score = audience match + problem/content match + approachability.")
     user = json.dumps({"buyer": brief.get("target_customer"), "problem": brief.get("core_problem"),
                        "product": brief.get("product_concept") or brief.get("desired_outcome"),
                        "results": compact}, ensure_ascii=False)
