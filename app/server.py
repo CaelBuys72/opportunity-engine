@@ -328,8 +328,11 @@ class Handler(BaseHTTPRequestHandler):
             qs = self.path.split("?", 1)[1] if "?" in self.path else ""
             qp = dict(p.split("=", 1) for p in qs.split("&") if "=" in p)
             cmodel = unquote(qp.get("cmodel", "").replace("+", " ")) or None
+            only = unquote(qp.get("only", "").replace("+", " ")) or None
             out = {}
             for name in ("groq", "gemini", "cerebras"):
+                if only and name != only:
+                    continue
                 p = RE._build_provider(name, creds, op)
                 if p is None:
                     out[name] = {"configured": False}
