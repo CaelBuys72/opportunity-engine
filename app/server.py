@@ -630,6 +630,31 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json({"ok": False, "error": str(e)}, 422)
             except Exception as e:
                 return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
+        # ---- Phase-1 curation: rescore one opportunity from real evidence ----
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/rescore"):
+            op = self._require_operator()
+            if not op:
+                return
+            oid = unquote(path.split("/")[4])
+            creds = auth.resolve_operator_credentials(op)
+            import research_engine as RE, rescore as RS
+            if not RE.get_search_provider(creds) or not RE.get_classifier(creds):
+                return self._json({"ok": False, "operator": op,
+                                   "error": f"{op} is missing a Serper and/or Groq key on the server"}, 503)
+            try:
+                return self._json({"ok": True, "operator": op, **RS.rescore_one(oid, creds=creds, operator=op)})
+            except Exception as e:
+                return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
+        if path == "/api/universe/rescore-rankings":
+            op = self._require_operator()
+            if not op:
+                return
+            import rescore as RS
+            try:
+                r = RS.rebuild_rankings()
+                return self._json({"ok": True, "ranked": len(r), "top": r[:10]})
+            except Exception as e:
+                return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
         if path.startswith("/api/opportunities/") and path.endswith("/select"):
             if not self._require_operator():
                 return

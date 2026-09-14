@@ -679,7 +679,7 @@ def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
 
 
 def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "unknown",
-                      max_candidates: int = 15) -> dict:
+                      max_candidates: int = 15, fetch_contacts: bool = True) -> dict:
     """Live creator shortlist for outreach: Serper search -> page fetch for contacts ->
     Groq fit-scoring. Honest: only real URLs, only publicly-found emails."""
     import research_engine as RE
@@ -712,16 +712,21 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
     except Exception:
         pass
 
-    # enrich the top slice: fetch each page once, pull emails (observed contact only)
+    # enrich the top slice: fetch each page once, pull emails (observed contact only).
+    # fetch_contacts=False skips the (slow) page fetches — used by the rescore batch,
+    # which only needs creator relevance for density, not emails.
     top = results[:max_candidates]
     for i, r in enumerate(top):
         r["i"] = i
-        try:
-            text, status = RE.fetch_text(r["url"], cap=3000)
-        except Exception:
-            text, status = "", "error"
-        r["page_text"] = text if status == "ok" else ""
-        r["emails"] = sorted(set(_EMAIL_RE.findall(r["page_text"])))[:3] if r["page_text"] else []
+        if fetch_contacts:
+            try:
+                text, status = RE.fetch_text(r["url"], cap=3000)
+            except Exception:
+                text, status = "", "error"
+            r["page_text"] = text if status == "ok" else ""
+            r["emails"] = sorted(set(_EMAIL_RE.findall(r["page_text"])))[:3] if r["page_text"] else []
+        else:
+            r["page_text"], r["emails"] = "", []
 
     creators = _score_creators(clf, brief, top) if top else []
     creators.sort(key=lambda c: c.get("fit_score") or 0, reverse=True)
