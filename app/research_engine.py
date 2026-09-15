@@ -212,7 +212,7 @@ def _http_json(url, data, headers, timeout=120, retries=6):
         except urllib.error.HTTPError as e:
             last = e
             if e.code in (429, 500, 502, 503) and attempt < retries - 1:
-                time.sleep((6 if e.code == 429 else 2) * (attempt + 1)); continue
+                time.sleep((3 if e.code == 429 else 2) * (attempt + 1)); continue
             try:
                 body = e.read().decode()[:300]
             except Exception:
@@ -263,7 +263,8 @@ class OpenAIClassifier(ClassificationProvider):
                                         {"role": "user", "content": user}]}).encode()
         data = _http_json(self.ENDPOINT, body,
                           {"Authorization": f"Bearer {self.api_key}",
-                           "Content-Type": "application/json"})
+                           "Content-Type": "application/json"},
+                          retries=getattr(self, "_retries", 3))
         return data["choices"][0]["message"]["content"]
 
 
@@ -291,7 +292,8 @@ class GroqClassifier(ClassificationProvider):
                            "temperature": 0.2, "max_tokens": 8000}).encode()
         data = _http_json(self.ENDPOINT, body,
                           {"Authorization": f"Bearer {self.api_key}",
-                           "Content-Type": "application/json"})
+                           "Content-Type": "application/json"},
+                          retries=getattr(self, "_retries", 3))
         self.last_tokens = int((data.get("usage") or {}).get("total_tokens", 0))
         _record_llm(self.operator, "groq", self.last_tokens)
         return data["choices"][0]["message"]["content"]
@@ -315,7 +317,8 @@ class GeminiClassifier(ClassificationProvider):
             "generationConfig": {"temperature": 0.2, "maxOutputTokens": 8192,
                                  "responseMimeType": "application/json"},
         }).encode()
-        data = _http_json(url, body, {"Content-Type": "application/json"})
+        data = _http_json(url, body, {"Content-Type": "application/json"},
+                          retries=getattr(self, "_retries", 3))
         self.last_tokens = int((data.get("usageMetadata") or {}).get("totalTokenCount", 0))
         _record_llm(self.operator, "gemini", self.last_tokens)
         parts = data["candidates"][0]["content"].get("parts", [])
@@ -343,7 +346,8 @@ class CerebrasClassifier(ClassificationProvider):
                            "temperature": 0.2, "max_tokens": 3000}).encode()
         data = _http_json(self.ENDPOINT, body,
                           {"Authorization": f"Bearer {self.api_key}",
-                           "Content-Type": "application/json"})
+                           "Content-Type": "application/json"},
+                          retries=getattr(self, "_retries", 3))
         self.last_tokens = int((data.get("usage") or {}).get("total_tokens", 0))
         _record_llm(self.operator, "cerebras", self.last_tokens)
         return data["choices"][0]["message"]["content"]
@@ -370,7 +374,8 @@ class MistralClassifier(ClassificationProvider):
                            "response_format": {"type": "json_object"}}).encode()
         data = _http_json(self.ENDPOINT, body,
                           {"Authorization": f"Bearer {self.api_key}",
-                           "Content-Type": "application/json"})
+                           "Content-Type": "application/json"},
+                          retries=getattr(self, "_retries", 3))
         self.last_tokens = int((data.get("usage") or {}).get("total_tokens", 0))
         _record_llm(self.operator, "mistral", self.last_tokens)
         return data["choices"][0]["message"]["content"]
@@ -400,7 +405,8 @@ class CloudflareTextClassifier(ClassificationProvider):
                                         {"role": "user", "content": user}],
                            "temperature": 0.2, "max_tokens": 3000}).encode()
         data = _http_json(url, body, {"Authorization": f"Bearer {self.token}",
-                                      "Content-Type": "application/json"})
+                                      "Content-Type": "application/json"},
+                          retries=getattr(self, "_retries", 3))
         self.last_tokens = int((data.get("usage") or {}).get("total_tokens", 0))
         _record_llm(self.operator, "cloudflare", self.last_tokens)
         return data["choices"][0]["message"]["content"]
@@ -414,6 +420,10 @@ class FallbackClassifier(ClassificationProvider):
 
     def __init__(self, providers: list[ClassificationProvider]):
         self.providers = [p for p in providers if p is not None]
+        # non-final providers must fail FAST on a rate-limit (429) so the chain moves on
+        # instead of burning ~90s of retries; only the last provider keeps normal retries.
+        for i, p in enumerate(self.providers):
+            p._retries = 1 if i < len(self.providers) - 1 else 3
         self.last_provider = None
         self.last_tokens = 0
 
