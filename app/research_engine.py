@@ -1080,6 +1080,22 @@ def import_classified(node_id: str, payload: dict) -> dict:
 # ==========================================================================
 import html as _html
 
+_BLOCK_MARKERS = (
+    "you've been blocked", "you have been blocked", "blocked by network security",
+    "log in to your reddit", "use your developer token", "enable javascript",
+    "verify you are a human", "verifying you are human", "please enable cookies",
+    "attention required", "cloudflare", "captcha", "access denied", "just a moment",
+    "are you a robot", "unusual traffic", "sign in to confirm", "consent to continue",
+)
+
+
+def _looks_blocked(text: str) -> bool:
+    """True if the fetched text is clearly a block/login/JS-shell page, not real content —
+    so a walled source (Reddit etc.) is never mistaken for retrieved evidence."""
+    low = (text or "")[:600].lower()
+    return any(m in low for m in _BLOCK_MARKERS)
+
+
 def _fetch_direct(url: str, cap: int) -> tuple[str, str]:
     """Direct fetch (fast; works for open blogs/sites). Reddit -> old.reddit.com."""
     fetch_url = re.sub(r"^https?://(www\.)?reddit\.com", "https://old.reddit.com", url)
@@ -1099,6 +1115,8 @@ def _fetch_direct(url: str, cap: int) -> tuple[str, str]:
     raw = re.sub(r"(?is)<(script|style|noscript|nav|footer|header|svg).*?</\1>", " ", raw)
     text = re.sub(r"(?s)<[^>]+>", " ", raw)
     text = _html.unescape(re.sub(r"\s+", " ", text)).strip()
+    if _looks_blocked(text):
+        return "", "blocked"
     return (text[:cap], "ok") if len(text) >= 200 else (text[:cap], "empty")
 
 
@@ -1118,6 +1136,8 @@ def _fetch_via_reader(url: str, cap: int) -> tuple[str, str]:
     except Exception as e:
         return "", f"reader_fail_{type(e).__name__}"
     text = _html.unescape(re.sub(r"\s+", " ", raw)).strip()
+    if _looks_blocked(text):
+        return "", "blocked"
     return (text[:cap], "ok") if len(text) >= 200 else (text[:cap], "empty")
 
 
