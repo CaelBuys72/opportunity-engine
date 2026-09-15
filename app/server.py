@@ -366,6 +366,31 @@ class Handler(BaseHTTPRequestHandler):
                     out[name] = {"configured": True, "ok": False, "model": getattr(p, "MODEL", "?"),
                                  "error": f"{type(e).__name__}: {e}"[:300]}
             return self._json({"operator": op, "providers": out})
+        if path == "/api/universe/cover-test":
+            # diagnostic: call the image provider directly and report bytes / error
+            op = self._require_operator()
+            if not op:
+                return
+            creds = auth.resolve_operator_credentials(op)
+            import research_engine as RE
+            qs = self.path.split("?", 1)[1] if "?" in self.path else ""
+            qp = dict(p.split("=", 1) for p in qs.split("&") if "=" in p)
+            model = unquote(qp.get("model", "").replace("+", " ")) or None
+            imgp = RE.get_image_provider(creds)
+            if not imgp:
+                return self._json({"ok": False, "error": "no image provider (CF_ACCOUNT_ID/CF_API_TOKEN unset)"}, 503)
+            if model:
+                imgp.MODEL = model
+            try:
+                img = imgp.cover("A calm, premium abstract book cover background, soft gradient, no text")
+                return self._json({"ok": bool(img), "provider": imgp.name,
+                                   "model": getattr(imgp, "MODEL", "?"),
+                                   "bytes": len(img) if img else 0,
+                                   "error": getattr(imgp, "last_error", None)})
+            except Exception as e:
+                return self._json({"ok": False, "provider": imgp.name,
+                                   "model": getattr(imgp, "MODEL", "?"),
+                                   "error": f"{type(e).__name__}: {e}"[:300]}, 502)
         if path == "/api/universe/serper-probe":
             # diagnostic: run a raw Serper query, return title/snippet/url + any emails
             # found IN THE SNIPPET — to verify bio emails surface in Google snippets.
