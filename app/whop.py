@@ -28,7 +28,7 @@ def _clean_copy(clf, brief: dict) -> dict:
     aud = brief.get("target_customer") or "this audience"
     outcome = brief.get("desired_outcome") or brief.get("product_promise") or ""
     fallback = {"title": (f"The Essential Kit for {aud}")[:80],
-                "headline": (outcome or "A focused, done-for-you kit.")[:120],
+                "headline": (outcome or "A focused, done-for-you kit.")[:80],
                 "description": outcome or brief.get("core_problem") or ""}
     if not clf:
         return fallback
@@ -37,7 +37,7 @@ def _clean_copy(clf, brief: dict) -> dict:
         system = ("Write clean, honest sales copy for a digital product from its brief. STRICT "
                   "JSON {\"title\":str,\"headline\":str,\"description\":str}. title <=70 chars, a real "
                   "product name (no placeholders, no the-word-'calculator'-if-it-isn't-one); headline "
-                  "<=110 chars; description 2-4 sentences, concrete, no hype, no invented features.")
+                  "<=80 chars (HARD limit); description 2-4 sentences, concrete, no hype, no invented features.")
         user = json.dumps({"audience": aud, "problem": brief.get("core_problem"),
                            "outcome": outcome, "format": brief.get("product_format")}, ensure_ascii=False)
         d = RE._extract_json(clf.classify(system, user)) or {}
@@ -45,7 +45,7 @@ def _clean_copy(clf, brief: dict) -> dict:
         if not title:
             return fallback
         return {"title": title[:80],
-                "headline": (d.get("headline") or fallback["headline"]).strip()[:120],
+                "headline": (d.get("headline") or fallback["headline"]).strip()[:80],
                 "description": (d.get("description") or fallback["description"]).strip()}
     except Exception:
         return fallback
@@ -66,7 +66,7 @@ def create_draft(opp_id: str, whop: dict, creds: dict | None = None,
         raise WhopError(f"no product brief for '{opp_id}' — generate the product first ({e})")
 
     if title:
-        copy = {"title": title[:80], "headline": (description or "")[:120],
+        copy = {"title": title[:80], "headline": (description or "")[:80],
                 "description": description or ""}
     else:
         copy = _clean_copy(RE.get_classifier(creds, layer="product"), brief)
