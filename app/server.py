@@ -317,6 +317,25 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json({"models": ids})
             except _ue.HTTPError as e:
                 return self._json({"error": f"HTTP {e.code}: {e.read().decode()[:200]}"}, 502)
+        if path == "/api/universe/cerebras-models":
+            # diagnostic: list the Cerebras models the signed-in operator's key can use
+            op = self._require_operator()
+            if not op:
+                return
+            creds = auth.resolve_operator_credentials(op)
+            if not creds.get("cerebras"):
+                return self._json({"error": f"{op} has no Cerebras key"}, 503)
+            import urllib.request as _u, urllib.error as _ue
+            req = _u.Request("https://api.cerebras.ai/v1/models",
+                             headers={"Authorization": f"Bearer {creds['cerebras']}",
+                                      "User-Agent": "opportunity-engine/1.0"})
+            try:
+                with _u.urlopen(req, timeout=20) as r:
+                    data = json.loads(r.read())
+                ids = sorted(m.get("id") for m in data.get("data", []))
+                return self._json({"models": ids, "count": len(ids)})
+            except _ue.HTTPError as e:
+                return self._json({"error": f"HTTP {e.code}: {e.read().decode()[:300]}"}, 502)
         if path == "/api/universe/llm-test":
             # diagnostic: make a tiny live classify call to EACH configured provider so
             # we see per-provider ok/error (the FallbackClassifier hides which one failed).
