@@ -349,14 +349,14 @@ class Handler(BaseHTTPRequestHandler):
             cmodel = unquote(qp.get("cmodel", "").replace("+", " ")) or None
             only = unquote(qp.get("only", "").replace("+", " ")) or None
             out = {}
-            for name in ("groq", "gemini", "cerebras"):
+            for name in ("groq", "gemini", "cerebras", "mistral", "cloudflare"):
                 if only and name != only:
                     continue
                 p = RE._build_provider(name, creds, op)
                 if p is None:
                     out[name] = {"configured": False}
                     continue
-                if name == "cerebras" and cmodel:
+                if cmodel and name == (only or "cerebras"):
                     p.MODEL = cmodel
                 try:
                     txt = p.classify('Reply with STRICT JSON {"ok":true}.', "ping")

@@ -349,6 +349,61 @@ class CerebrasClassifier(ClassificationProvider):
         return data["choices"][0]["message"]["content"]
 
 
+class MistralClassifier(ClassificationProvider):
+    """Mistral La Plateforme free tier — OpenAI-compatible, ~1B tokens/month free,
+    no card (phone-verified). The research-layer workhorse; big budget, doesn't touch
+    Groq's product pool or Cloudflare's cover pool."""
+    name = "mistral"
+    ENDPOINT = "https://api.mistral.ai/v1/chat/completions"
+    MODEL = os.environ.get("MISTRAL_MODEL", "mistral-small-latest")
+
+    def __init__(self, api_key: str, operator: str = "unknown"):
+        self.api_key = api_key
+        self.operator = operator
+        self.last_tokens = 0
+
+    def classify(self, system: str, user: str) -> str:
+        body = json.dumps({"model": self.MODEL,
+                           "messages": [{"role": "system", "content": system},
+                                        {"role": "user", "content": user}],
+                           "temperature": 0.2, "max_tokens": 4000,
+                           "response_format": {"type": "json_object"}}).encode()
+        data = _http_json(self.ENDPOINT, body,
+                          {"Authorization": f"Bearer {self.api_key}",
+                           "Content-Type": "application/json"})
+        self.last_tokens = int((data.get("usage") or {}).get("total_tokens", 0))
+        _record_llm(self.operator, "mistral", self.last_tokens)
+        return data["choices"][0]["message"]["content"]
+
+
+class CloudflareTextClassifier(ClassificationProvider):
+    """Cloudflare Workers AI text (OpenAI-compatible endpoint) — shared account, 10k
+    free Neurons/day (also powers the FLUX covers, so they share that daily pool). Used
+    as the research fallback: already configured on this account, no signup. Default to a
+    light model to conserve Neurons; override with CF_TEXT_MODEL."""
+    name = "cloudflare"
+    MODEL = os.environ.get("CF_TEXT_MODEL", "@cf/meta/llama-3.1-8b-instruct")
+
+    def __init__(self, account_id: str, api_token: str, operator: str = "shared"):
+        self.account_id = account_id
+        self.token = api_token
+        self.operator = operator
+        self.last_tokens = 0
+
+    def classify(self, system: str, user: str) -> str:
+        url = (f"https://api.cloudflare.com/client/v4/accounts/{self.account_id}"
+               f"/ai/v1/chat/completions")
+        body = json.dumps({"model": self.MODEL,
+                           "messages": [{"role": "system", "content": system},
+                                        {"role": "user", "content": user}],
+                           "temperature": 0.2, "max_tokens": 3000}).encode()
+        data = _http_json(url, body, {"Authorization": f"Bearer {self.token}",
+                                      "Content-Type": "application/json"})
+        self.last_tokens = int((data.get("usage") or {}).get("total_tokens", 0))
+        _record_llm(self.operator, "cloudflare", self.last_tokens)
+        return data["choices"][0]["message"]["content"]
+
+
 class FallbackClassifier(ClassificationProvider):
     """Tries an ordered list of classifiers, moving to the next ONLY on a rate-limit
     (HTTP 429) or provider-unavailable error — so a layer keeps working after its
@@ -387,22 +442,26 @@ class FallbackClassifier(ClassificationProvider):
 # Product generation gets Groq then Gemini (both long-context, high quality); the
 # lighter research/classification layers run on Cerebras (huge daily budget), with
 # Gemini as a large-context safety net when a prompt exceeds Cerebras's 8K window.
-# Reality (2026-09-15): Groq is the only reliably-free LLM. Cerebras returns 402
-# (billing-gated on this account) and Gemini's free quota is tiny + its 429 retries
-# hang requests — so research layers fall back to GROQ, not Gemini. Cerebras is kept
-# FIRST so the moment its billing/free access is enabled it's used automatically with
-# no code change; until then it fails fast (402, no retry) and Groq handles the layer.
+# Provider roles (2026-09-15). Products: Groq (200k tok/day) -> Gemini overflow.
+# Research layers: Mistral (free ~1B tok/month) -> Cloudflare Workers AI (shared 10k
+# Neurons/day, already configured for covers) -> Groq (always-available last resort).
+# Cerebras is billing-gated on this account (402) so it is NOT in the active chains;
+# re-add it if its billing/free access is ever enabled.
 LAYER_CHAINS = {
     "product":  ["groq", "gemini"],
-    "research": ["cerebras", "groq"],
-    "explore":  ["cerebras", "groq"],
-    "rescore":  ["cerebras", "groq"],
-    "creator":  ["cerebras", "groq"],
+    "research": ["mistral", "cloudflare", "groq"],
+    "explore":  ["mistral", "cloudflare", "groq"],
+    "rescore":  ["mistral", "cloudflare", "groq"],
+    "creator":  ["mistral", "cloudflare", "groq"],
 }
-_DEFAULT_CHAIN = ["groq", "gemini", "cerebras"]
+_DEFAULT_CHAIN = ["groq", "mistral", "gemini"]
 
 
 def _build_provider(name: str, creds: dict | None, op: str) -> ClassificationProvider | None:
+    if name == "cloudflare":
+        # shared global account (same as covers), not a per-operator key
+        acct, tok = os.environ.get("CF_ACCOUNT_ID"), os.environ.get("CF_API_TOKEN")
+        return CloudflareTextClassifier(acct, tok, operator=op) if (acct and tok) else None
     if creds is not None:
         key = creds.get(name)
     else:
@@ -415,6 +474,8 @@ def _build_provider(name: str, creds: dict | None, op: str) -> ClassificationPro
         return GeminiClassifier(key, operator=op)
     if name == "cerebras":
         return CerebrasClassifier(key, operator=op)
+    if name == "mistral":
+        return MistralClassifier(key, operator=op)
     return None
 
 
@@ -533,7 +594,8 @@ def providers_status(creds: dict | None = None) -> dict:
     sp = get_search_provider(creds)
     img = get_image_provider(creds)
     op = creds.get("operator", "unknown") if creds is not None else "unknown"
-    llm = {n: (_build_provider(n, creds, op) is not None) for n in ("groq", "gemini", "cerebras")}
+    llm = {n: (_build_provider(n, creds, op) is not None)
+           for n in ("groq", "gemini", "cerebras", "mistral", "cloudflare")}
     # what each layer would actually route to, given the configured keys
     def _chain(layer):
         c = get_classifier(creds, layer=layer)
