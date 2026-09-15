@@ -631,6 +631,75 @@ def _creator_queries(clf, brief: dict, profile: dict) -> list[str]:
         return fallback[:8]
 
 
+def _platform_queries(brief: dict, profile: dict) -> list[str]:
+    """Site-targeted queries that surface actual creator CHANNELS/profiles, not articles
+    ABOUT them (the main reason recall was low — plain web search returns listicles)."""
+    aud = (brief.get("target_customer") or profile.get("target_audience") or "").strip()
+    prob = (brief.get("core_problem") or "").strip()
+    if not aud:
+        return []
+    short = " ".join(aud.split()[:6])
+    qs = [
+        f"site:youtube.com {short} {prob}".strip(),
+        f"site:youtube.com {short} channel",
+        f"site:tiktok.com {short}",
+        f"site:instagram.com {short}",
+        f"{short} site:substack.com",
+        f"{short} newsletter creator",
+        f"{short} podcast host",
+        f"best {short} youtubers OR creators",
+    ]
+    return [q for q in qs if q.strip()]
+
+
+# contact-route link patterns (found in the creator's own page text)
+_LINK_PATTERNS = {
+    "link_hub": r"https?://(?:linktr\.ee|beacons\.ai|bio\.link|linkin\.bio|link\.bio|solo\.to|tap\.bio|komi\.io)/[^\s\"'<>)]+",
+    "instagram": r"https?://(?:www\.)?instagram\.com/[A-Za-z0-9_.]+",
+    "x": r"https?://(?:www\.)?(?:twitter|x)\.com/[A-Za-z0-9_]+",
+    "tiktok": r"https?://(?:www\.)?tiktok\.com/@[A-Za-z0-9_.]+",
+    "contact_page": r"https?://[^\s\"'<>)]+/(?:contact|about|work-with|collab)[^\s\"'<>)]*",
+}
+_LINK_RE = {k: re.compile(v, re.I) for k, v in _LINK_PATTERNS.items()}
+
+
+def _contact_page_url(channel_root: str) -> str:
+    """For YouTube, the /about tab is where business email lives; else the root itself."""
+    try:
+        if "youtube.com" in channel_root and "/about" not in channel_root:
+            return channel_root.rstrip("/") + "/about"
+    except Exception:
+        pass
+    return channel_root
+
+
+def _extract_contacts(text: str, channel_url: str) -> dict:
+    """Pull every REAL, observed reach route from a creator's page text: emails first,
+    then link-hubs / socials / contact pages. The channel URL itself is always a route
+    (comment / DM). Nothing invented — only what appears in the fetched text."""
+    text = text or ""
+    emails = sorted({e for e in _EMAIL_RE.findall(text)
+                     if not e.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".webp"))})[:3]
+    links = {}
+    for kind, rx in _LINK_RE.items():
+        m = rx.search(text)
+        if m:
+            links[kind] = m.group(0)
+    # reach method, best-first
+    if emails:
+        method, primary = "email", emails[0]
+    elif links.get("link_hub"):
+        method, primary = "link_hub", links["link_hub"]
+    elif links.get("contact_page"):
+        method, primary = "contact_page", links["contact_page"]
+    elif any(k in links for k in ("instagram", "x", "tiktok")):
+        method = "dm"
+        primary = links.get("instagram") or links.get("x") or links.get("tiktok")
+    else:
+        method, primary = "platform", channel_url        # comment / on-platform DM
+    return {"emails": emails, "links": links, "method": method, "primary": primary}
+
+
 def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
     """Groq scores each search hit for creator-fit. Returns per-index scoring; we merge
     back the real URL + regex-found emails so nothing is invented."""
@@ -639,18 +708,22 @@ def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
                 "snippet": (it.get("snippet") or "")[:300],
                 "page_excerpt": (it.get("page_text") or "")[:600]} for it in items]
     system = (
-        "You evaluate web-search results to identify real individual CREATORS/channels (not "
-        "marketplaces, listicles, agencies or brands) whose audience matches the buyer and who "
-        "make content on the problem. For EACH item return an object; respond with STRICT JSON "
-        "{\"creators\":[{\"i\":int,\"keep\":bool,\"name\":str,\"platform\":str,\"handle\":str,"
+        "You evaluate web-search results to identify real individual CREATORS/channels whose "
+        "audience matches the buyer and who make content on the problem. For EACH item return an "
+        "object; respond with STRICT JSON {\"creators\":[{\"i\":int,\"keep\":bool,"
+        "\"confidence\":\"high|medium|low\",\"name\":str,\"platform\":str,\"handle\":str,"
         "\"niche\":str,\"est_followers\":int|null,\"why_fit\":str,\"fit_score\":int(0-100),"
         "\"caution\":str}]}. Rules: "
-        "'name' MUST be the CREATOR/channel/author (e.g. the YouTube channel or the person), NOT "
-        "the title of a single video or post. If the result is a one-off video/post and you "
-        "cannot identify the creator behind it from the title/snippet/page text, set keep=false. "
-        "keep=false for anything that is not a single identifiable creator/channel. est_followers "
-        "ONLY if explicitly present in the text, else null. Never invent numbers, handles or "
-        "emails. fit_score = audience match + problem/content match + approachability.")
+        "'name' MUST be the CREATOR/channel/author (the YouTube channel, the person, the newsletter), "
+        "NOT the title of a single video or post. "
+        "keep=true for ANY plausible individual creator/channel/author/podcast/newsletter — even if "
+        "you must infer the creator behind a single video, and even if the fit is only moderate. Set "
+        "confidence=low for those inferred/borderline ones, medium for probable, high for a clearly "
+        "identified creator who squarely fits. "
+        "keep=false ONLY for things that are clearly NOT one creator: marketplaces, app-store pages, "
+        "listicles/round-up articles, news sites, agencies, retail brands, or generic company pages. "
+        "est_followers ONLY if explicitly present, else null. Never invent numbers, handles or emails. "
+        "fit_score = audience match + problem/content match + approachability.")
     user = json.dumps({"buyer": brief.get("target_customer"), "problem": brief.get("core_problem"),
                        "product": brief.get("product_concept") or brief.get("desired_outcome"),
                        "results": compact}, ensure_ascii=False)
@@ -664,6 +737,7 @@ def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
         src = by_i.get(r.get("i"))
         if not src:
             continue
+        conf = r.get("confidence")
         out.append({
             "name": r.get("name") or src.get("title"), "platform": r.get("platform"),
             "handle": r.get("handle"),
@@ -671,15 +745,19 @@ def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
             "source_url": src.get("url"),                              # the exact hit from Serper
             "niche": r.get("niche"), "est_followers": r.get("est_followers"),
             "why_fit": r.get("why_fit"), "fit_score": r.get("fit_score") or 0,
+            "confidence": conf if conf in ("high", "medium", "low") else "medium",
             "caution": r.get("caution"),
-            "contact_emails": src.get("emails", []),                   # regex-observed only
+            "contact_emails": [], "contacts": None,                    # filled after scoring (kept only)
             "found_via": src.get("query"),
         })
     return out
 
 
+CONTACT_FETCH_LIMIT = 15   # fetch contact pages for at most this many kept creators (latency guard)
+
+
 def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "unknown",
-                      max_candidates: int = 15, fetch_contacts: bool = True) -> dict:
+                      max_candidates: int = 45, fetch_contacts: bool = True) -> dict:
     """Live creator shortlist for outreach: Serper search -> page fetch for contacts ->
     Groq fit-scoring. Honest: only real URLs, only publicly-found emails."""
     import research_engine as RE
@@ -689,12 +767,13 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
     bundle = load_opportunity(opp_id)
     profile = define_creator_search_profile(bundle)
     brief = bundle["brief"]
-    queries = _creator_queries(clf, brief, profile)
+    # semantic (LLM) queries + site-targeted queries that surface real channels, deduped
+    queries = list(dict.fromkeys(_creator_queries(clf, brief, profile) + _platform_queries(brief, profile)))[:14]
 
     seen, results = set(), []
     for q in queries:
         try:
-            hits = sp.search(q, num=10)
+            hits = sp.search(q, num=15)
         except Exception:
             hits = []
         for h in hits:
@@ -712,33 +791,43 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
     except Exception:
         pass
 
-    # enrich the top slice: fetch each page once, pull emails (observed contact only).
-    # fetch_contacts=False skips the (slow) page fetches — used by the rescore batch,
-    # which only needs creator relevance for density, not emails.
-    top = results[:max_candidates]
-    for i, r in enumerate(top):
+    # Score a LARGE pool on title+snippet (one LLM call, no page fetches yet) so a noisy
+    # first page of results doesn't starve the shortlist. max_candidates caps the pool.
+    pool = results[:max_candidates]
+    for i, r in enumerate(pool):
         r["i"] = i
-        if fetch_contacts:
+        r["page_text"] = ""
+    creators = _score_creators(clf, brief, pool) if pool else []
+    creators.sort(key=lambda c: c.get("fit_score") or 0, reverse=True)
+
+    # Enrich ONLY the kept creators with real contact routes — fetch the creator's own
+    # channel/about page (not a video), pull emails + link-hub / social / contact-page
+    # routes. fetch_contacts=False (rescore density path) skips this slow step.
+    if fetch_contacts:
+        for c in creators[:CONTACT_FETCH_LIMIT]:
+            page = _contact_page_url(c.get("url") or c.get("source_url") or "")
             try:
-                text, status = RE.fetch_text(r["url"], cap=3000)
+                text, status = RE.fetch_text(page, cap=4000)
             except Exception:
                 text, status = "", "error"
-            r["page_text"] = text if status == "ok" else ""
-            r["emails"] = sorted(set(_EMAIL_RE.findall(r["page_text"])))[:3] if r["page_text"] else []
-        else:
-            r["page_text"], r["emails"] = "", []
-
-    creators = _score_creators(clf, brief, top) if top else []
-    creators.sort(key=lambda c: c.get("fit_score") or 0, reverse=True)
+            contacts = _extract_contacts(text if status == "ok" else "", c.get("url") or "")
+            c["contacts"] = contacts
+            c["contact_emails"] = contacts["emails"]
+            c["reach_method"] = contacts["method"]
 
     dossier = {
         "opportunity_id": opp_id, "generated_at": _now(),
         "audience": brief.get("target_customer"), "queries": queries,
         "candidates_found": len(results), "shortlisted": len(creators),
-        "with_contact": sum(1 for c in creators if c.get("contact_emails")),
+        "with_email": sum(1 for c in creators if c.get("contact_emails")),
+        "with_any_contact": sum(1 for c in creators
+                                if c.get("contacts") and c["contacts"].get("method") != "platform"),
+        "by_confidence": {lvl: sum(1 for c in creators if c.get("confidence") == lvl)
+                          for lvl in ("high", "medium", "low")},
         "creators": creators,
-        "note": "Creators from live search; fit scored by LLM; emails only where publicly "
-                "listed on the creator's own page. Verify before outreach.",
+        "note": "Creators from live search; fit + confidence scored by LLM. Contact routes are "
+                "observed-only (emails/links on the creator's own page); most creators are reached "
+                "by DM or a contact page, not email. Verify before outreach.",
     }
     _write(opp_id, "creator_shortlist", dossier)
     return dossier
@@ -788,10 +877,14 @@ def draft_outreach(opp_id: str, creds: dict | None = None, operator: str = "unkn
     drafts = []
     for i, c in enumerate(creators):
         d = by_i.get(i) or {}
+        contacts = c.get("contacts") or {}
         drafts.append({
             "creator": c.get("name"), "platform": c.get("platform"), "url": c.get("url"),
             "handle": c.get("handle"), "contact_emails": c.get("contact_emails", []),
-            "fit_score": c.get("fit_score"),
+            "reach_method": c.get("reach_method") or contacts.get("method"),
+            "reach_via": contacts.get("primary") or c.get("url"),
+            "contact_links": contacts.get("links") or {},
+            "fit_score": c.get("fit_score"), "confidence": c.get("confidence"),
             "subject": d.get("subject") or f"Idea for your {c.get('platform', '')} audience",
             "message": d.get("message") or "",
             "status": "draft",

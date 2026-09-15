@@ -639,7 +639,10 @@ class Handler(BaseHTTPRequestHandler):
                 d = DI.discover_creators(oid, creds=creds, operator=op)
                 return self._json({"ok": True, "opportunity_id": oid, "operator": op,
                                    "candidates_found": d["candidates_found"],
-                                   "shortlisted": d["shortlisted"], "with_contact": d["with_contact"],
+                                   "shortlisted": d["shortlisted"],
+                                   "with_email": d.get("with_email", 0),
+                                   "with_any_contact": d.get("with_any_contact", 0),
+                                   "by_confidence": d.get("by_confidence", {}),
                                    "creators": d["creators"]})
             except DI.DistributionError as e:
                 return self._json({"ok": False, "error": str(e)}, 422)

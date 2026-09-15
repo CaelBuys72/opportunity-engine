@@ -513,19 +513,31 @@ async function showUniverseCreators(id) {
     .then(r => r.ok ? r.json() : null).catch(() => null);
   let inner;
   if (d && (d.creators || []).length) {
+    const REACH_LABEL = { email: "email", link_hub: "link hub", contact_page: "contact page",
+                          dm: "DM", platform: "comment / DM on channel" };
     const rows = d.creators.map(c => {
-      const emails = (c.contact_emails || []).length
-        ? c.contact_emails.map(e => `<a href="mailto:${esc(e)}">${esc(e)}</a>`).join(", ")
-        : '<span class="muted small">no public email</span>';
+      const ct = c.contacts || {};
+      let reach;
+      if ((c.contact_emails || []).length) {
+        reach = c.contact_emails.map(e => `<a href="mailto:${esc(e)}">${esc(e)}</a>`).join(", ");
+      } else if (ct.primary && ct.method && ct.method !== "platform") {
+        reach = `via ${esc(REACH_LABEL[ct.method] || ct.method)}: <a href="${esc(ct.primary)}" target="_blank" rel="noopener">${esc(ct.primary.replace(/^https?:\/\//, "").slice(0, 42))}</a>`;
+      } else {
+        reach = `<span class="muted small">reach via ${esc(REACH_LABEL[c.reach_method] || "comment / DM on channel")}</span>`;
+      }
+      const conf = c.confidence || "medium";
       const fol = c.est_followers ? ` · ${Number(c.est_followers).toLocaleString()} followers` : "";
       return `<div class="ev"><p><b>${esc(c.name || "creator")}</b>
           <span class="basis ${(c.fit_score || 0) >= 60 ? "observed" : "inferred"}">fit ${esc(c.fit_score || 0)}</span>
+          <span class="badge ${esc(conf)}">${esc(conf)}</span>
           <span class="muted small">${esc(c.platform || "")}${fol}</span></p>
         <p class="meta">${esc(c.why_fit || "")}${c.caution ? ` <span class="unknown">⚠ ${esc(c.caution)}</span>` : ""}</p>
-        <p class="meta">${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url)}</a>` : ""} · ${emails}</p></div>`;
+        <p class="meta">${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url)}</a>` : ""} · ${reach}</p></div>`;
     }).join("");
+    const bc = d.by_confidence || {};
+    const confSummary = ["high", "medium", "low"].filter(l => bc[l]).map(l => `${bc[l]} ${l}`).join(" / ");
     inner = `<section class="card dossier" style="border-color:rgba(123,92,255,.45)">
-        <h3>🎯 Creators <span class="muted small">${d.shortlisted} shortlisted · ${d.with_contact} with contact · ${d.candidates_found} found</span></h3>
+        <h3>🎯 Creators <span class="muted small">${d.shortlisted} shortlisted${confSummary ? " (" + confSummary + ")" : ""} · ${d.with_any_contact ?? d.with_email ?? 0} reachable · ${d.candidates_found} found</span></h3>
         ${rows}
         <div class="cta"><button class="primary" id="u-creators-btn" style="background:rgba(123,92,255,.25);color:#e9f2ff">Re-run discovery</button>
           <span class="result" id="u-creators-result"></span></div>
@@ -552,7 +564,7 @@ async function discoverCreators(id) {
   catch (e) { res.innerHTML = `<span style="color:var(--bad)">Request failed: ${esc(e.message)}</span>`; b.disabled = false; b.textContent = "FIND CREATORS →"; return; }
   b.disabled = false;
   if (!r.ok) { res.innerHTML = `<span style="color:var(--bad)">${esc(r.error || "discovery failed")}</span>`; b.textContent = "FIND CREATORS →"; return; }
-  res.innerHTML = `Found <b>${r.shortlisted}</b> creators (${r.with_contact} with contact) from ${r.candidates_found} results`;
+  res.innerHTML = `Found <b>${r.shortlisted}</b> creators (${r.with_any_contact ?? r.with_email ?? 0} reachable) from ${r.candidates_found} results`;
   showUniverseCreators(id);
 }
 
