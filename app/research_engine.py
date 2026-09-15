@@ -1080,13 +1080,8 @@ def import_classified(node_id: str, payload: dict) -> dict:
 # ==========================================================================
 import html as _html
 
-def fetch_text(url: str, cap: int = 4000) -> tuple[str, str]:
-    """Best-effort page retrieval. Returns (text, status). Never fabricates —
-    on any failure returns ("", "<reason>"). Simple, not a crawler.
-    Reddit is rewritten to old.reddit.com (server-rendered, no JS) for a better hit rate;
-    a 200 that yields <200 chars of usable text is reported 'empty' (not 'ok')."""
-    if not url:
-        return "", "no_url"
+def _fetch_direct(url: str, cap: int) -> tuple[str, str]:
+    """Direct fetch (fast; works for open blogs/sites). Reddit -> old.reddit.com."""
     fetch_url = re.sub(r"^https?://(www\.)?reddit\.com", "https://old.reddit.com", url)
     try:
         req = urllib.request.Request(fetch_url, headers={
@@ -1105,6 +1100,41 @@ def fetch_text(url: str, cap: int = 4000) -> tuple[str, str]:
     text = re.sub(r"(?s)<[^>]+>", " ", raw)
     text = _html.unescape(re.sub(r"\s+", " ", text)).strip()
     return (text[:cap], "ok") if len(text) >= 200 else (text[:cap], "empty")
+
+
+def _fetch_via_reader(url: str, cap: int) -> tuple[str, str]:
+    """Read-through proxy (Jina Reader) — fetches SERVER-SIDE and returns clean text, so it
+    bypasses the datacenter-IP blocks that now 403 Reddit/Quora/forums for cloud hosts. Free,
+    keyless (~20 rpm); set JINA_API_KEY for higher limits. Best-effort; ("", reason) on fail."""
+    headers = {"User-Agent": "opportunity-engine/1.0", "X-Return-Format": "text",
+               "Accept": "text/plain"}
+    key = os.environ.get("JINA_API_KEY")
+    if key:
+        headers["Authorization"] = f"Bearer {key}"
+    try:
+        req = urllib.request.Request("https://r.jina.ai/" + url, headers=headers)
+        with urllib.request.urlopen(req, timeout=30) as r:
+            raw = r.read(900_000).decode("utf-8", "ignore")
+    except Exception as e:
+        return "", f"reader_fail_{type(e).__name__}"
+    text = _html.unescape(re.sub(r"\s+", " ", raw)).strip()
+    return (text[:cap], "ok") if len(text) >= 200 else (text[:cap], "empty")
+
+
+def fetch_text(url: str, cap: int = 4000) -> tuple[str, str]:
+    """Best-effort page retrieval. Returns (text, status). Never fabricates. Tries a direct
+    fetch first (fast, for open sites), then falls back to a server-side read-through proxy
+    for sources that block datacenter IPs (Reddit/Quora/forums). <200 chars => 'empty'."""
+    if not url:
+        return "", "no_url"
+    text, status = _fetch_direct(url, cap)
+    if status == "ok":
+        return text, status
+    rtext, rstatus = _fetch_via_reader(url, cap)
+    if rstatus == "ok":
+        return rtext, "ok"
+    # neither worked — report the more informative reason
+    return (rtext or text or ""), (rstatus if rstatus != "empty" else status)
 
 
 # critical dimensions the completion gate cares about (index-aligned to make_plan's
