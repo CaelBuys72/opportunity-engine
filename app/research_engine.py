@@ -1257,6 +1257,13 @@ def _plan_queries(pocket: dict, dynamic: list[str]) -> list[dict]:
 _UGC = {"reddit.com": 5, "quora.com": 4, "ycombinator": 4, "stackexchange": 4,
         "forum": 4, "community": 3}
 _REVIEW = {"g2.com": 4, "capterra": 4, "trustpilot": 3, "producthunt": 3}
+# Domains that reliably 403 / login-wall server-side fetches (2026) — their SNIPPETS are
+# still valuable evidence, but they should not hog the limited page-fetch slots. A partial
+# penalty keeps strong walled sources in the mix while letting fetchable ones (blogs,
+# Substack, publisher articles, docs) rise into the top-N we actually retrieve.
+_WALLED = ("reddit.com", "quora.com", "x.com", "twitter.com", "instagram.com",
+           "facebook.com", "linkedin.com")
+_WALLED_PENALTY = 4.0
 
 
 def _rank_candidates(candidates: list[dict], pocket: dict) -> list[dict]:
@@ -1276,6 +1283,8 @@ def _rank_candidates(candidates: list[dict], pocket: dict) -> list[dict]:
             if k in url: score += v; break
         for k, v in _REVIEW.items():
             if k in url: score += v; break
+        if any(w in dom for w in _WALLED):        # can't fetch the page body; keep snippet value only
+            score -= _WALLED_PENALTY
         if any(w in url for w in ("pricing", "price", "cost")): score += 2
         if any(w in url for w in ("template", "product", "marketplace", "gumroad", "etsy", "notion.so")): score += 1
         score += intent_boost.get(c.get("intent"), 0)
