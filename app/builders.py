@@ -7,9 +7,18 @@ returns (None, reason) and the caller marks the PDF format BLOCKED — never fak
 """
 from __future__ import annotations
 import csv as _csv
+import re as _re
 import shutil
 import subprocess
 from pathlib import Path
+
+# engine/basis tags that must never reach a buyer-facing document
+_ENGINE_TAG_RE = _re.compile(r"\s*\[(observed|inferred|unknown|assumed|n/?a|"
+                             r"basis[^\]]*|source[^\]]*|evidence[^\]]*)\]", _re.I)
+
+
+def _strip_engine_tags(s: str) -> str:
+    return _ENGINE_TAG_RE.sub("", str(s))
 
 from openpyxl import Workbook, load_workbook
 from docx import Document
@@ -140,13 +149,22 @@ def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
              "•": "-", " ": " ", "■": "", "﻿": ""}
 
     def safe(t):
-        s = str(t)
+        s = _strip_engine_tags(str(t))          # never leak [observed]/[inferred]/... to buyers
         for k, v in _SUBS.items():
             s = s.replace(k, v)
         return s.encode("latin-1", "ignore").decode("latin-1")   # drop remaining non-WinAnsi
 
-    def esc(t):  # for Paragraph markup (safe() first, then HTML-escape)
-        return safe(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    def esc(t):  # for Paragraph markup (safe() first, then HTML-escape, then light markdown)
+        s = safe(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        # render markdown emphasis instead of showing literal asterisks/underscores
+        s = _re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", s)
+        s = _re.sub(r"__(.+?)__", r"<b>\1</b>", s)
+        s = _re.sub(r"(?<!\*)\*(?!\*)([^*\n]+?)\*(?!\*)", r"<i>\1</i>", s)  # *italic*
+        s = s.replace("**", "").replace("* ", "").replace(" *", "")        # kill any strays
+        return s.strip()
+
+    def _item(x):  # strip a leading markdown list marker so it isn't doubled by the bullet
+        return _re.sub(r"^\s*[\*\-•]\s+", "", str(x))
 
     def render(b):
         t = b.get("type")
@@ -155,11 +173,11 @@ def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
         if t == "para":
             return [Paragraph(esc(b.get("text", "")), body)]
         if t in ("bullet", "number"):
-            items = [ListItem(Paragraph(esc(x), li)) for x in b.get("items", [])]
+            items = [ListItem(Paragraph(esc(_item(x)), li)) for x in b.get("items", [])]
             return [ListFlowable(items, bulletType="1" if t == "number" else "bullet",
                                  leftIndent=16), Spacer(1, 4)]
         if t == "check":
-            return [Paragraph("[ &nbsp; ]&nbsp;&nbsp;" + esc(x), li) for x in b.get("items", [])] + [Spacer(1, 4)]
+            return [Paragraph("[ &nbsp; ]&nbsp;&nbsp;" + esc(_item(x)), li) for x in b.get("items", [])] + [Spacer(1, 4)]
         if t == "field":
             return [Paragraph(f"<b>{esc(b.get('label',''))}:</b> " + "_" * 28, fld)]
         return []

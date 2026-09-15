@@ -29,7 +29,8 @@ STATES_FILE = ROOT / "data" / "universe" / "pipeline_states.json"
 FORBIDDEN = re.compile(r"\b(TODO|TBD|PLACEHOLDER|LOREM IPSUM|INSERT HERE|EXAMPLE TEXT)\b"
                        r"|\[(write|add|insert|todo|fill in later|complete)\b[^\]]*\]", re.I)
 ENGINE_LEAK = re.compile(r"\b(prb-|opp-|aud-|src-|source_ref|evidence_count|basis|inferred|"
-                         r"priority_score|commercial_score|scoring_version)\b")
+                         r"priority_score|commercial_score|scoring_version)\b"
+                         r"|\[(observed|inferred|unknown|assumed|basis[^\]]*)\]", re.I)
 
 
 class ProductionError(Exception):
@@ -630,6 +631,55 @@ def _cover_prompt(title: str, transformation: dict) -> str:
             "NO text, NO words, NO letters, NO logos.")
 
 
+def _chapter_title(name: str) -> str:
+    """Buyer-facing chapter title: strip engine tags ([observed] etc.) and the verbose
+    '- explanation' tail so it reads like a real section, not a system label."""
+    s = re.sub(r"\s*\[[^\]]*\]", "", str(name or "")).strip()
+    for sep in (" — ", " - ", ": "):
+        if sep in s and len(s) > 46:
+            s = s.split(sep)[0].strip()
+            break
+    return s[:80] or "Section"
+
+
+def _clean_subtitle(brief: dict, transformation: dict) -> str:
+    """A clean outcome line for the cover — not the templated 'Get to \"…\" without the
+    usual guesswork.' string."""
+    s = (brief.get("desired_outcome") or transformation.get("to_state")
+         or brief.get("product_promise") or "").strip()
+    m = re.search(r"'([^']+)'", s) or re.search(r'"([^"]+)"', s)   # pull the quoted outcome if templated
+    if m:
+        s = m.group(1).strip()
+    return s[:160]
+
+
+def _product_name(brief: dict, dossier: dict, creds: dict | None) -> str:
+    """A real, sellable product NAME (e.g. 'PrepMaster Toolkit') — not the raw, often
+    garbled, product_concept. One small LLM call with a plain heuristic fallback."""
+    existing = (brief.get("product_name") or dossier.get("product_name") or "").strip()
+    if existing:
+        return _chapter_title(existing)
+    aud = brief.get("target_customer") or "Your Audience"
+    fallback = f"The {aud} Playbook"[:70]
+    try:
+        import research_engine as RE
+        clf = RE.get_classifier(creds, layer="product")
+        if not clf:
+            return fallback
+        system = ("Name this digital product. STRICT JSON {\"name\":str}: a real, specific product "
+                  "name a buyer sees on a sales page — 2-6 words, Title Case, no placeholders, no "
+                  "colon dumping the whole description, and don't call it a 'calculator'/'guide' "
+                  "unless it genuinely is one.")
+        user = json.dumps({"audience": aud, "problem": brief.get("core_problem"),
+                           "outcome": brief.get("desired_outcome"),
+                           "format": brief.get("product_format")}, ensure_ascii=False)
+        d = RE._extract_json(clf.classify(system, user)) or {}
+        name = re.sub(r"\s*\[[^\]]*\]", "", (d.get("name") or "")).strip()
+        return (name or fallback)[:70]
+    except Exception:
+        return fallback
+
+
 def _assemble_bundle(pdir: Path, components: list[dict], spec: dict,
                      creds: dict | None = None) -> tuple[str, str]:
     """One sellable ebook PDF (document components as chapters, with an optional
@@ -640,9 +690,9 @@ def _assemble_bundle(pdir: Path, components: list[dict], spec: dict,
     bdir.mkdir(parents=True, exist_ok=True)
     brief = spec.get("product_brief", {}) or {}
     dossier = spec.get("curation_dossier", {}) or {}
-    title = brief.get("product_concept") or dossier.get("product_concept") or "Your Product"
     transformation = dossier.get("transformation", {}) or {}
-    subtitle = brief.get("product_promise") or transformation.get("to_state") or ""
+    title = _product_name(brief, dossier, creds)          # clean product NAME, not raw brief
+    subtitle = _clean_subtitle(brief, transformation)     # clean outcome line, not template
 
     chapters, tools, excluded = [], [], []
     for c in components:
@@ -650,7 +700,7 @@ def _assemble_bundle(pdir: Path, components: list[dict], spec: dict,
         if not (c["production_status"] == "built" and c["qa_status"] == "passed"):
             excluded.append(cid); continue
         if c.get("role") == "tool":
-            safe = re.sub(r"[^A-Za-z0-9 _-]+", "-", c.get("name") or cid).strip()[:70]
+            safe = re.sub(r"[^A-Za-z0-9 _-]+", "-", _chapter_title(c.get("name") or cid)).strip()[:70]
             for f in c["files"]:
                 src = PRODUCTS / f
                 dest = bdir / f"{safe}{src.suffix}"
@@ -659,7 +709,7 @@ def _assemble_bundle(pdir: Path, components: list[dict], spec: dict,
             cj = pdir / "components" / cid / "content.json"
             if cj.exists():
                 data = json.loads(cj.read_text())
-                chapters.append({"title": c.get("name") or data.get("title") or cid,
+                chapters.append({"title": _chapter_title(c.get("name") or data.get("title") or cid),
                                  "blocks": data.get("blocks", [])})
 
     ebook_name = None

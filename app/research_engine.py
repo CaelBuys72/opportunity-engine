@@ -459,12 +459,15 @@ class FallbackClassifier(ClassificationProvider):
 # Neurons/day, already configured for covers) -> Groq (always-available last resort).
 # Cerebras is billing-gated on this account (402) so it is NOT in the active chains;
 # re-add it if its billing/free access is ever enabled.
+# Cloudflare is LAST for research so its 10k Neurons/day stay reserved for FLUX ebook
+# covers in normal operation (research runs on Mistral→Groq); CF text only fires if both
+# of those are down, so it rarely competes with covers.
 LAYER_CHAINS = {
     "product":  ["groq", "gemini"],
-    "research": ["mistral", "cloudflare", "groq"],
-    "explore":  ["mistral", "cloudflare", "groq"],
-    "rescore":  ["mistral", "cloudflare", "groq"],
-    "creator":  ["mistral", "cloudflare", "groq"],
+    "research": ["mistral", "groq", "cloudflare"],
+    "explore":  ["mistral", "groq", "cloudflare"],
+    "rescore":  ["mistral", "groq", "cloudflare"],
+    "creator":  ["mistral", "groq", "cloudflare"],
 }
 _DEFAULT_CHAIN = ["groq", "mistral", "gemini"]
 
