@@ -366,6 +366,21 @@ class Handler(BaseHTTPRequestHandler):
                     out[name] = {"configured": True, "ok": False, "model": getattr(p, "MODEL", "?"),
                                  "error": f"{type(e).__name__}: {e}"[:300]}
             return self._json({"operator": op, "providers": out})
+        if path == "/api/universe/fetch-test":
+            op = self._require_operator()
+            if not op:
+                return
+            import research_engine as RE
+            qs = self.path.split("?", 1)[1] if "?" in self.path else ""
+            qp = dict(p.split("=", 1) for p in qs.split("&") if "=" in p)
+            url = unquote(qp.get("url", "").replace("+", " "))
+            if not url:
+                return self._json({"error": "pass ?url="}, 400)
+            dt, ds = RE._fetch_direct(url, 300)
+            rt, rs = RE._fetch_via_reader(url, 300)
+            return self._json({"url": url,
+                               "direct": {"status": ds, "len": len(dt), "sample": dt[:160]},
+                               "reader": {"status": rs, "len": len(rt), "sample": rt[:160]}})
         if path == "/api/universe/cover-test":
             # diagnostic: call the image provider directly and report bytes / error
             op = self._require_operator()
