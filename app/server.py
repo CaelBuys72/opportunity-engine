@@ -679,6 +679,8 @@ class Handler(BaseHTTPRequestHandler):
             if not op:
                 return
             oid = unquote(path.split("/")[4])
+            body = self._body_json()
+            force = bool(body.get("force"))                 # true = regenerate content from scratch
             creds = auth.resolve_operator_credentials(op)
             import research_engine as RE, production as PR
             if not RE.get_classifier(creds):
@@ -687,7 +689,7 @@ class Handler(BaseHTTPRequestHandler):
                                    "providers": RE.providers_status(creds)}, 503)
             try:
                 PR.approve_build(oid)                       # one-click: auto-approve the build gate
-                m = PR.build_product(oid, creds=creds, operator=op)
+                m = PR.build_product(oid, creds=creds, operator=op, force=force)
                 comps = [{"name": c["name"], "status": c["production_status"], "qa": c["qa_status"],
                           "formats": c["required_formats"]} for c in m["components"]]
                 return self._json({"ok": True, "opportunity_id": oid, "operator": op,
