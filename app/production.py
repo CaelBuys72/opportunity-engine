@@ -305,8 +305,52 @@ def _content(cid: str, name: str, prop="[Property Name]") -> dict:
     return {"kind": "docx", "title": T, "blocks": [{"type": "para", "text": name}]}
 
 
+def _niche_reference(spec: dict, creds: dict | None) -> dict:
+    """C1 — model how REAL, selling products in this niche are structured, so generated
+    content matches their shape/depth (not a generic AI listicle). Searches for existing
+    products/guides and extracts a format reference from titles+snippets (no downloads).
+    Best-effort: returns {} if search/LLM is unavailable so generation still proceeds."""
+    import research_engine as RE
+    sp = RE.get_search_provider(creds)
+    clf = RE.get_classifier(creds, layer="research")
+    if not sp or not clf:
+        return {}
+    brief = spec.get("product_brief", {}) or {}
+    aud = brief.get("target_customer") or ""
+    prob = brief.get("core_problem") or aud
+    if not aud:
+        return {}
+    queries = [f"best {aud} ebook OR guide OR template",
+               f"{aud} gumroad OR etsy digital product",
+               f"free {aud} guide pdf",
+               f"{prob} playbook OR checklist"]
+    results = []
+    for q in queries:
+        try:
+            for h in sp.search(q, num=8)[:8]:
+                if h.get("title"):
+                    results.append({"title": h.get("title"), "url": h.get("url"),
+                                    "snippet": (h.get("snippet") or "")[:200]})
+        except Exception:
+            pass
+    if not results:
+        return {}
+    system = ("From these EXISTING products/guides that sell in a niche, model the FORMAT a buyer "
+              "expects so a new product matches. STRICT JSON {\"typical_sections\":[str,...],"
+              "\"typical_inclusions\":[str,...],\"depth\":str,\"tone\":str,\"length_hint\":str,"
+              "\"differentiators\":[str,...]}. Base it ONLY on what titles/snippets reveal; concise, "
+              "no fabricated specifics.")
+    try:
+        ref = RE._extract_json(clf.classify(system, json.dumps(
+            {"audience": aud, "problem": prob, "existing_products": results}, ensure_ascii=False)))
+        return ref if isinstance(ref, dict) else {}
+    except Exception:
+        return {}
+
+
 def _generate_content(opp_id: str, comp: dict, cspec: dict, deliverable: str,
-                      required: set, spec: dict, creds: dict | None) -> dict:
+                      required: set, spec: dict, creds: dict | None,
+                      reference: dict | None = None) -> dict:
     """LLM-generate real, buyer-ready content for one component, shaped for the
     format builders. Works for ANY opportunity (no hardcoded templates). Raises on
     failure so the component is honestly marked failed rather than stubbed."""
@@ -333,9 +377,14 @@ def _generate_content(opp_id: str, comp: dict, cspec: dict, deliverable: str,
         "deliverable": deliverable,
         "jobs": comp.get("maps_to_jobs", []) or cspec.get("maps_to_jobs", []),
         "evidence_highlights": ev_lines,
+        "niche_format_reference": reference or {},
     }
+    ref_rule = (" Match the structure, depth and tone that real, selling products in this niche use "
+                "(see niche_format_reference: typical_sections / typical_inclusions / depth / tone) — "
+                "so this reads like an established product an expert made, not a generic AI listicle."
+                if reference else "")
     rules = ("Write REAL, specific, immediately-usable content for the buyer described. "
-             "Be concrete and practical, grounded in the buyer's world and the evidence highlights. "
+             "Be concrete and practical, grounded in the buyer's world and the evidence highlights." + ref_rule + " "
              "Buyer-fillable blanks in [square brackets] are allowed (e.g. [Your business name]). "
              "NEVER output unfinished placeholders like [write here], [insert], TODO, TBD, lorem ipsum "
              "or 'example text'. NEVER mention internal ids, scores, 'basis', 'evidence' or any "
@@ -498,6 +547,7 @@ def build_product(opp_id: str, creds: dict | None = None, operator: str = "unkno
     prev_comps = {c["component_id"]: c for c in prev["components"]} if prev else {}
 
     manifest_components, traceability = [], []
+    _ref = {}   # C1 niche format reference — computed once, lazily, only if we generate
     for cid in order:
         if only_component and cid != only_component:
             if cid in prev_comps:            # keep previously built component untouched
@@ -527,7 +577,10 @@ def build_product(opp_id: str, creds: dict | None = None, operator: str = "unkno
         cdir.mkdir(parents=True, exist_ok=True)
         role = "tool" if bool({"xlsx", "csv"} & set(required)) else "chapter"
         try:
-            content = _generate_content(opp_id, comp, cspec, deliverable, required, spec, creds)
+            if not _ref:                       # model the niche's real products once per build
+                _ref = _niche_reference(spec, creds) or {"_none": True}
+            content = _generate_content(opp_id, comp, cspec, deliverable, required, spec, creds,
+                                        reference=(None if _ref.get("_none") else _ref))
             (cdir / "content.json").write_text(json.dumps(content, ensure_ascii=False))
             if role == "tool":
                 # spreadsheets/trackers stay as separate editable files
