@@ -382,7 +382,9 @@ class CloudflareTextClassifier(ClassificationProvider):
     as the research fallback: already configured on this account, no signup. Default to a
     light model to conserve Neurons; override with CF_TEXT_MODEL."""
     name = "cloudflare"
-    MODEL = os.environ.get("CF_TEXT_MODEL", "@cf/meta/llama-3.1-8b-instruct")
+    # light-ish current model to conserve the shared Neuron pool (CF text is the research
+    # FALLBACK and shares 10k Neurons/day with covers). Verified working 2026-09-15.
+    MODEL = os.environ.get("CF_TEXT_MODEL", "@cf/meta/llama-4-scout-17b-16e-instruct")
 
     def __init__(self, account_id: str, api_token: str, operator: str = "shared"):
         self.account_id = account_id
