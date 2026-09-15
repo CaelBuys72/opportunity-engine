@@ -582,6 +582,30 @@ class Handler(BaseHTTPRequestHandler):
                 storage.get_backend().release_expansion(node_id)
                 return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
         # ---- Hand a (generated) universe opportunity into the existing Phase-8 pipeline ----
+        if path.startswith("/api/universe/opportunity/") and path.endswith("/whop-draft"):
+            # Create a HIDDEN draft product on the operator's Whop business (Cael-default
+            # fallback). Never publishes / uploads files — those stay manual.
+            op = self._require_operator()
+            if not op:
+                return
+            oid = unquote(path.split("/")[4])
+            body = self._body_json()
+            creds = auth.resolve_operator_credentials(op)
+            whop = auth.resolve_whop_credentials(op)
+            import whop as WH
+            if not whop.get("api_key") or not whop.get("biz_id"):
+                return self._json({"ok": False, "operator": op,
+                                   "error": "No Whop business configured. Add CAEL_WHOP_API_KEY + "
+                                            "CAEL_WHOP_BIZ_ID (biz_...) to the server."}, 503)
+            try:
+                r = WH.create_draft(oid, whop, creds=creds, operator=op,
+                                    title=(body.get("title") or None),
+                                    description=(body.get("description") or None))
+                return self._json({"ok": True, "opportunity_id": oid, "operator": op, **r})
+            except WH.WhopError as e:
+                return self._json({"ok": False, "error": str(e)}, 502)
+            except Exception as e:
+                return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
         if path.startswith("/api/universe/opportunity/") and path.endswith("/open"):
             # Register an opportunity into the shared workspace (idempotent, no API spend).
             op = self._require_operator()

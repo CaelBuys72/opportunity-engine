@@ -110,3 +110,26 @@ def resolve_operator_credentials(operator: str) -> dict:
         tog = tog or os.environ.get("TOGETHER_API_KEY")
     return {"groq": groq, "gemini": gem, "cerebras": cer, "mistral": mis,
             "serper": ser, "together": tog, "operator": operator}
+
+
+# The default Whop business every operator publishes to until they configure their own.
+WHOP_DEFAULT_OWNER = "cael"
+
+
+def resolve_whop_credentials(operator: str) -> dict:
+    """Whop publishing creds for an operator. UNLIKE the LLM/search keys, this DELIBERATELY
+    falls back to the default owner's (Cael's) Whop business when an operator hasn't set up
+    their own — so both operators publish to one business until, say, Sheylyn adds his own
+    SHEYLYN_WHOP_API_KEY + SHEYLYN_WHOP_BIZ_ID, at which point his button routes to his.
+    This is an explicit product decision, scoped to Whop only. Keys stay server-side.
+    Returns {'api_key','biz_id','owner','requested_by'}."""
+    up = (operator or "").upper()
+    key = os.environ.get(f"{up}_WHOP_API_KEY")
+    biz = os.environ.get(f"{up}_WHOP_BIZ_ID")
+    if key and biz:
+        return {"api_key": key, "biz_id": biz, "owner": operator, "requested_by": operator}
+    # fall back to the default owner's business (or bare WHOP_* in open-dev)
+    dup = WHOP_DEFAULT_OWNER.upper()
+    dkey = os.environ.get(f"{dup}_WHOP_API_KEY") or os.environ.get("WHOP_API_KEY")
+    dbiz = os.environ.get(f"{dup}_WHOP_BIZ_ID") or os.environ.get("WHOP_BIZ_ID")
+    return {"api_key": dkey, "biz_id": dbiz, "owner": WHOP_DEFAULT_OWNER, "requested_by": operator}

@@ -592,6 +592,10 @@ async function showUniverseProduct(id) {
         <div class="cta">${dl}
           <button class="primary" id="u-produce" style="background:rgba(123,92,255,.25);color:#e9f2ff">Regenerate product</button>
           <span class="result" id="u-produce-result"></span></div>
+        ${m.download_ready ? `<div class="cta" style="margin-top:8px">
+          <button class="primary" id="u-whop" style="background:rgba(244,197,99,.22);color:#e9f2ff">Create Whop draft (hidden) →</button>
+          <span class="result" id="u-whop-result"></span></div>
+          <p class="muted small">Creates a hidden draft on your Whop business. You still attach files &amp; publish manually.</p>` : ""}
       </section>`;
   } else {
     inner = `<section class="card dossier">
@@ -604,6 +608,23 @@ async function showUniverseProduct(id) {
   box.innerHTML = inner;
   const b = $("#u-produce");
   if (b) b.onclick = () => produceUniverse(id);
+  const w = $("#u-whop");
+  if (w) w.onclick = () => createWhopDraft(id);
+}
+
+async function createWhopDraft(id) {
+  const b = $("#u-whop"), res = $("#u-whop-result");
+  b.disabled = true; b.textContent = "Creating hidden draft on Whop…";
+  res.textContent = "Writing clean copy from the brief and creating a hidden draft…";
+  let r;
+  try { r = await (await fetch("/api/universe/opportunity/" + encodeURIComponent(id) + "/whop-draft", { method: "POST" })).json(); }
+  catch (e) { res.innerHTML = `<span style="color:var(--bad)">Request failed: ${esc(e.message)}</span>`; b.disabled = false; b.textContent = "Create Whop draft (hidden) →"; return; }
+  b.disabled = false; b.textContent = "Create Whop draft (hidden) →";
+  if (!r.ok) { res.innerHTML = `<span style="color:var(--bad)">${esc(r.error || "whop draft failed")}</span>`; return; }
+  const link = r.admin_url || r.public_url;
+  res.innerHTML = `Draft <b>${esc(r.visibility || "hidden")}</b> created on <b>${esc(r.owner)}</b>'s business` +
+    (link ? ` — <a href="${esc(link)}" target="_blank" rel="noopener">open in Whop</a>` : "") +
+    `<br><span class="muted small">“${esc(r.title || "")}” · now attach files + price + publish in Whop.</span>`;
 }
 
 async function produceUniverse(id) {
