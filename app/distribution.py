@@ -633,7 +633,8 @@ def _creator_queries(clf, brief: dict, profile: dict) -> list[str]:
 
 # email domains that are NOT a creator's own contact (aggregators, agencies, tooling)
 _EMAIL_DENY = ("feedspot.com", "example.com", "sentry.io", "wixpress.com", "domain.com",
-               "yourdomain.com", "email.com", "mailchimp.com", "squarespace.com")
+               "yourdomain.com", "email.com", "mailchimp.com", "squarespace.com",
+               "audiencly.com", "viralnation.com", "sentry-next.wixpress.com")
 
 
 def _is_creator_email(e: str) -> bool:
@@ -643,30 +644,40 @@ def _is_creator_email(e: str) -> bool:
     return not any(d in el for d in _EMAIL_DENY)
 
 
-def _platform_queries(brief: dict, profile: dict) -> list[str]:
-    """Queries that surface real creator CHANNELS *and* their public contact emails.
-    Two kinds: channel-finding (site-targeted) and EMAIL-INTENT (validated: Google
-    snippets carry the bio email for creators who publish one to get work)."""
-    aud = (brief.get("target_customer") or profile.get("target_audience") or "").strip()
-    prob = (brief.get("core_problem") or "").strip()
-    if not aud:
-        return []
-    short = " ".join(aud.split()[:6])
-    channel = [
-        f"site:youtube.com {short} {prob}".strip(),
-        f"site:tiktok.com {short}",
-        f"site:instagram.com {short}",
-        f"{short} site:substack.com",
-        f"{short} podcast host",
-    ]
-    # email-intent — natural-language (rigid site:+\"gmail.com\" dorks error on Serper)
-    email = [
-        f"{short} creator email gmail.com",
-        f"{short} youtuber business inquiries email",
-        f"{short} instagram creator collab email",
-        f"{short} newsletter OR podcast contact email",
-    ]
-    return [q for q in (channel + email) if q.strip()]
+def _niche_terms(clf, brief: dict) -> list[str]:
+    """Concise SEARCH terms a person would actually type to find these creators
+    (e.g. 'dungeon master', 'tabletop RPG') — NOT the verbose buyer description, which
+    returns nothing. This is what makes the email-intent queries surface real bios."""
+    fallback = [w for w in (brief.get("target_customer") or "").split()
+                if w.lower() not in STOPWORDS][:3]
+    try:
+        import research_engine as RE
+        system = ("Give the 3-4 SHORT search terms a normal person types to find CREATORS for "
+                  "this audience/problem — the niche words, not the buyer description. E.g. buyer "
+                  "'game masters trying to reduce prep time' -> [\"dungeon master\",\"tabletop rpg\","
+                  "\"D&D DM\"]. STRICT JSON {\"terms\":[str,...]}. 1-3 words each, no prose.")
+        user = json.dumps({"buyer": brief.get("target_customer"), "problem": brief.get("core_problem")},
+                          ensure_ascii=False)
+        data = RE._extract_json(clf.classify(system, user))
+        terms = [t.strip() for t in ((data or {}).get("terms") or []) if isinstance(t, str) and t.strip()]
+        return (terms or [" ".join(fallback)])[:4]
+    except Exception:
+        return [" ".join(fallback)] if fallback else []
+
+
+def _platform_queries(terms: list[str]) -> list[str]:
+    """Build channel-finding + EMAIL-INTENT queries from concise NICHE TERMS (validated:
+    Google snippets carry the bio email for creators who publish one to get work)."""
+    qs = []
+    for t in terms[:3]:
+        qs += [
+            f"site:youtube.com {t} creator",
+            f"site:instagram.com {t}",
+            f"{t} youtuber business inquiries email",   # email-intent (proven to surface bios)
+            f"{t} creator email gmail.com",
+            f"{t} newsletter OR podcast contact email",
+        ]
+    return [q for q in qs if q.strip()]
 
 
 # contact-route link patterns (found in the creator's own page text)
@@ -787,8 +798,10 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
     bundle = load_opportunity(opp_id)
     profile = define_creator_search_profile(bundle)
     brief = bundle["brief"]
-    # semantic (LLM) queries + site-targeted queries that surface real channels, deduped
-    queries = list(dict.fromkeys(_creator_queries(clf, brief, profile) + _platform_queries(brief, profile)))[:14]
+    # concise niche terms drive both semantic + email-intent queries (the verbose buyer
+    # description returns no bios; niche terms like "dungeon master" do)
+    terms = _niche_terms(clf, brief)
+    queries = list(dict.fromkeys(_creator_queries(clf, brief, profile) + _platform_queries(terms)))[:16]
 
     seen, results = set(), []
     for q in queries:
@@ -815,7 +828,9 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
         pass
 
     # Score a LARGE pool on title+snippet (one LLM call, no page fetches yet) so a noisy
-    # first page of results doesn't starve the shortlist. max_candidates caps the pool.
+    # first page of results doesn't starve the shortlist. Put email-bearing results FIRST
+    # so the pool cap can never truncate a creator who already exposed a contact email.
+    results.sort(key=lambda r: 1 if r.get("snippet_emails") else 0, reverse=True)
     pool = results[:max_candidates]
     for i, r in enumerate(pool):
         r["i"] = i
