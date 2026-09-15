@@ -122,7 +122,7 @@ def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
     from reportlab.lib import colors
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
     from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
-                                    ListFlowable, ListItem)
+                                    ListFlowable, ListItem, Table, TableStyle)
     from reportlab.platypus.tableofcontents import TableOfContents
     from reportlab.lib.utils import ImageReader
     import io as _io
@@ -177,7 +177,18 @@ def build_ebook_pdf(path: Path, title: str, subtitle: str, chapters: list[dict],
             return [ListFlowable(items, bulletType="1" if t == "number" else "bullet",
                                  leftIndent=16), Spacer(1, 4)]
         if t == "check":
-            return [Paragraph("[ &nbsp; ]&nbsp;&nbsp;" + esc(_item(x)), li) for x in b.get("items", [])] + [Spacer(1, 4)]
+            # real, visible checkbox controls (a bordered box cell), not "[ ]" text
+            rows = [[Paragraph("", li), Paragraph(esc(_item(x)), li)] for x in b.get("items", [])]
+            if not rows:
+                return []
+            tbl = Table(rows, colWidths=[0.7 * cm, None], hAlign="LEFT")
+            st = [("VALIGN", (0, 0), (-1, -1), "TOP"),
+                  ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+                  ("LEFTPADDING", (0, 0), (-1, -1), 0), ("RIGHTPADDING", (0, 0), (0, -1), 6)]
+            for r in range(len(rows)):   # draw the box only around the checkbox cell
+                st.append(("BOX", (0, r), (0, r), 0.9, colors.HexColor("#4b5563")))
+            tbl.setStyle(TableStyle(st))
+            return [tbl, Spacer(1, 4)]
         if t == "field":
             return [Paragraph(f"<b>{esc(b.get('label',''))}:</b> " + "_" * 28, fld)]
         return []

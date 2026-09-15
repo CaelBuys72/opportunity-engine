@@ -305,102 +305,169 @@ def _content(cid: str, name: str, prop="[Property Name]") -> dict:
     return {"kind": "docx", "title": T, "blocks": [{"type": "para", "text": name}]}
 
 
-def _niche_reference(spec: dict, creds: dict | None) -> dict:
-    """C1 — model how REAL, selling products in this niche are structured, so generated
-    content matches their shape/depth (not a generic AI listicle). Searches for existing
-    products/guides and extracts a format reference from titles+snippets (no downloads).
-    Best-effort: returns {} if search/LLM is unavailable so generation still proceeds."""
-    import research_engine as RE
-    sp = RE.get_search_provider(creds)
-    clf = RE.get_classifier(creds, layer="research")
-    if not sp or not clf:
-        return {}
-    brief = spec.get("product_brief", {}) or {}
-    aud = brief.get("target_customer") or ""
-    prob = brief.get("core_problem") or aud
-    if not aud:
-        return {}
-    queries = [f"best {aud} ebook OR guide OR template",
-               f"{aud} gumroad OR etsy digital product",
-               f"free {aud} guide pdf",
-               f"{prob} playbook OR checklist"]
+def _clean_name(s) -> str:
+    """Strip internal provenance tags ([observed]/[inferred]/…) from a customer-facing name."""
+    return re.sub(r"\s*\[[^\]]*\]", "", str(s or "")).strip()
+
+
+def _alternatives(brief: dict, sp, clf) -> list[dict]:
+    """The missing Phase-8 dimension, gathered at build time if the brief lacks it: the real
+    free/paid things this audience already uses (informs differentiation + do-not-build).
+    Best-effort; returns [] if unavailable. Never fabricated — only from real results."""
+    existing = brief.get("existing_alternatives") or []
+    if existing:
+        return existing if isinstance(existing, list) else []
+    aud = (brief.get("target_customer") or "").strip()
+    if not sp or not clf or not aud:
+        return []
     results = []
-    for q in queries:
+    for q in (f"free {aud} template OR tool OR guide", f"{aud} gumroad OR etsy OR notion template",
+              f"best {aud} resources reddit"):
         try:
             for h in sp.search(q, num=8)[:8]:
                 if h.get("title"):
                     results.append({"title": h.get("title"), "url": h.get("url"),
-                                    "snippet": (h.get("snippet") or "")[:200]})
+                                    "snippet": (h.get("snippet") or "")[:180]})
         except Exception:
             pass
     if not results:
-        return {}
-    system = ("From these EXISTING products/guides that sell in a niche, model the FORMAT a buyer "
-              "expects so a new product matches. STRICT JSON {\"typical_sections\":[str,...],"
-              "\"typical_inclusions\":[str,...],\"depth\":str,\"tone\":str,\"length_hint\":str,"
-              "\"differentiators\":[str,...]}. Base it ONLY on what titles/snippets reveal; concise, "
-              "no fabricated specifics.")
+        return []
+    system = ("From these search results, list the REAL existing alternatives (free and paid) this "
+              "audience already uses for this problem. STRICT JSON {\"alternatives\":[{\"name\":str,"
+              "\"kind\":\"free|paid\",\"does_well\":str,\"limitation\":str,\"url\":str}]}. Only ones "
+              "actually present in the results; concise; nothing invented.")
     try:
-        ref = RE._extract_json(clf.classify(system, json.dumps(
-            {"audience": aud, "problem": prob, "existing_products": results}, ensure_ascii=False)))
-        return ref if isinstance(ref, dict) else {}
+        d = RE._extract_json(clf.classify(system, json.dumps(
+            {"audience": aud, "results": results}, ensure_ascii=False)))
+        a = (d or {}).get("alternatives")
+        return a if isinstance(a, list) else []
     except Exception:
+        return []
+
+
+def _product_decisions(spec: dict, creds: dict | None) -> dict:
+    """The information-contract repair. ONE strong call turns RESEARCH TRUTH into deliberate
+    PRODUCT DECISIONS: the mechanism, differentiation vs real alternatives, the buyer's real
+    vocabulary, and per-component MANUFACTURING decisions (buyer job, interaction type, required
+    content, niche specifics, examples, exclusions) — all grounded in the actual evidence quotes
+    that the old pipeline dropped. Best-effort {}; generation still runs if it returns empty."""
+    import research_engine as RE
+    clf = RE.get_classifier(creds, layer="product")
+    sp = RE.get_search_provider(creds)
+    if not clf:
         return {}
+    brief = spec.get("product_brief", {}) or {}
+    ev = spec.get("evidence", {}) or {}
+    claims = ev.get("claims", []) if isinstance(ev, dict) else []
+    quotes = [{"ref": i, "claim": c.get("claim"), "quote": (c.get("evidence") or "")[:260]}
+              for i, c in enumerate(claims) if isinstance(c, dict) and c.get("evidence")][:14]
+    cs = spec.get("component_specs", {})
+    comp_list = cs.get("specs", []) if isinstance(cs, dict) else (cs if isinstance(cs, list) else [])
+    components = [{"component_id": c.get("component_id"), "name": _clean_name(c.get("name")),
+                  "type": c.get("type"), "maps_to_jobs": c.get("maps_to_jobs", [])}
+                 for c in comp_list]
+    alternatives = _alternatives(brief, sp, clf)
+    system = ("You are a product lead turning RESEARCH into deliberate product decisions for a niche "
+              "digital product. Ground EVERY decision in the evidence quotes + real alternatives given; "
+              "never invent facts, stats or authorities. STRICT JSON: {"
+              "\"mechanism\":str (how the product actually produces the outcome),"
+              "\"mechanism_name\":str|null (a natural name ONLY if it truly aids comprehension; else null),"
+              "\"differentiation\":str (why this beats the named free/paid alternatives),"
+              "\"customer_vocabulary\":[str,...] (real terms/phrases this audience uses, drawn from the quotes),"
+              "\"per_component\":[{\"component_id\":str,\"buyer_job\":str,\"mechanism_role\":str,"
+              "\"context_of_use\":str,\"interaction_type\":\"checklist|worksheet|tracker|reference|decision_aid|script|guide\","
+              "\"required_content\":[str,...],\"niche_specifics\":[str,...],\"examples_required\":[str,...],"
+              "\"exclusions\":[str,...],\"evidence_refs\":[int,...]}]}. Be specific and opinionated where the "
+              "evidence supports it. No filler.")
+    user = json.dumps({"audience": brief.get("target_customer"), "problem": brief.get("core_problem"),
+                       "desired_outcome": brief.get("desired_outcome"),
+                       "evidence_quotes": quotes, "alternatives": alternatives,
+                       "components": components}, ensure_ascii=False)
+    try:
+        d = RE._extract_json(clf.classify(system, user))
+        if not isinstance(d, dict):
+            return {"_quotes": quotes, "alternatives": alternatives, "per_component_map": {}}
+        d["_quotes"] = quotes
+        d["alternatives"] = alternatives
+        d["per_component_map"] = {p.get("component_id"): p for p in (d.get("per_component") or [])
+                                  if isinstance(p, dict) and p.get("component_id")}
+        return d
+    except Exception:
+        return {"_quotes": quotes, "alternatives": alternatives, "per_component_map": {}}
 
 
 def _generate_content(opp_id: str, comp: dict, cspec: dict, deliverable: str,
                       required: set, spec: dict, creds: dict | None,
-                      reference: dict | None = None) -> dict:
-    """LLM-generate real, buyer-ready content for one component, shaped for the
-    format builders. Works for ANY opportunity (no hardcoded templates). Raises on
-    failure so the component is honestly marked failed rather than stubbed."""
+                      decisions: dict | None = None) -> dict:
+    """Manufacture buyer-ready content for one component from the DELIBERATE decisions
+    (mechanism, buyer job, interaction type, required content, niche specifics, exclusions)
+    grounded in the real evidence quotes — not generic claim labels. Raises on failure."""
     import research_engine as RE
     clf = RE.get_classifier(creds, layer="product")
     if clf is None:
         raise ProductionError("no LLM credential available to generate product content "
                               "(operator needs a Gemini key)")
     brief = spec.get("product_brief", {}) or {}
-    dossier = spec.get("curation_dossier", {}) or {}
-    transformation = dossier.get("transformation", {}) or {}
-    ev = spec.get("evidence", {}) or {}
-    claims = ev.get("claims", []) if isinstance(ev, dict) else []
-    ev_lines = [c.get("claim") for c in claims[:8] if isinstance(c, dict) and c.get("claim")]
+    dec = decisions or {}
+    cid = comp.get("id") or cspec.get("component_id")
+    cdec = (dec.get("per_component_map") or {}).get(cid, {})
+    # resolve THIS component's real evidence quotes (the rich material, not labels)
+    quotes = dec.get("_quotes") or []
+    by_ref = {q["ref"]: q.get("quote") for q in quotes}
+    refs = cdec.get("evidence_refs") or []
+    comp_quotes = [by_ref[r] for r in refs if r in by_ref] or [q.get("quote") for q in quotes[:5]]
 
-    is_sheet = bool({"xlsx", "csv"} & set(required))
-    kind = "xlsx" if is_sheet else "docx"
+    interaction = cdec.get("interaction_type") or ""
+    is_sheet = bool({"xlsx", "csv"} & set(required)) or interaction == "tracker"
+    kind = "xlsx" if bool({"xlsx", "csv"} & set(required)) else "docx"
     context = {
-        "product_concept": brief.get("product_concept") or dossier.get("product_concept"),
-        "buyer": brief.get("target_customer") or brief.get("audience"),
-        "transformation": f"{transformation.get('from_state', '')} -> {transformation.get('to_state', '')}",
-        "component_name": comp.get("name"),
-        "component_purpose": comp.get("purpose", "") or cspec.get("purpose", ""),
-        "deliverable": deliverable,
-        "jobs": comp.get("maps_to_jobs", []) or cspec.get("maps_to_jobs", []),
-        "evidence_highlights": ev_lines,
-        "niche_format_reference": reference or {},
+        "buyer": brief.get("target_customer"),
+        "desired_outcome": brief.get("desired_outcome"),
+        "product_mechanism": dec.get("mechanism"),
+        "mechanism_name": dec.get("mechanism_name"),
+        "differentiation": dec.get("differentiation"),
+        "customer_vocabulary": dec.get("customer_vocabulary") or [],
+        "component": _clean_name(comp.get("name")),
+        "buyer_job": cdec.get("buyer_job") or (cspec.get("maps_to_jobs") or comp.get("maps_to_jobs")),
+        "context_of_use": cdec.get("context_of_use"),
+        "interaction_type": interaction or None,
+        "required_content": cdec.get("required_content") or [],
+        "niche_specifics": cdec.get("niche_specifics") or [],
+        "examples_required": cdec.get("examples_required") or [],
+        "exclusions": cdec.get("exclusions") or [],
+        "evidence_quotes": [q for q in comp_quotes if q],
     }
-    ref_rule = (" Match the structure, depth and tone that real, selling products in this niche use "
-                "(see niche_format_reference: typical_sections / typical_inclusions / depth / tone) — "
-                "so this reads like an established product an expert made, not a generic AI listicle."
-                if reference else "")
-    rules = ("Write REAL, specific, immediately-usable content for the buyer described. "
-             "Be concrete and practical, grounded in the buyer's world and the evidence highlights." + ref_rule + " "
-             "Buyer-fillable blanks in [square brackets] are allowed (e.g. [Your business name]). "
-             "NEVER output unfinished placeholders like [write here], [insert], TODO, TBD, lorem ipsum "
-             "or 'example text'. NEVER mention internal ids, scores, 'basis', 'evidence' or any "
-             "engine/analysis terminology. Return STRICT JSON only, no prose around it.")
+    rules = (
+        "Manufacture exactly the component in the spec. GROUND it in evidence_quotes (real things this "
+        "audience said) and use customer_vocabulary — reference the specifics; do NOT copy the quotes "
+        "verbatim and do NOT fabricate stats, names or authorities. Cover the required_content, include "
+        "at least the examples_required (concrete, niche-real), weave in the niche_specifics, and respect "
+        "exclusions. WRITE LIKE A PRACTITIONER who actually does this — concrete, opinionated where the "
+        "evidence supports it, dense and useful. "
+        "BANNED: generic intros ('In today's fast-paced…'), advice the audience obviously already knows, "
+        "motivational filler, empty transitions, restating the promise, summarizing conclusions, symmetric "
+        "filler bullets, corporate abstraction, markdown symbols (*, **, #) inside text, and any placeholder "
+        "(TODO/TBD/[insert]/lorem). Buyer-fillable blanks like [Your campaign name] are fine. NEVER mention "
+        "internal ids, scores, 'basis', 'evidence' or engine terms. Return STRICT JSON only.")
     if kind == "xlsx":
-        system = ("You manufacture a working spreadsheet template. " + rules +
+        system = ("You manufacture a WORKING, usable spreadsheet the buyer tracks/calculates in. " + rules +
                   ' Output schema: {"title": str, "sheet": {"name": str (<=31 chars), '
                   '"instructions": str, "headers": [str,...], "rows": [[cell,...], ...]}}. '
-                  "6-14 columns and 3-6 realistic example rows the buyer can replace.")
+                  "6-14 columns and 4-8 realistic, niche-specific example rows the buyer can replace.")
     else:
-        system = ("You manufacture a polished, finished document. " + rules +
+        shape = {
+            "checklist": "Lead with a tight, specific checklist (type 'check', concrete niche items — not generic advice); brief context only where it earns its place.",
+            "worksheet": "Build a fillable worksheet: 'field' blocks with real prompts the buyer completes for THEIR situation, grouped under short headings.",
+            "reference": "Optimize for scanning/retrieval: short headings + tight bullets, one concept per block, no long prose.",
+            "decision_aid": "Give explicit decision criteria / if-then branches so the buyer can choose quickly; use bullets or a short table-like structure.",
+            "script": "Provide usable, copy-pasteable language with 2-3 real variants and a one-line note on when to use each.",
+            "tracker": "Provide an actual tracking structure (fields/columns + example entries), not prose about tracking.",
+            "guide": "Prose is acceptable here, but keep it dense, opinionated and example-led.",
+        }.get(interaction, "Choose the structure that makes this component genuinely usable; prefer checklists/fields/tables over prose where they fit.")
+        system = ("You manufacture a finished, usable component (NOT a generic guide). " + rules + " " + shape +
                   ' Output schema: {"title": str, "blocks": [ {"type":"heading","text":str} | '
                   '{"type":"para","text":str} | {"type":"bullet","items":[str,...]} | '
-                  '{"type":"check","items":[str,...]} | {"type":"field","label":str} ]}. '
-                  "Produce a complete, well-structured document (headings, guidance, checklists/bullets "
-                  "where useful) — genuinely valuable on its own.")
+                  '{"type":"check","items":[str,...]} | {"type":"field","label":str} ]}.')
     user = json.dumps(context, ensure_ascii=False)
 
     def _gen(sys_prompt):
@@ -508,7 +575,60 @@ def _qa_text_blocks(blocks: list) -> dict:
         issues.append("forbidden placeholder/unfinished content")
     if ENGINE_LEAK.search(text):
         issues.append("internal engine terminology leaked to buyer")
+    if re.search(r"\*\*|^\s*#{1,6}\s|^\s*\[\s*\]", text, re.M):   # raw markdown / pseudo-checkbox
+        issues.append("raw markdown or pseudo-control leaked into content")
     return {"structural": [], "content": issues, "qa_status": "passed" if not issues else "failed"}
+
+
+# deterministic artifact-quality tripwires (engine tags, raw markdown, placeholders, ids, pseudo-checkboxes)
+_ARTIFACT_BAD = re.compile(
+    r"\[(observed|inferred|unknown|assumed|basis[^\]]*)\]"      # engine provenance tags
+    r"|\*\*|(?<![\w*])\*\s"                                     # markdown bold / bullet asterisks
+    r"|^\s*\[\s*\]"                                              # pseudo-checkbox "[ ]"
+    r"|\b(TODO|TBD|LOREM IPSUM|INSERT HERE)\b"                  # placeholders
+    r"|\b(opp-|prb-|aud-|src-|cmp-|job-)\b",                    # internal ids
+    re.I | re.M)
+
+
+def _sellable_gate(pdir: Path, components: list[dict], decisions: dict, cover_info: dict,
+                   release_status: str, bundle_status: str) -> dict:
+    """Smallest useful pre-publish gate: deterministic checks + the structured decisions we
+    already have. Fails CLOSED (needs_revision) with concrete reasons. No new LLM calls."""
+    texts = []
+    for c in components:
+        cj = pdir / "components" / c["component_id"] / "content.json"
+        if cj.exists():
+            try:
+                texts.append(cj.read_text())
+            except Exception:
+                pass
+    blob = "\n".join(texts)
+    vocab = [v for v in (decisions.get("customer_vocabulary") or []) if isinstance(v, str) and len(v) > 2]
+    pcm = decisions.get("per_component_map") or {}
+    checks = {
+        "product_mechanism": bool(decisions.get("mechanism")),                       # D
+        "differentiation": bool(decisions.get("differentiation")),                   # F
+        "evidence_alignment": bool(pcm) and any(p.get("evidence_refs") for p in pcm.values()),  # B
+        "niche_fluency": bool(vocab) and any(v.lower() in blob.lower() for v in vocab),          # C
+        "component_utility": bool(components) and all(c["production_status"] == "built" for c in components),  # E
+        "artifact_clean": not bool(_ARTIFACT_BAD.search(blob)),                       # G
+        "visual_coherence": cover_info.get("cover_status") == "generated",           # H
+        "bundle_complete": bundle_status == "complete",
+    }
+    why = {
+        "product_mechanism": "no clear product mechanism derived from research",
+        "differentiation": "differentiation vs free/paid alternatives unresolved",
+        "evidence_alignment": "components not traceable to research evidence",
+        "niche_fluency": "buyer vocabulary/niche terms not present in the content",
+        "component_utility": "one or more components did not build",
+        "artifact_clean": "engine tags / markdown / placeholders / ids leaked into content",
+        "visual_coherence": f"cover generation failed (fallback used): {cover_info.get('cover_failure_reason')}",
+        "bundle_complete": "bundle incomplete",
+    }
+    reasons = [why[k] for k, ok in checks.items() if not ok]
+    # creator-confidence = every check passes (cover fallback fails closed per the spec)
+    sellable = all(checks.values())
+    return {"sellable": sellable, "checks": checks, "reasons": reasons}
 
 
 # ---------------------------------------------------------------- orchestrator
@@ -547,7 +667,7 @@ def build_product(opp_id: str, creds: dict | None = None, operator: str = "unkno
     prev_comps = {c["component_id"]: c for c in prev["components"]} if prev else {}
 
     manifest_components, traceability = [], []
-    _ref = {}   # C1 niche format reference — computed once, lazily, only if we generate
+    _decisions = None   # deliberate product decisions — computed once, lazily, only if we generate
     for cid in order:
         if only_component and cid != only_component:
             if cid in prev_comps:            # keep previously built component untouched
@@ -577,10 +697,10 @@ def build_product(opp_id: str, creds: dict | None = None, operator: str = "unkno
         cdir.mkdir(parents=True, exist_ok=True)
         role = "tool" if bool({"xlsx", "csv"} & set(required)) else "chapter"
         try:
-            if not _ref:                       # model the niche's real products once per build
-                _ref = _niche_reference(spec, creds) or {"_none": True}
+            if _decisions is None:             # turn research truth into product decisions, once
+                _decisions = _product_decisions(spec, creds)
             content = _generate_content(opp_id, comp, cspec, deliverable, required, spec, creds,
-                                        reference=(None if _ref.get("_none") else _ref))
+                                        decisions=_decisions)
             (cdir / "content.json").write_text(json.dumps(content, ensure_ascii=False))
             if role == "tool":
                 # spreadsheets/trackers stay as separate editable files
@@ -618,18 +738,37 @@ def build_product(opp_id: str, creds: dict | None = None, operator: str = "unkno
     if verif_pending:
         blocked_reasons.append("external verification pending")
 
-    bundle_status, release_status = _assemble_bundle(pdir, manifest_components, spec, creds=creds)
+    bundle_status, release_status, cover_info = _assemble_bundle(
+        pdir, manifest_components, spec, creds=creds, decisions=_decisions)
     if all_built and qa_ok and not verif_pending and bundle_status == "complete":
         release_status = "release_candidate"
     else:
         release_status = "blocked"
 
+    # Sellable-Product gate (deterministic, fail-closed): even a technically-complete build is
+    # held as needs_revision if it shows obvious quality failures.
+    gate = _sellable_gate(pdir, manifest_components, _decisions or {}, cover_info,
+                          release_status, bundle_status)
+    if release_status == "release_candidate" and not gate["sellable"]:
+        product_status = "needs_revision"
+    elif release_status == "release_candidate":
+        product_status = "release_candidate"
+    else:
+        product_status = "blocked"
+
     manifest = {
         "opportunity_id": opp_id, "product_name": spec["product_brief"].get("product_concept", opp_id)[:80],
-        "product_status": "release_candidate" if release_status == "release_candidate" else "blocked",
+        "product_status": product_status,
         "spec_source": f"research/{opp_id}/", "components": manifest_components,
         "bundle_status": bundle_status, "release_status": release_status,
         "release_blocked_reasons": blocked_reasons,
+        **cover_info,
+        "sellable_gate": gate,
+        "product_decisions": {"mechanism": (_decisions or {}).get("mechanism"),
+                              "mechanism_name": (_decisions or {}).get("mechanism_name"),
+                              "differentiation": (_decisions or {}).get("differentiation"),
+                              "alternatives_found": len((_decisions or {}).get("alternatives") or []),
+                              "vocabulary": (_decisions or {}).get("customer_vocabulary") or []},
         "llm_tokens_used": _RE.llm_tokens_used(operator) - _tok0,
         "capabilities": {"pdf": B.pdf_available()[1]},
     }
@@ -677,11 +816,19 @@ def get_bundle(opp_id: str) -> bytes | None:
     return storage.get_backend().get_object(key)
 
 
-def _cover_prompt(title: str, transformation: dict) -> str:
-    return ("Professional ebook cover background art, modern and clean, abstract and "
-            f"tasteful, evoking: {title}. Calm premium colour palette, soft depth, "
-            "subtle gradient, plenty of empty space at the top for a title. "
-            "NO text, NO words, NO letters, NO logos.")
+def _cover_prompt(title: str, brief: dict, decisions: dict | None = None) -> str:
+    """Niche-aware cover background. Feeds the image model WHAT the product is, WHO it's for
+    and WHAT WORLD it belongs to — so the art is appropriate, not a generic gradient. Avoids
+    cheap stereotype props; asks for a mood/setting a designer for that audience would choose."""
+    aud = brief.get("target_customer") or ""
+    fmt = brief.get("product_format") or ""
+    mech = (decisions or {}).get("mechanism") or brief.get("desired_outcome") or ""
+    return ("Design a professional DIGITAL PRODUCT COVER background (no text) for this product. "
+            f"Product: {title}. Audience: {aud}. What it helps them do: {mech}. Artifact type: {fmt}. "
+            "Choose a mood, setting and colour world a senior designer would pick for THIS audience and "
+            "subject — evocative of their world without cheap clichés or literal stereotype props. "
+            "Editorial, cohesive, tasteful; clear empty space at the top for a title to be overlaid. "
+            "NO text, NO words, NO letters, NO logos, NO watermarks.")
 
 
 def _chapter_title(name: str) -> str:
@@ -734,9 +881,10 @@ def _product_name(brief: dict, dossier: dict, creds: dict | None) -> str:
 
 
 def _assemble_bundle(pdir: Path, components: list[dict], spec: dict,
-                     creds: dict | None = None) -> tuple[str, str]:
+                     creds: dict | None = None, decisions: dict | None = None) -> tuple[str, str, dict]:
     """One sellable ebook PDF (document components as chapters, with an optional
-    AI cover) + editable tool files (spreadsheets) + a short START_HERE."""
+    AI cover) + editable tool files (spreadsheets) + a short START_HERE.
+    Returns (bundle_status, release_status, cover_info) — cover failure is never silent."""
     bdir = pdir / "bundle"
     if bdir.exists():
         shutil.rmtree(bdir)
@@ -765,6 +913,7 @@ def _assemble_bundle(pdir: Path, components: list[dict], spec: dict,
                 chapters.append({"title": _chapter_title(c.get("name") or data.get("title") or cid),
                                  "blocks": data.get("blocks", [])})
 
+    cover_info = {"cover_status": "not_attempted", "cover_failure_reason": None}
     ebook_name = None
     if chapters:
         safe_title = re.sub(r"[^A-Za-z0-9 _-]+", "-", title).strip()[:60] or "Ebook"
@@ -773,12 +922,22 @@ def _assemble_bundle(pdir: Path, components: list[dict], spec: dict,
             import research_engine as _RE
             imgp = _RE.get_image_provider(creds)
             if imgp:
-                cover = imgp.cover(_cover_prompt(title, transformation))  # None on failure → typographic cover
-                if cover is None and getattr(imgp, "last_error", None):
+                cover = imgp.cover(_cover_prompt(title, brief, decisions))  # None on failure → typographic cover
+                if cover:
+                    cover_info = {"cover_status": "generated", "cover_failure_reason": None,
+                                  "cover_provider": imgp.name}
+                else:
+                    reason = str(getattr(imgp, "last_error", None) or "no image returned")[:200]
+                    cover_info = {"cover_status": "fallback", "cover_failure_reason": reason,
+                                  "cover_provider": imgp.name}
                     (pdir / "qa").mkdir(parents=True, exist_ok=True)
-                    (pdir / "qa" / "cover_error.txt").write_text(str(imgp.last_error))
+                    (pdir / "qa" / "cover_error.txt").write_text(reason)
+            else:
+                cover_info = {"cover_status": "fallback",
+                              "cover_failure_reason": "no image provider configured (CF_ACCOUNT_ID/CF_API_TOKEN)"}
         except Exception as e:
             cover = None
+            cover_info = {"cover_status": "fallback", "cover_failure_reason": f"{type(e).__name__}: {e}"[:200]}
             try:
                 (pdir / "qa").mkdir(parents=True, exist_ok=True)
                 (pdir / "qa" / "cover_error.txt").write_text(str(e))
@@ -803,7 +962,7 @@ def _assemble_bundle(pdir: Path, components: list[dict], spec: dict,
 
     has_content = bool(ebook_name or tools)
     status = "complete" if has_content and not excluded else ("partial" if has_content else "empty")
-    return status, "blocked"
+    return status, "blocked", cover_info
 
 
 # ---------------------------------------------------------------- release approval

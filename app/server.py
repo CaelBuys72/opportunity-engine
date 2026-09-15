@@ -698,6 +698,10 @@ class Handler(BaseHTTPRequestHandler):
                                    "download_ready": m.get("download_ready", False),
                                    "llm_tokens_used": m.get("llm_tokens_used", 0),
                                    "release_blocked_reasons": m.get("release_blocked_reasons", []),
+                                   "cover_status": m.get("cover_status"),
+                                   "cover_failure_reason": m.get("cover_failure_reason"),
+                                   "sellable_gate": m.get("sellable_gate"),
+                                   "product_decisions": m.get("product_decisions"),
                                    "components": comps})
             except PR.ProductionError as e:
                 return self._json({"ok": False, "error": str(e)}, 422)
