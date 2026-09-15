@@ -366,6 +366,35 @@ class Handler(BaseHTTPRequestHandler):
                     out[name] = {"configured": True, "ok": False, "model": getattr(p, "MODEL", "?"),
                                  "error": f"{type(e).__name__}: {e}"[:300]}
             return self._json({"operator": op, "providers": out})
+        if path == "/api/universe/serper-probe":
+            # diagnostic: run a raw Serper query, return title/snippet/url + any emails
+            # found IN THE SNIPPET — to verify bio emails surface in Google snippets.
+            op = self._require_operator()
+            if not op:
+                return
+            creds = auth.resolve_operator_credentials(op)
+            import research_engine as RE, re as _re
+            sp = RE.get_search_provider(creds)
+            if not sp:
+                return self._json({"error": f"{op} has no Serper key"}, 503)
+            qs = self.path.split("?", 1)[1] if "?" in self.path else ""
+            qp = dict(p.split("=", 1) for p in qs.split("&") if "=" in p)
+            q = unquote(qp.get("q", "").replace("+", " "))
+            if not q:
+                return self._json({"error": "pass ?q="}, 400)
+            EMAIL = _re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
+            try:
+                hits = sp.search(q, num=15)
+            except Exception as e:
+                return self._json({"error": f"{type(e).__name__}: {e}"}, 502)
+            out = []
+            for h in hits:
+                sn = h.get("snippet") or ""
+                out.append({"title": h.get("title"), "url": h.get("url"),
+                            "snippet": sn[:220], "emails_in_snippet": sorted(set(EMAIL.findall(sn)))})
+            return self._json({"query": q, "n": len(out),
+                               "with_email": sum(1 for r in out if r["emails_in_snippet"]),
+                               "results": out})
         if path == "/api/universe/search-index":
             from universe_graph import GraphService
             return self._json({"nodes": GraphService().search_index()})
