@@ -537,7 +537,7 @@ async function showUniverseCreators(id) {
     const bc = d.by_confidence || {};
     const confSummary = ["high", "medium", "low"].filter(l => bc[l]).map(l => `${bc[l]} ${l}`).join(" / ");
     inner = `<section class="card dossier" style="border-color:rgba(123,92,255,.45)">
-        <h3>🎯 Creators <span class="muted small">${d.shortlisted} shortlisted${confSummary ? " (" + confSummary + ")" : ""} · ${d.with_any_contact ?? d.with_email ?? 0} reachable · ${d.candidates_found} found</span></h3>
+        <h3>🎯 Creators <span class="muted small">${d.shortlisted} shortlisted · <b>${d.with_email ?? 0} with email</b>${d.in_follower_band ? " · " + d.in_follower_band + " in 10k–100k" : ""}${confSummary ? " · " + confSummary : ""} · ${d.candidates_found} found</span></h3>
         ${rows}
         <div class="cta"><button class="primary" id="u-creators-btn" style="background:rgba(123,92,255,.25);color:#e9f2ff">Re-run discovery</button>
           <span class="result" id="u-creators-result"></span></div>

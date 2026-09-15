@@ -631,25 +631,42 @@ def _creator_queries(clf, brief: dict, profile: dict) -> list[str]:
         return fallback[:8]
 
 
+# email domains that are NOT a creator's own contact (aggregators, agencies, tooling)
+_EMAIL_DENY = ("feedspot.com", "example.com", "sentry.io", "wixpress.com", "domain.com",
+               "yourdomain.com", "email.com", "mailchimp.com", "squarespace.com")
+
+
+def _is_creator_email(e: str) -> bool:
+    el = e.lower()
+    if el.endswith((".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg")):
+        return False
+    return not any(d in el for d in _EMAIL_DENY)
+
+
 def _platform_queries(brief: dict, profile: dict) -> list[str]:
-    """Site-targeted queries that surface actual creator CHANNELS/profiles, not articles
-    ABOUT them (the main reason recall was low — plain web search returns listicles)."""
+    """Queries that surface real creator CHANNELS *and* their public contact emails.
+    Two kinds: channel-finding (site-targeted) and EMAIL-INTENT (validated: Google
+    snippets carry the bio email for creators who publish one to get work)."""
     aud = (brief.get("target_customer") or profile.get("target_audience") or "").strip()
     prob = (brief.get("core_problem") or "").strip()
     if not aud:
         return []
     short = " ".join(aud.split()[:6])
-    qs = [
+    channel = [
         f"site:youtube.com {short} {prob}".strip(),
-        f"site:youtube.com {short} channel",
         f"site:tiktok.com {short}",
         f"site:instagram.com {short}",
         f"{short} site:substack.com",
-        f"{short} newsletter creator",
         f"{short} podcast host",
-        f"best {short} youtubers OR creators",
     ]
-    return [q for q in qs if q.strip()]
+    # email-intent — natural-language (rigid site:+\"gmail.com\" dorks error on Serper)
+    email = [
+        f"{short} creator email gmail.com",
+        f"{short} youtuber business inquiries email",
+        f"{short} instagram creator collab email",
+        f"{short} newsletter OR podcast contact email",
+    ]
+    return [q for q in (channel + email) if q.strip()]
 
 
 # contact-route link patterns (found in the creator's own page text)
@@ -747,7 +764,10 @@ def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
             "why_fit": r.get("why_fit"), "fit_score": r.get("fit_score") or 0,
             "confidence": conf if conf in ("high", "medium", "low") else "medium",
             "caution": r.get("caution"),
-            "contact_emails": [], "contacts": None,                    # filled after scoring (kept only)
+            # email from the search snippet (primary); about/link-hub fetch tops up if empty
+            "contact_emails": list(src.get("snippet_emails") or []),
+            "email_source": "snippet" if src.get("snippet_emails") else None,
+            "contacts": None,
             "found_via": src.get("query"),
         })
     return out
@@ -784,7 +804,10 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
             if k in seen:
                 continue
             seen.add(k)
-            results.append({**h, "query": q})
+            # bio/contact emails often sit right in the Google snippet (validated)
+            snip_emails = sorted({e for e in _EMAIL_RE.findall(h.get("snippet") or "")
+                                  if _is_creator_email(e)})[:3]
+            results.append({**h, "query": q, "snippet_emails": snip_emails})
     try:
         RE._bump_usage(f"creators:{opp_id}", queries=len(queries), results=len(results),
                        sources=len(results), operator=operator, provider="serper")
@@ -798,13 +821,12 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
         r["i"] = i
         r["page_text"] = ""
     creators = _score_creators(clf, brief, pool) if pool else []
-    creators.sort(key=lambda c: c.get("fit_score") or 0, reverse=True)
 
-    # Enrich ONLY the kept creators with real contact routes — fetch the creator's own
-    # channel/about page (not a video), pull emails + link-hub / social / contact-page
-    # routes. fetch_contacts=False (rescore density path) skips this slow step.
+    # Contact: the snippet email (if any) is already attached. TOP-UP only the creators
+    # that still lack an email by fetching their channel/about/link-hub page once.
     if fetch_contacts:
-        for c in creators[:CONTACT_FETCH_LIMIT]:
+        need = [c for c in creators if not c.get("contact_emails")][:CONTACT_FETCH_LIMIT]
+        for c in need:
             page = _contact_page_url(c.get("url") or c.get("source_url") or "")
             try:
                 text, status = RE.fetch_text(page, cap=4000)
@@ -812,8 +834,25 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
                 text, status = "", "error"
             contacts = _extract_contacts(text if status == "ok" else "", c.get("url") or "")
             c["contacts"] = contacts
-            c["contact_emails"] = contacts["emails"]
-            c["reach_method"] = contacts["method"]
+            if contacts["emails"]:
+                c["contact_emails"] = contacts["emails"]
+                c["email_source"] = "page"
+        for c in creators:
+            if c.get("contact_emails"):
+                c["reach_method"] = "email"
+                if not c.get("contacts"):
+                    c["contacts"] = {"emails": c["contact_emails"], "links": {},
+                                     "method": "email", "primary": c["contact_emails"][0]}
+            else:
+                c["reach_method"] = (c.get("contacts") or {}).get("method") or "platform"
+
+    # Rank EMAIL-FIRST (your outreach is email), then a soft 10k-100k follower band, then fit.
+    def _rank_key(c):
+        has_email = 1 if c.get("contact_emails") else 0
+        f = c.get("est_followers")
+        in_band = 1 if (isinstance(f, int) and 10000 <= f <= 100000) else 0
+        return (has_email, in_band, c.get("fit_score") or 0)
+    creators.sort(key=_rank_key, reverse=True)
 
     dossier = {
         "opportunity_id": opp_id, "generated_at": _now(),
@@ -821,13 +860,16 @@ def discover_creators(opp_id: str, creds: dict | None = None, operator: str = "u
         "candidates_found": len(results), "shortlisted": len(creators),
         "with_email": sum(1 for c in creators if c.get("contact_emails")),
         "with_any_contact": sum(1 for c in creators
-                                if c.get("contacts") and c["contacts"].get("method") != "platform"),
+                                if (c.get("reach_method") or "platform") != "platform"),
+        "in_follower_band": sum(1 for c in creators
+                                if isinstance(c.get("est_followers"), int)
+                                and 10000 <= c["est_followers"] <= 100000),
         "by_confidence": {lvl: sum(1 for c in creators if c.get("confidence") == lvl)
                           for lvl in ("high", "medium", "low")},
         "creators": creators,
-        "note": "Creators from live search; fit + confidence scored by LLM. Contact routes are "
-                "observed-only (emails/links on the creator's own page); most creators are reached "
-                "by DM or a contact page, not email. Verify before outreach.",
+        "note": "Email-first: creators with a public email (from their bio/snippet) rank first, "
+                "then a soft 10k-100k follower preference, then fit. Emails are observed-only "
+                "(never invented). Some creators are only reachable on-platform; verify before outreach.",
     }
     _write(opp_id, "creator_shortlist", dossier)
     return dossier
