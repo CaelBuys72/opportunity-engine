@@ -616,17 +616,27 @@ def _creator_queries(clf, brief: dict, profile: dict) -> list[str]:
     fallback += [f"{profile['target_audience']} youtube creator",
                  f"{profile['target_audience']} tiktok", f"{profile['target_audience']} newsletter"]
     try:
-        system = ("You build web-search queries to FIND CREATORS (YouTubers, TikTokers, "
-                  "Instagram, newsletter authors) whose audience is a given buyer with a given "
-                  "problem. Return STRICT JSON: {\"queries\": [str, ...]} — 8 varied queries across "
-                  "platforms that would surface such creators. No prose.")
+        system = ("You build PLAIN Google search queries (as a user would type into Google) to "
+                  "FIND CREATORS whose audience is a given buyer with a given problem. Use the "
+                  "natural NICHE terms, not the buyer description. Return STRICT JSON "
+                  "{\"queries\": [str, ...]} — 6 queries. Each is a plain search string ONLY: NO "
+                  "platform labels like 'YouTube:', NO leading '#', NO prose. Good: 'dungeon master "
+                  "youtube channel', 'best tabletop rpg newsletter'. Bad: 'YouTube: ...', '#dndgm'.")
         user = json.dumps({"buyer": brief.get("target_customer"), "problem": brief.get("core_problem"),
                            "outcome": brief.get("desired_outcome")}, ensure_ascii=False)
         import research_engine as RE
         data = RE._extract_json(clf.classify(system, user))
         qs = (data or {}).get("queries") if isinstance(data, dict) else None
-        qs = [q for q in (qs or []) if isinstance(q, str) and q.strip()]
-        return (qs or fallback)[:8]
+        # strip any stray "Platform:" prefix and drop hashtag-only queries the model may emit
+        clean = []
+        for q in (qs or []):
+            if not isinstance(q, str) or not q.strip():
+                continue
+            q = re.sub(r"^\s*(youtube|tiktok|instagram|x|twitter|newsletter|substack)\s*:\s*", "", q, flags=re.I)
+            if q.strip().startswith("#") or not q.strip():
+                continue
+            clean.append(q.strip())
+        return (clean or fallback)[:6]
     except Exception:
         return fallback[:8]
 
@@ -758,14 +768,20 @@ def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
     data = RE._extract_json(clf.classify(system, user))
     rows = (data or {}).get("creators") if isinstance(data, dict) else (data if isinstance(data, list) else None)
     by_i = {it["i"]: it for it in items}
-    out = []
+    by_row = {r.get("i"): r for r in (rows or []) if isinstance(r, dict)}
+    out, kept_ids = [], set()
     for r in (rows or []):
-        if not isinstance(r, dict) or not r.get("keep", True):
+        if not isinstance(r, dict):
             continue
         src = by_i.get(r.get("i"))
         if not src:
             continue
+        # KEY: an email-bearing result is ALWAYS an outreach lead, even if it's a contact/
+        # for-hire/article page the creator-filter would drop — the email IS the point.
+        if not r.get("keep", True) and not src.get("snippet_emails"):
+            continue
         conf = r.get("confidence")
+        kept_ids.add(r.get("i"))
         out.append({
             "name": r.get("name") or src.get("title"), "platform": r.get("platform"),
             "handle": r.get("handle"),
@@ -780,6 +796,21 @@ def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
             "email_source": "snippet" if src.get("snippet_emails") else None,
             "contacts": None,
             "found_via": src.get("query"),
+        })
+    # safety net: any email-bearing item the LLM omitted ENTIRELY is still added as a lead
+    for it in items:
+        if it["i"] in kept_ids or not it.get("snippet_emails"):
+            continue
+        r = by_row.get(it["i"]) or {}
+        out.append({
+            "name": r.get("name") or it.get("title"), "platform": r.get("platform"),
+            "handle": r.get("handle"), "url": _channel_root(it.get("url", "")),
+            "source_url": it.get("url"), "niche": r.get("niche"),
+            "est_followers": r.get("est_followers"), "why_fit": r.get("why_fit") or "has a public contact email",
+            "fit_score": r.get("fit_score") or 40, "confidence": "low",
+            "caution": r.get("caution"),
+            "contact_emails": list(it.get("snippet_emails") or []), "email_source": "snippet",
+            "contacts": None, "found_via": it.get("query"),
         })
     return out
 
