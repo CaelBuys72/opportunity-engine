@@ -223,6 +223,20 @@ class Handler(BaseHTTPRequestHandler):
         self._send(204, b"", "text/plain")
 
     def do_GET(self):
+        # A read must NEVER crash the worker to a raw 502 (which the UI can't surface, leaving
+        # it stuck on "Loading…"). Return a clean 500 JSON with the reason instead.
+        try:
+            return self._do_GET_impl()
+        except Exception as e:
+            import traceback as _tb
+            _tb.print_exc()
+            try:
+                return self._json({"error": f"{type(e).__name__}: {e}",
+                                   "where": "GET " + self.path.split("?")[0]}, 500)
+            except Exception:
+                pass
+
+    def _do_GET_impl(self):
         path = self.path.split("?")[0]
         if path == "/api/graph":
             return self._json(build_graph())
