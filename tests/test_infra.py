@@ -161,5 +161,35 @@ except ValueError:
 check("fail CLEARLY when research provider absent (never product provider)", _failclear)
 RE2.get_search_provider, RE2.get_classifier, RS._discover_creators = _orig_sp, _orig_clf, _orig_disc
 
+print("== regression: an Opportunity node loads as a pure read (no external provider) ==")
+import universe as U, research_engine as RE3
+b.upsert_rows("markets", [{"id": "mkt-x", "type": "market", "name": "MX", "status": "active", "basis": "inferred"}], key="id")
+b.upsert_rows("submarkets", [{"id": "sub-x", "type": "submarket", "market_id": "mkt-x", "name": "SX", "status": "active", "basis": "inferred", "origin": "seeded"}], key="id")
+b.upsert_rows("audiences", [{"id": "aud-x", "type": "audience", "market_id": "mkt-x", "submarket_id": "sub-x", "name": "AX", "status": "active", "basis": "inferred"}], key="id")
+b.upsert_rows("opportunities", [{"id": "opp-x", "type": "opportunity", "market_id": "mkt-x", "submarket_id": "sub-x", "audience_id": "aud-x", "name": "OX"}], key="id")
+b.upsert_rows("opportunity_scores", [{"opportunity_id": "opp-x", "commercial_score": 80, "priority_score": 70}], key="opportunity_id")
+def _boom(*a, **k):
+    raise AssertionError("external provider invoked during an opportunity READ")
+_sp0, _clf0 = RE3.get_search_provider, RE3.get_classifier
+RE3.get_search_provider = _boom; RE3.get_classifier = _boom          # any provider call now fails the test
+try:
+    svc = U.UniverseService(U.UniverseStore())
+    check("opportunity read returns data (no provider)", (svc.get_opportunity("opp-x") or {}).get("name") == "OX")
+    check("path resolves as a read", svc.path_for_opportunity("opp-x") == ["MX", "SX", "AX", "OX"])
+    check("score reads as a read", (svc.score_for_opportunity("opp-x") or {}).get("commercial_score") == 80)
+    check("problems read as a read (empty ok)", isinstance(svc.problems_for_opportunity("opp-x"), list))
+    _read_ok = True
+except AssertionError as e:
+    _read_ok = False; print("   provider was invoked:", e)
+finally:
+    RE3.get_search_provider = _sp0; RE3.get_classifier = _clf0
+check("opportunity read invoked NO external provider", _read_ok)
+
+print("== regression: no function-local 'from universe import' (UnboundLocalError shadowing) ==")
+_srv = (ROOT / "app" / "server.py").read_text()
+import re as _re
+_shadow = _re.findall(r"^[ \t]+from universe import", _srv, _re.M)   # indented => inside a function
+check("server.py has no shadowing local universe import", len(_shadow) == 0)
+
 print(f"\n{_passed} passed, {_failed} failed")
 sys.exit(1 if _failed else 0)

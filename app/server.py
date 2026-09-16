@@ -317,8 +317,7 @@ class Handler(BaseHTTPRequestHandler):
             # distinguishes them). Read-only; enables the keep/replace/rebuild decision after the
             # operator runs the five-market experiment. No providers touched.
             mid = unquote(path.split("/")[4])
-            from universe import UniverseService
-            svc = UniverseService()
+            svc = UniverseService(UniverseStore())   # module-level import (line 28); no local import
             subs = [s for s in svc._s.values() if s.get("market_id") == mid]
             def _view(s):
                 return {"id": s["id"], "name": s.get("name"), "basis": s.get("basis"),

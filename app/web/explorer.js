@@ -412,7 +412,13 @@ function select(id) {
   selected = id;
   computeActive();
   applyEmphasis();
-  renderPanel(id);
+  // never leave the panel stuck on "Loading…": surface a failed load as an error
+  renderPanel(id).catch(e => {
+    const p = document.getElementById("panel");
+    if (p) p.innerHTML = `<div class="panel-empty"><h2>Couldn't load this node</h2>` +
+      `<p class="muted">${esc(String((e && e.message) || e))}</p>` +
+      `<p class="muted small">This was a read — no research or provider call was triggered. Try again.</p></div>`;
+  });
   renderBreadcrumb();
 }
 
