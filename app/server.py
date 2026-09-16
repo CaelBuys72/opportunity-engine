@@ -298,6 +298,25 @@ class Handler(BaseHTTPRequestHandler):
                 "supabase_url_set": bool(os.environ.get("SUPABASE_URL")),
                 "supabase_key_set": bool(os.environ.get("SUPABASE_SERVICE_ROLE_KEY")),
             })
+        if path.startswith("/api/universe/market/") and path.endswith("/submarket-comparison"):
+            # Pass-2: compare SEEDED vs research-DISCOVERED submarkets for a market (provenance
+            # distinguishes them). Read-only; enables the keep/replace/rebuild decision after the
+            # operator runs the five-market experiment. No providers touched.
+            mid = unquote(path.split("/")[4])
+            from universe import UniverseService
+            svc = UniverseService()
+            subs = [s for s in svc._s.values() if s.get("market_id") == mid]
+            def _view(s):
+                return {"id": s["id"], "name": s.get("name"), "basis": s.get("basis"),
+                        "origin": s.get("origin", "seeded"),
+                        "distribution_state": s.get("distribution_state"),
+                        "distribution_evidence": s.get("distribution_evidence"),
+                        "source_refs": len(s.get("source_refs", []) or [])}
+            seeded = [_view(s) for s in subs if s.get("origin", "seeded") == "seeded"]
+            researched = [_view(s) for s in subs if s.get("origin") == "dynamic_research"]
+            return self._json({"market_id": mid, "seeded_count": len(seeded),
+                               "researched_count": len(researched),
+                               "seeded": seeded, "researched": researched})
         if path == "/api/universe/groq-models":
             # diagnostic: list the Groq models the signed-in operator's key can use
             op = self._require_operator()
@@ -620,6 +639,27 @@ class Handler(BaseHTTPRequestHandler):
                                    "packet_saved": st.get("source_count", 0) > 0}, 503)
             except Exception as e:
                 storage.get_backend().release_expansion(node_id)
+                return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
+        # ---- Pass-2: validate a submarket's creator-led distribution (research provider only) ----
+        if path.startswith("/api/universe/submarket/") and path.endswith("/validate-distribution"):
+            op = self._require_operator()
+            if not op:
+                return
+            sid = unquote(path.split("/")[4])
+            creds = auth.resolve_operator_credentials(op)
+            import research_engine as RE, rescore as RS
+            # research provider only — do NOT fall back to the product provider
+            if not RE.get_search_provider(creds) or not RE.get_classifier(creds, layer="creator"):
+                return self._json({"ok": False, "operator": op,
+                                   "error": f"{op} is missing the RESEARCH provider (Serper + "
+                                            "Mistral/Cloudflare) needed for distribution validation",
+                                   "providers": RE.providers_status(creds)}, 503)
+            try:
+                return self._json({"ok": True, "operator": op,
+                                   **RS.validate_submarket_distribution(sid, creds=creds, operator=op)})
+            except ValueError as e:
+                return self._json({"ok": False, "error": str(e)}, 422)
+            except Exception as e:
                 return self._json({"ok": False, "error": f"{type(e).__name__}: {e}"}, 500)
         # ---- Hand a (generated) universe opportunity into the existing Phase-8 pipeline ----
         if path.startswith("/api/universe/opportunity/") and path.endswith("/whop-draft"):

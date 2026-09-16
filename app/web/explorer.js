@@ -490,10 +490,13 @@ async function renderPanel(id) {
     wireExplore(n);
   } else if (t === "submarket") {
     const parent = nodes.get(n.parent);
+    const distState = m.distribution_state || "unresearched";
     panel.innerHTML = head("Submarket", n.label) + originTag +
-      `<section class="pcard">${kv("Parent market", val(parent ? parent.label : m.market_id))}${kv("Audiences", m.audiences)}${kv("Problems", m.problems)}${kv("Opportunities", m.opportunities)}${kv("Basis", val(m.basis))}</section>` +
+      `<section class="pcard">${kv("Parent market", val(parent ? parent.label : m.market_id))}${kv("Audiences", m.audiences)}${kv("Problems", m.problems)}${kv("Opportunities", m.opportunities)}${kv("Basis", val(m.basis))}${kv("Distribution", distState)}</section>` +
+      `<button class="handoff" id="dist-btn" style="background:rgba(82,214,154,.18);color:#e9f2ff">📡 Validate distribution</button><p class="muted small" id="dist-status">Research-provider only: finds real creators serving this submarket → sets distribution viability.</p>` +
       expandHint(n);
     wireExplore(n);
+    wireDistribution(n);
   } else if (t === "audience") {
     const path = ancestorLabels(n);
     panel.innerHTML = head("Audience", n.label) + originTag +
@@ -570,6 +573,23 @@ function expandHint(n) {
     return `<button class="handoff explore" id="explore-btn">🔎 Explore Deeper</button>
       <p class="muted small" id="explore-status">Runs live web search → collects evidence → generates ${n.type === "audience" ? "problems &amp; opportunities" : "child nodes"}, saved permanently.</p>`;
   return `<p class="muted small">No further downstream data. <span class="unknown">Unknown / not yet generated.</span></p>`;
+}
+// wire the submarket "Validate distribution" button (research provider only)
+function wireDistribution(n) {
+  const btn = document.getElementById("dist-btn"); if (!btn) return;
+  btn.onclick = async () => {
+    const st = document.getElementById("dist-status");
+    btn.disabled = true; btn.textContent = "Researching creators…";
+    st.innerHTML = "Finding real creators serving this submarket (Serper + Mistral)…";
+    let r;
+    try {
+      r = await (await fetch("/api/universe/submarket/" + encodeURIComponent(n.id) + "/validate-distribution", { method: "POST" })).json();
+    } catch (e) { st.innerHTML = `<span class="unknown">Request failed: ${esc(e.message)}</span>`; btn.disabled = false; btn.textContent = "📡 Validate distribution"; return; }
+    btn.disabled = false; btn.textContent = "📡 Validate distribution";
+    if (!r.ok) { st.innerHTML = `<span class="unknown">${esc(r.error || "validation failed")}</span>`; return; }
+    st.innerHTML = `Distribution: <b>${esc(r.distribution_state)}</b> · ${r.creator_count} creator(s)` +
+      (r.sample && r.sample.length ? ` — ${esc(r.sample.slice(0, 3).join(", "))}` : "");
+  };
 }
 // wire the Explore-Deeper button (dynamic research) for the currently-shown node
 function wireExplore(n) {

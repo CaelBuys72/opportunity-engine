@@ -195,6 +195,49 @@ def rescore_one(opp_id: str, creds: dict | None = None, operator: str = "unknown
             "creators_found": n_creators, "demand_signals": n_signals}
 
 
+def validate_submarket_distribution(submarket_id: str, creds: dict | None = None,
+                                    operator: str = "unknown") -> dict:
+    """Pass-2 commercial front-half: does an accessible CREATOR-LED distribution ecosystem
+    exist in this submarket? Reuses the repaired, entity-gated creator discovery (research
+    provider only — Serper + Mistral/Cloudflare, never the product/Groq provider). Persists a
+    distribution_state + evidence onto the submarket row WITHOUT destroying existing fields.
+    Keeps observed capability (state) separate from evidence confidence (basis)."""
+    import research_engine as RE
+    import storage
+    from datetime import datetime, timezone
+    from universe import UniverseService
+    svc = UniverseService()
+    s = svc._s.get(submarket_id)
+    if not s:
+        raise ValueError(f"no submarket '{submarket_id}'")
+    m = svc._m.get(s.get("market_id"), {})
+    sp = RE.get_search_provider(creds)
+    clf = RE.get_classifier(creds, layer="creator")   # research provider; None => fail clear
+    if not sp or not clf:
+        raise ValueError("distribution validation needs the research provider "
+                         "(Serper + Mistral/Cloudflare) — refusing to use the product provider")
+    ctx = {"submarket": s.get("name"), "market": m.get("name"),
+           "audience": s.get("name"), "problems": []}
+    creators = _discover_creators(ctx, sp, clf)        # entity-gated: no SaaS/publications/forums
+    n = len(creators)
+    # evidence-based state (NOT an LLM vibe score). Unknown only when we couldn't research.
+    state = "strong" if n >= 4 else "limited" if n >= 1 else "weak"
+    evidence = {"creator_count": n, "sample": [c.get("name") for c in creators[:5] if c.get("name")],
+                "platforms": sorted({c.get("platform") for c in creators if c.get("platform")})}
+    row = {**s, "distribution_state": state, "distribution_evidence": evidence,
+           "distribution_basis": "observed",   # we actually ran the research this pass
+           "distribution_validated_at": datetime.now(timezone.utc).isoformat()}
+    storage.get_backend().upsert_rows("submarkets", [row], key="id")
+    try:
+        RE._bump_usage(f"submarket-dist:{submarket_id}", queries=0, results=n, sources=n,
+                       operator=operator, provider="serper")
+    except Exception:
+        pass
+    return {"submarket_id": submarket_id, "name": s.get("name"),
+            "distribution_state": state, "creator_count": n,
+            "sample": evidence["sample"], "platforms": evidence["platforms"]}
+
+
 def rebuild_rankings() -> list[dict]:
     """Recompute rankings from all persisted scores; upsert to storage."""
     import scoring as S

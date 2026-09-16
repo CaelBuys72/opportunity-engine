@@ -127,5 +127,39 @@ check("individual_creator is a creator type", "individual_creator" in DI._CREATO
 check("saas is NOT a creator type", "saas" not in DI._CREATOR_TYPES)
 check("publication is NOT a creator type", "publication" not in DI._CREATOR_TYPES)
 
+print("== Pass-2: submarket distribution validation (fixtures — no live calls) ==")
+import rescore as RS, research_engine as RE2
+b.upsert_rows("markets", [{"id": "mkt-fit", "type": "market", "name": "Fitness",
+                           "status": "active", "basis": "inferred"}], key="id")
+b.upsert_rows("submarkets", [
+    {"id": "sub-fit-seed", "type": "submarket", "market_id": "mkt-fit", "name": "General Fitness",
+     "status": "active", "basis": "inferred", "origin": "seeded"},
+    {"id": "sub-fit-pl", "type": "submarket", "market_id": "mkt-fit", "name": "Powerlifting",
+     "status": "active", "basis": "observed", "origin": "dynamic_research",
+     "source_refs": ["s1", "s2"]},
+], key="id")
+_orig_sp, _orig_clf, _orig_disc = RE2.get_search_provider, RE2.get_classifier, RS._discover_creators
+RE2.get_search_provider = lambda creds=None: object()
+RE2.get_classifier = lambda creds=None, layer=None: object()          # research provider present
+RS._discover_creators = lambda ctx, sp, clf: [
+    {"name": "Alan Thrall", "platform": "youtube"}, {"name": "Bromley", "platform": "youtube"},
+    {"name": "Juggernaut", "platform": "youtube"}, {"name": "Calgary Barbell", "platform": "youtube"},
+    {"name": "PL Coach", "platform": "instagram"}]
+_res = RS.validate_submarket_distribution("sub-fit-pl", creds={"operator": "cael"})
+check("distribution state derived from evidence (>=4 creators => strong)", _res["distribution_state"] == "strong")
+_row = b.get_row("submarkets", "sub-fit-pl")
+check("distribution_state persisted on submarket", _row.get("distribution_state") == "strong")
+check("provenance preserved (origin still dynamic_research)", _row.get("origin") == "dynamic_research")
+check("existing source_refs preserved (data safety)", _row.get("source_refs") == ["s1", "s2"])
+check("seeded vs researched remain distinguishable",
+      b.get_row("submarkets", "sub-fit-seed")["origin"] == "seeded" and _row["origin"] == "dynamic_research")
+RE2.get_classifier = lambda creds=None, layer=None: None             # research provider ABSENT
+try:
+    RS.validate_submarket_distribution("sub-fit-pl", creds={"operator": "cael"}); _failclear = False
+except ValueError:
+    _failclear = True
+check("fail CLEARLY when research provider absent (never product provider)", _failclear)
+RE2.get_search_provider, RE2.get_classifier, RS._discover_creators = _orig_sp, _orig_clf, _orig_disc
+
 print(f"\n{_passed} passed, {_failed} failed")
 sys.exit(1 if _failed else 0)
