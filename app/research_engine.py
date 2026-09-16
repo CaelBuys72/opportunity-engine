@@ -508,6 +508,11 @@ def get_classifier(creds: dict | None = None, layer: str | None = None) -> Class
     built = [p for p in (_build_provider(n, creds, op) for n in chain) if p is not None]
     if built:
         return built[0] if len(built) == 1 else FallbackClassifier(built)
+    # RESEARCH layers must NEVER borrow the product (Groq) provider — if none of their own
+    # providers are configured, FAIL CLEARLY (return None) rather than silently spending the
+    # product-generation budget. Only "product" and availability checks (layer=None) degrade.
+    if layer in LAYER_CHAINS and layer != "product":
+        return None
     # nothing in the chain configured — fall back to any other configured provider so
     # a missing key degrades gracefully instead of hard-failing the whole layer.
     for n in _DEFAULT_CHAIN:

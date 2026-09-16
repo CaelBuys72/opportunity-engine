@@ -646,6 +646,28 @@ _EMAIL_DENY = ("feedspot.com", "example.com", "sentry.io", "wixpress.com", "doma
                "yourdomain.com", "email.com", "mailchimp.com", "squarespace.com",
                "audiencly.com", "viralnation.com", "sentry-next.wixpress.com")
 
+# entity_type values that qualify as a distribution partner (a person / creator-led brand)
+_CREATOR_TYPES = {"individual_creator", "creator_brand", "newsletter", "podcast", "education_brand"}
+
+# domains that are clearly NOT a single creator (publications, forums, aggregators, dev/SaaS
+# hubs, review sites, marketplaces' discovery pages). SECONDARY defense — the LLM entity_type
+# classification is primary; this catches the obvious ones deterministically. NOTE: creator
+# PLATFORMS (youtube/instagram/tiktok/substack/x) are intentionally NOT here — creators live there.
+_NON_CREATOR_DOMAINS = (
+    "reddit.com", "medium.com", "quora.com", "dev.to", "notion.so", "notion.site",
+    "stackexchange.com", "stackoverflow.com", "wikipedia.org", "feedspot.com",
+    "g2.com", "capterra.com", "getapp.com", "trustpilot.com", "producthunt.com",
+    "github.com", "linkedin.com", "glassdoor.com", "indeed.com", "clutch.co",
+    "fiverr.com", "upwork.com", "hackernoon.com", "hubspot.com", "forbes.com",
+    "businessinsider.com", "techcrunch.com", "wix.com", "squarespace.com",
+)
+
+
+def _is_non_creator_domain(url: str) -> bool:
+    u = (url or "").lower()
+    dom = re.sub(r"^https?://(www\.)?", "", u).split("/")[0]
+    return any(dom == d or dom.endswith("." + d) for d in _NON_CREATOR_DOMAINS)
+
 
 def _is_creator_email(e: str) -> bool:
     el = e.lower()
@@ -746,45 +768,49 @@ def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
                 "snippet": (it.get("snippet") or "")[:300],
                 "page_excerpt": (it.get("page_text") or "")[:600]} for it in items]
     system = (
-        "You evaluate web-search results to identify real individual CREATORS/channels whose "
-        "audience matches the buyer and who make content on the problem. For EACH item return an "
-        "object; respond with STRICT JSON {\"creators\":[{\"i\":int,\"keep\":bool,"
-        "\"confidence\":\"high|medium|low\",\"name\":str,\"platform\":str,\"handle\":str,"
-        "\"niche\":str,\"est_followers\":int|null,\"why_fit\":str,\"fit_score\":int(0-100),"
-        "\"caution\":str}]}. Rules: "
-        "'name' MUST be the CREATOR/channel/author (the YouTube channel, the person, the newsletter), "
-        "NOT the title of a single video or post. "
-        "keep=true for ANY plausible individual creator/channel/author/podcast/newsletter — even if "
-        "you must infer the creator behind a single video, and even if the fit is only moderate. Set "
-        "confidence=low for those inferred/borderline ones, medium for probable, high for a clearly "
-        "identified creator who squarely fits. "
-        "keep=false ONLY for things that are clearly NOT one creator: marketplaces, app-store pages, "
-        "listicles/round-up articles, news sites, agencies, retail brands, or generic company pages. "
-        "est_followers ONLY if explicitly present, else null. Never invent numbers, handles or emails. "
-        "fit_score = audience match + problem/content match + approachability.")
+        "You classify web-search results as DISTRIBUTION PARTNERS for a small maker. The ONLY "
+        "qualifying partners are CREATORS / creator-led personal brands. For EACH item return "
+        "STRICT JSON {\"creators\":[{\"i\":int,"
+        "\"entity_type\":\"individual_creator|creator_brand|newsletter|podcast|education_brand|"
+        "saas|company|marketplace|publication|forum|community_platform|aggregator|tool|agency|other\","
+        "\"keep\":bool,\"confidence\":\"high|medium|low\",\"name\":str,\"platform\":str,\"handle\":str,"
+        "\"niche\":str,\"est_followers\":int|null,\"why_fit\":str,\"fit_score\":int(0-100),\"caution\":str}]}. "
+        "RULES: keep=true ONLY when entity_type is one of individual_creator, creator_brand, newsletter, "
+        "podcast, or education_brand — a real PERSON or creator-led brand that regularly publishes to an "
+        "audience. keep=false for EVERYTHING else: SaaS products, software tools, companies, marketplaces "
+        "(gumroad/etsy storefronts of a brand), publications/blogs (Medium, dev.to, news), forums/community "
+        "platforms (Reddit, Quora, StackExchange), aggregators/listicles, agencies, and generic websites — "
+        "a company or platform that merely DISCUSSES the problem is NOT a creator. Also keep=false for a "
+        "direct product/software competitor even if creator-ish. "
+        "'name' MUST be the creator/channel/author, not a post title. est_followers ONLY if explicitly "
+        "present, else null. Never invent numbers/handles/emails. fit_score = audience + content match + "
+        "approachability. When unsure whether something is a person or a company, set entity_type='other' "
+        "and keep=false.")
     user = json.dumps({"buyer": brief.get("target_customer"), "problem": brief.get("core_problem"),
                        "product": brief.get("product_concept") or brief.get("desired_outcome"),
                        "results": compact}, ensure_ascii=False)
     data = RE._extract_json(clf.classify(system, user))
     rows = (data or {}).get("creators") if isinstance(data, dict) else (data if isinstance(data, list) else None)
     by_i = {it["i"]: it for it in items}
-    by_row = {r.get("i"): r for r in (rows or []) if isinstance(r, dict)}
-    out, kept_ids = [], set()
+    out = []
     for r in (rows or []):
         if not isinstance(r, dict):
             continue
         src = by_i.get(r.get("i"))
         if not src:
             continue
-        # KEY: an email-bearing result is ALWAYS an outreach lead, even if it's a contact/
-        # for-hire/article page the creator-filter would drop — the email IS the point.
-        if not r.get("keep", True) and not src.get("snippet_emails"):
+        etype = (r.get("entity_type") or "").strip().lower()
+        # PRIMARY gate: must be a creator entity type. SECONDARY: domain denylist (defense in depth).
+        # An email does NOT rescue a non-creator (that was the old regression: SaaS/pubs with a
+        # contact email were kept as "creators").
+        is_creator = etype in _CREATOR_TYPES and r.get("keep", False) \
+            and not _is_non_creator_domain(src.get("url", ""))
+        if not is_creator:
             continue
         conf = r.get("confidence")
-        kept_ids.add(r.get("i"))
         out.append({
             "name": r.get("name") or src.get("title"), "platform": r.get("platform"),
-            "handle": r.get("handle"),
+            "handle": r.get("handle"), "entity_type": etype,
             "url": _channel_root(src.get("url", "")),                  # creator root (real, truncated)
             "source_url": src.get("url"),                              # the exact hit from Serper
             "niche": r.get("niche"), "est_followers": r.get("est_followers"),
@@ -796,21 +822,6 @@ def _score_creators(clf, brief: dict, items: list[dict]) -> list[dict]:
             "email_source": "snippet" if src.get("snippet_emails") else None,
             "contacts": None,
             "found_via": src.get("query"),
-        })
-    # safety net: any email-bearing item the LLM omitted ENTIRELY is still added as a lead
-    for it in items:
-        if it["i"] in kept_ids or not it.get("snippet_emails"):
-            continue
-        r = by_row.get(it["i"]) or {}
-        out.append({
-            "name": r.get("name") or it.get("title"), "platform": r.get("platform"),
-            "handle": r.get("handle"), "url": _channel_root(it.get("url", "")),
-            "source_url": it.get("url"), "niche": r.get("niche"),
-            "est_followers": r.get("est_followers"), "why_fit": r.get("why_fit") or "has a public contact email",
-            "fit_score": r.get("fit_score") or 40, "confidence": "low",
-            "caution": r.get("caution"),
-            "contact_emails": list(it.get("snippet_emails") or []), "email_source": "snippet",
-            "contacts": None, "found_via": it.get("query"),
         })
     return out
 

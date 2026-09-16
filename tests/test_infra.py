@@ -95,5 +95,37 @@ check("no provider without keys", RE.get_search_provider({}) is None and RE.get_
 b.upsert_rows("submarkets", [{"id": "sub-a-1", "name": "S1", "market_id": "mkt-a"}])
 check("stored child loads with zero generation", len(b.list_rows("submarkets")) == 1)
 
+print("== provider routing: research NEVER uses the product (Groq) provider ==")
+os.environ["CF_ACCOUNT_ID"] = "a"; os.environ["CF_API_TOKEN"] = "t"   # enable cloudflare in chains
+_creds = {"operator": "cael", "groq": "g", "gemini": "m", "mistral": "mi"}
+def _chain(layer):
+    c = RE.get_classifier(_creds, layer=layer)
+    return [p.name for p in c.providers] if hasattr(c, "providers") else ([c.name] if c else [])
+for _layer in ("research", "explore", "rescore", "creator"):
+    _ch = _chain(_layer)
+    check(f"{_layer} excludes groq", "groq" not in _ch)
+    check(f"{_layer} primary is mistral", _ch[:1] == ["mistral"])
+check("product uses groq primary", _chain("product")[:1] == ["groq"])
+check("product overflows to gemini", "gemini" in _chain("product"))
+# research with NO research providers must FAIL CLEARLY, not fall back to groq
+os.environ.pop("CF_ACCOUNT_ID", None); os.environ.pop("CF_API_TOKEN", None)
+_c_nores = RE.get_classifier({"operator": "cael", "groq": "g"}, layer="research")
+check("research fails clearly (no groq fallback) when research providers absent", _c_nores is None)
+check("product still resolves when only groq present",
+      RE.get_classifier({"operator": "cael", "groq": "g"}, layer="product") is not None)
+
+print("== creator qualification: non-creator entities are rejected ==")
+import distribution as DI
+check("reddit is a non-creator domain", DI._is_non_creator_domain("https://www.reddit.com/r/freelance/x"))
+check("medium is a non-creator domain", DI._is_non_creator_domain("https://medium.com/@someone/post"))
+check("dev.to is a non-creator domain", DI._is_non_creator_domain("https://dev.to/foo"))
+check("notion is a non-creator domain", DI._is_non_creator_domain("https://www.notion.so/templates"))
+check("youtube is NOT denylisted (creators live there)", not DI._is_non_creator_domain("https://youtube.com/@gm"))
+check("instagram is NOT denylisted", not DI._is_non_creator_domain("https://instagram.com/creator"))
+check("substack is NOT denylisted", not DI._is_non_creator_domain("https://foo.substack.com"))
+check("individual_creator is a creator type", "individual_creator" in DI._CREATOR_TYPES)
+check("saas is NOT a creator type", "saas" not in DI._CREATOR_TYPES)
+check("publication is NOT a creator type", "publication" not in DI._CREATOR_TYPES)
+
 print(f"\n{_passed} passed, {_failed} failed")
 sys.exit(1 if _failed else 0)

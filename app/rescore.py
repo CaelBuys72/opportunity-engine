@@ -64,27 +64,36 @@ def _discover_creators(ctx: dict, sp, clf) -> list[dict]:
     if not results:
         return []
     system = (
-        "From web results, identify individual CREATORS/channels who serve this audience (NOT brands, "
-        "marketplaces, listicles or agencies). For each return STRICT JSON {\"creators\":[{\"i\":int,"
-        "\"keep\":bool,\"platform\":str,\"name\":str,\"handle\":str,\"relevance\":\"high|medium|low\"}]}. "
-        "name = the creator/channel (not a video title). keep=false if it is not a single identifiable "
-        "creator. relevance = how directly their audience matches this buyer + problem.")
+        "Classify each web result. A qualifying CREATOR is a real PERSON or creator-led brand "
+        "(individual_creator/creator_brand/newsletter/podcast/education_brand) — NOT a SaaS product, "
+        "company, marketplace, publication/blog, forum, community platform, aggregator, tool or agency. "
+        "Return STRICT JSON {\"creators\":[{\"i\":int,\"entity_type\":str,\"keep\":bool,\"platform\":str,"
+        "\"name\":str,\"handle\":str,\"relevance\":\"high|medium|low\"}]}. keep=true ONLY for creator "
+        "entity types; a company/platform that merely discusses the topic is NOT a creator. name = the "
+        "creator/channel, not a video title.")
     data = RE._extract_json(clf.classify(system, json.dumps(
         {"audience": ctx.get("audience"), "problem": (ctx.get("problems") or [None])[0],
          "results": [{"i": r["i"], "title": r["title"], "url": r["url"], "snippet": r["snippet"]} for r in results]},
         ensure_ascii=False)))
     rows = (data or {}).get("creators") if isinstance(data, dict) else (data if isinstance(data, list) else [])
+    import distribution as _DI
     by_i = {r["i"]: r for r in results}
     out = []
     for r in (rows or []):
         if not isinstance(r, dict) or not r.get("keep", True):
             continue
+        et = (r.get("entity_type") or "").strip().lower()
         src = by_i.get(r.get("i"))
         if not src:
             continue
+        if et and et not in _DI._CREATOR_TYPES:              # entity classification (primary)
+            continue
+        if _DI._is_non_creator_domain(src.get("url", "")):   # denylist (secondary)
+            continue
         rel = r.get("relevance", "low")
         out.append({"platform": r.get("platform"), "url": src["url"], "handle": r.get("handle"),
-                    "name": r.get("name") or src.get("title"), "relevance": rel if rel in ("high", "medium", "low") else "low"})
+                    "name": r.get("name") or src.get("title"),
+                    "relevance": rel if rel in ("high", "medium", "low") else "low"})
     return out
 
 
