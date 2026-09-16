@@ -462,12 +462,16 @@ class FallbackClassifier(ClassificationProvider):
 # Cloudflare is LAST for research so its 10k Neurons/day stay reserved for FLUX ebook
 # covers in normal operation (research runs on Mistral→Groq); CF text only fires if both
 # of those are down, so it rarely competes with covers.
+# Groq is RESERVED for product generation. Research layers must NOT use Groq (a big research
+# request would eat the product token budget) — they run Mistral -> Cloudflare only. Requests
+# are batched small (see execute_research) so they fit Mistral's rate limit + Cloudflare's 8K
+# context. If both are down a research layer fails visibly rather than stealing product budget.
 LAYER_CHAINS = {
     "product":  ["groq", "gemini"],
-    "research": ["mistral", "groq", "cloudflare"],
-    "explore":  ["mistral", "groq", "cloudflare"],
-    "rescore":  ["mistral", "groq", "cloudflare"],
-    "creator":  ["mistral", "groq", "cloudflare"],
+    "research": ["mistral", "cloudflare"],
+    "explore":  ["mistral", "cloudflare"],
+    "rescore":  ["mistral", "cloudflare"],
+    "creator":  ["mistral", "cloudflare"],
 }
 _DEFAULT_CHAIN = ["groq", "mistral", "gemini"]
 
@@ -1359,6 +1363,51 @@ def _synth_user(pocket, all_questions, sources):
             "\"outcome\":\"READY|NEEDS_MORE_RESEARCH|WEAK_NO_PRODUCT\"}}")
 
 
+def _claims_user(pocket, batch):
+    """Claims-only extraction over ONE small batch of sources — keeps each request tiny so it
+    fits free per-minute token caps (Mistral) + 8K context (Cloudflare). source_ref is the
+    [index] shown WITHIN this batch (execute_research remaps it to the global index)."""
+    src_lines = []
+    for i, s in enumerate(batch):
+        page = s.get("page_text") or ""
+        body = page[:1100] if len(page) > 200 else (s.get("snippet") or "")[:300]
+        src_lines.append(f"[{i}] ({s.get('source_type')} · intent:{s.get('intent')}) "
+                         f"{s.get('title')} <{s.get('url')}>\n{body}")
+    return (f"AUDIENCE: {pocket['audience']}\nCORE PROBLEM: {pocket['core_problem']}\n"
+            f"DESIRED OUTCOME: {pocket.get('desired_outcome','')}\n\nSOURCES:\n"
+            + "\n\n".join(src_lines) + "\n\n"
+            "Extract concise evidence CLAIMS from ONLY these sources. Return JSON: {\"claims\":"
+            "[{\"claim\",\"evidence\",\"source_ref\":<index within THIS batch>,"
+            "\"evidence_type\":\"behavior|pain|attempt|complaint|desired_outcome|pricing|product_format|workflow|other\","
+            "\"basis\":\"observed|inferred\",\"strength\":\"strong|medium|weak\",\"product_implication\"}]}")
+
+
+def _answer_user(pocket, all_questions, claims):
+    """Answer the questions + synthesize product implications from the ALREADY-EXTRACTED claims
+    (short text), never raw page bodies — so this final call stays small too."""
+    cl_lines = []
+    for i, c in enumerate(claims[:28]):
+        cl_lines.append(f"[{c.get('source_ref', '?')}] ({c.get('evidence_type')}·{c.get('basis')}) "
+                        f"{(c.get('claim') or '')[:140]} — {(c.get('evidence') or '')[:200]}")
+    qlines = "\n".join(f"- ({t}) {q}" for q, t in all_questions)
+    return (f"AUDIENCE: {pocket['audience']}\nCORE PROBLEM: {pocket['core_problem']}\n"
+            f"DESIRED OUTCOME: {pocket.get('desired_outcome','')}\n"
+            f"KNOWN EXISTING SOLUTIONS: {pocket.get('existing_solutions')}\n\n"
+            f"QUESTIONS (answer EVERY one):\n{qlines}\n\n"
+            f"EXTRACTED CLAIMS (source_ref in brackets):\n" + "\n".join(cl_lines) + "\n\n"
+            "Using ONLY these claims, answer every question and synthesize implications. Return JSON: {"
+            "\"questions\":[{\"question\",\"question_type\":\"universal|dynamic\",\"status\":\"SUPPORTED|PARTIAL|UNKNOWN|CONTRADICTED\","
+            "\"answer\",\"source_refs\":[<indexes>],\"confidence\":\"LOW|MEDIUM|HIGH\","
+            "\"product_implication\",\"remaining_uncertainty\"}],"
+            "\"product_implications\":{\"core_problem\",\"desired_outcome\",\"current_behavior\":[],"
+            "\"current_solutions\":[],\"failure_modes\":[],\"free_alternatives\":[],\"product_opportunity\","
+            "\"product_mechanism\",\"product_format\":{\"recommended\",\"components\":[],\"basis\":\"observed|inferred\",\"rationale\"},"
+            "\"must_have_components\":[{\"component\",\"buyer_job\",\"evidence_refs\":[<indexes>],\"basis\":\"observed|inferred\"}],"
+            "\"do_not_build\":[],\"pricing\":{\"values\":[],\"basis\":\"observed|inferred|unknown\"},"
+            "\"contradictions\":[],\"remaining_uncertainty\":[],"
+            "\"outcome\":\"READY|NEEDS_MORE_RESEARCH|WEAK_NO_PRODUCT\"}}")
+
+
 def execute_research(pocket: dict, plan: dict, max_fetch: int = 14,
                      creds: dict | None = None, operator: str = "unknown") -> dict | None:
     """Execute the plan end to end. Returns a rich result or None if no providers.
@@ -1408,11 +1457,31 @@ def execute_research(pocket: dict, plan: dict, max_fetch: int = 14,
     billable = getattr(sp, "live_calls", 0) - calls_before
     _bump_usage(node_id, billable, discovered, len(candidates), operator=operator)
 
-    # 4) batched extraction + answering + synthesis (1 LLM call).
-    # Analyse the top-ranked SELECTED sources: full page text where retrieval succeeded,
-    # otherwise the Serper snippet (which is itself real, observed source text).
+    # 4) BATCHED extraction, then a small answering/synthesis pass. Each request stays tiny
+    #    (a few sources, or short claims) so it fits free per-minute token caps + 8K context —
+    #    a rich retrieval can no longer 413/overflow the LLM. Groq is NOT in the research chain.
     analysis_pool = selected
-    parsed = _extract_json(cl.classify(_SYNTH_SYS, _synth_user(pocket, all_questions, analysis_pool)))
+    _BATCH = 4
+    claims_all = []
+    for _bi in range(0, len(analysis_pool), _BATCH):
+        _batch = analysis_pool[_bi:_bi + _BATCH]
+        try:
+            _pj = _extract_json(cl.classify(_SYNTH_SYS, _claims_user(pocket, _batch))) or {}
+        except Exception:
+            _pj = {}
+        for _c in _pj.get("claims", []):
+            _r = _c.get("source_ref")
+            if isinstance(_r, int) and 0 <= _r < len(_batch):
+                _c["source_ref"] = _bi + _r            # batch-local -> global index
+            claims_all.append(_c)
+        if _bi + _BATCH < len(analysis_pool):
+            time.sleep(1.2)                            # pace under Mistral's per-second free limit
+    try:
+        _ans = _extract_json(cl.classify(_SYNTH_SYS, _answer_user(pocket, all_questions, claims_all))) or {}
+    except Exception:
+        _ans = {}
+    parsed = {"questions": _ans.get("questions", []), "claims": claims_all,
+              "product_implications": _ans.get("product_implications", {}) or {}}
 
     answered = parsed.get("questions", [])
     # evidence-bearing sources = distinct sources cited by any extracted claim
