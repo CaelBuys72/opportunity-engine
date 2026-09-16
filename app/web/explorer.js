@@ -486,23 +486,23 @@ async function renderPanel(id) {
     panel.innerHTML = head("Market", n.label) + originTag +
       `<p class="pdesc">${val(m.description)}</p>` +
       `<section class="pcard">${kv("Submarkets", m.submarkets)}${kv("Audiences", m.audiences)}${kv("Problems", m.problems)}${kv("Opportunities", m.opportunities)}${kv("Basis", val(m.basis))}</section>` +
-      expandHint(n);
-    wireExplore(n);
+      rediscoverBtn("Submarkets") + expandHint(n);
+    wireExplore(n); wireRediscover(n);
   } else if (t === "submarket") {
     const parent = nodes.get(n.parent);
     const distState = m.distribution_state || "unresearched";
     panel.innerHTML = head("Submarket", n.label) + originTag +
       `<section class="pcard">${kv("Parent market", val(parent ? parent.label : m.market_id))}${kv("Audiences", m.audiences)}${kv("Problems", m.problems)}${kv("Opportunities", m.opportunities)}${kv("Basis", val(m.basis))}${kv("Distribution", distState)}</section>` +
       `<button class="handoff" id="dist-btn" style="background:rgba(82,214,154,.18);color:#e9f2ff">📡 Validate distribution</button><p class="muted small" id="dist-status">Research-provider only: finds real creators serving this submarket → sets distribution viability.</p>` +
-      expandHint(n);
-    wireExplore(n);
-    wireDistribution(n);
+      rediscoverBtn("Audiences") + expandHint(n);
+    wireExplore(n); wireRediscover(n); wireDistribution(n);
   } else if (t === "audience") {
     const path = ancestorLabels(n);
     panel.innerHTML = head("Audience", n.label) + originTag +
       `<section class="pcard">${kv("Market", val(path[0]))}${kv("Submarket", val(path[1]))}${kv("Problems", m.problems)}${kv("Opportunities", m.opportunities)}${kv("Creator density", val(m.creator_density))}${kv("Research status", val(m.research_status))}</section>` +
+      rediscoverBtn("Problems") +
       expandHint(n);
-    wireExplore(n);
+    wireExplore(n); wireRediscover(n);
   } else if (t === "problem") {
     const p = await apiFirst("/api/universe/problem/" + id, "graph/problem/" + id + ".json");
     const opps = [...edges.values()].filter(e => e.source === id).map(e => nodes.get(e.target)).filter(Boolean);
@@ -573,6 +573,29 @@ function expandHint(n) {
     return `<button class="handoff explore" id="explore-btn">🔎 Explore Deeper</button>
       <p class="muted small" id="explore-status">Runs live web search → collects evidence → generates ${n.type === "audience" ? "problems &amp; opportunities" : "child nodes"}, saved permanently.</p>`;
   return `<p class="muted small">No further downstream data. <span class="unknown">Unknown / not yet generated.</span></p>`;
+}
+// research-first (re)discovery button — available even when seeded children already exist,
+// so the operator can independently research a node's children (deduped; seeded preserved).
+function rediscoverBtn(childLabel) {
+  return `<button class="handoff explore" id="rediscover-btn">🔎 Research / Rediscover ${childLabel}</button>` +
+    `<p class="muted small" id="rediscover-status">Research-first (Serper + Mistral). New ${childLabel.toLowerCase()} are appended with provenance; seeded nodes are kept.</p>`;
+}
+function wireRediscover(n) {
+  const btn = document.getElementById("rediscover-btn"); if (!btn) return;
+  btn.onclick = async () => {
+    const st = document.getElementById("rediscover-status");
+    btn.disabled = true; btn.textContent = "Researching…";
+    st.innerHTML = "Live web research → evidence → new nodes (this can take ~1–2 min)…";
+    let r;
+    try {
+      r = await (await fetch("/api/universe/expand/" + encodeURIComponent(n.id), { method: "POST" })).json();
+    } catch (e) { st.innerHTML = `<span class="unknown">Request failed: ${esc(e.message)}</span>`; btn.disabled = false; btn.textContent = "🔎 Research / Rediscover"; return; }
+    btn.disabled = false; btn.textContent = "🔎 Research / Rediscover";
+    if (!r.ok) { st.innerHTML = `<span class="unknown">${esc(r.error || "research unavailable")}</span>`; return; }
+    st.innerHTML = `Saved · ${r.problems ?? r.children ?? 0} new node(s) · ${r.sources ?? 0} sources. Reselect the node to see them.`;
+    n.expandable = true; n.expanded = false; n.expansion_status = "expanded";
+    try { await expand(n.id); select(n.id); } catch (e) {}
+  };
 }
 // wire the submarket "Validate distribution" button (research provider only)
 function wireDistribution(n) {
