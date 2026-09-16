@@ -1319,15 +1319,25 @@ _SYNTH_SYS = (
 
 
 def _synth_user(pocket, all_questions, sources):
-    src_lines = []
+    # Keep the whole synthesis request within free per-minute token budgets (Groq TPM is
+    # only ~8k). Now that full page bodies retrieve, cap per-source excerpt AND the running
+    # total so a rich retrieval can't 413 the request. Excerpts still carry the evidence;
+    # full page_text stays in the dossier for reference.
+    PER_FULL, PER_SNIP, TOTAL_BUDGET = 900, 300, 14000
+    src_lines, used = [], 0
     for i, s in enumerate(sources):
         page = s.get("page_text") or ""
         if len(page) > 200:
-            kind, body = "full-page", page[:1600]
+            kind, body = "full-page", page[:PER_FULL]
         else:
-            kind, body = "search snippet", (s.get("snippet") or "")[:600]
+            kind, body = "search snippet", (s.get("snippet") or "")[:PER_SNIP]
+        if used + len(body) > TOTAL_BUDGET:          # stop before blowing the token budget
+            body = body[:max(0, TOTAL_BUDGET - used)]
+        used += len(body)
         src_lines.append(f"[{i}] ({s.get('source_type')} · {kind} · intent:{s.get('intent')}) "
                          f"{s.get('title')} <{s.get('url')}>\n{body}")
+        if used >= TOTAL_BUDGET:
+            break
     qlines = "\n".join(f"- ({t}) {q}" for q, t in all_questions)
     return (f"AUDIENCE: {pocket['audience']}\nCORE PROBLEM: {pocket['core_problem']}\n"
             f"DESIRED OUTCOME: {pocket.get('desired_outcome','')}\n"
